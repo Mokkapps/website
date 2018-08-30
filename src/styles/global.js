@@ -3,6 +3,7 @@ import { injectGlobal } from 'emotion';
 import '@react-website-themes/default/styles/global';
 
 const dark = '#333333';
+const medium = '#3f3f3f';
 const light = '#424242';
 const red = '#FC1A20';
 
@@ -44,9 +45,10 @@ injectGlobal`
     list-style-position: inside;
   }
 
-  /* a {
+  a {
     color: var(--linkColor);
     transition: .3s;
+    text-decoration: underline;
   }
 
   @media (hover: hover)  {
@@ -63,6 +65,6 @@ injectGlobal`
   }
   *::-webkit-scrollbar-thumb {
     background-color: var(--scrollBarThumb);
-  } */
+  }
 
 `;

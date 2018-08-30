@@ -1,0 +1,15 @@
+.social-link {
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  align-content: center;
+  padding: .5rem;
+  margin-right: 1rem;
+}
+
+.social-link:hover {
+  background: #fc1a20;
+  transform: translate(0, -2px);
+  box-shadow: 5px 5px 1px black;
+}

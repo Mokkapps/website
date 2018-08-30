@@ -2,6 +2,8 @@
 name: copyrightNote
 ---
 
-Built with ❤️ by [Mokkapps](https://www.mokkapps.de)
+Built with ❤️ by [Mokkapps](https://www.mokkapps.de) 
 
-Website code available at [Github](https://github.com/Mokkapps/website)
+Code for this website is available at [Github](https://github.com/Mokkapps/website)
+
+[Privacy Policy](privacy-policy)

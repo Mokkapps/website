@@ -58,7 +58,6 @@ const PostTemplate = props => {
         fields: { slug, prefix },
       },
       author: { html: authorHTML },
-      footerLinks: { html: footerLinksHTML },
       copyright: { html: copyrightHTML },
     },
     pageContext: { next, prev },
@@ -99,7 +98,7 @@ const PostTemplate = props => {
         <Author html={authorHTML} />
         <Comments slug={slug} siteUrl={siteUrl} />
       </PostArticle>
-      <CustomFooter links={footerLinksHTML} copyright={copyrightHTML} />
+      <CustomFooter copyright={copyrightHTML} />
       <Seo
         url={`${siteUrl}${slug}`}
         language={siteLanguage}
@@ -136,11 +135,6 @@ export const query = graphql`
     }
     author: markdownRemark(
       fileAbsolutePath: { regex: "/content/parts/author/" }
-    ) {
-      html
-    }
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
     ) {
       html
     }

@@ -9,8 +9,8 @@ injectGlobal`
     --lightTextColor: #888;
     --superLightTextColor: #aaa;
     --fontFamily: "Bitter", sans-serif;
-    --linkColor: #a00;
-    --hoverLinkColor: #d00;
+    --linkColor: #FC1A20;
+    --hoverLinkColor: #b21117;
     --scrollBarThumb: #eaeaea;
     --scrollBarTrack: #f9f9f9;
     --scrollBarWidth: 10px;

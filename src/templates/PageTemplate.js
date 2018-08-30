@@ -29,7 +29,6 @@ const PageTemplate = props => {
         fields: { slug },
         excerpt,
       },
-      footerLinks: { html: footerLinksHTML },
       copyright: { html: copyrightHTML },
     },
   } = props;
@@ -46,7 +45,7 @@ const PageTemplate = props => {
         <Heading title={title} />
         <Bodytext html={pageHTML} />
       </PageArticle>
-      <CustomFooter links={footerLinksHTML} copyright={copyrightHTML} />
+      <CustomFooter copyright={copyrightHTML} />
       <Seo
         url={`${siteUrl}${slug}`}
         language={siteLanguage}
@@ -78,11 +77,6 @@ export const query = graphql`
         title
         categories
       }
-    }
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
     }
     copyright: markdownRemark(
       fileAbsolutePath: { regex: "/content/parts/copyright/" }

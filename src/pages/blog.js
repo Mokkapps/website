@@ -53,7 +53,6 @@ const BlogPage = props => {
   const {
     data: {
       posts: { edges },
-      footerLinks: { html: footerLinksHTML },
       copyright: { html: copyrightHTML },
     },
   } = props;
@@ -77,7 +76,7 @@ const BlogPage = props => {
           metaIcons={metaIcons}
         />
       </Article>
-      <CustomFooter links={footerLinksHTML} copyright={copyrightHTML} />
+      <CustomFooter copyright={copyrightHTML} />
       <Seo
         url={siteUrl}
         language={siteLanguage}
@@ -109,11 +108,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    footerLinks: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/footerLinks/" }
-    ) {
-      html
     }
     copyright: markdownRemark(
       fileAbsolutePath: { regex: "/content/parts/copyright/" }

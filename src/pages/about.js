@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Header from '@react-website-themes/default/components/Header';
+import Heading from '@react-website-themes/default/components/Heading';
 import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
@@ -11,19 +12,18 @@ import menuItems from 'content/meta/menu';
 import CustomMenu from '../components/CustomMenu';
 import CustomFooter from '../components/CustomFooter';
 import HeaderLogo from '../components/HeaderLogo';
-import Hero from '../components/Hero/Hero';
+import About from '../components/About/About';
+import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
 import '../styles/variables';
 
-const IndexPage = props => {
+const AboutPage = props => {
   const {
     data: {
       copyright: { html: copyrightHTML },
     },
   } = props;
-
-  console.log('props', props);
 
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
@@ -33,7 +33,10 @@ const IndexPage = props => {
         <HeaderLogo />
         <CustomMenu items={menuItems} />
       </Header>
-      <Hero />
+      <PageArticle>
+        <Heading title="About me" />
+        <About />
+      </PageArticle>
       <CustomFooter copyright={copyrightHTML} />
       <Seo
         url={siteUrl}
@@ -45,7 +48,7 @@ const IndexPage = props => {
   );
 };
 
-export default IndexPage;
+export default AboutPage;
 
 export const query = graphql`
   query {

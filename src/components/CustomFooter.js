@@ -6,12 +6,13 @@ const style = css`
   .credits {
     display: none;
   }
+
+  p {
+    color: white;
+    font-size: 1.2em;
+  }
 `;
 
-export default ({ link, copyright }) => (
-  <Footer
-    customStyle={style}
-    links={link}
-    copyright={copyright}
-  />
+export default ({ copyright }) => (
+  <Footer customStyle={style} copyright={copyright} />
 );

@@ -16,6 +16,16 @@ export default () => (
     onClick={() => navigate('./')}
   >
     <img src={logo} alt="Logo" width="32" height="32" />
-    okkapps
+    <p
+      style={{
+        color: 'white',
+        letterSpacing: 3,
+        // transform: 'skew(-15deg)',
+        fontSize: 19,
+        marginLeft: 3,
+      }}
+    >
+      OKKAPPS
+    </p>
   </div>
 );
