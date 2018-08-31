@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.desc {
+  margin-left: 2rem;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.container > * {
+  flex: 1 100%;
+}
+
+/* Small screens */
+@media all and (min-width: 300px) {
+  /* We tell both sidebars to share a row */
+  .image {
+    flex: 0 1 auto;
+  }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  .desc {
+    flex: 20 0px;
+    order: 2;
+  }
+  .image {
+    order: 1;
+  }
+}

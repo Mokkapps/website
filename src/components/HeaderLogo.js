@@ -12,6 +12,7 @@ export default () => (
       alignContent: 'center',
       alignItems: 'center',
       outline: 'none',
+      cursor: 'pointer',
     }}
     onClick={() => navigate('./')}
   >

@@ -22,17 +22,11 @@ const NotFoundPage = props => {
   const {
     data: {
       notFound: { html: notFoundHTML },
-      footerLinks: { html: footerLinksHTML },
       copyright: { html: copyrightHTML },
     },
   } = props;
 
-  const {
-    siteUrl,
-    siteTitle,
-    siteDescription,
-    siteLanguage,
-  } = config;
+  const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
   return (
     <Layout>
@@ -44,7 +38,7 @@ const NotFoundPage = props => {
         <Heading title="Not found" />
         <Bodytext html={notFoundHTML} />
       </Article>
-      <CustomFooter links={footerLinksHTML} copyright={copyrightHTML} />
+      <CustomFooter copyright={copyrightHTML} />
       <Seo
         url={siteUrl}
         language={siteLanguage}
