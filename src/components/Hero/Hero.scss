@@ -1,17 +1,10 @@
+@import '../../styles/variables.scss';
+
 .container {
   height: 100%;
   border-radius: 10px;
   padding: 2rem;
-  background: #333333;
-}
-
-.section-container {
-  border-radius: 1rem;
-  background-color: gray;
-  margin: auto;
-  margin-top: 1rem;
-  width: 90%;
-  padding: 2rem;
+  background: $dark-gray;
 }
 
 .centered {

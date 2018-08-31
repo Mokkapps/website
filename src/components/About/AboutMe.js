@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './About.css';
+import './About.scss';
 
 export default () => (
   <div className="container">

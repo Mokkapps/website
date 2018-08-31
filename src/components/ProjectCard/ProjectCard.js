@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Card from './Card';
+import Card from '../Card/Card';
 import ProjectCardDescription from './ProjectCardDescription';
 
-import './styles.css';
+import './ProjectCard.scss';
 
 class ProjectCard extends React.Component {
   render() {
-    let { photo, productName, description, rating, url } = this.props;
+    let { photo, projectName, description, rating, url } = this.props;
 
     return (
       <Card className="product-card">
@@ -18,7 +18,7 @@ class ProjectCard extends React.Component {
           }}
         />
         <ProjectCardDescription
-          productName={productName}
+          projectName={projectName}
           description={description}
           rating={rating}
           url={url}

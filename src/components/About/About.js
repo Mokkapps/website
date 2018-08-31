@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './About.css';
+import './About.scss';
 
 import SkillBar from '../SkillBar';
 import AboutMe from './AboutMe';

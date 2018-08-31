@@ -8,6 +8,7 @@ module.exports = {
     description: config.siteDescription,
   },
   plugins: [
+    // Import files
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,10 +37,13 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    `gatsby-plugin-resolve-src`,
-    `gatsby-plugin-catch-links`,
+    'gatsby-plugin-sass', // enable SASS
+    `gatsby-plugin-resolve-src`, // resolve imports from src subdir
+    `gatsby-plugin-catch-links`, // intercept markdown links
+    // Following two are necessary for gatsby-image
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // Parses Markdown files using Remark.
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -78,14 +82,18 @@ module.exports = {
         ],
       },
     },
+    // Google Analytics integration
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
+    // Support for css-in-js library Emotion
     `gatsby-plugin-emotion`,
+    // Create a sitemap
     `gatsby-plugin-sitemap`,
+    // Create an RSS feed
     {
       resolve: `gatsby-plugin-feed`,
       options: {

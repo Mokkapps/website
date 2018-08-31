@@ -1,5 +1,5 @@
 import React from 'react';
 
-import './styles.css';
+import './Card.scss';
 
 export default ({ children }) => <div className="card">{children}</div>;

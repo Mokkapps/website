@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Hero.css';
+import './Hero.scss';
 import SocialLink from '../SocialLink/SocialLink';
 import HeroHeading from './HeroHeading';
 import HeroCharacteristicList from './HeroCharacteristicList';

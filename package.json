@@ -1,6 +1,11 @@
 {
   "name": "website",
   "description": "Website for Mokkapps",
+  "author": "Michael Hoffmann <kontakt@mokkapps.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mokkapps/website"
+  },
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -23,6 +28,7 @@
     "gatsby-plugin-google-analytics": "2.0.0-rc.1",
     "gatsby-plugin-react-helmet": "3.0.0-rc.1",
     "gatsby-plugin-resolve-src": "2.0.0-beta.1",
+    "gatsby-plugin-sass": "2.0.0-rc.1",
     "gatsby-plugin-sharp": "2.0.0-rc.2",
     "gatsby-plugin-sitemap": "2.0.0-rc.1",
     "gatsby-remark-copy-linked-files": "2.0.0-rc.1",
@@ -35,6 +41,7 @@
     "gatsby-source-filesystem": "2.0.1-rc.1",
     "gatsby-transformer-remark": "2.1.1-rc.1",
     "gatsby-transformer-sharp": "2.1.1-rc.2",
+    "node-sass": "^4.9.3",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.3.2",

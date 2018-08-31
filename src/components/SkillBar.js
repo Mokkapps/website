@@ -3,7 +3,7 @@ import { Progress } from 'react-sweet-progress';
 import 'react-sweet-progress/lib/style.css';
 
 import config from '../content/meta/config';
-import './SkillBar.css';
+import './SkillBar.scss';
 
 export default () =>
   config.skills.map(skill => (
