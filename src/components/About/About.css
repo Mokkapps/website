@@ -13,6 +13,11 @@
   margin-left: 2rem;
 }
 
+.skills-container {
+  width: 60%;
+  margin: auto;
+}
+
 /* We tell all items to be 100% width, via flex-basis */
 .container > * {
   flex: 1 100%;

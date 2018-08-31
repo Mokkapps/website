@@ -8,7 +8,9 @@ import AboutMe from './AboutMe';
 export default () => (
   <section>
     <AboutMe />
-    <h1>Skills</h1>
-    <SkillBar />
+    <div className="skills-container">
+      <h1 style={{ marginBottom: '2rem' }}>Skills</h1>
+      <SkillBar />
+    </div>
   </section>
 );
