@@ -1,21 +1,17 @@
 import React from 'react';
 
+import './Hero.scss';
+
 import HeroCharacteristic from './HeroCharacteristic';
 import config from '../../content/meta/config';
 
 export default () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-    }}
-  >
+  <ul className="hero--characteristics">
     {config.characteristics.map(characteristic => {
       const { emoji, ariaLabel, text } = characteristic;
       return (
         <HeroCharacteristic emoji={emoji} ariaLabel={ariaLabel} text={text} />
       );
     })}
-  </div>
+  </ul>
 );

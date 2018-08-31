@@ -21,10 +21,10 @@ const config = {
   // pathPrefix: '',
 
   characteristics: [
-    { text: 'MOBILE, GAME & FRONTEND DEVELOPER', emoji: '💻', ariaLabel: 'pc' },
-    { text: 'BLOGGER', emoji: '📝', ariaLabel: 'memo' },
-    { text: 'VIDEOGAME ENTHUSIAST', emoji: '🎮', ariaLabel: 'games' },
-    { text: 'BEEKEEPER', emoji: '🐝', ariaLabel: 'bee' },
+    { text: 'Mobile, Game & Frontend Developer', emoji: '💻', ariaLabel: 'pc' },
+    { text: 'Blogger', emoji: '📝', ariaLabel: 'memo' },
+    { text: 'Videogame Enthusiast', emoji: '🎮', ariaLabel: 'games' },
+    { text: 'Beekeeper', emoji: '🐝', ariaLabel: 'bee' },
   ],
 
   projects: [

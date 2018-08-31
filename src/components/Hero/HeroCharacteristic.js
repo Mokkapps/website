@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './Hero.scss';
+
 export default ({ text, ariaLabel, emoji }) => (
-  <h2 style={{marginTop: '1rem'}}>
+  <li className="hero--characteristics-item">
     <span role="img" aria-label={ariaLabel} style={{ marginRight: '.5em' }}>
       {emoji}
     </span>
     {text}
-  </h2>
+  </li>
 );

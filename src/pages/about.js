@@ -12,7 +12,7 @@ import menuItems from 'content/meta/menu';
 import CustomMenu from '../components/CustomMenu';
 import CustomFooter from '../components/CustomFooter';
 import HeaderLogo from '../components/HeaderLogo';
-import About from '../components/About/About';
+import About from '../components/About';
 import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
@@ -22,6 +22,7 @@ const AboutPage = props => {
   const {
     data: {
       copyright: { html: copyrightHTML },
+      file,
     },
   } = props;
 
@@ -35,7 +36,7 @@ const AboutPage = props => {
       </Header>
       <PageArticle>
         <Heading title="About me" />
-        <About />
+        <About aboutImage={file} />
       </PageArticle>
       <CustomFooter copyright={copyrightHTML} />
       <Seo
@@ -56,6 +57,13 @@ export const query = graphql`
       fileAbsolutePath: { regex: "/content/parts/copyright/" }
     ) {
       html
+    }
+    file(relativePath: { eq: "me.jpg" }) {
+      childImageSharp {
+        fixed(width: 250, height: 250) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
   }
 `;

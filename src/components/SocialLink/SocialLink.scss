@@ -1,13 +1,13 @@
 @import '../../styles/variables';
 
-.social-link {
+.social--link {
   align-items: center;
   background: white;
   border-radius: 5px;
   display: flex;
   align-content: center;
   padding: 0.5rem;
-  margin-right: 1rem;
+  margin: 1rem 1rem 0 0;
 
   &:hover {
     background: $primary-color;

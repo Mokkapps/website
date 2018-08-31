@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.headerlogo--container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.headerlogo--text {
+  color: $secondary-color;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  font-size: 1.3em;
+  margin-left: 0.1em;
+}

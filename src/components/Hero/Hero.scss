@@ -1,15 +1,59 @@
 @import '../../styles/variables.scss';
 
-.container {
+.hero--container {
   height: 100%;
   border-radius: 10px;
   padding: 2rem;
   background: $dark-gray;
 }
 
-.centered {
+.hero--characteristics {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  list-style: none;
+}
+
+.hero--characteristics-item {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+.hero--heading {
+  text-align: center;
+  font-size: 3em;
+}
+
+.hero--loopable-text {
+  color: $primary-color;
+}
+
+.hero--section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2rem;
+}
+
+/* Small screens */
+@media screen and (max-width: 300px) {
+  .hero--heading {
+    font-size: 1.4em;
+  }
+
+  .hero--characteristics-item {
+    font-size: 1.2em;
+  }
+}
+
+/* Medium screens */
+@media screen and (max-width: 600px) {
+  .hero--heading {
+    font-size: 1.7em;
+  }
+
+  .hero--characteristics-item {
+    font-size: 1.5em;
+  }
 }

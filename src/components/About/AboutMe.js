@@ -1,26 +1,27 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 import './About.scss';
 
-export default () => (
-  <div className="container">
-    <img className="image" src="./about.jpg" width="250" height="250" />
-    <div className="desc">
-      <h2>
+export default ({ aboutImage }) => (
+  <div className="about--container">
+    <Img className="about--image" fixed={aboutImage.childImageSharp.fixed} />
+    <div className="about--desc">
+      <p className="about--text">
         I am a software developer from the Bavarian Forest and currently live in
         Munich.
-      </h2>
+      </p>
       <br />
-      <h2>
+      <p className="about--text">
         Highly committed, agile personality with broad experience in the field
         of application development. Experience in working in agile team
         settings. Delivering excellent results and used to work under pressure.
-      </h2>
+      </p>
       <br />
-      <h2>
+      <p className="about--text">
         I am very interested in development of mobile apps, websites and video
         games. If I am not coding I play videogames or do sports.
-      </h2>
+      </p>
     </div>
   </div>
 );

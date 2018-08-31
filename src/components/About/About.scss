@@ -1,43 +1,50 @@
-.container {
+@import '../../styles/variables.scss';
+
+.about--container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+
+  & > * {
+    flex: 1 100%;
+  }
 }
 
-.image {
+.about--text {
+  font-size: 1.5em;
+  color: $secondary-color;
+}
+
+.about--image {
   border-radius: 50%;
 }
 
-.desc {
-  margin-left: 2rem;
+.about--desc {
+  margin: 2em 0 0 2em;
 }
 
-.skills-container {
+.about--skills {
   width: 60%;
   margin: auto;
-}
-
-/* We tell all items to be 100% width, via flex-basis */
-.container > * {
-  flex: 1 100%;
+  margin-top: 2em;
 }
 
 /* Small screens */
 @media all and (min-width: 300px) {
   /* We tell both sidebars to share a row */
-  .image {
+  .about--image {
     flex: 0 1 auto;
   }
 }
 
 /* Large screens */
 @media all and (min-width: 800px) {
-  .desc {
+  .about--desc {
     flex: 20 0px;
     order: 2;
   }
-  .image {
+  .about--image {
     order: 1;
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
-import ProjectCard from './ProjectCard/ProjectCard';
+import ProjectCard from './ProjectCard';
 
-export default () => <ProjectCard productName="Test" description="DEsc" />;
+export default ({photos}) => <ProjectCard photo={photos} productName="Test" description="DEsc" />;
+

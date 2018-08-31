@@ -22,6 +22,7 @@ const ProjectsPage = props => {
   const {
     data: {
       copyright: { html: copyrightHTML },
+      file,
     },
   } = props;
 
@@ -35,7 +36,7 @@ const ProjectsPage = props => {
       </Header>
       <PageArticle>
         <Heading title="Projects" />
-        <ProjectList />
+        <ProjectList photos={file} />
       </PageArticle>
       <CustomFooter copyright={copyrightHTML} />
       <Seo
@@ -56,6 +57,13 @@ export const query = graphql`
       fileAbsolutePath: { regex: "/content/parts/copyright/" }
     ) {
       html
+    }
+    file(relativePath: { eq: "icon.png" }) {
+      childImageSharp {
+        fixed(width: 250, height: 250) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
   }
 `;
