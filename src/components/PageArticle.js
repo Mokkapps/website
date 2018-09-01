@@ -4,7 +4,7 @@ import { css } from 'emotion';
 import Article from '@react-website-themes/default/components/Article';
 
 const articleStyle = css`
-  background: #333333;
+  background: white;
   border-radius: 10px;
   padding: 2rem;
   min-width: 100%;

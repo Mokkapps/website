@@ -32,7 +32,7 @@ const PublicationsPage = () => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading title="📚 Publications" />
+        <Heading title="PUBLICATIONS" />
         <h1 style={{ marginBottom: '1rem' }}>Talks</h1>
         <ul>
           {publications.filter(p => p.type === 'talk').map(p => (

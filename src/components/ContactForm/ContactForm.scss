@@ -4,7 +4,7 @@
   height: 2rem;
   border-radius: 0.25rem;
   border: none;
-  background: $secondary-color;
+  background: lightgrey;
   padding: 0.25rem 1rem;
   overflow: auto;
   font: inherit;
@@ -38,7 +38,7 @@
 
   &__label {
     margin: 1rem 0 1rem 0;
-    color: $secondary-color;
+    color: black;
   }
 
   &__button {

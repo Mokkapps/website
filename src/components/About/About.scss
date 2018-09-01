@@ -3,14 +3,13 @@
 .about {
   &__container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
   }
 
   &__text {
     font-size: 1.5em;
-    color: $secondary-color;
     text-align: center;
 
     &--red {

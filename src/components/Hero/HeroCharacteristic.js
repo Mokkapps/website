@@ -3,10 +3,16 @@ import React from 'react';
 import './Hero.scss';
 
 export default ({ text, ariaLabel, emoji }) => (
-  <li className="hero__characteristics-item">
-    <span role="img" aria-label={ariaLabel} style={{ marginRight: '.5em' }}>
-      {emoji}
-    </span>
-    {text}
-  </li>
+  <div className="hero__characteristics-item">
+    <p>{text}</p>
+    <div class="hero__characteristics-item-overlay">
+      <span
+        class="hero__characteristics-item-overlay-content"
+        role="img"
+        aria-label={ariaLabel}
+      >
+        {emoji}
+      </span>
+    </div>
+  </div>
 );

@@ -53,6 +53,7 @@
     "react-emotion": "^9.2.6",
     "react-facebook": "^5.0.3",
     "react-feather": "^1.1.1",
+    "react-grid-system": "^4.3.0",
     "react-helmet": "^5.2.0",
     "react-mobile-store-button": "0.0.3",
     "react-sweet-progress": "^1.1.2",

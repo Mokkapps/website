@@ -33,7 +33,7 @@ const ContactPage = () => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading customStyle={headingStyle} title="📬 Contact Me" />
+        <Heading customStyle={headingStyle} title="CONTACT ME" />
         <ContactForm />
       </PageArticle>
       <Footer />

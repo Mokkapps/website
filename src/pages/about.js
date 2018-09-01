@@ -42,7 +42,7 @@ const AboutPage = props => {
       <PageArticle>
         <Heading
           customStyle={headingStyle}
-          title="🙋‍♂️ About Me"
+          title="ABOUT ME"
         />
         <About aboutImage={file} />
       </PageArticle>

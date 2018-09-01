@@ -8,7 +8,7 @@ import config from '../content/meta/config';
 export default () =>
   config.skills.map(skill => (
     <div key={skill.type}>
-      <h3>{skill.type}</h3>
+      <h3 style={{ color: 'black' }}>{skill.type}</h3>
       <Progress
         style={{ marginBottom: '1rem' }}
         status="skill"

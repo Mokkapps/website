@@ -25,13 +25,17 @@ import '../styles/variables';
 
 const articleStyle = css`
   border-radius: 1rem;
-  background: #333333;
+  background: white;
   margin: auto;
   padding: 2rem;
   min-width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  h3 {
+    color: black;
+  }
 `;
 
 const blogStyle = css`
@@ -63,7 +67,7 @@ const BlogPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Article customStyle={articleStyle}>
-        <Heading title="✍️ Blog" />
+        <Heading title="BLOG" />
         <Blog
           customStyle={blogStyle}
           items={posts}

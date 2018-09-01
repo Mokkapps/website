@@ -34,7 +34,7 @@ const SuccessPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="👍 Success" />
+        <Heading title="SUCCESS" />
         <Bodytext html={contactSuccessHTML} />
       </Article>
       <Footer />
