@@ -51,6 +51,7 @@
     "react-facebook": "^5.0.3",
     "react-feather": "^1.1.1",
     "react-helmet": "^5.2.0",
+    "react-mobile-store-button": "0.0.3",
     "react-sweet-progress": "^1.1.2",
     "react-text-loop": "^1.1.0",
     "styled-components": "^3.4.5"

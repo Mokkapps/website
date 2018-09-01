@@ -1,6 +1,6 @@
 @import '../../styles/variables';
 
-.social--link {
+.social-link {
   align-items: center;
   background: white;
   border-radius: 5px;
@@ -11,7 +11,8 @@
 
   &:hover {
     background: $primary-color;
-    transform: translate(0, -2px);
-    box-shadow: 5px 5px 1px black;
+    box-shadow: 0 0.5rem 0.5rem 0.5rem rgba(black, 0.2),
+      0 0.5rem 0.5rem 0 rgba(black, 0.14), 0 0.5rem 0.5rem 0 rgba(black, 0.12) !important;
+    transform: translateY(-0.2rem);
   }
 }

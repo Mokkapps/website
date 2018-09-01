@@ -8,8 +8,8 @@ import AboutMe from './AboutMe';
 const About = ({aboutImage}) => (
   <section>
     <AboutMe aboutImage={aboutImage} />
-    <div className="about--skills">
-      <h1 style={{ marginBottom: '.5em' }}>Skills</h1>
+    <div className="about__skills">
+      <h1 className="about__skills-heading">Skills</h1>
       <SkillBar />
     </div>
   </section>

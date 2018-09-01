@@ -7,14 +7,14 @@ import HeroHeading from './HeroHeading';
 import HeroCharacteristicList from './HeroCharacteristicList';
 
 export default () => (
-  <div className="hero--container">
+  <div className="hero__container">
     <HeroHeading />
 
-    <div className="hero--section">
+    <div className="hero__section">
       <HeroCharacteristicList />
     </div>
 
-    <div className="hero--section">
+    <div className="hero__section">
       <SocialLink href="https://github.com/mokkapps" iconName="github" />
       <SocialLink href="https://twitter.com/mokkapps" iconName="twitter" />
       <SocialLink href="https://dev.to/mokkapps" iconName="dev-dot-to" />

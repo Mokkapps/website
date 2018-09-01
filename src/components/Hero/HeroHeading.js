@@ -6,7 +6,7 @@ import './Hero.scss';
 import HeroLoopableText from './HeroLoopableText';
 
 export default () => (
-  <h2 className="hero--heading">
+  <h2 className="hero__heading">
     Hi! I'm{' '}
     <TextLoop
       style={{ cursor: 'pointer' }}

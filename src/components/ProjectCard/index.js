@@ -4,16 +4,15 @@ import Img from 'gatsby-image';
 import Card from '../Card';
 import ProjectCardDescription from './ProjectCardDescription';
 
-import './ProjectCard.scss';
+import './styles.scss';
 
-const ProjectCard = ({ photo, projectName, description, rating, url }) => (
-  <Card className="product-card">
-    <Img className="gallery gallery-item" fixed={photo.childImageSharp.fixed} />
+const ProjectCard = ({ asset, title, description, urls }) => (
+  <Card className="project-card">
+    <Img className="project-card__image" sizes={asset.childImageSharp.sizes} />
     <ProjectCardDescription
-      projectName={projectName}
+      projectName={title}
       description={description}
-      rating={rating}
-      url={url}
+      urls={urls}
     />
   </Card>
 );

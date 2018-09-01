@@ -8,7 +8,7 @@ export default ({ children }) => (
     role="link"
     tabIndex={0}
     onKeyPress={() => {}}
-    className="hero--loopable-text"
+    className="hero__loopable-text"
     onClick={() => navigate('./about')}
   >
     {children}

@@ -1,50 +1,58 @@
 @import '../../styles/variables.scss';
 
-.about--container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-
-  & > * {
-    flex: 1 100%;
+.about {
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.about--text {
+.about__text {
   font-size: 1.5em;
   color: $secondary-color;
+  text-align: center;
+
+  &--red {
+    color: $primary-color;
+  }
 }
 
-.about--image {
+.about__image {
   border-radius: 50%;
 }
 
-.about--desc {
+.about__desc {
   margin: 2em 0 0 2em;
 }
 
-.about--skills {
+.about__skills {
   width: 60%;
   margin: auto;
   margin-top: 2em;
 }
 
+.about__skills-heading {
+  text-align: center;
+  margin: 1.5em 0 1.5em 0;
+}
+
 /* Small screens */
 @media all and (min-width: 300px) {
   /* We tell both sidebars to share a row */
-  .about--image {
+  .about__image {
     flex: 0 1 auto;
   }
 }
 
 /* Large screens */
 @media all and (min-width: 800px) {
-  .about--desc {
+  .about__desc {
     flex: 20 0px;
     order: 2;
   }
-  .about--image {
+  .about__image {
     order: 1;
   }
 }

@@ -6,7 +6,7 @@ import HeroCharacteristic from './HeroCharacteristic';
 import config from '../../content/meta/config';
 
 export default () => (
-  <ul className="hero--characteristics">
+  <ul className="hero__characteristics">
     {config.characteristics.map(characteristic => {
       const { emoji, ariaLabel, text } = characteristic;
       return (

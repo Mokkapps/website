@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { css } from 'emotion';
 
 import 'prismjs/themes/prism-okaidia.css';
 
@@ -36,6 +37,17 @@ import PostArticle from '../components/PostArticle';
 
 import '../styles/global';
 import '../styles/variables';
+
+const bodyTextStyle = css`
+  img {
+    width: 100%;
+  }
+
+  ol {
+    margin: 0 0 1.5em;
+    list-style-position: inside;
+  }
+`;
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -92,7 +104,7 @@ const PostTemplate = props => {
           categories={categories}
           icons={metaIcons}
         />
-        <Bodytext html={postHTML} />
+        <Bodytext customStyle={bodyTextStyle} html={postHTML} />
         <Share shareBlockProps={shareBlockProps} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <Author html={authorHTML} />

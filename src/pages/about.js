@@ -28,6 +28,8 @@ const AboutPage = props => {
 
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
+  console.log('props', props);
+
   return (
     <Layout>
       <Header>
@@ -35,7 +37,7 @@ const AboutPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading title="About me" />
+        <Heading title="About Me" />
         <About aboutImage={file} />
       </PageArticle>
       <CustomFooter copyright={copyrightHTML} />

@@ -35,10 +35,6 @@ const articleStyle = css`
 `;
 
 const blogStyle = css`
-  border-color: #fc1a20 !important;
-  border: 0.2rem;
-  border-style: solid;
-  border-radius: 1rem;
   padding: 2rem;
   width: 80%;
 `;
@@ -72,7 +68,7 @@ const BlogPage = props => {
         <Blog
           customStyle={blogStyle}
           items={posts}
-          author={'greg'}
+          author={'Michael Hoffmann'}
           metaIcons={metaIcons}
         />
       </Article>

@@ -22,7 +22,7 @@ const ProjectsPage = props => {
   const {
     data: {
       copyright: { html: copyrightHTML },
-      file,
+      projectAssets,
     },
   } = props;
 
@@ -35,8 +35,8 @@ const ProjectsPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading title="Projects" />
-        <ProjectList photos={file} />
+        <Heading title="My Private Projects" />
+        <ProjectList projectAssets={projectAssets} />
       </PageArticle>
       <CustomFooter copyright={copyrightHTML} />
       <Seo
@@ -62,6 +62,17 @@ export const query = graphql`
       childImageSharp {
         fixed(width: 250, height: 250) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            sizes(maxWidth: 600) {
+              ...GatsbyImageSharpSizes_tracedSVG
+            }
+          }
         }
       }
     }

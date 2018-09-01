@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import TagIcon from 'react-feather/dist/icons/tag';
+import { css } from 'emotion';
 
 import 'prismjs/themes/prism-okaidia.css';
 
@@ -22,6 +23,16 @@ import HeaderLogo from '../components/HeaderLogo';
 import '../styles/global';
 import '../styles/variables';
 
+const listStyle = css`
+  a {
+    color: white;
+  }
+
+  a:hover {
+    color: #fc1a20;
+  }
+`;
+
 const PageTemplate = props => {
   const {
     pageContext: { category },
@@ -33,12 +44,7 @@ const PageTemplate = props => {
 
   const items = edges.map(edge => edge.node);
 
-  const {
-    siteUrl,
-    siteDescription,
-    siteLanguage,
-    siteTitlePostfix,
-  } = config;
+  const { siteUrl, siteDescription, siteLanguage, siteTitlePostfix } = config;
 
   return (
     <Layout>
@@ -50,13 +56,13 @@ const PageTemplate = props => {
         <Heading>
           <span>Posts in category</span> <TagIcon />
           <h1>{category}</h1>
-          <p className="meta">
+          <h3 className="meta">
             There {totalCount > 1 ? 'are' : 'is'} <strong>{totalCount}</strong>{' '}
             post
-            {totalCount > 1 ? 's' : ''} in the category.
-          </p>
+            {totalCount > 1 ? 's' : ''} in the category:
+          </h3>
         </Heading>
-        <List items={items} />
+        <List customStyle={listStyle} items={items} />
       </Article>
       <CustomFooter copyright={copyrightHTML} />
       <Seo
