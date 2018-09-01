@@ -1,6 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { css } from 'emotion';
 
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
@@ -13,23 +11,19 @@ import menuItems from 'content/meta/menu';
 import CustomMenu from '../components/CustomMenu';
 import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
-import ProjectList from '../components/ProjectList';
 import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
 import '../styles/variables';
 
-const headingStyle = css`
-  display: flex;
-  justify-content: center;
-`;
-
-const ProjectsPage = props => {
+const PublicationsPage = () => {
   const {
-    data: { projectAssets },
-  } = props;
-
-  const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
+    publications,
+    siteUrl,
+    siteTitle,
+    siteDescription,
+    siteLanguage,
+  } = config;
 
   return (
     <Layout>
@@ -38,8 +32,23 @@ const ProjectsPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading customStyle={headingStyle} title="My Private Projects" />
-        <ProjectList projectAssets={projectAssets} />
+        <Heading title="Publications" />
+        <h1 style={{ marginBottom: '1rem' }}>Talks</h1>
+        <ul>
+          {publications.filter(p => p.type === 'talk').map(p => (
+            <li style={{ marginTop: '1rem' }}>
+              <a href={p.link}>{p.title}</a>
+            </li>
+          ))}
+        </ul>
+        <h1 style={{ marginBottom: '1rem', marginTop: '1rem' }}>Articles</h1>
+        <ul>
+          {publications.filter(p => p.type === 'article').map(p => (
+            <li style={{ marginTop: '1rem' }}>
+              <a href={p.link}>{p.title}</a>
+            </li>
+          ))}
+        </ul>
       </PageArticle>
       <Footer />
       <Seo
@@ -52,20 +61,4 @@ const ProjectsPage = props => {
   );
 };
 
-export default ProjectsPage;
-
-export const query = graphql`
-  query {
-    projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
-      edges {
-        node {
-          childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export default PublicationsPage;

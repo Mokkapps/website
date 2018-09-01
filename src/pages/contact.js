@@ -1,8 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { css } from 'emotion';
 
-import Article from '@react-website-themes/default/components/Article';
-import Bodytext from '@react-website-themes/default/components/Bodytext';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
 import Layout from '@react-website-themes/default/components/Layout';
@@ -15,9 +13,15 @@ import CustomMenu from '../components/CustomMenu';
 import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
 import ContactForm from '../components/ContactForm';
+import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
 import '../styles/variables';
+
+const headingStyle = css`
+  display: flex;
+  justify-content: center;
+`;
 
 const ContactPage = () => {
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
@@ -28,10 +32,10 @@ const ContactPage = () => {
         <HeaderLogo />
         <CustomMenu items={menuItems} />
       </Header>
-      <Article>
-        <Heading title="Contact Me" />
+      <PageArticle>
+        <Heading customStyle={headingStyle} title="Contact Me" />
         <ContactForm />
-      </Article>
+      </PageArticle>
       <Footer />
       <Seo
         url={siteUrl}

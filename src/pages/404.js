@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { css } from 'emotion';
 
 import Article from '@react-website-themes/default/components/Article';
 import Bodytext from '@react-website-themes/default/components/Bodytext';
@@ -18,10 +19,16 @@ import HeaderLogo from '../components/HeaderLogo';
 import '../styles/global';
 import '../styles/variables';
 
+const bodyStyle = css`
+  img {
+    width: 100%;
+  }
+`;
+
 const NotFoundPage = props => {
   const {
     data: {
-      notFound: { html: notFoundHTML }
+      notFound: { html: notFoundHTML },
     },
   } = props;
 
@@ -34,8 +41,8 @@ const NotFoundPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="Not found" />
-        <Bodytext html={notFoundHTML} />
+        <Heading title="404" />
+        <Bodytext customStyle={bodyStyle} html={notFoundHTML} />
       </Article>
       <Footer />
       <Seo

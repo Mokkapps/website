@@ -51,3 +51,7 @@ Mokkapps does not warrant that the website is free of viruses or other harmful c
 https://www.mokkapps.de website may contain links to external websites that are not provided or maintained by or in any way affiliated with Mokkapps.
 
 Please note that the Mokkapps does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.
+
+## Attribution
+
+[Background Hero Pattern](https://www.heropatterns.com/) by Steve Schoger is licensed under CC BY 4.0.

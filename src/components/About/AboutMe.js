@@ -8,7 +8,6 @@ import config from '../../content/meta/config';
 
 const renderLoopableText = () => (
   <TextLoop
-    style={{ cursor: 'pointer' }}
     mask
     springConfig={{ stiffness: 180, damping: 8 }}
   >

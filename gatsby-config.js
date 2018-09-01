@@ -37,7 +37,8 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    'gatsby-plugin-sass', // enable SASS
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-sass`, // enable SASS
     `gatsby-plugin-resolve-src`, // resolve imports from src subdir
     `gatsby-plugin-catch-links`, // intercept markdown links
     // Following two are necessary for gatsby-image

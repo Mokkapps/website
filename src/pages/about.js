@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { css } from 'emotion';
 
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
@@ -18,11 +19,14 @@ import PageArticle from '../components/PageArticle';
 import '../styles/global';
 import '../styles/variables';
 
+const headingStyle = css`
+  display: flex;
+  justify-content: center;
+`;
+
 const AboutPage = props => {
   const {
-    data: {
-      file,
-    },
+    data: { file },
   } = props;
 
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
@@ -36,7 +40,7 @@ const AboutPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading title="About Me" />
+        <Heading customStyle={headingStyle} title="About Me" />
         <About aboutImage={file} />
       </PageArticle>
       <Footer />

@@ -110,6 +110,39 @@ const config = {
     },
   ],
 
+  publications: [
+    {
+      type: 'talk',
+      title:
+        'CoffeeTalk jambit 2016: Unity – Eine Einführung in die Cross-Plattform-Spieleentwicklung',
+      link:
+        'https://jambit.com/aktuelles/veranstaltungen/coffeetalks-april-2016/',
+    },
+    {
+      type: 'talk',
+      title: 'CoffeeTalk jambit 2017: Reactive Programming',
+      link:
+        'https://www.jambit.com/en/latest-info/events/coffeetalks-june-2017/',
+    },
+    {
+      type: 'talk',
+      title: 'Abendvortrag jambit 2018: Mein erstes Smartphone-Spiel',
+      link: 'https://www.mokkapps.de/talks/my-first-smartphone-game/',
+    },
+    {
+      type: 'article',
+      title: 'ToiletPaper jambit 2016: Kotlin: Das bessere Java?',
+      link:
+        'https://www.jambit.com/aktuelles/toilet-papers/kotlin-das-bessere-java/',
+    },
+    {
+      type: 'article',
+      title:
+        'Concept for an Intermodal Traveller Information System with Real-Time Data Using Complex Event Processing',
+      link: 'https://ieeexplore.ieee.org/document/7313462/authors?reload=true',
+    },
+  ],
+
   skills: [
     { type: 'JavaScript', level: 90 },
     { type: 'TypeScript', level: 75 },
