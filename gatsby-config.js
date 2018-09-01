@@ -37,6 +37,21 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    // PWA support
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Mokkapps Website',
+        short_name: 'Mokkapps',
+        start_url: '/',
+        background_color: '#333333',
+        theme_color: '#fc1a20',
+        display: 'minimal-ui',
+        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-offline`, // needs to be after the manifest plugin
+    // Netlify support
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sass`, // enable SASS
     `gatsby-plugin-resolve-src`, // resolve imports from src subdir
