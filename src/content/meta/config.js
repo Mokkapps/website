@@ -147,10 +147,10 @@ const config = {
     { type: 'JavaScript', level: 90 },
     { type: 'TypeScript', level: 75 },
     { type: 'Java', level: 50 },
-    { type: 'CSS', level: 70 },
+    { type: 'CSS', level: 80 },
     { type: 'HTML', level: 80 },
     { type: 'Angular', level: 80 },
-    { type: 'React', level: 80 },
+    { type: 'React', level: 85 },
     { type: 'Node.js', level: 60 },
   ],
 };

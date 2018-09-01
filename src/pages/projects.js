@@ -38,7 +38,7 @@ const ProjectsPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading customStyle={headingStyle} title="My Private Projects" />
+        <Heading customStyle={headingStyle} title="💻 My Private Projects" />
         <ProjectList projectAssets={projectAssets} />
       </PageArticle>
       <Footer />

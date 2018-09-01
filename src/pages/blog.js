@@ -63,7 +63,7 @@ const BlogPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Article customStyle={articleStyle}>
-        <Heading title="Blog" />
+        <Heading title="✍️ Blog" />
         <Blog
           customStyle={blogStyle}
           items={posts}

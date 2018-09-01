@@ -7,10 +7,7 @@ import './About.scss';
 import config from '../../content/meta/config';
 
 const renderLoopableText = () => (
-  <TextLoop
-    mask
-    springConfig={{ stiffness: 180, damping: 8 }}
-  >
+  <TextLoop mask springConfig={{ stiffness: 180, damping: 8 }}>
     {config.characteristics.map(c => (
       <p className="about__text--red">{c.text}</p>
     ))}
@@ -27,18 +24,33 @@ export default ({ aboutImage }) => (
       </p>
       <br />
       <p className="about__text">
-        I publish my private software projects under the pseudonym
-        <p className="about__text--red">Mokkapps</p>
+        I publish my <a href="projects">private software projects</a> under the
+        pseudonym
+        <p className="about__text--red">Mokkapps.</p>
       </p>
       <br />
       <p className="about__text">
-        Highly committed, agile personality with broad experience in the field
-        of application development. Experience in working in agile team
-        settings. Delivering excellent results and used to work under pressure.
+        I love programming but especially JavaScript, its ecosystem and
+        possibilities. Therefore, I developed some{' '}
+        <a href="projects">private projects</a> but I also work as a
+        professional software developer at{' '}
+        <a href="https://www.zeiss.com">ZEISS</a>.
       </p>
       <br />
       <p className="about__text">
-        If I am not coding I play video games or do sports.
+        I like to share my knowledge with others. This is why I{' '}
+        <a href="blog">write blog posts</a> and{' '}
+        <a href="publications">do talks or write articles</a>.
+      </p>
+      <br />
+      <p className="about__text">
+        I also try to{' '}
+        <a href="https://github.com/Mokkapps">share most of my projects</a> as I
+        like the Open Source philosophy.
+      </p>
+      <br />
+      <p className="about__text">
+        If I am not working I play video games or do sports.
       </p>
     </div>
   </div>

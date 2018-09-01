@@ -41,7 +41,7 @@ const NotFoundPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="404" />
+        <Heading title="🔥 404" />
         <Bodytext customStyle={bodyStyle} html={notFoundHTML} />
       </Article>
       <Footer />

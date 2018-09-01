@@ -40,7 +40,10 @@ const AboutPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <PageArticle>
-        <Heading customStyle={headingStyle} title="About Me" />
+        <Heading
+          customStyle={headingStyle}
+          title="🙋‍♂️ About Me"
+        />
         <About aboutImage={file} />
       </PageArticle>
       <Footer />
