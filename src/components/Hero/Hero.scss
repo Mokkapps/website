@@ -1,35 +1,37 @@
 @import '../../styles/variables.scss';
 
-.hero__container {
-  height: 100%;
-  border-radius: 10px;
-  padding: 2rem;
-  background: $dark-gray;
-}
+.hero {
+  &__container {
+    height: 100%;
+    border-radius: 10px;
+    padding: 2rem;
+    background: $dark-gray;
+  }
+  
+  &__characteristics {
+    list-style: none;
+  }
 
-.hero__characteristics {
-  list-style: none;
-}
+  &__characteristics-item {
+    text-align: center;
+    font-size: 2em;
+  }
 
-.hero__characteristics-item {
-  text-align: center;
-  font-size: 2em;
-}
+  &__heading {
+    text-align: center;
+    font-size: 3em;
+  }
 
-.hero__heading {
-  text-align: center;
-  font-size: 3em;
-}
+  &__loopable-text {
+    color: $primary-color;
+  }
 
-.hero__loopable-text {
-  color: $primary-color;
-}
-
-.hero__section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
+  &__section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+  }
 }
 
 /* Small screens */

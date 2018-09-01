@@ -17,7 +17,7 @@ import config from 'content/meta/config';
 import menuItems from 'content/meta/menu';
 
 import CustomMenu from '../components/CustomMenu';
-import CustomFooter from '../components/CustomFooter';
+import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
 
 import '../styles/global';
@@ -37,8 +37,7 @@ const PageTemplate = props => {
   const {
     pageContext: { category },
     data: {
-      posts: { totalCount, edges },
-      copyright: { html: copyrightHTML },
+      posts: { totalCount, edges }
     },
   } = props;
 
@@ -64,7 +63,7 @@ const PageTemplate = props => {
         </Heading>
         <List customStyle={listStyle} items={items} />
       </Article>
-      <CustomFooter copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={`${siteUrl}/categories/${category}/`}
         language={siteLanguage}
@@ -103,11 +102,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
     }
   }
 `;

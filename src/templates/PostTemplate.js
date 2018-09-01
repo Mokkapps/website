@@ -31,7 +31,7 @@ import TwitterIcon from 'react-feather/dist/icons/twitter';
 import EmailIcon from 'react-feather/dist/icons/mail';
 
 import CustomMenu from '../components/CustomMenu';
-import CustomFooter from '../components/CustomFooter';
+import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
 import PostArticle from '../components/PostArticle';
 
@@ -69,8 +69,7 @@ const PostTemplate = props => {
         frontmatter: { title, categories },
         fields: { slug, prefix },
       },
-      author: { html: authorHTML },
-      copyright: { html: copyrightHTML },
+      author: { html: authorHTML }
     },
     pageContext: { next, prev },
   } = props;
@@ -110,7 +109,7 @@ const PostTemplate = props => {
         <Author html={authorHTML} />
         <Comments slug={slug} siteUrl={siteUrl} />
       </PostArticle>
-      <CustomFooter copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={`${siteUrl}${slug}`}
         language={siteLanguage}
@@ -147,11 +146,6 @@ export const query = graphql`
     }
     author: markdownRemark(
       fileAbsolutePath: { regex: "/content/parts/author/" }
-    ) {
-      html
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
     ) {
       html
     }

@@ -12,7 +12,7 @@ import config from 'content/meta/config';
 import menuItems from 'content/meta/menu';
 
 import CustomMenu from '../components/CustomMenu';
-import CustomFooter from '../components/CustomFooter';
+import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
 import PageArticle from '../components/PageArticle';
 
@@ -28,8 +28,7 @@ const PageTemplate = props => {
         frontmatter: { title },
         fields: { slug },
         excerpt,
-      },
-      copyright: { html: copyrightHTML },
+      }
     },
   } = props;
 
@@ -45,7 +44,7 @@ const PageTemplate = props => {
         <Heading title={title} />
         <Bodytext html={pageHTML} />
       </PageArticle>
-      <CustomFooter copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={`${siteUrl}${slug}`}
         language={siteLanguage}
@@ -77,11 +76,6 @@ export const query = graphql`
         title
         categories
       }
-    }
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
     }
   }
 `;

@@ -7,8 +7,10 @@ const customMenu = css`
   ul li a {
     color: white;
   }
+
+  a:hover {
+    color: #fc1a20 !important;
+  }
 `;
 
-export default ({ items }) => (
-  <Menu customStyle={customMenu} items={items} />
-);
+export default ({ items }) => <Menu customStyle={customMenu} items={items} />;

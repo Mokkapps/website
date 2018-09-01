@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 
 import Header from '@react-website-themes/default/components/Header';
 import Layout from '@react-website-themes/default/components/Layout';
@@ -9,20 +8,14 @@ import config from 'content/meta/config';
 import menuItems from 'content/meta/menu';
 
 import CustomMenu from '../components/CustomMenu';
-import CustomFooter from '../components/CustomFooter';
+import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
-import Hero from '../components/Hero/Hero';
+import Hero from '../components/Hero';
 
 import '../styles/global';
 import '../styles/variables';
 
-const IndexPage = props => {
-  const {
-    data: {
-      copyright: { html: copyrightHTML },
-    },
-  } = props;
-
+const IndexPage = ({ data }) => {
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
   return (
@@ -32,7 +25,7 @@ const IndexPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Hero />
-      <CustomFooter copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={siteUrl}
         language={siteLanguage}
@@ -44,13 +37,3 @@ const IndexPage = props => {
 };
 
 export default IndexPage;
-
-export const query = graphql`
-  query {
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
-    }
-  }
-`;

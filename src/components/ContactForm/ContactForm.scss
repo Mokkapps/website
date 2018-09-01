@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+
+%form-shared {
+  height: 2rem;
+  border-radius: 0.25rem;
+  border: none;
+  background: lightgrey;
+  padding: 0.25rem 1rem;
+  overflow: auto;
+  font: inherit;
+}
+
+.contact {
+  &__container {
+    grid-column: 2;
+    box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 2rem 4rem;
+    background-color: white;
+    z-index: 9000;
+    margin-top: 1rem;
+
+    @media (max-width: 600px) {
+      padding: 3rem 3rem;
+    }
+
+    @media (max-width: 1200px) {
+      padding: 2rem 1.5rem;
+    }
+
+    form {
+      p {
+        label,
+        input {
+          display: block;
+        }
+        input {
+          min-width: 275px;
+        }
+      }
+    }
+  }
+
+  &__label {
+    margin: 1rem 0 1rem 0;
+    color: black;
+  }
+
+  &__button {
+    background: $primary-color;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      background: $hover-link-color;
+      cursor: pointer;
+      transform: translateY(-2px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__input {
+    @extend %form-shared;
+  }
+
+  &__textarea {
+    @extend %form-shared;
+    padding: 1rem;
+    resize: vertical;
+    min-height: 150px;
+    width: 100%;
+  }
+}

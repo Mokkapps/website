@@ -1,0 +1,12 @@
+.footer {
+  &__container {
+    flex-shrink: 0;
+    height: 4em;
+    padding: 1em;
+    // background-color: orangered;
+  }
+
+  &__content {
+    text-align: center;
+  }
+}

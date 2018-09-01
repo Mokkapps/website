@@ -31,7 +31,8 @@ const config = {
     {
       title: 'Supermarket Challenge',
       description: {
-        short: 'Supermarket Challenge delivers an addictive gameplay experience!',
+        short:
+          'Supermarket Challenge is an iOS & Android smartphone game which delivers an addictive gameplay experience',
         long: `
         Challenge yourself and try to sustain at the supermarket cash register. Set a high score and share it with your friends for a new challenge.
 
@@ -41,65 +42,72 @@ const config = {
         
         Surprise boxes can include useful extras or have a negative surprise for you. 
         
-        Be careful! Unscanned articles in the shopping basket or articles which are thrown out of the screen, cost a life. You have three lifes per round.`
+        Be careful! Unscanned articles in the shopping basket or articles which are thrown out of the screen, cost a life. You have three lifes per round.`,
       },
       usedTechnologies: ['Corona SDK'],
       imageName: 'supermarket-challenge',
       urls: {
-        googlePlay: 'https://play.google.com/store/apps/details?id=de.mokkapps.supermarketchallenge',
-        appStore: 'https://itunes.apple.com/de/app/supermarket-challenge/id1207665675'
-      }
+        googlePlay:
+          'https://play.google.com/store/apps/details?id=de.mokkapps.supermarketchallenge',
+        appStore:
+          'https://itunes.apple.com/de/app/supermarket-challenge/id1207665675',
+      },
     },
     {
       title: 'Standup Picker',
       description: {
-        short: 'A desktop application which can be used in Scrum teams to initiate the daily Scrum meeting',
-        long: ''
+        short:
+          'A desktop application which can be used in Scrum teams to initiate the daily Scrum meeting',
+        long: '',
       },
       usedTechnologies: ['Angular 5, Electron'],
       imageName: 'standup-picker',
       urls: {
-        github: 'https://github.com/Mokkapps/scrum-daily-standup-picker'
-      }
+        github: 'https://github.com/Mokkapps/scrum-daily-standup-picker',
+      },
     },
     {
       title: 'RebelGamer Mobile App',
       description: {
         short: 'iOS & Android app for the gaming blog www.rebelgamer.de',
-        long: ''
+        long: '',
       },
       usedTechnologies: ['React Native'],
       imageName: 'rebelgamer',
       urls: {
         github: 'https://github.com/Mokkapps/rebelgamer-mobile-app',
-        googlePlay: 'https://play.google.com/store/apps/details?id=de.rebelgamer.RebelGamerRSS',
-        appStore: 'https://itunes.apple.com/de/app/rebelgamer-news-fur-gamer/id1187403828'
-      }
+        googlePlay:
+          'https://play.google.com/store/apps/details?id=de.rebelgamer.RebelGamerRSS',
+        appStore:
+          'https://itunes.apple.com/de/app/rebelgamer-news-fur-gamer/id1187403828',
+      },
     },
     {
       title: 'GitHub Traffic Viewer',
       description: {
-        short: 'A website which shows a list of traffic graphs of your own GitHub repositories',
-        long: ''
+        short:
+          'A website which shows a list of traffic graphs of your own GitHub repositories',
+        long: '',
       },
       usedTechnologies: ['Gatsby.js, Firebase'],
       imageName: 'github-traffic-viewer',
       urls: {
-        github: 'https://github.com/Mokkapps/github-traffic-viewer-website'
-      }
+        github: 'https://github.com/Mokkapps/github-traffic-viewer-website',
+      },
     },
     {
       title: 'Void Fest 2018 Band Reminder',
       description: {
-        short: 'Web application which can be used to subscribe for push notifications which will inform 30 minutes before a band will play on the music festival Void Fest 2018.',
-        long: ''
+        short:
+          'Web application which can be used to subscribe for push notifications which will inform 30 minutes before a band will play on the music festival Void Fest 2018',
+        long: '',
       },
       usedTechnologies: ['React.js, Node.js'],
       imageName: 'void-fest-band-reminder',
       urls: {
-        github: 'https://github.com/Mokkapps/void-fest-pwa'
-      }
-    }
+        github: 'https://github.com/Mokkapps/void-fest-pwa',
+      },
+    },
   ],
 
   skills: [

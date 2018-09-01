@@ -10,7 +10,7 @@ import config from 'content/meta/config';
 import menuItems from 'content/meta/menu';
 
 import CustomMenu from '../components/CustomMenu';
-import CustomFooter from '../components/CustomFooter';
+import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
 import About from '../components/About';
 import PageArticle from '../components/PageArticle';
@@ -21,14 +21,13 @@ import '../styles/variables';
 const AboutPage = props => {
   const {
     data: {
-      copyright: { html: copyrightHTML },
       file,
     },
   } = props;
 
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
-  console.log('props', props);
+  console.log('about props', props);
 
   return (
     <Layout>
@@ -40,7 +39,7 @@ const AboutPage = props => {
         <Heading title="About Me" />
         <About aboutImage={file} />
       </PageArticle>
-      <CustomFooter copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={siteUrl}
         language={siteLanguage}
@@ -55,11 +54,6 @@ export default AboutPage;
 
 export const query = graphql`
   query {
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
-    }
     file(relativePath: { eq: "me.jpg" }) {
       childImageSharp {
         fixed(width: 250, height: 250) {

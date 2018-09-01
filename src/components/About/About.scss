@@ -7,35 +7,35 @@
     justify-content: center;
     align-items: center;
   }
-}
 
-.about__text {
-  font-size: 1.5em;
-  color: $secondary-color;
-  text-align: center;
+  &__text {
+    font-size: 1.5em;
+    color: $secondary-color;
+    text-align: center;
 
-  &--red {
-    color: $primary-color;
+    &--red {
+      color: $primary-color;
+    }
   }
-}
 
-.about__image {
-  border-radius: 50%;
-}
+  &__image {
+    border-radius: 50%;
+  }
 
-.about__desc {
-  margin: 2em 0 0 2em;
-}
+  &__desc {
+    margin: 2em 0 0 2em;
+  }
 
-.about__skills {
-  width: 60%;
-  margin: auto;
-  margin-top: 2em;
-}
+  &__skills {
+    width: 60%;
+    margin: auto;
+    margin-top: 2em;
+  }
 
-.about__skills-heading {
-  text-align: center;
-  margin: 1.5em 0 1.5em 0;
+  &__skills-heading {
+    text-align: center;
+    margin: 1.5em 0 1.5em 0;
+  }
 }
 
 /* Small screens */

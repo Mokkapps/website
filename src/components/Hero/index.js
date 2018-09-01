@@ -6,7 +6,7 @@ import SocialLink from '../SocialLink/SocialLink';
 import HeroHeading from './HeroHeading';
 import HeroCharacteristicList from './HeroCharacteristicList';
 
-export default () => (
+const Hero = () => (
   <div className="hero__container">
     <HeroHeading />
 
@@ -25,3 +25,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default Hero;

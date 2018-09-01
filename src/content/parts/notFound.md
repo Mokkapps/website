@@ -6,4 +6,4 @@ name: notFound
 
 You could try to navigate to homepage to find the page you were looking for.
 
-Alternatively you can send me an email to report any problems.
+Alternatively you can [send me an email](contact) to report any problems.

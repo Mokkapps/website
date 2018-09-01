@@ -10,7 +10,7 @@ import config from 'content/meta/config';
 import menuItems from 'content/meta/menu';
 
 import CustomMenu from '../components/CustomMenu';
-import CustomFooter from '../components/CustomFooter';
+import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
 import ProjectList from '../components/ProjectList';
 import PageArticle from '../components/PageArticle';
@@ -21,7 +21,6 @@ import '../styles/variables';
 const ProjectsPage = props => {
   const {
     data: {
-      copyright: { html: copyrightHTML },
       projectAssets,
     },
   } = props;
@@ -38,7 +37,7 @@ const ProjectsPage = props => {
         <Heading title="My Private Projects" />
         <ProjectList projectAssets={projectAssets} />
       </PageArticle>
-      <CustomFooter copyright={copyrightHTML} />
+      <Footer />
       <Seo
         url={siteUrl}
         language={siteLanguage}
@@ -53,24 +52,12 @@ export default ProjectsPage;
 
 export const query = graphql`
   query {
-    copyright: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/copyright/" }
-    ) {
-      html
-    }
-    file(relativePath: { eq: "icon.png" }) {
-      childImageSharp {
-        fixed(width: 250, height: 250) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {
           childImageSharp {
             sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes_tracedSVG
+              ...GatsbyImageSharpSizes
             }
           }
         }

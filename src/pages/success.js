@@ -18,10 +18,10 @@ import HeaderLogo from '../components/HeaderLogo';
 import '../styles/global';
 import '../styles/variables';
 
-const NotFoundPage = props => {
+const SuccessPage = props => {
   const {
     data: {
-      notFound: { html: notFoundHTML }
+      success: { html: contactSuccessHTML },
     },
   } = props;
 
@@ -34,8 +34,8 @@ const NotFoundPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="Not found" />
-        <Bodytext html={notFoundHTML} />
+        <Heading title="Success" />
+        <Bodytext html={contactSuccessHTML} />
       </Article>
       <Footer />
       <Seo
@@ -48,12 +48,12 @@ const NotFoundPage = props => {
   );
 };
 
-export default NotFoundPage;
+export default SuccessPage;
 
 export const query = graphql`
   query {
-    notFound: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/notFound/" }
+    success: markdownRemark(
+      fileAbsolutePath: { regex: "/content/parts/contactSuccess/" }
     ) {
       html
     }

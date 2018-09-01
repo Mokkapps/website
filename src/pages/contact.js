@@ -14,17 +14,12 @@ import menuItems from 'content/meta/menu';
 import CustomMenu from '../components/CustomMenu';
 import Footer from '../components/Footer';
 import HeaderLogo from '../components/HeaderLogo';
+import ContactForm from '../components/ContactForm';
 
 import '../styles/global';
 import '../styles/variables';
 
-const NotFoundPage = props => {
-  const {
-    data: {
-      notFound: { html: notFoundHTML }
-    },
-  } = props;
-
+const ContactPage = () => {
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
   return (
@@ -34,8 +29,8 @@ const NotFoundPage = props => {
         <CustomMenu items={menuItems} />
       </Header>
       <Article>
-        <Heading title="Not found" />
-        <Bodytext html={notFoundHTML} />
+        <Heading title="Contact Me" />
+        <ContactForm />
       </Article>
       <Footer />
       <Seo
@@ -48,14 +43,4 @@ const NotFoundPage = props => {
   );
 };
 
-export default NotFoundPage;
-
-export const query = graphql`
-  query {
-    notFound: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/notFound/" }
-    ) {
-      html
-    }
-  }
-`;
+export default ContactPage;
