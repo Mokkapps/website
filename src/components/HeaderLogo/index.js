@@ -6,13 +6,13 @@ import './HeaderLogo.scss';
 
 const HeaderLogo = () => (
   <div
-    className="headerlogo--container"
+    className="header-logo__container"
     role="link"
     tabIndex="0"
-    onClick={() => navigate('./')}
+    onClick={() => navigate('/')}
   >
     <img src={logo} alt="Logo" width="32" height="32" />
-    <p className="headerlogo--text">OKKAPPS</p>
+    <p className="header-logo__text">OKKAPPS</p>
   </div>
 );
 

@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-.headerlogo--container {
+.header-logo__container {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -9,10 +9,11 @@
   cursor: pointer;
 }
 
-.headerlogo--text {
+.header-logo__text {
   color: $secondary-color;
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 1.3em;
   margin-left: 0.1em;
+  margin-top: 0.2em;
 }

@@ -8,11 +8,9 @@ import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
 import About from '../components/About';
 import PageArticle from '../components/PageArticle';
 
@@ -36,14 +34,10 @@ const AboutPage = props => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu />
       </Header>
       <PageArticle>
-        <Heading
-          customStyle={headingStyle}
-          title="ABOUT ME"
-        />
+        <Heading customStyle={headingStyle} title="ABOUT ME" />
         <About aboutImage={file} />
       </PageArticle>
       <Footer />

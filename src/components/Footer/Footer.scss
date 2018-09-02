@@ -3,11 +3,16 @@
     flex-shrink: 0;
     height: 4em;
     padding: 1em;
-    // background-color: orangered;
   }
 
   &__content {
     text-align: center;
     color: white;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 0.5rem 0;
   }
 }

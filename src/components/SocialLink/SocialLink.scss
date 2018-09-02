@@ -3,16 +3,13 @@
 .social-link {
   align-items: center;
   background: white;
-  border-radius: 5px;
+  border-radius: 100%;
   display: flex;
   align-content: center;
   padding: 0.5rem;
   margin: 1rem 1rem 0 0;
 
   &:hover {
-    background: $primary-color;
-    box-shadow: 0 0.5rem 0.5rem 0.5rem rgba(black, 0.2),
-      0 0.5rem 0.5rem 0 rgba(black, 0.14), 0 0.5rem 0.5rem 0 rgba(black, 0.12) !important;
-    transform: translateY(-0.2rem);
+    background: lightgrey;
   }
 }

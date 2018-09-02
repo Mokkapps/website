@@ -19,7 +19,6 @@ import Seo from '@react-website-themes/default/components/Seo';
 import Share from '@react-website-themes/default/components/Share';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
 import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';
@@ -30,9 +29,8 @@ import FacebookIcon from 'react-feather/dist/icons/facebook';
 import TwitterIcon from 'react-feather/dist/icons/twitter';
 import EmailIcon from 'react-feather/dist/icons/mail';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
 import PostArticle from '../components/PostArticle';
 
 import '../styles/global';
@@ -69,7 +67,7 @@ const PostTemplate = props => {
         frontmatter: { title, categories },
         fields: { slug, prefix },
       },
-      author: { html: authorHTML }
+      author: { html: authorHTML },
     },
     pageContext: { next, prev },
   } = props;
@@ -92,8 +90,7 @@ const PostTemplate = props => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu />
       </Header>
       <PostArticle>
         <Heading title={title} />

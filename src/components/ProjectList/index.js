@@ -4,13 +4,7 @@ import ProjectCard from '../ProjectCard';
 import './ProjectList.scss';
 
 import config from '../../content/meta/config';
-
-const getAsset = (edges, imageName) => {
-  return edges
-    .map(e => e.node)
-    .filter(node => node.childImageSharp)
-    .find(node => node.childImageSharp.sizes.src.includes(imageName));
-};
+import { getAsset } from '../../utils/helper';
 
 const ProjectList = ({ projectAssets }) => {
   const { edges } = projectAssets;

@@ -2,7 +2,7 @@ import { injectGlobal } from 'emotion';
 
 import '@react-website-themes/default/styles/global';
 
-/* ovveride/add new variables*/
+/* override/add new variables*/
 injectGlobal`
   html {
     box-sizing: border-box;
@@ -47,7 +47,7 @@ injectGlobal`
   }
 
   a:hover {
-    color: var(--hoverLinkColor);
+    color: var(--linkColor);
     text-decoration: underline;
   }
 

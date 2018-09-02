@@ -9,11 +9,9 @@ import Heading from '@react-website-themes/default/components/Heading';
 import Bodytext from '@react-website-themes/default/components/Bodytext';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
 import PageArticle from '../components/PageArticle';
 
 import 'prismjs/themes/prism-okaidia.css';
@@ -37,8 +35,7 @@ const PageTemplate = props => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu/>
       </Header>
       <PageArticle>
         <Heading title={title} />

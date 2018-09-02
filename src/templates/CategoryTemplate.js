@@ -14,11 +14,9 @@ import List from '@react-website-themes/default/components/List';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
 
 import '../styles/global';
 import '../styles/variables';
@@ -37,7 +35,7 @@ const PageTemplate = props => {
   const {
     pageContext: { category },
     data: {
-      posts: { totalCount, edges }
+      posts: { totalCount, edges },
     },
   } = props;
 
@@ -48,8 +46,7 @@ const PageTemplate = props => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu />
       </Header>
       <Article>
         <Heading>

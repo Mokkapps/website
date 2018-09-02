@@ -7,11 +7,9 @@ import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
 import ContactForm from '../components/ContactForm';
 import PageArticle from '../components/PageArticle';
 
@@ -29,10 +27,9 @@ const ContactPage = () => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu/>
       </Header>
-      <PageArticle>
+      <PageArticle narrow>
         <Heading customStyle={headingStyle} title="CONTACT ME" />
         <ContactForm />
       </PageArticle>

@@ -20,11 +20,14 @@ const config = {
   siteUrl: base.url,
   // pathPrefix: '',
 
+  quote:
+    'Passionate software developer with focus on web-based technologies.',
+
   characteristics: [
-    { text: 'Mobile, Game & Frontend Developer', emoji: '💻', ariaLabel: 'pc' },
-    { text: 'Blogger', emoji: '📝', ariaLabel: 'memo' },
-    { text: 'Video Game Enthusiast', emoji: '🎮', ariaLabel: 'games' },
-    { text: 'Beekeeper', emoji: '🐝', ariaLabel: 'bee' },
+    { text: 'Mobile,\n Game &\n Frontend Developer', icon: 'code' },
+    { text: 'Blogger', icon: 'file-text' },
+    { text: 'Video Game\n Enthusiast', icon: 'monitor' },
+    { text: 'Beekeeper', icon: 'info' },
   ],
 
   projects: [
@@ -47,11 +50,13 @@ const config = {
       usedTechnologies: ['Corona SDK'],
       imageName: 'supermarket-challenge',
       urls: {
+        page: '/supermarket-challenge',
         googlePlay:
           'https://play.google.com/store/apps/details?id=de.mokkapps.supermarketchallenge',
         appStore:
           'https://itunes.apple.com/de/app/supermarket-challenge/id1207665675',
       },
+      featured: true,
     },
     {
       title: 'Standup Picker',
@@ -63,8 +68,10 @@ const config = {
       usedTechnologies: ['Angular 5, Electron'],
       imageName: 'standup-picker',
       urls: {
+        page: '/standup-picker',
         github: 'https://github.com/Mokkapps/scrum-daily-standup-picker',
       },
+      featured: true,
     },
     {
       title: 'RebelGamer Mobile App',
@@ -75,12 +82,14 @@ const config = {
       usedTechnologies: ['React Native'],
       imageName: 'rebelgamer',
       urls: {
+        page: '/rebelgamer',
         github: 'https://github.com/Mokkapps/rebelgamer-mobile-app',
         googlePlay:
           'https://play.google.com/store/apps/details?id=de.rebelgamer.RebelGamerRSS',
         appStore:
           'https://itunes.apple.com/de/app/rebelgamer-news-fur-gamer/id1187403828',
       },
+      featured: true,
     },
     {
       title: 'GitHub Traffic Viewer',

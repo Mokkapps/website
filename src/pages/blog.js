@@ -14,11 +14,9 @@ import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
 
 import '../styles/global';
 import '../styles/variables';
@@ -36,11 +34,6 @@ const articleStyle = css`
   h3 {
     color: black;
   }
-`;
-
-const blogStyle = css`
-  padding: 2rem;
-  width: 80%;
 `;
 
 const metaIcons = {
@@ -63,13 +56,11 @@ const BlogPage = props => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu/>
       </Header>
       <Article customStyle={articleStyle}>
         <Heading title="BLOG" />
         <Blog
-          customStyle={blogStyle}
           items={posts}
           author={'Michael Hoffmann'}
           metaIcons={metaIcons}

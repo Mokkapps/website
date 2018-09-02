@@ -10,6 +10,15 @@ const articleStyle = css`
   min-width: 100%;
 `;
 
-export default ({ children }) => (
-  <Article customStyle={articleStyle}>{children}</Article>
+const narrowArticleStyle = css`
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  min-width: 50%;
+`;
+
+export default ({ children, narrow }) => (
+  <Article customStyle={narrow ? narrowArticleStyle : articleStyle}>
+    {children}
+  </Article>
 );

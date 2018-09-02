@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { css } from 'emotion';
 
-import Article from '@react-website-themes/default/components/Article';
 import Bodytext from '@react-website-themes/default/components/Bodytext';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
@@ -10,11 +9,10 @@ import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
+import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
 import '../styles/variables';
@@ -37,13 +35,12 @@ const NotFoundPage = props => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu />
       </Header>
-      <Article>
+      <PageArticle narrow>
         <Heading title="404" />
         <Bodytext customStyle={bodyStyle} html={notFoundHTML} />
-      </Article>
+      </PageArticle>
       <Footer />
       <Seo
         url={siteUrl}

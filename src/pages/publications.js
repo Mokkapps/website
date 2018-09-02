@@ -6,11 +6,9 @@ import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
-import menuItems from 'content/meta/menu';
 
-import CustomMenu from '../components/CustomMenu';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import HeaderLogo from '../components/HeaderLogo';
 import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
@@ -28,8 +26,7 @@ const PublicationsPage = () => {
   return (
     <Layout>
       <Header>
-        <HeaderLogo />
-        <CustomMenu items={menuItems} />
+        <Menu/>
       </Header>
       <PageArticle>
         <Heading title="PUBLICATIONS" />
@@ -41,7 +38,7 @@ const PublicationsPage = () => {
             </li>
           ))}
         </ul>
-        <h1 style={{ marginBottom: '1rem', marginTop: '1rem' }}>Articles</h1>
+        <h1 style={{ marginBottom: '1rem', marginTop: '3rem' }}>Articles</h1>
         <ul>
           {publications.filter(p => p.type === 'article').map(p => (
             <li style={{ marginTop: '1rem' }}>

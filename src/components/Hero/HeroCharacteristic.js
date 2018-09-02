@@ -2,17 +2,12 @@ import React from 'react';
 
 import './Hero.scss';
 
-export default ({ text, ariaLabel, emoji }) => (
-  <div className="hero__characteristics-item">
-    <p>{text}</p>
-    <div class="hero__characteristics-item-overlay">
-      <span
-        class="hero__characteristics-item-overlay-content"
-        role="img"
-        aria-label={ariaLabel}
-      >
-        {emoji}
-      </span>
+export default ({ text, ariaLabel, emoji, icon }) => {
+  const Icon = icon;
+  return (
+    <div className="hero__characteristics-item">
+      {Icon && <Icon className="hero__characteristics-item-icon" />}
+      <p className="hero__characteristics-item-text">{text}</p>
     </div>
-  </div>
-);
+  );
+};
