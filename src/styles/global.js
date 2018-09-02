@@ -33,7 +33,7 @@ injectGlobal`
   }
 
   h3 {
-      color: white;
+      color: black;
   }
 
   ul {

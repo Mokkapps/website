@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Header from '@react-website-themes/default/components/Header';
-import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
@@ -10,6 +9,7 @@ import config from 'content/meta/config';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
+import Layout from '../components/Layout';
 
 import '../styles/global';
 import '../styles/variables';

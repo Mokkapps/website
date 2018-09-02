@@ -48,8 +48,8 @@
       &-text {
         white-space: pre-line;
         margin: 1rem 0 0;
-        font-size: 1.2rem;
         font-weight: bold;
+        font-size: 1.2rem;
         text-align: center;
         text-transform: uppercase;
       }
@@ -68,10 +68,6 @@
     text-align: center;
     width: 80%;
   }
-
-  &__loopable-text {
-    color: $primary-color;
-  }
 }
 
 /* Small screens */
@@ -80,8 +76,12 @@
     font-size: 1.4em;
   }
 
-  .hero__characteristics-item {
-    font-size: 1.2em;
+  .hero__characteristics-item-text {
+    font-size: 1rem;
+  }
+
+  .hero__quote {
+    font-size: 0.8em;
   }
 }
 
@@ -91,7 +91,11 @@
     font-size: 1.7em;
   }
 
-  .hero__characteristics-item {
-    font-size: 1.5em;
+  .hero__characteristics-item-text {
+    font-size: 1rem;
+  }
+
+  .hero__quote {
+    font-size: 1em;
   }
 }

@@ -20,12 +20,19 @@ const config = {
   siteUrl: base.url,
   // pathPrefix: '',
 
+  socialLinks: [
+    {url: 'https://github.com/mokkapps', icon: 'github'},
+    {url: 'https://twitter.com/mokkapps', icon: 'twitter'},
+    {url: 'https://dev.to/mokkapps', icon: 'dev-dot-to'},
+    {url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1', icon: 'linkedin'},
+  ],
+
   quote:
-    'Passionate software developer with focus on web-based technologies.',
+    'Passionate software developer with focus on web-based technologies',
 
   characteristics: [
-    { text: 'Mobile,\n Game &\n Frontend Developer', icon: 'code' },
-    { text: 'Blogger', icon: 'file-text' },
+    { text: 'Mobile,\n Game &\n Frontend Developer', icon: 'code', link: '/projects' },
+    { text: 'Blogger', icon: 'file-text', link: '/blog'  },
     { text: 'Video Game\n Enthusiast', icon: 'monitor' },
     { text: 'Beekeeper', icon: 'info' },
   ],

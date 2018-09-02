@@ -12,7 +12,6 @@ import Bodytext from '@react-website-themes/default/components/Bodytext';
 import Comments from '@react-website-themes/default/components/Comments';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
-import Layout from '@react-website-themes/default/components/Layout';
 import Meta from '@react-website-themes/default/components/Meta';
 import NextPrev from '@react-website-themes/default/components/NextPrev';
 import Seo from '@react-website-themes/default/components/Seo';
@@ -32,6 +31,7 @@ import EmailIcon from 'react-feather/dist/icons/mail';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import PostArticle from '../components/PostArticle';
+import Layout from '../components/Layout';
 
 import '../styles/global';
 import '../styles/variables';

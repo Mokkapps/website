@@ -22,15 +22,15 @@ const images = {
 const Hero = ({ projectAssets }) => (
   <div className="hero__container">
     <h1 className="hero__heading">
-      Hi! I'm <strong style={{ color: 'red' }}>Michael Hoffmann</strong>
+      Hi! I'm <a href="about">Michael Hoffmann</a>
     </h1>
 
-    <p className="hero__quote">{config.quote}</p>
+    <h3 className="hero__quote">{config.quote}</h3>
 
     <div className="hero__characteristics-container">
       {config.characteristics.map(characteristic => {
         const { text, icon } = characteristic;
-        return <HeroCharacteristic icon={images[icon]} text={text} />;
+        return <HeroCharacteristic icon={images[icon]} text={text}/>;
       })}
     </div>
 

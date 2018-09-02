@@ -55,6 +55,7 @@
     "react-feather": "^1.1.1",
     "react-helmet": "^5.2.0",
     "react-mobile-store-button": "0.0.3",
+    "react-scroll-up-button": "^1.6.0",
     "react-sweet-progress": "^1.1.2"
   },
   "devDependencies": {

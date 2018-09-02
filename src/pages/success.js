@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import Bodytext from '@react-website-themes/default/components/Bodytext';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
-import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
@@ -12,6 +11,7 @@ import config from 'content/meta/config';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import PageArticle from '../components/PageArticle';
+import Layout from '../components/Layout';
 
 import '../styles/global';
 import '../styles/variables';

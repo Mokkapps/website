@@ -10,13 +10,13 @@ import Article from '@react-website-themes/default/components/Article';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
 import Blog from '@react-website-themes/default/components/Blog';
-import Layout from '@react-website-themes/default/components/Layout';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 
 import '../styles/global';
 import '../styles/variables';

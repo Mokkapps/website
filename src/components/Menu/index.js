@@ -12,13 +12,12 @@ const Menu = () => (
     <HeaderLogo />
     <ul className="menu__icons-container">
       {menuItems.map(item => {
-        const { label, to, icon: Icon, linkProps } = item;
+        const { ariaLabel, to, icon: Icon, linkProps } = item;
 
         return (
-          <li className="menu__icon" key={label}>
-            <Link to={to} activeClassName="active-item" {...linkProps}>
+          <li className="menu__icon" key={ariaLabel}>
+            <Link to={to} aria-label={ariaLabel} activeClassName="active-item" {...linkProps}>
               {Icon && <Icon />}
-              <span>{label}</span>
             </Link>
           </li>
         );

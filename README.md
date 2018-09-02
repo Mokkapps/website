@@ -10,7 +10,7 @@ Hi 👋 This is the code of [my personal portfolio website](<[www.mokkapps.de](h
 
 - [React](https://reactjs.org/)
 - [Gatsby](https://www.gatsbyjs.org/)
-- [Gatsby Starter Kit](https://github.com/greglobinski/gatsby-starter-kit)
+- Bootstrapped with [Gatsby Starter Kit](https://github.com/greglobinski/gatsby-starter-kit)
 
 ## License
 

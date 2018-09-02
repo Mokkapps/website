@@ -5,7 +5,7 @@ import './About.scss';
 
 export default ({ aboutImage }) => (
   <div className="about__container">
-    <Img className="about__image" fixed={aboutImage.childImageSharp.fixed} />
+    <Img alt="About Me" title="Myself" className="about__image" fixed={aboutImage.childImageSharp.fixed} />
     <div className="about__desc">
       <p className="about__text">
         My name is Michael Hoffmann and I'm a software developer from the
