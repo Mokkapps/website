@@ -9,7 +9,7 @@ export default () => (
   <footer className="footer__container">
     <div className="footer__links">
       {config.socialLinks.map(link => (
-        <SocialLink href={link.url} iconName={link.icon} />
+        <SocialLink key={link.url} href={link.url} iconName={link.icon} />
       ))}
     </div>
     <div className="footer__content">

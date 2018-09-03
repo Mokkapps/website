@@ -30,7 +30,9 @@ const Hero = ({ projectAssets }) => (
     <div className="hero__characteristics-container">
       {config.characteristics.map(characteristic => {
         const { text, icon } = characteristic;
-        return <HeroCharacteristic icon={images[icon]} text={text}/>;
+        return (
+          <HeroCharacteristic key={text} icon={images[icon]} text={text} />
+        );
       })}
     </div>
 

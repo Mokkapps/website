@@ -1,12 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { css } from 'emotion';
 
 import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
 
-import Article from '@react-website-themes/default/components/Article';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
 import Blog from '@react-website-themes/default/components/Blog';
@@ -17,24 +15,10 @@ import config from 'content/meta/config';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
+import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
 import '../styles/variables';
-
-const articleStyle = css`
-  border-radius: 1rem;
-  background: white;
-  margin: auto;
-  padding: 2rem;
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  h3 {
-    color: black;
-  }
-`;
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -58,14 +42,14 @@ const BlogPage = props => {
       <Header>
         <Menu/>
       </Header>
-      <Article customStyle={articleStyle}>
+      <PageArticle>
         <Heading title="BLOG" />
         <Blog
           items={posts}
           author={'Michael Hoffmann'}
           metaIcons={metaIcons}
         />
-      </Article>
+      </PageArticle>
       <Footer />
       <Seo
         url={siteUrl}

@@ -16,7 +16,13 @@ const Menu = () => (
 
         return (
           <li className="menu__icon" key={ariaLabel}>
-            <Link to={to} aria-label={ariaLabel} activeClassName="active-item" {...linkProps}>
+            <Link
+              to={to}
+              title={ariaLabel}
+              aria-label={ariaLabel}
+              activeClassName="active-item"
+              {...linkProps}
+            >
               {Icon && <Icon />}
             </Link>
           </li>

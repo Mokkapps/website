@@ -29,8 +29,6 @@ const AboutPage = props => {
 
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
-  console.log('about props', props);
-
   return (
     <Layout>
       <Header>

@@ -9,7 +9,6 @@ import { ShareButtonRectangle } from 'react-custom-share';
 
 import Author from '@react-website-themes/default/components/Author';
 import Bodytext from '@react-website-themes/default/components/Bodytext';
-import Comments from '@react-website-themes/default/components/Comments';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
 import Meta from '@react-website-themes/default/components/Meta';
@@ -66,17 +65,18 @@ const PostTemplate = props => {
         html: postHTML,
         frontmatter: { title, categories },
         fields: { slug, prefix },
+        timeToRead,
       },
       author: { html: authorHTML },
     },
     pageContext: { next, prev },
   } = props;
-
+  
   const { siteUrl, siteLanguage, siteTitlePostfix } = config;
 
   const url = siteUrl + slug;
   const shareBlockProps = {
-    url: url,
+    url,
     button: ShareButtonRectangle,
     buttons: [
       { network: 'Twitter', icon: TwitterIcon },
@@ -100,11 +100,13 @@ const PostTemplate = props => {
           categories={categories}
           icons={metaIcons}
         />
+        <sup>
+          <p style={{ marginBottom: '1rem' }}>~ {timeToRead} minute read</p>
+        </sup>
         <Bodytext customStyle={bodyTextStyle} html={postHTML} />
         <Share shareBlockProps={shareBlockProps} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <Author html={authorHTML} />
-        <Comments slug={slug} siteUrl={siteUrl} />
       </PostArticle>
       <Footer />
       <Seo
@@ -140,6 +142,7 @@ export const query = graphql`
         title
         categories
       }
+      timeToRead
     }
     author: markdownRemark(
       fileAbsolutePath: { regex: "/content/parts/author/" }
