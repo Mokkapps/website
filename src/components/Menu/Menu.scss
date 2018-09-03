@@ -10,25 +10,38 @@
     justify-content: space-between;
   }
 
-  &__icons-container {
+  &__item-container {
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    width: 250px;
+    flex-wrap: wrap;
 
-    @media (max-width: 476px) {
+    @media (max-width: 712px) {
       margin-top: 0.5rem;
       justify-content: flex-start;
     }
-
-    @media (min-width: 476px) {
-      justify-content: flex-end;
-    }
   }
 
-  &__icon {
+  &__item {
     padding: 0 5px;
     line-height: 1;
+
+    &-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      align-content: center;
+    }
+
+    &-title {
+      display: none;
+      margin-left: 0.5rem;
+
+      @media (max-width: 1240px) {
+        display: block;
+      }
+    }
 
     &:--active {
       color: var(--linkColor) !important;
@@ -44,6 +57,7 @@
 
       &:hover {
         color: var(--linkColor);
+        text-decoration: none;
       }
     }
 
