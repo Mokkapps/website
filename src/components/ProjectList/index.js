@@ -11,10 +11,17 @@ const ProjectList = ({ projectAssets }) => {
   return (
     <section className="projects__container">
       {config.projects.map(project => {
-        const { imageName, title, description, urls } = project;
+        const {
+          imageName,
+          title,
+          description,
+          urls,
+          usedTechnologies,
+        } = project;
         return (
           <ProjectCard
             key={title}
+            usedTechnologies={usedTechnologies}
             asset={getAsset(edges, imageName)}
             title={title}
             description={description.short}

@@ -21,18 +21,24 @@ const config = {
   // pathPrefix: '',
 
   socialLinks: [
-    {url: 'https://github.com/mokkapps', icon: 'github'},
-    {url: 'https://twitter.com/mokkapps', icon: 'twitter'},
-    {url: 'https://dev.to/mokkapps', icon: 'dev-dot-to'},
-    {url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1', icon: 'linkedin'},
+    { url: 'https://github.com/mokkapps', icon: 'github' },
+    { url: 'https://twitter.com/mokkapps', icon: 'twitter' },
+    { url: 'https://dev.to/mokkapps', icon: 'dev-dot-to' },
+    {
+      url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
+      icon: 'linkedin',
+    },
   ],
 
-  quote:
-    'Passionate software developer with focus on web-based technologies',
+  quote: 'Passionate software developer with focus on web-based technologies',
 
   characteristics: [
-    { text: 'Mobile,\n Game &\n Frontend Developer', icon: 'code', link: '/projects' },
-    { text: 'Blogger', icon: 'file-text', link: '/blog'  },
+    {
+      text: 'Mobile,\n Game &\n Frontend Developer',
+      icon: 'code',
+      link: '/projects',
+    },
+    { text: 'Blogger', icon: 'file-text', link: '/blog' },
     { text: 'Video Game\n Enthusiast', icon: 'monitor' },
     { text: 'Beekeeper', icon: 'info' },
   ],
@@ -54,7 +60,11 @@ const config = {
         
         Be careful! Unscanned articles in the shopping basket or articles which are thrown out of the screen, cost a life. You have three lifes per round.`,
       },
-      usedTechnologies: ['Corona SDK'],
+      usedTechnologies: [
+        { name: 'Corona SDK' },
+        { icon: 'ios' },
+        { icon: 'android' },
+      ],
       imageName: 'supermarket-challenge',
       urls: {
         page: '/supermarket-challenge',
@@ -72,7 +82,7 @@ const config = {
           'A desktop application which can be used in Scrum teams to initiate the daily Scrum meeting',
         long: '',
       },
-      usedTechnologies: ['Angular 5, Electron'],
+      usedTechnologies: [{ name: 'Electron' }, { icon: 'angular' }],
       imageName: 'standup-picker',
       urls: {
         page: '/standup-picker',
@@ -86,7 +96,12 @@ const config = {
         short: 'iOS & Android app for the gaming blog www.rebelgamer.de',
         long: '',
       },
-      usedTechnologies: ['React Native'],
+      usedTechnologies: [
+        { name: 'React-Native' },
+        { icon: 'react' },
+        { icon: 'ios' },
+        { icon: 'android' },
+      ],
       imageName: 'rebelgamer',
       urls: {
         page: '/rebelgamer',
@@ -105,7 +120,7 @@ const config = {
           'A website which shows a list of traffic graphs of your own GitHub repositories',
         long: '',
       },
-      usedTechnologies: ['Gatsby.js, Firebase'],
+      usedTechnologies: [{ name: 'Gatsby.js, Firebase' }, { icon: 'react' }],
       imageName: 'github-traffic-viewer',
       urls: {
         github: 'https://github.com/Mokkapps/github-traffic-viewer-website',
@@ -118,7 +133,7 @@ const config = {
           'Web application which can be used to subscribe for push notifications which will inform 30 minutes before a band will play on the music festival Void Fest 2018',
         long: '',
       },
-      usedTechnologies: ['React.js, Node.js'],
+      usedTechnologies: [{ icon: 'react' }, { icon: 'node' }],
       imageName: 'void-fest-band-reminder',
       urls: {
         github: 'https://github.com/Mokkapps/void-fest-pwa',

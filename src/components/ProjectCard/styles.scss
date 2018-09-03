@@ -10,6 +10,19 @@
     min-height: 200px;
   }
 
+  &__technologies {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tech-item {
+    margin: 0 0.25rem 0 0.25rem;
+  }
+
   &__store-buttons-container {
     display: flex;
     flex-direction: row;

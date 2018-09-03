@@ -7,7 +7,14 @@ import ProjectCardDescription from './ProjectCardDescription';
 
 import './styles.scss';
 
-const ProjectCard = ({ asset, title, description, urls, minimal }) => (
+const ProjectCard = ({
+  asset,
+  title,
+  description,
+  urls,
+  minimal,
+  usedTechnologies,
+}) => (
   <Card
     className="project-card"
     minimal={minimal}
@@ -23,6 +30,7 @@ const ProjectCard = ({ asset, title, description, urls, minimal }) => (
       projectName={title}
       description={description}
       urls={urls}
+      usedTechnologies={usedTechnologies}
     />
   </Card>
 );
