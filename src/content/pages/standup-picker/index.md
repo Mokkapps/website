@@ -7,9 +7,7 @@ categories: []
 
 ### Used Technologies: [Electron](https://electronjs.org/), [Angular](https://angular.io/)
 
-<a href="https://youtu.be/7MHk09N5APM" alt="Standup Picker - Click to Watch!">
-<img width="100%" src="https://github.com/Mokkapps/scrum-daily-standup-picker/raw/master/youtube_video_thumbnail.png">
-</a>
+[![Standup Picker - Click to Watch](./youtube_video_thumbnail.png)](https://youtu.be/7MHk09N5APM "Standup Picker")
 
 ## Features
 

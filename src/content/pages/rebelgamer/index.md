@@ -6,7 +6,7 @@ title: RebelGamer
 
 ### Used Technology: [React Native](https://facebook.github.io/react-native/)
 
-<img width="100%" alt="RebelGamer Screenshot" src="https://lh3.googleusercontent.com/6HULm72iPE6idi7QdrVhxpTHXrf6okhglGektyrmf3yvleNQDCp-9OXQjYh4frmNG78=w1339-h944-rw">
+![RebelGamer Screenshot](./rebelgamer-app-screenshot.png)
 
 <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center;">
 

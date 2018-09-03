@@ -113,6 +113,29 @@ const config = {
       },
       featured: true,
     },
+    // {
+    //   title: 'Parents Soundboard',
+    //   description: {
+    //     short: 'A soundboard developed for parents to be able to play often needed phrases like "No"',
+    //     long: '',
+    //   },
+    //   usedTechnologies: [
+    //     { name: 'React-Native' },
+    //     { icon: 'react' },
+    //     { icon: 'ios' },
+    //     { icon: 'android' },
+    //   ],
+    //   imageName: 'parents-soundboard',
+    //   urls: {
+    //     page: '/parents-soundboard',
+    //     github: 'https://github.com/Mokkapps/parents-soundboard',
+    //     googlePlay:
+    //       'https://play.google.com/store/apps/details?id=de.mokkapps.parentssoundboard',
+    //     appStore:
+    //       'https://itunes.apple.com/de/app/rebelgamer-news-fur-gamer/id1187403828',
+    //   },
+    //   featured: true,
+    // },
     {
       title: 'GitHub Traffic Viewer',
       description: {

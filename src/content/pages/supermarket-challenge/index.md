@@ -7,7 +7,7 @@ categories: []
 
 ### Used Technology: [Corona SDK](https://coronalabs.com/)
 
-<img width="100%" alt="Supermarket Challenge Screenshot" src="https://lh3.googleusercontent.com/vhYqhwYhWydUNfvVRjZY1EQNE6HNNXiDCqSmLcu-niT9pb1Xvia1LN4TJZw-SrJvAb8=w1339-h944-rw">
+![Supermarket Challenge Screenshot](../../../images/projects/supermarket-challenge.png)
 
 Supermarket Challenge delivers an addictive gameplay experience!
 
