@@ -6,7 +6,6 @@ import { css } from 'emotion';
 
 import 'prismjs/themes/prism-okaidia.css';
 
-import Article from '@react-website-themes/default/components/Article';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
 import List from '@react-website-themes/default/components/List';
@@ -17,17 +16,20 @@ import config from 'content/meta/config';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
+import PageArticle from '../components/PageArticle';
 
 import '../styles/global';
 import '../styles/variables';
+import { MokkappsRed } from '../styles/variables';
 
 const listStyle = css`
   a {
-    color: white;
+    color: ${MokkappsRed};
   }
 
   a:hover {
-    color: #fc1a20;
+    color: ${MokkappsRed};
+    text-decoration: underline;
   }
 `;
 
@@ -48,7 +50,7 @@ const PageTemplate = props => {
       <Header>
         <Menu />
       </Header>
-      <Article>
+      <PageArticle>
         <Heading>
           <span>Posts in category</span> <TagIcon />
           <h1>{category}</h1>
@@ -59,7 +61,7 @@ const PageTemplate = props => {
           </h3>
         </Heading>
         <List customStyle={listStyle} items={items} />
-      </Article>
+      </PageArticle>
       <Footer />
       <Seo
         url={`${siteUrl}/categories/${category}/`}

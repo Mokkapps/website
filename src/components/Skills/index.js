@@ -12,8 +12,6 @@ const getDevIcons = skills =>
         key={skill.icon}
         className="skills__icon"
         iconName={skill.icon}
-        width="64px"
-        height="64px"
       />
     </div>
   ));

@@ -1,8 +1,10 @@
 import React from 'react';
-import { Timeline, TimelineEvent, TimelineBlip } from 'react-event-timeline';
+import { Timeline, TimelineEvent } from 'react-event-timeline';
 
 import WorkIcon from 'react-feather/dist/icons/briefcase';
 import SchoolIcon from 'react-feather/dist/icons/book-open';
+
+import { MokkappsBlack, MokkappsRed } from '../../styles/variables';
 
 export default () => (
   <Timeline>
@@ -10,9 +12,9 @@ export default () => (
       title="ZEISS Microscopy GmbH, Munich/Germany"
       createdAt="October 2018"
       icon={<WorkIcon width="20px" />}
-      iconColor="#FC1A20"
+      iconColor={MokkappsBlack}
       container="card"
-      cardHeaderStyle={{ backgroundColor: '#fc1a20', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       <strong>Software Engineer</strong>
     </TimelineEvent>
@@ -20,9 +22,9 @@ export default () => (
       title="jambit GmbH, Munich/Germany"
       createdAt="2015-2018"
       icon={<WorkIcon width="20px" />}
-      iconColor="#FC1A20"
+      iconColor={MokkappsBlack}
       container="card"
-      cardHeaderStyle={{ backgroundColor: '#fc1a20', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       <strong>Software Architect</strong>
       <ul>
@@ -44,9 +46,9 @@ export default () => (
       title="BMW Forschung und Technik GmbH, Munich/Germany"
       createdAt="2015"
       icon={<WorkIcon width="20px" />}
-      iconColor="#FC1A20"
+      iconColor={MokkappsBlack}
       container="card"
-      cardHeaderStyle={{ backgroundColor: '#fc1a20', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       <strong>Master Thesis</strong>
       <blockquote>
@@ -58,9 +60,9 @@ export default () => (
       title="Technical University of Munich, Munich/Germany"
       createdAt="2013-2015"
       icon={<SchoolIcon width="20px" />}
-      iconColor="black"
+      iconColor={MokkappsRed}
       container="card"
-      cardHeaderStyle={{ backgroundColor: 'black', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsRed, color: 'white' }}
     >
       Master of Science in Electrical Engineering
     </TimelineEvent>
@@ -68,9 +70,9 @@ export default () => (
       title="Bertrandt AG, Munich/Germany"
       createdAt="2012-2013"
       icon={<WorkIcon width="20px" />}
-      iconColor="#FC1A20"
+      iconColor={MokkappsBlack}
       container="card"
-      cardHeaderStyle={{ backgroundColor: '#fc1a20', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       <strong>Bachelor Thesis</strong>
       <blockquote>
@@ -82,9 +84,9 @@ export default () => (
       title="University of Applied Science, Deggendorf/Germany"
       createdAt="2009-2013"
       icon={<SchoolIcon width="20px" />}
-      iconColor="black"
+      iconColor={MokkappsRed}
       container="card"
-      cardHeaderStyle={{ backgroundColor: 'black', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsRed, color: 'white' }}
     >
       Bachelor of Science in Electrical Engineering
     </TimelineEvent>
@@ -92,9 +94,9 @@ export default () => (
       title="Gaming blog www.rebelgamer.de"
       createdAt="2010-2016"
       icon={<WorkIcon width="20px" />}
-      iconColor="#FC1A20"
+      iconColor={MokkappsBlack}
       container="card"
-      cardHeaderStyle={{ backgroundColor: '#fc1a20', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       <ul>
         <li>Head for up to six content journalists</li>
@@ -108,9 +110,9 @@ export default () => (
       title="Zollner AG, Zandt/Germany"
       createdAt="2006-2009"
       icon={<WorkIcon width="20px" />}
-      iconColor="#FC1A20"
+      iconColor={MokkappsBlack}
       container="card"
-      cardHeaderStyle={{ backgroundColor: '#fc1a20', color: 'white' }}
+      cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       Apprenticeship as electronics technician for devices and systems
     </TimelineEvent>

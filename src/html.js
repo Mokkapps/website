@@ -38,6 +38,12 @@ export default class HTML extends React.Component {
           />
           {this.props.postBodyComponents}
         </body>
+        <noscript>
+          <p>
+            I'm sorry, but my website doesn't work properly without JavaScript
+            enabled.
+          </p>
+        </noscript>
       </html>
     );
   }

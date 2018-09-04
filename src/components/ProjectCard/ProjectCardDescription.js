@@ -37,19 +37,23 @@ export default ({
         </div>
         <hr className="project-card__divider" />
         <p className="project-card__description">{description}</p>
-        {urls.github ? (
-          <div className="project-card__desc-button-container">
-            <ProjectCardButton icon="github" url={urls.github} />
-          </div>
-        ) : null}
         <div className="project-card__store-buttons-container">
+          {urls.github ? (
+            <ProjectCardButton icon="github" url={urls.github} />
+          ) : null}
           {urls.googlePlay ? (
-            <AppStoreButton type="android" url={urls.googlePlay} />
+            <div style={{ marginTop: '1rem' }}>
+              <AppStoreButton
+                store="android"
+                width={240}
+                url={urls.googlePlay}
+              />
+            </div>
           ) : null}
           <div />
           {urls.appStore ? (
-            <div style={{ marginTop: '1rem' }}>
-              <AppStoreButton type="ios" url={urls.appStore} />
+            <div style={{ marginTop: '.5rem' }}>
+              <AppStoreButton store="ios" width={240} url={urls.appStore} />
             </div>
           ) : null}
         </div>

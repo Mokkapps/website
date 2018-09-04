@@ -13,7 +13,7 @@ export default () => (
       ))}
     </div>
     <div className="footer__content">
-      <a href="https://github.com/Mokkapps/website">Built</a> with ❤️ using{' '}
+      <a href="https://github.com/Mokkapps/website">Built</a> with &hearts; using{' '}
       <a href="https://www.gatsbyjs.org/">Gatsby.js</a> |{' '}
       <a href="privacy-policy">Privacy Policy</a> |{' '}
       <a href="legal-notice">Legal Notice</a>
