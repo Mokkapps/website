@@ -4,7 +4,7 @@ import './styles.scss';
 
 import ProjectCardButton from './ProjectCardButton';
 import AppStoreButton from './AppStoreButton';
-import DevIcon from './DevIcon';
+import DevIcon from '../DevIcon';
 
 export default ({
   projectName,

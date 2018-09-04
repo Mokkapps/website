@@ -198,14 +198,14 @@ const config = {
   ],
 
   skills: [
-    { type: 'JavaScript', level: 90 },
-    { type: 'TypeScript', level: 75 },
-    { type: 'Java', level: 50 },
-    { type: 'CSS', level: 80 },
-    { type: 'HTML', level: 80 },
-    { type: 'Angular', level: 80 },
-    { type: 'React', level: 85 },
-    { type: 'Node.js', level: 60 },
+    { type: 'JavaScript', icon: 'js', level: 'expert' },
+    { type: 'TypeScript', icon: 'typescript', level: 'advanced' },
+    { type: 'Java', icon: 'java', level: 'intermediate' },
+    { type: 'CSS3', icon: 'css3', level: 'advanced' },
+    { type: 'HTML5', icon: 'html', level: 'advanced' },
+    { type: 'Angular', icon: 'angular', level: 'advanced' },
+    { type: 'React', icon: 'react', level: 'advanced' },
+    { type: 'Node.js', icon: 'node', level: 'intermediate' },
   ],
 };
 

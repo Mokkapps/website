@@ -2,7 +2,7 @@ import React from 'react';
 
 import './About.scss';
 
-import SkillBar from '../SkillBar';
+import Skills from '../Skills';
 import Timeline from '../Timeline';
 import AboutMe from './AboutMe';
 
@@ -11,7 +11,7 @@ const About = ({ aboutImage }) => (
     <AboutMe aboutImage={aboutImage} />
     <div className="about__skills">
       <h1 className="about__skills-heading">Skills</h1>
-      <SkillBar />
+      <Skills />
     </div>
     <div className="about__skills">
       <h1 className="about__skills-heading">Timeline</h1>

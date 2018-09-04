@@ -1,0 +1,32 @@
+.skills {
+  &__icon {
+    margin: .5rem;
+  }
+
+  &__icons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-areas:
+      'text  icons'
+      'text  icons'
+      'text  icons'
+      'text  icons';
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+}
