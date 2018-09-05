@@ -43,6 +43,9 @@ class AppStoreButton extends React.Component {
           alt={`Get it on ${store}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={e => {
+            e.stopPropagation();
+          }}
         >
           &nbsp;
         </a>

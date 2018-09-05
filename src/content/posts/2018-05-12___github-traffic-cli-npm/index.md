@@ -1,5 +1,5 @@
 ---
-title: 'My first NPM Package: github-traffic-cli'
+title: 'My First NPM Package: github-traffic-cli'
 subTitle: My little journey developing my first npm package
 categories: ["development"]
 cover: github-traffic-cli.png

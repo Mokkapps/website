@@ -3,7 +3,13 @@ import React from 'react';
 import './styles.scss';
 
 export default ({ url, icon }) => (
-  <a href={url} className="project-card__desc-button">
+  <a
+    href={url}
+    className="project-card__desc-button"
+    onClick={e => {
+      e.stopPropagation();
+    }}
+  >
     {' '}
     {icon ? (
       <img
