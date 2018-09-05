@@ -11,7 +11,6 @@ import Author from '@react-website-themes/default/components/Author';
 import Bodytext from '@react-website-themes/default/components/Bodytext';
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
-import Meta from '@react-website-themes/default/components/Meta';
 import NextPrev from '@react-website-themes/default/components/NextPrev';
 import Seo from '@react-website-themes/default/components/Seo';
 import Share from '@react-website-themes/default/components/Share';
@@ -31,6 +30,7 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import PostArticle from '../components/PostArticle';
 import Layout from '../components/Layout';
+import Meta from '../components/Meta';
 
 import '../styles/global';
 import '../styles/variables';

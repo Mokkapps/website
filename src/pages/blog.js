@@ -7,7 +7,6 @@ import TagIcon from 'react-feather/dist/icons/tag';
 
 import Header from '@react-website-themes/default/components/Header';
 import Heading from '@react-website-themes/default/components/Heading';
-import Blog from '@react-website-themes/default/components/Blog';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
@@ -16,6 +15,7 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import PageArticle from '../components/PageArticle';
+import BlogPostList from '../components/BlogPostList';
 
 import '../styles/global';
 import '../styles/variables';
@@ -44,7 +44,7 @@ const BlogPage = props => {
       </Header>
       <PageArticle>
         <Heading title="BLOG" />
-        <Blog
+        <BlogPostList
           items={posts}
           author={'Michael Hoffmann'}
           metaIcons={metaIcons}

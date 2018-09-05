@@ -17,12 +17,8 @@ const ProjectCard = ({
 }) => (
   <Card
     className="project-card"
-    minimal={minimal}
-    onClick={() => {
-      if (minimal) {
-        navigate(urls.page);
-      }
-    }}
+    clickable
+    onClick={() => navigate(urls.page)}
   >
     <Img className="project-card__image" sizes={asset.childImageSharp.sizes} />
     <ProjectCardDescription

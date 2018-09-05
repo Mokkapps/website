@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.meta {
+  margin: 0.5em 0 2em;
+  font-size: 0.9em;
+  color: $light-gray;
+  display: flex;
+  margin-bottom: 1em;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  & span {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    padding-right: 10px;
+  }
+
+  & svg {
+    margin: 2px 5px 0 0;
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -10,11 +10,11 @@ const About = ({ aboutImage }) => (
   <section>
     <AboutMe aboutImage={aboutImage} />
     <div className="about__skills">
-      <h1 className="about__skills-heading">Skills</h1>
+      <h1 className="about__skills-heading">SKILLS</h1>
       <Skills />
     </div>
     <div className="about__skills">
-      <h1 className="about__skills-heading">Timeline</h1>
+      <h1 className="about__skills-heading">TIMELINE</h1>
       <Timeline />
     </div>
   </section>

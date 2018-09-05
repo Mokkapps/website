@@ -146,6 +146,7 @@ const config = {
       usedTechnologies: [{ name: 'Gatsby.js, Firebase' }, { icon: 'react' }],
       imageName: 'github-traffic-viewer',
       urls: {
+        page: 'https://github-traffic-viewer.netlify.com/',
         github: 'https://github.com/Mokkapps/github-traffic-viewer-website',
       },
     },
@@ -159,6 +160,7 @@ const config = {
       usedTechnologies: [{ icon: 'react' }, { icon: 'node' }],
       imageName: 'void-fest-band-reminder',
       urls: {
+        page: 'https://void-fest-app.netlify.com/',
         github: 'https://github.com/Mokkapps/void-fest-pwa',
       },
     },
