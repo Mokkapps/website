@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { css } from 'emotion';
@@ -10,7 +11,6 @@ import { ShareButtonRectangle } from 'react-custom-share';
 import Author from '@react-website-themes/default/components/Author';
 import Bodytext from '@react-website-themes/default/components/Bodytext';
 import Header from '@react-website-themes/default/components/Header';
-import Heading from '@react-website-themes/default/components/Heading';
 import NextPrev from '@react-website-themes/default/components/NextPrev';
 import Seo from '@react-website-themes/default/components/Seo';
 import Share from '@react-website-themes/default/components/Share';
@@ -25,12 +25,14 @@ import NextIcon from 'react-feather/dist/icons/arrow-right';
 import FacebookIcon from 'react-feather/dist/icons/facebook';
 import TwitterIcon from 'react-feather/dist/icons/twitter';
 import EmailIcon from 'react-feather/dist/icons/mail';
+import ReadIcon from 'react-feather/dist/icons/eye';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import PostArticle from '../components/PostArticle';
 import Layout from '../components/Layout';
-import Meta from '../components/Meta';
+import PostMeta from '../components/PostMeta';
+import Heading from '../components/Heading';
 
 import '../styles/global';
 import '../styles/variables';
@@ -50,6 +52,7 @@ const metaIcons = {
   calendar: CalendarIcon,
   user: UserIcon,
   tag: TagIcon,
+  read: ReadIcon
 };
 
 const nextPrevIcons = {
@@ -63,15 +66,16 @@ const PostTemplate = props => {
       post: {
         excerpt,
         html: postHTML,
-        frontmatter: { title, categories },
+        frontmatter: { title, categories, cover },
         fields: { slug, prefix },
         timeToRead,
       },
       author: { html: authorHTML },
+      file
     },
-    pageContext: { next, prev },
+    pageContext: { next, prev }
   } = props;
-  
+
   const { siteUrl, siteLanguage, siteTitlePostfix } = config;
 
   const url = siteUrl + slug;
@@ -94,15 +98,20 @@ const PostTemplate = props => {
       </Header>
       <PostArticle>
         <Heading title={title} />
-        <Meta
+        <PostMeta
+          authorImage={file}
           author="Michael Hoffmann"
           prefix={prefix}
           categories={categories}
           icons={metaIcons}
+          timeToRead={timeToRead}
         />
-        <sup>
-          <p style={{ marginBottom: '1rem' }}>~ {timeToRead} minute read</p>
-        </sup>
+        {cover ? (
+          <Img
+            style={{ marginBottom: '1rem' }}
+            fluid={cover.childImageSharp.fluid}
+          />
+        ) : null}
         <Bodytext customStyle={bodyTextStyle} html={postHTML} />
         <Share shareBlockProps={shareBlockProps} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
@@ -141,6 +150,13 @@ export const query = graphql`
       frontmatter {
         title
         categories
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       timeToRead
     }
@@ -148,6 +164,13 @@ export const query = graphql`
       fileAbsolutePath: { regex: "/content/parts/author/" }
     ) {
       html
+    }
+    file(relativePath: { eq: "about.png" }) {
+      childImageSharp {
+        fixed(width: 60, height: 60) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
   }
 `;

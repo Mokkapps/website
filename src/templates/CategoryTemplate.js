@@ -7,7 +7,6 @@ import { css } from 'emotion';
 import 'prismjs/themes/prism-okaidia.css';
 
 import Header from '@react-website-themes/default/components/Header';
-import Heading from '@react-website-themes/default/components/Heading';
 import List from '@react-website-themes/default/components/List';
 import Seo from '@react-website-themes/default/components/Seo';
 
@@ -17,6 +16,7 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import PageArticle from '../components/PageArticle';
+import Heading from '../components/Heading';
 
 import '../styles/global';
 import '../styles/variables';

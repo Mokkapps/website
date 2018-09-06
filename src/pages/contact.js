@@ -2,7 +2,6 @@ import React from 'react';
 import { css } from 'emotion';
 
 import Header from '@react-website-themes/default/components/Header';
-import Heading from '@react-website-themes/default/components/Heading';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
@@ -12,6 +11,7 @@ import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 import PageArticle from '../components/PageArticle';
 import Layout from '../components/Layout';
+import Heading from '../components/Heading';
 
 import '../styles/global';
 import '../styles/variables';

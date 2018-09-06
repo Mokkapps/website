@@ -2,7 +2,7 @@
 title: author
 ---
 
-**Mokkapps** 
+**Michael Hoffmann** 
 
 💻 Mobile, game & frontend developer | 📝 Blogger | 🎮 Videogame enthusiast | 🐝 Beekeeper. 
 

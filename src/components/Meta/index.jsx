@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
+import { getFormattedDate } from '../../utils/helper';
+
 import './Meta.scss';
 
 const Meta = props => {
@@ -16,26 +18,27 @@ const Meta = props => {
   return (
     <p className="meta">
       <span>
-        {CalendarIcon && <CalendarIcon />} {prefix}
+        {CalendarIcon && <CalendarIcon />} {getFormattedDate(prefix)}
       </span>
       <span>
         {UserIcon && <UserIcon />} {author}
       </span>
-      {categories && (
-        <span>
-          {TagIcon && <TagIcon />}
-          {categories.map(category => {
-            const link = (
-              <Link key={category} to={`/categories/${category}`}>
-                {category}
-              </Link>
-            );
-            const txt = <span key={category}>{category}</span>;
+      {categories &&
+        categories.map(category => {
+          const link = (
+            <Link key={category} to={`/categories/${category}`}>
+              {category}
+            </Link>
+          );
+          const txt = <span key={category}>{category}</span>;
 
-            return categoryLink ? link : txt;
-          })}
-        </span>
-      )}
+          return (
+            <span>
+              {TagIcon && <TagIcon />}
+              {categoryLink ? link : txt}
+            </span>
+          );
+        })}
     </p>
   );
 };

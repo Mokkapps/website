@@ -4,7 +4,6 @@ import { css } from 'emotion';
 
 import Bodytext from '@react-website-themes/default/components/Bodytext';
 import Header from '@react-website-themes/default/components/Header';
-import Heading from '@react-website-themes/default/components/Heading';
 import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
@@ -13,6 +12,7 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import PageArticle from '../components/PageArticle';
 import Layout from '../components/Layout';
+import Heading from '../components/Heading';
 
 import '../styles/global';
 import '../styles/variables';
