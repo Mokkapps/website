@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
@@ -14,14 +15,23 @@ const BlogPostList = props => {
       <ul>
         {items.map(item => {
           const {
-            frontmatter: { title, categories },
+            frontmatter: { title, categories, cover },
             fields: { slug, prefix },
             excerpt,
           } = item;
 
           return (
-            <li key={slug}>
-              <Link to={slug}>
+            <li key={slug} className="blog-list__item">
+              {cover ? (
+                <Img
+                  outerWrapperClassName="blog-list__item-image"
+                  fluid={cover.childImageSharp.fluid}
+                />
+              ) : null}
+              <Link
+                className="blog-list__item-text"
+                to={`/blog${slug}`}
+              >
                 <h3>{title}</h3>
                 <Meta
                   categories={categories}

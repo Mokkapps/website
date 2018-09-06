@@ -18,6 +18,7 @@ injectGlobal`
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    outline-color: red;
   }
 
   p {

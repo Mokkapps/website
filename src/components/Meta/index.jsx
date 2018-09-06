@@ -25,15 +25,11 @@ const Meta = props => {
       </span>
       {categories &&
         categories.map(category => {
-          const link = (
-            <Link key={category} to={`/categories/${category}`}>
-              {category}
-            </Link>
-          );
+          const link = <Link to={`/categories/${category}`}>{category}</Link>;
           const txt = <span key={category}>{category}</span>;
 
           return (
-            <span>
+            <span key={category}>
               {TagIcon && <TagIcon />}
               {categoryLink ? link : txt}
             </span>

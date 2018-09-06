@@ -2,7 +2,7 @@
 title: My Development Setup
 subTitle: Learn which tools I use for development
 categories: ["setup"]
-cover: 
+cover: cover.jpg
 ---
 
 In the past, I stumbled upon many interesting tools by investigating the development setups of other developers. Therefore, I thought I could also present you my setup.

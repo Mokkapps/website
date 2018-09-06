@@ -2,7 +2,7 @@
 title: My Definition Of A Senior Developer
 subTitle: This post describes my experiences while working with experienced developers and me getting more experienced
 categories: ["career"]
-cover: 
+cover: cover.jpg
 ---
 
 During my time as a software developer I met and worked with many other developers. Some of them just started their apprenticeship, some started their first job after university, some already had multiple years work experience and some even had 10+ years experience working as a software developer.

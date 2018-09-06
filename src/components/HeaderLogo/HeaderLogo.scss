@@ -5,8 +5,10 @@
   flex-direction: row;
   align-content: center;
   align-items: center;
-  outline: none;
-  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .header-logo__text {

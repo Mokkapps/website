@@ -2,7 +2,7 @@
 title: Draft
 subTitle: Because those who mind don't matter, and those who matter don't mind
 categories: ["career"]
-cover: photo.jpg
+cover: ../../../images/blog-post-placeholder.png
 ---
 
 This is a draft post. Gatsby will not create a web page for this file.

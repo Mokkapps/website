@@ -2,10 +2,10 @@ import React from 'react';
 
 import './Card.scss';
 
-const Card = ({ children, onClick, clickable }) => (
-  <div onClick={() => onClick()} className={`card ${clickable ? 'clickable' : ''}`}>
+const Card = ({ children, url, clickable }) => (
+  <a href={url} className={`card ${clickable ? 'clickable' : ''}`}>
     {children}
-  </div>
+  </a>
 );
 
 export default Card;

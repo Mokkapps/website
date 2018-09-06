@@ -46,14 +46,14 @@ const PostMeta = props => {
         {categories &&
           categories.map(category => {
             const link = (
-              <Link key={category} to={`/categories/${category}`}>
+              <Link to={`/categories/${category}`}>
                 {category}
               </Link>
             );
             const txt = <span key={category}>{category}</span>;
 
             return (
-              <span className="meta__category">
+              <span key={category} className="meta__category">
                 {TagIcon && <TagIcon style={{ marginRight: '.25rem' }} />}
                 {categoryLink ? link : txt}
               </span>

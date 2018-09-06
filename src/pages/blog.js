@@ -29,7 +29,7 @@ const metaIcons = {
 const BlogPage = props => {
   const {
     data: {
-      posts: { edges }
+      posts: { edges },
     },
   } = props;
 
@@ -40,7 +40,7 @@ const BlogPage = props => {
   return (
     <Layout>
       <Header>
-        <Menu/>
+        <Menu />
       </Header>
       <PageArticle>
         <Heading title="BLOG" />
@@ -79,6 +79,13 @@ export const query = graphql`
           frontmatter {
             title
             categories
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 700) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

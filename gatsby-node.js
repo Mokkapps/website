@@ -132,7 +132,7 @@ exports.createPages = ({ graphql, actions }) => {
             index === posts.length - 1 ? undefined : posts[index + 1].node;
 
           createPage({
-            path: slug,
+            path: `/blog${slug}`,
             component: postTemplate,
             context: {
               slug,
