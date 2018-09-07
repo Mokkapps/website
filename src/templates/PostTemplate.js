@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { css } from 'emotion';
+import ReactDisqusComments from 'react-disqus-comments';
 
 import 'prismjs/themes/prism-okaidia.css';
 
@@ -52,7 +53,7 @@ const metaIcons = {
   calendar: CalendarIcon,
   user: UserIcon,
   tag: TagIcon,
-  read: ReadIcon
+  read: ReadIcon,
 };
 
 const nextPrevIcons = {
@@ -71,9 +72,9 @@ const PostTemplate = props => {
         timeToRead,
       },
       author: { html: authorHTML },
-      file
+      file,
     },
-    pageContext: { next, prev }
+    pageContext: { next, prev },
   } = props;
 
   const { siteUrl, siteLanguage, siteTitlePostfix } = config;
@@ -90,6 +91,8 @@ const PostTemplate = props => {
     text: title,
     longtext: excerpt,
   };
+
+  const handleNewComment = comment => console.log(comment);
 
   return (
     <Layout>
@@ -115,6 +118,13 @@ const PostTemplate = props => {
         <Bodytext customStyle={bodyTextStyle} html={postHTML} />
         <Share shareBlockProps={shareBlockProps} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
+        <ReactDisqusComments
+          style={{ marginTop: '2rem' }}
+          shortname="mokkapps"
+          identifier={slug}
+          title="Comments"
+          onNewComment={handleNewComment}
+        />
         <Author html={authorHTML} />
       </PostArticle>
       <Footer />
