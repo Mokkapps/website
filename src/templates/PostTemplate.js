@@ -79,7 +79,7 @@ const PostTemplate = props => {
 
   const { siteUrl, siteLanguage, siteTitlePostfix } = config;
 
-  const url = siteUrl + slug;
+  const url = `${siteUrl}/blog${slug}`;
   const shareBlockProps = {
     url,
     button: ShareButtonRectangle,
