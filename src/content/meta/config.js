@@ -1,6 +1,6 @@
 const base = {
   name: 'Mokkapps',
-  url: 'https://github.com/Mokkapps/website',
+  url: 'https://www.mokkapps.de',
   desc: 'Portfolio website from Michael Hoffmann',
 };
 
