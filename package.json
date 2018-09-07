@@ -49,6 +49,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.3.2",
     "react-custom-share": "^0.4.8",
+    "react-disqus-comments": "^1.2.0",
     "react-dom": "^16.3.2",
     "react-emotion": "^9.2.6",
     "react-event-timeline": "^1.5.4",
