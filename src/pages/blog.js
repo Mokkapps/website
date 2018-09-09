@@ -5,20 +5,16 @@ import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
 
-import Header from '@react-website-themes/default/components/Header';
-import Seo from '@react-website-themes/default/components/Seo';
-
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
-import PageArticle from '../components/PageArticle';
+import Article from '../components/Article';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
-
-import '../styles/global';
-import '../styles/variables';
+import Header from '../components/Header';
+import Seo from '../components/Seo';
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -42,14 +38,14 @@ const BlogPage = props => {
       <Header>
         <Menu />
       </Header>
-      <PageArticle>
+      <Article>
         <Heading title="BLOG" />
         <BlogPostList
           items={posts}
           author={'Michael Hoffmann'}
           metaIcons={metaIcons}
         />
-      </PageArticle>
+      </Article>
       <Footer />
       <Seo
         url={siteUrl}

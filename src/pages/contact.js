@@ -1,25 +1,15 @@
 import React from 'react';
-import { css } from 'emotion';
-
-import Header from '@react-website-themes/default/components/Header';
-import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
-import PageArticle from '../components/PageArticle';
+import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-
-import '../styles/global';
-import '../styles/variables';
-
-const headingStyle = css`
-  display: flex;
-  justify-content: center;
-`;
+import Header from '../components/Header';
+import Seo from '../components/Seo';
 
 const ContactPage = () => {
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
@@ -29,10 +19,10 @@ const ContactPage = () => {
       <Header>
         <Menu/>
       </Header>
-      <PageArticle narrow>
-        <Heading customStyle={headingStyle} title="CONTACT ME" />
+      <Article narrow>
+        <Heading title="CONTACT ME" />
         <ContactForm />
-      </PageArticle>
+      </Article>
       <Footer />
       <Seo
         url={siteUrl}

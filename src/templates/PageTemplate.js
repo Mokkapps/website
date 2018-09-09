@@ -2,21 +2,16 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Header from '@react-website-themes/default/components/Header';
-import Seo from '@react-website-themes/default/components/Seo';
-import Bodytext from '@react-website-themes/default/components/Bodytext';
-
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import PageArticle from '../components/PageArticle';
+import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-
-import 'prismjs/themes/prism-okaidia.css';
-import '../styles/global';
-import '../styles/variables';
+import BodyText from '../components/BodyText';
+import Header from '../components/Header';
+import Seo from '../components/Seo';
 
 const PageTemplate = props => {
   const {
@@ -26,7 +21,7 @@ const PageTemplate = props => {
         frontmatter: { title },
         fields: { slug },
         excerpt,
-      }
+      },
     },
   } = props;
 
@@ -35,12 +30,12 @@ const PageTemplate = props => {
   return (
     <Layout>
       <Header>
-        <Menu/>
+        <Menu />
       </Header>
-      <PageArticle>
+      <Article>
         <Heading title={title} />
-        <Bodytext html={pageHTML} />
-      </PageArticle>
+        <BodyText html={pageHTML} />
+      </Article>
       <Footer />
       <Seo
         url={`${siteUrl}${slug}`}

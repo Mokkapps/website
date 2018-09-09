@@ -1,5 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import { customMedia } from '../../utils/style-utils';
+
+const Container = styled.div`
+  display: inline-block;
+  height: ${props => `${props.height}px`};
+  width: 240px;
+
+  ${customMedia.lessThan('md')`
+     width: 190px;
+  `};
+`;
+
+const StyledAnchor = styled.a`
+  background: ${props => `url(${imageLinks[props.store]}) no-repeat`};
+  background-size: contain;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+
+  &:hover {
+    text-decoration: none;
+    transform: scale(1.05, 1.05);
+  }
+`;
 
 const imageLinks = {
   ios:
@@ -21,35 +50,20 @@ class AppStoreButton extends React.Component {
   };
 
   render() {
-    const { store, url, height, width, ...props } = this.props;
-
-    const linkStyles = {
-      background: `url(${imageLinks[store]}) no-repeat`,
-      backgroundSize: 'contain',
-      display: 'inline-block',
-      overflow: 'hidden',
-      textDecoration: 'none',
-      height: '100%',
-      width: '100%',
-      padding: '5px',
-    };
-
+    const { store, url, height, width } = this.props;
     return (
-      <div style={{ height, width, display: 'inline-block' }} {...props}>
-        <a
-          style={linkStyles}
+      <Container height={height} width={width}>
+        <StyledAnchor
+          store={store}
           href={url}
           aria-label={`Get it on ${store}`}
           alt={`Get it on ${store}`}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={e => {
-            e.stopPropagation();
-          }}
         >
           &nbsp;
-        </a>
-      </div>
+        </StyledAnchor>
+      </Container>
     );
   }
 }

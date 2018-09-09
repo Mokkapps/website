@@ -2,10 +2,42 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import { getFormattedDate } from '../../utils/helper';
 
-import './PostMeta.scss';
+const Author = styled.section`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const AuthorImg = styled(Img)`
+  border-radius: 100%;
+  margin-right: 0.5rem;
+`;
+
+const AuthorTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CategoriesContainer = styled.section`
+  margin: 1rem 0 1rem 0;
+  display: flex;
+`;
+
+const CategorySpan = styled.span`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 0.5rem;
+`;
+
+const iconStyle = {
+  width: 15,
+  height: 15,
+};
 
 const PostMeta = props => {
   const {
@@ -22,50 +54,41 @@ const PostMeta = props => {
     },
   } = props;
 
-  return (
-    <div>
-      <div className="meta__author">
-        <Img
-          className="meta__author-icon"
-          fixed={authorImage.childImageSharp.fixed}
-        />
-        <div className="meta__author-text">
-          <span style={{ marginBottom: '.5rem' }}>
-            {CalendarIcon && <UserIcon style={{ width: 15, height: 15 }} />}{' '}
-            Michael Hoffmann
-          </span>
-          <span>
-            {CalendarIcon && <CalendarIcon style={{ width: 15, height: 15 }} />}{' '}
-            {getFormattedDate(prefix)} |{' '}
-            {ReadIcon && <ReadIcon style={{ width: 15, height: 15 }} />}{' '}
-            {timeToRead} min read
-          </span>
-        </div>
-      </div>
-      <div className="meta__categories">
-        {categories &&
-          categories.map(category => {
-            const link = (
-              <Link to={`/categories/${category}`}>
-                {category}
-              </Link>
-            );
-            const txt = <span key={category}>{category}</span>;
+  return [
+    <Author>
+      <AuthorImg
+        className="meta__author-icon"
+        fixed={authorImage.childImageSharp.fixed}
+      />
+      <AuthorTextContainer>
+        <span style={{ marginBottom: '.5rem' }}>
+          {CalendarIcon && <UserIcon style={iconStyle} />} Michael Hoffmann
+        </span>
+        <span>
+          {CalendarIcon && <CalendarIcon style={iconStyle} />}{' '}
+          {getFormattedDate(prefix)} |{' '}
+          {ReadIcon && <ReadIcon style={iconStyle} />} {timeToRead} min read
+        </span>
+      </AuthorTextContainer>
+    </Author>,
+    <CategoriesContainer>
+      {categories &&
+        categories.map(category => {
+          const link = <Link to={`/categories/${category}`}>{category}</Link>;
+          const txt = <span key={category}>{category}</span>;
 
-            return (
-              <span key={category} className="meta__category">
-                {TagIcon && <TagIcon style={{ marginRight: '.25rem' }} />}
-                {categoryLink ? link : txt}
-              </span>
-            );
-          })}
-      </div>
-    </div>
-  );
+          return (
+            <CategorySpan key={category}>
+              {TagIcon && <TagIcon style={{ marginRight: '.25rem' }} />}
+              {categoryLink ? link : txt}
+            </CategorySpan>
+          );
+        })}
+    </CategoriesContainer>,
+  ];
 };
 
 PostMeta.propTypes = {
-  customStyle: PropTypes.string,
   prefix: PropTypes.string,
   categories: PropTypes.array,
   author: PropTypes.string,

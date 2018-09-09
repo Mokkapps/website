@@ -1,10 +1,68 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './ContactForm.scss';
 import ContactButton from './ContactButton';
+import { customMedia } from '../../utils/style-utils';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+
+  ${customMedia.lessThan('md')`
+    padding: 3rem 3rem;
+  `};
+
+  ${customMedia.greaterThan('md')`
+    padding: 2rem 1.5rem;
+  `};
+
+  form {
+    p {
+      label,
+      input {
+        display: block;
+      }
+      input {
+        min-width: 350px;
+        ${customMedia.lessThan('md')`
+          min-width: 200px;
+        `};
+      }
+    }
+  }
+`;
+
+const Label = styled.label`
+  margin: 1rem 0 1rem 0;
+  color: black;
+`;
+
+const Input = styled.input`
+  height: 2rem;
+  border-radius: 0.25rem;
+  border: none;
+  background: lightgrey;
+  padding: 0.25rem 1rem;
+  overflow: auto;
+  font: inherit;
+`;
+
+const TextArea = styled.textarea`
+  height: 2rem;
+  border-radius: 0.25rem;
+  border: none;
+  background: lightgrey;
+  padding: 0.25rem 1rem;
+  overflow: auto;
+  font: inherit;
+  padding: 1rem;
+  resize: vertical;
+  min-height: 150px;
+  width: 100%;
+`;
 
 const ContactForm = () => (
-  <div className="contact__container">
+  <Container>
     <form
       name="contact-form"
       action="/success"
@@ -14,34 +72,23 @@ const ContactForm = () => (
       netlify="true"
     >
       <p>
-        <label className="contact__label" htmlFor="name">
-          Name
-        </label>
-        <input className="contact__input" name="name" type="text" required />
+        <Label htmlFor="name">Name</Label>
+        <Input name="name" type="text" required />
       </p>
       <p>
-        <label className="contact__label" htmlFor="email">
-          E-Mail
-        </label>
-        <input className="contact__input" name="email" type="email" required />
+        <Label htmlFor="email">E-Mail</Label>
+        <Input name="email" type="email" required />
       </p>
       <p>
-        <label className="contact__label" htmlFor="message">
-          Your Message
-        </label>
-        <textarea className="contact__textarea" name="message" required />
+        <Label htmlFor="message">Your Message</Label>
+        <TextArea name="message" required />
       </p>
       <p style={{ marginTop: '1rem' }}>
         <ContactButton>Send</ContactButton>
       </p>
-      <input
-        className="contact__input"
-        type="hidden"
-        name="form-name"
-        value="contact-form"
-      />
+      <Input type="hidden" name="form-name" value="contact-form" />
     </form>
-  </div>
+  </Container>
 );
 
 export default ContactForm;

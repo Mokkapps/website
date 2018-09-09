@@ -1,10 +1,33 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import { getFormattedDate } from '../../utils/helper';
 
-import './Meta.scss';
+const MetaText = styled.p`
+  margin: 0.5em 0 2em;
+  font-size: 0.9em;
+  color: $light-gray;
+  display: flex;
+  margin-bottom: 1em;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  & span {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    padding-right: 10px;
+  }
+
+  & svg {
+    margin: 2px 5px 0 0;
+    width: 16px;
+    height: 16px;
+  }
+`;
 
 const Meta = props => {
   const {
@@ -16,7 +39,7 @@ const Meta = props => {
   } = props;
 
   return (
-    <p className="meta">
+    <MetaText>
       <span>
         {CalendarIcon && <CalendarIcon />} {getFormattedDate(prefix)}
       </span>
@@ -35,12 +58,11 @@ const Meta = props => {
             </span>
           );
         })}
-    </p>
+    </MetaText>
   );
 };
 
 Meta.propTypes = {
-  customStyle: PropTypes.string,
   prefix: PropTypes.string,
   categories: PropTypes.array,
   author: PropTypes.string,

@@ -1,16 +1,34 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './SocialLink.scss';
+const StyledAnchor = styled.a`
+  align-items: center;
+  background: white;
+  border-radius: 100%;
+  display: flex;
+  align-content: center;
+  padding: 0.5rem;
+  margin: 1rem 1rem 0 0;
+
+  &:hover {
+    background: lightgrey;
+    transform: scale(1.1, 1.1);
+  }
+`;
+
+const Image = styled.img`
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+`;
 
 const SocialLink = ({ href, iconName }) => (
-  <a href={href} className="social-link">
-    <img
+  <StyledAnchor href={href}>
+    <Image
       alt={`Social Link to ${iconName}`}
-      height={20}
-      width={20}
       src={`https://unpkg.com/simple-icons@latest/icons/${iconName}.svg`}
     />
-  </a>
+  </StyledAnchor>
 );
 
 export default SocialLink;

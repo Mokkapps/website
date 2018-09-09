@@ -2,19 +2,8 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { css } from 'emotion';
 import ReactDisqusComments from 'react-disqus-comments';
-
-import 'prismjs/themes/prism-okaidia.css';
-
 import { ShareButtonRectangle } from 'react-custom-share';
-
-import Author from '@react-website-themes/default/components/Author';
-import Bodytext from '@react-website-themes/default/components/Bodytext';
-import Header from '@react-website-themes/default/components/Header';
-import NextPrev from '@react-website-themes/default/components/NextPrev';
-import Seo from '@react-website-themes/default/components/Seo';
-import Share from '@react-website-themes/default/components/Share';
 
 import config from 'content/meta/config';
 
@@ -30,24 +19,16 @@ import ReadIcon from 'react-feather/dist/icons/eye';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import PostArticle from '../components/PostArticle';
+import Article from '../components/Article';
 import Layout from '../components/Layout';
 import PostMeta from '../components/PostMeta';
 import Heading from '../components/Heading';
-
-import '../styles/global';
-import '../styles/variables';
-
-const bodyTextStyle = css`
-  img {
-    width: 100%;
-  }
-
-  ol {
-    margin: 0 0 1.5em;
-    list-style-position: inside;
-  }
-`;
+import BodyText from '../components/BodyText';
+import Header from '../components/Header';
+import Seo from '../components/Seo';
+import Author from '../components/Author';
+import NextPrev from '../components/NextPrev';
+import Share from '../components/Share';
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -99,7 +80,7 @@ const PostTemplate = props => {
       <Header>
         <Menu />
       </Header>
-      <PostArticle>
+      <Article>
         <Heading title={title} />
         <PostMeta
           authorImage={file}
@@ -115,7 +96,7 @@ const PostTemplate = props => {
             fluid={cover.childImageSharp.fluid}
           />
         ) : null}
-        <Bodytext customStyle={bodyTextStyle} html={postHTML} />
+        <BodyText html={postHTML} />
         <Share shareBlockProps={shareBlockProps} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <ReactDisqusComments
@@ -126,7 +107,7 @@ const PostTemplate = props => {
           onNewComment={handleNewComment}
         />
         <Author html={authorHTML} />
-      </PostArticle>
+      </Article>
       <Footer />
       <Seo
         url={`${siteUrl}${slug}`}

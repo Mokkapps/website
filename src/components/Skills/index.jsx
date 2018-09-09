@@ -1,19 +1,47 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import config from '../../content/meta/config';
 import DevIcon from '../DevIcon';
 
-import './Skills.scss';
+const DevIconContainer = styled.div`
+  margin: auto 0.5rem;
+  padding: .25rem;
+`;
+
+const IconsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+`;
+
+const SkillsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  grid-template-areas:
+    'text icons'
+    'text icons'
+    'text icons'
+    'text icons';
+`;
+
+const SkillHeading = styled.h3`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+`;
 
 const getDevIcons = skills =>
   skills.map(skill => (
-    <div title={skill.type} className="skills__icon" key={skill.icon}>
-      <DevIcon
-        key={skill.icon}
-        className="skills__icon"
-        iconName={skill.icon}
-      />
-    </div>
+    <DevIconContainer title={skill.type} key={skill.icon}>
+      <DevIcon iconName={skill.icon} />
+    </DevIconContainer>
   ));
 
 const capitalizeFirstLetter = string =>
@@ -22,12 +50,12 @@ const capitalizeFirstLetter = string =>
 const getSkillSection = (skillLevel, skills) =>
   skills.length > 0
     ? [
-        <h3 key={skillLevel} className="skills__text">
+        <SkillHeading key={skillLevel}>
           {capitalizeFirstLetter(skillLevel)}
-        </h3>,
-        <div key={Math.random()} className="skills__icons-container">
+        </SkillHeading>,
+        <IconsContainer key={Math.random()}>
           {getDevIcons(skills)}
-        </div>,
+        </IconsContainer>,
       ]
     : null;
 
@@ -35,10 +63,10 @@ const SKILLS = ['expert', 'advanced', 'intermediate', 'elementary'];
 
 export default () => {
   return (
-    <div className="skills__container">
+    <SkillsContainer>
       {SKILLS.map(skill =>
         getSkillSection(skill, config.skills.filter(s => s.level === skill))
       )}
-    </div>
+    </SkillsContainer>
   );
 };

@@ -1,26 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { css } from 'emotion';
-
-import Header from '@react-website-themes/default/components/Header';
-import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import ProjectList from '../components/ProjectList';
-import PageArticle from '../components/PageArticle';
+import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-
-import '../styles/global';
-import '../styles/variables';
-
-const headingStyle = css`
-  display: flex;
-  justify-content: center;
-`;
+import Header from '../components/Header';
+import Seo from '../components/Seo';
 
 const ProjectsPage = props => {
   const {
@@ -34,10 +24,10 @@ const ProjectsPage = props => {
       <Header>
         <Menu/>
       </Header>
-      <PageArticle>
-        <Heading customStyle={headingStyle} title="MY PRIVATE PROJECTS" />
+      <Article>
+        <Heading title="MY PRIVATE PROJECTS" />
         <ProjectList projectAssets={projectAssets} />
-      </PageArticle>
+      </Article>
       <Footer />
       <Seo
         url={siteUrl}

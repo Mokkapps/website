@@ -1,10 +1,74 @@
 import React from 'react';
-
-import './styles.scss';
+import styled from 'styled-components';
 
 import ProjectCardButton from './ProjectCardButton';
 import AppStoreButton from './AppStoreButton';
 import DevIcon from '../DevIcon';
+
+import { customMedia } from '../../utils/style-utils';
+
+const Container = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+
+  flex: 0 0 auto;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+`;
+
+const Heading = styled.h3`
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  color: #2c3e50;
+  word-wrap: normal;
+  ${customMedia.lessThan('md')`
+    font-size: 1.2em;
+  `};
+`;
+
+const Divider = styled.hr`
+  margin: 1rem 0 1rem 0;
+`;
+
+const DescriptionText = styled.p`
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  justify-content: center;
+`;
+
+const TechnologiesContainer = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+const TechIcon = styled(DevIcon)`
+  margin: 0 0.25rem 0 0.25rem;
+  color: black;
+`;
+
+const TechText = styled.p`
+  margin: 0 0.25rem 0 0.25rem;
+  color: black;
+`;
 
 export default ({
   projectName,
@@ -14,30 +78,24 @@ export default ({
   minimal,
   usedTechnologies,
 }) => (
-  <div className="project-card__description-box">
-    <div className="project-card__title">{projectName}</div>
+  <Container>
+    <Heading>{projectName}</Heading>
     {minimal ? null : (
       <div>
-        <hr className="project-card__divider" />
-        <div className="project-card__technologies">
+        <Divider />
+        <TechnologiesContainer>
           {usedTechnologies.map(
             tech =>
               tech.icon ? (
-                <DevIcon
-                  className="project-card__tech-item"
-                  key={tech.icon}
-                  iconName={tech.icon}
-                />
+                <TechIcon key={tech.icon} iconName={tech.icon} />
               ) : (
-                <p key={tech.name} className="project-card__tech-item">
-                  {tech.name}
-                </p>
+                <TechText key={tech.name}>{tech.name}</TechText>
               )
           )}
-        </div>
-        <hr className="project-card__divider" />
-        <p className="project-card__description">{description}</p>
-        <div className="project-card__store-buttons-container">
+        </TechnologiesContainer>
+        <Divider />
+        <DescriptionText>{description}</DescriptionText>
+        <ButtonsContainer>
           {urls.github ? (
             <ProjectCardButton icon="github" url={urls.github} />
           ) : null}
@@ -50,14 +108,13 @@ export default ({
               />
             </div>
           ) : null}
-          <div />
           {urls.appStore ? (
-            <div style={{ marginTop: '.5rem' }}>
+            <div>
               <AppStoreButton store="ios" width={240} url={urls.appStore} />
             </div>
           ) : null}
-        </div>
+        </ButtonsContainer>
       </div>
     )}
-  </div>
+  </Container>
 );

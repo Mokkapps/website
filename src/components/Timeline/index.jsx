@@ -51,10 +51,11 @@ export default () => (
       cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       <strong>Master Thesis</strong>
-      <blockquote>
+      <br />
+      <p>
         "Concept and Prototype Development of an Event-Driven Architecture for
         an Intermodal Route Guide"
-      </blockquote>
+      </p>
     </TimelineEvent>
     <TimelineEvent
       title="Technical University of Munich, Munich/Germany"
@@ -75,10 +76,11 @@ export default () => (
       cardHeaderStyle={{ backgroundColor: MokkappsBlack, color: 'white' }}
     >
       <strong>Bachelor Thesis</strong>
-      <blockquote>
+      <br />
+      <p>
         "Development of an Android smartphone application to control and
         visualize sensors and actors which meet the KNX standard"
-      </blockquote>
+      </p>
     </TimelineEvent>
     <TimelineEvent
       title="University of Applied Science, Deggendorf/Germany"

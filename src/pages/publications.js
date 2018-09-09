@@ -1,18 +1,14 @@
 import React from 'react';
 
-import Header from '@react-website-themes/default/components/Header';
-import Seo from '@react-website-themes/default/components/Seo';
-
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import PageArticle from '../components/PageArticle';
+import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-
-import '../styles/global';
-import '../styles/variables';
+import Header from '../components/Header';
+import Seo from '../components/Seo';
 
 const PublicationsPage = () => {
   const {
@@ -28,7 +24,7 @@ const PublicationsPage = () => {
       <Header>
         <Menu/>
       </Header>
-      <PageArticle>
+      <Article>
         <Heading title="PUBLICATIONS" />
         <h1 style={{ marginBottom: '1rem' }}>Talks</h1>
         <ul>
@@ -46,7 +42,7 @@ const PublicationsPage = () => {
             </li>
           ))}
         </ul>
-      </PageArticle>
+      </Article>
       <Footer />
       <Seo
         url={siteUrl}

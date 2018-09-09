@@ -50,6 +50,14 @@ module.exports = {
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
+    // Typography.js
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.js`,
+      },
+    },
+    `gatsby-plugin-styled-components`, // Styled components
     `gatsby-plugin-offline`, // needs to be after the manifest plugin
     // Netlify support
     `gatsby-plugin-netlify`,
@@ -70,7 +78,6 @@ module.exports = {
               maxWidth: 690,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -104,8 +111,6 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
-    // Support for css-in-js library Emotion
-    `gatsby-plugin-emotion`,
     // Create a sitemap
     `gatsby-plugin-sitemap`,
     // Create an RSS feed

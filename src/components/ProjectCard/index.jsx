@@ -1,11 +1,20 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { navigate } from 'gatsby';
+import styled from 'styled-components';
 
 import Card from '../Card';
 import ProjectCardDescription from './ProjectCardDescription';
 
-import './styles.scss';
+const StyledCard = styled(Card)`
+  display: flex;
+  flex-flow: column;
+  box-shadow: 0 10px 30px rgba(#2c3e50, 0.5);
+`;
+
+const ProjectImage = styled(Img)`
+  margin: 0.3rem;
+  min-height: 200px;
+`;
 
 const ProjectCard = ({
   asset,
@@ -15,12 +24,8 @@ const ProjectCard = ({
   minimal,
   usedTechnologies,
 }) => (
-  <Card
-    className="project-card"
-    url={urls.page}
-    clickable
-  >
-    <Img className="project-card__image" sizes={asset.childImageSharp.sizes} />
+  <StyledCard url={urls.page} clickable>
+    <ProjectImage sizes={asset.childImageSharp.sizes} />
     <ProjectCardDescription
       minimal={minimal}
       projectName={title}
@@ -28,7 +33,7 @@ const ProjectCard = ({
       urls={urls}
       usedTechnologies={usedTechnologies}
     />
-  </Card>
+  </StyledCard>
 );
 
 export default ProjectCard;

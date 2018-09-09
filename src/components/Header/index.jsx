@@ -1,0 +1,35 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import { customMedia } from '../../utils/style-utils';
+
+const StyledHeader = styled.header`
+  display: flex;
+  margin-bottom: 50px;
+  padding: 5px 5px 0;
+
+  ${customMedia.lessThan('md')`
+    flex-direction: column; margin-bottom: 35px;
+  `};
+
+  ${customMedia.greaterThan('md')`
+    flex-direction: row; margin-bottom: 50px;
+  `};
+
+  a {
+    text-decoration: none;
+  }
+`;
+
+const Header = props => {
+  const { children } = props;
+
+  return <StyledHeader>{children}</StyledHeader>;
+};
+
+Header.propTypes = {
+  children: PropTypes.node,
+};
+
+export default Header;

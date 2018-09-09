@@ -2,36 +2,17 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import TagIcon from 'react-feather/dist/icons/tag';
-import { css } from 'emotion';
-
-import 'prismjs/themes/prism-okaidia.css';
-
-import Header from '@react-website-themes/default/components/Header';
-import List from '@react-website-themes/default/components/List';
-import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
-import PageArticle from '../components/PageArticle';
+import Article from '../components/Article';
 import Heading from '../components/Heading';
-
-import '../styles/global';
-import '../styles/variables';
-import { MokkappsRed } from '../styles/variables';
-
-const listStyle = css`
-  a {
-    color: ${MokkappsRed};
-  }
-
-  a:hover {
-    color: ${MokkappsRed};
-    text-decoration: underline;
-  }
-`;
+import Header from '../components/Header';
+import Seo from '../components/Seo';
+import List from '../components/List';
 
 const PageTemplate = props => {
   const {
@@ -50,7 +31,7 @@ const PageTemplate = props => {
       <Header>
         <Menu />
       </Header>
-      <PageArticle>
+      <Article>
         <Heading>
           <span>Posts in category</span> <TagIcon />
           <h1>{category}</h1>
@@ -60,8 +41,8 @@ const PageTemplate = props => {
             {totalCount > 1 ? 's' : ''} in the category:
           </h3>
         </Heading>
-        <List customStyle={listStyle} items={items} />
-      </PageArticle>
+        <List items={items} />
+      </Article>
       <Footer />
       <Seo
         url={`${siteUrl}/categories/${category}/`}

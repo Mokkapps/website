@@ -1,26 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { css } from 'emotion';
-
-import Header from '@react-website-themes/default/components/Header';
-import Seo from '@react-website-themes/default/components/Seo';
 
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import About from '../components/About';
-import PageArticle from '../components/PageArticle';
+import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-
-import '../styles/global';
-import '../styles/variables';
-
-const headingStyle = css`
-  display: flex;
-  justify-content: center;
-`;
+import Header from '../components/Header';
+import Seo from '../components/Seo';
 
 const AboutPage = props => {
   const {
@@ -34,10 +24,10 @@ const AboutPage = props => {
       <Header>
         <Menu />
       </Header>
-      <PageArticle>
-        <Heading customStyle={headingStyle} title="ABOUT ME" />
+      <Article>
+        <Heading title="ABOUT ME" />
         <About aboutImage={file} />
-      </PageArticle>
+      </Article>
       <Footer />
       <Seo
         url={siteUrl}
@@ -55,7 +45,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "about.png" }) {
       childImageSharp {
-        fixed(width: 250, height: 250) {
+        fixed(width: 230, height: 230) {
           ...GatsbyImageSharpFixed
         }
       }

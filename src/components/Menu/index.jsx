@@ -1,38 +1,101 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
-import './Menu.scss';
+import styled from 'styled-components';
 
 import menuItems from 'content/meta/menu';
-
 import HeaderLogo from '../HeaderLogo';
 
+import { MokkappsRed } from '../../styles/variables';
+
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const MenuItems = styled.ul`
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  @media (max-width: 712px) {
+    margin-top: 0.5rem;
+    justify-content: flex-start;
+  }
+`;
+
+const Item = styled.li`
+  padding: 0 5px;
+  line-height: 1;
+
+  .active {
+    color: ${MokkappsRed};
+  }
+
+  a {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    color: white;
+
+    &:hover {
+      color: ${MokkappsRed};
+      text-decoration: none;
+    }
+  }
+
+  svg {
+    height: 30px;
+  }
+`;
+
+const ItemContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+`;
+
+const ItemTitle = styled.span`
+  display: none;
+  margin-left: 0.5rem;
+
+  @media (max-width: 1240px) {
+    display: block;
+  }
+`;
+
 const Menu = () => (
-  <div className="menu__container">
+  <Container>
     <HeaderLogo />
-    <ul className="menu__item-container">
+    <MenuItems>
       {menuItems.map(item => {
         const { ariaLabel, label, to, icon: Icon, linkProps } = item;
 
         return (
-          <li className="menu__item" key={ariaLabel}>
+          <Item key={ariaLabel}>
             <Link
               to={to}
               title={label}
               aria-label={ariaLabel}
-              activeClassName="active-item"
+              activeClassName="active"
               {...linkProps}
             >
-              <div className="menu__item-content">
+              <ItemContainer>
                 {Icon && <Icon />}
-                <span className="menu__item-title">{label}</span>
-              </div>
+                <ItemTitle>{label}</ItemTitle>
+              </ItemContainer>
             </Link>
-          </li>
+          </Item>
         );
       })}
-    </ul>
-  </div>
+    </MenuItems>
+  </Container>
 );
 
 export default Menu;
