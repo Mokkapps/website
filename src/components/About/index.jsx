@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Margin } from 'styled-components-spacing';
 
 import Skills from '../Skills';
 import Timeline from '../Timeline';
@@ -7,23 +8,23 @@ import AboutMe from './AboutMe';
 
 const SkillsContainer = styled.div`
   width: 80%;
-  margin: auto;
-  margin-top: 2em;
+  margin: 0 auto;
 `;
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 1.5em 0 1.5em 0;
-  word-wrap: normal; 
+  word-wrap: normal;
 `;
 
 const About = ({ aboutImage }) => (
   <section>
     <AboutMe aboutImage={aboutImage} />
-    <SkillsContainer>
-      <Heading>SKILLS</Heading>
-      <Skills />
-    </SkillsContainer>
+    <Margin top={4} bottom={4}>
+      <SkillsContainer>
+        <Heading>SKILLS</Heading>
+        <Skills />
+      </SkillsContainer>
+    </Margin>
     <SkillsContainer>
       <Heading>EXPERIENCE & EDUCATION</Heading>
       <Timeline />

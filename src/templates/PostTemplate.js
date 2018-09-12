@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 import { ShareButtonRectangle } from 'react-custom-share';
+import { Margin } from 'styled-components-spacing';
 
 import config from 'content/meta/config';
 
@@ -91,21 +92,21 @@ const PostTemplate = props => {
           timeToRead={timeToRead}
         />
         {cover ? (
-          <Img
-            style={{ marginBottom: '1rem' }}
-            fluid={cover.childImageSharp.fluid}
-          />
+          <Margin bottom={4}>
+            <Img fluid={cover.childImageSharp.fluid} />
+          </Margin>
         ) : null}
         <BodyText html={postHTML} />
         <Share shareBlockProps={shareBlockProps} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
-        <ReactDisqusComments
-          style={{ marginTop: '2rem' }}
-          shortname="mokkapps"
-          identifier={slug}
-          title="Comments"
-          onNewComment={handleNewComment}
-        />
+        <Margin top={4}>
+          <ReactDisqusComments
+            shortname="mokkapps"
+            identifier={slug}
+            title="Comments"
+            onNewComment={handleNewComment}
+          />
+        </Margin>
         <Author html={authorHTML} />
       </Article>
       <Footer />

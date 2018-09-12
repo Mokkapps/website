@@ -34,13 +34,23 @@ const config = {
 
   characteristics: [
     {
-      text: 'Mobile,\n Game &\n Frontend Developer',
+      text: 'Software Engineer',
+      description: 'I love coding mobile apps, games and websites',
       icon: 'code',
       link: '/projects',
     },
-    { text: 'Blogger', icon: 'file-text', link: '/blog' },
-    { text: 'Video Game\n Enthusiast', icon: 'monitor' },
-    { text: 'Beekeeper', icon: 'info' },
+    {
+      text: 'Blogger',
+      description: 'I write about software development',
+      icon: 'file-text',
+      link: '/blog',
+    },
+    {
+      text: 'Video Gamer',
+      description: 'I love to play video games on PC and PS4',
+      icon: 'monitor',
+    },
+    { text: 'Beekeeper', description: 'I love nature and bees', icon: 'info' },
   ],
 
   projects: [

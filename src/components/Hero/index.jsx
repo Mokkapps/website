@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Margin } from 'styled-components-spacing';
 
 import BlogIcon from 'react-feather/dist/icons/file-text';
 import BeeIcon from 'react-feather/dist/icons/info';
@@ -29,7 +30,6 @@ const Container = styled.div`
 const Heading = styled.h1`
   text-align: center;
   font-size: 3em;
-  margin-bottom: 2rem;
 
   ${customMedia.lessThan('sm')`
      font-size: 1.4em;
@@ -41,7 +41,7 @@ const Heading = styled.h1`
 `;
 
 const Quote = styled.h3`
-  margin: auto;
+  margin: 0 auto;
   font-size: 2em;
   text-align: center;
   width: 80%;
@@ -56,16 +56,17 @@ const Quote = styled.h3`
 `;
 
 const Characteristics = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  grid-template-areas:
+    'skill skill'
+    'skill skill';
 `;
 
 const SectionHeading = styled.h2`
   text-align: center;
-  margin: 1.5rem 0 1.5rem 0;
 `;
 
 const Projects = styled.section`
@@ -79,15 +80,24 @@ const Hero = ({ projectAssets }) => (
     <Heading>
       Hi! I'm <a href="about">Michael Hoffmann</a>
     </Heading>
-    <Quote>{config.quote}</Quote>
-    <Characteristics>
-      {config.characteristics.map(characteristic => {
-        const { text, icon } = characteristic;
-        return (
-          <HeroCharacteristic key={text} icon={images[icon]} text={text} />
-        );
-      })}
-    </Characteristics>
+    <Margin top={4}>
+      <Quote>{config.quote}</Quote>
+    </Margin>
+    <Margin top={4} bottom={4}>
+      <Characteristics>
+        {config.characteristics.map(characteristic => {
+          const { text, description, icon } = characteristic;
+          return (
+            <HeroCharacteristic
+              key={text}
+              icon={images[icon]}
+              text={text}
+              description={description}
+            />
+          );
+        })}
+      </Characteristics>
+    </Margin>
     <SectionHeading>FEATURED PROJECTS</SectionHeading>
     <Projects>
       {config.projects.filter(p => p.featured).map(project => {

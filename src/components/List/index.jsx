@@ -7,7 +7,7 @@ import { MokkappsRed } from '../../styles/variables';
 
 const ListElement = styled.li`
   border-bottom: 1px dotted #ddd;
-  
+
   &:last-child {
     border-bottom: none;
   }
@@ -45,7 +45,7 @@ const List = props => {
 
           return (
             <ListElement key={slug}>
-              <Link to={slug} activeClassName="active">
+              <Link to={`/blog/${slug}`} activeClassName="active">
                 {title}
               </Link>
             </ListElement>
