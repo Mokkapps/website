@@ -27,17 +27,19 @@ const BlogPostList = props => {
           } = item;
 
           return (
-            <BlogPost
-              key={slug}
-              title={title}
-              slug={slug}
-              cover={cover}
-              categories={categories}
-              prefix={prefix}
-              author={author}
-              metaIcons={metaIcons}
-              excerpt={excerpt}
-            />
+            <li>
+              <BlogPost
+                key={slug}
+                title={title}
+                slug={slug}
+                cover={cover}
+                categories={categories}
+                prefix={prefix}
+                author={author}
+                metaIcons={metaIcons}
+                excerpt={excerpt}
+              />
+            </li>
           );
         })}
       </List>

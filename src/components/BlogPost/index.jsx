@@ -8,7 +8,7 @@ import { customMedia } from '../../utils/style-utils';
 
 import './styles.scss';
 
-const Post = styled.li`
+const Post = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
