@@ -18,14 +18,12 @@ import TwitterIcon from 'react-feather/dist/icons/twitter';
 import EmailIcon from 'react-feather/dist/icons/mail';
 import ReadIcon from 'react-feather/dist/icons/eye';
 
-import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import PostMeta from '../components/PostMeta';
 import Heading from '../components/Heading';
 import BodyText from '../components/BodyText';
-import Header from '../components/Header';
 import Seo from '../components/Seo';
 import Author from '../components/Author';
 import NextPrev from '../components/NextPrev';
@@ -78,9 +76,6 @@ const PostTemplate = props => {
 
   return (
     <Layout>
-      <Header>
-        <Menu />
-      </Header>
       <Article>
         <Heading title={title} />
         <PostMeta

@@ -3,13 +3,11 @@ import { graphql } from 'gatsby';
 
 import config from 'content/meta/config';
 
-import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import BodyText from '../components/BodyText';
-import Header from '../components/Header';
 import Seo from '../components/Seo';
 
 const SuccessPage = props => {
@@ -23,9 +21,6 @@ const SuccessPage = props => {
 
   return (
     <Layout>
-      <Header>
-        <Menu />
-      </Header>
       <Article>
         <Heading title="SUCCESS" />
         <BodyText html={contactSuccessHTML} />

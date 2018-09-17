@@ -8,10 +8,17 @@ const Anchor = styled.a`
   flex-direction: row;
   align-content: center;
   align-items: center;
+  margin-bottom: 0px;
 
   &:hover {
     text-decoration: none;
   }
+`;
+
+const Image = styled.img`
+  width: 35px;
+  height: 35px;
+  margin-bottom: 0px;
 `;
 
 const Text = styled.p`
@@ -21,11 +28,12 @@ const Text = styled.p`
   letter-spacing: 0.2em;
   font-size: 1.3em;
   margin-left: 0.1em;
+  margin-bottom: 0px;
 `;
 
 const HeaderLogo = () => (
   <Anchor href="/">
-    <img src={logo} alt="Logo" width="32" height="32" />
+    <Image src={logo} alt="Logo" />
     <Text>OKKAPPS</Text>
   </Anchor>
 );

@@ -3,13 +3,11 @@ import { graphql } from 'gatsby';
 
 import config from 'content/meta/config';
 
-import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import ProjectList from '../components/ProjectList';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-import Header from '../components/Header';
 import Seo from '../components/Seo';
 
 const ProjectsPage = props => {
@@ -21,9 +19,6 @@ const ProjectsPage = props => {
 
   return (
     <Layout>
-      <Header>
-        <Menu/>
-      </Header>
       <Article>
         <Heading title="MY PRIVATE PROJECTS" />
         <ProjectList projectAssets={projectAssets} />

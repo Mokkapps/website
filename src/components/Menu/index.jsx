@@ -12,6 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: start;
 `;
 
 const MenuItems = styled.ul`
@@ -19,6 +20,8 @@ const MenuItems = styled.ul`
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
+  margin-left: 0;
+  margin-bottom: 0;
 
   @media (max-width: 712px) {
     margin-top: 0.5rem;
@@ -27,7 +30,7 @@ const MenuItems = styled.ul`
 `;
 
 const Item = styled.li`
-  padding: 0 5px;
+  padding: 0 10px 0 0;
   line-height: 1;
 
   .active {
@@ -39,7 +42,7 @@ const Item = styled.li`
     height: 100%;
     justify-content: center;
     align-items: center;
-    padding: 0 5px;
+    padding: 0 10px 0 0;
     color: white;
 
     &:hover {

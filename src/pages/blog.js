@@ -3,13 +3,11 @@ import { graphql } from 'gatsby';
 
 import config from 'content/meta/config';
 
-import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
-import Header from '../components/Header';
 import Seo from '../components/Seo';
 
 import { metaIcons } from '../utils/helper';
@@ -27,9 +25,6 @@ const BlogPage = props => {
 
   return (
     <Layout>
-      <Header>
-        <Menu />
-      </Header>
       <Article>
         <Heading title="BLOG" />
         <BlogPostList

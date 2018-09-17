@@ -1,7 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import ScrollUpButton from 'react-scroll-up-button';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { Margin } from 'styled-components-spacing';
+
+import Header from '../Header';
+import Menu from '../Menu';
 
 const Container = styled.div`
   padding: 15px 25px;
@@ -14,7 +18,14 @@ const Layout = props => {
   return (
     <Container>
       <ScrollUpButton />
-      <main>{children}</main>
+      <main>
+        <Margin bottom={3}>
+          <Header>
+            <Menu />
+          </Header>
+        </Margin>
+        {children}
+      </main>
     </Container>
   );
 };

@@ -3,11 +3,9 @@ import { graphql } from 'gatsby';
 
 import config from 'content/meta/config';
 
-import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
-import Header from '../components/Header';
 import Seo from '../components/Seo';
 
 import '../utils/style-utils';
@@ -23,9 +21,6 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <Header>
-        <Menu />
-      </Header>
       <Hero projectAssets={projectAssets} latestPost={post} />
       <Footer />
       <Seo

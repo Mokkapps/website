@@ -2,12 +2,10 @@ import React from 'react';
 
 import config from 'content/meta/config';
 
-import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-import Header from '../components/Header';
 import Seo from '../components/Seo';
 
 const PublicationsPage = () => {
@@ -21,9 +19,6 @@ const PublicationsPage = () => {
 
   return (
     <Layout>
-      <Header>
-        <Menu/>
-      </Header>
       <Article>
         <Heading title="PUBLICATIONS" />
         <h1 style={{ marginBottom: '1rem' }}>Talks</h1>
