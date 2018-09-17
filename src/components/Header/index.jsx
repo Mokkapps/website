@@ -6,15 +6,14 @@ import { customMedia } from '../../utils/style-utils';
 
 const StyledHeader = styled.header`
   display: flex;
-  margin-bottom: 50px;
   padding: 5px 5px 0;
 
   ${customMedia.lessThan('md')`
-    flex-direction: column; margin-bottom: 35px;
+    flex-direction: column;
   `};
 
   ${customMedia.greaterThan('md')`
-    flex-direction: row; margin-bottom: 50px;
+    flex-direction: row;
   `};
 
   a {
