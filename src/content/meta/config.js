@@ -162,6 +162,20 @@ const config = {
       },
     },
     {
+      title: 'Privatimkerei Hoffmann Website',
+      description: {
+        short:
+          'Website for our family-run honey farm',
+        long: '',
+      },
+      usedTechnologies: [{ name: 'Gatsby.js' }, { icon: 'react' }],
+      imageName: 'privatimkerei-hoffmann',
+      urls: {
+        page: 'https://privatimkerei-hoffmann.de/',
+        github: 'https://github.com/Mokkapps/imkerei-hoffmann-website',
+      },
+    },
+    {
       title: 'Void Fest 2018 Band Reminder',
       description: {
         short:
