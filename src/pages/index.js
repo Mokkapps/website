@@ -14,8 +14,10 @@ import '../utils/style-utils';
 
 const IndexPage = props => {
   const {
-    data: { projectAssets },
+    data: { projectAssets, latestPost },
   } = props;
+
+  const post = latestPost.edges.map(edge => edge.node)[0];
 
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 
@@ -24,7 +26,7 @@ const IndexPage = props => {
       <Header>
         <Menu />
       </Header>
-      <Hero projectAssets={projectAssets} />
+      <Hero projectAssets={projectAssets} latestPost={post} />
       <Footer />
       <Seo
         url={siteUrl}
@@ -46,6 +48,32 @@ export const query = graphql`
           childImageSharp {
             sizes(maxWidth: 600) {
               ...GatsbyImageSharpSizes
+            }
+          }
+        }
+      }
+    }
+    latestPost: allMarkdownRemark(
+      filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
+      sort: { fields: [fields___prefix], order: DESC }
+      limit: 1
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          fields {
+            slug
+            prefix
+          }
+          frontmatter {
+            title
+            categories
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 700) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }

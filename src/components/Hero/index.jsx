@@ -8,8 +8,9 @@ import GamingIcon from 'react-feather/dist/icons/monitor';
 import CodeIcon from 'react-feather/dist/icons/code';
 
 import HeroCharacteristic from './HeroCharacteristic';
+import BlogPost from '../BlogPost';
 import config from '../../content/meta/config';
-import { getAsset } from '../../utils/helper';
+import { getAsset, metaIcons } from '../../utils/helper';
 import ProjectCard from '../ProjectCard';
 import { customMedia } from '../../utils/style-utils';
 
@@ -58,8 +59,8 @@ const Quote = styled.h3`
 const Characteristics = styled.section`
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-column-gap: .5rem;
-  grid-row-gap: .5rem;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
   grid-template-areas:
     'skill skill'
     'skill skill';
@@ -75,46 +76,75 @@ const Projects = styled.section`
   flex-wrap: wrap;
 `;
 
-const Hero = ({ projectAssets }) => (
-  <Container>
-    <Heading>
-      Hi! I'm <a href="about">Michael Hoffmann</a>
-    </Heading>
-    <Margin top={4}>
-      <Quote>{config.quote}</Quote>
-    </Margin>
-    <Margin top={4} bottom={4}>
-      <Characteristics>
-        {config.characteristics.map(characteristic => {
-          const { text, description, icon } = characteristic;
+const MorePostsLink = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Hero = ({ projectAssets, latestPost }) => {
+  const {
+    frontmatter: { title, categories, cover },
+    fields: { slug, prefix },
+    excerpt,
+  } = latestPost;
+  return (
+    <Container>
+      <Heading>
+        Hi! I'm <a href="about">Michael Hoffmann</a>
+      </Heading>
+      <Margin top={4}>
+        <Quote>{config.quote}</Quote>
+      </Margin>
+      <Margin top={4} bottom={4}>
+        <Characteristics>
+          {config.characteristics.map(characteristic => {
+            const { text, description, icon } = characteristic;
+            return (
+              <HeroCharacteristic
+                key={text}
+                icon={images[icon]}
+                text={text}
+                description={description}
+              />
+            );
+          })}
+        </Characteristics>
+      </Margin>
+      <SectionHeading>FEATURED PROJECTS</SectionHeading>
+      <Projects>
+        {config.projects.filter(p => p.featured).map(project => {
+          const { imageName, title, description, urls } = project;
           return (
-            <HeroCharacteristic
-              key={text}
-              icon={images[icon]}
-              text={text}
-              description={description}
+            <ProjectCard
+              key={title}
+              minimal={true}
+              asset={getAsset(projectAssets.edges, imageName)}
+              title={title}
+              description={description.short}
+              urls={urls}
             />
           );
         })}
-      </Characteristics>
-    </Margin>
-    <SectionHeading>FEATURED PROJECTS</SectionHeading>
-    <Projects>
-      {config.projects.filter(p => p.featured).map(project => {
-        const { imageName, title, description, urls } = project;
-        return (
-          <ProjectCard
-            key={title}
-            minimal={true}
-            asset={getAsset(projectAssets.edges, imageName)}
-            title={title}
-            description={description.short}
-            urls={urls}
-          />
-        );
-      })}
-    </Projects>
-  </Container>
-);
+      </Projects>
+      <Margin top={4}>
+        <SectionHeading>LATEST BLOG POST</SectionHeading>
+      </Margin>
+      <BlogPost
+        key={slug}
+        title={title}
+        slug={slug}
+        cover={cover}
+        categories={categories}
+        prefix={prefix}
+        author="Michael Hoffmann"
+        metaIcons={metaIcons}
+        excerpt={excerpt}
+      />
+      <MorePostsLink>
+        <a href="/blog">Read more blog posts →</a>
+      </MorePostsLink>
+    </Container>
+  );
+};
 
 export default Hero;

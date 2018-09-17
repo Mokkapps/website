@@ -1,10 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import CalendarIcon from 'react-feather/dist/icons/calendar';
-import UserIcon from 'react-feather/dist/icons/user';
-import TagIcon from 'react-feather/dist/icons/tag';
-
 import config from 'content/meta/config';
 
 import Menu from '../components/Menu';
@@ -16,11 +12,7 @@ import Heading from '../components/Heading';
 import Header from '../components/Header';
 import Seo from '../components/Seo';
 
-const metaIcons = {
-  calendar: CalendarIcon,
-  user: UserIcon,
-  tag: TagIcon,
-};
+import { metaIcons } from '../utils/helper';
 
 const BlogPage = props => {
   const {

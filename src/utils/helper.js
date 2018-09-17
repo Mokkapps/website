@@ -1,3 +1,7 @@
+import CalendarIcon from 'react-feather/dist/icons/calendar';
+import UserIcon from 'react-feather/dist/icons/user';
+import TagIcon from 'react-feather/dist/icons/tag';
+
 export const getAsset = (edges, imageName) => {
   return edges
     .map(e => e.node)
@@ -12,4 +16,10 @@ export const getFormattedDate = dateString => {
     year: 'numeric',
   };
   return new Date(dateString).toLocaleString('en-US', dateOptions);
+};
+
+export const metaIcons = {
+  calendar: CalendarIcon,
+  user: UserIcon,
+  tag: TagIcon,
 };
