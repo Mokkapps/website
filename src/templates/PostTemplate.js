@@ -53,8 +53,8 @@ const PostTemplate = props => {
         fields: { slug, prefix },
         timeToRead,
       },
-      author: { html: authorHTML },
       file,
+      authorImage,
     },
     pageContext: { next, prev },
   } = props;
@@ -97,7 +97,12 @@ const PostTemplate = props => {
           </Margin>
         ) : null}
         <BodyText html={postHTML} />
-        <Share shareBlockProps={shareBlockProps} />
+        <Margin top={4} bottom={4}>
+          <Share shareBlockProps={shareBlockProps} />
+        </Margin>
+        <Margin bottom={4}>
+          <Author image={authorImage} />
+        </Margin>
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <Margin top={4}>
           <ReactDisqusComments
@@ -107,7 +112,6 @@ const PostTemplate = props => {
             onNewComment={handleNewComment}
           />
         </Margin>
-        <Author html={authorHTML} />
       </Article>
       <Footer />
       <Seo
@@ -152,15 +156,17 @@ export const query = graphql`
       }
       timeToRead
     }
-    author: markdownRemark(
-      fileAbsolutePath: { regex: "/content/parts/author/" }
-    ) {
-      html
-    }
     file(relativePath: { eq: "about.png" }) {
       childImageSharp {
         fixed(width: 60, height: 60) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    authorImage: file(relativePath: { eq: "about.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

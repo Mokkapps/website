@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { MokkappsRed } from '../../styles/variables';
+
 const StyledAnchor = styled.a`
   align-items: center;
   background: white;
@@ -8,10 +10,11 @@ const StyledAnchor = styled.a`
   display: flex;
   align-content: center;
   padding: 0.5rem;
-  margin: 1rem 1rem 0 0;
+  margin-right: 1rem;
+
 
   &:hover {
-    background: lightgrey;
+    background: ${MokkappsRed};
     transform: scale(1.1, 1.1);
   }
 `;
