@@ -30,6 +30,7 @@
     "gatsby-plugin-react-helmet": "3.0.0-rc.1",
     "gatsby-plugin-resolve-src": "2.0.0-beta.1",
     "gatsby-plugin-sass": "2.0.0-rc.1",
+    "gatsby-plugin-sentry": "^0.1.0",
     "gatsby-plugin-sharp": "^2.0.0-rc.3",
     "gatsby-plugin-sitemap": "2.0.0-rc.1",
     "gatsby-plugin-styled-components": "^3.0.0-rc.1",

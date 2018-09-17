@@ -113,6 +113,16 @@ module.exports = {
     },
     // Create a sitemap
     `gatsby-plugin-sitemap`,
+    // Sentry integration
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: process.env.GATSBY_SENTRY_DNS_URL,
+        config: {
+          environment: 'production'
+        }
+      },
+    },
     // Create an RSS feed
     {
       resolve: `gatsby-plugin-feed`,
