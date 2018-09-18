@@ -27,9 +27,8 @@ const BlogPostList = props => {
           } = item;
 
           return (
-            <li>
+            <li key={slug}>
               <BlogPost
-                key={slug}
                 title={title}
                 slug={slug}
                 cover={cover}

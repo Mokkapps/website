@@ -1,12 +1,12 @@
 const base = {
   name: 'Mokkapps',
   url: 'https://www.mokkapps.de',
-  desc: 'Portfolio website from Michael Hoffmann',
+  desc: 'Passionate software developer with focus on web-based technologies',
 };
 
 const config = {
   /* meta tags */
-  siteTitle: `${base.name} - ${base.desc}`,
+  siteTitle: `${base.name} | ${base.desc}`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
   siteImage: 'preview.jpg',

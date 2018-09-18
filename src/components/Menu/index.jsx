@@ -65,12 +65,8 @@ const ItemContainer = styled.div`
 `;
 
 const ItemTitle = styled.span`
-  display: none;
+  display: block;
   margin-left: 0.5rem;
-
-  @media (max-width: 1240px) {
-    display: block;
-  }
 `;
 
 const Menu = () => (

@@ -57,7 +57,7 @@ export default ({
 }) => (
   <Post key={slug}>
     {cover ? (
-      <Img outerWrapperClassName="image" fluid={cover.childImageSharp.fluid} />
+      <Img className="image" fluid={cover.childImageSharp.fluid} />
     ) : null}
     <Text to={`/blog${slug}`}>
       <h3>{title}</h3>

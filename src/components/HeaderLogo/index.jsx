@@ -22,12 +22,11 @@ const Image = styled.img`
 `;
 
 const Text = styled.p`
-  font-family: 'Open Sans', sans-serif;
   color: white;
   font-weight: bold;
   letter-spacing: 0.2em;
-  font-size: 1.3em;
-  margin-left: 0.1em;
+  font-size: 1.5em;
+  margin-left: 0.25em;
   margin-bottom: 0px;
 `;
 
