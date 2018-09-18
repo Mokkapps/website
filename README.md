@@ -1,6 +1,8 @@
-![Lighthouse Progressive Web App Badge](./lighthouse_badges/lighthouse_progressive_web_app.svg)![Lighthouse Accessibility Badge](./lighthouse_badges/lighthouse_accessibility.svg)
-![Lighthouse Best Practices Badge](./lighthouse_badges/lighthouse_best_practices.svg)
-![Lighthouse Performance Badge](./lighthouse_badges/lighthouse_performance.svg)
+[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&compact&category=Progressive+Web+App)](https://github.com/ebidel/lighthouse-badge)
+[![Lighthouse score: 92/100](https://lighthouse-badge.appspot.com/?score=92&compact&category=Performance)](https://github.com/ebidel/lighthouse-badge)
+[![Lighthouse score: 93/100](https://lighthouse-badge.appspot.com/?score=93&compact&category=Accessibility)](https://github.com/ebidel/lighthouse-badge)
+[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&compact&category=Best+Practices)](https://github.com/ebidel/lighthouse-badge)
+[![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&compact&category=SEO)](https://github.com/ebidel/lighthouse-badge)
 
 # Mokkapps Portfolio Website
 
