@@ -76,7 +76,7 @@ const Projects = styled.section`
   flex-wrap: wrap;
 `;
 
-const MorePostsLink = styled.div`
+const MoreLink = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -110,6 +110,11 @@ const Hero = ({ projectAssets, latestPost }) => {
           })}
         </Characteristics>
       </Margin>
+      <Margin bottom={4}>
+        <MoreLink>
+          <a href="/about">More about me →</a>
+        </MoreLink>
+      </Margin>
       <SectionHeading>FEATURED PROJECTS</SectionHeading>
       <Projects>
         {config.projects.filter(p => p.featured).map(project => {
@@ -126,6 +131,9 @@ const Hero = ({ projectAssets, latestPost }) => {
           );
         })}
       </Projects>
+      <MoreLink>
+        <a href="/projects">More projects →</a>
+      </MoreLink>
       <Margin top={4}>
         <SectionHeading>LATEST BLOG POST</SectionHeading>
       </Margin>
@@ -140,9 +148,9 @@ const Hero = ({ projectAssets, latestPost }) => {
         metaIcons={metaIcons}
         excerpt={excerpt}
       />
-      <MorePostsLink>
-        <a href="/blog">Read more blog posts →</a>
-      </MorePostsLink>
+      <MoreLink>
+        <a href="/blog">More blog posts →</a>
+      </MoreLink>
     </Container>
   );
 };
