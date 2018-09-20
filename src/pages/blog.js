@@ -100,7 +100,7 @@ const BlogPage = props => {
 export default BlogPage;
 
 export const query = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query($skip: Int, $limit: Int) {
     allPosts: allMarkdownRemark {
       edges {
         node {
