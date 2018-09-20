@@ -18,14 +18,14 @@ const Layout = props => {
   return (
     <Container>
       <ScrollUpButton />
-      <main>
+      <div>
         <Margin bottom={3}>
           <Header>
             <Menu />
           </Header>
         </Margin>
         {children}
-      </main>
+      </div>
     </Container>
   );
 };
