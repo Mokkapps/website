@@ -89,14 +89,14 @@ const Hero = ({ projectAssets, latestPost }) => {
   } = latestPost;
   return (
     <Container>
-      <Heading>
+      <Heading data-cy="hero-heading">
         Hi! I'm <a href="about">Michael Hoffmann</a>
       </Heading>
       <Margin top={4}>
-        <Quote>{config.quote}</Quote>
+        <Quote data-cy="hero-quote">{config.quote}</Quote>
       </Margin>
       <Margin top={4} bottom={4}>
-        <Characteristics>
+        <Characteristics data-cy="hero-characteristics-section">
           {config.characteristics.map(characteristic => {
             const { text, description, icon } = characteristic;
             return (
@@ -111,12 +111,12 @@ const Hero = ({ projectAssets, latestPost }) => {
         </Characteristics>
       </Margin>
       <Margin bottom={4}>
-        <MoreLink>
+        <MoreLink data-cy="hero-characteristics-more-button">
           <a href="/about">More about me →</a>
         </MoreLink>
       </Margin>
       <SectionHeading>FEATURED PROJECTS</SectionHeading>
-      <Projects>
+      <Projects data-cy="hero-projects-section">
         {config.projects.filter(p => p.featured).map(project => {
           const { imageName, title, description, urls } = project;
           return (
@@ -131,13 +131,14 @@ const Hero = ({ projectAssets, latestPost }) => {
           );
         })}
       </Projects>
-      <MoreLink>
+      <MoreLink data-cy="hero-projects-more-button">
         <a href="/projects">More projects →</a>
       </MoreLink>
       <Margin top={4}>
         <SectionHeading>LATEST BLOG POST</SectionHeading>
       </Margin>
       <BlogPost
+        dataCy="hero-blog-section"
         key={slug}
         title={title}
         slug={slug}
@@ -148,7 +149,7 @@ const Hero = ({ projectAssets, latestPost }) => {
         metaIcons={metaIcons}
         excerpt={excerpt}
       />
-      <MoreLink>
+      <MoreLink data-cy="hero-blog-more-button">
         <a href="/blog">More blog posts →</a>
       </MoreLink>
     </Container>

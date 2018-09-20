@@ -8,17 +8,19 @@ sudo: false
 
 cache:
   directories:
-  - node_modules
+    - ~/.npm
+    - ~/.cache
 
 env:
   - CI=true
 
 before_script:
   - npm i -g gatsby
-  - npm i
+  - npm ci
 
 script:
   - npm run lint
+  - npm run test:e2e:ci
   - npm run build
 
 deploy:

@@ -12,7 +12,6 @@ const StyledAnchor = styled.a`
   padding: 0.5rem;
   margin-right: 1rem;
 
-
   &:hover {
     background: ${MokkappsRed};
     transform: scale(1.1, 1.1);
@@ -26,7 +25,7 @@ const Image = styled.img`
 `;
 
 const SocialLink = ({ href, iconName }) => (
-  <StyledAnchor href={href}>
+  <StyledAnchor href={href} data-cy={`social-link-${iconName}`}>
     <Image
       alt={`Social Link to ${iconName}`}
       src={`https://unpkg.com/simple-icons@latest/icons/${iconName}.svg`}

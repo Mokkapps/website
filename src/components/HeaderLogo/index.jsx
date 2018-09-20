@@ -31,7 +31,7 @@ const Text = styled.p`
 `;
 
 const HeaderLogo = () => (
-  <Anchor href="/">
+  <Anchor data-cy="header-logo" href="/">
     <Image src={logo} alt="Logo" />
     <Text>OKKAPPS</Text>
   </Anchor>

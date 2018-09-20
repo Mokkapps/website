@@ -70,14 +70,17 @@ const ItemTitle = styled.span`
 `;
 
 const Menu = () => (
-  <Container>
+  <Container data-cy="header-menu">
     <HeaderLogo />
     <MenuItems>
       {menuItems.map(item => {
         const { ariaLabel, label, to, icon: Icon, linkProps } = item;
 
         return (
-          <Item key={ariaLabel}>
+          <Item
+            data-cy={`header-menu-item-${label.toLowerCase()}`}
+            key={ariaLabel}
+          >
             <Link
               to={to}
               title={label}

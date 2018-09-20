@@ -21,10 +21,11 @@ const config = {
   // pathPrefix: '',
 
   socialLinks: [
-    { url: 'https://github.com/mokkapps', icon: 'github' },
-    { url: 'https://twitter.com/mokkapps', icon: 'twitter' },
-    { url: 'https://dev.to/mokkapps', icon: 'dev-dot-to' },
+    { id: 'github', url: 'https://github.com/mokkapps', icon: 'github' },
+    { id: 'twitter', url: 'https://twitter.com/mokkapps', icon: 'twitter' },
+    { id: 'dev.to', url: 'https://dev.to/mokkapps', icon: 'dev-dot-to' },
     {
+      id: 'linkedin',
       url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
       icon: 'linkedin',
     },
@@ -164,8 +165,7 @@ const config = {
     {
       title: 'Privatimkerei Hoffmann Website',
       description: {
-        short:
-          'Website for our family-run honey farm',
+        short: 'Website for our family-run honey farm',
         long: '',
       },
       usedTechnologies: [{ name: 'Gatsby.js' }, { icon: 'react' }],

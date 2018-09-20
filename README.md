@@ -4,6 +4,8 @@
 [![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&compact&category=Best+Practices)](https://github.com/ebidel/lighthouse-badge)
 [![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&compact&category=SEO)](https://github.com/ebidel/lighthouse-badge)
 
+[![Build Status](https://travis-ci.org/Mokkapps/website.svg?branch=master)](https://travis-ci.org/Mokkapps/website)
+
 # Mokkapps Portfolio Website
 
 Hi 👋 This is the code of [my personal portfolio website](<[www.mokkapps.de](https://www.mokkapps.de)>) where you can find all my private projects and other information about my person.

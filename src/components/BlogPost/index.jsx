@@ -46,6 +46,7 @@ const Text = styled(Link)`
 `;
 
 export default ({
+  dataCy,
   slug,
   cover,
   title,
@@ -55,7 +56,7 @@ export default ({
   metaIcons,
   excerpt,
 }) => (
-  <Post key={slug}>
+  <Post key={slug} data-cy={dataCy}>
     {cover ? (
       <Img className="image" fluid={cover.childImageSharp.fluid} />
     ) : null}

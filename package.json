@@ -11,8 +11,11 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch",
+    "start-server": "gatsby develop",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "lint": "eslint src"
   },
   "dependencies": {
@@ -69,9 +72,11 @@
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0-rc.1",
     "babel-eslint": "7.2.3",
+    "cypress": "^3.1.0",
     "dotenv": "^6.0.0",
     "eslint": "4.1.1",
     "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-cypress": "^2.0.1",
     "eslint-plugin-flowtype": "2.34.1",
     "eslint-plugin-import": "2.6.0",
     "eslint-plugin-jest": "^21.18.0",
@@ -81,6 +86,7 @@
     "js-yaml": "^3.12.0",
     "prettier": "^1.13.7",
     "react-testing-library": "^5.0.0",
+    "start-server-and-test": "^1.7.1",
     "yaml-loader": "^0.5.0"
   }
 }
