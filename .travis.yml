@@ -10,9 +10,20 @@ cache:
   directories:
   - node_modules
 
+env:
+  - CI=true
+
 before_script:
-  - "npm i -g gatsby"
-  - "npm i"
+  - npm i -g gatsby
+  - npm i
 
 script:
-  - "npm run lint"
+  - npm run lint
+  - npm run build
+
+deploy:
+  provider: script
+  script: "curl -X POST -d '' https://api.netlify.com/build_hooks/5ba3c8da1f12b70cbbcaa1a3"
+  skip_cleanup: true
+  on:
+    branch: master
