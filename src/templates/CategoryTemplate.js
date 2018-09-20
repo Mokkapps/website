@@ -1,6 +1,9 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import React from 'react';
+import { Margin } from 'styled-components-spacing';
+
 import TagIcon from 'react-feather/dist/icons/tag';
 
 import config from 'content/meta/config';
@@ -24,16 +27,27 @@ const PageTemplate = props => {
 
   const { siteUrl, siteDescription, siteLanguage, siteTitlePostfix } = config;
 
+  const Introduction = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
+
   return (
     <Layout>
       <Article>
         <Heading>
-          <span>Posts in category</span> <TagIcon />
+          <Introduction>
+            <Margin right={2}>
+              <span>Posts in category</span>
+            </Margin>{' '}
+            <TagIcon />
+          </Introduction>
           <h1>{category}</h1>
-          <h3 className="meta">
+          <h3>
             There {totalCount > 1 ? 'are' : 'is'} <strong>{totalCount}</strong>{' '}
             post
-            {totalCount > 1 ? 's' : ''} in the category:
+            {totalCount > 1 ? 's' : ''} in this category:
           </h3>
         </Heading>
         <List items={items} />

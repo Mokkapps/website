@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 export default class HTML extends React.Component {
   render() {
     return (
+      // eslint-disable-next-line
       <html {...this.props.htmlAttributes}>
         <head>
           <meta charSet="utf-8" />

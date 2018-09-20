@@ -1,7 +1,7 @@
 ---
 title: Draft
 subTitle: Because those who mind don't matter, and those who matter don't mind
-categories: ["career"]
+categories: []
 cover: ../../../images/blog-post-placeholder.png
 ---
 

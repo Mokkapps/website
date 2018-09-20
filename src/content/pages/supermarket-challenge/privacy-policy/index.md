@@ -1,6 +1,6 @@
 ---
 title: Supermarket Challenge Mobile App Privacy Policy
-categories: ['privacy-policy']
+categories: []
 ---
 
 # Deutsch

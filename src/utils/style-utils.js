@@ -1,4 +1,3 @@
-import styled from "styled-components"; // You need this as well
 import { generateMedia } from "styled-media-query";
 
 export const customMedia = generateMedia({
