@@ -15,12 +15,16 @@ const Anchor = styled.a`
   transition: 0.25s;
 
   &:hover {
-    box-shadow: 0px 6px 14px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 14px -3px rgba(0, 0, 0, 0.75);
     transform: translateY(-0.2rem);
     text-decoration: none;
   }
 `;
 
-const Card = ({ children, url }) => <Anchor href={url}>{children}</Anchor>;
+const Card = ({ children, url, id }) => (
+  <Anchor data-cy={`project-card-${id}`} href={url}>
+    {children}
+  </Anchor>
+);
 
 export default Card;

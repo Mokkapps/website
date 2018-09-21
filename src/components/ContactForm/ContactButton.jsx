@@ -21,4 +21,6 @@ const Button = styled.button`
   }
 `;
 
-export default props => <Button>{props.children}</Button>;
+export default props => (
+  <Button data-cy="contact-button">{props.children}</Button>
+);

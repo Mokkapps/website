@@ -17,14 +17,16 @@ const Container = styled.div`
 `;
 
 export default ({ categories }) => (
-  <Container>
+  <Container data-cy="blog-categories">
     {categories.map(category => {
       const link = <Link to={`/categories/${category}`}>{category}</Link>;
       const TagIcon = metaIcons.tag;
 
       return (
-        <Category key={category}>
-          {TagIcon && <TagIcon style={{ marginRight: '.25rem', width: 20, height: 20 }} />}
+        <Category key={category} data-cy={`blog-category-${category}`}>
+          {TagIcon && (
+            <TagIcon style={{ marginRight: '.25rem', width: 20, height: 20 }} />
+          )}
           {link}
         </Category>
       );

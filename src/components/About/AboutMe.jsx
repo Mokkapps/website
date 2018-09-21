@@ -34,7 +34,7 @@ export default ({ aboutImage }) => (
       fixed={aboutImage.childImageSharp.fixed}
     />
     <Margin top={4}>
-      <DescriptionContainer>
+      <DescriptionContainer data-cy="about-description">
         <Text>
           My name is Michael Hoffmann and I'm a software developer from the
           Bavarian Forest that currently lives in Munich. Mokkaps is the

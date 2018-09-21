@@ -17,6 +17,7 @@ const ProjectImage = styled(Img)`
 `;
 
 const ProjectCard = ({
+  id,
   asset,
   title,
   description,
@@ -24,7 +25,7 @@ const ProjectCard = ({
   minimal,
   usedTechnologies,
 }) => (
-  <StyledCard url={urls.page} clickable>
+  <StyledCard url={urls.page} clickable id={id}>
     <ProjectImage sizes={asset.childImageSharp.sizes} />
     <ProjectCardDescription
       minimal={minimal}

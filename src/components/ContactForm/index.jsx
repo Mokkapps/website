@@ -73,15 +73,15 @@ const ContactForm = () => (
     >
       <p>
         <Label htmlFor="name">Name</Label>
-        <Input name="name" type="text" required />
+        <Input data-cy="contact-name" name="name" type="text" required />
       </p>
       <p>
         <Label htmlFor="email">E-Mail</Label>
-        <Input name="email" type="email" required />
+        <Input data-cy="contact-email" name="email" type="email" required />
       </p>
       <p>
         <Label htmlFor="message">Your Message</Label>
-        <TextArea name="message" required />
+        <TextArea data-cy="contact-message" name="message" required />
       </p>
       <p style={{ marginTop: '1rem' }}>
         <ContactButton>Send</ContactButton>

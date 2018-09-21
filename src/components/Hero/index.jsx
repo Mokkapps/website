@@ -138,7 +138,7 @@ const Hero = ({ projectAssets, latestPost }) => {
         <SectionHeading>LATEST BLOG POST</SectionHeading>
       </Margin>
       <BlogPost
-        dataCy="hero-blog-section"
+        id={0}
         key={slug}
         title={title}
         slug={slug}

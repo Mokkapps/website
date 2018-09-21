@@ -20,12 +20,12 @@ const About = ({ aboutImage }) => (
   <section>
     <AboutMe aboutImage={aboutImage} />
     <Margin top={4} bottom={4}>
-      <SkillsContainer>
+      <SkillsContainer data-cy="about-skills">
         <Heading>SKILLS</Heading>
         <Skills />
       </SkillsContainer>
     </Margin>
-    <SkillsContainer>
+    <SkillsContainer data-cy="about-education">
       <Heading>EXPERIENCE & EDUCATION</Heading>
       <Timeline />
     </SkillsContainer>

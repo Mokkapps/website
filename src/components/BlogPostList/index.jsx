@@ -15,10 +15,11 @@ const List = styled.ul`
 
 const BlogPostList = props => {
   const { items, author, metaIcons } = props;
+  let count = 0;
 
   return (
     <Container>
-      <List>
+      <List data-cy="blog-post-list">
         {items.map(item => {
           const {
             frontmatter: { title, categories, cover },
@@ -26,9 +27,10 @@ const BlogPostList = props => {
             excerpt,
           } = item;
 
-          return (
+          const component = (
             <li key={slug}>
               <BlogPost
+                id={count}
                 title={title}
                 slug={slug}
                 cover={cover}
@@ -40,6 +42,10 @@ const BlogPostList = props => {
               />
             </li>
           );
+
+          count++;
+
+          return component;
         })}
       </List>
     </Container>

@@ -1,6 +1,6 @@
 import config from '../../src/content/meta/config';
 
-describe('Home Screen Test', () => {
+describe('Home Page Test', () => {
   beforeEach(() => {
     cy.visit('/');
   });
@@ -30,10 +30,7 @@ describe('Home Screen Test', () => {
   });
 
   it('shows latest blog post', () => {
-    cy.get('[data-cy=hero-blog-section]')
-      .children()
-      .should('have.length', 2);
-
+    cy.get('[data-cy=blog-post-0]');
     cy.get('[data-cy=hero-blog-more-button]').click();
     cy.url().should('include', '/blog');
   });

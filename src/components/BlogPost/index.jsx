@@ -46,7 +46,7 @@ const Text = styled(Link)`
 `;
 
 export default ({
-  dataCy,
+  id,
   slug,
   cover,
   title,
@@ -56,11 +56,11 @@ export default ({
   metaIcons,
   excerpt,
 }) => (
-  <Post key={slug} data-cy={dataCy}>
+  <Post key={slug}>
     {cover ? (
       <Img className="image" fluid={cover.childImageSharp.fluid} />
     ) : null}
-    <Text to={`/blog${slug}`}>
+    <Text to={`/blog${slug}`} data-cy={`blog-post-${id}`}>
       <h3>{title}</h3>
       <Meta
         categories={categories}

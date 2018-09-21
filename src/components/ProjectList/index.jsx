@@ -17,8 +17,9 @@ const Container = styled.section`
 
 const ProjectList = ({ projectAssets }) => {
   const { edges } = projectAssets;
+  let count = 0;
   return (
-    <Container>
+    <Container data-cy="projects-list">
       {config.projects.map(project => {
         const {
           imageName,
@@ -27,8 +28,10 @@ const ProjectList = ({ projectAssets }) => {
           urls,
           usedTechnologies,
         } = project;
-        return (
+
+        const comp = (
           <ProjectCard
+            id={count}
             key={title}
             usedTechnologies={usedTechnologies}
             asset={getAsset(edges, imageName)}
@@ -37,6 +40,10 @@ const ProjectList = ({ projectAssets }) => {
             urls={urls}
           />
         );
+
+        count++;
+
+        return comp;
       })}
     </Container>
   );
