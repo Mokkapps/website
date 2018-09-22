@@ -18,6 +18,20 @@ export const getFormattedDate = dateString => {
   return new Date(dateString).toLocaleString('en-US', dateOptions);
 };
 
+export const getAllCategories = allPosts => {
+  const postCategories = allPosts.edges
+    .map(edge => edge.node.frontmatter.categories)
+    .filter(category => category !== null);
+  let categories = [];
+  for (const categoryArr of postCategories) {
+    for (const category of categoryArr) {
+      categories.push(category);
+    }
+  }
+  categories = Array.from(new Set(categories));
+  return categories;
+};
+
 export const metaIcons = {
   calendar: CalendarIcon,
   user: UserIcon,

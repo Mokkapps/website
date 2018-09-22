@@ -14,7 +14,7 @@ import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import CategorySelection from '../components/CategorySelection';
 
-import { metaIcons } from '../utils/helper';
+import { metaIcons, getAllCategories } from '../utils/helper';
 
 import './style.scss';
 
@@ -32,18 +32,7 @@ const BlogPage = props => {
   } = props;
 
   const posts = edges.map(edge => edge.node);
-
-  // Get categories Set
-  const postCategories = allPosts.edges
-    .map(edge => edge.node.frontmatter.categories)
-    .filter(category => category !== null);
-  let categories = [];
-  for (const categoryArr of postCategories) {
-    for (const category of categoryArr) {
-      categories.push(category);
-    }
-  }
-  categories = Array.from(new Set(categories));
+  const categories = getAllCategories(allPosts);
 
   const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
 

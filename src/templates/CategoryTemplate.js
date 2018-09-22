@@ -13,31 +13,40 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
-import List from '../components/List';
+import BlogPostList from '../components/BlogPostList';
+import CategorySelection from '../components/CategorySelection';
+
+import { metaIcons, getAllCategories } from '../utils/helper';
+
+const Introduction = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CenteredHeading = styled.h3`
+  text-align: center;
+`;
 
 const PageTemplate = props => {
   const {
     pageContext: { category },
     data: {
       posts: { totalCount, edges },
+      allPosts,
     },
   } = props;
 
   const items = edges.map(edge => edge.node);
+  const categories = getAllCategories(allPosts);
 
   const { siteUrl, siteDescription, siteLanguage, siteTitlePostfix } = config;
-
-  const Introduction = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `;
 
   return (
     <Layout>
       <Article>
         <Heading>
-          <Introduction>
+          <Introduction data-cy="category-introduction">
             <Margin right={2}>
               <span>Posts in category</span>
             </Margin>{' '}
@@ -50,7 +59,15 @@ const PageTemplate = props => {
             {totalCount > 1 ? 's' : ''} in this category:
           </h3>
         </Heading>
-        <List items={items} />
+        <BlogPostList
+          items={items}
+          author={'Michael Hoffmann'}
+          metaIcons={metaIcons}
+        />
+        <Margin top={2} bottom={2}>
+          <CenteredHeading>Other Categories</CenteredHeading>
+          <CategorySelection categories={categories} />
+        </Margin>
       </Article>
       <Footer />
       <Seo
@@ -72,6 +89,15 @@ export default PageTemplate;
 
 export const query = graphql`
   query CategoryTemplateQuery($category: String!) {
+    allPosts: allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            categories
+          }
+        }
+      }
+    }
     posts: allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___prefix], order: DESC }
@@ -88,6 +114,13 @@ export const query = graphql`
           frontmatter {
             title
             categories
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 700) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
