@@ -52,7 +52,7 @@ const BlogPage = props => {
         </Margin>
         <BlogPostList
           items={posts}
-          author={'Michael Hoffmann'}
+          author={config.authorName}
           metaIcons={metaIcons}
         />
         <ReactPaginate
