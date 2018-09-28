@@ -61,7 +61,7 @@ const PageTemplate = props => {
         </Heading>
         <BlogPostList
           items={items}
-          author={'Michael Hoffmann'}
+          author={config.authorName}
           metaIcons={metaIcons}
         />
         <Margin top={2} bottom={2}>

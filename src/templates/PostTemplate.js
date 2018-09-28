@@ -80,7 +80,7 @@ const PostTemplate = props => {
         <Heading title={title} />
         <PostMeta
           authorImage={file}
-          author="Michael Hoffmann"
+          author={config.authorName}
           prefix={prefix}
           categories={categories}
           icons={metaIcons}
@@ -114,6 +114,8 @@ const PostTemplate = props => {
         language={siteLanguage}
         title={`${title}${siteTitlePostfix}`}
         description={excerpt}
+        image={cover ? cover.childImageSharp.fluid.src : null}
+        postSEO
       />
     </Layout>
   );

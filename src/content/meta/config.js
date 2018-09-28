@@ -11,6 +11,7 @@ const config = {
   siteDescription: `${base.desc}`,
   siteImage: 'preview.jpg',
   siteLanguage: 'en',
+  siteLogo: '/logos/icon.png',
 
   /* site header */
   headerTitle: `${base.name}`,
@@ -19,6 +20,8 @@ const config = {
   /* url */
   siteUrl: base.url,
   // pathPrefix: '',
+
+  authorName: 'Michael Hoffmann',
 
   socialLinks: [
     { id: 'github', url: 'https://github.com/mokkapps', icon: 'github' },
