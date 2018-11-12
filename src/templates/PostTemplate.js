@@ -103,7 +103,8 @@ const PostTemplate = props => {
           <ReactDisqusComments
             shortname="mokkapps"
             identifier={slug}
-            title="Comments"
+            title={title}
+            url={url}
             onNewComment={handleNewComment}
           />
         </Margin>
@@ -114,7 +115,9 @@ const PostTemplate = props => {
         language={siteLanguage}
         title={`${title}${siteTitlePostfix}`}
         description={excerpt}
-        image={cover ? `${config.siteUrl}${cover.childImageSharp.fluid.src}` : null}
+        image={
+          cover ? `${config.siteUrl}${cover.childImageSharp.fluid.src}` : null
+        }
         postSEO
       />
     </Layout>
