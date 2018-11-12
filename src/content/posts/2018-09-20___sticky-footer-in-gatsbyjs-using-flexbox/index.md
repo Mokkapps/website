@@ -83,9 +83,9 @@ export default Layout;
 
 So if we would style `<body></body>` and the `<div>{children}</div>` as proposed in [Philip Walton's solution](https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/) it would not work.
 
-But why? Because it would mean that the `<Footer/>` component would be included in the `<body></body>`.
+But why? Because it would mean that the `<Footer/>` component has to be a direct children of the `<body>` tag which it isn't due to GatsbyJS's and React's way to build the HTML document.
 
-To solve the problem I added a new `<div></div>` tag which is the equivalent to the `<body></body>` tag of the above mentioned example.
+To solve the problem I added a new `<div></div>` tag which should represent the `<body>` tag of the above mentioned example.
 
 So my `layout.js` looks this way:
 
