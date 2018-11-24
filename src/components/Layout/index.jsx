@@ -8,7 +8,7 @@ import Header from '../Header';
 import Menu from '../Menu';
 
 const Container = styled.div`
-  padding: 15px 25px;
+  padding: 1rem 1rem 1rem 1rem;
   background: #424242;
 `;
 
