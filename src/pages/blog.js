@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { graphql, navigate } from 'gatsby';
 import ReactPaginate from 'react-paginate';
 import { Margin } from 'styled-components-spacing';
+import PropTypes from 'prop-types';
 
 import config from 'content/meta/config';
 
@@ -62,7 +63,7 @@ const BlogPage = props => {
           initialPage={pageNumber}
           previousLabel="<"
           nextLabel=">"
-          breakLabel={<a href="">...</a>}
+          breakLabel={<button>...</button>}
           disableInitialCallback
           breakClassName="break-me"
           onPageChange={handlePageClick}
@@ -84,6 +85,11 @@ const BlogPage = props => {
       />
     </Layout>
   );
+};
+
+BlogPage.propTypes = {
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
 };
 
 export default BlogPage;

@@ -24,7 +24,7 @@ const PublicationsPage = () => {
         <h1 style={{ marginBottom: '1rem' }}>Talks</h1>
         <ul>
           {publications.filter(p => p.type === 'talk').map(p => (
-            <li style={{ marginTop: '1rem' }}>
+            <li key={p.link} style={{ marginTop: '1rem' }}>
               <a href={p.link}>{p.title}</a>
             </li>
           ))}
@@ -32,7 +32,7 @@ const PublicationsPage = () => {
         <h1 style={{ marginBottom: '1rem', marginTop: '3rem' }}>Articles</h1>
         <ul>
           {publications.filter(p => p.type === 'article').map(p => (
-            <li style={{ marginTop: '1rem' }}>
+            <li key={p.link} style={{ marginTop: '1rem' }}>
               <a href={p.link}>{p.title}</a>
             </li>
           ))}

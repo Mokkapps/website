@@ -72,7 +72,7 @@ const PostTemplate = props => {
     longtext: excerpt,
   };
 
-  const handleNewComment = comment => console.log(comment);
+  const handleNewComment = () => {};
 
   return (
     <Layout>

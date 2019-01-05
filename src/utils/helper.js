@@ -28,6 +28,7 @@ export const getAllCategories = allPosts => {
       categories.push(category);
     }
   }
+  // eslint-disable-next-line no-undef
   categories = Array.from(new Set(categories));
   return categories;
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import config from 'content/meta/config';
 
@@ -34,6 +35,10 @@ const NotFoundPage = props => {
       />
     </Layout>
   );
+};
+
+NotFoundPage.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default NotFoundPage;

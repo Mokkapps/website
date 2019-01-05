@@ -4,6 +4,11 @@
     "browser": true,
     "node": true
   },
-  "extends": ["react-app", "plugin:jsx-a11y/recommended"],
-  "plugins": ["jsx-a11y"]
+  "extends": ["plugin:jsx-a11y/recommended", "plugin:react/recommended", "eslint:recommended"],
+  "plugins": ["jsx-a11y"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

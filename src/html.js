@@ -26,7 +26,7 @@ export default class HTML extends React.Component {
         </body>
         <noscript>
           <p>
-            I'm sorry, but my website doesn't work properly without JavaScript
+            I&#39;m sorry, but my website doesn&#39;t work properly without JavaScript
             enabled.
           </p>
         </noscript>

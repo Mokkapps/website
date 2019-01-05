@@ -1,7 +1,7 @@
 import Typography from 'typography';
 import CodePlugin from 'typography-plugin-code';
 import theme from 'typography-theme-alton';
-theme.overrideThemeStyles = ({ rhythm }, options) => ({
+theme.overrideThemeStyles = () => ({
   a: {
     color: '#FC1A20',
     textDecoration: 'none',

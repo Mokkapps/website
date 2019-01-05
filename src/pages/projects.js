@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import config from 'content/meta/config';
 
@@ -32,6 +33,10 @@ const ProjectsPage = props => {
       />
     </Layout>
   );
+};
+
+ProjectsPage.propTypes = {
+  data: PropTypes.object.isRequired
 };
 
 export default ProjectsPage;

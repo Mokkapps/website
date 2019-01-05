@@ -6,7 +6,7 @@ import DevIcon from '../DevIcon';
 
 const DevIconContainer = styled.div`
   margin: auto 0.5rem;
-  padding: .25rem;
+  padding: 0.25rem;
 `;
 
 const IconsContainer = styled.div`
@@ -14,7 +14,8 @@ const IconsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
 `;
 
 const SkillsContainer = styled.div`
@@ -25,6 +26,8 @@ const SkillsContainer = styled.div`
     'text icons'
     'text icons'
     'text icons';
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
 `;
 
 const SkillHeading = styled.h3`
@@ -34,7 +37,8 @@ const SkillHeading = styled.h3`
   align-items: center;
   padding: 0.5rem;
   height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
 `;
 
 const getDevIcons = skills =>
@@ -54,19 +58,19 @@ const getSkillSection = (skillLevel, skills) =>
           {capitalizeFirstLetter(skillLevel)}
         </SkillHeading>,
         <IconsContainer key={Math.random()}>
-          {getDevIcons(skills)}
+          {getDevIcons(skills)} 
         </IconsContainer>,
       ]
     : null;
 
 const SKILLS = ['expert', 'advanced', 'intermediate', 'elementary'];
 
-export default () => {
-  return (
-    <SkillsContainer>
-      {SKILLS.map(skill =>
-        getSkillSection(skill, config.skills.filter(s => s.level === skill))
-      )}
-    </SkillsContainer>
-  );
-};
+const Skills = () => (
+  <SkillsContainer>
+    {SKILLS.map(skill =>
+      getSkillSection(skill, config.skills.filter(s => s.level === skill))
+    )}
+  </SkillsContainer>
+);
+
+export default Skills;
