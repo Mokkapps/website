@@ -75,10 +75,7 @@ const StyledArticle = styled.article`
   min-width: ${props => (props.narrow ? '50%' : '100%')};
 `;
 
-const Article = props => {
-  const { children } = props;
-  return <StyledArticle>{children}</StyledArticle>;
-};
+const Article = ({ children }) => <StyledArticle>{children}</StyledArticle>;
 
 Article.propTypes = {
   children: PropTypes.node.isRequired,
@@ -259,6 +256,11 @@ For me, it was important to have a good [Google Lighthouse score](https://develo
 
 ![Lighthouse Result](./lighthouse.png)
 
+## Sentry
+
+To be able to track errors on my website I use [Sentry](https://www.sentry.io/) which is a open-source error tracking software. It can be easily integrated in Gatsby using [gatsby-plugin-sentry](https://www.gatsbyjs.org/packages/gatsby-plugin-sentry/?=sentry#gatsby-plugin-sentry).
+
+
 ## Conclusion
 
 I am really proud of my website and I enjoyed engineering it. This website represents myself in the world wide web and I am therefore very interested in its design, quality, accessibility and page views.
@@ -275,3 +277,4 @@ In my opinion, each web developer should have its own custom website. A portfoli
 
 * [www.mokkapps.de](https://www.mokkapps.de)
 * [Website code on GitHub](https://github.com/mokkapps/website)
+* [Presentation Slides](https://mokkapps-website-lightning-talk.netlify.com/)

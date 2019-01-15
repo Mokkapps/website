@@ -12,10 +12,7 @@ const StyledArticle = styled.article`
   min-width: ${props => (props.narrow ? '50%' : '100%')};
 `;
 
-const Article = props => {
-  const { children } = props;
-  return <StyledArticle>{children}</StyledArticle>;
-};
+const Article = ({ children }) => <StyledArticle>{children}</StyledArticle>;
 
 Article.propTypes = {
   children: PropTypes.node.isRequired,
