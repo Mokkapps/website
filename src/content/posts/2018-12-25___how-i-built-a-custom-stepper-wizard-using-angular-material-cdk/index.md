@@ -117,8 +117,8 @@ The first step was to create a new Angular component for the `CdkStepper` to be 
 
 ```typescript
 import { Directionality } from '@angular/cdk/bidi';
-import { ChangeDetectorRef, Component, Input, QueryList } from '@angular/core';
-import { CdkStep, CdkStepper } from '@angular/cdk/stepper';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { CdkStepper } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-custom-stepper',
@@ -136,8 +136,6 @@ export class CustomStepperComponent extends CdkStepper {
   }
 }
 ```
-
-The variables `linear`, `selectedIndex` and `_steps` are provided by the `CdkStepper`class as documented in [the API documentation](https://material.angular.io/cdk/stepper/api#CdkStepper).
 
 The HTML template for this basic component:
 
