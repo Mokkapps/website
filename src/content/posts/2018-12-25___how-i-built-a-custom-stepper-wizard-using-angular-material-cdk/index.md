@@ -5,6 +5,8 @@ categories: ['development']
 cover: cover.png
 ---
 
+**Update 12.02.2018:** _Meanwhile I have created [a PR](https://github.com/angular/material2/pull/14710) to the Angular Material repository and added there an [official guide](https://material.angular.io/guide/creating-a-custom-stepper-using-the-cdk-stepper)_
+
 Recently I had to refactor a quite complex legacy Angular component and I want to share my experiences with you.
 
 ## The Legacy Component
@@ -117,8 +119,8 @@ The first step was to create a new Angular component for the `CdkStepper` to be 
 
 ```typescript
 import { Directionality } from '@angular/cdk/bidi';
-import { ChangeDetectorRef, Component, Input, QueryList } from '@angular/core';
-import { CdkStep, CdkStepper } from '@angular/cdk/stepper';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { CdkStepper } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-custom-stepper',
@@ -127,35 +129,25 @@ import { CdkStep, CdkStepper } from '@angular/cdk/stepper';
   providers: [{ provide: CdkStepper, useExisting: CustomStepperComponent }],
 })
 export class CustomStepperComponent extends CdkStepper {
-  /** Whether the validity of previous steps should be checked or not */
-  linear: boolean;
-
-  /** The index of the selected step. */
-  selectedIndex: number;
-
-  /** The list of step components that the stepper is holding. */
-  _steps: QueryList<CdkStep>;
-
   constructor(dir: Directionality, changeDetectorRef: ChangeDetectorRef) {
     super(dir, changeDetectorRef);
+  }
+  
+  onClick(index: number): void {
+    this.selectedIndex = index;
   }
 }
 ```
 
-The variables `linear`, `selectedIndex` and `_steps` are provided by the `CdkStepper`class as documented in [the API documentation](https://material.angular.io/cdk/stepper/api#CdkStepper).
-
 The HTML template for this basic component:
 
 ```html
-<section *ngFor="let step of _steps; let i = index; let isLast = last">
-  <!-- This is where the content from each CdkStep is projected to -->
-  <ng-container [ngTemplateOutlet]="step.content"></ng-container>
-</section>
+<ng-container [ngTemplateOutlet]="selected.content"></ng-container>
 
 <!-- This is the navigation bar of the stepper -->
 <footer>
   <button cdkStepperPrevious>Previous</button>
-  <button *ngFor="let step of _steps; let i = index;">Step {{i + 1}}</button>
+  <button *ngFor="let step of _steps; let i = index;" (click)="onClick(i)">Step {{i + 1}}</button>
   <button cdkStepperNext>Next</button>
 </footer>
 ```
@@ -165,11 +157,9 @@ And now we can already use our new `CustomStepperComponent` in another component
 ```html
 <app-custom-stepper>
   <cdk-step>
-    <ng-template cdkStepLabel>Step1</ng-template>
     <input type="text" name="a" value="a" />
   </cdk-step>
   <cdk-step>
-    <ng-template cdkStepLabel>Step2</ng-template>
     <input type="text" name="b" value="b" />
   </cdk-step>
 </app-custom-stepper>
@@ -179,11 +169,7 @@ Each step needs to be wrapped inside a `<cdk-step>` tag. For multiple steps you 
 
 ```html
 <app-custom-stepper>
-  <cdk-step
-    *ngFor="let step of mySteps; let stepIndex = index"
-    label="{{ step.title }}"
-  >
-    <ng-template cdkStepLabel>{{ step.title }}</ng-template>
+  <cdk-step *ngFor="let step of mySteps; let stepIndex = index">
     <my-step-component [step]="step"></my-step-component>
   </cdk-step>
 </app-custom-stepper>
@@ -200,12 +186,10 @@ A simple example without using forms could look this way:
 ```html
 <app-custom-stepper linear>
   <cdk-step editable="false" [completed]="completed">
-    <ng-template cdkStepLabel>StepB1</ng-template>
     <input type="text" name="a" value="Cannot proceed to next step" />
     <button (click)="completeStep()">Complete step</button>
   </cdk-step>
   <cdk-step editable="false">
-    <ng-template cdkStepLabel>StepB2</ng-template>
     <input type="text" name="b" value="b" />
   </cdk-step>
 </app-custom-stepper>
