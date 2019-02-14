@@ -5,7 +5,7 @@ categories: ['development', 'tools']
 cover: cover.png
 ---
 
-As I started my first JavaScript project in 2015 I used [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) which is an IDE (integrated development environment) for JavaScript development. I was already used to JetBrains IDEs as I worked before with Android Studio which is based on IntelliJ IDEA. Additionally, I got a WebStorm license from my company and could, therefore, use it without any restrictions.
+As I started my first JavaScript project in 2015 I used [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) which is an IDE (integrated development environment) for JavaScript development. I was already used to JetBrains IDEs as I worked before with Android Studio which is based on [IntelliJ IDEA](https://www.jetbrains.com/idea/). Additionally, I got a WebStorm license from my company and could, therefore, use it without any restrictions.
 
 As [Visual Studio Code](https://code.visualstudio.com/) got more and more popular I used it for my further web projects. I really liked it because it was much faster, highly customizable and free so that I could also use it for my private projects. 
 
@@ -15,7 +15,7 @@ In this blog post, I want to tell you why I now mainly use WebStorm instead of V
 
 ## Preamble
 
-This is a very hot topic and I know this will cause some controversy. In the following article, I talk about my experience using WebStorm in a large Angular application which was mainly developed in VS Code. 
+This is a very hot topic and I know this will cause some controversy. In the following article, I talk about my experience using WebStorm in a large Angular application which was mainly developed in VS Code.  
 
 ## Code Inspection
 
@@ -77,9 +77,11 @@ Using WebStorm you already have everything available per-default and, for exampl
 
 ## Code Refactoring
 
-In my opinion, refactoring code is much better using WebStorm. You can rename a component and it updates all file names and usages both in the HTML as well as in the TypeScript files. In general, all the JetBrains are well known for their refactoring features:
+In my opinion, refactoring code is much better using WebStorm. You can rename a component and it updates all file names and usages both in the HTML as well as in the TypeScript files. In general, all the JetBrains IDEs are well known for their refactoring features:
 
 ![WebStorm Refactoring](https://res.cloudinary.com/dvw7amyb4/image/upload/c_fit,w_800/v1549911785/webstorm-refactoring.png)
+
+A well-known feature of the JetBrain IDEs is [Safe Delete](https://www.jetbrains.com/help/webstorm/2017.1/safe-delete.html). Using this functionality you can safely remove files from your source code during refactoring. The IDE will first search for usages of the files and if they are found, you can check them and make necessary  before the files are deleted.
 
 Unfortunately, VS Code is not that powerful at the moment.
 
@@ -95,7 +97,9 @@ In total, WebStorm has great Angular support as it assists in editing Angular te
 
 VS Code is based on Electron and is powered by HTML & JavaScript. 
 
-WebStorm is developed in Java and it feels in general slower than VS Code. I would not say that it is critically slower but the speed difference is noticeable.
+WebStorm is developed in Java and it feels in general slower than VS Code. I would not say that it is critically slower but the speed difference is noticeable. 
+
+VS Code has a faster startup time but if you are working on a project your IDE or editor is always open and startup time does not play a crucial role.
 
 ## Accessibility Inspections For HTML
 
@@ -122,7 +126,7 @@ VS Code is more of an editor than an IDE like WebStorm is categorized as. WebSto
 Microsoft has created an amazing product with VS Code which you can of course use for larger business applications. Generally, I would prefer and recommend using WebStorm due to these reasons:
 
 * Better code analysis functionalities
-* All-in-one IDE with good basic functionality without any additional installed plugin
+* All-in-one IDE with good basic functionality without the need to install many additional plugins
 * Much better code refactoring possibilities
 
 If you prioritize speed, prefer using open source software or just want to quickly edit some configuration files then you should go for VS Code. 
