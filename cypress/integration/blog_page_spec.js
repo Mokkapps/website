@@ -31,6 +31,8 @@ describe('Blog Page Test', () => {
     cy.get('.pagination__next').click();
     cy.url().should('include', '/blog/2');
 
+    cy.wait(500);
+
     cy.get('.pagination__prev').click();
     cy.url().should('not.include', '/blog/2');
   });
