@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 
 import BlogIcon from 'react-feather/dist/icons/file-text';
+import SearchIcon from 'react-feather/dist/icons/search';
+import ZapIcon from 'react-feather/dist/icons/zap';
 import BeeIcon from 'react-feather/dist/icons/info';
 import GamingIcon from 'react-feather/dist/icons/monitor';
 import CodeIcon from 'react-feather/dist/icons/code';
@@ -16,9 +18,11 @@ import { customMedia } from '../../utils/style-utils';
 
 const images = {
   'file-text': BlogIcon,
+  zap: ZapIcon,
   info: BeeIcon,
   monitor: GamingIcon,
   code: CodeIcon,
+  search: SearchIcon,
 };
 
 const Container = styled.div`

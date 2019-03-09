@@ -10,7 +10,7 @@ import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 
 const ContactPage = () => {
-  const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription, siteLanguage } = config;
 
   return (
     <Layout>
@@ -22,7 +22,7 @@ const ContactPage = () => {
       <Seo
         url={siteUrl}
         language={siteLanguage}
-        title={siteTitle}
+        title={`Contact | ${siteDescription}`}
         description={siteDescription}
       />
     </Layout>

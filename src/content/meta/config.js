@@ -1,7 +1,7 @@
 const base = {
-  name: 'Mokkapps',
+  name: 'Mokkapps (Michael Hoffmann)',
   url: 'https://www.mokkapps.de',
-  desc: 'Passionate software developer with focus on web-based technologies',
+  desc: "I'm Michael Hoffmann. Passionate freelance web and app developer.",
 };
 
 const config = {
@@ -34,27 +34,35 @@ const config = {
     },
   ],
 
-  quote: 'Passionate software developer with focus on web-based technologies',
+  quote:
+    'Passionate freelance web and app developer with a focus on web-based technologies',
 
   characteristics: [
     {
-      text: 'Software Engineer',
-      description: 'I love coding mobile apps, games and websites',
+      text: 'Software Developer',
+      description:
+        'I love developing web applications, mobile apps, and games with a focus on high quality, clean, well-documented and easily maintainable code while respecting deadlines and budgets',
       icon: 'code',
       link: '/projects',
     },
     {
-      text: 'Blogger',
-      description: 'I write about software development',
+      text: 'Blogger & Speaker',
+      description:
+        'I write articles and give talks about software development and my career',
       icon: 'file-text',
       link: '/blog',
     },
     {
-      text: 'Video Gamer',
-      description: 'I love to play video games on PC and PS4',
-      icon: 'monitor',
+      text: 'Customer Orientated',
+      description: 'I can solve problems in my projects within time and budget',
+      icon: 'zap',
     },
-    { text: 'Beekeeper', description: 'I love nature and bees', icon: 'info' },
+    {
+      text: 'Challenge Seeker',
+      description:
+        'I want to be challenged by problems you think are difficult or impossible to solve',
+      icon: 'search',
+    },
   ],
 
   projects: [
@@ -198,24 +206,30 @@ const config = {
     {
       type: 'talk',
       title:
-        'CoffeeTalk jambit 2016: Unity – Eine Einführung in die Cross-Plattform-Spieleentwicklung',
-      link:
-        'https://jambit.com/aktuelles/veranstaltungen/coffeetalks-april-2016/',
+        '2019 Munich Frontend Meetup: The Engineering Behind My Portfolio Website',
+      link: 'https://mokkapps-website-lightning-talk.netlify.com',
     },
     {
       type: 'talk',
-      title: 'CoffeeTalk jambit 2017: Reactive Programming',
+      title: '2018 Abendvortrag jambit: Mein erstes Smartphone-Spiel',
+      link: 'https://www.mokkapps.de/talks/my-first-smartphone-game/',
+    },
+    {
+      type: 'talk',
+      title: '2017 CoffeeTalk jambit: Reactive Programming',
       link:
         'https://www.jambit.com/en/latest-info/events/coffeetalks-june-2017/',
     },
     {
       type: 'talk',
-      title: 'Abendvortrag jambit 2018: Mein erstes Smartphone-Spiel',
-      link: 'https://www.mokkapps.de/talks/my-first-smartphone-game/',
+      title:
+        '2016 CoffeeTalk jambit: Unity – Eine Einführung in die Cross-Plattform-Spieleentwicklung',
+      link:
+        'https://jambit.com/aktuelles/veranstaltungen/coffeetalks-april-2016/',
     },
     {
       type: 'article',
-      title: 'ToiletPaper jambit 2016: Kotlin: Das bessere Java?',
+      title: '2016 ToiletPaper jambit: Kotlin: Das bessere Java?',
       link:
         'https://www.jambit.com/aktuelles/toilet-papers/kotlin-das-bessere-java/',
     },

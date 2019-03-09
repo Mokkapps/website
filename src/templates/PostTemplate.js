@@ -156,14 +156,14 @@ export const query = graphql`
       }
       timeToRead
     }
-    file(relativePath: { eq: "about.png" }) {
+    file(relativePath: { eq: "about.jpg" }) {
       childImageSharp {
         fixed(width: 60, height: 60) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    authorImage: file(relativePath: { eq: "about.png" }) {
+    authorImage: file(relativePath: { eq: "about.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid

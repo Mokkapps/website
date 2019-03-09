@@ -80,7 +80,7 @@ const BlogPage = props => {
       <Seo
         url={siteUrl}
         language={siteLanguage}
-        title={siteTitle}
+        title={`Blog | ${siteDescription}`}
         description={siteDescription}
       />
     </Layout>

@@ -7,6 +7,10 @@ describe('About Page Test', () => {
     cy.get('img');
   });
 
+  it('includes social links', () => {
+    cy.get('[data-cy=about-social-links]');
+  });
+
   it('includes a description', () => {
     cy.get('[data-cy=about-description]');
   });
@@ -15,7 +19,7 @@ describe('About Page Test', () => {
     cy.get('[data-cy=about-skills]');
   });
 
-  it('includes experience and education', () => {
-    cy.get('[data-cy=about-education]');
+  it('includes how i work section', () => {
+    cy.get('[data-cy=about-how-i-work]');
   });
 });

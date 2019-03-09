@@ -18,7 +18,7 @@ const NotFoundPage = props => {
     },
   } = props;
 
-  const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription, siteLanguage } = config;
 
   return (
     <Layout>
@@ -30,7 +30,7 @@ const NotFoundPage = props => {
       <Seo
         url={siteUrl}
         language={siteLanguage}
-        title={siteTitle}
+        title={`Not Found | ${siteDescription}`}
         description={siteDescription}
       />
     </Layout>

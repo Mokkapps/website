@@ -5,7 +5,7 @@ export default class HTML extends React.Component {
   render() {
     return (
       // eslint-disable-next-line
-      <html {...this.props.htmlAttributes}>
+      <html lang="en" {...this.props.htmlAttributes}>
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -13,6 +13,7 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <link rel="canonical" href="https://www.mokkapps.de" />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
@@ -26,8 +27,8 @@ export default class HTML extends React.Component {
         </body>
         <noscript>
           <p>
-            I&#39;m sorry, but my website doesn&#39;t work properly without JavaScript
-            enabled.
+            I&#39;m sorry, but my website doesn&#39;t work properly without
+            JavaScript enabled.
           </p>
         </noscript>
       </html>

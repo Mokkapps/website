@@ -16,7 +16,7 @@ const AboutPage = props => {
     data: { file },
   } = props;
 
-  const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription, siteLanguage } = config;
 
   return (
     <Layout>
@@ -28,7 +28,7 @@ const AboutPage = props => {
       <Seo
         url={siteUrl}
         language={siteLanguage}
-        title={siteTitle}
+        title={`About | ${siteDescription}`}
         description={siteDescription}
       />
     </Layout>
@@ -43,7 +43,7 @@ export default AboutPage;
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "about.png" }) {
+    file(relativePath: { eq: "about.jpg" }) {
       childImageSharp {
         fixed(width: 230, height: 230) {
           ...GatsbyImageSharpFixed

@@ -12,7 +12,6 @@ const PublicationsPage = () => {
   const {
     publications,
     siteUrl,
-    siteTitle,
     siteDescription,
     siteLanguage,
   } = config;
@@ -42,7 +41,7 @@ const PublicationsPage = () => {
       <Seo
         url={siteUrl}
         language={siteLanguage}
-        title={siteTitle}
+        title={`Publications | ${siteDescription}`}
         description={siteDescription}
       />
     </Layout>

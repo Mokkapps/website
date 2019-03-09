@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 
 import Skills from '../Skills';
-import Timeline from '../Timeline';
 import AboutMe from './AboutMe';
+import HowIWork from './HowIWork';
 
 const SkillsContainer = styled.div`
   width: 80%;
@@ -25,10 +25,12 @@ const About = ({ aboutImage }) => (
         <Skills />
       </SkillsContainer>
     </Margin>
-    <SkillsContainer data-cy="about-education">
-      <Heading>EXPERIENCE & EDUCATION</Heading>
-      <Timeline />
-    </SkillsContainer>
+    <Margin bottom={4}>
+      <SkillsContainer data-cy="about-how-i-work">
+        <Heading>HOW I WORK</Heading>
+        <HowIWork />
+      </SkillsContainer>
+    </Margin>
   </section>
 );
 
