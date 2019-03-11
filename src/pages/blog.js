@@ -35,7 +35,7 @@ const BlogPage = props => {
   const posts = edges.map(edge => edge.node);
   const categories = getAllCategories(allPosts);
 
-  const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription, siteLanguage } = config;
 
   const handlePageClick = ({ selected }) =>
     navigate(`/blog/${selected === 0 ? '' : selected + 1}`);
