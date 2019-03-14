@@ -56,21 +56,21 @@ const AboutMe = ({ aboutImage }) => (
           My name is Michael Hoffmann, a freelance web and app developer based
           in Munich/ Germany. I hold a Masters in Electrical Engineering from
           the reknown Technical University of Munich (TUM) and have{' '}
-          {new Date().getFullYear() - 2015} years of professional experience.
+          {new Date().getFullYear() - 2015}+ years of professional experience.
         </AboutParagraph>
         <AboutParagraph>
           I work for businesses of all sizes and have experience with both small
           and medium enterprises and corporates. In my career I have developed,
           maintained and launched multiple projects from scratch or improved an
-          existing legacy code base. <a href="/contact">Get in touch</a>, if you
-          like to receive a detailed list of projects I have worked on so far.
+          existing code base. <a href="/contact">Get in touch</a>, if you like
+          to receive a detailed list of projects I have worked on so far.
         </AboutParagraph>
         <AboutParagraph>
-          I really love programming – but especially JavaScript because of its
-          ecosystem and possibilities. Therefore I totally enjoy developing{' '}
-          <a href="/projects">private projects</a> under the pseudonym Mokkapps
-          besides working as a freelance developer. The reason why I{' '}
-          <a href="/blog">write blog posts</a>,{' '}
+          Programming is my passion – but especially JavaScript/TypeScript
+          because of its ecosystem and possibilities. Therefore I totally enjoy
+          my work as a freelance developer and developing{' '}
+          <a href="/projects">private projects</a> under the pseudonym Mokkapps.
+          The reason why I <a href="/blog">write blog posts</a>,{' '}
           <a href="/publications">do talks or write articles</a> is that I like
           to share my knowledge with others. Therefore, I also try to share most
           of my projects <a href="https://github.com/Mokkapps">via GitHub</a>.
