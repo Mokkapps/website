@@ -14,6 +14,11 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           <link rel="canonical" href="https://www.mokkapps.de" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"
+          />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
@@ -25,6 +30,7 @@ export default class HTML extends React.Component {
           />
           {this.props.postBodyComponents}
         </body>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -43,6 +49,28 @@ export default class HTML extends React.Component {
                 window[disableStr] = true;
                 console.log('Disabled google analytics for property', 'UA-93160141-1');
               }
+            `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener("load", function()
+              {window.cookieconsent.initialise({
+                palette: {
+                  popup: {
+                    background: '#000',
+                  },
+                  button: {
+                    background: '#fc1a20',
+                  },
+                },
+                theme: 'classic',
+                content: {
+                  href: 'https://www.mokkapps.de/privacy-policy',
+                },
+              })}
+              );
             `,
           }}
         />
