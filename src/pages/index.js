@@ -13,7 +13,7 @@ import '../utils/style-utils';
 
 const IndexPage = props => {
   const {
-    data: { projectAssets, latestPost },
+    data: { projectAssets, latestPost, file },
   } = props;
 
   const post = latestPost.edges.map(edge => edge.node)[0];
@@ -22,7 +22,7 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <Hero projectAssets={projectAssets} latestPost={post} />
+      <Hero projectAssets={projectAssets} latestPost={post} sliderImage={file} />
       <Footer />
       <Seo
         url={siteUrl}
@@ -35,13 +35,20 @@ const IndexPage = props => {
 };
 
 IndexPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export default IndexPage;
 
 export const query = graphql`
   query {
+    file(relativePath: { eq: "slider.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 600) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {

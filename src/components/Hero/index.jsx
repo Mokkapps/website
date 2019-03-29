@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
+import Img from 'gatsby-image';
 
 import BlogIcon from 'react-feather/dist/icons/file-text';
 import SearchIcon from 'react-feather/dist/icons/search';
@@ -85,7 +86,11 @@ const MoreLink = styled.div`
   justify-content: center;
 `;
 
-const Hero = ({ projectAssets, latestPost }) => {
+const Image = styled(Img)`
+  border-radius: 5px;
+`;
+
+const Hero = ({ projectAssets, latestPost, sliderImage }) => {
   const {
     frontmatter: { title, categories, cover },
     fields: { slug, prefix },
@@ -96,10 +101,17 @@ const Hero = ({ projectAssets, latestPost }) => {
       <Heading data-cy="hero-heading">
         Hi! I'm <a href="about">Michael Hoffmann</a>
       </Heading>
-      <Margin top={4}>
+      <Margin top={3} bottom={3}>
         <Quote data-cy="hero-quote">{config.quote}</Quote>
       </Margin>
-      <Margin top={4} bottom={4}>
+      {sliderImage ? (
+      <Image
+        alt="Michael Hoffmann Image"
+        title="Michael Hoffmann"
+        sizes={sliderImage.childImageSharp.sizes}
+      />
+    ) : null}
+      <Margin top={4} bottom={3}>
         <Characteristics data-cy="hero-characteristics-section">
           {config.characteristics.map(characteristic => {
             const { text, description, icon } = characteristic;

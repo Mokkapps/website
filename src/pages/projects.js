@@ -12,6 +12,7 @@ import ProjectList from '../components/ProjectList';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
+import FluidImage from '../components/FluidImage';
 import Seo from '../components/Seo';
 
 const MarginCenteredWrapper = styled(Margin)`
@@ -30,7 +31,7 @@ const ProjectLogos = styled.section`
 
 const ProjectsPage = props => {
   const {
-    data: { projectAssets, companyLogoAssets },
+    data: { projectAssets, companyLogoAssets, consultingImage },
   } = props;
 
   const { edges } = companyLogoAssets;
@@ -45,8 +46,11 @@ const ProjectsPage = props => {
             <a href="/contact">Get in touch</a> if you want to have a detailed
             list of projects I have worked on in my professional career.
           </span>
+          <MarginCenteredWrapper top={3} bottom={2}>
+            <FluidImage image={consultingImage} />
+          </MarginCenteredWrapper>
           <MarginCenteredWrapper top={2} bottom={2}>
-            <span>I’ve been lucky to work with:</span>
+            <span>I am proud to have worked with:</span>
             <Margin top={3}>
               <ProjectLogos>
                 {edges.map(edge => (
@@ -84,6 +88,13 @@ export default ProjectsPage;
 
 export const query = graphql`
   query {
+    consultingImage: file(relativePath: { eq: "consulting1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {

@@ -1,4 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import config from 'content/meta/config';
 
@@ -8,15 +11,28 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
+import FluidImage from '../components/FluidImage';
 
-const ContactPage = () => {
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const ContactPage = props => {
+  const {
+    data: { contactImage },
+  } = props;
   const { siteUrl, siteDescription, siteLanguage } = config;
 
   return (
     <Layout>
       <Article narrow>
         <Heading title="CONTACT ME" />
-        <ContactForm />
+        <Container>
+          <FluidImage image={contactImage} />
+          <ContactForm />
+        </Container>
       </Article>
       <Footer />
       <Seo
@@ -29,4 +45,20 @@ const ContactPage = () => {
   );
 };
 
+ContactPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
 export default ContactPage;
+
+export const query = graphql`
+  query {
+    contactImage: file(relativePath: { eq: "contact.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;

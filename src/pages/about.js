@@ -13,7 +13,7 @@ import Seo from '../components/Seo';
 
 const AboutPage = props => {
   const {
-    data: { file },
+    data: { introImage, consultingImage },
   } = props;
 
   const { siteUrl, siteDescription, siteLanguage } = config;
@@ -22,7 +22,12 @@ const AboutPage = props => {
     <Layout>
       <Article>
         <Heading title="ABOUT ME" />
-        <About aboutImage={file} />
+        <About
+          images={{
+            intro: introImage,
+            consulting: consultingImage,
+          }}
+        />
       </Article>
       <Footer />
       <Seo
@@ -43,10 +48,17 @@ export default AboutPage;
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "about.jpg" }) {
+    introImage: file(relativePath: { eq: "about.jpg" }) {
       childImageSharp {
-        fixed(width: 230, height: 230) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    consultingImage: file(relativePath: { eq: "consulting2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

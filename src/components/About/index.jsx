@@ -5,6 +5,7 @@ import { Margin } from 'styled-components-spacing';
 import Skills from '../Skills';
 import AboutMe from './AboutMe';
 import HowIWork from './HowIWork';
+import FluidImage from '../FluidImage';
 
 const SkillsContainer = styled.div`
   width: 80%;
@@ -16,9 +17,9 @@ const Heading = styled.h1`
   word-wrap: normal;
 `;
 
-const About = ({ aboutImage }) => (
+const About = ({ images }) => (
   <section>
-    <AboutMe aboutImage={aboutImage} />
+    <AboutMe images={images} />
     <Margin top={4} bottom={4}>
       <SkillsContainer data-cy="about-skills">
         <Heading>SKILLS</Heading>
@@ -28,6 +29,9 @@ const About = ({ aboutImage }) => (
     <Margin bottom={4}>
       <SkillsContainer data-cy="about-how-i-work">
         <Heading>HOW I WORK</Heading>
+        <Margin bottom={4} top={4}>
+          <FluidImage image={images.consulting} />
+        </Margin>
         <HowIWork />
       </SkillsContainer>
     </Margin>

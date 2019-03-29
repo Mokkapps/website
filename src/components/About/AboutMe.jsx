@@ -1,10 +1,10 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
+import FluidImage from '../FluidImage';
 
 const SocialLinks = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const SocialLinks = styled.div`
 
 const Container = styled.div`
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -30,19 +30,9 @@ const AboutParagraph = styled.p`
   text-justify: inter-word;
 `;
 
-const Image = styled(Img)`
-  border-radius: 50%;
-`;
-
-const AboutMe = ({ aboutImage }) => (
+const AboutMe = ({ images }) => (
   <Container>
-    {aboutImage ? (
-      <Image
-        alt="About Me"
-        title="Myself"
-        fixed={aboutImage.childImageSharp.fixed}
-      />
-    ) : null}
+    <FluidImage image={images.intro} />
     <Margin top={2}>
       <SocialLinks data-cy="about-social-links">
         {config.socialLinks.map(link => (

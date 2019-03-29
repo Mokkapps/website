@@ -46,12 +46,14 @@ const PageTemplate = props => {
     <Layout>
       <Article>
         <Heading>
-          <Introduction data-cy="category-introduction">
-            <Margin right={2}>
-              <span>Posts in category</span>
-            </Margin>{' '}
-            <TagIcon />
-          </Introduction>
+          <Margin bottom={3}>
+            <Introduction data-cy="category-introduction">
+              <Margin right={2}>
+                <span>Posts in category</span>
+              </Margin>{' '}
+              <TagIcon />
+            </Introduction>
+          </Margin>
           <h1>{category}</h1>
           <h3>
             There {totalCount > 1 ? 'are' : 'is'} <strong>{totalCount}</strong>{' '}

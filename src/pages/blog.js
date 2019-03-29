@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { graphql, navigate } from 'gatsby';
 import ReactPaginate from 'react-paginate';
 import { Margin } from 'styled-components-spacing';
@@ -18,10 +17,6 @@ import CategorySelection from '../components/CategorySelection';
 import { metaIcons, getAllCategories } from '../utils/helper';
 
 import './style.scss';
-
-const SubHeading = styled.h2`
-  text-align: center;
-`;
 
 const BlogPage = props => {
   const {
@@ -45,12 +40,9 @@ const BlogPage = props => {
       <Article>
         <Heading title="BLOG" />
         <Margin top={4} bottom={4}>
-          <SubHeading>Categories</SubHeading>
           <CategorySelection categories={categories} />
         </Margin>
-        <Margin bottom={4}>
-          <SubHeading>Posts</SubHeading>
-        </Margin>
+        <Margin bottom={4} />
         <BlogPostList
           items={posts}
           author={config.authorName}
@@ -89,7 +81,7 @@ const BlogPage = props => {
 
 BlogPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired,
 };
 
 export default BlogPage;
