@@ -55,7 +55,7 @@ const PostMeta = props => {
   } = props;
 
   return [
-    <Author>
+    <Author key="author">
       <AuthorImg
         className="meta__author-icon"
         fixed={authorImage.childImageSharp.fixed}
@@ -71,7 +71,7 @@ const PostMeta = props => {
         </span>
       </AuthorTextContainer>
     </Author>,
-    <CategoriesContainer>
+    <CategoriesContainer key="categories-container">
       {categories &&
         categories.map(category => {
           const link = <Link to={`/categories/${category}`}>{category}</Link>;
