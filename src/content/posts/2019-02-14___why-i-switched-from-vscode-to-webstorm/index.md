@@ -24,10 +24,12 @@ WebStorm provides a robust, fast, and flexible static code analysis. This analys
 You can also detect unused methods in JavaScript methods using VS Code and ESLint with the rules [no-unused-vars](https://eslint.org/docs/rules/no-unused-vars#disallow-unused-variables-no-unused-vars) and [no-unreachable](https://eslint.org/docs/rules/no-unreachable#disallow-unreachable-code-after-return-throw-continue-and-break-statements-no-unreachable). But if you are, for example, using a TypeScript project (like Angular) VS Code does not detect unused public methods. See this simple example:
 
 **VS Code**
-![VS Code Unused Angular Methods](https://res.cloudinary.com/dvw7amyb4/image/upload/v1549824726/vscode-unused-methods.gif)
+
+<a href="https://imgur.com/l3Plzmv"><img src="https://i.imgur.com/l3Plzmv.gif" title="source: imgur.com" /></a>
 
 **WebStorm**
-![WebStorm Unused Angular Methods](https://res.cloudinary.com/dvw7amyb4/image/upload/v1549824809/webstorm-unused-methods.gif)
+
+<a href="https://imgur.com/lIirdG3"><img src="https://i.imgur.com/lIirdG3.gif" title="source: imgur.com" /></a>
 
 This can have a huge impact on the code quality of a large Angular code base which was mainly developed using VS Code.
 
@@ -39,7 +41,7 @@ WebStorm has an integrated test runner which I really like. This way you can run
 
 Running my [jasmine](https://jasmine.github.io/) & [Karma](https://karma-runner.github.io/3.0/index.html) tests in WebStorm I can easily jump to the failed test code and rerun only this specific test. The following image shows such a test run:
 
-![WebStorm Karma Tests](https://res.cloudinary.com/dvw7amyb4/image/upload/v1549824460/webstorm-karma-tests.gif)
+<a href="https://imgur.com/8EIlmX2"><img src="https://i.imgur.com/8EIlmX2.gif" title="source: imgur.com" /></a>
 
 My Angular unit test workflow in VS Code is normally to mark a `describe` or `it` test block with a `f` (e.g. `fdescribe`) which tells Karma to only run this certain test block. Alternatively, I use the [karma-jasmine-html-reporter](https://www.npmjs.com/package/karma-jasmine-html-reporter) where you can also define to run only certain tests by clicking on them in the HTML page.
 
@@ -50,12 +52,14 @@ There is currently also a [VS Code Karma Test Adapter](https://github.com/hbenl/
 Not waiting for promises can be really tricky if you expect the subsequent code to run only after the promise has been resolved. WebStorm shows if there are unresolved promises (in this case for a TypeScript application):
 
 **WebStorm**
-![VS Code Unresolved Promise](https://res.cloudinary.com/dvw7amyb4/image/upload/c_fit,w_800/v1549824897/webstorm-unresolved-promise.png)
+
+<a href="https://imgur.com/6w91gli"><img src="https://i.imgur.com/6w91gli.png" title="source: imgur.com" /></a>
 
 VS Code has currently no possibility to show this information:
 
 **VS Code**
-![WebStorm Unresolved Promise](https://res.cloudinary.com/dvw7amyb4/image/upload/c_fit,w_800/v1549824892/vscode-unresolved-promise.png)
+
+<a href="https://imgur.com/QUqQ6IK"><img src="https://i.imgur.com/QUqQ6IK.png" title="source: imgur.com" /></a>
 
 ## Source Control / Git Integration
 
@@ -79,7 +83,7 @@ Using WebStorm you already have everything available per-default and, for exampl
 
 In my opinion, refactoring code is much better using WebStorm. You can rename a component and it updates all file names and usages both in the HTML as well as in the TypeScript files. In general, all the JetBrains IDEs are well known for their refactoring features:
 
-![WebStorm Refactoring](https://res.cloudinary.com/dvw7amyb4/image/upload/c_fit,w_800/v1549911785/webstorm-refactoring.png)
+<a href="https://imgur.com/P9v25rc"><img src="https://i.imgur.com/P9v25rc.png?1" title="source: imgur.com" /></a>
 
 A well-known feature of the JetBrain IDEs is [Safe Delete](https://www.jetbrains.com/help/webstorm/2017.1/safe-delete.html). Using this functionality you can safely remove files from your source code during refactoring. The IDE will first search for usages of the files and if they are found, you can check them and make necessary  before the files are deleted.
 
@@ -89,7 +93,7 @@ Unfortunately, VS Code is not that powerful at the moment.
 
 WebStorm provides a good Angular CLI integration by the so-called Angular Schematics:
 
-![WebStorm Angular Schematics](https://res.cloudinary.com/dvw7amyb4/image/upload/v1549921565/webstorm-angular-schematics.gif)
+<a href="https://imgur.com/AjAfGy9"><img src="https://i.imgur.com/AjAfGy9.gif" title="source: imgur.com" /></a>
 
 In total, WebStorm has great Angular support as it assists in editing Angular templates, provides code completion for variables, pipes, and template reference variables.
 
@@ -105,7 +109,7 @@ VS Code has a faster startup time but if you are working on a project your IDE o
 
 WebStorm provides inspections which are based on recommendations from [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) (WCAG) which help you to write more accessible HTML code.
 
-![WebStorm HTML Accessibility Inspection](https://res.cloudinary.com/dvw7amyb4/image/upload/c_fit,w_800/v1549921331/webstorm-html-accessibility.png)
+<a href="https://imgur.com/u14WavG"><img src="https://i.imgur.com/u14WavG.png" title="source: imgur.com" /></a>
 
 ## Price
 
