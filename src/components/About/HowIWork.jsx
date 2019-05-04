@@ -17,6 +17,7 @@ const HowIWork = () => (
           Angular. I always develop them with your end-user in mind as this will
           also help you to meet your business goals
         </li>
+        <li>I am interested in doing development work in backend & frontend applications</li>
         <li>I am reliable and honest to my customers and clients</li>
         <li>
           I produce high quality, clean, well-documented and easily maintainable

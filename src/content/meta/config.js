@@ -242,12 +242,14 @@ const config = {
   ],
 
   skills: [
-    { type: 'JavaScript', icon: 'js', level: 'expert' },
+    { type: 'JavaScript', icon: 'js', level: 'advanced' },
+    { type: 'C#', icon: 'csharp', level: 'intermediate' },
+    { type: '.NET', icon: 'dot-net', level: 'intermediate' },
     { type: 'TypeScript', icon: 'typescript', level: 'advanced' },
     { type: 'Java', icon: 'java', level: 'intermediate' },
     { type: 'CSS3', icon: 'css3', level: 'advanced' },
     { type: 'HTML5', icon: 'html', level: 'advanced' },
-    { type: 'Angular', icon: 'angular', level: 'advanced' },
+    { type: 'Angular', icon: 'angular', level: 'expert' },
     { type: 'React', icon: 'react', level: 'advanced' },
     { type: 'Node.js', icon: 'node', level: 'intermediate' },
   ],

@@ -56,9 +56,9 @@ const AboutMe = ({ images }) => (
           to receive a detailed list of projects I have worked on so far.
         </AboutParagraph>
         <AboutParagraph>
-          Programming is my passion – but especially JavaScript/TypeScript
-          because of its ecosystem and possibilities. Therefore I totally enjoy
-          my work as a freelance developer and developing{' '}
+          Programming is my passion – but especially developing complex business
+          applications both in frontend and in backend. I totally enjoy my work
+          as a freelance developer and developing{' '}
           <a href="/projects">private projects</a> under the pseudonym Mokkapps.
           The reason why I <a href="/blog">write blog posts</a>,{' '}
           <a href="/publications">do talks or write articles</a> is that I like

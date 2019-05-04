@@ -26,7 +26,7 @@ I change up things sometimes, so this page will serve as a living document and a
 
 ## Notebook
 
-I am using a MacBook Pro (Retina, 13-inch, Early 2015) for development and a custom-built desktop PC for gaming.
+I am using a MacBook Pro (15-inch, 2018) for development and a custom-built desktop PC for gaming.
 
 ## Mechanical Keyboard
 
