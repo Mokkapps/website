@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
 import DevIcon from '../DevIcon';
@@ -48,17 +49,14 @@ const getDevIcons = skills =>
     </DevIconContainer>
   ));
 
-const capitalizeFirstLetter = string =>
-  string.charAt(0).toUpperCase() + string.slice(1);
-
 const getSkillSection = (skillLevel, skills) =>
   skills.length > 0
     ? [
         <SkillHeading key={skillLevel}>
-          {capitalizeFirstLetter(skillLevel)}
+          <FormattedMessage id={skillLevel} />
         </SkillHeading>,
         <IconsContainer key={Math.random()}>
-          {getDevIcons(skills)} 
+          {getDevIcons(skills)}
         </IconsContainer>,
       ]
     : null;

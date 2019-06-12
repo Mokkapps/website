@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import menuItems from 'content/meta/menu';
 import HeaderLogo from '../HeaderLogo';
-
 import { MokkappsRed } from '../../styles/variables';
 
 const Container = styled.div`
@@ -69,28 +69,30 @@ const ItemTitle = styled.span`
   margin-left: 0.5rem;
 `;
 
-const Menu = () => (
+const Menu = ({intl}) => (
   <Container data-cy="header-menu">
     <HeaderLogo />
     <MenuItems>
       {menuItems.map(item => {
-        const { ariaLabel, label, to, icon: Icon, linkProps } = item;
+        const { ariaLabel, i18nId, to, icon: Icon, linkProps } = item;
 
         return (
           <Item
-            data-cy={`header-menu-item-${label.toLowerCase()}`}
+            data-cy={`header-menu-item-${i18nId.toLowerCase()}`}
             key={ariaLabel}
           >
             <Link
               to={to}
-              title={label}
+              title={intl.formatMessage({ id: i18nId })}
               aria-label={ariaLabel}
               activeClassName="active"
               {...linkProps}
             >
               <ItemContainer>
                 {Icon && <Icon />}
-                <ItemTitle>{label}</ItemTitle>
+                <ItemTitle>
+                  <FormattedMessage id={i18nId} />
+                </ItemTitle>
               </ItemContainer>
             </Link>
           </Item>
@@ -100,4 +102,4 @@ const Menu = () => (
   </Container>
 );
 
-export default Menu;
+export default injectIntl(Menu);

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
+import { FormattedMessage } from 'react-intl';
 
 import Skills from '../Skills';
 import AboutMe from './AboutMe';
@@ -28,7 +29,9 @@ const About = ({ images }) => (
     </Margin>
     <Margin bottom={4}>
       <SkillsContainer data-cy="about-how-i-work">
-        <Heading>HOW I WORK</Heading>
+        <Heading>
+          <FormattedMessage id="howIWork" />
+        </Heading>
         <Margin bottom={4} top={4}>
           <FluidImage image={images.consulting} />
         </Margin>

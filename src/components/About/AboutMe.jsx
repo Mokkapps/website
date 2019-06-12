@@ -5,6 +5,7 @@ import { Margin } from 'styled-components-spacing';
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
 import FluidImage from '../FluidImage';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 const SocialLinks = styled.div`
   display: flex;
@@ -30,6 +31,8 @@ const AboutParagraph = styled.p`
   text-justify: inter-word;
 `;
 
+const yearsOfExperience = new Date().getFullYear() - 2015;
+
 const AboutMe = ({ images }) => (
   <Container>
     <FluidImage image={images.intro} />
@@ -43,35 +46,24 @@ const AboutMe = ({ images }) => (
     <Margin top={4}>
       <DescriptionContainer data-cy="about-description">
         <AboutParagraph>
-          My name is Michael Hoffmann, a freelance web and app developer based
-          in Munich/ Germany. I hold a Masters in Electrical Engineering from
-          the reknown Technical University of Munich (TUM) and have{' '}
-          {new Date().getFullYear() - 2015}+ years of professional experience.
+          <FormattedMessage
+            id="aboutParagraph"
+            values={{
+              years: yearsOfExperience,
+            }}
+          />
         </AboutParagraph>
         <AboutParagraph>
-          I work for businesses of all sizes and have experience with both small
-          and medium enterprises and corporates. In my career I have developed,
-          maintained and launched multiple projects from scratch or improved an
-          existing code base. <a href="/contact">Get in touch</a>, if you like
-          to receive a detailed list of projects I have worked on so far.
+          <FormattedHTMLMessage id="aboutParagraph2" />
         </AboutParagraph>
         <AboutParagraph>
-          Programming is my passion – but especially developing complex business
-          applications both in frontend and in backend. I totally enjoy my work
-          as a freelance developer and developing{' '}
-          <a href="/projects">private projects</a> under the pseudonym Mokkapps.
-          The reason why I <a href="/blog">write blog posts</a>,{' '}
-          <a href="/publications">do talks or write articles</a> is that I like
-          to share my knowledge with others. Therefore, I also try to share most
-          of my projects <a href="https://github.com/Mokkapps">via GitHub</a>.
+          <FormattedHTMLMessage id="aboutParagraph3" />
         </AboutParagraph>
         <AboutParagraph>
-          If I do not invest my time in coding I'm usually playing video games
-          or doing sports.
+          <FormattedMessage id="aboutParagraph4" />
         </AboutParagraph>
         <AboutParagraph>
-          Just <a href="/contact">contact me</a> if you would like me to work
-          for you.
+          <FormattedHTMLMessage id="aboutParagraph5" />
         </AboutParagraph>
       </DescriptionContainer>
     </Margin>

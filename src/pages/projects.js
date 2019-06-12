@@ -14,6 +14,7 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import FluidImage from '../components/FluidImage';
 import Seo from '../components/Seo';
+import { FormattedMessage } from 'react-intl';
 
 const MarginCenteredWrapper = styled(Margin)`
   width: 100%;
@@ -35,22 +36,26 @@ const ProjectsPage = props => {
   } = props;
 
   const { edges } = companyLogoAssets;
-  const { siteUrl, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription } = config;
 
   return (
     <Layout>
       <Article>
-        <Heading title="BUSINESS PROJECTS" />
+        <Heading i18nId="businessProjectsHeading" />
         <MarginCenteredWrapper top={4} bottom={4}>
           <span>
-            <a href="/contact">Get in touch</a> if you want to have a detailed
-            list of projects I have worked on in my professional career.
+            <a href="/contact">
+              <FormattedMessage id="getInTouch" />
+            </a>
+            <FormattedMessage id="detailedProjectList" />
           </span>
           <MarginCenteredWrapper top={3} bottom={2}>
             <FluidImage image={consultingImage} />
           </MarginCenteredWrapper>
           <MarginCenteredWrapper top={2} bottom={2}>
-            <span>I am proud to have worked with:</span>
+            <span>
+              <FormattedMessage id="workedWith" />
+            </span>
             <Margin top={3}>
               <ProjectLogos>
                 {edges.map(edge => (
@@ -66,13 +71,12 @@ const ProjectsPage = props => {
             </Margin>
           </MarginCenteredWrapper>
         </MarginCenteredWrapper>
-        <Heading title="MY PRIVATE PROJECTS" />
+        <Heading i18nId="privateProjectsHeading" />
         <ProjectList projectAssets={projectAssets} />
       </Article>
       <Footer />
       <Seo
         url={siteUrl}
-        language={siteLanguage}
         title={`Projects | ${siteDescription}`}
         description={siteDescription}
       />

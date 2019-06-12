@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import { getFormattedDate } from '../../utils/helper';
+import { FormattedDate } from 'react-intl';
 
 const MetaText = styled.p`
   margin: 0.5em 0 2em;
@@ -41,7 +40,7 @@ const Meta = props => {
   return (
     <MetaText>
       <span>
-        {CalendarIcon && <CalendarIcon />} {getFormattedDate(prefix)}
+        {CalendarIcon && <CalendarIcon />} {<FormattedDate value={prefix} />}
       </span>
       <span>
         {UserIcon && <UserIcon />} {author}

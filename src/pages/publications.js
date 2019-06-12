@@ -12,8 +12,7 @@ const PublicationsPage = () => {
   const {
     publications,
     siteUrl,
-    siteDescription,
-    siteLanguage,
+    siteDescription
   } = config;
 
   return (
@@ -40,7 +39,6 @@ const PublicationsPage = () => {
       <Footer />
       <Seo
         url={siteUrl}
-        language={siteLanguage}
         title={`Publications | ${siteDescription}`}
         description={siteDescription}
       />

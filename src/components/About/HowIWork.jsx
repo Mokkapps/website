@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 const Container = styled.section`
   display: flex;
   flex-flow: column;
@@ -7,60 +8,51 @@ const Container = styled.section`
   align-items: center;
 `;
 
-const HowIWork = () => (
-  <Container>
-    <div>
-      <h3>What I Do</h3>
-      <ul>
+export default class HowIWork extends React.Component {
+  createHowIWorkList = () => {
+    let list = [];
+
+    for (let i = 1; i <= 12; i++) {
+      list.push(
         <li>
-          I specialize in building web applications written in React and
-          Angular. I always develop them with your end-user in mind as this will
-          also help you to meet your business goals
+          <FormattedMessage id={'whatIDo' + i} />
         </li>
-        <li>I am interested in doing development work in backend & frontend applications</li>
-        <li>I am reliable and honest to my customers and clients</li>
-        <li>
-          I produce high quality, clean, well-documented and easily maintainable
-          code while respecting deadlines and budgets
-        </li>
-        <li>I use high code quality standards and static code analyzer</li>
-        <li>
-          I create beautifully responsive products which work across a variety
-          of devices and browsers
-        </li>
-        <li>I value accessible, valid and semantic HTML</li>
-        <li>I use modernized CSS using Grid, Flexbox, and Animations</li>
-        <li>I love to use ReactiveExtensions (RxJS)</li>
-        <li>I like strict typing in JavaScript, especially using TypeScript</li>
-        <li>I like to write tests (unit, integration and end-to-end)</li>
-        <li>I have advanced Git knowledge</li>
-      </ul>
-    </div>
+      );
+    }
+    return list;
+  };
 
-    <div>
-      <h3>Who I Work With</h3>
-      <p>
-        I enjoy working in a close relationship with international teams onsite.
-        It is great fun for me to learn about new industries, especially if the
-        product has a positive impact.
-      </p>
-    </div>
+  render() {
+    return (
+      <Container>
+        <div>
+          <h3>
+            <FormattedMessage id="whatIDo" />
+          </h3>
+          <ul>{this.createHowIWorkList()}</ul>
+        </div>
 
-    <div>
-      <h3>What I Don't Do</h3>
-      <p>
-        Usually, I do not develop simple websites but am more interested in
-        complex web applications or mobile apps.
-      </p>
-      <p>
-        I can provide simple logos or help you pick typography or colors. In
-        case you need further help with your brand, I am happy to connect you
-        with a trusted graphic and brand designer.
-      </p>
-    </div>
-  </Container>
-);
+        <div>
+          <h3>
+            <FormattedMessage id="whoIWorkWithHeading" />
+          </h3>
+          <p>
+            <FormattedMessage id="whoIWorkWithDesc" />
+          </p>
+        </div>
 
-HowIWork.displayName = 'How I Work';
-
-export default HowIWork;
+        <div>
+          <h3>
+            <FormattedMessage id="whatDontDoHeading" />
+          </h3>
+          <p>
+            <FormattedMessage id="whatDontDoDesc1" />
+          </p>
+          <p>
+            <FormattedMessage id="whatDontDoDesc2" />
+          </p>
+        </div>
+      </Container>
+    );
+  }
+}

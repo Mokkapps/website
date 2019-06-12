@@ -11,11 +11,11 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = props => {
-  const { children } = props;
-
-  return <StyledHeader>{children}</StyledHeader>;
-};
+const Header = ({ children }) => (
+  <StyledHeader>
+    {children}
+  </StyledHeader>
+);
 
 Header.propTypes = {
   children: PropTypes.node,

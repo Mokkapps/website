@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Margin } from 'styled-components-spacing';
+import { FormattedMessage } from 'react-intl';
 
 const Container = styled.div`
   padding: 1rem;
@@ -19,7 +21,7 @@ const Description = styled.p`
   text-align: center;
 `;
 
-export default ({ text, icon, description }) => {
+const HeroCharacteristics = ({ text, icon, description }) => {
   const Icon = icon;
 
   const StyledIcon = styled(Icon)`
@@ -32,9 +34,19 @@ export default ({ text, icon, description }) => {
     <Container>
       {Icon && <StyledIcon />}
       <Margin top={2}>
-        <Title>{text}</Title>
+        <Title>
+          <FormattedMessage id={text} />
+        </Title>
       </Margin>
-      <Description>{description}</Description>
+      <Description><FormattedMessage id={description} /></Description>
     </Container>
   );
 };
+
+HeroCharacteristics.propTypes = {
+  text: PropTypes.string.isRequired,
+  icon: PropTypes.func.isRequired,
+  description: PropTypes.string.isRequired,
+};
+
+export default HeroCharacteristics;

@@ -23,7 +23,7 @@ const PageTemplate = props => {
     },
   } = props;
 
-  const { siteUrl, siteLanguage, siteTitlePostfix } = config;
+  const { siteUrl, siteTitlePostfix } = config;
 
   return (
     <Layout>
@@ -34,7 +34,6 @@ const PageTemplate = props => {
       <Footer />
       <Seo
         url={`${siteUrl}${slug}`}
-        language={siteLanguage}
         title={`${title}${siteTitlePostfix}`}
         description={excerpt}
       />

@@ -3,8 +3,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import { getFormattedDate } from '../../utils/helper';
+import { FormattedDate, FormattedMessage } from 'react-intl';
 
 const Author = styled.section`
   display: flex;
@@ -66,8 +65,9 @@ const PostMeta = props => {
         </span>
         <span>
           {CalendarIcon && <CalendarIcon style={iconStyle} />}{' '}
-          {getFormattedDate(prefix)} |{' '}
-          {ReadIcon && <ReadIcon style={iconStyle} />} {timeToRead} min read
+          {<FormattedDate value={prefix} />} |{' '}
+          {ReadIcon && <ReadIcon style={iconStyle} />} {timeToRead}{' '}
+          <FormattedMessage id="minuteRead" />
         </span>
       </AuthorTextContainer>
     </Author>,

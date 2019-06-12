@@ -18,7 +18,7 @@ const IndexPage = props => {
 
   const post = latestPost.edges.map(edge => edge.node)[0];
 
-  const { siteUrl, siteTitle, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteTitle, siteDescription } = config;
 
   return (
     <Layout>
@@ -26,7 +26,6 @@ const IndexPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        language={siteLanguage}
         title={siteTitle}
         description={siteDescription}
       />

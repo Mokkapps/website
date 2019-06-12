@@ -16,12 +16,12 @@ const AboutPage = props => {
     data: { introImage, consultingImage },
   } = props;
 
-  const { siteUrl, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription } = config;
 
   return (
     <Layout>
       <Article>
-        <Heading title="ABOUT ME" />
+        <Heading i18nId="aboutMe" />
         <About
           images={{
             intro: introImage,
@@ -32,7 +32,6 @@ const AboutPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        language={siteLanguage}
         title={`About | ${siteDescription}`}
         description={siteDescription}
       />

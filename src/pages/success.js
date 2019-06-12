@@ -18,7 +18,7 @@ const SuccessPage = props => {
     },
   } = props;
 
-  const { siteUrl, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription } = config;
 
   return (
     <Layout>
@@ -29,7 +29,6 @@ const SuccessPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        language={siteLanguage}
         title={`Contact Success | ${siteDescription}`}
         description={siteDescription}
       />

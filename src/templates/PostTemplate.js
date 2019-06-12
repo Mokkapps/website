@@ -57,7 +57,7 @@ const PostTemplate = props => {
     pageContext: { next, prev },
   } = props;
 
-  const { siteUrl, siteLanguage, siteTitlePostfix } = config;
+  const { siteUrl, siteTitlePostfix } = config;
 
   const url = `${siteUrl}/blog${slug}`;
   const shareBlockProps = {
@@ -112,7 +112,6 @@ const PostTemplate = props => {
       <Footer />
       <Seo
         url={`${siteUrl}${slug}`}
-        language={siteLanguage}
         title={`${title}${siteTitlePostfix}`}
         description={excerpt}
         image={

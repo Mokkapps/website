@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 import Img from 'gatsby-image';
+import { FormattedMessage } from 'react-intl';
 
 import BlogIcon from 'react-feather/dist/icons/file-text';
 import SearchIcon from 'react-feather/dist/icons/search';
@@ -99,28 +100,30 @@ const Hero = ({ projectAssets, latestPost, sliderImage }) => {
   return (
     <Container>
       <Heading data-cy="hero-heading">
-        Hi! I'm <a href="about">Michael Hoffmann</a>
+        <FormattedMessage id="hi" /> <a href="about">Michael Hoffmann</a>
       </Heading>
       <Margin top={3} bottom={3}>
-        <Quote data-cy="hero-quote">{config.quote}</Quote>
+        <Quote data-cy="hero-quote">
+          <FormattedMessage id="shortSummary" />
+        </Quote>
       </Margin>
       {sliderImage ? (
-      <Image
-        alt="Michael Hoffmann Image"
-        title="Michael Hoffmann"
-        sizes={sliderImage.childImageSharp.sizes}
-      />
-    ) : null}
+        <Image
+          alt="Michael Hoffmann Image"
+          title="Michael Hoffmann"
+          sizes={sliderImage.childImageSharp.sizes}
+        />
+      ) : null}
       <Margin top={4} bottom={3}>
         <Characteristics data-cy="hero-characteristics-section">
           {config.characteristics.map(characteristic => {
-            const { text, description, icon } = characteristic;
+            const { i18nTitleId, i18nDescId, icon } = characteristic;
             return (
               <HeroCharacteristic
-                key={text}
+                key={i18nTitleId}
                 icon={images[icon]}
-                text={text}
-                description={description}
+                text={i18nTitleId}
+                description={i18nDescId}
               />
             );
           })}
@@ -128,30 +131,36 @@ const Hero = ({ projectAssets, latestPost, sliderImage }) => {
       </Margin>
       <Margin bottom={4}>
         <MoreLink data-cy="hero-characteristics-more-button">
-          <a href="/about">More about me →</a>
+          <a href="/about">
+            <FormattedMessage id="moreAboutMeLink"/>
+          </a>
         </MoreLink>
       </Margin>
-      <SectionHeading>FEATURED PROJECTS</SectionHeading>
+      <SectionHeading>
+        <FormattedMessage id="featuredProjects"/>
+      </SectionHeading>
       <Projects data-cy="hero-projects-section">
-        {config.projects.filter(p => p.featured).map(project => {
-          const { imageName, title, description, urls } = project;
-          return (
-            <ProjectCard
-              key={title}
-              minimal={true}
-              asset={getAsset(projectAssets.edges, imageName)}
-              title={title}
-              description={description.short}
-              urls={urls}
-            />
-          );
-        })}
+        {config.projects
+          .filter(p => p.featured)
+          .map(project => {
+            const { imageName, title, description, urls } = project;
+            return (
+              <ProjectCard
+                key={title}
+                minimal={true}
+                asset={getAsset(projectAssets.edges, imageName)}
+                title={title}
+                description={description.short}
+                urls={urls}
+              />
+            );
+          })}
       </Projects>
       <MoreLink data-cy="hero-projects-more-button">
-        <a href="/projects">More projects →</a>
+        <a href="/projects"><FormattedMessage id="moreProjectsLink"/></a>
       </MoreLink>
       <Margin top={4}>
-        <SectionHeading>LATEST BLOG POST</SectionHeading>
+        <SectionHeading><FormattedMessage id="latestBlogPost"/></SectionHeading>
       </Margin>
       <BlogPost
         id={0}
@@ -166,7 +175,7 @@ const Hero = ({ projectAssets, latestPost, sliderImage }) => {
         excerpt={excerpt}
       />
       <MoreLink data-cy="hero-blog-more-button">
-        <a href="/blog">More blog posts →</a>
+        <a href="/blog"><FormattedMessage id="moreBlogPostsLink"/></a>
       </MoreLink>
     </Container>
   );

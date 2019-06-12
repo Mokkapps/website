@@ -10,7 +10,6 @@ const config = {
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
   siteImage: 'preview.jpg',
-  siteLanguage: 'en',
   siteLogo: '/logos/icon.png',
 
   /* site header */
@@ -33,34 +32,27 @@ const config = {
       icon: 'linkedin',
     },
   ],
-
-  quote:
-    'Passionate freelance web and app developer with a focus on web-based technologies',
-
   characteristics: [
     {
-      text: 'Software Developer',
-      description:
-        'I love developing web applications, mobile apps, and games with a focus on high quality, clean, well-documented and easily maintainable code while respecting deadlines and budgets',
+      i18nTitleId: 'characteristicDevTitle',
+      i18nDescId: 'characteristicDevDesc',
       icon: 'code',
       link: '/projects',
     },
     {
-      text: 'Blogger & Speaker',
-      description:
-        'I write articles and give talks about software development and my career',
+      i18nTitleId: 'characteristicBlogTitle',
+      i18nDescId: 'characteristicBlogDesc',
       icon: 'file-text',
       link: '/blog',
     },
     {
-      text: 'Customer Orientated',
-      description: 'I can solve problems in my projects within time and budget',
+      i18nTitleId: 'characteristicCustomerTitle',
+      i18nDescId: 'characteristicCustomerDesc',
       icon: 'zap',
     },
     {
-      text: 'Challenge Seeker',
-      description:
-        'I want to be challenged by problems you think are difficult or impossible to solve',
+      i18nTitleId: 'characteristicChallengeTitle',
+      i18nDescId: 'characteristicChallengeDesc',
       icon: 'search',
     },
   ],

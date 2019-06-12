@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { customMedia } from '../../utils/style-utils';
+import { FormattedMessage } from 'react-intl';
 
 const Header = styled.header`
   text-align: center;
@@ -19,7 +20,17 @@ const Header = styled.header`
 `;
 
 const Heading = props => {
-  const { title, children } = props;
+  const { title, children, i18nId } = props;
+
+  if (i18nId) {
+    return (
+      <Header>
+        <h1>
+          <FormattedMessage id={i18nId} />
+        </h1>
+      </Header>
+    );
+  }
 
   return <Header>{title ? <h1>{title}</h1> : children}</Header>;
 };

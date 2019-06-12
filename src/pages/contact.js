@@ -23,12 +23,12 @@ const ContactPage = props => {
   const {
     data: { contactImage },
   } = props;
-  const { siteUrl, siteDescription, siteLanguage } = config;
+  const { siteUrl, siteDescription } = config;
 
   return (
     <Layout>
       <Article narrow>
-        <Heading title="CONTACT ME" />
+        <Heading i18nId="contactMe" />
         <Container>
           <FluidImage image={contactImage} />
           <ContactForm />
@@ -37,7 +37,6 @@ const ContactPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        language={siteLanguage}
         title={`Contact | ${siteDescription}`}
         description={siteDescription}
       />

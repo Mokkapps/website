@@ -40,7 +40,7 @@ const PageTemplate = props => {
   const items = edges.map(edge => edge.node);
   const categories = getAllCategories(allPosts);
 
-  const { siteUrl, siteDescription, siteLanguage, siteTitlePostfix } = config;
+  const { siteUrl, siteDescription, siteTitlePostfix } = config;
 
   return (
     <Layout>
@@ -74,7 +74,6 @@ const PageTemplate = props => {
       <Footer />
       <Seo
         url={`${siteUrl}/categories/${category}/`}
-        language={siteLanguage}
         title={`Posts in category: ${category}${siteTitlePostfix}`}
         description={siteDescription}
       />

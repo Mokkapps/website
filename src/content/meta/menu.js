@@ -5,17 +5,17 @@ import BlogIcon from 'react-feather/dist/icons/file-text';
 import ContactIcon from 'react-feather/dist/icons/mail';
 
 const menu = [
-  { label: 'Home', to: '/', ariaLabel: 'Home', icon: HomeIcon },
-  { label: 'Blog', to: '/blog', ariaLabel: 'Blog', icon: BlogIcon },
+  { i18nId: 'menuHome', to: '/', ariaLabel: 'Home', icon: HomeIcon },
+  { i18nId: 'menuBlog', to: '/blog', ariaLabel: 'Blog', icon: BlogIcon },
   {
-    label: 'Projects',
+    i18nId: 'menuProjects',
     to: '/projects',
     ariaLabel: 'Projects',
     icon: ProjectsIcon,
   },
-  { label: 'About', to: '/about', ariaLabel: 'About Me', icon: InfoIcon },
+  { i18nId: 'menuAbout', to: '/about', ariaLabel: 'About Me', icon: InfoIcon },
   {
-    label: 'Contact',
+    i18nId: 'menuContact',
     to: '/contact',
     ariaLabel: 'Contact Me',
     icon: ContactIcon,

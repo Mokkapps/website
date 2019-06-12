@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
+import { FormattedMessage } from 'react-intl';
 
-const Footer = styled.footer`
+const FooterWrapper = styled.footer`
   flex-shrink: 0;
   height: 4em;
   padding: 1em;
@@ -21,23 +22,28 @@ const Content = styled.div`
   margin: 1rem 0 1rem 0;
 `;
 
-export default () => (
-  <Footer>
+const Footer = () => (
+  <FooterWrapper>
     <SocialLinks data-cy="footer-social-links">
       {config.socialLinks.map(link => (
         <SocialLink key={link.url} href={link.url} iconName={link.icon} />
       ))}
     </SocialLinks>
     <Content>
-      <a href="https://github.com/Mokkapps/website">Built</a> with &hearts;
-      using <a href="https://www.gatsbyjs.org/">Gatsby.js</a> |{' '}
+      <a href="https://github.com/Mokkapps/website">
+        <FormattedMessage id="built" />
+      </a>{' '}
+      <FormattedMessage id="with" /> &hearts; <FormattedMessage id="using" />{' '}
+      <a href="https://www.gatsbyjs.org/">Gatsby.js</a> |{' '}
       <a data-cy="footer-privacy-policy" href="/privacy-policy">
-        Privacy Policy
+        <FormattedMessage id="privacyPolicy" />
       </a>{' '}
       |{' '}
       <a data-cy="footer-legal-notice" href="/legal-notice">
-        Legal Notice
+        <FormattedMessage id="legalNotice" />
       </a>
     </Content>
-  </Footer>
+  </FooterWrapper>
 );
+
+export default Footer;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import ContactButton from './ContactButton';
 import { customMedia } from '../../utils/style-utils';
+import { FormattedMessage } from 'react-intl';
 
 const Container = styled.div`
   display: flex;
@@ -72,8 +73,10 @@ const ContactForm = () => (
       netlify="true"
     >
       <p hidden>
-        <Label>Don’t fill this out if you're human: <input name="bot-field" /></Label>
-        </p>
+        <Label>
+          Don’t fill this out if you're human: <input name="bot-field" />
+        </Label>
+      </p>
       <p>
         <Label htmlFor="name">Name</Label>
         <Input data-cy="contact-name" name="name" type="text" required />
@@ -83,12 +86,16 @@ const ContactForm = () => (
         <Input data-cy="contact-email" name="email" type="email" required />
       </p>
       <p>
-        <Label htmlFor="message">Your Message</Label>
+        <Label htmlFor="message">
+          <FormattedMessage id="yourMessage" />
+        </Label>
         <TextArea data-cy="contact-message" name="message" required />
       </p>
-      <div data-netlify-recaptcha="true"></div>
+      <div data-netlify-recaptcha="true" />
       <p style={{ marginTop: '1rem' }}>
-        <ContactButton>Send</ContactButton>
+        <ContactButton>
+          <FormattedMessage id="send" />
+        </ContactButton>
       </p>
       <Input type="hidden" name="form-name" value="contact-form" />
     </form>
