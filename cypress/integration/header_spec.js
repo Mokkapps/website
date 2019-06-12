@@ -16,14 +16,6 @@ describe('Header Test', () => {
     cy.get('[data-cy=header-menu-item-menucontact]');
   });
 
-  it('navigates home if home menu item is clicked', () => {
-    cy.get('[data-cy=header-menu-item-menublog]').click();
-    cy.url().should('include', '/blog');
-
-    cy.get('[data-cy=header-menu-item-menuhome]').click();
-    cy.url().should('not.include', '/blog');
-  });
-
   it('navigates to blog page if blog menu item is clicked', () => {
     cy.get('[data-cy=header-menu-item-menublog]').click();
     cy.url().should('include', '/blog');
