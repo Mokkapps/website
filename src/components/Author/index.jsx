@@ -5,6 +5,7 @@ import { Margin } from 'styled-components-spacing';
 
 import content from '../../content/meta/config';
 import SocialLink from '../SocialLink';
+import { FormattedMessage } from 'react-intl';
 
 const Container = styled.section`
   background-color: lightgray;
@@ -42,12 +43,14 @@ const SocialLinks = styled.div`
   padding: 0.2rem;
 `;
 
-export default ({ image }) => (
+const Author = ({ image }) => (
   <Container>
     <Image fluid={image.childImageSharp.fluid} />
     <Description>
       <Name>Michael Hoffmann</Name>
-      <Text>{content.quote}</Text>
+      <Text>
+        <FormattedMessage id="shortSummary" />
+      </Text>
       <Margin top={2}>
         <SocialLinks>
           {content.socialLinks.map(link => (
@@ -58,3 +61,5 @@ export default ({ image }) => (
     </Description>
   </Container>
 );
+
+export default Author;
