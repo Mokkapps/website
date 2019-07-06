@@ -43,7 +43,7 @@ You should love to solve challenging problems in an endless amount of time. You 
 
 ## Learn the fundamental basics of your programming language and frameworks
 
-![Never Stop Learning](http://www.mathelme.com/assets/Never-Stop-Learning_07.png)
+![Never Stop Learning](https://i.imgur.com/yHU2zpD.png)
 
 This is really essential for a software developer. It is often not very complicated to learn the basics of a programming language or framework. Most of the time, you can quickly implement features or even smaller projects after a short time. But it gets tricky if you need to debug, adapt the framework or fix bugs.
 
@@ -75,7 +75,7 @@ I mainly worked with Git and can recommend you the free online ebook [Pro git](h
 
 ## Be a mentor and have a mentor
 
-![Mentor Meme](http://m.memegen.com/p907yj.jpg)
+![Mentor Meme](https://i.imgur.com/1dIMwhl.jpg)
 
 In my opinion you can only call yourself a "senior" developer if you mentor others and also have a mentor yourself.
 
@@ -104,7 +104,7 @@ My suggestion is to use these channels to keep yourself up-to-date:
 
 ## Leave your comfort zone
 
-![Comfort Zone](http://www.paladinstaff.com/blog/wp-content/uploads/2016/03/_d_improd_/where-magic-happens_f_improf_700x504.jpg)
+![Comfort Zone](https://i.imgur.com/6WaDGXI.jpg)
 
 Many developers try to avoid leaving their comfort zone and a "senior" developer should not be afraid of leaving his comfort zone. Here are some examples:
 

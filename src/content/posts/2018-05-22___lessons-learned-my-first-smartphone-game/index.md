@@ -27,19 +27,19 @@ The first step was to analyze the market for similar existing smartphone games. 
 
 ### Crazy Market
 
-<iframe width="700" height="400" src="https://www.youtube.com/embed/f-ix_6lbkPM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/f-ix_6lbkPM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Basically, this game nearly matched my expectations for the basic game mechanic at the supermarket checkout. But I disliked the Japan-styled theme, the aggressive In-App purchases and the level-based approach.
 
 ### Checkout Challenge
 
-<iframe width="700" height="400" src="https://www.youtube.com/embed/SozFe1ES-S0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/SozFe1ES-S0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Checkout Challenge isn't available anymore but provided a funny Arcade-focused supermarket checkout game.
 
 ### Another inspiration: Fruit Ninja
 
-<iframe width="700" height="400" src="https://www.youtube.com/embed/a8z8XG6uThU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/a8z8XG6uThU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 I played Fruit Ninja a lot and had a nice high-score challenge with my friends. For my game, I wanted to achieve the same high-score challenge feeling and implement the three player lifes as they were available in Fruit Ninja.
 
@@ -57,9 +57,7 @@ Christmas 2016 I started to develop a first prototype of the game based on the [
 
 Gameplay video of the first prototype:
 
-<video controls preload width=700>
-<source src="https://www.mokkapps.de/talks/my-first-smartphone-game/videos/prototype-1.mov" type="video/quicktime">
-</video>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/6NDQV2u1IT0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 I deployed the game to my smartphone and on a web platform to let friends and family try the game. The response was very positive so I decided to further develop the prototype to a publishable game.
 
@@ -159,9 +157,7 @@ I released the first beta version for about 10 testers (friends & family). Negat
 
 Start of May 2017 I released the first version of "Supermarket Challenge" on iOS and Android. It included only the Arcade mode:
 
-<video controls preload width=700>
-<source src="https://www.mokkapps.de/talks/my-first-smartphone-game/videos/release-1.mp4" type="video/mp4">
-</video>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/hTc560JcyKg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Version 2.0
 
