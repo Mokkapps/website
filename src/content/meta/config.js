@@ -1,7 +1,7 @@
 const base = {
   name: 'Mokkapps (Michael Hoffmann)',
   url: 'https://www.mokkapps.de',
-  desc: "I'm Michael Hoffmann. Passionate freelance web and app developer.",
+  desc: "I'm Michael Hoffmann. Passionate freelance frontend and app developer.",
 };
 
 const config = {
@@ -235,8 +235,8 @@ const config = {
 
   skills: [
     { type: 'JavaScript', icon: 'js', level: 'advanced' },
-    { type: 'C#', icon: 'csharp', level: 'intermediate' },
-    { type: '.NET', icon: 'dot-net', level: 'intermediate' },
+    { type: 'C#', icon: 'csharp', level: 'elementary' },
+    { type: '.NET', icon: 'dot-net', level: 'elementary' },
     { type: 'TypeScript', icon: 'typescript', level: 'advanced' },
     { type: 'Java', icon: 'java', level: 'intermediate' },
     { type: 'CSS3', icon: 'css3', level: 'advanced' },
