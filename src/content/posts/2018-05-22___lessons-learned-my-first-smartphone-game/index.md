@@ -133,25 +133,19 @@ The following videos demonstrate the progress of the game from the first prototy
 
 Implemented basic game mechanic:
 
-<video controls preload width=700>
-<source src="https://www.mokkapps.de/talks/my-first-smartphone-game/videos/prototype-2.mp4" type="video/mp4">
-</video>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/XI19bXruh3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Start February 2017
 
 UX adjustments, tutorials, menus and more:
 
-<video controls preload width=700>
-<source src="https://www.mokkapps.de/talks/my-first-smartphone-game/videos/prototype-3.mp4" type="video/mp4">
-</video>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/UEgTW_pMIBY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Mid March 2017
 
 I released the first beta version for about 10 testers (friends & family). Negative feedback was given due to the high difficulty and the inconsistent visual design. As a result, I asked a friend of mine to support and assist me in visual aspects of the game which resulted in a better design:
 
-<video controls preload width=700>
-<source src="https://www.mokkapps.de/talks/my-first-smartphone-game/videos/prototype-4.mp4" type="video/mp4">
-</video>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/Dvcqtvyaq2o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Version 1.0
 
