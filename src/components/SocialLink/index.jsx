@@ -27,7 +27,7 @@ const Image = styled.img`
 const SocialLink = ({ href, iconName }) => (
   <StyledAnchor href={href} data-cy={`social-link-${iconName}`}>
     <Image
-      alt={`Social Link to ${iconName}`}
+      alt={`Link to ${iconName}`}
       src={`https://unpkg.com/simple-icons@latest/icons/${iconName}.svg`}
     />
   </StyledAnchor>

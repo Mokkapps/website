@@ -31,6 +31,11 @@ const config = {
       url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
       icon: 'linkedin',
     },
+    {
+      id: 'codepen',
+      url: ' https://codepen.io/mokkapps-the-scripter',
+      icon: 'codepen',
+    },
   ],
   characteristics: [
     {
