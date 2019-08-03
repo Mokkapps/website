@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
@@ -34,7 +35,7 @@ const Name = styled.h3`
 const Text = styled.p`
   padding: 0 2rem 0.5rem 2rem;
   text-align: center;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 `;
 
 const SocialLinks = styled.div`
@@ -62,4 +63,9 @@ const Author = ({ image }) => (
   </Container>
 );
 
+Author.propTypes = {
+  image: PropTypes.object.isRequired
+};
+
 export default Author;
+

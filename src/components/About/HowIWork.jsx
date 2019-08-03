@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+
 const Container = styled.section`
   display: flex;
   flex-flow: column;
@@ -14,7 +15,7 @@ export default class HowIWork extends React.Component {
 
     for (let i = 1; i <= 12; i++) {
       list.push(
-        <li>
+        <li key={i}>
           <FormattedMessage id={'whatIDo' + i} />
         </li>
       );

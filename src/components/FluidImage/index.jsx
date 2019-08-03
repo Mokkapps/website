@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
@@ -18,4 +19,9 @@ const FluidImage = ({ image }) => (
   <Image alt="Michael Hoffmann Image" fluid={image.childImageSharp.fluid} />
 );
 
+FluidImage.propTypes = {
+  image: PropTypes.object.isRequired
+};
+
 export default FluidImage;
+

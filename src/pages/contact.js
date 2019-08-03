@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import config from 'content/meta/config';
+import config from '../content/meta/config';
 
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';

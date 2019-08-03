@@ -10,7 +10,7 @@ const config = {
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
   siteImage: 'preview.jpg',
-  siteLogo: '/logos/icon.png',
+  siteLogo: '/favicon.ico',
 
   /* site header */
   headerTitle: `${base.name}`,
@@ -22,6 +22,33 @@ const config = {
 
   authorName: 'Michael Hoffmann',
 
+  skills: [
+    // className can be found in https://konpa.github.io/devicon/
+    { type: 'JavaScript', className: 'devicon-javascript-plain colored', level: 'advanced' },
+    { type: 'C#', className: 'devicon-csharp-line colored', level: 'elementary' },
+    { type: '.NET', className: 'devicon-dot-net-plain-wordmark colored', level: 'elementary' },
+    { type: 'TypeScript', className: 'devicon-typescript-plain colored', level: 'advanced' },
+    { type: 'Java', className: 'devicon-java-plain-wordmark colored', level: 'intermediate' },
+    { type: 'CSS3', className: 'devicon-css3-plain-wordmark colored', level: 'advanced' },
+    { type: 'HTML5', className: 'devicon-html5-plain-wordmark colored', level: 'advanced' },
+    { type: 'Angular', className: 'devicon-angularjs-plain colored', level: 'expert' },
+    { type: 'React', className: 'devicon-react-original-wordmark colored', level: 'advanced' },
+    { type: 'Vue', className: 'devicon-vuejs-plain-wordmark colored', level: 'advanced' },
+    { type: 'Node.js', className: 'devicon-nodejs-plain-wordmark colored', level: 'intermediate' },
+  ],
+  otherTools: [
+    // className can be found in https://konpa.github.io/devicon/
+    { type: 'Webpack', className: 'devicon-webpack-plain-wordmark colored' },
+    { type: 'Bootstrap', className: 'devicon-bootstrap-plain-wordmark colored' },
+    { type: 'jasmine', className: 'devicon-jasmine-plain-wordmark colored' },
+    { type: 'Protractor', className: 'devicon-protractor-plain-wordmark colored' },
+    { type: 'Sass', className: 'devicon-sass-original colored' },
+    { type: 'Docker', className: 'devicon-docker-plain-wordmark colored' },
+    { type: 'Git', className: 'devicon-git-plain-wordmark colored' },
+    { type: 'IntelliJ', className: 'devicon-intellij-plain-wordmark colored' },
+    { type: 'Android', className: 'devicon-android-plain-wordmark colored' },
+    { type: 'Apple', className: 'devicon-apple-original colored' },
+  ],
   socialLinks: [
     { id: 'github', url: 'https://github.com/mokkapps', icon: 'github' },
     { id: 'twitter', url: 'https://twitter.com/mokkapps', icon: 'twitter' },
@@ -81,8 +108,8 @@ const config = {
       },
       usedTechnologies: [
         { name: 'Corona SDK' },
-        { icon: 'ios' },
-        { icon: 'android' },
+        { iconClassName: 'devicon-apple-original colored' },
+        { iconClassName: 'devicon-android-plain' },
       ],
       imageName: 'supermarket-challenge',
       urls: {
@@ -101,7 +128,7 @@ const config = {
           'A desktop application which can be used in Scrum teams to initiate the daily Scrum meeting',
         long: '',
       },
-      usedTechnologies: [{ name: 'Electron' }, { icon: 'angular' }],
+      usedTechnologies: [{ name: 'Electron' }, { iconClassName: 'devicon-angularjs-plain' }],
       imageName: 'standup-picker',
       urls: {
         page: '/standup-picker',
@@ -117,9 +144,9 @@ const config = {
       },
       usedTechnologies: [
         { name: 'React-Native' },
-        { icon: 'react' },
-        { icon: 'ios' },
-        { icon: 'android' },
+        { iconClassName: 'devicon-react-original' },
+        { iconClassName: 'devicon-apple-original colored' },
+        { iconClassName: 'devicon-android-plain' },
       ],
       imageName: 'rebelgamer',
       urls: {
@@ -141,9 +168,9 @@ const config = {
       },
       usedTechnologies: [
         { name: 'React-Native' },
-        { icon: 'react' },
-        { icon: 'ios' },
-        { icon: 'android' },
+        { iconClassName: 'devicon-react-original' },
+        { iconClassName: 'devicon-apple-original colored' },
+        { iconClassName: 'devicon-android-plain' },
       ],
       imageName: 'parents-soundboard',
       urls: {
@@ -163,7 +190,7 @@ const config = {
           'A website which shows a list of traffic graphs of your own GitHub repositories',
         long: '',
       },
-      usedTechnologies: [{ name: 'Gatsby.js, Firebase' }, { icon: 'react' }],
+      usedTechnologies: [{ name: 'Gatsby.js, Firebase' }, { iconClassName: 'devicon-react-original' }],
       imageName: 'github-traffic-viewer',
       urls: {
         page: 'https://github-traffic-viewer.netlify.com/',
@@ -176,7 +203,7 @@ const config = {
         short: 'Website for our family-run honey farm',
         long: '',
       },
-      usedTechnologies: [{ name: 'Gatsby.js' }, { icon: 'react' }],
+      usedTechnologies: [{ name: 'Gatsby.js' }, { iconClassName: 'devicon-react-original' }],
       imageName: 'privatimkerei-hoffmann',
       urls: {
         page: 'https://privatimkerei-hoffmann.de/',
@@ -190,7 +217,7 @@ const config = {
           'Web application which can be used to subscribe for push notifications which will inform 30 minutes before a band will play on the music festival Void Fest 2018',
         long: '',
       },
-      usedTechnologies: [{ icon: 'react' }, { icon: 'node' }],
+      usedTechnologies: [{ iconClassName: 'devicon-react-original' }, { iconClassName: 'devicon-nodejs-plain' }],
       imageName: 'void-fest-band-reminder',
       urls: {
         page: 'https://void-fest-app.netlify.com/',
@@ -236,19 +263,6 @@ const config = {
         'Concept for an Intermodal Traveller Information System with Real-Time Data Using Complex Event Processing',
       link: 'https://ieeexplore.ieee.org/document/7313462/authors?reload=true',
     },
-  ],
-
-  skills: [
-    { type: 'JavaScript', icon: 'js', level: 'advanced' },
-    { type: 'C#', icon: 'csharp', level: 'elementary' },
-    { type: '.NET', icon: 'dot-net', level: 'elementary' },
-    { type: 'TypeScript', icon: 'typescript', level: 'advanced' },
-    { type: 'Java', icon: 'java', level: 'intermediate' },
-    { type: 'CSS3', icon: 'css3', level: 'advanced' },
-    { type: 'HTML5', icon: 'html', level: 'advanced' },
-    { type: 'Angular', icon: 'angular', level: 'expert' },
-    { type: 'React', icon: 'react', level: 'advanced' },
-    { type: 'Node.js', icon: 'node', level: 'intermediate' },
   ],
 };
 

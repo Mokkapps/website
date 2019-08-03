@@ -38,6 +38,7 @@ const Heading = props => {
 Heading.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
+  i18nId: PropTypes.string,
 };
 
 export default Heading;

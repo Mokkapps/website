@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -16,7 +17,7 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-export default ({ categories }) => (
+const CategorySelection = ({ categories }) => (
   <Container data-cy="blog-categories">
     {categories.map(category => {
       const link = <Link to={`/categories/${category}`}>{category}</Link>;
@@ -33,3 +34,10 @@ export default ({ categories }) => (
     })}
   </Container>
 );
+
+CategorySelection.propTypes = {
+  categories: PropTypes.array.isRequired
+};
+
+export default CategorySelection;
+

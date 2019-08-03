@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { Margin } from 'styled-components-spacing';
 
-import config from 'content/meta/config';
+import config from '../content/meta/config';
 
 import Footer from '../components/Footer';
 import ProjectList from '../components/ProjectList';

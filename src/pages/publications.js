@@ -1,6 +1,6 @@
 import React from 'react';
 
-import config from 'content/meta/config';
+import config from '../content/meta/config';
 
 import Footer from '../components/Footer';
 import Article from '../components/Article';

@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
 import { Margin } from 'styled-components-spacing';
 import { FormattedMessage } from 'react-intl';
 
+import { MokkappsLightGray } from '../../styles/variables';
+
 const Container = styled.div`
   padding: 1rem;
   border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: flex;
   flex-direction: column;
-  background-color: #ecf0f1;
+  background-color: ${MokkappsLightGray};
 `;
 
 const Title = styled.h4`
@@ -38,7 +41,9 @@ const HeroCharacteristics = ({ text, icon, description }) => {
           <FormattedMessage id={text} />
         </Title>
       </Margin>
-      <Description><FormattedMessage id={description} /></Description>
+      <Description>
+        <FormattedMessage id={description} />
+      </Description>
     </Container>
   );
 };

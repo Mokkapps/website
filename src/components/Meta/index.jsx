@@ -5,13 +5,10 @@ import styled from 'styled-components';
 import { FormattedDate } from 'react-intl';
 
 const MetaText = styled.p`
-  margin: 0.5em 0 2em;
   font-size: 0.9em;
-  color: $light-gray;
   display: flex;
-  margin-bottom: 1em;
+  margin: 0.5em 0 1em;
 
-  display: flex;
   flex-wrap: wrap;
 
   & span {

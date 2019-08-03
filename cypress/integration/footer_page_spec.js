@@ -8,10 +8,11 @@ describe('Footer Test', () => {
   it('includes the social links', () => {
     cy.get('[data-cy=footer-social-links]')
       .children()
-      .should('have.length', 4);
+      .should('have.length', 5);
     cy.get('[data-cy=social-link-twitter]');
     cy.get('[data-cy=social-link-dev-dot-to]');
     cy.get('[data-cy=social-link-linkedin]');
+    cy.get('[data-cy=social-link-codepen]');
   });
 
   it('includes link to privacy policy and legal notice', () => {
@@ -57,6 +58,17 @@ describe('Footer Test', () => {
       .filter(link => link.id === 'linkedin')
       .map(link => link.url);
     cy.get('[data-cy=social-link-linkedin]').should(
+      'have.attr',
+      'href',
+      url[0]
+    );
+  });
+
+  it('navigates to codepen page', () => {
+    const url = config.socialLinks
+      .filter(link => link.id === 'codepen')
+      .map(link => link.url);
+    cy.get('[data-cy=social-link-codepen]').should(
       'have.attr',
       'href',
       url[0]

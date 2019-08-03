@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate';
 import { Margin } from 'styled-components-spacing';
 import PropTypes from 'prop-types';
 
-import config from 'content/meta/config';
+import config from '../content/meta/config';
 
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
@@ -22,13 +22,16 @@ const BlogPage = props => {
   const {
     data: {
       posts: { edges },
-      allPosts,
-    },
-    pageContext: { numberOfPages, pageNumber },
+      allEdges,
+      allBlogPosts
+    }
   } = props;
 
+  const numberOfPages = props.pageContext.numberOfPages !== undefined ? props.pageContext.numberOfPages : Math.round(allBlogPosts.totalCount / 5);
+  const pageNumber = props.pageContext.pageNumber !== undefined ?  props.pageContext.pageNumber : 0;
+
   const posts = edges.map(edge => edge.node);
-  const categories = getAllCategories(allPosts);
+  const categories = getAllCategories(allEdges);
 
   const { siteUrl, siteDescription } = config;
 
@@ -86,8 +89,8 @@ BlogPage.propTypes = {
 export default BlogPage;
 
 export const query = graphql`
-  query($skip: Int, $limit: Int) {
-    allPosts: allMarkdownRemark {
+  query($skip: Int = 0, $limit: Int = 5) {
+    allEdges: allMarkdownRemark {
       edges {
         node {
           frontmatter {
@@ -96,6 +99,9 @@ export const query = graphql`
         }
       }
     }
+    allBlogPosts: allMarkdownRemark(filter: {fields: {source: {eq: "posts"}, slug: {ne: null}}}) {
+      totalCount
+    } 
     posts: allMarkdownRemark(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
       sort: { fields: [fields___prefix], order: DESC }

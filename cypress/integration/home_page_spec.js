@@ -29,8 +29,11 @@ describe('Home Page Test', () => {
     cy.url().should('include', '/projects');
   });
 
-  it('shows latest blog post', () => {
+  it('shows latest blog posts', () => {
     cy.get('[data-cy=blog-post-0]');
+    cy.get('[data-cy=blog-post-1]');
+    cy.get('[data-cy=blog-post-2]');
+
     cy.get('[data-cy=hero-blog-more-button]').click();
     cy.url().should('include', '/blog');
   });

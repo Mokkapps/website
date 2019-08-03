@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 
@@ -33,4 +34,10 @@ const SocialLink = ({ href, iconName }) => (
   </StyledAnchor>
 );
 
+SocialLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  iconName: PropTypes.string.isRequired
+};
+
 export default SocialLink;
+

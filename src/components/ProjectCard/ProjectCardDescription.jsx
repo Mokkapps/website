@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 
 import ProjectCardButton from './ProjectCardButton';
 import AppStoreButton from './AppStoreButton';
-import DevIcon from '../DevIcon';
 
 import { customMedia } from '../../utils/style-utils';
 
@@ -60,7 +60,7 @@ const TechnologiesContainer = styled.div`
   align-items: center;
 `;
 
-const TechIcon = styled(DevIcon)`
+const TechIcon = styled.i`
   margin: 0 0.25rem 0 0.25rem;
   color: black;
 `;
@@ -70,10 +70,9 @@ const TechText = styled.p`
   color: black;
 `;
 
-export default ({
+const ProjectCardDescription = ({
   projectName,
   description,
-  rating,
   urls,
   minimal,
   usedTechnologies,
@@ -86,8 +85,8 @@ export default ({
         <TechnologiesContainer>
           {usedTechnologies.map(
             tech =>
-              tech.icon ? (
-                <TechIcon key={tech.icon} iconName={tech.icon} />
+              tech.iconClassName ? (
+                <TechIcon key={tech.iconClassName} className={tech.iconClassName} />
               ) : (
                 <TechText key={tech.name}>{tech.name}</TechText>
               )
@@ -118,3 +117,14 @@ export default ({
     )}
   </Container>
 );
+
+ProjectCardDescription.propTypes = {
+  description: PropTypes.string.isRequired,
+  minimal: PropTypes.bool,
+  projectName: PropTypes.string.isRequired,
+  urls: PropTypes.object.isRequired,
+  usedTechnologies: PropTypes.array
+};
+
+export default ProjectCardDescription;
+

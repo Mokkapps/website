@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
-import menuItems from 'content/meta/menu';
+import menuItems from '../../content/meta/menu';
 import HeaderLogo from '../HeaderLogo';
 import { MokkappsRed } from '../../styles/variables';
 
@@ -34,7 +35,11 @@ const Item = styled.li`
   line-height: 1;
 
   .active {
-    color: ${MokkappsRed};
+  
+    
+          &:after {
+        transform: scaleX(1);
+      }
   }
 
   a {
@@ -45,9 +50,29 @@ const Item = styled.li`
     padding: 0 10px 0 0;
     color: white;
 
+    position: relative;
+    text-decoration: none;
+    background-size: 100% 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 3px;
+      transform: scaleX(0);
+      background-color: ${MokkappsRed};
+      transition: transform 0.3s;
+    }
+
     &:hover {
-      color: ${MokkappsRed};
       text-decoration: none;
+
+      &:after {
+        transform: scaleX(1);
+      }
     }
   }
 
@@ -69,7 +94,7 @@ const ItemTitle = styled.span`
   margin-left: 0.5rem;
 `;
 
-const Menu = ({intl}) => (
+const Menu = ({ intl }) => (
   <Container data-cy="header-menu">
     <HeaderLogo />
     <MenuItems>
@@ -102,4 +127,9 @@ const Menu = ({intl}) => (
   </Container>
 );
 
+Menu.propTypes = {
+  intl: PropTypes.any.isRequired
+};
+
 export default injectIntl(Menu);
+

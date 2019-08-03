@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
@@ -40,5 +41,9 @@ const About = ({ images }) => (
     </Margin>
   </section>
 );
+
+About.propTypes = {
+  images: PropTypes.object.isRequired
+};
 
 export default About;

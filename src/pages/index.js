@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from 'content/meta/config';
+import config from '../content/meta/config';
 
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
@@ -13,16 +13,16 @@ import '../utils/style-utils';
 
 const IndexPage = props => {
   const {
-    data: { projectAssets, latestPost, file },
+    data: { projectAssets, latestPosts, file },
   } = props;
 
-  const post = latestPost.edges.map(edge => edge.node)[0];
+  const posts = latestPosts.edges.map(edge => edge.node);
 
   const { siteUrl, siteTitle, siteDescription } = config;
 
   return (
     <Layout>
-      <Hero projectAssets={projectAssets} latestPost={post} sliderImage={file} />
+      <Hero projectAssets={projectAssets} latestPosts={posts} sliderImage={file} />
       <Footer />
       <Seo
         url={siteUrl}
@@ -59,10 +59,10 @@ export const query = graphql`
         }
       }
     }
-    latestPost: allMarkdownRemark(
+    latestPosts: allMarkdownRemark(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
       sort: { fields: [fields___prefix], order: DESC }
-      limit: 1
+      limit: 3
     ) {
       edges {
         node {

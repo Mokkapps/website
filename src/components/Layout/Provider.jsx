@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import { compose, withState, withHandlers, lifecycle } from 'recompose';
 import { Context } from '../Context';
@@ -33,4 +34,11 @@ const enhance = compose(
   })
 );
 
+Provider.propTypes = {
+  children: PropTypes.node.isRequired,
+  lang: PropTypes.string.isRequired,
+  toggleLanguage: PropTypes.func.isRequired
+};
+
 export default enhance(Provider);
+

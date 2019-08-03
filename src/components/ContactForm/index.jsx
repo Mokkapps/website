@@ -56,7 +56,6 @@ const TextArea = styled.textarea`
   padding: 0.25rem 1rem;
   overflow: auto;
   font: inherit;
-  padding: 1rem;
   resize: vertical;
   min-height: 150px;
   width: 100%;
@@ -74,6 +73,7 @@ const ContactForm = () => (
     >
       <p hidden>
         <Label>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           Don’t fill this out if you're human: <input name="bot-field" />
         </Label>
       </p>

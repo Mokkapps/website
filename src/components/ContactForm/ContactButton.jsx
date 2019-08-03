@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 
@@ -21,6 +22,13 @@ const Button = styled.button`
   }
 `;
 
-export default props => (
-  <Button data-cy="contact-button">{props.children}</Button>
+const ContactButton = ({children}) => (
+  <Button data-cy="contact-button">{children}</Button>
 );
+
+ContactButton.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
+export default ContactButton;
+

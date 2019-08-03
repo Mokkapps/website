@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
-import DevIcon from '../DevIcon';
+import { MokkappsLightGray } from '../../styles/variables';
 
 const DevIconContainer = styled.div`
   margin: auto 0.5rem;
@@ -15,8 +15,9 @@ const IconsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
+  background-color: ${MokkappsLightGray};
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 3px;
 `;
 
 const SkillsContainer = styled.div`
@@ -27,8 +28,11 @@ const SkillsContainer = styled.div`
     'text icons'
     'text icons'
     'text icons';
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
+  grid-gap: 10px;
+`;
+
+const DevIcon = styled.i`
+  font-size: 50px;
 `;
 
 const SkillHeading = styled.h3`
@@ -38,14 +42,15 @@ const SkillHeading = styled.h3`
   align-items: center;
   padding: 0.5rem;
   height: 100%;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
+  background-color: ${MokkappsLightGray};
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 3px;
 `;
 
 const getDevIcons = skills =>
   skills.map(skill => (
-    <DevIconContainer title={skill.type} key={skill.icon}>
-      <DevIcon iconName={skill.icon} />
+    <DevIconContainer title={skill.type} key={skill.className}>
+      <DevIcon className={skill.className}/>
     </DevIconContainer>
   ));
 

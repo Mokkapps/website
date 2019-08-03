@@ -8,7 +8,7 @@ import usFlag from '../../images/us.svg';
 const Image = styled.img`
   width: 35px;
   height: 35px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 `;
 
 const Button = styled.button`
@@ -17,7 +17,6 @@ const Button = styled.button`
   cursor: pointer;
   outline: none;
   border: 0;
-  padding: 0;
   margin: 0;
 `;
 

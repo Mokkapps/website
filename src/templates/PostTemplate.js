@@ -6,7 +6,7 @@ import ReactDisqusComments from 'react-disqus-comments';
 import { ShareButtonRectangle } from 'react-custom-share';
 import { Margin } from 'styled-components-spacing';
 
-import config from 'content/meta/config';
+import config from '../content/meta/config';
 
 import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';

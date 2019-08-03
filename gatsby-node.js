@@ -128,9 +128,10 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create paginated blog pages
         paginate({
-          createPage, 
+          createPage,
           items: posts,
-          itemsPerPage: 5, 
+          itemsPerPage: 5,
+          itemsPerFirstPage: 5,
           pathPrefix: '/blog',
           component: path.resolve('./src/pages/blog.js'),
         });

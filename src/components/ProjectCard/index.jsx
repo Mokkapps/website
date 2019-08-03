@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
@@ -37,4 +38,15 @@ const ProjectCard = ({
   </StyledCard>
 );
 
+ProjectCard.propTypes = {
+  asset: PropTypes.object.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.number,
+  minimal: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  urls: PropTypes.object.isRequired,
+  usedTechnologies: PropTypes.array
+};
+
 export default ProjectCard;
+

@@ -83,6 +83,7 @@ const BodyText = props => {
 
 BodyText.propTypes = {
   html: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default BodyText;

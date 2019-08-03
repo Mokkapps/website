@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Anchor = styled.a`
   max-width: 100%;
@@ -15,7 +16,7 @@ const Anchor = styled.a`
   transition: 0.25s;
 
   &:hover {
-    box-shadow: 0px 6px 14px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.75);
     transform: translateY(-0.2rem);
     text-decoration: none;
   }
@@ -26,5 +27,11 @@ const Card = ({ children, url, id }) => (
     {children}
   </Anchor>
 );
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
+  url: PropTypes.string.isRequired,
+  id: PropTypes.number
+};
 
 export default Card;

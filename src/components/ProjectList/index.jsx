@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 
@@ -49,4 +50,9 @@ const ProjectList = ({ projectAssets }) => {
   );
 };
 
+ProjectList.propTypes = {
+  projectAssets: PropTypes.object.isRequired
+};
+
 export default ProjectList;
+

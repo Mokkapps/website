@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
@@ -70,4 +71,9 @@ const AboutMe = ({ images }) => (
   </Container>
 );
 
+AboutMe.propTypes = {
+  images: PropTypes.object.isRequired
+};
+
 export default AboutMe;
+

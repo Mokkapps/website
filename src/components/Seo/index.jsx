@@ -39,6 +39,7 @@ Seo.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string,
+  postSEO: PropTypes.bool,
 };
 
 export default Seo;

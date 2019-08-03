@@ -6,6 +6,7 @@ import { customMedia } from '../../utils/style-utils';
 
 const Container = styled.div`
   display: inline-block;
+  border-radius: 2px;
   height: ${props => `${props.height}px`};
   width: 240px;
 
@@ -27,6 +28,7 @@ const StyledAnchor = styled.a`
   &:hover {
     text-decoration: none;
     transform: scale(1.05, 1.05);
+    background-size: contain;
   }
 `;
 

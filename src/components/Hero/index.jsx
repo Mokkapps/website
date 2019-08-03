@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
@@ -11,7 +12,8 @@ import BeeIcon from 'react-feather/dist/icons/info';
 import GamingIcon from 'react-feather/dist/icons/monitor';
 import CodeIcon from 'react-feather/dist/icons/code';
 
-import HeroCharacteristic from './HeroCharacteristic';
+import HeroCharacteristic from './HeroCharacteristics';
+import HeroLink from './HeroLink';
 import BlogPost from '../BlogPost';
 import config from '../../content/meta/config';
 import { getAsset, metaIcons } from '../../utils/helper';
@@ -89,14 +91,10 @@ const MoreLink = styled.div`
 
 const Image = styled(Img)`
   border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 `;
 
-const Hero = ({ projectAssets, latestPost, sliderImage }) => {
-  const {
-    frontmatter: { title, categories, cover },
-    fields: { slug, prefix },
-    excerpt,
-  } = latestPost;
+const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
   return (
     <Container>
       <Heading data-cy="hero-heading">
@@ -131,13 +129,13 @@ const Hero = ({ projectAssets, latestPost, sliderImage }) => {
       </Margin>
       <Margin bottom={4}>
         <MoreLink data-cy="hero-characteristics-more-button">
-          <a href="/about">
-            <FormattedMessage id="moreAboutMeLink"/>
-          </a>
+          <HeroLink href="/about">
+            <FormattedMessage id="moreAboutMeLink" />
+          </HeroLink>
         </MoreLink>
       </Margin>
       <SectionHeading>
-        <FormattedMessage id="featuredProjects"/>
+        <FormattedMessage id="featuredProjects" />
       </SectionHeading>
       <Projects data-cy="hero-projects-section">
         {config.projects
@@ -157,28 +155,51 @@ const Hero = ({ projectAssets, latestPost, sliderImage }) => {
           })}
       </Projects>
       <MoreLink data-cy="hero-projects-more-button">
-        <a href="/projects"><FormattedMessage id="moreProjectsLink"/></a>
+        <HeroLink href="/projects">
+          <FormattedMessage id="moreProjectsLink" />
+        </HeroLink>
       </MoreLink>
       <Margin top={4}>
-        <SectionHeading><FormattedMessage id="latestBlogPost"/></SectionHeading>
+        <SectionHeading>
+          <FormattedMessage id="latestBlogPosts" />
+        </SectionHeading>
       </Margin>
-      <BlogPost
-        id={0}
-        key={slug}
-        title={title}
-        slug={slug}
-        cover={cover}
-        categories={categories}
-        prefix={prefix}
-        author="Michael Hoffmann"
-        metaIcons={metaIcons}
-        excerpt={excerpt}
-      />
+      {latestPosts.map((post, index) => {
+        const {
+          frontmatter: { title, categories, cover },
+          fields: { slug, prefix },
+          excerpt,
+        } = post;
+        return (
+          <BlogPost
+            id={index}
+            key={slug}
+            title={title}
+            slug={slug}
+            cover={cover}
+            categories={categories}
+            prefix={prefix}
+            author="Michael Hoffmann"
+            metaIcons={metaIcons}
+            excerpt={excerpt}
+          />
+        );
+      })}
+
       <MoreLink data-cy="hero-blog-more-button">
-        <a href="/blog"><FormattedMessage id="moreBlogPostsLink"/></a>
+        <HeroLink href="/blog">
+          <FormattedMessage id="moreBlogPostsLink" />
+        </HeroLink>
       </MoreLink>
     </Container>
   );
 };
 
+Hero.propTypes = {
+  latestPosts: PropTypes.array.isRequired,
+  projectAssets: PropTypes.object.isRequired,
+  sliderImage: PropTypes.any.isRequired
+};
+
 export default Hero;
+

@@ -8,17 +8,19 @@ const Anchor = styled.a`
   flex-direction: row;
   align-content: center;
   align-items: center;
-  margin-bottom: 0px;
+  margin-bottom: 0;
+  background-size: 100% 0;
 
   &:hover {
     text-decoration: none;
+    background-size: 100% 0;
   }
 `;
 
 const Image = styled.img`
   width: 35px;
   height: 35px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 `;
 
 const Text = styled.p`
@@ -27,7 +29,7 @@ const Text = styled.p`
   letter-spacing: 0.2em;
   font-size: 1.5em;
   margin-left: 0.25em;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 `;
 
 const HeaderLogo = () => (

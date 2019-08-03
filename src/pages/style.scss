@@ -9,6 +9,11 @@
 
     a {
       cursor: pointer;
+      background-size: 100% 0;
+
+      &:hover {
+        background-size: 100% 0;
+      }
     }
   }
 
@@ -24,6 +29,7 @@
     background: red;
     a {
       color: white;
+
       &:hover {
         color: white;
       }

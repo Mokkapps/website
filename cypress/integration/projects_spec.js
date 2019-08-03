@@ -12,7 +12,7 @@ describe('Projects Page Test', () => {
   });
 
   it('includes correct link to project page', () => {
-    cy.get('[data-cy=project-card-0]').then($card => {
+    cy.get('[data-cy=project-card-0]').then(() => {
       cy.get('[data-cy=project-card-0]').click();
       cy.url().should('include', config.projects[0].urls.page);
     });

@@ -6,8 +6,9 @@ export default class HTML extends React.Component {
     return (
       // eslint-disable-next-line
       <html lang="en" {...this.props.htmlAttributes}>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"/>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -31,6 +32,7 @@ export default class HTML extends React.Component {
           }}
         />
         <head>
+          <title>Mokkapps</title>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
