@@ -29,6 +29,8 @@ import Author from '../components/Author';
 import NextPrev from '../components/NextPrev';
 import Share from '../components/Share';
 
+import './postTemplate.scss';
+
 const metaIcons = {
   calendar: CalendarIcon,
   user: UserIcon,
@@ -88,7 +90,7 @@ const PostTemplate = props => {
         />
         {cover ? (
           <Margin bottom={4}>
-            <Img fluid={cover.childImageSharp.fluid} />
+            <Img fluid={cover.childImageSharp.fluid} className="post-template-image"/>
           </Margin>
         ) : null}
         <BodyText html={postHTML} />
