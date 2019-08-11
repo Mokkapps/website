@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { metaIcons } from '../../utils/helper';
+import { capitalize, metaIcons } from '../../utils/helper';
 
 const Category = styled.span`
   display: flex;
@@ -20,7 +20,7 @@ const Container = styled.div`
 const CategorySelection = ({ categories }) => (
   <Container data-cy="blog-categories">
     {categories.map(category => {
-      const link = <Link to={`/categories/${category}`}>{category}</Link>;
+      const link = <Link to={`/categories/${category}`}>{capitalize(category)}</Link>;
       const TagIcon = metaIcons.tag;
 
       return (

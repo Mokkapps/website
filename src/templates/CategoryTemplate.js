@@ -16,7 +16,7 @@ import Seo from '../components/Seo';
 import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
 
-import { metaIcons, getAllCategories } from '../utils/helper';
+import { metaIcons, getAllCategories, capitalize } from '../utils/helper';
 
 const Introduction = styled.div`
   display: flex;
@@ -54,7 +54,7 @@ const PageTemplate = props => {
               <TagIcon />
             </Introduction>
           </Margin>
-          <h1>{category}</h1>
+          <h1>{capitalize(category)}</h1>
           <h3>
             There {totalCount > 1 ? 'are' : 'is'} <strong>{totalCount}</strong>{' '}
             post

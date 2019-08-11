@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedDate, FormattedMessage } from 'react-intl';
 
+import { capitalize } from '../../utils/helper';
+
 const Author = styled.section`
   display: flex;
   justify-content: flex-start;
@@ -74,8 +76,8 @@ const PostMeta = props => {
     <CategoriesContainer key="categories-container">
       {categories &&
         categories.map(category => {
-          const link = <Link to={`/categories/${category}`}>{category}</Link>;
-          const txt = <span key={category}>{category}</span>;
+          const link = <Link to={`/categories/${category}`}>{capitalize(category)}</Link>;
+          const txt = <span key={category}>{capitalize(category)}</span>;
 
           return (
             <CategorySpan key={category}>

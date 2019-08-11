@@ -23,6 +23,8 @@ I change up things sometimes, so this page will serve as a living document and a
 * [Enpass](https://enpass.io/) for password management
 * [Franz](https://meetfranz.com/) as messaging app
 * [Spotify](https://www.spotify.com/) for music streaming
+* [Alfred App](https://www.alfredapp.com/) an productivity app for macOS
+* [Dash](https://kapeli.com/dash) an API documentation browser
 
 ## Notebook
 

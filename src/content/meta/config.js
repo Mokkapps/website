@@ -64,6 +64,7 @@ const config = {
       icon: 'codepen',
     },
   ],
+  customers: ['BMW', 'Audi Business Innovation', 'Carl Zeiss Microscopy', 'ProSiebenSat.1 Tech'],
   characteristics: [
     {
       i18nTitleId: 'characteristicDevTitle',
