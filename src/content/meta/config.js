@@ -64,7 +64,7 @@ const config = {
       icon: 'codepen',
     },
   ],
-  customers: ['BMW', 'Audi Business Innovation', 'Carl Zeiss Microscopy', 'ProSiebenSat.1 Tech'],
+  customers: ['BMW', 'Audi Business Innovation', 'Carl Zeiss Microscopy', 'ProSiebenSat.1 Tech', 'SOFTWAREarchitekt.at'],
   characteristics: [
     {
       i18nTitleId: 'characteristicDevTitle',
