@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Margin } from 'styled-components-spacing';
+import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
-import { FormattedMessage } from 'react-intl';
+import NewsletterSubscription from '../NewsletterSubscription';
 
 const FooterWrapper = styled.footer`
   flex-shrink: 0;
-  height: 4em;
+  height: 16em;
   padding: 1em;
 `;
 
@@ -22,13 +24,25 @@ const Content = styled.div`
   margin: 1rem 0 1rem 0;
 `;
 
+const Newsletter = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Footer = () => (
   <FooterWrapper>
+    <Margin bottom="3">
+      <Newsletter>
+        <NewsletterSubscription></NewsletterSubscription>
+      </Newsletter>
+    </Margin>
+
     <SocialLinks data-cy="footer-social-links">
       {config.socialLinks.map(link => (
         <SocialLink key={link.url} href={link.url} iconName={link.icon} />
       ))}
     </SocialLinks>
+
     <Content>
       <a href="https://github.com/Mokkapps/website">
         <FormattedMessage id="built" />

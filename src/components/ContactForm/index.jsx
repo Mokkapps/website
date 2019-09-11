@@ -38,7 +38,7 @@ const Label = styled.label`
   color: black;
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   height: 2rem;
   border-radius: 0.25rem;
   border: none;

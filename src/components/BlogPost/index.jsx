@@ -6,7 +6,6 @@ import { PropTypes } from 'prop-types';
 
 import Meta from '../Meta';
 import { customMedia } from '../../utils/style-utils';
-import { MokkappsRed, MokkappsBlack } from '../../styles/variables';
 
 import './styles.scss';
 

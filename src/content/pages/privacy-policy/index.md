@@ -107,6 +107,8 @@ The personal data collected as part of a registration for the newsletter will on
 
 ### 6. Newsletter-Tracking
 
+We use [tinyletter](http://tinyletter.com) and this is their privacy policy: http://tinyletter.com/site/privacy.html
+
 The newsletter of the Mokkapps contains so-called tracking pixels. A tracking pixel is a miniature graphic embedded in such e-mails, which are sent in HTML format to enable log file recording and analysis. This allows a statistical analysis of the success or failure of online marketing campaigns. Based on the embedded tracking pixel, the Mokkapps may see if and when an e-mail was opened by a data subject, and which links in the e-mail were called up by data subjects.
 
 Such personal data collected in the tracking pixels contained in the newsletters are stored and analyzed by the controller in order to optimize the shipping of the newsletter, as well as to adapt the content of future newsletters even better to the interests of the data subject. These personal data will not be passed on to third parties. Data subjects are at any time entitled to revoke the respective separate declaration of consent issued by means of the double-opt-in procedure. After a revocation, these personal data will be deleted by the controller. The Mokkapps automatically regards a withdrawal from the receipt of the newsletter as a revocation.
