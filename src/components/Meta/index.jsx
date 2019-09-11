@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedDate } from 'react-intl';
 
+import { capitalize } from '../../utils/helper';
+
 const MetaText = styled.p`
   font-size: 0.9em;
   display: flex;
@@ -44,8 +46,8 @@ const Meta = props => {
       </span>
       {categories &&
         categories.map(category => {
-          const link = <Link to={`/categories/${category}`}>{category}</Link>;
-          const txt = <span key={category}>{category}</span>;
+          const link = <Link to={`/categories/${category}`}>{capitalize(category)}</Link>;
+          const txt = <span key={category}>{capitalize(category)}</span>;
 
           return (
             <span key={category}>

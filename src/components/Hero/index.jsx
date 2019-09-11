@@ -112,7 +112,14 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
           sizes={sliderImage.childImageSharp.sizes}
         />
       ) : null}
-      <Margin top={4} bottom={3}>
+      <Margin top={2} bottom={4}>
+        <MoreLink data-cy="hero-characteristics-newsletter-button">
+          <HeroLink href="/newsletter">
+            <FormattedMessage id="newsletterLink" />
+          </HeroLink>
+        </MoreLink>
+      </Margin>
+      <Margin top={3} bottom={3}>
         <Characteristics data-cy="hero-characteristics-section">
           {config.characteristics.map(characteristic => {
             const { i18nTitleId, i18nDescId, icon } = characteristic;

@@ -18,6 +18,7 @@
   "shortSummary": "Leidenschaftlicher Frontend- und App-Entwickler mit Fokus auf Web-basierten Technologien",
   "moreAboutMeLink": "Mehr über mich →",
   "moreProjectsLink": "Mehr Projekte →",
+  "newsletterLink": "Zum Newsletter →",
   "moreBlogPostsLink": "Mehr Blog Artikel →",
   "featuredProjects": "AUSGEWäHLTE PRIVATE PROJEKTE",
   "latestBlogPosts": "AKTUELLE BLOG ARTIKEL",
@@ -64,6 +65,8 @@
   "whatDontDoDesc1": "Normalerweise entwickle ich keine einfachen Websites sondern bin mehr an komplexeren Web-Applikationen, mobilen Apps oder Spielen interessiert.",
   "whatDontDoDesc2": "Ich kann einfache Logos erstellen oder bei der Auswahl von Schriftarten und Farben assistieren. Bei weiterer Unterstützung zur Definierung einer Marke, kann ich gerne den Kontakt zu einem zuverlässigen Grafikdesigner herstellen.",
   "joinTheNewsletter": "Newsletter Anmeldung",
-  "enterEmail": "Deine Emailadresse",
-  "subscribe": "Anmelden"
+  "enterEmail": "Email*",
+  "subscribe": "Anmelden",
+  "newsletterInfo": "Melde dich für meinen Newsletter an! Erfahre als Erster, wenn ich einen neuen Blog-Artikel veröffentliche und erhalte regelmäßige News aus der Software-Szene.",
+  "newsletter": "Newsletter"
 }

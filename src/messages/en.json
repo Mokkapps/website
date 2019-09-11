@@ -18,6 +18,7 @@
   "shortSummary": "Passionate freelance frontend and app developer with a focus on web-based technologies",
   "moreAboutMeLink": "More about me →",
   "moreProjectsLink": "More projects →",
+  "newsletterLink": "Join the Newsletter →",
   "moreBlogPostsLink": "More blog posts →",
   "featuredProjects": "FEATURED PRIVATE PROJECTS",
   "latestBlogPosts": "LATEST BLOG POSTS",
@@ -63,7 +64,9 @@
   "whatDontDoHeading": "What I Don't Do",
   "whatDontDoDesc1": "Usually, I do not develop simple websites but am more interested in complex web applications or mobile apps.",
   "whatDontDoDesc2": "I can provide simple logos or help you pick typography or colors. In case you need further help with your brand, I am happy to connect you with a trusted graphic and brand designer.",
-  "joinTheNewsletter": "Join The Newsletter",
-  "enterEmail": "Enter your email address",
-  "subscribe": "Subscribe"
+  "joinTheNewsletter": "Sign up for the Newsletter",
+  "enterEmail": "Email*",
+  "subscribe": "Subscribe",
+  "newsletterInfo": "Sign up for my newsletter! Hear first if I publish a new blog post and get regularly news from the software community.",
+  "newsletter": "Newsletter"
 }
