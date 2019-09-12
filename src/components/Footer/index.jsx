@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 import { FormattedMessage } from 'react-intl';
+import PropTypes from 'prop-types';
 
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
@@ -29,13 +30,15 @@ const Newsletter = styled.div`
   justify-content: center;
 `;
 
-const Footer = () => (
+const Footer = ({ hideNewsletter }) => (
   <FooterWrapper>
-    <Margin bottom="3">
-      <Newsletter>
-        <NewsletterSubscription></NewsletterSubscription>
-      </Newsletter>
-    </Margin>
+    {hideNewsletter ? null : (
+      <Margin bottom="3">
+        <Newsletter>
+          <NewsletterSubscription />
+        </Newsletter>
+      </Margin>
+    )}
 
     <SocialLinks data-cy="footer-social-links">
       {config.socialLinks.map(link => (
@@ -59,5 +62,9 @@ const Footer = () => (
     </Content>
   </FooterWrapper>
 );
+
+Footer.propTypes = {
+  hideNewsletter: PropTypes.boolean,
+};
 
 export default Footer;

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
@@ -13,7 +13,7 @@ import GamingIcon from 'react-feather/dist/icons/monitor';
 import CodeIcon from 'react-feather/dist/icons/code';
 
 import HeroCharacteristic from './HeroCharacteristics';
-import HeroLink from './HeroLink';
+import LinkButton from '../LinkButton';
 import BlogPost from '../BlogPost';
 import config from '../../content/meta/config';
 import { getAsset, metaIcons } from '../../utils/helper';
@@ -84,14 +84,9 @@ const Projects = styled.section`
   flex-wrap: wrap;
 `;
 
-const MoreLink = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 const Image = styled(Img)`
   border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
 const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
@@ -113,11 +108,11 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
         />
       ) : null}
       <Margin top={2} bottom={4}>
-        <MoreLink data-cy="hero-characteristics-newsletter-button">
-          <HeroLink href="/newsletter">
-            <FormattedMessage id="newsletterLink" />
-          </HeroLink>
-        </MoreLink>
+        <LinkButton
+          dataCy="hero-characteristics-newsletter-button"
+          href="/newsletter"
+          i18nId="newsletterLink"
+        />
       </Margin>
       <Margin top={3} bottom={3}>
         <Characteristics data-cy="hero-characteristics-section">
@@ -135,11 +130,11 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
         </Characteristics>
       </Margin>
       <Margin bottom={4}>
-        <MoreLink data-cy="hero-characteristics-more-button">
-          <HeroLink href="/about">
-            <FormattedMessage id="moreAboutMeLink" />
-          </HeroLink>
-        </MoreLink>
+        <LinkButton
+          dataCy="hero-characteristics-more-button"
+          href="/about"
+          i18nId="moreAboutMeLink"
+        />
       </Margin>
       <SectionHeading>
         <FormattedMessage id="featuredProjects" />
@@ -161,11 +156,11 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
             );
           })}
       </Projects>
-      <MoreLink data-cy="hero-projects-more-button">
-        <HeroLink href="/projects">
-          <FormattedMessage id="moreProjectsLink" />
-        </HeroLink>
-      </MoreLink>
+      <LinkButton
+        dataCy="hero-projects-more-button"
+        href="/projects"
+        i18nId="moreProjectsLink"
+      />
       <Margin top={4}>
         <SectionHeading>
           <FormattedMessage id="latestBlogPosts" />
@@ -192,12 +187,11 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
           />
         );
       })}
-
-      <MoreLink data-cy="hero-blog-more-button">
-        <HeroLink href="/blog">
-          <FormattedMessage id="moreBlogPostsLink" />
-        </HeroLink>
-      </MoreLink>
+      <LinkButton
+        dataCy="hero-blog-more-button"
+        href="/blog"
+        i18nId="moreBlogPostsLink"
+      />
     </Container>
   );
 };
@@ -205,8 +199,7 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
 Hero.propTypes = {
   latestPosts: PropTypes.array.isRequired,
   projectAssets: PropTypes.object.isRequired,
-  sliderImage: PropTypes.any.isRequired
+  sliderImage: PropTypes.any.isRequired,
 };
 
 export default Hero;
-

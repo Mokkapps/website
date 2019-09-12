@@ -1,10 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 import { FormattedMessage } from 'react-intl';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
 
 import config from '../content/meta/config';
 
@@ -14,20 +11,12 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import NewsletterSubscription from '../components/NewsletterSubscription';
+import LinkButton from '../components/LinkButton';
 
 const InfoText = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-`;
-
-const ArchiveList = styled.ul`
-  display: flex;
-  justify-content: center;
-`;
-
-const ArchiveHeader = styled.h2`
-  text-align: center;
 `;
 
 const NewsletterContainer = styled.div`
@@ -36,13 +25,7 @@ const NewsletterContainer = styled.div`
   justify-content: center;
 `;
 
-const NewsletterPage = props => {
-  const {
-    data: {
-      newsletter: { edges },
-    },
-  } = props;
-  const newsletterEvents = edges.map(edge => edge.node);
+const NewsletterPage = () => {
   const { siteUrl, siteDescription } = config;
 
   return (
@@ -57,24 +40,13 @@ const NewsletterPage = props => {
         <NewsletterContainer>
           <NewsletterSubscription />
         </NewsletterContainer>
-        {newsletterEvents.length > 0 ? (
-          <div>
-            <Margin top={4}>
-              <ArchiveHeader>Archive</ArchiveHeader>
-            </Margin>
-            <ArchiveList>
-              {newsletterEvents.map(ev => (
-                <li key={ev.fields.slug}>
-                  <Link to={ev.fields.slug}>
-                    {new Date(ev.frontmatter.title).toLocaleDateString()}
-                  </Link>
-                </li>
-              ))}
-            </ArchiveList>
-          </div>
-        ) : null}
+        <LinkButton
+          dataCy="newsletter-archive-link-button"
+          href="https://tinyletter.com/Mokkapps/archive"
+          i18nId="visitArchive"
+        />
       </Article>
-      <Footer />
+      <Footer hideNewsletter />
       <Seo
         url={siteUrl}
         title={`Newsletter | ${siteDescription}`}
@@ -85,27 +57,3 @@ const NewsletterPage = props => {
 };
 
 export default NewsletterPage;
-
-NewsletterPage.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-export const query = graphql`
-  query {
-    newsletter: allMarkdownRemark(
-      filter: { fields: { slug: { regex: "/newsletter.*/" } } }
-      sort: { fields: [fields___prefix], order: DESC }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-  }
-`;
