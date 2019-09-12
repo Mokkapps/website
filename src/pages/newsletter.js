@@ -13,7 +13,6 @@ import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
-import BlogPage from './blog';
 import NewsletterSubscription from '../components/NewsletterSubscription';
 
 const InfoText = styled.div`
@@ -87,7 +86,7 @@ const NewsletterPage = props => {
 
 export default NewsletterPage;
 
-BlogPage.propTypes = {
+NewsletterPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
