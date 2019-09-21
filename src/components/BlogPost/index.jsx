@@ -36,7 +36,7 @@ const Post = styled(Link)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
   `};
 `;
 
