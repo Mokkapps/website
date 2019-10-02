@@ -37,12 +37,17 @@ const NewsletterPage = () => {
             <FormattedMessage id="newsletterInfo" />
           </InfoText>
         </Margin>
+        <Margin bottom={2}>
+          <InfoText>
+            <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/" target="_blank">Learn more about Mailchimp's privacy practices here.</a></p>
+          </InfoText>
+        </Margin>
         <NewsletterContainer>
           <NewsletterSubscription />
         </NewsletterContainer>
         <LinkButton
           dataCy="newsletter-archive-link-button"
-          href="https://tinyletter.com/Mokkapps/archive"
+          href="https://us19.campaign-archive.com/home/?u=587746a905932c04ed4e175bb&id=220816f8fa"
           i18nId="visitArchive"
         />
       </Article>

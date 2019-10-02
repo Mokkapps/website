@@ -108,7 +108,7 @@ module.exports = {
               },
             },
           },
-          `gatsby-remark-prismjs`
+          `gatsby-remark-prismjs`,
         ],
       },
     },
@@ -119,7 +119,7 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
         anonymize: true,
         respectDNT: true,
-        head: true
+        head: true,
       },
     },
     // Create a sitemap

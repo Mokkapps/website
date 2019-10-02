@@ -44,10 +44,13 @@ const NewsletterSubscription = ({ intl }) => {
   return (
     <Wrapper>
       <Form
-        action="https://tinyletter.com/Mokkapps"
+        action="https://mokkapps.us19.list-manage.com/subscribe/post?u=587746a905932c04ed4e175bb&amp;id=220816f8fa"
         method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://tinyletter.com/Mokkapps', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
+        class="validate"
+        target="_blank"
+        novalidate
       >
         <h3>
           {' '}
@@ -59,7 +62,13 @@ const NewsletterSubscription = ({ intl }) => {
               <FormattedMessage id="enterEmail" />
             </label>
           </Margin>
-          <Input type="email" name="email" id="tlemail" placeholder="your.email@example.com" required />
+          <Input
+            type="email"
+            name="email"
+            id="tlemail"
+            placeholder="your.email@example.com"
+            required
+          />
         </EmailContainer>
         <input type="hidden" value="1" name="embed" />
         <Margin top={2}>
