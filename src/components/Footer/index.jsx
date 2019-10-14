@@ -47,12 +47,12 @@ const Footer = ({ hideNewsletter }) => (
     </SocialLinks>
 
     <Content>
-      <a href="https://github.com/Mokkapps/website">
+      <a href="https://github.com/Mokkapps/website" target="_blank" rel="noopener noreferrer">
         <FormattedMessage id="built" />
       </a>{' '}
       <FormattedMessage id="with" /> &hearts; <FormattedMessage id="using" />{' '}
-      <a href="https://www.gatsbyjs.org/">Gatsby.js</a> |{' '}
-      <a data-cy="footer-privacy-policy" href="/privacy-policy">
+      <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby.js</a> |{' '}
+      <a data-cy="footer-privacy-policy" href="/privacy-policy" >
         <FormattedMessage id="privacyPolicy" />
       </a>{' '}
       |{' '}
