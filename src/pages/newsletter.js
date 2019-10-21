@@ -13,10 +13,9 @@ import Seo from '../components/Seo';
 import NewsletterSubscription from '../components/NewsletterSubscription';
 import LinkButton from '../components/LinkButton';
 
-const InfoText = styled.div`
+const InfoText = styled.p`
   width: 100%;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 `;
 
 const NewsletterContainer = styled.div`
@@ -30,7 +29,7 @@ const NewsletterPage = () => {
 
   return (
     <Layout>
-      <Article narrow>
+      <Margin narrow>
         <Heading i18nId="newsletter" />
         <Margin bottom={4}>
           <InfoText>
@@ -39,8 +38,19 @@ const NewsletterPage = () => {
         </Margin>
         <Margin bottom={2}>
           <InfoText>
-            <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/" target="_blank">Learn more about Mailchimp's privacy practices here.</a></p>
+            <FormattedMessage id="mailChimpInfo" />
           </InfoText>
+        </Margin>
+        <Margin bottom={2}>
+          <NewsletterContainer>
+            <a
+              href="https://mailchimp.com/legal/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FormattedMessage id="mailChimpInfoLink" />
+            </a>
+          </NewsletterContainer>
         </Margin>
         <NewsletterContainer>
           <NewsletterSubscription />
@@ -50,8 +60,8 @@ const NewsletterPage = () => {
           href="https://us19.campaign-archive.com/home/?u=587746a905932c04ed4e175bb&id=220816f8fa"
           i18nId="visitArchive"
         />
-      </Article>
-      <Footer hideNewsletter />
+      </Margin>
+      <Footer />
       <Seo
         url={siteUrl}
         title={`Newsletter | ${siteDescription}`}

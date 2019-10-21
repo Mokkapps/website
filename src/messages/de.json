@@ -69,5 +69,7 @@
   "subscribe": "Anmelden",
   "newsletterInfo": "Melde dich für meinen Newsletter an! Erfahre als Erster, wenn ich einen neuen Blog-Artikel veröffentliche und erhalte regelmäßige News aus der Software-Szene.",
   "newsletter": "Newsletter",
-  "visitArchive": "Newsletter Archiv →"
+  "visitArchive": "Newsletter Archiv →",
+  "mailChimpInfo": "Wir verwenden Mailchimp als Newsletter-Plattform. Bei der Anmeldung werden Informationen an Mailchimp übertragen.",
+  "mailChimpInfoLink": "Mehr Informationen über Mailchimp's Datenschutz-Praktiken."
 }

@@ -2,20 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
-import { injectIntl, FormattedMessage } from 'react-intl';
-import {
-  MokkappsWhite,
-  MokkappsBlack,
-  MokkappsRed,
-} from '../../styles/variables';
-import { Input } from '../ContactForm';
-
-const Wrapper = styled.div`
-  background-color: ${MokkappsWhite};
-  border-radius: 5px;
-  padding: 10px;
-  max-width: 300px;
-`;
+import { injectIntl } from 'react-intl';
+import { MokkappsBlack, MokkappsRed } from '../../styles/variables';
 
 const Form = styled.form`
   text-align: center;
@@ -35,50 +23,24 @@ const SubscribeInput = styled.input`
   }
 `;
 
-const EmailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 const NewsletterSubscription = ({ intl }) => {
   return (
-    <Wrapper>
-      <Form
-        action="https://mokkapps.us19.list-manage.com/subscribe/post?u=587746a905932c04ed4e175bb&amp;id=220816f8fa"
-        method="post"
-        id="mc-embedded-subscribe-form"
-        name="mc-embedded-subscribe-form"
-        class="validate"
-        target="_blank"
-        novalidate
-      >
-        <h3>
-          {' '}
-          <FormattedMessage id="joinTheNewsletter" />
-        </h3>
-        <EmailContainer>
-          <Margin bottom={2}>
-            <label htmlFor="tlemail">
-              <FormattedMessage id="enterEmail" />
-            </label>
-          </Margin>
-          <Input
-            type="email"
-            name="email"
-            id="tlemail"
-            placeholder="your.email@example.com"
-            required
-          />
-        </EmailContainer>
-        <input type="hidden" value="1" name="embed" />
-        <Margin top={2}>
-          <SubscribeInput
-            type="submit"
-            value={intl.formatMessage({ id: 'subscribe' })}
-          />
-        </Margin>
-      </Form>
-    </Wrapper>
+    <Form
+      action="https://mokkapps.us19.list-manage.com/subscribe/post?u=587746a905932c04ed4e175bb&amp;id=220816f8fa"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      class="validate"
+      target="_blank"
+      novalidate
+    >
+      <Margin top={2}>
+        <SubscribeInput
+          type="submit"
+          value={intl.formatMessage({ id: 'joinTheNewsletter' })}
+        />
+      </Margin>
+    </Form>
   );
 };
 

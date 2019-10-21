@@ -69,5 +69,7 @@
   "subscribe": "Subscribe",
   "newsletterInfo": "Sign up for my newsletter! Hear first if I publish a new blog post and get regularly news from the software community.",
   "newsletter": "Newsletter",
-  "visitArchive": "Visit Newsletter Archive →"
+  "visitArchive": "Visit Newsletter Archive →",
+  "mailChimpInfo": "We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing",
+  "mailChimpInfoLink": "Learn more about Mailchimp's privacy practices here."
 }
