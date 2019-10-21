@@ -29,7 +29,7 @@ const NewsletterPage = () => {
 
   return (
     <Layout>
-      <Margin narrow>
+      <Article narrow>
         <Heading i18nId="newsletter" />
         <Margin bottom={4}>
           <InfoText>
@@ -60,7 +60,7 @@ const NewsletterPage = () => {
           href="https://us19.campaign-archive.com/home/?u=587746a905932c04ed4e175bb&id=220816f8fa"
           i18nId="visitArchive"
         />
-      </Margin>
+      </Article>
       <Footer />
       <Seo
         url={siteUrl}
