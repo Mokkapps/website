@@ -25,7 +25,7 @@ script:
 
 deploy:
   provider: script
-  script: "curl -X POST -d '' https://api.netlify.com/build_hooks/5ba3c8da1f12b70cbbcaa1a3"
+  script: "curl -X POST -d '' https://api.netlify.com/build_hooks/5ba3c8da1f12b70cbbcaa1a3 && curl -X POST -d {} https://api.netlify.com/build_hooks/5daf5f3d31ede3a743f5bebc"
   skip_cleanup: true
   on:
     branch: master
