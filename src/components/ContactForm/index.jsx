@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ContactButton from './ContactButton';
+import Button from '../Button';
 import { customMedia } from '../../utils/style-utils';
 import { FormattedMessage } from 'react-intl';
 
@@ -93,9 +93,9 @@ const ContactForm = () => (
       </p>
       <div data-netlify-recaptcha="true" />
       <p style={{ marginTop: '1rem' }}>
-        <ContactButton>
+        <Button type="submit">
           <FormattedMessage id="send" />
-        </ContactButton>
+        </Button>
       </p>
       <Input type="hidden" name="form-name" value="contact-form" />
     </form>

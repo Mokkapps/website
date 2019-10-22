@@ -27,7 +27,9 @@ const enhance = compose(
       const localLang = localStorage.getItem('lang');
       if (localLang) {
         this.props.handleLanguage(localLang);
-      } else {
+      } else if (window.location.href.includes('mokkapps.com')) {
+        this.props.handleLanguage('en');
+      }else {
         this.props.handleLanguage(navigator.language.split('-')[0]);
       }
     },

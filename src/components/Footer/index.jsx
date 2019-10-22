@@ -7,7 +7,6 @@ import SocialLink from '../SocialLink';
 
 const FooterWrapper = styled.footer`
   flex-shrink: 0;
-  height: 16em;
   padding: 1em;
 `;
 

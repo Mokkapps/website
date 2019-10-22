@@ -1,25 +1,27 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
 import menuItems from '../../content/meta/menu';
-import HeaderLogo from '../HeaderLogo';
 import { MokkappsRed } from '../../styles/variables';
+import HeaderLogo from '../HeaderLogo';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 const Container = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
 `;
 
 const MenuItems = styled.ul`
   list-style: none;
   display: flex;
   justify-content: flex-end;
+  align-items: start;
   flex-wrap: wrap;
   margin-left: 0;
   margin-bottom: 0;
@@ -35,11 +37,9 @@ const Item = styled.li`
   line-height: 1;
 
   .active {
-  
-    
-          &:after {
-        transform: scaleX(1);
-      }
+    &:after {
+      transform: scaleX(1);
+    }
   }
 
   a {
@@ -123,13 +123,14 @@ const Menu = ({ intl }) => (
           </Item>
         );
       })}
+
+      <LanguageSwitcher />
     </MenuItems>
   </Container>
 );
 
 Menu.propTypes = {
-  intl: PropTypes.any.isRequired
+  intl: PropTypes.any.isRequired,
 };
 
 export default injectIntl(Menu);
-

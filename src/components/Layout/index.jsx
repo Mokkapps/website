@@ -37,7 +37,6 @@ const Layout = ({ children }) => {
                 <Margin bottom={3}>
                   <Header>
                     <Menu />
-                    <LanguageSwitcher />
                   </Header>
                 </Margin>
                 {children}
