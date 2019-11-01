@@ -3,19 +3,14 @@ import styled from 'styled-components';
 import ScrollUpButton from 'react-scroll-up-button';
 import PropTypes from 'prop-types';
 import { Margin } from 'styled-components-spacing';
-import { addLocaleData, IntlProvider } from 'react-intl';
-import en from 'react-intl/locale-data/en';
-import de from 'react-intl/locale-data/de';
+import { IntlProvider } from 'react-intl';
 
 import Header from '../Header';
-import LanguageSwitcher from '../LanguageSwitcher';
 import Menu from '../Menu';
 import localEng from '../../messages/en.json';
 import localDe from '../../messages/de.json';
 import { Context } from '../Context';
 import Provider from './Provider';
-
-addLocaleData(de, en);
 
 const Container = styled.div`
   padding: 1rem 1rem 1rem 1rem;

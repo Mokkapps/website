@@ -43,7 +43,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "slider.jpg" }) {
       childImageSharp {
-        sizes(maxWidth: 600) {
+        sizes(maxWidth: 1500) {
           ...GatsbyImageSharpSizes
         }
       }
@@ -76,7 +76,7 @@ export const query = graphql`
             categories
             cover {
               childImageSharp {
-                fluid(maxWidth: 1500) {
+                fluid(maxWidth: 700) {
                   ...GatsbyImageSharpFluid
                 }
               }
