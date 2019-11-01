@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { MokkappsLightGray } from '../../styles/variables';
+
 const Anchor = styled.a`
   max-width: 100%;
   width: 300px;
@@ -9,7 +11,7 @@ const Anchor = styled.a`
   min-height: 230px;
   display: flex;
   flex-flow: column;
-  background-color: #ecf0f1;
+  background-color: ${MokkappsLightGray};
   border-radius: 0.25rem;
   margin: 1rem;
   user-select: none;
@@ -23,7 +25,7 @@ const Anchor = styled.a`
 `;
 
 const Card = ({ children, url, id }) => (
-  <Anchor data-cy={`project-card-${id}`} href={url}>
+  <Anchor data-cy={`card-${id}`} href={url}>
     {children}
   </Anchor>
 );
@@ -31,7 +33,7 @@ const Card = ({ children, url, id }) => (
 Card.propTypes = {
   children: PropTypes.node.isRequired,
   url: PropTypes.string.isRequired,
-  id: PropTypes.number
+  id: PropTypes.number,
 };
 
 export default Card;

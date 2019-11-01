@@ -19,7 +19,7 @@ import EmailIcon from 'react-feather/dist/icons/mail';
 import ReadIcon from 'react-feather/dist/icons/eye';
 
 import Footer from '../components/Footer';
-import Article from '../components/Article';
+import ArticleWithSidebar from '../components/ArticleWithSidebar';
 import Layout from '../components/Layout';
 import PostMeta from '../components/PostMeta';
 import Heading from '../components/Heading';
@@ -78,7 +78,7 @@ const PostTemplate = props => {
 
   return (
     <Layout>
-      <Article>
+      <ArticleWithSidebar authorImage={authorImage}>
         <Heading title={title} />
         <PostMeta
           authorImage={file}
@@ -110,7 +110,7 @@ const PostTemplate = props => {
             onNewComment={handleNewComment}
           />
         </Margin>
-      </Article>
+      </ArticleWithSidebar>
       <Footer />
       <Seo
         url={`${siteUrl}${slug}`}

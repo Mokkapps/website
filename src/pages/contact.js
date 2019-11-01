@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Margin } from 'styled-components-spacing';
 
 import config from '../content/meta/config';
 
@@ -12,6 +13,7 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import FluidImage from '../components/FluidImage';
+import LinkButton from '../components/LinkButton';
 
 const Container = styled.section`
   display: flex;
@@ -31,6 +33,13 @@ const ContactPage = props => {
         <Heading i18nId="contactMe" />
         <Container>
           <FluidImage image={contactImage} />
+          <Margin top={2}>
+            <LinkButton
+              dataCy="contact-about-me-button"
+              href="/about"
+              i18nId="moreAboutMeLink"
+            />
+          </Margin>
           <ContactForm />
         </Container>
       </Article>

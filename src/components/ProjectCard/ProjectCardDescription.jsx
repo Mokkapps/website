@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -6,6 +6,7 @@ import ProjectCardButton from './ProjectCardButton';
 import AppStoreButton from './AppStoreButton';
 
 import { customMedia } from '../../utils/style-utils';
+import { MokkappsLightGray } from '../../styles/variables';
 
 const Container = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Container = styled.div`
   flex: 0 0 auto;
   padding: 1.5rem 2rem;
   box-sizing: border-box;
-  background-color: #ecf0f1;
+  background-color: ${MokkappsLightGray};
 `;
 
 const Heading = styled.h3`
@@ -83,13 +84,15 @@ const ProjectCardDescription = ({
       <div>
         <Divider />
         <TechnologiesContainer>
-          {usedTechnologies.map(
-            tech =>
-              tech.iconClassName ? (
-                <TechIcon key={tech.iconClassName} className={tech.iconClassName} />
-              ) : (
-                <TechText key={tech.name}>{tech.name}</TechText>
-              )
+          {usedTechnologies.map(tech =>
+            tech.iconClassName ? (
+              <TechIcon
+                key={tech.iconClassName}
+                className={tech.iconClassName}
+              />
+            ) : (
+              <TechText key={tech.name}>{tech.name}</TechText>
+            )
           )}
         </TechnologiesContainer>
         <Divider />
@@ -123,8 +126,7 @@ ProjectCardDescription.propTypes = {
   minimal: PropTypes.bool,
   projectName: PropTypes.string.isRequired,
   urls: PropTypes.object.isRequired,
-  usedTechnologies: PropTypes.array
+  usedTechnologies: PropTypes.array,
 };
 
 export default ProjectCardDescription;
-
