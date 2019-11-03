@@ -29,6 +29,8 @@ import Author from '../components/Author';
 import NextPrev from '../components/NextPrev';
 import Share from '../components/Share';
 
+import { getAllCategories } from '../utils/helper';
+
 import './postTemplate.scss';
 
 const metaIcons = {
@@ -46,6 +48,7 @@ const nextPrevIcons = {
 const PostTemplate = props => {
   const {
     data: {
+      allEdges,
       post: {
         excerpt,
         html: postHTML,
@@ -74,11 +77,12 @@ const PostTemplate = props => {
     longtext: excerpt,
   };
 
+  const allCategories = getAllCategories(allEdges);
   const handleNewComment = () => {};
 
   return (
     <Layout>
-      <ArticleWithSidebar authorImage={authorImage}>
+      <ArticleWithSidebar authorImage={authorImage} categories={allCategories}>
         <Heading title={title} />
         <PostMeta
           authorImage={file}
@@ -136,6 +140,15 @@ export default PostTemplate;
 
 export const query = graphql`
   query PostTemplateQuery($slug: String!) {
+    allEdges: allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            categories
+          }
+        }
+      }
+    }
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       fileAbsolutePath

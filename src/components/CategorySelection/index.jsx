@@ -14,11 +14,11 @@ const Category = styled.span`
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: ${props => (props.centered ? 'center' : 'flex-start')};
 `;
 
-const CategorySelection = ({ categories }) => (
-  <Container data-cy="blog-categories">
+const CategorySelection = ({ categories, centered }) => (
+  <Container data-cy="blog-categories" centered={centered}>
     {categories.map(category => {
       const link = <Link to={`/categories/${category}`}>{capitalize(category)}</Link>;
       const TagIcon = metaIcons.tag;
@@ -36,7 +36,8 @@ const CategorySelection = ({ categories }) => (
 );
 
 CategorySelection.propTypes = {
-  categories: PropTypes.array.isRequired
+  categories: PropTypes.array.isRequired,
+  centered: PropTypes.bool
 };
 
 export default CategorySelection;

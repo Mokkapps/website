@@ -43,7 +43,7 @@ const BlogPage = props => {
       <Article>
         <Heading title="BLOG" />
         <Margin top={4} bottom={4}>
-          <CategorySelection categories={categories} />
+          <CategorySelection categories={categories} centered/>
         </Margin>
         <Margin bottom={4} />
         <BlogPostList

@@ -8,26 +8,21 @@ import { MokkappsLightGray } from '../../styles/variables';
 import { customMedia } from '../../utils/style-utils';
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const Heading = styled.h3`
-    padding: 0.5rem;
-    margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Description = styled.p`
-    padding: 0.5rem;
-    color: black;
-    text-align: center;
-    ${customMedia.greaterThan('lg')`
+  padding: 0.5rem;
+  color: black;
+  text-align: center;
+  ${customMedia.greaterThan('lg')`
         font-size: 1rem;
     `};
-    ${customMedia.lessThan('lg')`
+  ${customMedia.lessThan('lg')`
         font-size: 0.5rem;
     `};
-    letter-spacing: 2px;
+  letter-spacing: 2px;
 `;
 
 const Card = styled.a`
@@ -46,18 +41,19 @@ const Card = styled.a`
   }
 `;
 
-const HireTheAuthor = ({image}) => (
-  <Wrapper>
-      <Heading><FormattedMessage id="hireTheAuthor" /></Heading>
-      <Card href="/contact">
-        <Img fluid={image.childImageSharp.fluid} />
-        <Description><FormattedMessage id="shortSummary"></FormattedMessage></Description>
-      </Card>
+const HireTheAuthor = ({ image }) => (
+  <Wrapper data-cy="hire-the-author">
+    <Card href="/contact">
+      <Img fluid={image.childImageSharp.fluid} />
+      <Description>
+        <FormattedMessage id="shortSummary"></FormattedMessage>
+      </Description>
+    </Card>
   </Wrapper>
 );
 
 HireTheAuthor.propTypes = {
-    image: PropTypes.object,
-  };
+  image: PropTypes.object
+};
 
 export default HireTheAuthor;

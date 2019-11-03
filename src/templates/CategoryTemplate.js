@@ -17,6 +17,7 @@ import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
 
 import { metaIcons, getAllCategories, capitalize } from '../utils/helper';
+import { FormattedMessage } from 'react-intl';
 
 const Introduction = styled.div`
   display: flex;
@@ -49,16 +50,23 @@ const PageTemplate = props => {
           <Margin bottom={3}>
             <Introduction data-cy="category-introduction">
               <Margin right={2}>
-                <span>Posts in category</span>
+                <span>
+                  <FormattedMessage id="postsInCategory" />
+                </span>
               </Margin>{' '}
               <TagIcon />
             </Introduction>
           </Margin>
           <h1>{capitalize(category)}</h1>
           <h3>
-            There {totalCount > 1 ? 'are' : 'is'} <strong>{totalCount}</strong>{' '}
-            post
-            {totalCount > 1 ? 's' : ''} in this category:
+            <FormattedMessage
+              id={
+                totalCount <= 1
+                  ? 'singlePostInCategory'
+                  : 'multiplePostsInCategory'
+              }
+              values={{ count: totalCount }}
+            />
           </h3>
         </Heading>
         <BlogPostList
@@ -67,8 +75,10 @@ const PageTemplate = props => {
           metaIcons={metaIcons}
         />
         <Margin top={2} bottom={2}>
-          <CenteredHeading>Other Categories</CenteredHeading>
-          <CategorySelection categories={categories} />
+          <CenteredHeading>
+            <FormattedMessage id="otherCategories"></FormattedMessage>
+          </CenteredHeading>
+          <CategorySelection categories={categories} centered/>
         </Margin>
       </Article>
       <Footer />

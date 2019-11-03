@@ -72,5 +72,9 @@
   "visitArchive": "Newsletter Archiv →",
   "mailChimpInfo": "Wir verwenden Mailchimp als Newsletter-Plattform. Bei der Anmeldung werden Informationen an Mailchimp übertragen.",
   "mailChimpInfoLink": "Mehr Informationen über Mailchimp's Datenschutz-Praktiken.",
-  "hireTheAuthor": "Beauftrage den Autor"
+  "hireTheAuthor": "Beauftrage den Autor",
+  "otherCategories": "Weitere Kategorien",
+  "postsInCategory": "Beiträge in Kategorie",
+  "singlePostInCategory": "Es befindet sich {count} Beitrag in dieser Kategorie",
+  "multiplePostsInCategory": "Es befinden sich {count} Beiträge in dieser Kategorie"
 }
