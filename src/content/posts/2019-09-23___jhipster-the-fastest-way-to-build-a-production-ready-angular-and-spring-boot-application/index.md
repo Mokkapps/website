@@ -1,7 +1,7 @@
 ---
 title: JHipster - The Fastest Way To Build A Production-Ready Angular & Spring Boot Application
 subTitle: 
-categories: ['development', 'tools'] 
+categories: ['development', 'angular'] 
 cover: cover.png
 ---
 

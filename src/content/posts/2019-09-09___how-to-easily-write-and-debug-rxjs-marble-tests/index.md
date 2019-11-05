@@ -1,7 +1,7 @@
 ---
 title: How To Easily Write And Debug RxJS Marble Tests
 subTitle: 
-categories: ['development'] 
+categories: ['development', 'angular'] 
 cover: cover.jpg
 ---
 

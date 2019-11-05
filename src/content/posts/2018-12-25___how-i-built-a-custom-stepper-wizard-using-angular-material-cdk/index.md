@@ -1,7 +1,7 @@
 ---
 title: How I Built A Custom Stepper/Wizard Component Using The Angular Material CDK
 subTitle:
-categories: ['development']
+categories: ['development', 'angular']
 cover: cover.png
 ---
 

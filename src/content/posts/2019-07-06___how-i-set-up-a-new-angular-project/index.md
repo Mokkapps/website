@@ -1,9 +1,11 @@
 ---
 title: How I Set Up A New Angular Project
 subTitle: 
-categories: ['development'] 
+categories: ['development', 'angular'] 
 cover: cover.png
 ---
+
+**Update November 2019: Updated article with some additional tips**
 
 **Update September 2019: Added error handling**
 
@@ -15,15 +17,19 @@ In my opinion, [Angular](https://angular.io/) is the best choice for large enter
 - UI Component Explorer
 - Domain-driven Design for your models
 - Error Handling
+- Build Complex Components
+- Miscellaneous
 
 ## Nx 
 
 [Nx](https://nx.dev/angular/getting-started/what-is-nx) is not a replacement for the Angular CLI but it uses the power of the Angular CLI and enhances it with additional tools. Anything you can do with the Angular CLI can also be done with Nx and you configure your project (as usual) with the `angular.json` configuration file.
 
-Basically, I love Nx due to these facts:
+I love Nx due to these facts:
 
 -   I can easily integrate modern tools like [Cypress](https://cypress.io), [Jest](https://jestjs.io/) and [Prettier](https://prettier.io/) to my Angular project
--   I can use effective development practices which are pioneered at Google, Facebook and Microsoft
+-   I can use effective development practices which are pioneered at Google, Facebook, and Microsoft
+
+> Nx is an easy to use version of the powerful monorepo tools used at companies like Google.
 
 Let us first talk about the usage of [Cypress](https://cypress.io) and [Jest](https://jestjs.io/) in Angular projects.
 
@@ -42,18 +48,18 @@ Cypress is modern and interesting because it is not based on Selenium. Whereas S
 * Consistent results
 * Screenshots and videos
 
-On the [official feature website](https://www.cypress.io/features) you can find further details to these features.
+On the [official feature website](https://www.cypress.io/features) you can find further details about these features.
 
 The greatest disadvantage of Cypress is, in my opinion, that it does not have full integration with tools like SauceLabs and BrowserStack and does not support other browsers than Chrome. This probably might change in the future but at the time of writing these features are not available yet. 
 
-In my opinion, Cypress is not a perfect choice for every Angular project but I would totally recommend that you should give it a try and make your own decision. 
+In my opinion, Cypress is not a perfect choice for every Angular project but I would recommend that you should give it a try and make your own decision. 
 
-### Why should I consider using Jest instead of jasmine?
+### Why should I consider using Jest instead of Karma/jasmine?
 
 In my experience, the testing experience using Karma + jasmine is worse when the projects become bigger:
 
 * Slow build times (especially initially)
-* Recompiling does not work reliably
+* Recompiling does not work reliably  
 * HTML reporter like [karma-jasmine-html-reporter](https://www.npmjs.com/package/karma-jasmine-html-reporter) tend to be buggy
 
 [Jest](https://jestjs.io/) was created by Facebook and is faster than other test runners because it is parallelizing tests. Additionally, it provides a CLI and has less configuration effort than other testing frameworks. 
@@ -68,7 +74,16 @@ Some of the advantages of Jest compared to Karma + jasmine:
 - Provides [snapshot testing](https://jestjs.io/docs/en/snapshot-testing)
 - More active community
 
-To be honest, I haven't used Jest in any of my Angular projects yet but I will definitely give it a try in one of my next projects. The main reason why I haven't used it yet is that I worked on existing codebases with many jasmine tests and there was no need/time/budget to migrate them to Jest.
+To be honest, I haven't used Jest in any of my Angular projects yet but I will give it a try in one of my next Angular projects. The main reason why I haven't used it yet is that I worked on existing codebases with many jasmine tests and there was no need/time/budget to migrate them to Jest.  But I already used Jest in a Vue.js project and liked it.
+
+If you are just annoyed with the verbose code produced by using Angular's [TestBed API](https://angular.io/guide/testing#component-dom-testing) I would suggest trying [Spectator](https://github.com/NetanelBasal/spectator) which allows us to write "readable, sleek and streamlined unit tests".
+
+A summary of my testing suggestions:
+
+* Consider using Spectator instead of the TestBed API of Angular.
+* Consider using Jest instead of Karma/Jasmine (Migration is quite easy)
+* Consider using [ng-mocks](https://www.npmjs.com/package/ng-mocks) to mock your component, directives, services, pipes and more. Your unit tests should be pure and therefore isolated. 
+* Consider using a functional component testing approach over the technical class testing approach. Test your component from the DOM and not the class, you should think in user events instead of methods.
 
 ### Effective Development Practices
 
@@ -76,7 +91,7 @@ Using Nx you can work in a "monorepo" way of building your application. This app
 
 * You commit a working piece of software which may include multiple parts like frontend and backend
 * One toolchain setup
-* Dependency management is easier
+* Dependency management is easier, e.g. all applications & libs in a Nx workspace share one `package.json` and can thus use the same Angular version
 * Code can be split into composable modules
 * Consistent developer experience
 
@@ -85,11 +100,27 @@ What I also like is the possibility to create applications and libraries in Nx w
 >    * An application is anything that can run in the browser or on the server. It's similar to a binary.
 >    * A library is a piece of code with a well-defined public API. A library can be imported into another library or application. You cannot run a library.
 
-As an example, it could be useful to define for each REST API endpoint a separate library which includes the Angular service and the corresponding models.
+As an example, we could define a TypeScript library that shares our TypeScript interfaces between our TS-based application in our workspace. Of course, our workspace can contain applications that rely on different frontend (or backend) frameworks like React, Angular, NestJS and even more.
 
-Additionally, you can enforce best practices in your project using workspace-specific schematics and code formatters.
+One of my favorite features is the dependency graph which can show me a graphical representation of my workspace by running `nx affected:dep-graph`: 
 
-See the [official documentation](https://nx.dev/angular/fundamentals/develop-like-google) to read more about how to use these mechanics in Nx.
+![Nx Dependency Graph](./nx-dep-graph.png)
+
+As we used `affected` we can see what parts of our workspace are affected by our current changes (highlighted in red). This way we can also run only tests or recompile code which was effected by our changes:
+
+```bash
+nx affected:apps  # prints the apps affected by a PR
+
+nx affected:build  # reruns build for all the projects affected by a PR
+
+nx affected:test  # reruns unit tests for all the projects affected by a PR
+
+nx affected:e2e  # reruns e2e tests for all the projects affected by a PR
+
+nx affected --target=lint  # reruns any target (for instance lint) for projects affected by a PR
+```
+
+See the [official documentation](https://nx.dev/angular/fundamentals/monorepos-automation) to read more about how to use these mechanics in Nx.
 
 ## TypeScript Configuration
 
@@ -119,7 +150,7 @@ I always use [ngx-translate](https://github.com/ngx-translate/core) in my Angula
 
 ## UI Component Explorer
 
-If you develop your own components it can be helpful to create a custom view with all available components or use existing solutions like [StoryBook](https://storybook.js.org/). 
+If you develop your components it can be helpful to create a custom view with all available components or use existing solutions like [StoryBook](https://storybook.js.org/). 
 
 In some projects, I created a separate page in the application (which was only visible to certain people) which showed a list of all available components. This page was used in manual testing sessions and provided a quick way to see if a new feature had an impact on any existing component. Additionally, it was possible to test the components in isolation.
 
@@ -191,7 +222,7 @@ If, for example, the minimum age should be changed from 18 to 16 this logic need
 
 I would always add a `LoggerService` and global error handler in the beginning of the project. 
 
-Additionally, try to use a error tracking software like [Sentry](https://sentry.io/) to be able to monitor and fix crashes in real time. 
+Additionally, try to use an error tracking software like [Sentry](https://sentry.io/) to be able to monitor and fix crashes in real-time. 
 
 Example for a `LoggerService`:
 
@@ -237,11 +268,34 @@ class MyErrorHandler implements ErrorHandler {
 @NgModule({
   providers: [{provide: ErrorHandler, useClass: MyErrorHandler}]
 })
-class MyModule {}
+class CoreModule {}
 ```
+
+## Build Complex Components
+
+Often we need to develop complex components in our applications. For this case I suggest the following:
+
+Try to solve your problem using the fantastic [Angular CDK](https://material.angular.io/cdk/categories) which provides a set of tools that implement common interaction patterns whilst being unopinionated about their presentation. Examples are tools for accessibility, overlays, scrolling, drag & drop, tables and more.
+
+If you build your component also take a look at existing open-source Angular libraries like [Angular Material](https://github.com/angular/components). There you can see how components are written the "Angular way".
+
+You can also look for existing Angular components in npm, therefore I can recommend taking a look at curated component lists like [Awesome Angular Components](https://github.com/brillout/awesome-angular-components) or [Awesome Angular](https://github.com/PatrickJS/awesome-angular). Anyways, I would advise to check the following for each 3rd party library you want to integrate into your project:
+    * When was it published the last time?
+    * Is it actively maintained? How many open issues are on GitHub? 
+    * Is it actively used by checking npm weekly download numbers?
+
+## Miscellaneous
+
+* Use [Prettier](https://prettier.io/) as code formatter
+* Use [Augury](https://augury.rangle.io/), [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) or any other useful browser dev tools 
+* Use [Compodoc](https://github.com/compodoc/compodoc) (or any other similar tool) to generate documentation for your application. 
+* Use [Husky](https://github.com/typicode/husky), to check if commit message has the correct format, code is formatted, linter has no errors and maybe also run unit tests before you push your code.
+* [Lazy load](https://angular.io/guide/lazy-loading-ngmodules) all your modules. This way you can split your application in multiple smaller bundles which are only loaded if necessary. 
 
 ## Conclusion
 
 It is important to agree with your team on such an opinionated setup. I would propose this approach to the team, discuss alternatives, advantages, disadvantages and try to find a good compromise. In the end, the project should be scalable and the team should be able to quickly deliver features.
 
 This article showed you my approach to set up a new Angular project. It is not complete and maybe not a perfect approach but it is my experience, so your suggestions are always welcome in the comments.
+
+I would also recommend you to read this free eBook from Manfred Steyer [Enterprise Angular - DDD, Nx Monorepos and Micro Frontends](https://leanpub.com/enterprise-angular) which covers a lot of the discussed topics in more detail.

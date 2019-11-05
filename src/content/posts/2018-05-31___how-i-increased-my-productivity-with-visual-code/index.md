@@ -1,7 +1,7 @@
 ---
 title: How I Increased My Productivity With Visual Studio Code
 subTitle: Learn how to become a more productive developer
-categories: ["productivity", "development"]
+categories: ["productivity", "development", "tools"]
 cover: cover.png
 ---
 
