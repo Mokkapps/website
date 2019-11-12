@@ -4,23 +4,16 @@ subTitle:
 categories: ['development', 'angular'] 
 cover: cover.png
 ---
-
-<!-- ### Content  
-
-1. How is change detection implemented?
-2. What does an Angular change detector look like, can I see it?
-3. How does the default change detection mechanism work
-4. turning on/off change detection, and triggering it manually
-5. Avoiding change detection loops: Production vs Development mode
-6. What does the OnPush change detection mode actually do?
-7. Using Immutable.js to simplify the building of Angular apps
-8. Conclusions
-
-![](https://miro.medium.com/max/1580/1*SdyHaw71UOajmOzoAsRDZw.png) -->
+<!-- Variables -->
+[demo-live]: https://angular-change-detection-demo.netlify.com
+[demo-simple]: https://angular-change-detection-demo.netlify.com/simple-demo
+[demo-async]: https://angular-change-detection-demo.netlify.com/async-pipe-demo
+[demo-expression-changed]: https://angular-change-detection-demo.netlify.com/expression-changed-demo
+[demo-github]: https://github.com/Mokkapps/angular-change-detection-demo
 
 Angular's Change Detection is a core mechanic of the framework but (at least from my experience) it is very hard to understand. Unfortunately, there exists no official guide on the [official website](https://angular.io/) about this topic. 
 
-In this blog post I will provide you all the necessary information you need to know about change detection. I will explain the mechanics by using a [demo project](https://github.com/Mokkapps/angular-change-detection-demo) I built.
+In this blog post I will provide you all the necessary information you need to know about change detection. I will explain the mechanics by using a [demo project][demo-github] I built for this blog post.
 
 ## What Is Change Detection
 
@@ -55,9 +48,6 @@ The following GIF demonstrates this process in a simplified way:
 The picture shows an Angular component tree and its change detector (CD) for each component which is created during the application bootstrap process. This detector compares the current value with the previous value of the property. If the value has changed it will set `isChanged` to true. Checkout [the implementation in the framework code](https://github.com/angular/angular/blob/885f1af509eb7d9ee049349a2fe5565282fbfefb/packages/core/src/util/comparison.ts#L13) which is just a `===` comparison with a special handling for `NaN`.
 
 > Change Detection does not perform a deep object comparison, it only compares the previous and current value of properties used by the template
-
-// TODO recreate
-![](https://miro.medium.com/max/1580/1*SdyHaw71UOajmOzoAsRDZw.png)
 
 ### Zone.js
 
@@ -132,15 +122,20 @@ Using this strategy, Angular knows that the component only needs to be updated i
 
 Let's take a closer look at these type of events.
 
-##### Input Reference Changes
+#### Input Reference Changes
 
 In the default change detection strategy, Angular will run the change detector any time `@Input()` data is changed or modified. Using the `OnPush` strategy, change detector is only triggered if a **new reference** is passed as `@Input()` value.
 
 Primitive types like numbers, string, booleans, null and undefined are passed by value. Object and arrays are also passed by value but modifying object properties or array entries does not create a new reference and therefore does not trigger change detection on a `OnPush` component. To trigger the change detector you need to pass a new object or array reference instead.
 
-//FIXME show demo code
+You can test this behavior using the [simple demo][demo-simple]:
 
-######  Immutable.js
+1. Modify the age of the `HeroCardComponent` with `ChangeDetectionStrategy.Default`
+2. Verify that the `HeroCardOnPushComponent` with `ChangeDetectionStrategy.OnPush` does not reflect the changed age (visualized by red border around the components)
+3. Click on "Create new object reference" in "Modify Heroes" panel
+4. Verify that the `HeroCardOnPushComponent` with `ChangeDetectionStrategy.OnPush` gets checked by change detection
+
+![ChangeDetection OnPush Input Reference Change](./cd-input-reference-change.gif)
 
 To prevent change detection bugs it can be useful to build the application using `OnPush` change detection everywhere by using only immutable objects and lists. Immutable objects can only be modified by creating a new object reference so we can guarantee that:
 
@@ -149,7 +144,7 @@ To prevent change detection bugs it can be useful to build the application using
 
 [Immutable.js](https://facebook.github.io/immutable-js/) is a good choice and the library provides persistent immutable data structures for objects (`Map`) and lists (`List`). Installing the library via [npm](https://www.npmjs.com/package/immutable) provides type definitions so that we can take advantage of type generics, error detection, and auto-complete in our IDE.
 
-##### Event Handler Is Triggered
+#### Event Handler Is Triggered
 
 Change detection (for all components in the component tree) will be triggered if the `OnPush` component or one of its child components triggers an event handler, like clicking on a button. 
 
@@ -160,7 +155,12 @@ Be careful, the following actions do not trigger change detection using the `OnP
 * `Promise.resolve().then()`
 * `this.http.get('...').subscribe()`
 
-//TODO reference demo code
+You can test this behavior using the [simple demo][demo-simple]:
+
+1. Click on "Change Age" button in `HeroCardOnPushComponent` which uses `ChangeDetectionStrategy.OnPush` 
+2. Verify that change detection is triggered and checks all components
+
+![ChangeDetection Event Trigger](./cd-event-trigger.gif)
 
 #### Trigger Change Detection Manually
 
@@ -171,8 +171,10 @@ There exist three methods to manually trigger change detections:
 
 > Running change detection manually is not a hack but you should only use it in reasonable cases
 
-// FIXME recreate image
-![](https://miro.medium.com/max/2904/1*KrIqm7-40larFWM7SeU8wQ.png)
+The following illustrations shows the different `ChangeDetectorRef` methods in a visual representation:
+![ChangeDetectorRef methods](./changedetectorref-methods.png)
+
+You can test some of these actions using the "DC" (`detectChanges()`) and "MFC" (`markForCheck()`) buttons in the [simple demo][demo-simple].
 
 #### Async Pipe
 
@@ -191,11 +193,74 @@ private _updateLatestValue(async: any, value: Object): void {
 
 As shown, the `AsyncPipe` automatically works using `OnPush` change detection strategy. So it is recommend to use it as much as possible to easier perform a later switch from default change detection strategy to `OnPush`.
 
+You can see this behavior in action in the [async demo][demo-async].
+
+![AsyncPipe with OnPush](./cd-async-pipe.gif)
+
+The first component directly binds an observable via `AsyncPipe` to the template 
+
+```html
+<mat-card-title>{{ (hero$ | async).name }}</mat-card-title>
+```
+
+```ts
+  hero$: Observable<Hero>;
+
+  ngOnInit(): void {
+    this.hero$ = interval(1000).pipe(
+        startWith(createHero()),
+        map(() => createHero())
+      );
+  }
+```
+
+while the second component subscribes to the observable and updates a data binding value:
+
+```html
+<mat-card-title>{{ hero.name }}</mat-card-title>
+```
+
+```ts
+  hero: Hero = createHero();
+
+  ngOnInit(): void {
+    interval(1000)
+      .pipe(map(() => createHero()))
+        .subscribe(() => {
+          this.hero = createHero();
+          console.log(
+            'HeroCardAsyncPipeComponent new hero without AsyncPipe: ',
+            this.hero
+          );
+        });
+  }
+```
+
+As you can see the implementation without the `AsyncPipe` does not trigger change detection, so we would need to manually call `detectChanges()` for each new event which is emitted from the observable.
+
 ### Avoiding Change Detection Loops and ExpressionChangedAfterCheckedError
 
 Angular includes a mechanism which detects change detection loops. In development mode the framework runs change detection twice to check if the value has changed since the first run. In production mode change detection is only run once to have a better performance. 
 
-TODO: Demonstrate ExpressionChangedAfterCheckedError with demo code
+I force the error in my [ExpressionChangedAfterCheckedError demo][demo-expression-changed] and you can see it if you open the browser console:
+
+![ExpressionChangedAfterCheckedError](./expression-change-error.png)
+
+In this demo I forced the error by updating the `hero` property in the `ngAfterViewInit` lifecycle hook: 
+
+```ts
+  ngAfterViewInit(): void {
+    this.hero.name = 'Another name which triggers ExpressionChangedAfterItHasBeenCheckedError';
+  }
+```
+
+To understand why this causes the error we need to take a look at the different steps during a change detection run:
+
+![Lifecycle Hooks](./lifecycle-hooks.png)
+
+As we can see, the `AfterViewInit` lifecycle hook is called after the DOM updates of the current view have been rendered. If we change the value in this hook it will have a different value in the second change detection run (which is triggered automatically in development mode as described above) and therefore Angular will throw the `ExpressionChangedAfterCheckedError`.
+
+I can highly recommend the article [Everything you need to know about change detection in Angular](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f) from [Max Koretskyi](https://twitter.com/maxkoretskyi) which explores the underlying implementation and use cases of the famous `ExpressionChangedAfterCheckedError` in more detail.
 
 ### Run Code Without Change Detection
 
@@ -264,7 +329,7 @@ As a developer, you usually need to deep dive into this topic for two reasons:
 * You receive a `ExpressionChangedAfterCheckedError` and need to solve it
 * You need to improve your application performance
 
-I hope this article could help you to have a better understanding about Angular's Change Detection. Feel free to use my [demo project](https://github.com/Mokkapps/angular-change-detection-demo) to play around with the different change detection strategies.
+I hope this article could help you to have a better understanding about Angular's Change Detection. Feel free to use my [demo project][demo-github] to play around with the different change detection strategies.
 
 ### Recommended Articles
 
