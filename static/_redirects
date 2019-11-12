@@ -1,4 +1,4 @@
 # my manually set redirects
 /talks/my-first-smartphone-game  https://mokkapps-first-smartphone-game-talk.netlify.com
-/demos/angular-change-detection  https://angular-change-detection-demo.netlify.com/:splat 200
+/demos/angular-change-detection/*  https://angular-change-detection-demo.netlify.com/:splat 200
 
