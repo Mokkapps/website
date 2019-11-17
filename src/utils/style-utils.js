@@ -5,6 +5,6 @@ export const customMedia = generateMedia({
   sm: '450px',
   md: '768px',
   lg: '992px',
-  xlg: '1200px',
+  xlg: '1280px',
   xxlg: '1440px',
 });
