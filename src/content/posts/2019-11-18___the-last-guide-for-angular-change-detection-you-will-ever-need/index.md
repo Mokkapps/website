@@ -152,8 +152,8 @@ Be careful, the following actions do not trigger change detection using the `OnP
 
 * `setTimeout`
 * `setInterval`
-* `Promise.resolve().then()`
-* `this.http.get('...').subscribe()`
+* `Promise.resolve().then()`, (of course, the same for `Promise.reject().then()`)
+* `this.http.get('...').subscribe()` (in general, any RxJS observable subscription)
 
 You can test this behavior using the [simple demo][demo-simple]:
 
@@ -325,6 +325,18 @@ platformBrowserDynamic().bootstrapModule(AppModule, {
 
 More details about deactivating Zone.js can be found in the article [Angular Elements without Zone.Js](https://www.softwarearchitekt.at/aktuelles/angular-elements-part-iii/).
 
+### Ivy
+
+Angular 9 will use [Ivy, Angular's next-generation compilation and rendering pipeline](https://blog.angularindepth.com/all-you-need-to-know-about-ivy-the-new-angular-engine-9cde471f42cf) per default. Starting with Angular version 8, you [can choose to opt in to start using a preview version of Ivy](https://angular.io/guide/ivy) and help in its continuing development and tuning.
+
+The Angular team will ensure that the new render engine still handles all framework lifecycle hooks in the correct order so that change detection works as before. So you will still see the same `ExpressionChangedAfterCheckedError` in your applications.
+
+[Max Koretskyi](https://twitter.com/maxkoretskyi) wrote [in the article](https://blog.angularindepth.com/ivy-engine-in-angular-first-in-depth-look-at-compilation-runtime-and-change-detection-876751edd9fd): 
+
+> As you can see, all the familiar operations are still here. But the order of operations appears to have changed. For example, it seems that now Angular first checks the child components and only then the embedded views. Since at the moment there’s no compiler to produce output suitable to test my assumptions, I can’t know for sure.
+
+You can find two more interesting Ivy related articles in the "Recommend Articles" section at the end of this blog post.
+
 ### Conclusion
 
 Angular Change Detection is a powerful framework mechanism that ensures that our UI represents our data in a predictable and performant way. It is safe to say that change detection just works for most applications, especially if they do not consist of 50+ components. 
@@ -342,3 +354,4 @@ I hope this article could help you to have a better understanding of Angular's C
 * [A Comprehensive Guide to Angular onPush Change Detection Strategy](https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4)
 * [Angular Change Detection Explained](https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html)
 * [Angular Ivy change detection execution: are you prepared?](https://blog.angularindepth.com/angular-ivy-change-detection-execution-are-you-prepared-ab68d4231f2c)
+* [Understanding Angular Ivy: Incremental DOM and Virtual DOM](https://blog.nrwl.io/understanding-angular-ivy-incremental-dom-and-virtual-dom-243be844bf36)

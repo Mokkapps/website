@@ -31,8 +31,6 @@ import Share from '../components/Share';
 
 import { getAllCategories } from '../utils/helper';
 
-import './postTemplate.scss';
-
 const metaIcons = {
   calendar: CalendarIcon,
   user: UserIcon,
@@ -94,7 +92,7 @@ const PostTemplate = props => {
         />
         {cover ? (
           <Margin bottom={4}>
-            <Img fluid={cover.childImageSharp.fluid} className="post-template-image"/>
+            <Img fluid={cover.childImageSharp.fluid}/>
           </Margin>
         ) : null}
         <BodyText html={postHTML} />

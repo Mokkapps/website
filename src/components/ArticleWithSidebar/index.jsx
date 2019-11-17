@@ -9,8 +9,16 @@ import { customMedia } from '../../utils/style-utils';
 import CategorySelection from '../CategorySelection';
 
 const Wrapper = styled.section`
-  display: flex;
-  margin: 0 auto 30px;
+  display: grid;
+
+  ${customMedia.lessThan('xlg')`
+    grid-template-columns: minmax(0, auto);
+    grid-template-areas: 'content';
+  `};
+  ${customMedia.greaterThan('xlg')`
+    grid-template-columns: 1fr minmax(0, 800px) 1fr;
+    grid-template-areas: 'left content sidebar';
+  `}
   background: white;
   border-radius: 10px;
   padding: 2rem;
@@ -21,25 +29,39 @@ const Heading = styled.h3`
   margin-bottom: 0;
 `;
 
+const LeftSide = styled.div`
+  grid-area: left;
+  ${customMedia.lessThan('xlg')`
+    display: none;
+  `};
+`;
+
 const StyledArticle = styled.article`
-  flex: 5;
+  grid-area: content;
+  ${customMedia.between('lg', 'xlg')`
+    max-width: 700px;
+    margin: 0 auto;
+  `};
 `;
 
 const StyledAside = styled.aside`
-  ${customMedia.lessThan('lg')`
-     display: none;
+  ${customMedia.lessThan('xlg')`
+    display: none;
   `};
+  grid-area: sidebar;
   padding: 1rem;
-  flex: 1;
+  margin: 0 auto;
 `;
 
 const AsideContent = styled.div`
   position: sticky;
   top: 0;
+  max-width: 200px;
 `;
 
 const ArticleWithSidebar = ({ children, authorImage, categories }) => (
   <Wrapper>
+    <LeftSide></LeftSide>
     <StyledArticle>{children}</StyledArticle>
     <StyledAside>
       <AsideContent>
