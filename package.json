@@ -14,8 +14,8 @@
     "start-server": "gatsby develop",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test:e2e:ci": "start-server-and-test start http://localhost:8000 cy:run",
-    "test:e2e": "start-server-and-test start http://localhost:8000 cy:open",
+    "test:e2e:ci": "rm -rf .cache && start-server-and-test start http://localhost:8000 cy:run",
+    "test:e2e": "rm -rf .cache && start-server-and-test start http://localhost:8000 cy:open",
     "lint": "eslint src"
   },
   "dependencies": {
@@ -73,7 +73,7 @@
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0",
     "babel-eslint": "^10.0.3",
-    "cypress": "^3.6.0",
+    "cypress": "^3.6.1",
     "dotenv": "^8.2.0",
     "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.0.2",

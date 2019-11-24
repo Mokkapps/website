@@ -3,6 +3,7 @@ import ProjectsIcon from 'react-feather/dist/icons/code';
 import InfoIcon from 'react-feather/dist/icons/user';
 import BlogIcon from 'react-feather/dist/icons/file-text';
 import ContactIcon from 'react-feather/dist/icons/mail';
+import MessageCircleIcon from 'react-feather/dist/icons/message-circle';
 
 const menu = [
   { i18nId: 'menuHome', to: '/', ariaLabel: 'Home', icon: HomeIcon },
@@ -13,6 +14,7 @@ const menu = [
     ariaLabel: 'Projects',
     icon: ProjectsIcon,
   },
+  { i18nId: 'menuPublications', to: '/publications', ariaLabel: 'Publications', icon: MessageCircleIcon },
   { i18nId: 'menuAbout', to: '/about', ariaLabel: 'About Me', icon: InfoIcon },
   {
     i18nId: 'menuContact',

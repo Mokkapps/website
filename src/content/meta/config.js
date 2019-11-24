@@ -1,7 +1,8 @@
 const base = {
   name: 'Mokkapps (Michael Hoffmann)',
   url: 'https://www.mokkapps.de',
-  desc: "I'm Michael Hoffmann. Passionate freelance frontend and app developer.",
+  desc:
+    "I'm Michael Hoffmann. Passionate freelance frontend and app developer.",
 };
 
 const config = {
@@ -24,24 +25,74 @@ const config = {
 
   skills: [
     // className can be found in https://konpa.github.io/devicon/
-    { type: 'JavaScript', className: 'devicon-javascript-plain colored', level: 'advanced' },
-    { type: 'C#', className: 'devicon-csharp-line colored', level: 'elementary' },
-    { type: '.NET', className: 'devicon-dot-net-plain-wordmark colored', level: 'elementary' },
-    { type: 'TypeScript', className: 'devicon-typescript-plain colored', level: 'advanced' },
-    { type: 'Java', className: 'devicon-java-plain-wordmark colored', level: 'intermediate' },
-    { type: 'CSS3', className: 'devicon-css3-plain-wordmark colored', level: 'advanced' },
-    { type: 'HTML5', className: 'devicon-html5-plain-wordmark colored', level: 'advanced' },
-    { type: 'Angular', className: 'devicon-angularjs-plain colored', level: 'expert' },
-    { type: 'React', className: 'devicon-react-original-wordmark colored', level: 'advanced' },
-    { type: 'Vue', className: 'devicon-vuejs-plain-wordmark colored', level: 'advanced' },
-    { type: 'Node.js', className: 'devicon-nodejs-plain-wordmark colored', level: 'intermediate' },
+    {
+      type: 'JavaScript',
+      className: 'devicon-javascript-plain colored',
+      level: 'advanced',
+    },
+    {
+      type: 'C#',
+      className: 'devicon-csharp-line colored',
+      level: 'elementary',
+    },
+    {
+      type: '.NET',
+      className: 'devicon-dot-net-plain-wordmark colored',
+      level: 'elementary',
+    },
+    {
+      type: 'TypeScript',
+      className: 'devicon-typescript-plain colored',
+      level: 'advanced',
+    },
+    {
+      type: 'Java',
+      className: 'devicon-java-plain-wordmark colored',
+      level: 'intermediate',
+    },
+    {
+      type: 'CSS3',
+      className: 'devicon-css3-plain-wordmark colored',
+      level: 'advanced',
+    },
+    {
+      type: 'HTML5',
+      className: 'devicon-html5-plain-wordmark colored',
+      level: 'advanced',
+    },
+    {
+      type: 'Angular',
+      className: 'devicon-angularjs-plain colored',
+      level: 'expert',
+    },
+    {
+      type: 'React',
+      className: 'devicon-react-original-wordmark colored',
+      level: 'advanced',
+    },
+    {
+      type: 'Vue',
+      className: 'devicon-vuejs-plain-wordmark colored',
+      level: 'advanced',
+    },
+    {
+      type: 'Node.js',
+      className: 'devicon-nodejs-plain-wordmark colored',
+      level: 'intermediate',
+    },
   ],
   otherTools: [
     // className can be found in https://konpa.github.io/devicon/
     { type: 'Webpack', className: 'devicon-webpack-plain-wordmark colored' },
-    { type: 'Bootstrap', className: 'devicon-bootstrap-plain-wordmark colored' },
+    {
+      type: 'Bootstrap',
+      className: 'devicon-bootstrap-plain-wordmark colored',
+    },
     { type: 'jasmine', className: 'devicon-jasmine-plain-wordmark colored' },
-    { type: 'Protractor', className: 'devicon-protractor-plain-wordmark colored' },
+    {
+      type: 'Protractor',
+      className: 'devicon-protractor-plain-wordmark colored',
+    },
     { type: 'Sass', className: 'devicon-sass-original colored' },
     { type: 'Docker', className: 'devicon-docker-plain-wordmark colored' },
     { type: 'Git', className: 'devicon-git-plain-wordmark colored' },
@@ -64,7 +115,13 @@ const config = {
       icon: 'codepen',
     },
   ],
-  customers: ['BMW', 'Audi Business Innovation', 'Carl Zeiss Microscopy', 'ProSiebenSat.1 Tech', 'SOFTWAREarchitekt.at'],
+  customers: [
+    'BMW',
+    'Audi Business Innovation',
+    'Carl Zeiss Microscopy',
+    'ProSiebenSat.1 Tech',
+    'SOFTWAREarchitekt.at',
+  ],
   characteristics: [
     {
       i18nTitleId: 'characteristicDevTitle',
@@ -129,7 +186,10 @@ const config = {
           'A desktop application which can be used in Scrum teams to initiate the daily Scrum meeting',
         long: '',
       },
-      usedTechnologies: [{ name: 'Electron' }, { iconClassName: 'devicon-angularjs-plain' }],
+      usedTechnologies: [
+        { name: 'Electron' },
+        { iconClassName: 'devicon-angularjs-plain' },
+      ],
       imageName: 'standup-picker',
       urls: {
         page: '/standup-picker',
@@ -191,7 +251,10 @@ const config = {
           'A website which shows a list of traffic graphs of your own GitHub repositories',
         long: '',
       },
-      usedTechnologies: [{ name: 'Gatsby.js, Firebase' }, { iconClassName: 'devicon-react-original' }],
+      usedTechnologies: [
+        { name: 'Gatsby.js, Firebase' },
+        { iconClassName: 'devicon-react-original' },
+      ],
       imageName: 'github-traffic-viewer',
       urls: {
         page: 'https://github-traffic-viewer.netlify.com/',
@@ -204,7 +267,10 @@ const config = {
         short: 'Website for our family-run honey farm',
         long: '',
       },
-      usedTechnologies: [{ name: 'Gatsby.js' }, { iconClassName: 'devicon-react-original' }],
+      usedTechnologies: [
+        { name: 'Gatsby.js' },
+        { iconClassName: 'devicon-react-original' },
+      ],
       imageName: 'privatimkerei-hoffmann',
       urls: {
         page: 'https://privatimkerei-hoffmann.de/',
@@ -218,7 +284,10 @@ const config = {
           'Web application which can be used to subscribe for push notifications which will inform 30 minutes before a band will play on the music festival Void Fest 2018',
         long: '',
       },
-      usedTechnologies: [{ iconClassName: 'devicon-react-original' }, { iconClassName: 'devicon-nodejs-plain' }],
+      usedTechnologies: [
+        { iconClassName: 'devicon-react-original' },
+        { iconClassName: 'devicon-nodejs-plain' },
+      ],
       imageName: 'void-fest-band-reminder',
       urls: {
         page: 'https://void-fest-app.netlify.com/',
@@ -230,25 +299,49 @@ const config = {
   publications: [
     {
       type: 'talk',
-      title:
-        '2019 Munich Frontend Meetup: The Engineering Behind My Portfolio Website',
-      link: 'https://mokkapps-website-lightning-talk.netlify.com',
+      date: '11/2019',
+      image: 'new-angular-project',
+      host: 'Munich Frontend Meetup',
+      title: 'How I Would Start A New Angular Project',
+      link:
+        'https://www.meetup.com/de-DE/Munich-Frontend-Developers/events/265401762/',
+      slides: 'https://www.slideshare.net/secret/47Wj9B5Is6Zch3',
     },
     {
       type: 'talk',
-      title: '2018 Abendvortrag jambit: Mein erstes Smartphone-Spiel',
-      link: 'https://www.mokkapps.de/talks/my-first-smartphone-game/',
+      date: '01/2019',
+      image: 'website-engineering',
+      host: 'Munich Frontend Meetup',
+      title: 'The Engineering Behind My Portfolio Website',
+      link:
+        'https://jambit.com/en/latest-info/events/meetup-munich-frontend-developers-2019/',
+      slides: 'https://mokkapps-website-lightning-talk.netlify.com',
     },
     {
       type: 'talk',
-      title: '2017 CoffeeTalk jambit: Reactive Programming',
+      date: '02/2018',
+      image: 'first-smartphone-game',
+      host: 'jambit GmbH',
+      title: 'My First Smartphone Game',
+      link:
+        'https://www.mokkapps.de/blog/lessons-learned-my-first-smartphone-game/',
+      slides: 'https://www.mokkapps.de/talks/my-first-smartphone-game/',
+    },
+    {
+      type: 'talk',
+      date: '06/2017',
+      image: 'reactive-programming',
+      host: 'jambit GmbH',
+      title: 'Reactive Programming',
       link:
         'https://www.jambit.com/en/latest-info/events/coffeetalks-june-2017/',
     },
     {
       type: 'talk',
-      title:
-        '2016 CoffeeTalk jambit: Unity – Eine Einführung in die Cross-Plattform-Spieleentwicklung',
+      date: '04/2016',
+      image: 'unity',
+      host: 'jambit GmbH',
+      title: 'Unity – Eine Einführung in die Cross-Plattform-Spiele-Entwicklung',
       link:
         'https://jambit.com/aktuelles/veranstaltungen/coffeetalks-april-2016/',
     },

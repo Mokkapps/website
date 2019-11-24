@@ -14,7 +14,7 @@ const Container = styled.div`
   justify-content: flex-start;
 
   flex: 0 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 1rem;
   box-sizing: border-box;
   background-color: ${MokkappsLightGray};
 `;
@@ -22,6 +22,7 @@ const Container = styled.div`
 const Heading = styled.h3`
   text-align: center;
   font-weight: bold;
+  margin: 0;
   text-transform: uppercase;
   font-size: 1.4rem;
   letter-spacing: 3px;
