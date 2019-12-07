@@ -24,8 +24,8 @@ jobs:
     - name: Install dependencies
       run: npm install
     
-    - name: Run linter
-      uses: stefanoeb/eslint-action@1.0.0
+    # - name: Run linter
+    #  uses: stefanoeb/eslint-action@1.0.0
     
     - name: Run tests
       run: npm run test:e2e:ci
