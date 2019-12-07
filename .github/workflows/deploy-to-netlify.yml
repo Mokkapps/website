@@ -23,18 +23,15 @@ jobs:
       
     - name: Install dependencies
       run: npm install
-    
-    # - name: Run linter
-    #  uses: stefanoeb/eslint-action@1.0.0
+      
+    - name: Run linter
+      run: npm run lint
     
     - name: Run tests
       run: npm run test:e2e:ci
     
     - name: Build app
       run: npm run build
-    
-    - name: Lighthouse Audit
-      uses: jakejarvis/lighthouse-action@v0.3.2
       
     - name: Deploy to Netlify
       if: job.status == 'success'
