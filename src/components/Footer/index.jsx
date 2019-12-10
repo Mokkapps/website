@@ -57,6 +57,7 @@ const Footer = () => (
       <a data-cy="footer-legal-notice" href="/legal-notice">
         <FormattedMessage id="legalNotice" />
       </a>
+      <a width="0" height="0" href="https://www.bloggerei.de/gutscheine/" target="_blank"><img src="https://www.bloggerei.de/bgpublicon.jpg" alt="Bloggerei.de Gutscheincodes" /></a>
     </Content>
   </FooterWrapper>
 );
