@@ -30,6 +30,8 @@ export class AppModule {}
 
 Angular CLI will then automatically create a separate bundle which is only loaded from the server if the selected route path is visited in your browser. 
 
+[[warning]]
+| My warning paragraph
 
 
 <iframe width="100%" height="500" src="https://stackblitz.com/github/mokkapps/angular-manual-lazy-load-demo?embed=1&file=src/app/app.component.ts"></iframe>
