@@ -73,6 +73,22 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: "gatsby-remark-custom-blocks",
+            options: {
+              blocks: {
+                danger: {
+                  classes: "alert alert-danger",
+                },
+                info: {
+                  classes: "alert alert-info",
+                },
+                warning: {
+                  classes: "alert alert-warning",
+                }
+              },
+            },
+          },
+          {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_blank",
