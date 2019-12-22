@@ -79,6 +79,9 @@ module.exports = {
                 danger: {
                   classes: "alert alert-danger",
                 },
+                info: {
+                  classes: "alert alert-info",
+                },
                 warning: {
                   classes: "alert alert-warning",
                 }
