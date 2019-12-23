@@ -107,13 +107,6 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
           sizes={sliderImage.childImageSharp.sizes}
         />
       ) : null}
-      <Margin top={2} bottom={4}>
-        <LinkButton
-          dataCy="hero-characteristics-newsletter-button"
-          href="/newsletter"
-          i18nId="newsletterLink"
-        />
-      </Margin>
       <Margin top={3} bottom={3}>
         <Characteristics data-cy="hero-characteristics-section">
           {config.characteristics.map(characteristic => {

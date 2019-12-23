@@ -21,7 +21,7 @@ The source code of the demo is available on [GitHub](https://github.com/Mokkapps
 
 Since Angular 8 we can use the browser's built-in [dynamic imports](https://v8.dev/features/dynamic-import) to load JavaScript modules asynchronous in Angular.
 
-A lazy-loaded module can be defined in the routing configuration using the new `import(...)` syntax for `loadChildren`;
+A lazy-loaded module can be defined in the routing configuration using the new `import(...)` syntax for `loadChildren`:
 
 ```ts
 @NgModule({
