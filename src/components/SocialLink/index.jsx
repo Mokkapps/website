@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+import * as simpleIcons from 'simple-icons';
 
 import { MokkappsRed } from '../../styles/variables';
 
@@ -19,25 +20,30 @@ const StyledAnchor = styled.a`
   }
 `;
 
-const Image = styled.img`
+const SvgWrapper = styled.div`
   margin: 0 auto;
   width: 20px;
   height: 20px;
 `;
 
 const SocialLink = ({ href, iconName }) => (
-  <StyledAnchor href={href} target="_blank" rel="noopener noreferrer" data-cy={`social-link-${iconName}`}>
-    <Image
-      alt={`Link to ${iconName}`}
-      src={`https://unpkg.com/simple-icons@latest/icons/${iconName}.svg`}
-    />
+  <StyledAnchor
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    data-cy={`social-link-${iconName}`}
+  >
+    {
+      <SvgWrapper
+        dangerouslySetInnerHTML={{ __html: `${simpleIcons.get(iconName).svg}` }}
+      />
+    }
   </StyledAnchor>
 );
 
 SocialLink.propTypes = {
   href: PropTypes.string.isRequired,
-  iconName: PropTypes.string.isRequired
+  iconName: PropTypes.string.isRequired,
 };
 
 export default SocialLink;
-

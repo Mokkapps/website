@@ -65,6 +65,7 @@
     "react-scroll-up-button": "^1.6.4",
     "react-typography": "^0.16.19",
     "recompose": "^0.30.0",
+    "simple-icons": "^2.1.0",
     "styled-components": "^4.4.1",
     "styled-components-spacing": "^3.1.0",
     "styled-media-query": "^2.1.2",
