@@ -2,12 +2,12 @@ const base = {
   name: 'Mokkapps (Michael Hoffmann)',
   url: 'https://www.mokkapps.de',
   desc:
-    "I'm Michael Hoffmann. Passionate freelance frontend and app developer.",
+    "I'm Michael Hoffmann. A freelance software engineer from Germany with focus on Angular.",
 };
 
 const config = {
   /* meta tags */
-  siteTitle: `${base.name} | ${base.desc}`,
+  baseName: `${base.name}`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
   siteImage: 'preview.jpg',
@@ -110,9 +110,9 @@ const config = {
       icon: 'linkedin',
     },
     {
-      id: 'codepen',
-      url: ' https://codepen.io/mokkapps-the-scripter',
-      icon: 'codepen',
+      id: 'instagram',
+      url: ' https://www.instagram.com/mokkapps/',
+      icon: 'instagram',
     },
   ],
   customers: [
@@ -157,11 +157,11 @@ const config = {
         Challenge yourself and try to sustain at the supermarket cash register. Set a high score and share it with your friends for a new challenge.
 
         Alternatively you can try one of the 12 levels to get a better gameplay feeling.
-        
+
         You have to scan articles, enter the correct barcode for fruits and throw bombs away before they explode.
-        
-        Surprise boxes can include useful extras or have a negative surprise for you. 
-        
+
+        Surprise boxes can include useful extras or have a negative surprise for you.
+
         Be careful! Unscanned articles in the shopping basket or articles which are thrown out of the screen, cost a life. You have three lifes per round.`,
       },
       usedTechnologies: [
@@ -341,7 +341,8 @@ const config = {
       date: '04/2016',
       image: 'unity',
       host: 'jambit GmbH',
-      title: 'Unity – Eine Einführung in die Cross-Plattform-Spiele-Entwicklung',
+      title:
+        'Unity – Eine Einführung in die Cross-Plattform-Spiele-Entwicklung',
       link:
         'https://jambit.com/aktuelles/veranstaltungen/coffeetalks-april-2016/',
     },

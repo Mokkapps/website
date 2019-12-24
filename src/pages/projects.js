@@ -30,7 +30,7 @@ const CustomerNames = styled.section`
 `;
 
 const Customer = styled.p`
-  background-color: ${MokkappsLightGray}; 
+  background-color: ${MokkappsLightGray};
   font-weight: bold;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -84,7 +84,7 @@ const ProjectsPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Projects | ${siteDescription}`}
+        title={`Projects`}
         description={siteDescription}
       />
     </Layout>

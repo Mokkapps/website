@@ -74,7 +74,7 @@ const BlogPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Blog | ${siteDescription}`}
+        title={`Blog`}
         description={siteDescription}
       />
     </Layout>
@@ -101,7 +101,7 @@ export const query = graphql`
     }
     allBlogPosts: allMarkdownRemark(filter: {fields: {source: {eq: "posts"}, slug: {ne: null}}}) {
       totalCount
-    } 
+    }
     posts: allMarkdownRemark(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
       sort: { fields: [fields___prefix], order: DESC }

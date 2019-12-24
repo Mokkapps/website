@@ -64,7 +64,7 @@ const NewsletterPage = () => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Newsletter | ${siteDescription}`}
+        title={`Newsletter`}
         description={siteDescription}
       />
     </Layout>

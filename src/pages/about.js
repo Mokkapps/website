@@ -32,7 +32,7 @@ const AboutPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`About | ${siteDescription}`}
+        title={`About`}
         description={siteDescription}
       />
     </Layout>

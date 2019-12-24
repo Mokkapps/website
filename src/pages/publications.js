@@ -104,7 +104,7 @@ const PublicationsPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Publications | ${siteDescription}`}
+        title={`Publications`}
         description={siteDescription}
       />
     </Layout>

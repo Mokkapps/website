@@ -29,7 +29,7 @@ const SuccessPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Contact Success | ${siteDescription}`}
+        title={`Contact Success`}
         description={siteDescription}
       />
     </Layout>

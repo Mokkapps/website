@@ -29,7 +29,7 @@ const NotFoundPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Not Found | ${siteDescription}`}
+        title={`Not Found`}
         description={siteDescription}
       />
     </Layout>

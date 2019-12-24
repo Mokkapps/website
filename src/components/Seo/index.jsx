@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import config from 'content/meta/config';
+import config from '../../content/meta/config';
 import { Context } from '../Context';
 
 const Seo = props => {
@@ -13,7 +13,7 @@ const Seo = props => {
       {({ lang }) => (
         <Helmet htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}>
           {/* General tags */}
-          <title>{title}</title>
+          <title>{`${title} | ${config.baseName}`}</title>
           <meta name="description" content={description} />
           {/* OpenGraph tags */}
           <meta property="og:url" content={url} />

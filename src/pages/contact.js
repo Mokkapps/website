@@ -46,7 +46,7 @@ const ContactPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Contact | ${siteDescription}`}
+        title={`Contact`}
         description={siteDescription}
       />
     </Layout>
