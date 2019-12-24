@@ -35,6 +35,7 @@ const SocialLink = ({ href, iconName }) => (
   >
     {
       <SvgWrapper
+        alt={iconName}
         dangerouslySetInnerHTML={{ __html: `${simpleIcons.get(iconName).svg}` }}
       />
     }

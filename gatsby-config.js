@@ -3,7 +3,7 @@ const config = require('./src/content/meta/config');
 
 module.exports = {
   siteMetadata: {
-    title: config.siteTitle,
+    title: config.baseName,
     siteUrl: config.siteUrl,
     description: config.siteDescription,
   },

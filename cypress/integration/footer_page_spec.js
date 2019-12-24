@@ -12,7 +12,7 @@ describe('Footer Test', () => {
     cy.get('[data-cy=social-link-twitter]');
     cy.get('[data-cy=social-link-dev-dot-to]');
     cy.get('[data-cy=social-link-linkedin]');
-    cy.get('[data-cy=social-link-codepen]');
+    cy.get('[data-cy=social-link-instagram]');
   });
 
   it('includes link to privacy policy and legal notice', () => {
@@ -64,11 +64,11 @@ describe('Footer Test', () => {
     );
   });
 
-  it('navigates to codepen page', () => {
+  it('navigates to instagram page', () => {
     const url = config.socialLinks
-      .filter(link => link.id === 'codepen')
+      .filter(link => link.id === 'instagram')
       .map(link => link.url);
-    cy.get('[data-cy=social-link-codepen]').should(
+    cy.get('[data-cy=social-link-instagram]').should(
       'have.attr',
       'href',
       url[0]

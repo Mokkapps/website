@@ -13,8 +13,7 @@ const Seo = props => {
       {({ lang }) => (
         <Helmet htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}>
           {/* General tags */}
-          <title>{`${title} | ${config.baseName}`}</title>
-          <meta name="description" content={description} />
+          <title>{`${title} | ${config.baseName}`}</title>
           {/* OpenGraph tags */}
           <meta property="og:url" content={url} />
           <meta property="og:title" content={title} />

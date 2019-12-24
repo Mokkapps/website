@@ -8,6 +8,7 @@ const base = {
 const config = {
   /* meta tags */
   baseName: `${base.name}`,
+  baseDesc: `${base.desc}`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
   siteImage: 'preview.jpg',
