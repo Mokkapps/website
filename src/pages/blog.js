@@ -23,17 +23,23 @@ const BlogPage = props => {
     data: {
       posts: { edges },
       allEdges,
-      allBlogPosts
-    }
+      allBlogPosts,
+    },
   } = props;
 
-  const numberOfPages = props.pageContext.numberOfPages !== undefined ? props.pageContext.numberOfPages : Math.round(allBlogPosts.totalCount / 5);
-  const pageNumber = props.pageContext.pageNumber !== undefined ?  props.pageContext.pageNumber : 0;
+  const numberOfPages =
+    props.pageContext.numberOfPages !== undefined
+      ? props.pageContext.numberOfPages
+      : Math.round(allBlogPosts.totalCount / 5);
+  const pageNumber =
+    props.pageContext.pageNumber !== undefined
+      ? props.pageContext.pageNumber
+      : 0;
 
   const posts = edges.map(edge => edge.node);
   const categories = getAllCategories(allEdges);
 
-  const { siteUrl, siteDescription } = config;
+  const { siteUrl, siteTitlePostfix } = config;
 
   const handlePageClick = ({ selected }) =>
     navigate(`/blog/${selected === 0 ? '' : selected + 1}`);
@@ -43,7 +49,7 @@ const BlogPage = props => {
       <Article>
         <Heading title="BLOG" />
         <Margin top={4} bottom={4}>
-          <CategorySelection categories={categories} centered/>
+          <CategorySelection categories={categories} centered />
         </Margin>
         <Margin bottom={4} />
         <BlogPostList
@@ -74,8 +80,8 @@ const BlogPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Blog`}
-        description={siteDescription}
+        title={`Blog${siteTitlePostfix}`}
+        description="Blog posts about software engineering and career"
       />
     </Layout>
   );
@@ -99,7 +105,9 @@ export const query = graphql`
         }
       }
     }
-    allBlogPosts: allMarkdownRemark(filter: {fields: {source: {eq: "posts"}, slug: {ne: null}}}) {
+    allBlogPosts: allMarkdownRemark(
+      filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
+    ) {
       totalCount
     }
     posts: allMarkdownRemark(

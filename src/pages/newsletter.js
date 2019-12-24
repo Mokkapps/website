@@ -25,7 +25,7 @@ const NewsletterContainer = styled.div`
 `;
 
 const NewsletterPage = () => {
-  const { siteUrl, siteDescription } = config;
+  const { siteTitlePostfix, siteUrl } = config;
 
   return (
     <Layout>
@@ -64,8 +64,8 @@ const NewsletterPage = () => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Newsletter`}
-        description={siteDescription}
+        title={`Newsletter${siteTitlePostfix}`}
+        description="Subscribe for the newsletter to stay up-do-date on Mokkapps topics"
       />
     </Layout>
   );

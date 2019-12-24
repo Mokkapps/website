@@ -18,7 +18,7 @@ const SuccessPage = props => {
     },
   } = props;
 
-  const { siteUrl, siteDescription } = config;
+  const { siteTitlePostfix, siteUrl } = config;
 
   return (
     <Layout>
@@ -29,15 +29,15 @@ const SuccessPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Contact Success`}
-        description={siteDescription}
+        title={`Contact Success${siteTitlePostfix}`}
+        description="The contact request was sent successfully"
       />
     </Layout>
   );
 };
 
 SuccessPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export default SuccessPage;

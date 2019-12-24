@@ -14,7 +14,7 @@ const SkillsContainer = styled.div`
   margin: 0 auto;
 `;
 
-const Heading = styled.h1`
+const Heading = styled.h2`
   text-align: center;
   word-wrap: normal;
 `;

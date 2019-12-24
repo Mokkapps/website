@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import config from 'content/meta/config';
+import config from '../../src/content/meta/config';
 
 import Footer from '../components/Footer';
 import Article from '../components/Article';

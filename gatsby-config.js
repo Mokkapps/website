@@ -138,6 +138,8 @@ module.exports = {
         head: true,
       },
     },
+    // Add SEO attributes
+    `gatsby-plugin-react-helmet`,
     // Create a sitemap
     `gatsby-plugin-sitemap`,
     // Sentry integration

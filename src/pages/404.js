@@ -18,7 +18,7 @@ const NotFoundPage = props => {
     },
   } = props;
 
-  const { siteUrl, siteDescription } = config;
+  const { siteTitlePostfix, siteUrl } = config;
 
   return (
     <Layout>
@@ -29,8 +29,8 @@ const NotFoundPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Not Found`}
-        description={siteDescription}
+        title={`Not Found${siteTitlePostfix}`}
+        description="The requested page was not found"
       />
     </Layout>
   );

@@ -6,14 +6,22 @@ import config from '../../content/meta/config';
 import { Context } from '../Context';
 
 const Seo = props => {
-  const { url, title, description, image = config.siteLogo, postSEO } = props;
+  const {
+    url,
+    title = config.baseName,
+    description = config.description,
+    image = config.siteLogo,
+    postSEO,
+  } = props;
 
   return (
     <Context.Consumer>
       {({ lang }) => (
-        <Helmet htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}>
-          {/* General tags */}
-          <title>{`${title} | ${config.baseName}`}</title>
+        <Helmet
+          htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}
+          title={title}
+        >
+          <meta name="description" content={description} />
           {/* OpenGraph tags */}
           <meta property="og:url" content={url} />
           <meta property="og:title" content={title} />

@@ -38,12 +38,16 @@ const Customer = styled.p`
   padding: 10px 20px;
 `;
 
+const Heading2 = styled.h2`
+text-align: center;
+`;
+
 const ProjectsPage = props => {
   const {
     data: { projectAssets, consultingImage },
   } = props;
 
-  const { siteUrl, siteDescription, customers } = config;
+  const { siteUrl, siteTitlePostfix, customers } = config;
 
   return (
     <Layout>
@@ -78,14 +82,14 @@ const ProjectsPage = props => {
             </Margin>
           </MarginCenteredWrapper>
         </MarginCenteredWrapper>
-        <Heading i18nId="privateProjectsHeading" />
+        <Heading2><FormattedMessage id="privateProjectsHeading"></FormattedMessage></Heading2>
         <ProjectList projectAssets={projectAssets} />
       </Article>
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Projects`}
-        description={siteDescription}
+        title={`Projects${siteTitlePostfix}`}
+        description="A list of all private and business projects from Michael Hoffmann"
       />
     </Layout>
   );

@@ -16,7 +16,7 @@ const AboutPage = props => {
     data: { introImage, consultingImage },
   } = props;
 
-  const { siteUrl, siteDescription } = config;
+  const { siteTitlePostfix, siteUrl, siteDescription } = config;
 
   return (
     <Layout>
@@ -32,7 +32,7 @@ const AboutPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`About`}
+        title={`About${siteTitlePostfix}`}
         description={siteDescription}
       />
     </Layout>

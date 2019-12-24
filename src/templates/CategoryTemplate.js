@@ -41,7 +41,7 @@ const PageTemplate = props => {
   const items = edges.map(edge => edge.node);
   const categories = getAllCategories(allPosts);
 
-  const { siteUrl, siteDescription, siteTitlePostfix } = config;
+  const { siteUrl, siteTitlePostfix } = config;
 
   return (
     <Layout>
@@ -78,14 +78,14 @@ const PageTemplate = props => {
           <CenteredHeading>
             <FormattedMessage id="otherCategories"></FormattedMessage>
           </CenteredHeading>
-          <CategorySelection categories={categories} centered/>
+          <CategorySelection categories={categories} centered />
         </Margin>
       </Article>
       <Footer />
       <Seo
         url={`${siteUrl}/categories/${category}/`}
         title={`Posts in category: ${category}${siteTitlePostfix}`}
-        description={siteDescription}
+        description={`This page contains all the posts in the category ${category}`}
       />
     </Layout>
   );

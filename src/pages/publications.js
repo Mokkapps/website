@@ -46,7 +46,7 @@ const PublicationsPage = props => {
     data: { talkAssets },
   } = props;
   const { edges } = talkAssets;
-  const { publications, siteUrl, siteDescription } = config;
+  const { siteTitlePostfix, publications, siteUrl } = config;
 
   return (
     <Layout>
@@ -104,8 +104,8 @@ const PublicationsPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Publications`}
-        description={siteDescription}
+        title={`Publications${siteTitlePostfix}`}
+        description="A list of talks and articles from Michael Hoffmann"
       />
     </Layout>
   );

@@ -25,7 +25,7 @@ const ContactPage = props => {
   const {
     data: { contactImage },
   } = props;
-  const { siteUrl, siteDescription } = config;
+  const { siteUrl, siteTitlePostfix } = config;
 
   return (
     <Layout>
@@ -46,8 +46,8 @@ const ContactPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Contact`}
-        description={siteDescription}
+        title={`Contact${siteTitlePostfix}`}
+        description="Contact Michael Hoffmann to hire him as a freelance software engineer or just ask him a question"
       />
     </Layout>
   );
