@@ -50,7 +50,6 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <meta name="description" content={config.baseDesc} />
           <link rel="canonical" href="https://www.mokkapps.de" />
           {this.props.headComponents}
         </head>
