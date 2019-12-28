@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import config from '../src/content/meta/config';
 
 export default class HTML extends React.Component {
   render() {
@@ -43,7 +42,6 @@ export default class HTML extends React.Component {
           }}
         />
         <head>
-          <title>{config.baseName}</title>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
