@@ -73,7 +73,7 @@ Germany
 
 Phone: +4915141257551
 
-Email: kontakt@mokkaps.de
+Email: mail@mokkaps.de
 
 Website: www.mokkapps.de
 

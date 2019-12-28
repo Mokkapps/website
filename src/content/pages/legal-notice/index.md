@@ -13,7 +13,7 @@ Westendstraße 11
 
 Telephone: +4915141257551
 
-E-Mail: mailto:kontakt@mokkapps.de
+E-Mail: mailto:mail@mokkapps.de
 
 Internet address: https://www.mokkapps.de
 

@@ -1,7 +1,7 @@
 {
   "name": "website",
   "description": "Website for Mokkapps",
-  "author": "Michael Hoffmann <kontakt@mokkapps.de>",
+  "author": "Michael Hoffmann <mail@mokkapps.de>",
   "repository": {
     "type": "git",
     "url": "https://github.com/Mokkapps/website"
