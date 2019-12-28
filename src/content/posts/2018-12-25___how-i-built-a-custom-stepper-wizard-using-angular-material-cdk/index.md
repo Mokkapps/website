@@ -13,7 +13,7 @@ Recently I had to refactor a quite complex legacy Angular component and I want t
 
 The component should look this way per design:
 
-![Legacy Component Design](./legacy-component-design.svg)
+![Angular Legacy Component Design](./legacy-component-design.svg)
 
 Basically, you can freely navigate through the content by clicking either the navigation arrows or clicking on a certain step in the navigation area on the bottom.
 

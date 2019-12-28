@@ -67,7 +67,7 @@ it('testcase', () => {
 
 As things are typically more complicated than in the simple examples, I have created [a project which contains a more realistic scenario](https://github.com/Mokkapps/angular-rx-sandbox-marble-diagram) with this simple architecture:
 
-![Test project architecture](./architecture.png)
+![Angular test project architecture](./architecture.png)
 
 The demo application contains these services:
 
@@ -146,7 +146,7 @@ it('should return news from stream', () => {
 
 A failed test will show a similar output:
 
-![Karma output failed test](./rx-sandbox-karma-failure.png)
+![Angular Karma output failed test](./rx-sandbox-karma-failure.png)
 
 We can immediately see that the received observable emitted the events on different frames:
 

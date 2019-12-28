@@ -104,7 +104,7 @@ As an example, we could define a TypeScript library that shares our TypeScript i
 
 One of my favorite features is the dependency graph which can show me a graphical representation of my workspace by running `nx affected:dep-graph`: 
 
-![Nx Dependency Graph](./nx-dep-graph.png)
+![Angular Nx Dependency Graph](./nx-dep-graph.png)
 
 As we used `affected` we can see what parts of our workspace are affected by our current changes (highlighted in red). This way we can also run only tests or recompile code which was effected by our changes:
 

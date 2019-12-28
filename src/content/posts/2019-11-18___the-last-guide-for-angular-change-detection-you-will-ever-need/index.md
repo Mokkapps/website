@@ -19,7 +19,7 @@ In this blog post, I will provide you all the necessary information you need to 
 
 Two of Angular's main goals are to be predictable and performant. The framework needs to replicate the state of our application on the UI by combining the state and the template:
 
-![Data-Template-DOM](./data-template-dom.png)
+![Angular Data-Template-DOM](./data-template-dom.png)
 
 It is also necessary to update the view if any changes happen to the state. This mechanism of syncing the HTML with our data is called "Change Detection". Each frontend framework uses its implementation, e.g. React uses Virtual DOM, Angular uses change detection and so on. I can recommend the article [Change And Its Detection In JavaScript Frameworks ](https://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html) which gives a good general overview of this topic.
 
@@ -43,7 +43,7 @@ Let us take a more detailed look at this process:
 
 The following GIF demonstrates this process in a simplified way:
 
-![Change Detection Cycle](./cd-cycle.gif)
+![Angular Change Detection Cycle](./cd-cycle.gif)
 
 The picture shows an Angular component tree and its change detector (CD) for each component which is created during the application bootstrap process. This detector compares the current value with the previous value of the property. If the value has changed it will set `isChanged` to true. Check out [the implementation in the framework code](https://github.com/angular/angular/blob/885f1af509eb7d9ee049349a2fe5565282fbfefb/packages/core/src/util/comparison.ts#L13) which is just a `===` comparison with special handling for `NaN`.
 
@@ -90,7 +90,7 @@ Let's look at each of these change detection strategies.
 
 By default, Angular uses the `ChangeDetectionStrategy.Default` change detection strategy. This default strategy checks every component in the component tree from top to bottom every time an event triggers change detection (like user event, timer, XHR, promise and so on). This conservative way of checking without making any assumption on the component's dependencies is called **dirty checking**. It can negatively influence your application's performance in large applications which consists of many components.
 
-![Change Detection Cycle](./cd-cycle.gif)
+![Angular Change Detection Cycle](./cd-cycle.gif)
 
 #### OnPush Change Detection Strategy
 
@@ -111,7 +111,7 @@ This change detection strategy provides the possibility to skip unnecessary chec
 
 The next GIF demonstrates skipping parts of the component tree by using the `OnPush` change detection strategy:
 
-![OnPush Change Detection Cycle](./cd-on-push-cycle.gif)
+![Angular OnPush Change Detection Cycle](./cd-on-push-cycle.gif)
 
 Using this strategy, Angular knows that the component only needs to be updated if:
 
@@ -135,7 +135,7 @@ You can test this behavior using the [simple demo][demo-simple]:
 3. Click on "Create new object reference" in "Modify Heroes" panel
 4. Verify that the `HeroCardOnPushComponent` with `ChangeDetectionStrategy.OnPush` gets checked by change detection
 
-![ChangeDetection OnPush Input Reference Change](./cd-input-reference-change.gif)
+![Angular ChangeDetection OnPush Input Reference Change](./cd-input-reference-change.gif)
 
 To prevent change detection bugs it can be useful to build the application using `OnPush` change detection everywhere by using only immutable objects and lists. Immutable objects can only be modified by creating a new object reference so we can guarantee that:
 
@@ -160,7 +160,7 @@ You can test this behavior using the [simple demo][demo-simple]:
 1. Click on "Change Age" button in `HeroCardOnPushComponent` which uses `ChangeDetectionStrategy.OnPush` 
 2. Verify that change detection is triggered and checks all components
 
-![ChangeDetection Event Trigger](./cd-event-trigger.gif)
+![Angular ChangeDetection Event Trigger](./cd-event-trigger.gif)
 
 #### Trigger Change Detection Manually
 
@@ -195,7 +195,7 @@ As shown, the `AsyncPipe` automatically works using `OnPush` change detection st
 
 You can see this behavior in action in the [async demo][demo-async].
 
-![AsyncPipe with OnPush](./cd-async-pipe.gif)
+![Angular AsyncPipe with OnPush](./cd-async-pipe.gif)
 
 The first component directly binds an observable via `AsyncPipe` to the template 
 
@@ -244,7 +244,7 @@ Angular includes a mechanism that detects change detection loops. In development
 
 I force the error in my [ExpressionChangedAfterCheckedError demo][demo-expression-changed] and you can see it if you open the browser console:
 
-![ExpressionChangedAfterCheckedError](./expression-change-error.png)
+![Angular ExpressionChangedAfterCheckedError](./expression-change-error.png)
 
 In this demo I forced the error by updating the `hero` property in the `ngAfterViewInit` lifecycle hook: 
 
@@ -256,7 +256,7 @@ In this demo I forced the error by updating the `hero` property in the `ngAfterV
 
 To understand why this causes the error we need to take a look at the different steps during a change detection run:
 
-![Lifecycle Hooks](./lifecycle-hooks.png)
+![Angular Lifecycle Hooks](./lifecycle-hooks.png)
 
 As we can see, the `AfterViewInit` lifecycle hook is called after the DOM updates of the current view have been rendered. If we change the value in this hook it will have a different value in the second change detection run (which is triggered automatically in development mode as described above) and therefore Angular will throw the `ExpressionChangedAfterCheckedError`.
 

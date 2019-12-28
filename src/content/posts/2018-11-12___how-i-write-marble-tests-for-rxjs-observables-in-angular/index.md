@@ -27,7 +27,7 @@ For an easier visualization of RxJS observables a new domain-specific language c
 
 The following image from the [official documentation](http://reactivex.io/rxjs/manual/overview.html#marble-diagrams) describes the anatomy of a marble diagram:
 
-![Marble Diagram Anatomy](./marble-diagram-anatomy.svg)
+![Angular Marble Diagram Anatomy](./marble-diagram-anatomy.svg)
 
 > In a marble diagram, time flows to the right, and the diagram describes how values (“marbles”) are emitted on the Observable execution.
 

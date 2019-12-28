@@ -1,8 +1,8 @@
 const base = {
-  name: 'Mokkapps (Michael Hoffmann)',
+  name: 'Mokkapps (Michael Hoffmann) - Freelance Angular Software Engineer',
   url: 'https://www.mokkapps.de',
   desc:
-    "I'm Michael Hoffmann. A freelance software engineer from Germany with focus on Angular.",
+    "Freelance software engineer from Germany with focus on Angular.",
 };
 
 const config = {

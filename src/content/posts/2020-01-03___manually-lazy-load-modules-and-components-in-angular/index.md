@@ -81,7 +81,7 @@ export class LazyLoaderService {
 
 The `loadLazyModules` method simulates a backend request. After a successful request, a module is registered using the `import(...)` syntax. If you now run the application you will see that a separate chunk for the module is created but it will not be loaded in the browser yet.
 
-![Lazy module chunk](./lazy-module-chunk.png)
+![Angular lazy module chunk](./lazy-module-chunk.png)
 
 The module promise is stored in a `Map` with a key to be able to access it later.
 
@@ -114,7 +114,7 @@ We get the current router config from the Router via Dependency Injection and pu
 Next, we need to reset the router configuration used for navigation and generating links by calling `resetConfig` with our new configuration that includes the lazy-loaded module route.
 Finally, we navigate to the new loaded route and see if it works:
 
-![Lazy load module gif](./lazy-load-module.gif)
+![Angular lazy load module gif](./lazy-load-module.gif)
 
 We see three things happening after the "Load Lazy Module" button was clicked:
 
@@ -143,7 +143,7 @@ Dynamically showing the available routes in the toolbar is done by iterating ove
 
 A typical requirement is that users want to create a bookmark for certain URLs in the application as they visit them very often. Let us try this with our current implementation:
 
-![Reload lazy module gif](./reload-lazy-module.gif)
+![Angular reload lazy module gif](./reload-lazy-module.gif)
 
 Reloading the lazy route leads to an error: `Error: Cannot match any routes. URL Segment: 'lazy'`
 
@@ -242,7 +242,7 @@ Some notes to this code block:
 
 The following picture demonstrates the lazy loading process of this component:
 
-![Lazy load component gif](./lazy-load-component.gif)
+![Angular lazy load component gif](./lazy-load-component.gif)
 
 ## Conclusion
 

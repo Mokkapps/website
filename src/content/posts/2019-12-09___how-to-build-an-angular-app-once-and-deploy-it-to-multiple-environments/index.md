@@ -22,7 +22,7 @@ This build artifact is then passed through multiple stages where it can be teste
 
 The following image shows this process as graphical representation:
 
-![Build Once Process](./build-once-process.png)
+![Angular build Once Process](./build-once-process.png)
 
 ### Why build once?
 

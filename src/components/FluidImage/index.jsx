@@ -16,7 +16,7 @@ const Image = styled(Img)`
 `;
 
 const FluidImage = ({ image }) => (
-  <Image alt="Michael Hoffmann Image" fluid={image.childImageSharp.fluid} />
+  <Image alt="Mokkapps (Michael Hoffmann) Freelancer Angular Image" fluid={image.childImageSharp.fluid} />
 );
 
 FluidImage.propTypes = {
