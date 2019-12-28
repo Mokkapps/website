@@ -17,10 +17,8 @@ const Seo = props => {
   return (
     <Context.Consumer>
       {({ lang }) => (
-        <Helmet
-          htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}
-          title={title}
-        >
+        <Helmet htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}>
+          <title>{title}</title>
           <meta name="description" content={description} />
           {/* OpenGraph tags */}
           <meta property="og:url" content={url} />
