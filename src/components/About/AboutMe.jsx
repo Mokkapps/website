@@ -61,6 +61,9 @@ const AboutMe = ({ images }) => (
           <FormattedHTMLMessage id="aboutParagraph3" />
         </AboutParagraph>
         <AboutParagraph>
+          <FormattedHTMLMessage id="aboutParagraph6" />
+        </AboutParagraph>
+        <AboutParagraph>
           <FormattedMessage id="aboutParagraph4" />
         </AboutParagraph>
         <AboutParagraph>

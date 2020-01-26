@@ -62,13 +62,16 @@ const Container = styled.div`
 `;
 
 const HtmlContainer = styled(Container)`
+  max-width: ${props => props.fullWidth ? '100%' : '700px'};
+  margin: 0 auto;
+  
   img {
     width: inherit;
   }
 `;
 
 const BodyText = props => {
-  const { html, children } = props;
+  const { html, children, fullWidth = false } = props;
 
   return (
     <React.Fragment>
@@ -83,7 +86,8 @@ const BodyText = props => {
 
 BodyText.propTypes = {
   html: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  fullWidth: PropTypes.bool,
 };
 
 export default BodyText;
