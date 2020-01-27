@@ -234,6 +234,7 @@ module.exports = {
                 }
               }
             `,
+            title: "Michael Hoffmann's (Mokkapps) RSS Feed",
             output: '/rss.xml',
           },
         ],
