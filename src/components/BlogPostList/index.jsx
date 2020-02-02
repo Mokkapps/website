@@ -11,6 +11,7 @@ const Container = styled.div`
 
 const List = styled.ul`
   list-style: none;
+  width: 100%;
 `;
 
 const BlogPostList = props => {

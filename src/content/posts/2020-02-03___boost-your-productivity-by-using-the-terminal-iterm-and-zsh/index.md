@@ -152,12 +152,13 @@ Some words about the used plugins, [here](https://github.com/ohmyzsh/ohmyzsh/tre
   ![bgnotify](./bgnotify.png)
 - web-search: adds aliases for searching with Google, Wiki, Bing, YouTube and other popular services.
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions): suggests commands as you type based on history and completions
+  <br/><br/>
   <a href="https://asciinema.org/a/37390" target="_blank"><img src="https://asciinema.org/a/37390.svg" /></a>
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): provides syntax highlighting for the shell zsh, red for invalid and green for valid commands:
   ![Invalid ZSH syntax highlighting](./invalid-zsh-syntax-highlighting.png)
   ![Valid ZSH syntax highlighting](./valid-zsh-syntax-highlighting.png)
 
-## Use Material Theme
+### Use Material Theme
 
 I really like Material Design so I also use it in iTerm thanks to this [iTerm2 color scheme](https://github.com/MartinSeeler/iterm2-material-design). Installation instructions can be found [here](https://github.com/MartinSeeler/iterm2-material-design#how-to-use-it).
 
@@ -165,27 +166,24 @@ The result should look similar to my terminal:
 
 ![iTerm Material Design](./iterm-material-design.png)
 
-## Use Minimal Theme
+### Use Minimal Theme
 
 Choose *Minimal* theme to have a cleaner UI with smaller tabs as shown in the screenshot above:
 
 ![Minimal Theme Setting](./minimal-theme-setting.png)
 
-## Change font to Cascadia Font
+### Change font to Cascadia Font
 
 I use the [Cascadia Font](https://github.com/microsoft/cascadia-code) from Microsoft in iTerm. After installing the font on your operating system you need to select it as a font in your iTerm profile:
 
 ![iTerm Font](./iterm-font.png)
 
-## Free course
-
-I highly recommend the free [Command Line Poweruser](https://commandlinepoweruser.com/) course from [Wes Bos](https://wesbos.com/) if you want to learn more about ZSH.
-
-### Good CLI tools
+## Good CLI tools
 
 In this chapter I want to demonstrate some CLI tools which I regularly use in my terminal and which can highly increase your productivty:
 
 - [lazygit](https://github.com/jesseduffield/lazygit): a simple but amazing terminal UI for git commands
+  <br/><br/>
   ![lazygit](./lazygit.gif)
 - [HTTPie](https://httpie.org): *a command line HTTP client with an intuitive UI, JSON support, syntax highlighting, wget-like downloads, plugins, and more* which I often use    instead of graphical programs like [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/)
   ![HTTPie](./httpie.png)
@@ -201,6 +199,10 @@ In this chapter I want to demonstrate some CLI tools which I regularly use in my
   ![lnav](./lnav.png)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): Kubernetes command-line tool to run commands against Kubernetes clusters
 - [watch](https://linuxize.com/post/linux-watch-command/): Linux watch command, which is really helpful to run commands at a regular interval
+
+## Free course
+
+I highly recommend the free [Command Line Poweruser](https://commandlinepoweruser.com/) course from [Wes Bos](https://wesbos.com/) if you want to learn more about ZSH.
 
 ## Conclusion
 
