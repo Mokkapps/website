@@ -62,9 +62,9 @@ const Container = styled.div`
 `;
 
 const HtmlContainer = styled(Container)`
-  max-width: ${props => props.fullWidth ? '100%' : '700px'};
+  max-width: ${props => (props.fullWidth ? '100%' : '700px')};
   margin: 0 auto;
-  
+
   img {
     width: inherit;
   }
@@ -76,7 +76,7 @@ const BodyText = props => {
   return (
     <React.Fragment>
       {html ? (
-        <HtmlContainer dangerouslySetInnerHTML={{ __html: html }} />
+        <HtmlContainer dangerouslySetInnerHTML={{ __html: html }} fullWidth={fullWidth} />
       ) : (
         <Container>{children}</Container>
       )}

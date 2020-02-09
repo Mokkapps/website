@@ -95,7 +95,7 @@ const PostTemplate = props => {
             <Img fluid={cover.childImageSharp.fluid}/>
           </Margin>
         ) : null}
-        <BodyText html={postHTML} />
+        <BodyText html={postHTML} fullWidth />
         <Margin top={4} bottom={4}>
           <Share shareBlockProps={shareBlockProps} />
         </Margin>

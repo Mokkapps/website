@@ -39,7 +39,6 @@ const LeftSide = styled.div`
 const StyledArticle = styled.article`
   grid-area: content;
   ${customMedia.between('lg', 'xlg')`
-    max-width: 700px;
     margin: 0 auto;
   `};
 `;

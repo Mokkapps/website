@@ -32,5 +32,5 @@ export const metaIcons = {
 
 export const capitalize = (s) => {
   if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1);
+  return s.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
 }

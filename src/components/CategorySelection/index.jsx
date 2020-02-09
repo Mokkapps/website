@@ -20,7 +20,7 @@ const Container = styled.div`
 const CategorySelection = ({ categories, centered }) => (
   <Container data-cy="blog-categories" centered={centered}>
     {categories.map(category => {
-      const link = <Link to={`/categories/${category}`}>{capitalize(category)}</Link>;
+      const link = <Link to={`/categories/${category.replace(' ', '-')}`}>{capitalize(category)}</Link>;
       const TagIcon = metaIcons.tag;
 
       return (
