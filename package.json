@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "gatsby develop",
+    "start": "gatsby develop -p 8000",
     "build": "rm -rf .cache && gatsby build",
     "serve": "gatsby serve",
     "start-server": "gatsby develop",

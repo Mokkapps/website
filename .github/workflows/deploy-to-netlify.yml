@@ -9,6 +9,7 @@ jobs:
   build:
 
     runs-on: ubuntu-16.04
+    timeout-minutes: 30
 
     steps:
     - uses: actions/checkout@v1
@@ -22,13 +23,22 @@ jobs:
       run: npm i -g gatsby
       
     - name: Install dependencies
-      run: npm install
+      run: npm ci
       
     - name: Run linter
       run: npm run lint
     
     - name: Run tests
-      run: npm run test:e2e:ci
+      uses: cypress-io/github-action@v1
+      timeout-minutes: 10
+      with:
+        # we have already installed all dependencies above
+        install: false
+        # serve locally
+        start: npm start
+        # quote the url to be safe against YML parsing surprises
+        wait-on: 'http://localhost:8000'
+        wait-on-timeout: 600
     
     - name: Build app
       run: npm run build

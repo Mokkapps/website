@@ -10,7 +10,7 @@ const Seo = props => {
     url,
     title = config.baseName,
     description = config.description,
-    image = `${window.location.origin}${config.defaultSeoImage}`,
+    image = typeof window !== `undefined` ? `${window.location.origin}${config.defaultSeoImage}` : undefined,
     postSEO,
   } = props;
 
