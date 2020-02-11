@@ -11,7 +11,7 @@ const config = {
   baseDesc: `${base.desc}`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
-  defaultSeoImage: '/images/me.jpg',
+  defaultSeoImage: `/images/me.jpg`,
 
   /* site header */
   headerTitle: `${base.name}`,
