@@ -12,6 +12,7 @@
     "build": "rm -rf .cache && gatsby build",
     "serve": "gatsby serve",
     "start-server": "gatsby develop",
+    "generate-blogpost": "node generate/blogpost.js",
     "cy:open": "cypress open",
     "cy:install": "cypress install",
     "cy:run": "cypress run",
@@ -75,6 +76,8 @@
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.8.3",
+    "@sindresorhus/slugify": "^0.10.0",
+    "axios": "^0.19.2",
     "babel-eslint": "^10.0.3",
     "cypress": "^3.8.3",
     "dotenv": "^8.2.0",
@@ -86,11 +89,17 @@
     "eslint-plugin-jest": "^23.6.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
+    "fake-useragent": "^1.0.1",
+    "inquirer": "^7.0.4",
     "jest": "^24.9.0",
     "js-yaml": "^3.13.1",
+    "json-to-pretty-yaml": "^1.2.2",
+    "mkdirp": "^1.0.3",
+    "opn": "^6.0.0",
     "prettier": "^1.19.1",
     "react-testing-library": "^8.0.1",
     "start-server-and-test": "^1.10.8",
+    "tinify": "^1.6.0-beta.2",
     "yaml-loader": "^0.5.0"
   }
 }
