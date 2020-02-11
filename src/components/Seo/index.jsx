@@ -10,7 +10,7 @@ const Seo = props => {
     url,
     title = config.baseName,
     description = config.description,
-    image = config.siteLogo,
+    image = config.defaultSeoImage,
     postSEO,
   } = props;
 
@@ -19,6 +19,7 @@ const Seo = props => {
       {({ lang }) => (
         <Helmet htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}>
           <title>{title}</title>
+          <meta name="image" content={image} />
           <meta name="description" content={description} />
           {/* OpenGraph tags */}
           <meta property="og:url" content={url} />
@@ -28,7 +29,7 @@ const Seo = props => {
           <meta property="og:type" content={postSEO ? 'article' : 'website'} />
           {/* Twitter Card tags */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content={config.authorName} />
+          <meta name="twitter:creator" content={config.twitterUsername} />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={image} />

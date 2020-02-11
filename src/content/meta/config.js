@@ -11,8 +11,7 @@ const config = {
   baseDesc: `${base.desc}`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
-  siteImage: 'preview.jpg',
-  siteLogo: '/favicon.ico',
+  defaultSeoImage: '/images/me.jpg',
 
   /* site header */
   headerTitle: `${base.name}`,
@@ -22,6 +21,7 @@ const config = {
   siteUrl: base.url,
   // pathPrefix: '',
 
+  twitterUsername: "@mokkapps",
   authorName: 'Michael Hoffmann',
 
   skills: [
