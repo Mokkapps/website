@@ -26,7 +26,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         separatorPosition === 1
           ? null
           : `/${filePath.substring(slugBeginning)}`;
-      prefix = filePath.substring(1, separatorPosition);
+      // file path example: /2019/2019-09-09___how-to-easily-write-and-debug-rxjs-marble-tests/
+      prefix = filePath.substring(1, separatorPosition).split('/')[1];
+      // prefix is 2019-09-09 in our example
     } else {
       slug = filePath;
       prefix = '';

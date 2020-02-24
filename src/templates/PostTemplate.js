@@ -50,7 +50,7 @@ const PostTemplate = props => {
       post: {
         excerpt,
         html: postHTML,
-        frontmatter: { title, categories, cover },
+        frontmatter: { title, categories, cover, bannerCredit },
         fields: { slug, prefix },
         timeToRead,
       },
@@ -92,8 +92,11 @@ const PostTemplate = props => {
         />
         {cover ? (
           <Margin bottom={4}>
-            <Img fluid={cover.childImageSharp.fluid}/>
+            <Img fluid={cover.childImageSharp.fluid} />
           </Margin>
+        ) : null}
+        {bannerCredit ? (
+          <div dangerouslySetInnerHTML={{ __html: bannerCredit }} />
         ) : null}
         <BodyText html={postHTML} fullWidth />
         <Margin top={4} bottom={4}>

@@ -32,7 +32,7 @@ const listify = a =>
     : null;
 
 async function generateBlogPost() {
-  const { title, categories, date } = await inquirer.prompt([
+  const { title, categories, date, useUnsplash } = await inquirer.prompt([
     {
       type: 'input',
       name: 'title',
@@ -53,12 +53,21 @@ async function generateBlogPost() {
       name: 'date',
       message: 'Release Date (format: yyyy-mm-dd)',
     },
+    {
+      type: 'confirm',
+      name: 'useUnsplash',
+      message: 'Use cover image from Unsplash?',
+    },
   ]);
   const slug = slugify(title);
-  const destination = fromRoot('src/content/posts', `${date}___${slug}`);
+  const year = new Date(date).getFullYear();
+  const destination = fromRoot(`src/content/posts/${year}`, `${date}___${slug}`);
   mkdirp.sync(destination);
 
-  const bannerCredit = await getBannerPhoto(title, destination);
+  let bannerCredit;
+  if (useUnsplash) {
+    bannerCredit = await getBannerPhoto(title, destination);
+  }
 
   const yaml = jsToYaml.stringify(
     removeEmpty({
@@ -95,9 +104,9 @@ async function getBannerPhoto(title, destination) {
       `https://unsplash.com/photos/${unsplashPhotoId}/download?force=true`
     )
     .resize({
-      method: "cover",
+      method: 'cover',
       width: 2070,
-      height: 1500
+      height: 1500,
     });
 
   const spinner = ora('compressing the image with tinypng.com').start();
@@ -121,7 +130,8 @@ async function getPhotoCredit(unsplashPhotoId) {
   } = response.data.match(/Photo by (?<name>.*?) on Unsplash/) || {
     groups: { name: 'Unknown' },
   };
-  return `Photo by [${name}](https://unsplash.com/photos/${unsplashPhotoId})`;
+  const url = `https://unsplash.com/photos/${unsplashPhotoId}}`;
+  return `Photo by <a href=${url}>${name}</a>`;
 }
 
 function removeEmpty(obj) {

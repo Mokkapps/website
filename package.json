@@ -96,6 +96,7 @@
     "json-to-pretty-yaml": "^1.2.2",
     "mkdirp": "^1.0.3",
     "opn": "^6.0.0",
+    "ora": "^4.0.3",
     "prettier": "^1.19.1",
     "react-testing-library": "^8.0.1",
     "start-server-and-test": "^1.10.8",
