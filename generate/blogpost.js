@@ -23,6 +23,14 @@ const fromRoot = (...p) => path.join(__dirname, '..', ...p);
 
 tinify.key = process.env.TINY_PNG_API_KEY;
 
+const toTitleCase = function (str) {
+  str = str.toLowerCase().split(' ');
+  for (let i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(' ');
+};
+
 const listify = a =>
   a && a.trim().length
     ? a
@@ -71,7 +79,7 @@ async function generateBlogPost() {
 
   const yaml = jsToYaml.stringify(
     removeEmpty({
-      title,
+      title: toTitleCase(title),
       subTitle: '',
       categories: listify(categories),
       cover: 'images/cover.jpg',
