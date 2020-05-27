@@ -336,7 +336,7 @@ If your backend is running locally, you can now serve the frontend by calling `n
 ## Alternative
 
 Of course, it is also possible to generate the frontend code if you have no control over the backend code but is supports OpenAPI.
-
+ 
 It is then necessary to adjust the npm script to use the backend URL instead of referencing the local schema file:
 
 ```json
