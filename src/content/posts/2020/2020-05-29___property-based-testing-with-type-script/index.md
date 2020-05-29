@@ -147,12 +147,12 @@ Got error: Property failed by returning false
 
 The error message is correct, and we found an edge-case for our `indexOf` method under test which we most probably would not have discovered with example based testing.
 
-With these simple steps you can easily introduce property based testing to projects which use [Jest](https://jestjs.io/) or [Mocha](http://mochajs.org/) as test framework independent of the web framework you are using.
+With these simple steps you can easily introduce property based testing to projects which use [Jest](https://jestjs.io/) or [Mocha](http://mochajs.org/) as test framework independent of the web framework you are using. The code for this demo [is available at GitHub](https://github.com/Mokkapps/property-based-testing-typescript-demo/tree/master/typescript-jest-demo).
 
 ## Angular & Karma Demo
 
 In the following demo, I want to show you how you can integrate property based testing in an Angular application (which per default uses [Karma](https://karma-runner.github.io/4.0/index.html))
-as test runner. Additionally, I also want to demonstrate the usage of property based testing for end-to-end (E2E) tests using [Protractor](https://www.protractortest.org/).
+as test runner. Additionally, I also want to demonstrate the usage of property based testing for end-to-end (E2E) tests using [Protractor](https://www.protractortest.org/). The code for this demos [is available at GitHub](https://github.com/Mokkapps/property-based-testing-typescript-demo/tree/master/angular-demo).
 
 ### First Karma property based unit test
 
