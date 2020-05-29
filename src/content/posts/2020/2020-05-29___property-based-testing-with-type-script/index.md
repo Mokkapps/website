@@ -335,7 +335,7 @@ describe('UserService', () => {
 });
 ```
 
-The test looks similar to the our first TypeScript test but we now have a more complex JavaScript object which we want to generate using `fc.record:
+The test looks similar to the our first TypeScript test but we now have a more complex JavaScript object which we want to generate using `fc.record`:
 
 ```ts
 const UserArbitrary = fc.record({
