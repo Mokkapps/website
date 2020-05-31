@@ -15,6 +15,7 @@ import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
+import GoogleSearchLink from '../components/GoogleSearchLink';
 
 import { metaIcons, getAllCategories, capitalize } from '../utils/helper';
 import { FormattedMessage } from 'react-intl';
@@ -68,6 +69,7 @@ const PageTemplate = props => {
               values={{ count: totalCount }}
             />
           </h3>
+          <GoogleSearchLink />
         </Heading>
         <BlogPostList
           items={items}

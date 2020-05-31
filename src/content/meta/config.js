@@ -19,6 +19,7 @@ const config = {
 
   /* url */
   siteUrl: base.url,
+  googleSearchUrl: 'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog+angular',
   // pathPrefix: '',
 
   twitterUsername: "@mokkapps",

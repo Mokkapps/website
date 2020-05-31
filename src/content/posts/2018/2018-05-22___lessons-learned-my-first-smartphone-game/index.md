@@ -5,7 +5,7 @@ categories: ["development"]
 cover: cover.png
 ---
 
-In 2017 I have released my first smartphone game "Supermarket Challenge" for [iOS]((https://itunes.apple.com/de/app/supermarket-challenge/id1207665675)) and [Android](https://play.google.com/store/apps/details?id=de.mokkapps.supermarketchallenge). I learned a lot of stuff during the game development and wanted to share my experiences with you.
+In 2017, I have released my first smartphone game "Supermarket Challenge" for [iOS]((https://itunes.apple.com/de/app/supermarket-challenge/id1207665675)) and [Android](https://play.google.com/store/apps/details?id=de.mokkapps.supermarketchallenge). I learned a lot of stuff during the game development and wanted to share my experiences with you.
 
 ## Why did I develop a game
 
@@ -86,7 +86,7 @@ So I decided to start researching for a new game engine which better suited my n
 
 As I had concrete expectations for the new engine my research led to [Corona](https://coronalabs.com/):
 
-* Focussed on 2D games
+* Focused on 2D games
 * Cross-Platform (iOS, Android, Desktop applications, Smart TVs)
 * Free (with few restrictions)
 * Text-based with Lua as scripting language

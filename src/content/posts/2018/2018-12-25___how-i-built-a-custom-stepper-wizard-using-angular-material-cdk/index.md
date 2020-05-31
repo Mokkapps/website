@@ -82,13 +82,13 @@ So the [CdkStepper](https://material.angular.io/cdk/stepper/overview) was exactl
 
 It is very simple to add the CDK to your Angular project:
 
-```bash
+```console
 npm install --save @angular/cdk
 ```
 
 Or alternatively for `Yarn`:
 
-```bash
+```console
 yarn add @angular/cdk
 ```
 

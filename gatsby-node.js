@@ -1,7 +1,6 @@
 const _ = require('lodash');
 const path = require('path');
 const Promise = require('bluebird');
-const { paginate } = require('gatsby-awesome-pagination');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const SLUG_SEPARATOR = '___';
@@ -127,16 +126,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create posts
         const posts = items.filter(item => item.node.fields.source === 'posts');
-
-        // Create paginated blog pages
-        paginate({
-          createPage,
-          items: posts,
-          itemsPerPage: 5,
-          itemsPerFirstPage: 5,
-          pathPrefix: '/blog',
-          component: path.resolve('./src/pages/blog.js'),
-        });
 
         posts.forEach(({ node }, index) => {
           const slug = node.fields.slug;

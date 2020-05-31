@@ -8,9 +8,7 @@ describe('Blog Page Test', () => {
 
     cy.get('[data-cy=blog-post-list]')
       .children()
-      .should('have.length', 5);
-
-    cy.get('.pagination');
+      .should('have.length', 28);
   });
 
   it('shows category page if a category is clicked', () => {
@@ -25,15 +23,5 @@ describe('Blog Page Test', () => {
       cy.get('[data-cy=blog-post-0]').click();
       cy.url().should('include', href);
     });
-  });
-
-  it('shows next blog post page if pagination is clicked', () => {
-    cy.get('.pagination__next').click();
-    cy.url().should('include', '/blog/2');
-
-    cy.wait(500);
-
-    cy.get('.pagination__prev').click();
-    cy.url().should('not.include', '/blog/2');
   });
 });

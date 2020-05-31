@@ -8,44 +8,29 @@ import config from '../content/meta/config';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import BlogPostList from '../components/BlogPostList';
-import Heading from '../components/Heading';
 import Seo from '../components/Seo';
-import GoogleSearchLink from '../components/GoogleSearchLink';
-import CategorySelection from '../components/CategorySelection';
-
-import { metaIcons, getAllCategories } from '../utils/helper';
+import SimpleBlogPostList from '../components/SimpleBlogPostList';
 
 import './style.scss';
+import Heading from '../components/Heading';
 
-const BlogPage = props => {
+const SimpleBlogPage = props => {
   const {
     data: {
       posts: { edges },
-      allEdges,
     },
   } = props;
 
   const posts = edges.map(edge => edge.node);
-  const categories = getAllCategories(allEdges);
 
   const { siteUrl, siteTitlePostfix } = config;
 
   return (
     <Layout>
       <Article>
-        <Heading title="BLOG" />
-        <Margin top={4} bottom={4}>
-          <CategorySelection categories={categories} centered />
-        </Margin>
-        <Margin bottom={4} />
-        <GoogleSearchLink />
-        <Margin bottom={4} />
-        <BlogPostList
-          items={posts}
-          author={config.authorName}
-          metaIcons={metaIcons}
-        />
+        <Heading title="MINIMAL BLOG LIST" />
+        <Margin bottom={4} top={4} />
+        <SimpleBlogPostList items={posts} />
       </Article>
       <Footer />
       <Seo
@@ -57,12 +42,12 @@ const BlogPage = props => {
   );
 };
 
-BlogPage.propTypes = {
+SimpleBlogPage.propTypes = {
   data: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 };
 
-export default BlogPage;
+export default SimpleBlogPage;
 
 export const query = graphql`
   query {
