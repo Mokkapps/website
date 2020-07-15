@@ -7,9 +7,9 @@ categories: []
 
 Michael Hoffmann
 
-Westendstraße 11
+Holzapfelkreuther Straße 19
 
-80339 München
+81375 München
 
 Telephone: +4915141257551
 

@@ -65,9 +65,9 @@ Controller for the purposes of the General Data Protection Regulation (GDPR), ot
 
 Mokkapps
 
-Westendstraße 11
+Holzapfelkreuther Straße 19
 
-80339 München
+81375 München
 
 Germany
 
