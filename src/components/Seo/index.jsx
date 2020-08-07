@@ -5,11 +5,12 @@ import Helmet from 'react-helmet';
 import config from '../../content/meta/config';
 import { Context } from '../Context';
 
-const windowGlobal = typeof window !== 'undefined' && window
+const windowGlobal = typeof window !== 'undefined' && window;
 
 const Seo = props => {
   const {
     url,
+    canonical,
     title = config.baseName,
     description = config.description,
     image = `${windowGlobal?.location?.origin}${config.defaultSeoImage}`,
@@ -21,6 +22,10 @@ const Seo = props => {
       {({ lang }) => (
         <Helmet htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}>
           <title>{title}</title>
+          link=
+          {canonical
+            ? [{ rel: 'canonical', key: canonical, href: canonical }]
+            : []}
           <meta name="image" content={image} />
           <meta name="description" content={description} />
           {/* OpenGraph tags */}
@@ -46,6 +51,7 @@ Seo.propTypes = {
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  canonical: PropTypes.string,
   image: PropTypes.string,
   postSEO: PropTypes.bool,
 };

@@ -33,6 +33,7 @@
     "gatsby-plugin-netlify": "^2.1.31",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.1.27",
     "gatsby-plugin-sentry": "^1.0.1",
