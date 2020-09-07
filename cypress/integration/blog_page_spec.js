@@ -8,7 +8,7 @@ describe('Blog Page Test', () => {
 
     cy.get('[data-cy=blog-post-list]')
       .children()
-      .should('have.length', 29);
+      .should('have.length', 30);
   });
 
   it('shows category page if a category is clicked', () => {
