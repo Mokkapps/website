@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 import PropTypes from 'prop-types';
 
@@ -18,6 +19,13 @@ import { metaIcons, getAllCategories } from '../utils/helper';
 
 import './style.scss';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 const BlogPage = props => {
   const {
     data: {
@@ -34,18 +42,20 @@ const BlogPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading title="BLOG" />
-        <Margin top={4} bottom={4}>
-          <CategorySelection categories={categories} centered />
-        </Margin>
-        <Margin bottom={4} />
-        <GoogleSearchLink />
-        <Margin bottom={4} />
-        <BlogPostList
-          items={posts}
-          author={config.authorName}
-          metaIcons={metaIcons}
-        />
+        <Container>
+          <Heading title="BLOG" />
+          <Margin top={4} bottom={4}>
+            <CategorySelection categories={categories} centered />
+          </Margin>
+          <Margin bottom={4} />
+          <GoogleSearchLink />
+          <Margin bottom={4} />
+          <BlogPostList
+            items={posts}
+            author={config.authorName}
+            metaIcons={metaIcons}
+          />
+        </Container>
       </Article>
       <Footer />
       <Seo

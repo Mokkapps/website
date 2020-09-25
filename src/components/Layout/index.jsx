@@ -29,12 +29,12 @@ const Layout = ({ children }) => {
             <Container>
               <ScrollUpButton />
               <div>
-                <Margin bottom={3}>
-                  <Header>
-                    <Menu />
-                  </Header>
-                </Margin>
-                {children}
+                  <Margin bottom={3}>
+                    <Header>
+                      <Menu />
+                    </Header>
+                  </Margin>
+                  {children}
               </div>
             </Container>
           </IntlProvider>

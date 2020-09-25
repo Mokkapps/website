@@ -28,7 +28,7 @@ const ProjectCard = ({
   children
 }) => (
   <StyledCard url={urls.page} clickable id={id}>
-    <ProjectImage sizes={asset.childImageSharp.sizes} />
+    <ProjectImage fluid={asset.childImageSharp.fluid} />
     <ProjectCardDescription
       minimal={minimal}
       projectName={title}

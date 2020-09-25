@@ -10,6 +10,7 @@ import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
 import '../utils/style-utils';
+import Article from '../components/Article';
 
 const IndexPage = props => {
   const {
@@ -22,7 +23,13 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <Hero projectAssets={projectAssets} latestPosts={posts} sliderImage={file} />
+      <Article>
+        <Hero
+          projectAssets={projectAssets}
+          latestPosts={posts}
+          sliderImage={file}
+        />
+      </Article>
       <Footer />
       <Seo
         url={siteUrl}
@@ -43,8 +50,9 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "slider.jpg" }) {
       childImageSharp {
-        sizes(maxWidth: 1500) {
-          ...GatsbyImageSharpSizes
+        fluid(maxWidth: 1900, maxHeight: 700) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
@@ -52,8 +60,8 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

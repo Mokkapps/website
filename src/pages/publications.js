@@ -78,7 +78,11 @@ const PublicationsPage = props => {
                       <TalkInfo>
                         <TalkText>{date}</TalkText>
                         <TalkText>{host}</TalkText>
-                        {slides ? <a href={slides}><FormattedMessage id="slides"/></a> : null}
+                        {slides ? (
+                          <a href={slides}>
+                            <FormattedMessage id="slides" />
+                          </a>
+                        ) : null}
                       </TalkInfo>
                     </ProjectCard>
                   </Margin>
@@ -123,8 +127,8 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 600) {
-              ...GatsbyImageSharpSizes
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

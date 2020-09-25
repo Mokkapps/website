@@ -6,7 +6,7 @@ export const getAsset = (edges, imageName) => {
   return edges
     .map(e => e.node)
     .filter(node => node.childImageSharp)
-    .find(node => node.childImageSharp.sizes.src.includes(imageName));
+    .find(node => node.childImageSharp.fluid.src.includes(imageName));
 };
 
 export const getAllCategories = allPosts => {
@@ -30,7 +30,9 @@ export const metaIcons = {
   tag: TagIcon,
 };
 
-export const capitalize = (s) => {
-  if (typeof s !== 'string') return ''
-  return s.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })
-}
+export const capitalize = s => {
+  if (typeof s !== 'string') return '';
+  return s.replace(/(?:^|\s)\S/g, function (a) {
+    return a.toUpperCase();
+  });
+};

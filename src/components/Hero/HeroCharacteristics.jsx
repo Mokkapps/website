@@ -50,7 +50,7 @@ const HeroCharacteristics = ({ text, icon, description }) => {
 
 HeroCharacteristics.propTypes = {
   text: PropTypes.string.isRequired,
-  icon: PropTypes.func.isRequired,
+  icon: PropTypes.object.isRequired,
   description: PropTypes.string.isRequired,
 };
 

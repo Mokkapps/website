@@ -30,10 +30,10 @@ const images = {
 };
 
 const Container = styled.div`
-  height: 100%;
-  border-radius: 10px;
-  padding: 2rem;
-  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Heading = styled.h1`
@@ -85,6 +85,8 @@ const Projects = styled.section`
 `;
 
 const Image = styled(Img)`
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
@@ -104,7 +106,7 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
         <Image
           alt="Michael Hoffmann Image"
           title="Michael Hoffmann"
-          sizes={sliderImage.childImageSharp.sizes}
+          fluid={sliderImage.childImageSharp.fluid}
         />
       ) : null}
       <Margin top={3} bottom={3}>
