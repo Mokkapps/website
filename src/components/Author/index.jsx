@@ -13,6 +13,7 @@ const Container = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content:center;
 `;
 
 const Description = styled.div`
@@ -30,6 +31,7 @@ const Image = styled(Img)`
 
 const Name = styled.h3`
   text-align: center;
+  color:red;
 `;
 
 const Text = styled.p`

@@ -95,7 +95,7 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
   return (
     <Container>
       <Heading data-cy="hero-heading">
-        <FormattedMessage id="hi" /> <a href="about">Michael Hoffmann</a>
+        <FormattedMessage id="hi" /> <a href="about">Michael Hoffmann..</a>
       </Heading>
       <Margin top={3} bottom={3}>
         <Quote data-cy="hero-quote">
@@ -105,7 +105,7 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
       {sliderImage ? (
         <Image
           alt="Michael Hoffmann Image"
-          title="Michael Hoffmann"
+          title="Michael Hoffmann.."
           fluid={sliderImage.childImageSharp.fluid}
         />
       ) : null}

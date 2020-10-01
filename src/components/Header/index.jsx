@@ -8,6 +8,7 @@ const StyledHeader = styled.header`
 
   a {
     text-decoration: none;
+    color:#fff;
   }
 `;
 
