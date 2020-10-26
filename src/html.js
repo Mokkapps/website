@@ -50,6 +50,12 @@ export default class HTML extends React.Component {
           />
           <link rel="canonical" href="https://www.mokkapps.de" />
           {this.props.headComponents}
+          <script
+            async
+            defer
+            data-website-id="edf6a782-7c23-4db8-b386-622502f7295a"
+            src="https://mokkapps-analytics.vercel.app/umami.js"
+          ></script>
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
