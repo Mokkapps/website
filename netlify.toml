@@ -15,13 +15,6 @@ package = "netlify-plugin-gatsby-cache"
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
-  # optional, fails build when a category is below a threshold
-  [plugins.inputs.thresholds]
-    seo = 0.9
-    pwa = 0.9
-
-[[plugins]]
-package = "netlify-plugin-checklinks"
 
 [[plugins]]
 package = "netlify-plugin-a11y"
