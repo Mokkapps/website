@@ -63,10 +63,7 @@ jobs:
       with:
         # we have already installed all dependencies above
         install: false
-        # build step before starting tests
-        build: npm run build
-        # serve locally
-        start: npm start
+        start: npm run test:e2e:ci
         # quote the url to be safe against YML parsing surprises
         wait-on: 'http://localhost:8000'
         wait-on-timeout: 600
