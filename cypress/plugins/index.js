@@ -14,4 +14,12 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  // add --disable-dev-shm-usage chrome flag
+  on('before:browser:launch', (browser, launchOptions) => {
+    if (browser.family === 'chromium') {
+      console.log('Adding Chrome flag: --disable-dev-shm-usage');
+      launchOptions.args.push('--disable-dev-shm-usage');
+    }
+    return launchOptions;
+  });
 }
