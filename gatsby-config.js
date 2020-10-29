@@ -73,27 +73,27 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-custom-blocks",
+            resolve: 'gatsby-remark-custom-blocks',
             options: {
               blocks: {
                 danger: {
-                  classes: "alert alert-danger",
+                  classes: 'alert alert-danger',
                 },
                 info: {
-                  classes: "alert alert-info",
+                  classes: 'alert alert-info',
                 },
                 warning: {
-                  classes: "alert alert-warning",
-                }
+                  classes: 'alert alert-warning',
+                },
               },
             },
           },
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
-              target: "_blank",
-              rel: "noopener noreferrer"
-            }
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            },
           },
           {
             resolve: 'gatsby-remark-images',
@@ -128,18 +128,14 @@ module.exports = {
         ],
       },
     },
-    // Google Analytics integration
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-        anonymize: true,
-        respectDNT: true,
-        head: true,
-      },
-    },
     // Add SEO attributes
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: config.siteUrl,
+      },
+    },
     // Create a sitemap
     `gatsby-plugin-sitemap`,
     // Sentry integration
@@ -205,7 +201,8 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+                  url:
+                    site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 });

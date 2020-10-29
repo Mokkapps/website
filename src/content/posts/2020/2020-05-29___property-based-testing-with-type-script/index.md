@@ -103,7 +103,7 @@ I prefer [fast-check](https://github.com/dubzzz/fast-check) for the following re
 
 To install [fast-check](https://github.com/dubzzz/fast-check) you need to run this command in your terminal:
 
-```console
+```bash
 npm i fast-check -D
 ```
 
@@ -160,7 +160,7 @@ As a base we use an Angular project created with the [Angular CLI](https://cli.a
 
 Next step is to install [fast-check](https://github.com/dubzzz/fast-check) we, therefore, need to run this command in the terminal:
 
-```console
+```bash
 npm i fast-check -D
 ```
 

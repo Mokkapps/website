@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
@@ -6,7 +6,7 @@ import { Margin } from 'styled-components-spacing';
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
 import FluidImage from '../FluidImage';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 const SocialLinks = styled.div`
   display: flex;
@@ -34,6 +34,11 @@ const AboutParagraph = styled.p`
 
 const yearsOfExperience = new Date().getFullYear() - 2015;
 
+const contactValue = {
+  // eslint-disable-next-line react/display-name
+  a: chunks => <a href="/contact">{chunks}</a>,
+};
+
 const AboutMe = ({ images }) => (
   <Container>
     <FluidImage image={images.intro} />
@@ -55,19 +60,62 @@ const AboutMe = ({ images }) => (
           />
         </AboutParagraph>
         <AboutParagraph>
-          <FormattedHTMLMessage id="aboutParagraph2" />
+          <FormattedMessage id="aboutParagraph2" values={contactValue} />
         </AboutParagraph>
         <AboutParagraph>
-          <FormattedHTMLMessage id="aboutParagraph3" />
+          <FormattedMessage
+            id="aboutParagraph3"
+            values={{
+              privateProjectsLink: (
+                <a href="/projects">
+                  <FormattedMessage id="privateProjectsLink" />
+                </a>
+              ),
+              blogLink: (
+                <a href="/blog">
+                  <FormattedMessage id="blogLink" />
+                </a>
+              ),
+              publicationLink: (
+                <a href="/publications">
+                  <FormattedMessage id="publicationLink" />
+                </a>
+              ),
+              angularArchitectsLink: (
+                <a
+                  href="https://www.angulararchitects.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FormattedMessage id="angularArchitectsLink" />
+                </a>
+              ),
+              gitHubLink: (
+                <a
+                  href="https://github.com/Mokkapps"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FormattedMessage id="gitHubLink" />
+                </a>
+              ),
+            }}
+          />
         </AboutParagraph>
         <AboutParagraph>
-          <FormattedHTMLMessage id="aboutParagraph6" />
+          <FormattedMessage
+            id="aboutParagraph6"
+            values={{
+              // eslint-disable-next-line react/display-name
+              a: chunks => <a href="/uses">{chunks}</a>,
+            }}
+          />
         </AboutParagraph>
         <AboutParagraph>
           <FormattedMessage id="aboutParagraph4" />
         </AboutParagraph>
         <AboutParagraph>
-          <FormattedHTMLMessage id="aboutParagraph5" />
+          <FormattedMessage id="aboutParagraph5" values={contactValue} />
         </AboutParagraph>
       </DescriptionContainer>
     </Margin>
@@ -75,8 +123,7 @@ const AboutMe = ({ images }) => (
 );
 
 AboutMe.propTypes = {
-  images: PropTypes.object.isRequired
+  images: PropTypes.object.isRequired,
 };
 
 export default AboutMe;
-

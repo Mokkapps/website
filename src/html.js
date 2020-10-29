@@ -50,12 +50,14 @@ export default class HTML extends React.Component {
           />
           <link rel="canonical" href="https://www.mokkapps.de" />
           {this.props.headComponents}
-          <script
-            async
-            defer
-            data-website-id="edf6a782-7c23-4db8-b386-622502f7295a"
-            src="https://mokkapps-analytics.vercel.app/umami.js"
-          ></script>
+          {process.env.NODE_ENV === 'production' && (
+            <script
+              async
+              defer
+              data-website-id="edf6a782-7c23-4db8-b386-622502f7295a"
+              src="https://mokkapps-analytics.vercel.app/umami.js"
+            ></script>
+          )}
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
@@ -66,27 +68,6 @@ export default class HTML extends React.Component {
           />
           {this.props.postBodyComponents}
         </body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Set to the same value as the web property used on the site
-              var gaProperty = 'UA-93160141-1';
-
-              // Disable tracking if the opt-out cookie exists.
-              var disableStr = 'ga-disable-' + gaProperty;
-              if (document.cookie.indexOf(disableStr + '=true') > -1) {
-                window[disableStr] = true;
-              }
-
-              // Opt-out function
-              function gaOptout() {
-                document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-                window[disableStr] = true;
-                console.log('Disabled google analytics for property', 'UA-93160141-1');
-              }
-            `,
-          }}
-        />
         <noscript>
           <p>
             I&#39;m sorry, but my website doesn&#39;t work properly without

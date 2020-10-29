@@ -225,7 +225,7 @@ public class NewsService {
 
 Finally, we can run the backend using `./gradlew bootRun` and trigger the news endpoint
 
-```bash                                                                                                                                                                                                              ⍉
+```bash                                                                             
 curl -v http://localhost:8080/api/news
 ```
 

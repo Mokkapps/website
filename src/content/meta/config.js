@@ -122,7 +122,7 @@ const config = {
     'Audi Business Innovation',
     'Carl Zeiss Microscopy',
     'ProSiebenSat.1 Tech',
-    'SOFTWAREarchitekt.at',
+    'Angular Architects',
   ],
   characteristics: [
     {

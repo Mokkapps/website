@@ -50,7 +50,7 @@ const PostTemplate = props => {
       post: {
         excerpt,
         html: postHTML,
-        frontmatter: { title, categories, cover, bannerCredit },
+        frontmatter: { title, categories, cover, bannerCredit, canonical },
         fields: { slug, prefix },
         timeToRead,
       },
@@ -59,6 +59,9 @@ const PostTemplate = props => {
     },
     pageContext: { next, prev },
   } = props;
+
+  console.log('CANONICAL', canonical);
+  console.log('typeof CANONICAL', typeof canonical);
 
   const { siteUrl, siteTitlePostfix } = config;
 
@@ -120,6 +123,7 @@ const PostTemplate = props => {
       <Seo
         url={`${siteUrl}${slug}`}
         title={`${title}${siteTitlePostfix}`}
+        canonical={canonical}
         description={excerpt}
         image={
           cover ? `${config.siteUrl}${cover.childImageSharp.fluid.src}` : null
@@ -160,6 +164,7 @@ export const query = graphql`
       }
       frontmatter {
         title
+        canonical
         categories
         cover {
           childImageSharp {

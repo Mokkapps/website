@@ -25,7 +25,7 @@ The base for our demo is a Spring Boot application which we initialize using [Sp
 
 We initialized the project using `spring-boot-starter-actuator` which already exposes [production-ready endpoints](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html).
 
-If we start our application we can see that some endpoints like `health` and `info` are already exposed to the `/actuator` endpoint per default: 
+If we start our application we can see that some endpoints like `health` and `info` are already exposed to the `/actuator` endpoint per default.
 
 Triggering the `/actuator/health` endpoint gives us a metric if the service is up and running: 
 

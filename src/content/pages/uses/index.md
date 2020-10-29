@@ -17,18 +17,21 @@ I change up things sometimes, so this page will serve as a living document and a
 ## Desktop Apps
 
 * [Firefox](https://www.mozilla.org/en-US/firefox/) as my main browser
-* [Notion](https://www.notion.so/) all-in-one workspace for notes, docs, tasks, todos and more
+* [Postman](https://www.postman.com) for API development and testing
 * [Enpass](https://enpass.io/) for password management
+* [Parallels](https://www.parallels.com/) for Windows virtualization
+* [FileZilla](https://filezilla-project.org) as FTP client
 * [Franz](https://meetfranz.com/) as messaging app
 * [Spotify](https://www.spotify.com/) for music streaming
 * [Alfred App](https://www.alfredapp.com/) an productivity app for macOS
 * [Dash](https://kapeli.com/dash) an API documentation browser
 * [Timing](https://timingapp.com/) as automatic time tracker for macOS
 * [Alfred](https://www.alfredapp.com/) instead of Spotlight on macOS
+* [Notion](https://www.notion.so/) all-in-one workspace for notes, docs, tasks, todos and more
 
 ## Notebook
 
-I am using a MacBook Pro (16-inch, 2019) for development and a custom-built desktop PC for gaming.
+I am using a MacBook Pro (16-inch, 2019) for development.
 
 ## Mechanical Keyboard
 
