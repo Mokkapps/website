@@ -11,25 +11,26 @@ publish = "public"
   TERM = "xterm"
 
 [[plugins]]
-  # local Cypress plugin will test our site after it is built
-  package = "netlify-plugin-cypress"
-    [plugins.inputs]
-      record = true
+package = "netlify-plugin-gatsby-cache"
 
 [[plugins]]
-  package = "netlify-plugin-gatsby-cache"
-
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-    # optional, fails build when a category is below a threshold
-    [plugins.inputs.thresholds]
+package = "@netlify/plugin-lighthouse"
+  # optional, fails build when a category is below a threshold
+  [plugins.inputs.thresholds]
     seo = 0.9
     pwa = 0.9
 
 [[plugins]]
-  package = "netlify-plugin-checklinks"
+package = "netlify-plugin-checklinks"
 
 [[plugins]]
-  package = "netlify-plugin-a11y"
+package = "netlify-plugin-a11y"
   [plugins.inputs]
     resultMode = "warn"
+
+# Commented out until https://github.com/cypress-io/netlify-plugin-cypress/issues/58 is fixed
+#[[plugins]]
+#  # local Cypress plugin will test our site after it is built
+#  package = "netlify-plugin-cypress"
+#    [plugins.inputs]
+#      record = true
