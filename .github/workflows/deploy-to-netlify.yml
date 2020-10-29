@@ -53,8 +53,13 @@ jobs:
     - name: Run linter
       run: npm run lint
     
-    - name: Run tests
+    - name: Run E2E tests
       uses: cypress-io/github-action@v2
+      env:
+        # incremental builds
+        # https://www.gatsbyjs.org/docs/page-build-optimizations-for-incremental-data-changes/
+        GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+        NODE_ENV: production
       timeout-minutes: 15
       with:
         # we have already installed all dependencies above
