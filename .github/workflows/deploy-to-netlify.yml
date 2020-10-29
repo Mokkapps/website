@@ -11,9 +11,10 @@ jobs:
     timeout-minutes: 30
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v2
     
-    - name: Cache npm
+    - name: npm Cache Folder
       uses: actions/cache@v2
       with:
         path: ~/.npm
@@ -45,9 +46,6 @@ jobs:
       uses: actions/setup-node@master
       with:
         node-version: 14.15.0
-        
-    - name: Install Gatsby
-      run: npm i -g gatsby
       
     - name: Install dependencies
       run: npm ci
@@ -56,19 +54,18 @@ jobs:
       run: npm run lint
     
     - name: Run tests
-      uses: cypress-io/github-action@v1
+      uses: cypress-io/github-action@v2
       timeout-minutes: 15
       with:
         # we have already installed all dependencies above
         install: false
+        # build step before starting tests
+        build: npm run build
         # serve locally
         start: npm start
         # quote the url to be safe against YML parsing surprises
         wait-on: 'http://localhost:8000'
         wait-on-timeout: 600
-    
-    - name: Build app
-      run: npm run build
       
     - name: Deploy to Netlify
       if: job.status == 'success'
