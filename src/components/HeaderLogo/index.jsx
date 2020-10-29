@@ -18,8 +18,6 @@ const Anchor = styled.a`
 `;
 
 const Image = styled.img`
-  width: 35px;
-  height: 35px;
   margin-bottom: 0;
 `;
 
@@ -34,7 +32,7 @@ const Text = styled.p`
 
 const HeaderLogo = () => (
   <Anchor data-cy="header-logo" href="/">
-    <Image src={logo} alt="Logo" />
+    <Image src={logo} alt="Logo" width={35} height={35} />
     <Text>OKKAPPS</Text>
   </Anchor>
 );

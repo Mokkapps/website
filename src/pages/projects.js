@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link} from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
@@ -55,9 +55,9 @@ const ProjectsPage = props => {
         <Heading i18nId="businessProjectsHeading" />
         <MarginCenteredWrapper top={4} bottom={4}>
           <span>
-            <a href="/contact">
+            <Link to="/contact">
               <FormattedMessage id="getInTouch" />
-            </a>
+            </Link>
             <FormattedMessage id="detailedProjectList" />
           </span>
           <MarginCenteredWrapper top={3} bottom={2}>
@@ -106,7 +106,7 @@ export const query = graphql`
     consultingImage: file(relativePath: { eq: "consulting1.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1500) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -115,7 +115,7 @@ export const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

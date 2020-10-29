@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 
@@ -34,11 +35,6 @@ const AboutParagraph = styled.p`
 
 const yearsOfExperience = new Date().getFullYear() - 2015;
 
-const contactValue = {
-  // eslint-disable-next-line react/display-name
-  a: chunks => <a href="/contact">{chunks}</a>,
-};
-
 const AboutMe = ({ images }) => (
   <Container>
     <FluidImage image={images.intro} />
@@ -60,26 +56,32 @@ const AboutMe = ({ images }) => (
           />
         </AboutParagraph>
         <AboutParagraph>
-          <FormattedMessage id="aboutParagraph2" values={contactValue} />
+          <FormattedMessage
+            id="aboutParagraph2"
+            values={{
+              // eslint-disable-next-line react/display-name
+              a: chunks => <Link to="/contact">{chunks}</Link>,
+            }}
+          />
         </AboutParagraph>
         <AboutParagraph>
           <FormattedMessage
             id="aboutParagraph3"
             values={{
               privateProjectsLink: (
-                <a href="/projects">
+                <Link to="/projects">
                   <FormattedMessage id="privateProjectsLink" />
-                </a>
+                </Link>
               ),
               blogLink: (
-                <a href="/blog">
+                <Link to="/blog">
                   <FormattedMessage id="blogLink" />
-                </a>
+                </Link>
               ),
               publicationLink: (
-                <a href="/publications">
+                <Link to="/publications">
                   <FormattedMessage id="publicationLink" />
-                </a>
+                </Link>
               ),
               angularArchitectsLink: (
                 <a
@@ -107,7 +109,7 @@ const AboutMe = ({ images }) => (
             id="aboutParagraph6"
             values={{
               // eslint-disable-next-line react/display-name
-              a: chunks => <a href="/uses">{chunks}</a>,
+              a: chunks => <Link to="/uses">{chunks}</Link>,
             }}
           />
         </AboutParagraph>
@@ -115,7 +117,13 @@ const AboutMe = ({ images }) => (
           <FormattedMessage id="aboutParagraph4" />
         </AboutParagraph>
         <AboutParagraph>
-          <FormattedMessage id="aboutParagraph5" values={contactValue} />
+          <FormattedMessage
+            id="aboutParagraph5"
+            values={{
+              // eslint-disable-next-line react/display-name
+              a: chunks => <Link to="/contact">{chunks}</Link>,
+            }}
+          />
         </AboutParagraph>
       </DescriptionContainer>
     </Margin>

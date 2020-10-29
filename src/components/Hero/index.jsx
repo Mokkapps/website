@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 import Img from 'gatsby-image';
@@ -95,7 +96,7 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
   return (
     <Container>
       <Heading data-cy="hero-heading">
-        <FormattedMessage id="hi" /> <a href="about">Michael Hoffmann</a>
+        <FormattedMessage id="hi" /> <Link to="/about">Michael Hoffmann</Link>
       </Heading>
       <Margin top={3} bottom={3}>
         <Quote data-cy="hero-quote">

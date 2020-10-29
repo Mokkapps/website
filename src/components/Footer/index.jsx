@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
@@ -46,13 +47,13 @@ const Footer = () => (
         Gatsby.js
       </a>{' '}
       |{' '}
-      <a data-cy="footer-privacy-policy" href="/privacy-policy">
+      <Link data-cy="footer-privacy-policy" to="/privacy-policy">
         <FormattedMessage id="privacyPolicy" />
-      </a>{' '}
+      </Link>{' '}
       |{' '}
-      <a data-cy="footer-legal-notice" href="/legal-notice">
+      <Link data-cy="footer-legal-notice" to="/legal-notice">
         <FormattedMessage id="legalNotice" />
-      </a>
+      </Link>
     </Content>
   </FooterWrapper>
 );

@@ -50,14 +50,14 @@ export const query = graphql`
     introImage: file(relativePath: { eq: "about.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     consultingImage: file(relativePath: { eq: "consulting2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

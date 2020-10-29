@@ -10,6 +10,53 @@ publish = "public"
   # set TERM variable for terminal output
   TERM = "xterm"
 
+# Asset optimization
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true
+
+# Headers to return with requests for the specified paths
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+
+[headers.values]
+  X-Frame-Options = "DENY"
+  X-XSS-Protection = "1; mode=block"
+  # Multi-key header rules are expressed with multi-line strings.
+  cache-control = '''
+        max-age=31557600,
+        no-cache,
+        no-store,
+        must-revalidate'''
+
+# Redirects Wordpress hacking trolls to an offensive image
+[[redirects]]
+  from = "/wp-login.php"
+  to = "https://i.imgur.com/1Ia9tTG.gif"
+  status = 301
+
+# Simple redirect for a page which has changed URLs
+[[redirects]]
+  from = "/talks/my-first-smartphone-game/"
+  to = "https://mokkapps-first-smartphone-game-talk.netlify.com"
+  status = 301
+
+# Simple redirect for a page which has changed URLs
+[[redirects]]
+  from = "blog/my-development-setup/"
+  to = "/uses/"
+  status = 301
+
 [[plugins]]
 package = "netlify-plugin-gatsby-cache"
 

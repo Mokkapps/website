@@ -57,17 +57,33 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
-    `gatsby-plugin-netlify-cache`, // Netlify cache
-    `gatsby-plugin-styled-components`, // Styled components
+    `gatsby-plugin-preact`,
+    `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-netlify-cache`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`, // needs to be after the manifest plugin
-    // Netlify support
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-sass`, // enable SASS
+    `gatsby-plugin-sass`,
     `gatsby-plugin-resolve-src`, // resolve imports from src subdir
     `gatsby-plugin-catch-links`, // intercept markdown links
     // Following two are necessary for gatsby-image
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }]    }
+    },
+    {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: [
+          'https://mokkapps.com',
+          'https://mokkapps.de',
+          'https://mokkapps.dev',
+        ],
+      },
+    },
     // Parses Markdown files using Remark.
     {
       resolve: `gatsby-transformer-remark`,
@@ -171,7 +187,7 @@ module.exports = {
         // setting this to '{ sh: "bash" }' will let you use
         // the language "sh" which will highlight using the
         // bash highlighter.
-        aliases: {},
+        aliases: { sh: 'bash' },
         // This toggles the display of line numbers alongside the code.
         // To use it, add the following line in src/layouts/index.js
         // right after importing the prism color scheme:

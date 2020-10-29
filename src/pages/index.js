@@ -51,7 +51,7 @@ export const query = graphql`
     file(relativePath: { eq: "slider.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1900, maxHeight: 700) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
           ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
@@ -61,7 +61,7 @@ export const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -85,7 +85,7 @@ export const query = graphql`
             cover {
               childImageSharp {
                 fluid(maxWidth: 700) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
