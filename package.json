@@ -9,15 +9,15 @@
   "license": "MIT",
   "scripts": {
     "start": "gatsby develop -p 8000",
-    "build": "rm -rf .cache && cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "serve": "gatsby serve",
     "start-server": "gatsby develop",
     "generate-blogpost": "node generate/blogpost.js",
     "cy:open": "cypress open",
     "cy:install": "cypress install",
     "cy:run": "cypress run",
-    "test:e2e:ci": "rm -rf .cache && start-server-and-test start http://localhost:8000 cy:run",
-    "test:e2e": "rm -rf .cache && start-server-and-test start http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test start http://localhost:8000 cy:run",
+    "test:e2e": "start-server-and-test start http://localhost:8000 cy:open",
     "lint": "eslint src"
   },
   "dependencies": {
