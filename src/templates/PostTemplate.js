@@ -60,9 +60,6 @@ const PostTemplate = props => {
     pageContext: { next, prev },
   } = props;
 
-  console.log('CANONICAL', canonical);
-  console.log('typeof CANONICAL', typeof canonical);
-
   const { siteUrl, siteTitlePostfix } = config;
 
   const url = `${siteUrl}/blog${slug}`;
