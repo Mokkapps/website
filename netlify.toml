@@ -1,0 +1,5 @@
+[[plugins]]
+  package = "netlify-plugin-cypress"
+    [plugins.inputs]
+    record = true
+  package = "netlify-plugin-gatsby-cache"

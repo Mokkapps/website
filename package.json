@@ -96,6 +96,7 @@
     "js-yaml": "^3.14.0",
     "json-to-pretty-yaml": "^1.2.2",
     "mkdirp": "^1.0.4",
+    "netlify-plugin-cypress": "^1.4.1",
     "opn": "^6.0.0",
     "ora": "^5.1.0",
     "prettier": "^2.1.2",
