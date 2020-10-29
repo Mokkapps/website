@@ -7,17 +7,44 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-20.04
     timeout-minutes: 30
 
     steps:
     - uses: actions/checkout@v1
+    
+    - name: Cache npm
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    
+    # In order to make gatsby incremental build works, it's necessary .cache
+    # and public folder.
+    - name: Gatsby Cache Folder
+      uses: actions/cache@v2
+      id: gatsby-cache-folder
+      with:
+        path: .cache
+        key: ${{ runner.os }}-cache-gatsby
+        restore-keys: |
+          ${{ runner.os }}-cache-gatsby
+
+    - name: Gatsby Public Folder
+      uses: actions/cache@v2
+      id: gatsby-public-folder
+      with:
+        path: public/
+        key: ${{ runner.os }}-public-gatsby
+        restore-keys: |
+          ${{ runner.os }}-public-gatsby
       
     - name: Set Node.js
       uses: actions/setup-node@master
       with:
-        node-version: 12.13.1
+        node-version: 14.15.0
         
     - name: Install Gatsby
       run: npm i -g gatsby
