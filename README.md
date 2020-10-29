@@ -1,4 +1,3 @@
-![Deploy to Netlify](https://github.com/Mokkapps/website/workflows/Deploy%20to%20Netlify/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3a56bccf-9bd3-4306-ae45-f92cef608076/deploy-status)](https://app.netlify.com/sites/mokkapps/deploys)
 
 # Mokkapps Portfolio Website

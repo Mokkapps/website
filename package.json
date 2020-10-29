@@ -22,6 +22,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
+    "@netlify/plugin-lighthouse": "^1.4.2",
     "babel-plugin-styled-components": "^1.11.1",
     "cross-env": "^7.0.2",
     "emotion": "^10.0.27",
