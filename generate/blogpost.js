@@ -23,38 +23,33 @@ const fromRoot = (...p) => path.join(__dirname, '..', ...p);
 
 tinify.key = process.env.TINY_PNG_API_KEY;
 
-const toTitleCase = function (str) {
-  str = str.toLowerCase().split(' ');
-  for (let i = 0; i < str.length; i++) {
-    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
-  }
-  return str.join(' ');
-};
-
-const listify = a =>
-  a && a.trim().length
-    ? a
-        .split(',')
-        .map(s => s.trim())
-        .filter(Boolean)
-    : null;
-
 async function generateBlogPost() {
-  const { title, categories, date, useUnsplash } = await inquirer.prompt([
+  const {
+    title,
+    categories,
+    date,
+    useUnsplash,
+    dryRun,
+  } = await inquirer.prompt([
     {
       type: 'input',
       name: 'title',
       message: 'Title',
     },
     {
-      type: 'input',
-      name: 'subTitle',
-      message: 'SubTitle (default: none)',
-    },
-    {
-      type: 'input',
+      type: 'checkbox',
       name: 'categories',
-      message: 'Categories (comma separated)',
+      choices: [
+        'development',
+        'spring',
+        'career',
+        'productivity',
+        'tools',
+        'angular',
+        'freelancing',
+        'testing',
+      ],
+      message: 'Categories',
     },
     {
       type: 'input',
@@ -64,31 +59,45 @@ async function generateBlogPost() {
     {
       type: 'confirm',
       name: 'useUnsplash',
-      message: 'Use cover image from Unsplash?',
+      default: false,
+      message: 'Use cover image from Unsplash? (default: false)',
+    },
+    {
+      type: 'confirm',
+      name: 'dryRun',
+      default: false,
+      message: 'Dry run without creating files? (default: false)',
     },
   ]);
   const slug = slugify(title);
   const year = new Date(date).getFullYear();
-  const destination = fromRoot(`src/content/posts/${year}`, `${date}___${slug}`);
+  const destination = fromRoot(
+    `src/content/posts/${year}`,
+    `${date}___${slug}`
+  );
   mkdirp.sync(destination);
 
   let bannerCredit;
-  if (useUnsplash) {
+  if (!dryRun && useUnsplash) {
     bannerCredit = await getBannerPhoto(title, destination);
   }
 
-  const yaml = jsToYaml.stringify(
-    removeEmpty({
-      title: toTitleCase(title),
-      subTitle: '',
-      categories: listify(categories),
-      cover: 'images/cover.jpg',
-      bannerCredit,
-    })
-  );
-  fs.writeFileSync(path.join(destination, 'index.md'), `---\n${yaml}\n---\n`);
-
-  console.log(`${destination.replace(process.cwd(), '')} is all ready for you`);
+  const mdObj = {
+    title: titleCaps(title),
+    categories,
+    cover: 'images/cover.jpg',
+  };
+  const yaml = jsToYaml.stringify(removeEmpty(mdObj));
+  const mdData = `---\n${yaml}\n---\n${
+    bannerCredit ? '<small>${bannerCredit}</small>' : ''
+  }`;
+  console.log(`Markdown data:\n${mdData}`);
+  if (!dryRun) {
+    fs.writeFileSync(path.join(destination, 'index.md'), mdData);
+    console.log(
+      `${destination.replace(process.cwd(), '')} is all ready for you`
+    );
+  }
 }
 
 async function getBannerPhoto(title, destination) {
@@ -149,6 +158,64 @@ function removeEmpty(obj) {
     }
     return o;
   }, {});
+}
+
+/*
+ * Title Caps
+ *
+ * Ported to JavaScript By John Resig - http://ejohn.org/ - 21 May 2008
+ * Original by John Gruber - http://daringfireball.net/ - 10 May 2008
+ * License: http://www.opensource.org/licenses/mit-license.php
+ */
+function titleCaps(title) {
+  const small =
+    '(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|v[.]?|via|vs[.]?)';
+  const punct = '([!"#$%&\'()*+,./:;<=>?@[\\\\\\]^_`{|}~-]*)';
+  let parts = [];
+  let split = /[:.;?!] |(?: |^)["Ò]/g;
+  let index = 0;
+
+  function lower(word) {
+    return word.toLowerCase();
+  }
+
+  function upper(word) {
+    return word.substr(0, 1).toUpperCase() + word.substr(1);
+  }
+
+  while (true) {
+    let m = split.exec(title);
+
+    parts.push(
+      title
+        .substring(index, m ? m.index : title.length)
+        .replace(/\b([A-Za-z][a-z.'Õ]*)\b/g, function (all) {
+          return /[A-Za-z]\.[A-Za-z]/.test(all) ? all : upper(all);
+        })
+        .replace(RegExp('\\b' + small + '\\b', 'ig'), lower)
+        .replace(RegExp('^' + punct + small + '\\b', 'ig'), function (
+          all,
+          punct,
+          word
+        ) {
+          return punct + upper(word);
+        })
+        .replace(RegExp('\\b' + small + punct + '$', 'ig'), upper)
+    );
+
+    index = split.lastIndex;
+
+    if (m) parts.push(m[0]);
+    else break;
+  }
+
+  return parts
+    .join('')
+    .replace(/ V(s?)\. /gi, ' v$1. ')
+    .replace(/(['Õ])S\b/gi, '$1s')
+    .replace(/\b(AT&T|Q&A)\b/gi, function (all) {
+      return all.toUpperCase();
+    });
 }
 
 generateBlogPost();
