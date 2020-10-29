@@ -60,6 +60,7 @@ jobs:
         # https://www.gatsbyjs.org/docs/page-build-optimizations-for-incremental-data-changes/
         GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
         NODE_ENV: production
+        CI: true
       with:
         # we have already installed all dependencies above
         install: false
