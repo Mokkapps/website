@@ -62,12 +62,8 @@ jobs:
         NODE_ENV: production
         CI: true
       with:
-        # we have already installed all dependencies above
-        install: false
+        install: false # we have already installed all dependencies above
         start: npm run test:e2e:ci
-        # quote the url to be safe against YML parsing surprises
-        wait-on: 'http://localhost:8000'
-        wait-on-timeout: 600
       
     - name: Deploy to Netlify
       if: job.status == 'success'
