@@ -57,7 +57,7 @@ jobs:
     
     - name: Run tests
       uses: cypress-io/github-action@v1
-      timeout-minutes: 10
+      timeout-minutes: 15
       with:
         # we have already installed all dependencies above
         install: false
