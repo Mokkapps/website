@@ -57,6 +57,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
+    `gatsby-plugin-netlify-cache`, // Netlify cache
     `gatsby-plugin-styled-components`, // Styled components
     `gatsby-plugin-offline`, // needs to be after the manifest plugin
     // Netlify support
