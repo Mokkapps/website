@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    timeout-minutes: 30
 
     steps:
     - name: Checkout
@@ -21,26 +20,6 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    
-    # In order to make gatsby incremental build works, it's necessary .cache
-    # and public folder.
-    - name: Gatsby Cache Folder
-      uses: actions/cache@v2
-      id: gatsby-cache-folder
-      with:
-        path: .cache
-        key: ${{ runner.os }}-cache-gatsby
-        restore-keys: |
-          ${{ runner.os }}-cache-gatsby
-
-    - name: Gatsby Public Folder
-      uses: actions/cache@v2
-      id: gatsby-public-folder
-      with:
-        path: public/
-        key: ${{ runner.os }}-public-gatsby
-        restore-keys: |
-          ${{ runner.os }}-public-gatsby
       
     - name: Set Node.js
       uses: actions/setup-node@master
@@ -52,20 +31,6 @@ jobs:
       
     - name: Run linter
       run: npm run lint
-    
-    - name: Run E2E tests
-      uses: cypress-io/github-action@v2
-      env:
-        # incremental builds
-        # https://www.gatsbyjs.org/docs/page-build-optimizations-for-incremental-data-changes/
-        GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
-        NODE_ENV: production
-        CI: true
-      with:
-        install: false # we have already installed all dependencies above
-        start: npm run test:e2e:ci
-        wait-on: 'http://localhost:8000'
-        wait-on-timeout: 1800
       
     - name: Deploy to Netlify
       if: job.status == 'success'
