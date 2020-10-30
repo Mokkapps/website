@@ -26,7 +26,7 @@ const Introduction = styled.div`
   justify-content: center;
 `;
 
-const CenteredHeading = styled.h3`
+const CenteredHeading = styled.h4`
   text-align: center;
 `;
 
@@ -69,6 +69,12 @@ const PageTemplate = props => {
               values={{ count: totalCount }}
             />
           </h3>
+          <Margin top={4} bottom={4}>
+            <CenteredHeading>
+              <FormattedMessage id="otherCategories"></FormattedMessage>
+            </CenteredHeading>
+            <CategorySelection categories={categories} centered />
+          </Margin>
           <GoogleSearchLink />
         </Heading>
         <BlogPostList
@@ -76,12 +82,6 @@ const PageTemplate = props => {
           author={config.authorName}
           metaIcons={metaIcons}
         />
-        <Margin top={2} bottom={2}>
-          <CenteredHeading>
-            <FormattedMessage id="otherCategories"></FormattedMessage>
-          </CenteredHeading>
-          <CategorySelection categories={categories} centered />
-        </Margin>
       </Article>
       <Footer />
       <Seo
