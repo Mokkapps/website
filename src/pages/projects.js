@@ -1,8 +1,7 @@
 import React from 'react';
-import { graphql, Link} from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Margin } from 'styled-components-spacing';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
@@ -16,7 +15,7 @@ import Heading from '../components/Heading';
 import FluidImage from '../components/FluidImage';
 import Seo from '../components/Seo';
 
-const MarginCenteredWrapper = styled(Margin)`
+const MarginCenteredWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -39,7 +38,7 @@ const Customer = styled.p`
 `;
 
 const Heading2 = styled.h2`
-text-align: center;
+  text-align: center;
 `;
 
 const ProjectsPage = props => {
@@ -53,36 +52,32 @@ const ProjectsPage = props => {
     <Layout>
       <Article>
         <Heading i18nId="businessProjectsHeading" />
-        <MarginCenteredWrapper top={4} bottom={4}>
+        <MarginCenteredWrapper className="my-8">
           <span>
             <Link to="/contact">
               <FormattedMessage id="getInTouch" />
             </Link>
             <FormattedMessage id="detailedProjectList" />
           </span>
-          <MarginCenteredWrapper top={3} bottom={2}>
+          <MarginCenteredWrapper className="mt-8">
             <FluidImage image={consultingImage} />
           </MarginCenteredWrapper>
-          <MarginCenteredWrapper top={2} bottom={2}>
+          <MarginCenteredWrapper className="my-8">
             <span>
               <FormattedMessage id="workedWith" />
             </span>
-            <Margin top={3}>
-              <CustomerNames>
-                {customers.map(customer => (
-                  <Margin
-                    right={2}
-                    left={2}
-                    key={customer}
-                  >
-                    <Customer>{customer}</Customer>
-                  </Margin>
-                ))}
-              </CustomerNames>
-            </Margin>
+            <CustomerNames className="mt-3">
+              {customers.map(customer => (
+                <Customer className="mx-2" key={customer}>
+                  {customer}
+                </Customer>
+              ))}
+            </CustomerNames>
           </MarginCenteredWrapper>
         </MarginCenteredWrapper>
-        <Heading2><FormattedMessage id="privateProjectsHeading"></FormattedMessage></Heading2>
+        <Heading2>
+          <FormattedMessage id="privateProjectsHeading"></FormattedMessage>
+        </Heading2>
         <ProjectList projectAssets={projectAssets} />
       </Article>
       <Footer />

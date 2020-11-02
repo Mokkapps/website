@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import ScrollUpButton from 'react-scroll-up-button';
 import PropTypes from 'prop-types';
-import { Margin } from 'styled-components-spacing';
 import { IntlProvider } from 'react-intl';
 
 import Header from '../Header';
@@ -29,12 +28,12 @@ const Layout = ({ children }) => {
             <Container>
               <ScrollUpButton />
               <div>
-                  <Margin bottom={3}>
-                    <Header>
-                      <Menu />
-                    </Header>
-                  </Margin>
-                  {children}
+                <div className="mb-3">
+                  <Header>
+                    <Menu />
+                  </Header>
+                </div>
+                {children}
               </div>
             </Container>
           </IntlProvider>

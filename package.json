@@ -39,6 +39,7 @@
     "gatsby-plugin-netlify": "^2.3.25",
     "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-offline": "^3.2.28",
+    "gatsby-plugin-postcss": "^3.0.4",
     "gatsby-plugin-preact": "^4.0.16",
     "gatsby-plugin-preconnect": "^1.1.54",
     "gatsby-plugin-preload-fonts": "^1.2.29",
@@ -80,11 +81,8 @@
     "recompose": "^0.30.0",
     "simple-icons": "^3.12.1",
     "styled-components": "^5.2.0",
-    "styled-components-spacing": "^3.1.1",
     "styled-media-query": "^2.1.2",
-    "typography": "^0.16.19",
-    "typography-plugin-code": "^0.16.19",
-    "typography-theme-alton": "^0.16.19"
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.12.1",

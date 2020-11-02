@@ -10,8 +10,8 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const LinkButton = ({ dataCy, href, i18nId }) => (
-  <Wrapper data-cy={dataCy}>
+const LinkButton = ({ dataCy, href, i18nId, props }) => (
+  <Wrapper {...props} data-cy={dataCy}>
     <a className="hero-link" href={href}>
       <span className="text">
         <FormattedMessage id={i18nId} />
@@ -28,6 +28,7 @@ LinkButton.propTypes = {
   dataCy: PropTypes.string.isRequired,
   i18nId: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
+  props: PropTypes.node,
 };
 
 export default LinkButton;

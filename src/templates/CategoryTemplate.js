@@ -2,7 +2,6 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import React from 'react';
-import { Margin } from 'styled-components-spacing';
 
 import TagIcon from 'react-feather/dist/icons/tag';
 
@@ -48,16 +47,14 @@ const PageTemplate = props => {
     <Layout>
       <Article>
         <Heading>
-          <Margin bottom={3}>
+          <div className="mb-3">
             <Introduction data-cy="category-introduction">
-              <Margin right={2}>
-                <span>
-                  <FormattedMessage id="postsInCategory" />
-                </span>
-              </Margin>{' '}
+              <span className="mr-2">
+                <FormattedMessage id="postsInCategory" />
+              </span>
               <TagIcon />
             </Introduction>
-          </Margin>
+          </div>
           <h1>{capitalize(category)}</h1>
           <h3>
             <FormattedMessage
@@ -69,12 +66,10 @@ const PageTemplate = props => {
               values={{ count: totalCount }}
             />
           </h3>
-          <Margin top={4} bottom={4}>
-            <CenteredHeading>
-              <FormattedMessage id="otherCategories"></FormattedMessage>
-            </CenteredHeading>
-            <CategorySelection categories={categories} centered />
-          </Margin>
+          <CenteredHeading className="my-8">
+            <FormattedMessage id="otherCategories"></FormattedMessage>
+          </CenteredHeading>
+          <CategorySelection className="my-8" categories={categories} centered />
           <GoogleSearchLink />
         </Heading>
         <BlogPostList

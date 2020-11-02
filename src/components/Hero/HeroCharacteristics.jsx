@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Margin } from 'styled-components-spacing';
 import { FormattedMessage } from 'react-intl';
 
 import { MokkappsLightGray } from '../../styles/variables';
@@ -36,11 +35,11 @@ const HeroCharacteristics = ({ text, icon, description }) => {
   return (
     <Container>
       {Icon && <StyledIcon />}
-      <Margin top={2}>
+      <div className="mt-2">
         <Title>
           <FormattedMessage id={text} />
         </Title>
-      </Margin>
+      </div>
       <Description>
         <FormattedMessage id={description} />
       </Description>
@@ -50,7 +49,7 @@ const HeroCharacteristics = ({ text, icon, description }) => {
 
 HeroCharacteristics.propTypes = {
   text: PropTypes.string.isRequired,
-  icon: PropTypes.object.isRequired,
+  icon: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
 };
 

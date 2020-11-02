@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { Margin } from 'styled-components-spacing';
 
 import content from '../../content/meta/config';
 import SocialLink from '../SocialLink';
@@ -52,20 +51,17 @@ const Author = ({ image }) => (
       <Text>
         <FormattedMessage id="shortSummary" />
       </Text>
-      <Margin top={2}>
-        <SocialLinks>
-          {content.socialLinks.map(link => (
-            <SocialLink key={link.url} href={link.url} iconName={link.icon} />
-          ))}
-        </SocialLinks>
-      </Margin>
+      <SocialLinks className="mt-2">
+        {content.socialLinks.map(link => (
+          <SocialLink key={link.url} href={link.url} iconName={link.icon} />
+        ))}
+      </SocialLinks>
     </Description>
   </Container>
 );
 
 Author.propTypes = {
-  image: PropTypes.object.isRequired
+  image: PropTypes.object.isRequired,
 };
 
 export default Author;
-

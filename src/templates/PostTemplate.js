@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 import { ShareButtonRectangle } from 'react-custom-share';
-import { Margin } from 'styled-components-spacing';
 
 import config from '../content/meta/config';
 
@@ -91,30 +90,23 @@ const PostTemplate = props => {
           timeToRead={timeToRead}
         />
         {cover ? (
-          <Margin bottom={4}>
-            <Img fluid={cover.childImageSharp.fluid} />
-          </Margin>
+          <Img className="mb-4" fluid={cover.childImageSharp.fluid} />
         ) : null}
         {bannerCredit ? (
           <div dangerouslySetInnerHTML={{ __html: bannerCredit }} />
         ) : null}
         <BodyText html={postHTML} fullWidth />
-        <Margin top={4} bottom={4}>
-          <Share shareBlockProps={shareBlockProps} />
-        </Margin>
-        <Margin bottom={4}>
-          <Author image={authorImage} />
-        </Margin>
+        <Share className="my-4" shareBlockProps={shareBlockProps} />
+        <Author className="mb-4" image={authorImage} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
-        <Margin top={4}>
-          <ReactDisqusComments
-            shortname="mokkapps"
-            identifier={slug}
-            title={title}
-            url={url}
-            onNewComment={handleNewComment}
-          />
-        </Margin>
+        <ReactDisqusComments
+          className="mt-4"
+          shortname="mokkapps"
+          identifier={slug}
+          title={title}
+          url={url}
+          onNewComment={handleNewComment}
+        />
       </ArticleWithSidebar>
       <Footer />
       <Seo

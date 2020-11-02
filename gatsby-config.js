@@ -50,18 +50,12 @@ module.exports = {
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
-    // Typography.js
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`,
-      },
-    },
+    `gatsby-plugin-offline`, // needs to be after the manifest plugin
     `gatsby-plugin-preact`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-offline`, // needs to be after the manifest plugin
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-resolve-src`, // resolve imports from src subdir
@@ -72,7 +66,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        policy: [{ userAgent: '*', allow: '/' }]    }
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
     },
     {
       resolve: 'gatsby-plugin-preconnect',
@@ -153,9 +148,7 @@ module.exports = {
         siteUrl: config.siteUrl,
       },
     },
-    // Create a sitemap
     `gatsby-plugin-sitemap`,
-    // Sentry integration
     {
       resolve: 'gatsby-plugin-sentry',
       options: {

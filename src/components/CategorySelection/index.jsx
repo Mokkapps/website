@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -17,10 +17,14 @@ const Container = styled.div`
   justify-content: ${props => (props.centered ? 'center' : 'flex-start')};
 `;
 
-const CategorySelection = ({ categories, centered }) => (
-  <Container data-cy="blog-categories" centered={centered}>
+const CategorySelection = ({ categories, centered, props }) => (
+  <Container {...props} data-cy="blog-categories" centered={centered}>
     {categories.map(category => {
-      const link = <Link to={`/categories/${category.replace(' ', '-')}`}>{capitalize(category)}</Link>;
+      const link = (
+        <Link to={`/categories/${category.replace(' ', '-')}`}>
+          {capitalize(category)}
+        </Link>
+      );
       const TagIcon = metaIcons.tag;
 
       return (
@@ -37,8 +41,8 @@ const CategorySelection = ({ categories, centered }) => (
 
 CategorySelection.propTypes = {
   categories: PropTypes.array.isRequired,
-  centered: PropTypes.bool
+  centered: PropTypes.bool,
+  props: PropTypes.node,
 };
 
 export default CategorySelection;
-

@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Margin } from 'styled-components-spacing';
 import PropTypes from 'prop-types';
 
 import config from '../content/meta/config';
@@ -29,7 +28,7 @@ const SimpleBlogPage = props => {
     <Layout>
       <Article>
         <Heading title="MINIMAL BLOG LIST" />
-        <Margin bottom={4} top={4} />
+        <div className="my-4" />
         <SimpleBlogPostList items={posts} />
       </Article>
       <Footer />

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { Margin } from 'styled-components-spacing';
 
 import HireTheAuthor from '../HireTheAuthor';
 import { customMedia } from '../../utils/style-utils';
@@ -68,12 +67,12 @@ const ArticleWithSidebar = ({ children, authorImage, categories }) => (
           <FormattedMessage id="hireTheAuthor" />
         </Heading>
         <HireTheAuthor image={authorImage}></HireTheAuthor>
-        <Margin top={3}>
+        <div className="mt-3">
           <Heading>
             <FormattedMessage id="otherCategories" />
           </Heading>
           <CategorySelection categories={categories} />
-        </Margin>
+        </div>
       </AsideContent>
     </StyledAside>
   </Wrapper>

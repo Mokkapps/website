@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { Margin } from 'styled-components-spacing';
 
 import config from '../content/meta/config';
 import { getAsset } from '../utils/helper';
@@ -53,47 +52,42 @@ const PublicationsPage = props => {
       <Article>
         <Content>
           <Heading i18nId="publicationsHeading" />
-          <Margin bottom={3} top={3}>
-            <h2>
-              <FormattedMessage id="talks" />
-            </h2>
-          </Margin>
+          <h2 className="my-8">
+            <FormattedMessage id="talks" />
+          </h2>
           <Talks>
             {publications
               .filter(p => p.type === 'talk')
               .map((talk, i) => {
                 const { link, title, date, host, slides, image } = talk;
                 return (
-                  <Margin bottom={2} right={2} key={i}>
-                    <ProjectCard
-                      id={i}
-                      key={i}
-                      usedTechnologies={[]}
-                      asset={getAsset(edges, image)}
-                      title={title}
-                      description={host + ': ' + date}
-                      urls={{ page: link }}
-                      minimal
-                    >
-                      <TalkInfo>
-                        <TalkText>{date}</TalkText>
-                        <TalkText>{host}</TalkText>
-                        {slides ? (
-                          <a href={slides}>
-                            <FormattedMessage id="slides" />
-                          </a>
-                        ) : null}
-                      </TalkInfo>
-                    </ProjectCard>
-                  </Margin>
+                  <ProjectCard
+                    className="mb-2 mr-2"
+                    id={i}
+                    key={i}
+                    usedTechnologies={[]}
+                    asset={getAsset(edges, image)}
+                    title={title}
+                    description={host + ': ' + date}
+                    urls={{ page: link }}
+                    minimal
+                  >
+                    <TalkInfo>
+                      <TalkText>{date}</TalkText>
+                      <TalkText>{host}</TalkText>
+                      {slides ? (
+                        <a href={slides}>
+                          <FormattedMessage id="slides" />
+                        </a>
+                      ) : null}
+                    </TalkInfo>
+                  </ProjectCard>
                 );
               })}
           </Talks>
-          <Margin bottom={3} top={3}>
-            <h2>
-              <FormattedMessage id="articles" />
-            </h2>
-          </Margin>
+          <h2 className="my-8">
+            <FormattedMessage id="articles" />
+          </h2>
           <ul>
             {publications
               .filter(p => p.type === 'article')

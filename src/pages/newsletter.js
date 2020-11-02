@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Margin } from 'styled-components-spacing';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
@@ -31,27 +30,21 @@ const NewsletterPage = () => {
     <Layout>
       <Article narrow>
         <Heading i18nId="newsletter" />
-        <Margin bottom={4}>
-          <InfoText>
-            <FormattedMessage id="newsletterInfo" />
-          </InfoText>
-        </Margin>
-        <Margin bottom={2}>
-          <InfoText>
-            <FormattedMessage id="mailChimpInfo" />
-          </InfoText>
-        </Margin>
-        <Margin bottom={2}>
-          <NewsletterContainer>
-            <a
-              href="https://mailchimp.com/legal/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FormattedMessage id="mailChimpInfoLink" />
-            </a>
-          </NewsletterContainer>
-        </Margin>
+        <InfoText className="mb-4">
+          <FormattedMessage id="newsletterInfo" />
+        </InfoText>
+        <InfoText className="mb-2">
+          <FormattedMessage id="mailChimpInfo" />
+        </InfoText>
+        <NewsletterContainer className="mb-2">
+          <a
+            href="https://mailchimp.com/legal/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FormattedMessage id="mailChimpInfoLink" />
+          </a>
+        </NewsletterContainer>
         <NewsletterContainer>
           <NewsletterSubscription />
         </NewsletterContainer>

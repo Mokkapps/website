@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Margin } from 'styled-components-spacing';
 import PropTypes from 'prop-types';
 
 import config from '../content/meta/config';
@@ -43,13 +42,13 @@ const BlogPage = props => {
     <Layout>
       <Article>
         <Container>
-          <Heading title="BLOG" />
-          <Margin top={4} bottom={4}>
-            <CategorySelection categories={categories} centered />
-          </Margin>
-          <Margin bottom={4} />
-          <GoogleSearchLink />
-          <Margin bottom={4} />
+          <Heading className="mb-8" title="BLOG" />
+          <CategorySelection
+            className="mt-4"
+            categories={categories}
+            centered
+          />
+          <GoogleSearchLink className="my-8" />
           <BlogPostList
             items={posts}
             author={config.authorName}

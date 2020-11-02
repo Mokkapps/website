@@ -56,19 +56,19 @@ const PostMeta = props => {
   } = props;
 
   return [
-    <Author key="author">
+    <Author className="mb-8" key="author">
       <AuthorImg
         className="meta__author-icon"
         fixed={authorImage.childImageSharp.fixed}
       />
       <AuthorTextContainer>
-        <span style={{ marginBottom: '.5rem' }}>
-          {CalendarIcon && <UserIcon style={iconStyle} />} Michael Hoffmann
+        <span className="mb-2 flex items-center">
+          {CalendarIcon && <UserIcon className="mr-2" style={iconStyle} />} Michael Hoffmann
         </span>
-        <span>
-          {CalendarIcon && <CalendarIcon style={iconStyle} />}{' '}
+        <span className="flex items-center">
+          {CalendarIcon && <CalendarIcon className="mr-2" style={iconStyle} />}{' '}
           {<FormattedDate value={prefix} />} |{' '}
-          {ReadIcon && <ReadIcon style={iconStyle} />} {timeToRead}{' '}
+          {ReadIcon && <ReadIcon className="ml-1 mr-2" style={iconStyle} />} {timeToRead}{' '}
           <FormattedMessage id="minuteRead" />
         </span>
       </AuthorTextContainer>

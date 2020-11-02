@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Margin } from 'styled-components-spacing';
 import { injectIntl } from 'react-intl';
 import { MokkappsBlack, MokkappsRed } from '../../styles/variables';
 
@@ -34,12 +33,11 @@ const NewsletterSubscription = ({ intl }) => {
       target="_blank"
       novalidate
     >
-      <Margin top={2}>
-        <SubscribeInput
-          type="submit"
-          value={intl.formatMessage({ id: 'joinTheNewsletter' })}
-        />
-      </Margin>
+      <SubscribeInput
+        className="mt-2"
+        type="submit"
+        value={intl.formatMessage({ id: 'joinTheNewsletter' })}
+      />
     </Form>
   );
 };

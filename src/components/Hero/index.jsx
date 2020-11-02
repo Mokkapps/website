@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { Margin } from 'styled-components-spacing';
 import Img from 'gatsby-image';
 import { FormattedMessage } from 'react-intl';
 
@@ -98,11 +97,9 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
       <Heading data-cy="hero-heading">
         <FormattedMessage id="hi" /> <Link to="/about">Michael Hoffmann</Link>
       </Heading>
-      <Margin top={3} bottom={3}>
-        <Quote data-cy="hero-quote">
-          <FormattedMessage id="shortSummary" />
-        </Quote>
-      </Margin>
+      <Quote className="my-8" data-cy="hero-quote">
+        <FormattedMessage id="shortSummary" />
+      </Quote>
       {sliderImage ? (
         <Image
           alt="Michael Hoffmann Image"
@@ -110,29 +107,25 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
           fluid={sliderImage.childImageSharp.fluid}
         />
       ) : null}
-      <Margin top={3} bottom={3}>
-        <Characteristics data-cy="hero-characteristics-section">
-          {config.characteristics.map(characteristic => {
-            const { i18nTitleId, i18nDescId, icon } = characteristic;
-            return (
-              <HeroCharacteristic
-                key={i18nTitleId}
-                icon={images[icon]}
-                text={i18nTitleId}
-                description={i18nDescId}
-              />
-            );
-          })}
-        </Characteristics>
-      </Margin>
-      <Margin bottom={4}>
-        <LinkButton
-          dataCy="hero-characteristics-more-button"
-          href="/about"
-          i18nId="moreAboutMeLink"
-        />
-      </Margin>
-      <SectionHeading>
+      <Characteristics className="my-8" data-cy="hero-characteristics-section">
+        {config.characteristics.map(characteristic => {
+          const { i18nTitleId, i18nDescId, icon } = characteristic;
+          return (
+            <HeroCharacteristic
+              key={i18nTitleId}
+              icon={images[icon]}
+              text={i18nTitleId}
+              description={i18nDescId}
+            />
+          );
+        })}
+      </Characteristics>
+      <LinkButton
+        dataCy="hero-characteristics-more-button"
+        href="/about"
+        i18nId="moreAboutMeLink"
+      />
+      <SectionHeading className="my-8">
         <FormattedMessage id="featuredProjects" />
       </SectionHeading>
       <Projects data-cy="hero-projects-section">
@@ -157,11 +150,9 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
         href="/projects"
         i18nId="moreProjectsLink"
       />
-      <Margin top={4}>
-        <SectionHeading>
-          <FormattedMessage id="latestBlogPosts" />
-        </SectionHeading>
-      </Margin>
+      <SectionHeading className="mt-8">
+        <FormattedMessage id="latestBlogPosts" />
+      </SectionHeading>
       {latestPosts.map((post, index) => {
         const {
           frontmatter: { title, categories, cover },

@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Margin } from 'styled-components-spacing';
 import { FormattedMessage } from 'react-intl';
 
 import Skills from '../Skills';
@@ -22,28 +21,22 @@ const Heading = styled.h2`
 const About = ({ images }) => (
   <section>
     <AboutMe images={images} />
-    <Margin top={4} bottom={4}>
-      <SkillsContainer data-cy="about-skills">
-        <Heading>SKILLS</Heading>
-        <Skills />
-      </SkillsContainer>
-    </Margin>
-    <Margin bottom={4}>
-      <SkillsContainer data-cy="about-how-i-work">
-        <Heading>
-          <FormattedMessage id="howIWork" />
-        </Heading>
-        <Margin bottom={4} top={4}>
-          <FluidImage image={images.consulting} />
-        </Margin>
-        <HowIWork />
-      </SkillsContainer>
-    </Margin>
+    <SkillsContainer className="my-8" data-cy="about-skills">
+      <Heading className="mb-8">SKILLS</Heading>
+      <Skills />
+    </SkillsContainer>
+    <SkillsContainer className="mb-8" data-cy="about-how-i-work">
+      <Heading className="mb-8">
+        <FormattedMessage id="howIWork" />
+      </Heading>
+      <FluidImage class="my-8" image={images.consulting} />
+      <HowIWork />
+    </SkillsContainer>
   </section>
 );
 
 About.propTypes = {
-  images: PropTypes.object.isRequired
+  images: PropTypes.object.isRequired,
 };
 
 export default About;
