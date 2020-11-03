@@ -50,7 +50,7 @@ module.exports = {
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`, // needs to be after the manifest plugin
+    `gatsby-plugin-remove-serviceworker`, // needs to be after the manifest plugin
     `gatsby-plugin-preact`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify-cache`,
