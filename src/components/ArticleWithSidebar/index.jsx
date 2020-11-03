@@ -18,7 +18,7 @@ const Wrapper = styled.section`
     grid-template-columns: 1fr minmax(0, 800px) 1fr;
     grid-template-areas: 'left content sidebar';
   `}
-  background: white;
+  background: var(--primary);
   border-radius: 10px;
   padding: 2rem;
 `;

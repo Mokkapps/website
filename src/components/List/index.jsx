@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { MokkappsRed } from '../../styles/variables';
-
 const ListElement = styled.li`
   border-bottom: 1px dotted #ddd;
 
@@ -22,10 +20,10 @@ const UnorderedList = styled.ul`
     padding: 0.6em 5px;
     position: relative;
     display: block;
-    color: ${MokkappsRed};
+    color: var(--accent);
 
     &:hover {
-      color: ${MokkappsRed};
+      color: var(--accent);
       text-decoration: underline;
     }
   }

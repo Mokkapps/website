@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
-import { MokkappsLightGray } from '../styles/variables';
 
 import Footer from '../components/Footer';
 import ProjectList from '../components/ProjectList';
@@ -29,7 +28,7 @@ const CustomerNames = styled.section`
 `;
 
 const Customer = styled.p`
-  background-color: ${MokkappsLightGray};
+  background-color: var(--secondary);
   font-weight: bold;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

@@ -8,7 +8,7 @@ import SocialLink from '../SocialLink';
 import { FormattedMessage } from 'react-intl';
 
 const Container = styled.section`
-  background-color: lightgray;
+  background-color: var(--secondary);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

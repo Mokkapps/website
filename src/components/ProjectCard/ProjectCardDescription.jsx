@@ -6,17 +6,15 @@ import ProjectCardButton from './ProjectCardButton';
 import AppStoreButton from './AppStoreButton';
 
 import { customMedia } from '../../utils/style-utils';
-import { MokkappsLightGray } from '../../styles/variables';
 
 const Container = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-
   flex: 0 0 auto;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: ${MokkappsLightGray};
+  background-color: var(--secondary);
 `;
 
 const Heading = styled.h3`
@@ -26,7 +24,7 @@ const Heading = styled.h3`
   text-transform: uppercase;
   font-size: 1.4rem;
   letter-spacing: 3px;
-  color: #2c3e50;
+  color: var(--text-secondary);
   word-wrap: normal;
   ${customMedia.lessThan('md')`
     font-size: 1.2em;
@@ -38,7 +36,7 @@ const Divider = styled.hr`
 `;
 
 const DescriptionText = styled.p`
-  color: black;
+  color: var(--text-main);
   text-align: center;
   font-size: 1rem;
   letter-spacing: 2px;
@@ -64,12 +62,12 @@ const TechnologiesContainer = styled.div`
 
 const TechIcon = styled.i`
   margin: 0 0.25rem 0 0.25rem;
-  color: black;
+  color: var(--text-main);
 `;
 
 const TechText = styled.p`
   margin: 0 0.25rem 0 0.25rem;
-  color: black;
+  color: var(--text-main);
 `;
 
 const ProjectCardDescription = ({

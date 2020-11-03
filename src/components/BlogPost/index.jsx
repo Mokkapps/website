@@ -18,6 +18,7 @@ const Post = styled(Link)`
   border-radius: 3px;
   text-decoration: none;
   background-size: 100% 0;
+  background: var(--secondary);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
@@ -28,7 +29,7 @@ const Post = styled(Link)`
 
   p {
     line-height: 1.4;
-    color: black;
+    color: var(--text-main);
   }
 
   ${customMedia.between('xs', 'lg')`
@@ -57,8 +58,14 @@ const BlogPost = ({
   author,
   metaIcons,
   excerpt,
+  className,
 }) => (
-  <Post to={`/blog${slug}`} data-cy={`blog-post-${id}`} key={slug}>
+  <Post
+    className={className}
+    to={`/blog${slug}`}
+    data-cy={`blog-post-${id}`}
+    key={slug}
+  >
     {cover ? (
       <Img className="image" fluid={cover.childImageSharp.fluid} />
     ) : null}
@@ -86,6 +93,7 @@ BlogPost.propTypes = {
   prefix: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default BlogPost;

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { FormattedMessage } from 'react-intl';
 
-import { MokkappsLightGray } from '../../styles/variables';
 import { customMedia } from '../../utils/style-utils';
 
 const Wrapper = styled.div`
@@ -14,7 +13,7 @@ const Wrapper = styled.div`
 
 const Description = styled.p`
   padding: 0.5rem;
-  color: black;
+  color: var(--text-main);
   text-align: center;
   ${customMedia.greaterThan('lg')`
         font-size: 1rem;
@@ -29,7 +28,7 @@ const Card = styled.a`
   width: 100%;
   display: flex;
   flex-flow: column;
-  background-color: ${MokkappsLightGray};
+  background-color: var(--secondary);
   border-radius: 0.25rem;
   user-select: none;
   transition: 0.25s;

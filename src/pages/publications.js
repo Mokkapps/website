@@ -29,7 +29,8 @@ const Content = styled.div`
 `;
 
 const TalkInfo = styled.div`
-  border-top: 1px solid gray;
+  border-top: 1px solid var(--text-main);
+  background: var(--secondary);
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -38,6 +39,7 @@ const TalkInfo = styled.div`
 
 const TalkText = styled.p`
   margin-bottom: 0.5rem;
+  color: var(--text-main);
 `;
 
 const PublicationsPage = props => {

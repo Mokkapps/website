@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
 import menuItems from '../../content/meta/menu';
-import { MokkappsRed } from '../../styles/variables';
 import HeaderLogo from '../HeaderLogo';
 import LanguageSwitcher from '../LanguageSwitcher';
+import ThemeSwitch from '../ThemeSwitch';
 
 const Container = styled.div`
   width: 100%;
@@ -63,7 +63,7 @@ const Item = styled.li`
       width: 100%;
       height: 3px;
       transform: scaleX(0);
-      background-color: ${MokkappsRed};
+      background-color: var(--accent);
       transition: transform 0.3s;
     }
 
@@ -94,40 +94,43 @@ const ItemTitle = styled.span`
   margin-left: 0.5rem;
 `;
 
-const Menu = ({ intl }) => (
-  <Container data-cy="header-menu">
-    <HeaderLogo />
-    <MenuItems>
-      {menuItems.map(item => {
-        const { ariaLabel, i18nId, to, icon: Icon, linkProps } = item;
+const Menu = ({ intl }) => {
+  return (
+    <Container data-cy="header-menu">
+      <HeaderLogo />
+      <MenuItems>
+        {menuItems.map(item => {
+          const { ariaLabel, i18nId, to, icon: Icon, linkProps } = item;
 
-        return (
-          <Item
-            data-cy={`header-menu-item-${i18nId.toLowerCase()}`}
-            key={ariaLabel}
-          >
-            <Link
-              to={to}
-              title={intl.formatMessage({ id: i18nId })}
-              aria-label={ariaLabel}
-              activeClassName="active"
-              {...linkProps}
+          return (
+            <Item
+              data-cy={`header-menu-item-${i18nId.toLowerCase()}`}
+              key={ariaLabel}
             >
-              <ItemContainer>
-                {Icon && <Icon />}
-                <ItemTitle>
-                  <FormattedMessage id={i18nId} />
-                </ItemTitle>
-              </ItemContainer>
-            </Link>
-          </Item>
-        );
-      })}
+              <Link
+                to={to}
+                title={intl.formatMessage({ id: i18nId })}
+                aria-label={ariaLabel}
+                activeClassName="active"
+                {...linkProps}
+              >
+                <ItemContainer>
+                  {Icon && <Icon />}
+                  <ItemTitle>
+                    <FormattedMessage id={i18nId} />
+                  </ItemTitle>
+                </ItemContainer>
+              </Link>
+            </Item>
+          );
+        })}
 
-      <LanguageSwitcher />
-    </MenuItems>
-  </Container>
-);
+        <LanguageSwitcher className="mr-4" />
+        <ThemeSwitch />
+      </MenuItems>
+    </Container>
+  );
+};
 
 Menu.propTypes = {
   intl: PropTypes.any.isRequired,

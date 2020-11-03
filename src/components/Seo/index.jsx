@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import config from '../../content/meta/config';
-import { Context } from '../Context';
+import { LanguageContext } from '../../context/languageContext';
 
 const windowGlobal = typeof window !== 'undefined' && window;
 
@@ -18,7 +18,7 @@ const Seo = props => {
   } = props;
 
   return (
-    <Context.Consumer>
+    <LanguageContext.Consumer>
       {({ lang }) => (
         <Helmet htmlAttributes={{ lang, prefix: 'og: http://ogp.me/ns#' }}>
           <title>{title}</title>
@@ -41,7 +41,7 @@ const Seo = props => {
           <meta name="twitter:image" content={image} />
         </Helmet>
       )}
-    </Context.Consumer>
+    </LanguageContext.Consumer>
   );
 };
 

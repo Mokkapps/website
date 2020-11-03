@@ -1,12 +1,16 @@
-import PropTypes from 'prop-types'
 import React from 'react';
-import { compose, withState, withHandlers, lifecycle } from 'recompose';
-import { Context } from '../Context';
 
-const Provider = ({ children, lang, toggleLanguage }) => (
-  <Context.Provider value={{ lang, toggleLanguage: () => toggleLanguage() }}>
+import PropTypes from 'prop-types';
+import { compose, withState, withHandlers, lifecycle } from 'recompose';
+
+export const LanguageContext = React.createContext('en');
+
+const LanguageProvider = ({ children, lang, toggleLanguage }) => (
+  <LanguageContext.Provider
+    value={{ lang, toggleLanguage: () => toggleLanguage() }}
+  >
     {children}
-  </Context.Provider>
+  </LanguageContext.Provider>
 );
 
 const enhance = compose(
@@ -29,18 +33,18 @@ const enhance = compose(
         this.props.handleLanguage(localLang);
       } else if (window.location.href.includes('mokkapps.com')) {
         this.props.handleLanguage('en');
-      }else {
+      } else {
         this.props.handleLanguage(navigator.language.split('-')[0]);
       }
     },
   })
 );
 
-Provider.propTypes = {
+LanguageProvider.propTypes = {
   children: PropTypes.node.isRequired,
   lang: PropTypes.string.isRequired,
-  toggleLanguage: PropTypes.func.isRequired
+  toggleLanguage: PropTypes.func.isRequired,
+  handleLanguage: PropTypes.func.isRequired,
 };
 
-export default enhance(Provider);
-
+export default enhance(LanguageProvider);

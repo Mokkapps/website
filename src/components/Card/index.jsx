@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { MokkappsLightGray, MokkappsBlack } from '../../styles/variables';
-
 const Anchor = styled.a`
   max-width: 100%;
   width: 300px;
@@ -11,11 +9,11 @@ const Anchor = styled.a`
   min-height: 230px;
   display: flex;
   flex-flow: column;
-  color: ${MokkappsBlack};
+  color: var(--accent);
   text-align: center;
   font-size: 1rem;
   letter-spacing: 2px;
-  background-color: ${MokkappsLightGray};
+  background-color: var(--secondary);
   background-image: none;
   border-radius: 0.25rem;
   margin: 1rem;
@@ -26,7 +24,7 @@ const Anchor = styled.a`
     box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.75);
     transform: translateY(-0.2rem);
     text-decoration: none;
-    color: ${MokkappsBlack};
+    color: var(--primary);
   }
 `;
 

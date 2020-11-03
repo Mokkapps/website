@@ -1,7 +1,7 @@
 $thick: 3px;
 $pad: 0.7em;
 $extra: calc(#{$pad} * 1.2);
-$color: #FC1A20;
+$color: var(--accent);
 
 .hero-link {
   color: $color;

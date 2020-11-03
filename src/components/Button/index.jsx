@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import { MokkappsRed } from '../../styles/variables';
-
 const StyledButton = styled.button`
-  background-color: ${MokkappsRed};
+  background-color: var(--accent);
   border: 0.16em solid rgba(255, 255, 255, 0);
   display: inline-flex;
   align-items: center;

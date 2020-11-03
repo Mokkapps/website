@@ -2,19 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { injectIntl } from 'react-intl';
-import { MokkappsBlack, MokkappsRed } from '../../styles/variables';
 
 const Form = styled.form`
   text-align: center;
-  color: ${MokkappsBlack};
+  color: var(--text-main);
 `;
 
 const SubscribeInput = styled.input`
-  background-color: ${MokkappsRed};
+  background-color: var(--accent);
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
-  color: white;
+  color: var(--text-main);
   padding: 0.5rem 1.5rem;
 
   &:hover {

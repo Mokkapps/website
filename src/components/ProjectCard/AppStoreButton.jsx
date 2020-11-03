@@ -36,7 +36,7 @@ const imageLinks = {
   ios:
     'https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg',
   android:
-    'https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg',
 };
 
 class AppStoreButton extends React.Component {

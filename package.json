@@ -77,6 +77,7 @@
     "react-helmet": "^6.1.0",
     "react-intl": "^5.8.8",
     "react-scroll-up-button": "^1.6.4",
+    "react-switch": "^5.0.1",
     "react-typography": "^0.16.19",
     "recompose": "^0.30.0",
     "simple-icons": "^3.12.1",

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
@@ -10,6 +10,7 @@ const StyledCard = styled(Card)`
   display: flex;
   flex-flow: column;
   box-shadow: 0 10px 30px rgba(#2c3e50, 0.5);
+  background: var(--secondary);
 `;
 
 const ProjectImage = styled(Img)`
@@ -25,7 +26,7 @@ const ProjectCard = ({
   urls,
   minimal,
   usedTechnologies,
-  children
+  children,
 }) => (
   <StyledCard url={urls.page} clickable id={id}>
     <ProjectImage fluid={asset.childImageSharp.fluid} />
@@ -52,4 +53,3 @@ ProjectCard.propTypes = {
 };
 
 export default ProjectCard;
-

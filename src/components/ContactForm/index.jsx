@@ -35,14 +35,14 @@ const Container = styled.div`
 
 const Label = styled.label`
   margin: 1rem 0 1rem 0;
-  color: black;
+  color: var(--text-main);
 `;
 
 export const Input = styled.input`
   height: 2rem;
   border-radius: 0.25rem;
   border: none;
-  background: lightgrey;
+  background: var(--secondary);
   padding: 0.25rem 1rem;
   overflow: auto;
   font: inherit;
@@ -52,7 +52,7 @@ const TextArea = styled.textarea`
   height: 2rem;
   border-radius: 0.25rem;
   border: none;
-  background: lightgrey;
+  background: var(--secondary);
   padding: 0.25rem 1rem;
   overflow: auto;
   font: inherit;

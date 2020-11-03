@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -10,9 +10,9 @@ const StyledAnchor = styled.a`
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: bold;
-  color: black;
-  background-color: white;
-  border: 2px solid black;
+  color: var(--text-main);
+  background-color: var(--secondary);
+  border: 2px solid var(--text-main);
   border-radius: 0.5rem;
   background-size: 100% 0;
   transition: 0.25s;
@@ -30,8 +30,8 @@ const StyledAnchor = styled.a`
   &:hover,
   &:focus,
   &:active {
-    background-color: lightgrey;
-    color: black;
+    background-color: var(--primary);
+    color: var(--text-main);
     text-decoration: none;
     background-size: 100% 0;
   }
@@ -42,6 +42,8 @@ const Icon = styled.img`
   margin-bottom: 0;
   width: 25px;
   height: 25px;
+  color: var(--text-main);
+  fill: var(--text-main);
 `;
 
 const ProjectCardButton = ({ url, icon }) => (
@@ -59,7 +61,7 @@ const ProjectCardButton = ({ url, icon }) => (
 
 ProjectCardButton.propTypes = {
   icon: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 };
 
 export default ProjectCardButton;

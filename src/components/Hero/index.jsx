@@ -75,6 +75,7 @@ const Characteristics = styled.section`
 `;
 
 const SectionHeading = styled.h2`
+  @apply my-8;
   text-align: center;
 `;
 
@@ -121,11 +122,12 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
         })}
       </Characteristics>
       <LinkButton
+        className="mb-10"
         dataCy="hero-characteristics-more-button"
         href="/about"
         i18nId="moreAboutMeLink"
       />
-      <SectionHeading className="my-8">
+      <SectionHeading>
         <FormattedMessage id="featuredProjects" />
       </SectionHeading>
       <Projects data-cy="hero-projects-section">
@@ -146,11 +148,12 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
           })}
       </Projects>
       <LinkButton
+        className="mb-10"
         dataCy="hero-projects-more-button"
         href="/projects"
         i18nId="moreProjectsLink"
       />
-      <SectionHeading className="mt-8">
+      <SectionHeading>
         <FormattedMessage id="latestBlogPosts" />
       </SectionHeading>
       {latestPosts.map((post, index) => {
@@ -161,6 +164,7 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
         } = post;
         return (
           <BlogPost
+            className="mt-4"
             id={index}
             key={slug}
             title={title}
@@ -175,6 +179,7 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
         );
       })}
       <LinkButton
+        className="mb-10"
         dataCy="hero-blog-more-button"
         href="/blog"
         i18nId="moreBlogPostsLink"

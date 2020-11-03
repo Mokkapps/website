@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
-import { MokkappsLightGray } from '../../styles/variables';
 
 const DevIconContainer = styled.div`
   margin: auto 0.5rem;
@@ -15,7 +14,7 @@ const IconsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: ${MokkappsLightGray};
+  background-color: var(--secondary);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 3px;
 `;
@@ -42,7 +41,7 @@ const SkillHeading = styled.h3`
   align-items: center;
   padding: 0.5rem;
   height: 100%;
-  background-color: ${MokkappsLightGray};
+  background-color: var(--secondary);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 3px;
 `;

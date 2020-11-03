@@ -3,8 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import * as simpleIcons from 'simple-icons';
 
-import { MokkappsRed } from '../../styles/variables';
-
 const StyledAnchor = styled.a`
   align-items: center;
   background: white;
@@ -15,7 +13,7 @@ const StyledAnchor = styled.a`
   margin-right: 1rem;
 
   &:hover {
-    background: ${MokkappsRed};
+    background: var(--accent);
     transform: scale(1.1, 1.1);
   }
 `;
