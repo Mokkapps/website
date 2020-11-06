@@ -14,7 +14,12 @@ const menu = [
     ariaLabel: 'Projects',
     icon: ProjectsIcon,
   },
-  { i18nId: 'menuPublications', to: '/publications', ariaLabel: 'Publications', icon: MessageCircleIcon },
+  {
+    i18nId: 'menuPublications',
+    to: '/publications',
+    ariaLabel: 'Publications',
+    icon: MessageCircleIcon,
+  },
   { i18nId: 'menuAbout', to: '/about', ariaLabel: 'About Me', icon: InfoIcon },
   {
     i18nId: 'menuContact',

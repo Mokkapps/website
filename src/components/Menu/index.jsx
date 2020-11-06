@@ -9,7 +9,7 @@ import HeaderLogo from '../HeaderLogo';
 import LanguageSwitcher from '../LanguageSwitcher';
 import ThemeSwitch from '../ThemeSwitch';
 
-const Container = styled.div`
+const Header = styled.header`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -20,8 +20,7 @@ const Container = styled.div`
 const MenuItems = styled.ul`
   list-style: none;
   display: flex;
-  justify-content: flex-end;
-  align-items: start;
+  align-items: center;
   flex-wrap: wrap;
   margin-left: 0;
   margin-bottom: 0;
@@ -96,7 +95,7 @@ const ItemTitle = styled.span`
 
 const Menu = ({ intl }) => {
   return (
-    <Container data-cy="header-menu">
+    <Header className="hidden lg:flex mb-4" data-cy="header-menu">
       <HeaderLogo />
       <MenuItems>
         {menuItems.map(item => {
@@ -125,10 +124,10 @@ const Menu = ({ intl }) => {
           );
         })}
 
-        <LanguageSwitcher className="mr-4" />
-        <ThemeSwitch />
+        <LanguageSwitcher className="mr-4 mb-2" />
+        <ThemeSwitch className="mb-2" />
       </MenuItems>
-    </Container>
+    </Header>
   );
 };
 

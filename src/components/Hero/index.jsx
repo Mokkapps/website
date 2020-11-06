@@ -18,7 +18,6 @@ import BlogPost from '../BlogPost';
 import config from '../../content/meta/config';
 import { getAsset, metaIcons } from '../../utils/helper';
 import ProjectCard from '../ProjectCard';
-import { customMedia } from '../../utils/style-utils';
 
 const images = {
   'file-text': BlogIcon,
@@ -38,30 +37,11 @@ const Container = styled.div`
 
 const Heading = styled.h1`
   text-align: center;
-  font-size: 3em;
-
-  ${customMedia.lessThan('sm')`
-     font-size: 1.4em;
-  `};
-
-  ${customMedia.lessThan('md')`
-     font-size: 2em;
-  `};
 `;
 
-const Quote = styled.h3`
+const Quote = styled.h2`
   margin: 0 auto;
-  font-size: 2em;
   text-align: center;
-  width: 80%;
-
-  ${customMedia.lessThan('sm')`
-    font-size: 0.8em;
-  `};
-
-  ${customMedia.lessThan('md')`
-     font-size: 1.2em;
-  `};
 `;
 
 const Characteristics = styled.section`
@@ -108,6 +88,12 @@ const Hero = ({ projectAssets, latestPosts, sliderImage }) => {
           fluid={sliderImage.childImageSharp.fluid}
         />
       ) : null}
+      <LinkButton
+        className="mt-5"
+        dataCy="hero-characteristics-contact-button"
+        href="/contact"
+        i18nId="contactLink"
+      />
       <Characteristics className="my-8" data-cy="hero-characteristics-section">
         {config.characteristics.map(characteristic => {
           const { i18nTitleId, i18nDescId, icon } = characteristic;

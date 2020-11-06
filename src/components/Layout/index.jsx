@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
+import React, { useContext, useState } from 'react';
 import ScrollUpButton from 'react-scroll-up-button';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
-import Header from '../Header';
 import Menu from '../Menu';
 import localEng from '../../messages/en.json';
 import localDe from '../../messages/de.json';
@@ -12,12 +10,11 @@ import LanguageProvider, {
   LanguageContext,
 } from '../../context/languageContext';
 import { ThemeContext } from '../../context/themeContextProvider';
-
-const Container = styled.div`
-  padding: 1rem 1rem 1rem 1rem;
-`;
+import BurgerMenu from '../Burger/BurgerMenu';
+import BurgerMenuButton from '../Burger/BurgerMenuButton';
 
 const Layout = ({ children }) => {
+  const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
   return (
     <LanguageProvider>
@@ -27,21 +24,17 @@ const Layout = ({ children }) => {
             locale={lang}
             messages={lang === 'en' ? localEng : localDe}
           >
-            <Container
+            <section
               className={`${
                 theme === 'light' ? 'theme-light' : 'theme-dark'
-              } bg-background text-main-text`}
+              } bg-background text-main-text relative md:p-4 overflow-hidden`}
             >
+              <BurgerMenuButton open={open} setOpen={setOpen} />
+              <BurgerMenu open={open} setOpen={setOpen} />
+              <Menu />
+              {children}
               <ScrollUpButton />
-              <div>
-                <div className="mb-3">
-                  <Header>
-                    <Menu />
-                  </Header>
-                </div>
-                {children}
-              </div>
-            </Container>
+            </section>
           </IntlProvider>
         )}
       </LanguageContext.Consumer>

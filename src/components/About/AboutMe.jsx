@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
 import FluidImage from '../FluidImage';
-import { FormattedMessage } from 'react-intl';
 
 const SocialLinks = styled.div`
   display: flex;
@@ -22,7 +22,6 @@ const Container = styled.div`
 
 const DescriptionContainer = styled.div`
   margin: 0 auto;
-  width: 80%;
 `;
 
 const AboutParagraph = styled.p`
@@ -39,10 +38,10 @@ const AboutMe = ({ images }) => (
     <FluidImage image={images.intro} />
     <SocialLinks className="mt-8" data-cy="about-social-links">
       {config.socialLinks.map(link => (
-        <SocialLink key={link.url} href={link.url} iconName={link.icon} />
+        <SocialLink link={link} key={link.id} />
       ))}
     </SocialLinks>
-    <DescriptionContainer className="mt-8" data-cy="about-description">
+    <DescriptionContainer className="mt-8 md:w-4/5" data-cy="about-description">
       <AboutParagraph>
         <FormattedMessage
           id="aboutParagraph"

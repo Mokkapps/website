@@ -17,10 +17,9 @@ const Wrapper = styled.section`
   ${customMedia.greaterThan('xlg')`
     grid-template-columns: 1fr minmax(0, 800px) 1fr;
     grid-template-areas: 'left content sidebar';
-  `}
+  `};
   background: var(--primary);
   border-radius: 10px;
-  padding: 2rem;
 `;
 
 const Heading = styled.h3`
@@ -47,7 +46,6 @@ const StyledAside = styled.aside`
     display: none;
   `};
   grid-area: sidebar;
-  padding: 1rem;
   margin: 0 auto;
 `;
 
@@ -58,15 +56,15 @@ const AsideContent = styled.div`
 `;
 
 const ArticleWithSidebar = ({ children, authorImage, categories }) => (
-  <Wrapper>
-    <LeftSide></LeftSide>
+  <Wrapper className="p-6 md:p-7 xl:p-4">
+    <LeftSide />
     <StyledArticle>{children}</StyledArticle>
     <StyledAside>
       <AsideContent>
         <Heading>
           <FormattedMessage id="hireTheAuthor" />
         </Heading>
-        <HireTheAuthor image={authorImage}></HireTheAuthor>
+        <HireTheAuthor image={authorImage} />
         <div className="mt-3">
           <Heading>
             <FormattedMessage id="otherCategories" />

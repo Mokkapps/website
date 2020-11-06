@@ -17,8 +17,12 @@ const Container = styled.div`
   justify-content: ${props => (props.centered ? 'center' : 'flex-start')};
 `;
 
-const CategorySelection = ({ categories, centered, props }) => (
-  <Container {...props} data-cy="blog-categories" centered={centered}>
+const CategorySelection = ({ categories, centered, className }) => (
+  <Container
+    className={className}
+    data-cy="blog-categories"
+    centered={centered}
+  >
     {categories.map(category => {
       const link = (
         <Link to={`/categories/${category.replace(' ', '-')}`}>

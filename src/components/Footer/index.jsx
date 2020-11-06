@@ -26,7 +26,7 @@ const Footer = () => (
   <FooterWrapper>
     <SocialLinks data-cy="footer-social-links">
       {config.socialLinks.map(link => (
-        <SocialLink key={link.url} href={link.url} iconName={link.icon} />
+        <SocialLink link={link} key={link.id} />
       ))}
     </SocialLinks>
 

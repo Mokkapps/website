@@ -1,8 +1,7 @@
 const base = {
   name: 'Mokkapps (Michael Hoffmann) - Freelance Angular Software Engineer',
   url: 'https://www.mokkapps.de',
-  desc:
-    "Freelance software engineer from Germany with focus on Angular.",
+  desc: 'Freelance software engineer from Germany with focus on Angular.',
 };
 
 const config = {
@@ -19,10 +18,11 @@ const config = {
 
   /* url */
   siteUrl: base.url,
-  googleSearchUrl: 'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog+angular',
+  googleSearchUrl:
+    'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog+angular',
   // pathPrefix: '',
 
-  twitterUsername: "@mokkapps",
+  twitterUsername: '@mokkapps',
   authorName: 'Michael Hoffmann',
 
   skills: [
@@ -103,18 +103,35 @@ const config = {
     { type: 'Apple', className: 'devicon-apple-original colored' },
   ],
   socialLinks: [
-    { id: 'github', url: 'https://github.com/mokkapps', icon: 'github' },
-    { id: 'twitter', url: 'https://twitter.com/mokkapps', icon: 'twitter' },
-    { id: 'dev.to', url: 'https://dev.to/mokkapps', icon: 'dev-dot-to' },
+    {
+      id: 'github',
+      url: 'https://github.com/mokkapps',
+      icon: 'github',
+      ariaLabel: 'GitHub',
+    },
+    {
+      id: 'twitter',
+      url: 'https://twitter.com/mokkapps',
+      icon: 'twitter',
+      ariaLabel: 'Twitter',
+    },
+    {
+      id: 'dev.to',
+      url: 'https://dev.to/mokkapps',
+      icon: 'dev-dot-to',
+      ariaLabel: 'DEV.to',
+    },
     {
       id: 'linkedin',
       url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
       icon: 'linkedin',
+      ariaLabel: 'LinkedIn',
     },
     {
       id: 'instagram',
       url: ' https://www.instagram.com/mokkapps/',
       icon: 'instagram',
+      ariaLabel: 'Instagram',
     },
   ],
   customers: [

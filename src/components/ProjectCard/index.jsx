@@ -27,8 +27,9 @@ const ProjectCard = ({
   minimal,
   usedTechnologies,
   children,
+  className,
 }) => (
-  <StyledCard url={urls.page} clickable id={id}>
+  <StyledCard className={className} url={urls.page} clickable id={id}>
     <ProjectImage fluid={asset.childImageSharp.fluid} />
     <ProjectCardDescription
       minimal={minimal}
@@ -50,6 +51,7 @@ ProjectCard.propTypes = {
   urls: PropTypes.object.isRequired,
   usedTechnologies: PropTypes.array,
   children: PropTypes.object,
+  className: PropTypes.string,
 };
 
 export default ProjectCard;

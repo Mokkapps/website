@@ -67,7 +67,7 @@ const ProjectsPage = props => {
             </span>
             <CustomerNames className="mt-3">
               {customers.map(customer => (
-                <Customer className="mx-2" key={customer}>
+                <Customer className="mx-2 mb-2 lg:mx-2" key={customer}>
                   {customer}
                 </Customer>
               ))}

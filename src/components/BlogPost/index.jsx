@@ -70,7 +70,7 @@ const BlogPost = ({
       <Img className="image" fluid={cover.childImageSharp.fluid} />
     ) : null}
     <Text>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <Meta
         categories={categories}
         prefix={prefix}

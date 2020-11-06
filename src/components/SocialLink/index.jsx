@@ -24,25 +24,31 @@ const SvgWrapper = styled.div`
   height: 20px;
 `;
 
-const SocialLink = ({ href, iconName }) => (
-  <StyledAnchor
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    data-cy={`social-link-${iconName}`}
-  >
-    {
-      <SvgWrapper
-        alt={iconName}
-        dangerouslySetInnerHTML={{ __html: `${simpleIcons.get(iconName).svg}` }}
-      />
-    }
-  </StyledAnchor>
-);
+const SocialLink = props => {
+  const { url, ariaLabel, icon } = props.link;
+  return (
+    <StyledAnchor
+      {...props}
+      href={url}
+      aria-label={ariaLabel}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cy={`social-link-${icon}`}
+    >
+      {
+        <SvgWrapper
+          alt={icon}
+          dangerouslySetInnerHTML={{
+            __html: `${simpleIcons.get(icon).svg}`,
+          }}
+        />
+      }
+    </StyledAnchor>
+  );
+};
 
 SocialLink.propTypes = {
-  href: PropTypes.string.isRequired,
-  iconName: PropTypes.string.isRequired,
+  link: PropTypes.object.isRequired,
 };
 
 export default SocialLink;

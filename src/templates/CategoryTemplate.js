@@ -70,7 +70,7 @@ const PageTemplate = props => {
             <FormattedMessage id="otherCategories"></FormattedMessage>
           </CenteredHeading>
           <CategorySelection className="my-8" categories={categories} centered />
-          <GoogleSearchLink />
+          <GoogleSearchLink className="mb-8" />
         </Heading>
         <BlogPostList
           items={items}

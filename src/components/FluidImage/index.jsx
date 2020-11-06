@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
@@ -15,13 +15,16 @@ const Image = styled(Img)`
   `};
 `;
 
-const FluidImage = ({ image }) => (
-  <Image alt="Mokkapps (Michael Hoffmann) Freelancer Angular Image" fluid={image.childImageSharp.fluid} />
+const FluidImage = ({ image, className }) => (
+  <Image
+    className={className}
+    alt="Mokkapps (Michael Hoffmann) Freelancer Angular Image"
+    fluid={image.childImageSharp.fluid}
+  />
 );
 
 FluidImage.propTypes = {
-  image: PropTypes.object.isRequired
+  image: PropTypes.object.isRequired,
 };
 
 export default FluidImage;
-

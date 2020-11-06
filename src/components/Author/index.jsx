@@ -53,7 +53,7 @@ const Author = ({ image }) => (
       </Text>
       <SocialLinks className="mt-2">
         {content.socialLinks.map(link => (
-          <SocialLink key={link.url} href={link.url} iconName={link.icon} />
+          <SocialLink link={link} key={link.id} />
         ))}
       </SocialLinks>
     </Description>

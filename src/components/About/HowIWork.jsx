@@ -1,13 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-
-const Container = styled.section`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-`;
 
 export default class HowIWork extends React.Component {
   createHowIWorkList = () => {
@@ -25,15 +17,15 @@ export default class HowIWork extends React.Component {
 
   render() {
     return (
-      <Container>
-        <div>
+      <section className="flex flex-col justify-center items-start">
+        <div className="my-4">
           <h3>
             <FormattedMessage id="whatIDo" />
           </h3>
           <ul>{this.createHowIWorkList()}</ul>
         </div>
 
-        <div>
+        <div className="my-4">
           <h3>
             <FormattedMessage id="whoIWorkWithHeading" />
           </h3>
@@ -42,7 +34,7 @@ export default class HowIWork extends React.Component {
           </p>
         </div>
 
-        <div>
+        <div className="my-4">
           <h3>
             <FormattedMessage id="whatDontDoHeading" />
           </h3>
@@ -53,7 +45,7 @@ export default class HowIWork extends React.Component {
             <FormattedMessage id="whatDontDoDesc2" />
           </p>
         </div>
-      </Container>
+      </section>
     );
   }
 }
