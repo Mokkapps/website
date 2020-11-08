@@ -7,7 +7,7 @@ cover: jasmine-test-selector.png
 
 I am really a big fan of [Visual Code](https://code.visualstudio.com) and use it as my main IDE for software development. The available selection of extensions (see the [Extension Marketplace](https://marketplace.visualstudio.com/VSCode)) is amazing.
 
-As I started using Visual Code I found every extension I was looking for. But last week I stumbled upon a feature where I could not find an extension for. So I decided to write my first VS code extension and let you know about my experiences during the development.
+As I started using Visual Code I found every extension I was looking for. Last week I stumbled upon a feature where I could not find an extension for. So I decided to write my first VS code extension and let you know about my experiences during the development.
 
 ## The problem I wanted to solve
 
@@ -38,7 +38,9 @@ It is really easy to grab one of the example projects or create a new one using 
 
 Searching through the [Extension API documentation](https://code.visualstudio.com/docs/extensionAPI/overview) I found this method
 
-> showQuickPick<T extends QuickPickItem>(items: T[] | Thenable<T[]>, options?: QuickPickOptions, token?: CancellationToken): Thenable<T | undefined>
+```ts
+showQuickPick<T extends QuickPickItem>(items: T[] | Thenable<T[]>, options?: QuickPickOptions, token?: CancellationToken): Thenable<T | undefined>
+```
 
 which functionality is described as:
 

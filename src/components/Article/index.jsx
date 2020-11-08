@@ -12,8 +12,8 @@ const StyledArticle = styled.article`
   min-width: ${props => (props.narrow ? '50%' : '100%')};
 `;
 
-const Article = ({ children }) => {
-  return <StyledArticle>{children}</StyledArticle>;
+const Article = props => {
+  return <StyledArticle {...props}>{props.children}</StyledArticle>;
 };
 
 Article.propTypes = {
