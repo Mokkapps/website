@@ -14,7 +14,7 @@ import Seo from '../components/Seo';
 const SuccessPage = props => {
   const {
     data: {
-      success: { html: contactSuccessHTML },
+      success,
     },
   } = props;
 
@@ -24,7 +24,7 @@ const SuccessPage = props => {
     <Layout>
       <Article>
         <Heading title="SUCCESS" />
-        <BodyText html={contactSuccessHTML} />
+        <BodyText body={success.body} />
       </Article>
       <Footer />
       <Seo
@@ -44,10 +44,10 @@ export default SuccessPage;
 
 export const query = graphql`
   query {
-    success: markdownRemark(
+    success: mdx(
       fileAbsolutePath: { regex: "/content/parts/contactSuccess/" }
     ) {
-      html
+      body
     }
   }
 `;

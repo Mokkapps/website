@@ -14,7 +14,7 @@ import Seo from '../components/Seo';
 const NotFoundPage = props => {
   const {
     data: {
-      notFound: { html: notFoundHTML },
+      notFound,
     },
   } = props;
 
@@ -24,7 +24,7 @@ const NotFoundPage = props => {
     <Layout>
       <Article narrow>
         <Heading title="404" />
-        <BodyText smallerImg html={notFoundHTML} />
+        <BodyText smallerImg body={notFound.body} />
       </Article>
       <Footer />
       <Seo
@@ -44,10 +44,10 @@ export default NotFoundPage;
 
 export const query = graphql`
   query {
-    notFound: markdownRemark(
+    notFound: mdx(
       fileAbsolutePath: { regex: "/content/parts/notFound/" }
     ) {
-      html
+      body
     }
   }
 `;

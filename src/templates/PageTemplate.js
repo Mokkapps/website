@@ -15,7 +15,7 @@ const PageTemplate = props => {
   const {
     data: {
       page: {
-        html: pageHTML,
+        body,
         frontmatter: { title },
         fields: { slug },
         excerpt,
@@ -29,7 +29,7 @@ const PageTemplate = props => {
     <Layout>
       <Article>
         <Heading title={title} />
-        <BodyText html={pageHTML} />
+        <BodyText body={body} />
       </Article>
       <Footer />
       <Seo
@@ -50,8 +50,8 @@ export default PageTemplate;
 
 export const query = graphql`
   query PageTemplateQuery($slug: String!) {
-    page: markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    page: mdx(fields: { slug: { eq: $slug } }) {
+      body
       excerpt
       fileAbsolutePath
       fields {

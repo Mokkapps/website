@@ -48,7 +48,7 @@ const PostTemplate = props => {
       allEdges,
       post: {
         excerpt,
-        html: postHTML,
+        body,
         frontmatter: { title, categories, cover, bannerCredit, canonical },
         fields: { slug, prefix },
         timeToRead,
@@ -95,7 +95,7 @@ const PostTemplate = props => {
         {bannerCredit ? (
           <div dangerouslySetInnerHTML={{ __html: bannerCredit }} />
         ) : null}
-        <BodyText html={postHTML} fullWidth />
+        <BodyText body={body} fullWidth />
         <Share className="my-4" shareBlockProps={shareBlockProps} />
         <Author className="mb-4" image={authorImage} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
@@ -134,7 +134,7 @@ export default PostTemplate;
 
 export const query = graphql`
   query PostTemplateQuery($slug: String!) {
-    allEdges: allMarkdownRemark {
+    allEdges: allMdx {
       edges {
         node {
           frontmatter {
@@ -143,8 +143,8 @@ export const query = graphql`
         }
       }
     }
-    post: markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    post: mdx(fields: { slug: { eq: $slug } }) {
+      body
       fileAbsolutePath
       excerpt
       fields {

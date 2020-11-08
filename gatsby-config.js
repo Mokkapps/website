@@ -79,11 +79,12 @@ module.exports = {
         ],
       },
     },
-    // Parses Markdown files using Remark.
+    // Parse Markdown files
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-custom-blocks',
             options: {
@@ -191,7 +192,7 @@ module.exports = {
     },
     // Create an RSS feed
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-feed-mdx`,
       options: {
         query: `
           {
@@ -207,20 +208,20 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   url:
                     site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.body }],
                 });
               });
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   limit: 1000,
                   sort: { order: DESC, fields: [fields___prefix] },
                   filter: { fields: { source: {eq: "posts"}, slug: { ne: null } } }
@@ -228,7 +229,7 @@ module.exports = {
                   edges {
                     node {
                       excerpt
-                      html
+                      body
                       fields {
                         slug
                         prefix

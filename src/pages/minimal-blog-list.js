@@ -50,7 +50,7 @@ export default SimpleBlogPage;
 
 export const query = graphql`
   query {
-    allEdges: allMarkdownRemark {
+    allEdges: allMdx {
       edges {
         node {
           frontmatter {
@@ -59,12 +59,12 @@ export const query = graphql`
         }
       }
     }
-    allBlogPosts: allMarkdownRemark(
+    allBlogPosts: allMdx(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
     ) {
       totalCount
     }
-    posts: allMarkdownRemark(
+    posts: allMdx(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
       sort: { fields: [fields___prefix], order: DESC }
     ) {

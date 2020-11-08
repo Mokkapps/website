@@ -67,7 +67,7 @@ export const query = graphql`
         }
       }
     }
-    latestPosts: allMarkdownRemark(
+    latestPosts: allMdx(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
       sort: { fields: [fields___prefix], order: DESC }
       limit: 3

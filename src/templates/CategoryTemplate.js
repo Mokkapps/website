@@ -97,7 +97,7 @@ export default PageTemplate;
 
 export const query = graphql`
   query CategoryTemplateQuery($category: String!) {
-    allPosts: allMarkdownRemark {
+    allPosts: allMdx {
       edges {
         node {
           frontmatter {
@@ -106,7 +106,7 @@ export const query = graphql`
         }
       }
     }
-    posts: allMarkdownRemark(
+    posts: allMdx(
       limit: 1000
       sort: { fields: [fields___prefix], order: DESC }
       filter: { frontmatter: { categories: { eq: $category } } }

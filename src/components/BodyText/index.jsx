@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const Container = styled.div`
   margin-bottom: 50px;
@@ -71,12 +72,14 @@ const HtmlContainer = styled(Container)`
 `;
 
 const BodyText = props => {
-  const { html, children, fullWidth = false } = props;
+  const { body, children, fullWidth = false } = props;
 
   return (
     <React.Fragment>
-      {html ? (
-        <HtmlContainer dangerouslySetInnerHTML={{ __html: html }} fullWidth={fullWidth} />
+      {body ? (
+        <HtmlContainer fullWidth={fullWidth}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </HtmlContainer>
       ) : (
         <Container>{children}</Container>
       )}
@@ -85,7 +88,7 @@ const BodyText = props => {
 };
 
 BodyText.propTypes = {
-  html: PropTypes.string,
+  body: PropTypes.string,
   children: PropTypes.node,
   fullWidth: PropTypes.bool,
 };

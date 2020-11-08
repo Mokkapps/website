@@ -9,9 +9,9 @@ I am really a big fan of [Visual Code](https://code.visualstudio.com) and use it
 
 As I started using Visual Code I found every extension I was looking for. But last week I stumbled upon a feature where I could not find an extension for. So I decided to write my first VS code extension and let you know about my experiences during the development.
 
-### The problem I wanted to solve
+## The problem I wanted to solve
 
-Currently I am doing a lot of [Angular](https://angular.io/) development and therefore use [Jasmine](https://jasmine.github.io/) for unit tests. My first IDE which I used for web development was [WebStorm](https://www.jetbrains.com/webstorm/) which is based on [IntelliJ IDEA](https://www.jetbrains.com/idea/). In WebStorm I often used and liked the plugin [ddescriber](https://github.com/andresdominguez/ddescriber) for Jasmine tests:
+Currently, I am doing a lot of [Angular](https://angular.io/) development and therefore use [Jasmine](https://jasmine.github.io/) for unit tests. My first IDE which I used for web development was [WebStorm](https://www.jetbrains.com/webstorm/) which is based on [IntelliJ IDEA](https://www.jetbrains.com/idea/). In WebStorm, I often used and liked the plugin [ddescriber](https://github.com/andresdominguez/ddescriber) for Jasmine tests:
 
 > Intellij plugin to quickly transform a JavaScript test block from describe() to ddescribe() and a test it() into iit()
 
@@ -34,7 +34,7 @@ The first version of the extension should be able to:
 
 Big applause to the VS code team for the amazing [documentation](https://code.visualstudio.com/docs/extensions/overview) on how to build your own VS code extension.
 
-It is really easy to grab one of the example projects or create a new one using [Extension Generator](https://code.visualstudio.com/docs/extensions/yocode) and get started. Additionally it is very easy to [run and debug your new extension](https://code.visualstudio.com/docs/extensions/developing-extensions#_running-and-debugging-your-extension).
+It is really easy to grab one of the example projects or create a new one using [Extension Generator](https://code.visualstudio.com/docs/extensions/yocode) and get started. Additionally, it is very easy to [run and debug your new extension](https://code.visualstudio.com/docs/extensions/developing-extensions#_running-and-debugging-your-extension).
 
 Searching through the [Extension API documentation](https://code.visualstudio.com/docs/extensionAPI/overview) I found this method
 
@@ -68,7 +68,7 @@ The published extension is available in the [Visual Studio Code Marketplace](htt
 
 ## Conclusion
 
-In summary it made a lot of fun to develop a VS code experience. The documentation and the provided examples are very good and I am very happy to have added a functionality to my favorite code editor which I have been missing.
+In summary, it made a lot of fun to develop a VS code experience. The documentation and the provided examples are very good and I am very happy to have added a functionality to my favorite code editor which I have been missing.
 
 ## Links
 
