@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { customMedia } from '../../utils/style-utils';
+import appStoreImage from '../../images/badge_app_store.svg';
+import googlePlayStoreImage from '../../images/badge_google_play_store.svg';
 
 const Container = styled.div`
   display: inline-block;
@@ -33,16 +35,15 @@ const StyledAnchor = styled.a`
 `;
 
 const imageLinks = {
-  ios:
-    'https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg',
-  android:
-    'https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg',
+  ios: appStoreImage,
+  android: googlePlayStoreImage,
 };
 
 class AppStoreButton extends React.Component {
   static propTypes = {
     store: PropTypes.oneOf(['ios', 'android']).isRequired,
     url: PropTypes.string.isRequired,
+    className: PropTypes.string,
     height: PropTypes.number,
     width: PropTypes.number,
   };
@@ -52,9 +53,9 @@ class AppStoreButton extends React.Component {
   };
 
   render() {
-    const { store, url, height, width } = this.props;
+    const { store, url, height, width, className } = this.props;
     return (
-      <Container height={height} width={width}>
+      <Container height={height} width={width} className={className}>
         <StyledAnchor
           store={store}
           href={url}
