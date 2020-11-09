@@ -48,7 +48,7 @@ const ThemeSwitch = props => {
           }}
         >
           <span role="img" aria-label="moon">
-            🌑
+            🌜
           </span>
         </div>
       }

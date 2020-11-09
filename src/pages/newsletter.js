@@ -28,7 +28,7 @@ const NewsletterPage = () => {
 
   return (
     <Layout>
-      <Article narrow>
+      <Article>
         <Heading i18nId="newsletter" />
         <InfoText className="mb-4">
           <FormattedMessage id="newsletterInfo" />

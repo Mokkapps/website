@@ -6,39 +6,33 @@ import { IntlProvider } from 'react-intl';
 import Menu from '../Menu';
 import localEng from '../../messages/en.json';
 import localDe from '../../messages/de.json';
-import LanguageProvider, {
-  LanguageContext,
-} from '../../context/languageContext';
+import { LanguageContext } from '../../context/languageContext';
 import { ThemeContext } from '../../context/themeContextProvider';
 import BurgerMenu from '../Burger/BurgerMenu';
 import BurgerMenuButton from '../Burger/BurgerMenuButton';
+import HeaderLogo from '../HeaderLogo';
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
+  const { lang } = useContext(LanguageContext);
   return (
-    <LanguageProvider>
-      <LanguageContext.Consumer>
-        {({ lang }) => (
-          <IntlProvider
-            locale={lang}
-            messages={lang === 'en' ? localEng : localDe}
-          >
-            <section
-              className={`${
-                theme === 'light' ? 'theme-light' : 'theme-dark'
-              } bg-background text-main-text relative md:p-4 overflow-hidden`}
-            >
-              <BurgerMenuButton open={open} setOpen={setOpen} />
-              <BurgerMenu open={open} setOpen={setOpen} />
-              <Menu />
-              {children}
-              <ScrollUpButton />
-            </section>
-          </IntlProvider>
-        )}
-      </LanguageContext.Consumer>
-    </LanguageProvider>
+    <IntlProvider locale={lang} messages={lang === 'en' ? localEng : localDe}>
+      <section
+        className={`${
+          theme === 'light' ? 'theme-light' : 'theme-dark'
+        } bg-background text-main-text relative md:p-4 overflow-hidden`}
+      >
+        <header className="lg:hidden flex justify-center p-4">
+          <HeaderLogo />
+        </header>
+        <BurgerMenuButton className="lg:hidden" open={open} setOpen={setOpen} />
+        <BurgerMenu className="lg:hidden" open={open} setOpen={setOpen} />
+        <Menu className="hidden lg:flex mb-4" />
+        {children}
+        <ScrollUpButton />
+      </section>
+    </IntlProvider>
   );
 };
 

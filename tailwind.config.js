@@ -11,6 +11,13 @@ module.exports = {
         sans: ['"Open Sans"', 'sans-serif'],
         heading: ['Domine', 'sans-serif'],
       },
+      minWidth: {
+        0: '0',
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+        full: '100%',
+      },
       colors: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',

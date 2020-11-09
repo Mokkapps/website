@@ -93,9 +93,9 @@ const ItemTitle = styled.span`
   margin-left: 0.5rem;
 `;
 
-const Menu = ({ intl }) => {
+const Menu = ({ intl, className }) => {
   return (
-    <Header className="hidden lg:flex mb-4" data-cy="header-menu">
+    <Header className={`hidden lg:flex ${className}`} data-cy="header-menu">
       <HeaderLogo />
       <MenuItems>
         {menuItems.map(item => {
@@ -133,6 +133,7 @@ const Menu = ({ intl }) => {
 
 Menu.propTypes = {
   intl: PropTypes.any.isRequired,
+  className: PropTypes.string,
 };
 
 export default injectIntl(Menu);

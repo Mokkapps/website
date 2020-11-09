@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { bool, func } from 'prop-types';
+import { bool, func, string } from 'prop-types';
 
 export const StyledBurger = styled.button`
   position: absolute;
@@ -45,10 +45,10 @@ export const StyledBurger = styled.button`
   }
 `;
 
-const BurgerMenuButton = ({ open, setOpen }) => {
+const BurgerMenuButton = ({ open, setOpen, className }) => {
   return (
     <StyledBurger
-      className="lg:hidden"
+      className={className}
       aria-label="Burger Menu"
       open={open}
       onClick={() => setOpen(!open)}
@@ -64,6 +64,7 @@ const BurgerMenuButton = ({ open, setOpen }) => {
 BurgerMenuButton.propTypes = {
   open: bool.isRequired,
   setOpen: func.isRequired,
+  className: string,
 };
 
 export default BurgerMenuButton;

@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const StyledArticle = styled.article`
-  max-width: 600px;
-  margin: 0 auto 30px;
-
-  background: var(--primary);
-  border-radius: 10px;
-  padding: 2rem;
-  min-width: ${props => (props.narrow ? '50%' : '100%')};
-`;
 
 const Article = props => {
-  return <StyledArticle {...props}>{props.children}</StyledArticle>;
+  return (
+    <article
+      {...props}
+      className="max-w-lg rounded-lg bg-primary p-8 min-w-full xlg:min-w-1/2 m-auto"
+    >
+      {props.children}
+    </article>
+  );
 };
 
 Article.propTypes = {

@@ -28,7 +28,7 @@ const ContactPage = props => {
 
   return (
     <Layout>
-      <Article narrow>
+      <Article>
         <Heading i18nId="contactMe" />
         <Container>
           <FluidImage image={contactImage} />

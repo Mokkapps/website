@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { bool, any } from 'prop-types';
+import { bool, any, string } from 'prop-types';
 import { Link } from 'gatsby';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
@@ -66,9 +66,9 @@ const ItemTitle = styled.span`
   margin-left: 0.5rem;
 `;
 
-const BurgerMenu = ({ open, intl }) => {
+const BurgerMenu = ({ open, intl, className }) => {
   return (
-    <StyledMenu open={open} className="lg:hidden">
+    <StyledMenu open={open} className={className}>
       <div className="my-8 flex justify-center">
         <LanguageSwitcher className="mr-4" />
         <ThemeSwitch />
@@ -107,6 +107,7 @@ const BurgerMenu = ({ open, intl }) => {
 BurgerMenu.propTypes = {
   open: bool.isRequired,
   intl: any.isRequired,
+  className: string,
 };
 
 export default injectIntl(BurgerMenu);

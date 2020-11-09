@@ -5,10 +5,10 @@ import styled from 'styled-components';
 const StyledButton = styled.button`
   background-color: var(--accent);
   border: 0.16em solid rgba(255, 255, 255, 0);
-  display: inline-flex;
-  align-items: center;
+  text-align: center;
   border-radius: 0.5rem;
   font-size: 1rem;
+  font-weight: bold;
   color: white;
   padding: 0.25rem 1.5rem;
   transition: all 0.2s;
@@ -20,9 +20,10 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ children, title, onClick, type }) => (
+const Button = ({ children, title, onClick, type, className, dataCy }) => (
   <StyledButton
-    data-cy="contact-button"
+    data-cy={dataCy}
+    className={className}
     type={type || 'button'}
     title={title}
     onClick={onClick}
@@ -36,6 +37,8 @@ Button.propTypes = {
   title: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
+  className: PropTypes.string,
+  dataCy: PropTypes.string,
 };
 
 export default Button;

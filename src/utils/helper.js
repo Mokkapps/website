@@ -9,6 +9,8 @@ export const getAsset = (edges, imageName) => {
     .find(node => node.childImageSharp.fluid.src.includes(imageName));
 };
 
+export const yearsOfExperience = new Date().getFullYear() - 2015;
+
 export const getAllCategories = allPosts => {
   const postCategories = allPosts.edges
     .map(edge => edge.node.frontmatter.categories)

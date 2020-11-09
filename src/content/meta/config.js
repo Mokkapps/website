@@ -24,7 +24,6 @@ const config = {
 
   twitterUsername: '@mokkapps',
   authorName: 'Michael Hoffmann',
-
   skills: [
     // className can be found in https://konpa.github.io/devicon/
     {
@@ -83,25 +82,6 @@ const config = {
       level: 'intermediate',
     },
   ],
-  otherTools: [
-    // className can be found in https://konpa.github.io/devicon/
-    { type: 'Webpack', className: 'devicon-webpack-plain-wordmark colored' },
-    {
-      type: 'Bootstrap',
-      className: 'devicon-bootstrap-plain-wordmark colored',
-    },
-    { type: 'jasmine', className: 'devicon-jasmine-plain-wordmark colored' },
-    {
-      type: 'Protractor',
-      className: 'devicon-protractor-plain-wordmark colored',
-    },
-    { type: 'Sass', className: 'devicon-sass-original colored' },
-    { type: 'Docker', className: 'devicon-docker-plain-wordmark colored' },
-    { type: 'Git', className: 'devicon-git-plain-wordmark colored' },
-    { type: 'IntelliJ', className: 'devicon-intellij-plain-wordmark colored' },
-    { type: 'Android', className: 'devicon-android-plain-wordmark colored' },
-    { type: 'Apple', className: 'devicon-apple-original colored' },
-  ],
   socialLinks: [
     {
       id: 'github',
@@ -141,31 +121,6 @@ const config = {
     'ProSiebenSat.1 Tech',
     'Angular Architects',
   ],
-  characteristics: [
-    {
-      i18nTitleId: 'characteristicDevTitle',
-      i18nDescId: 'characteristicDevDesc',
-      icon: 'code',
-      link: '/projects',
-    },
-    {
-      i18nTitleId: 'characteristicBlogTitle',
-      i18nDescId: 'characteristicBlogDesc',
-      icon: 'file-text',
-      link: '/blog',
-    },
-    {
-      i18nTitleId: 'characteristicCustomerTitle',
-      i18nDescId: 'characteristicCustomerDesc',
-      icon: 'zap',
-    },
-    {
-      i18nTitleId: 'characteristicChallengeTitle',
-      i18nDescId: 'characteristicChallengeDesc',
-      icon: 'search',
-    },
-  ],
-
   projects: [
     {
       title: 'Supermarket Challenge',
@@ -314,7 +269,6 @@ const config = {
       },
     },
   ],
-
   publications: [
     {
       type: 'talk',

@@ -2,21 +2,18 @@ import config from '../../src/content/meta/config';
 
 describe('Home Page Test', () => {
   beforeEach(() => {
+    cy.viewport(1280, 1024);
     cy.visit('/');
   });
 
-  it('includes a heading and a quote', () => {
-    cy.get('[data-cy=hero-heading]');
-    cy.get('[data-cy=hero-quote]');
+  it('includes a heading and images', () => {
+    cy.get('[data-cy=home-heading]');
+    cy.get('picture').should('have.length', 8);
   });
 
-  it('shows characteristics section', () => {
-    cy.get('[data-cy=hero-characteristics-section]')
-      .children()
-      .should('have.length', 4);
-
-    cy.get('[data-cy=hero-characteristics-more-button]').click();
-    cy.url().should('include', '/about');
+  it('shows a hire me button which redirects to contact page', () => {
+    cy.get('[data-cy=home-hire-me-button]').click();
+    cy.url().should('include', '/contact');
   });
 
   it('shows featured projects', () => {
@@ -30,9 +27,7 @@ describe('Home Page Test', () => {
   });
 
   it('shows latest blog posts', () => {
-    cy.get('[data-cy=blog-post-0]');
-    cy.get('[data-cy=blog-post-1]');
-    cy.get('[data-cy=blog-post-2]');
+    cy.get('[data-cy=card-blog-post').should('have.length', 3);
 
     cy.get('[data-cy=hero-blog-more-button]').click();
     cy.url().should('include', '/blog');

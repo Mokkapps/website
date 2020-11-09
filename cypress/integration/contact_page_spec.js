@@ -11,6 +11,6 @@ describe('Contact Page Test', () => {
     cy.get('[data-cy=contact-name]');
     cy.get('[data-cy=contact-email]');
     cy.get('[data-cy=contact-message]');
-    cy.get('[data-cy=contact-button]');
+    cy.get('[data-cy=contact-about-me-button]');
   });
 });

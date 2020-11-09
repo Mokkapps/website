@@ -7,6 +7,7 @@ import { FormattedMessage } from 'react-intl';
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
 import FluidImage from '../FluidImage';
+import { yearsOfExperience } from "../../utils/helper";
 
 const SocialLinks = styled.div`
   display: flex;
@@ -30,8 +31,6 @@ const AboutParagraph = styled.p`
   text-align: justify;
   text-justify: inter-word;
 `;
-
-const yearsOfExperience = new Date().getFullYear() - 2015;
 
 const AboutMe = ({ images }) => (
   <Container>

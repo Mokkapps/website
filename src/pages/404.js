@@ -22,7 +22,7 @@ const NotFoundPage = props => {
 
   return (
     <Layout>
-      <Article narrow>
+      <Article>
         <Heading title="404" />
         <BodyText smallerImg body={notFound.body} />
       </Article>

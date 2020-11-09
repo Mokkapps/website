@@ -33,6 +33,7 @@
 ol,
 ul {
   list-style: initial;
+  @apply ml-4;
 }
 
 li {
@@ -51,18 +52,30 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  @apply text-3xl;
   @apply mb-2;
+
+  @media (max-width: 712px) {
+    @apply text-5xl;
+  }
 }
 
 h2 {
-  font-size: 2rem;
+  @apply text-2xl;
   @apply mb-2;
+
+  @media (max-width: 712px) {
+    @apply text-3xl;
+  }
 }
 
 h3 {
-  font-size: 1.5rem;
+  @apply text-xl;
   @apply mb-2;
+
+  @media (max-width: 712px) {
+    @apply text-2xl;
+  }
 }
 
 body {
