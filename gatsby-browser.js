@@ -1,4 +1,4 @@
-import './src/styles/main.css';
+import './src/styles/main.scss';
 import 'prismjs/themes/prism.css';
 
 import React from 'react';

@@ -55,9 +55,16 @@ module.exports = {
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        postCssPlugins: [
+          require('tailwindcss'),
+          require('./tailwind.config.js'),
+        ],
+      },
+    },
     `gatsby-plugin-resolve-src`, // resolve imports from src subdir
     `gatsby-plugin-catch-links`, // intercept markdown links
     // Following two are necessary for gatsby-image
