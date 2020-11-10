@@ -2,7 +2,7 @@
 title: Why A Good Frontend Developer Should Care About Web Accessibility
 subTitle:
 categories: ['development']
-cover: cover.png
+cover: cover.jpg
 ---
 <small>Cover image from <a href="https://www.flickr.com/photos/poakpong/4681315789">Poakpong</a> licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC 2.0</a></small>
 
@@ -83,7 +83,7 @@ You should definitely try them out to get a feeling for them. I would especially
 
 This video shows the usage of a screen reader:
 
-[![Screen Reader Video](./screen-reader-thumbnail.png)](https://www.youtube.com/watch?v=xpP_Km5L46E)
+[![Screen Reader Video](./screen-reader-thumbnail.jpg)](https://www.youtube.com/watch?v=xpP_Km5L46E)
 
 ## How can I make a site more accessible?
 

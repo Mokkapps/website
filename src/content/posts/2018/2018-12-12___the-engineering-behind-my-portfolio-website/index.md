@@ -2,17 +2,17 @@
 title: The Engineering Behind My Portfolio Website
 subTitle: Learn with which tools I have built my portfolio website
 categories: ['development']
-cover: cover.png
+cover: cover.jpg
 ---
 
 I created my first personal website in 2017 when I launched [my first smartphone game](https://www.mokkapps.de/blog/lessons-learned-my-first-smartphone-game/). I use Google Analytics in this game and it is therefore [necessary](https://privacypolicies.com/blog/privacy-policy-google-analytics/) to provide a link to a privacy policy website from inside the game. I used [WordPress](https://wordpress.org/) and a free theme as I had nearly no frontend knowledge at that time:
 
-![First website iteration](./website-v1.png)
+![First website iteration](./website-v1.jpg)
 [See the first version in the web archive](https://web.archive.org/web/20170701233843/http://mokkapps.de:80/)
 
 End of 2017 I then released a [new version](https://dev.to/mokkapps/how-i-built-my-website-with-hugo-and-netlify-3n49) based on the open-source static site generator [Hugo](https://gohugo.io/) using the [HTML5 Up Prologue theme](https://html5up.net/prologue). The idea was to have a more unique design and better control over the layout:
 
-![Second website iteration](./website-v2.png)
+![Second website iteration](./website-v2.jpg)
 [See the second version in the web archive](https://web.archive.org/web/20180322183119/http://mokkapps.de/)
 
 As I specialized myself more and more as frontend developer I wanted to create my own portfolio website with its own styling. The inspiration came from Ali Spittel's blog post ["Building a Kickass Portfolio"](https://dev.to/aspittel/building-a-kickass-portfolio-28ph).
@@ -27,7 +27,7 @@ Some of the main reasons which encouraged me to do the refactoring:
 
 The result can be seen at [www.mokkapps.de](https://www.mokkapps.de):
 
-![Final website](./website-v3.png)
+![Final website](./website-v3.jpg)
 
 The basic implementation took about 40 hours of work. I did not draft my sites before moving to code but just started coding and experimented with different designs.
 

@@ -2,7 +2,7 @@
 title: How I Set Up A New Angular Project
 subTitle: 
 categories: ['development', 'angular'] 
-cover: cover.png
+cover: cover.jpg
 ---
 
 **Update November 2019: Updated article with some additional tips**

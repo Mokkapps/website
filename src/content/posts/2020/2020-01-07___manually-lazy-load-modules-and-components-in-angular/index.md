@@ -2,7 +2,7 @@
 title: Manually Lazy Load Modules And Components In Angular
 subTitle:
 categories: ['development', 'angular']
-cover: cover.png
+cover: cover.jpg
 ---
 
 In Angular enterprise applications, it is often a requirement to load a configuration from a server via HTTP request which contains a UI configuration. Based on this configuration data, multiple modules and/or components need to be lazy-loaded and its routes dynamically added to the application.

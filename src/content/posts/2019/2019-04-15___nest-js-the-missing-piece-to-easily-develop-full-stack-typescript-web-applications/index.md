@@ -22,7 +22,7 @@ If you have an existing backend team which is productive and happy with their te
 
 ## What is Nest?
 
-![Nest website](./nest-js-website.png)
+![Nest website](./nest-js-website.jpg)
 
 The official description on the website is:
 

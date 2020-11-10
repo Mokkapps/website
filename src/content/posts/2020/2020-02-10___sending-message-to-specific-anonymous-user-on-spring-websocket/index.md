@@ -2,7 +2,7 @@
 title: Sending Message To Specific Anonymous User On Spring WebSocket
 subTitle:
 categories: ['spring', 'development']
-cover: cover.png
+cover: cover.jpg
 ---
 
 In my current, I had the opportunity to develop a new application based on [Vue.js](https://vuejs.org/) in the frontend and [Spring Boot](https://spring.io/projects/spring-boot) in the backend. The backend should send updates to the frontend via a WebSocket connection so that users do not need to refresh the website to see the latest information.

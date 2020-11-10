@@ -331,7 +331,7 @@ Last step is to use the `AsyncPipe` in the HTML to render the articles:
 
 If your backend is running locally, you can now serve the frontend by calling `npm start` and open a browser on `http://localhost:4200` and you should see the dummy article:
 
-![Running Demo](/images/running-example.png)
+![Running Demo](./images/running-example.jpg)
 
 ## Alternative
 

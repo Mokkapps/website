@@ -188,15 +188,15 @@ In this chapter I want to demonstrate some CLI tools which I regularly use in my
 - [HTTPie](https://httpie.org): *a command line HTTP client with an intuitive UI, JSON support, syntax highlighting, wget-like downloads, plugins, and more* which I often use    instead of graphical programs like [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/)
   ![HTTPie](./httpie.png)
 - [htop](https://hisham.hm/htop/): "an interactive process viewer for Unix systems", which I use instead of the macOS `Activity Monitor.app`
-  ![htop](./htop.png)
+  ![htop](./htop.jpg)
 - [Midnight Commander](https://midnight-commander.org/): a visual file manager
-  ![Midnight Commander](./midnight-commander.png)
+  ![Midnight Commander](./midnight-commander.jpg)
 - [tree](https://github.com/MrRaindrop/tree-cli): List contents of directories in tree-like format
   ![tree](./tree.png)
 - [bat](https://github.com/sharkdp/bat): a `cat` clone with syntax highlighting and Git integration
   ![bat](./bat.png)
 - [lnav](https://lnav.org/): an advanced log file viewer
-  ![lnav](./lnav.png)
+  ![lnav](./lnav.jpg)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): Kubernetes command-line tool to run commands against Kubernetes clusters
 - [watch](https://linuxize.com/post/linux-watch-command/): Linux watch command, which is really helpful to run commands at a regular interval
 

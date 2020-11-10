@@ -2,7 +2,7 @@
 title: The Last Guide For Angular Change Detection You'll Ever Need
 subTitle: 
 categories: ['development', 'angular'] 
-cover: cover.png
+cover: cover.jpg
 canonical: "https://indepth.dev/the-last-guide-for-angular-change-detection-youll-ever-need/"
 ---
 <!-- Variables -->
