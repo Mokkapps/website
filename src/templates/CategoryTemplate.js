@@ -34,12 +34,12 @@ const PageTemplate = props => {
     pageContext: { category },
     data: {
       posts: { totalCount, edges },
-      allPosts,
+      allCategories,
     },
   } = props;
 
   const items = edges.map(edge => edge.node);
-  const categories = getAllCategories(allPosts);
+  const categories = allCategories.group.map(c => c.fieldValue);
 
   const { siteUrl, siteTitlePostfix } = config;
 
@@ -97,13 +97,10 @@ export default PageTemplate;
 
 export const query = graphql`
   query CategoryTemplateQuery($category: String!) {
-    allPosts: allMdx {
-      edges {
-        node {
-          frontmatter {
-            categories
-          }
-        }
+    allCategories: allMdx(filter: {frontmatter: {categories: {ne: ""}}}) {
+      group(field: frontmatter___categories) {
+        fieldValue
+        totalCount
       }
     }
     posts: allMdx(
@@ -119,7 +116,6 @@ export const query = graphql`
             prefix
           }
           excerpt
-          timeToRead
           frontmatter {
             title
             categories

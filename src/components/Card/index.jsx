@@ -37,7 +37,7 @@ const Card = ({ children, url, id }) => (
 Card.propTypes = {
   children: PropTypes.node.isRequired,
   url: PropTypes.string.isRequired,
-  id: PropTypes.number,
+  id: PropTypes.string,
 };
 
 export default Card;

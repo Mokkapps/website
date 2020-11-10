@@ -32,7 +32,7 @@ const ProjectList = ({ projectAssets }) => {
 
         const comp = (
           <ProjectCard
-            id={count}
+            id={count.toString()}
             key={title}
             usedTechnologies={usedTechnologies}
             asset={getAsset(edges, imageName)}

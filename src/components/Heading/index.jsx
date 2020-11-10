@@ -1,26 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-
-const Header = styled.header`
-  text-align: center;
-`;
 
 const Heading = props => {
   const { title, children, i18nId } = props;
 
   if (i18nId) {
     return (
-      <Header>
+      <header className="text-center">
         <h1>
           <FormattedMessage id={i18nId} />
         </h1>
-      </Header>
+      </header>
     );
   }
 
-  return <Header>{title ? <h1>{title}</h1> : children}</Header>;
+  return (
+    <header className="text-center">
+      {title ? <h1>{title}</h1> : children}
+    </header>
+  );
 };
 
 Heading.propTypes = {

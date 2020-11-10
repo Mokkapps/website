@@ -1,23 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
 import Img from 'gatsby-image';
 
-import { customMedia } from '../../utils/style-utils';
-
-const Image = styled(Img)`
-  border-radius: 5px;
-  width: 50%;
-  margin: 0 auto;
-
-  ${customMedia.between('xs', 'lg')`
-      width: 100%;
-  `};
-`;
-
 const FluidImage = ({ image, className }) => (
-  <Image
-    className={className}
+  <Img
+    className={`rounded-lg m-auto w-full lg:w-2/3 ${className}`}
     alt="Mokkapps (Michael Hoffmann) Freelancer Angular Image"
     fluid={image.childImageSharp.fluid}
   />
@@ -25,6 +12,7 @@ const FluidImage = ({ image, className }) => (
 
 FluidImage.propTypes = {
   image: PropTypes.object.isRequired,
+  className: PropTypes.string,
 };
 
 export default FluidImage;

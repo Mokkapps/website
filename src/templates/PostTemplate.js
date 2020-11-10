@@ -80,8 +80,9 @@ const PostTemplate = props => {
   return (
     <Layout>
       <ArticleWithSidebar authorImage={authorImage} categories={allCategories}>
-        <Heading title={title} />
+        <Heading title={title}  />
         <PostMeta
+          className="my-8"
           authorImage={file}
           author={config.authorName}
           prefix={prefix}
@@ -97,7 +98,7 @@ const PostTemplate = props => {
         ) : null}
         <BodyText body={body} fullWidth />
         <Share className="my-4" shareBlockProps={shareBlockProps} />
-        <Author className="mb-4" image={authorImage} />
+        <Author className="mb-8" image={authorImage} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <ReactDisqusComments
           className="mt-4"

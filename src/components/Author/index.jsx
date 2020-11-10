@@ -43,8 +43,8 @@ const SocialLinks = styled.div`
   padding: 0.2rem;
 `;
 
-const Author = ({ image }) => (
-  <Container>
+const Author = ({ image, className }) => (
+  <Container className={className}>
     <Image fluid={image.childImageSharp.fluid} />
     <Description>
       <Name>Michael Hoffmann</Name>
@@ -62,6 +62,7 @@ const Author = ({ image }) => (
 
 Author.propTypes = {
   image: PropTypes.object.isRequired,
+  className: PropTypes.string,
 };
 
 export default Author;

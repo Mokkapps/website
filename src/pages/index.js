@@ -66,7 +66,7 @@ const IndexPage = props => {
           </h1>
           <div className="flex flex-col md:flex-row">
             <div className="w-full mr-10">
-              <h2>
+              <h2 className="text-center lg:text-left">
                 <FormattedMessage id="homeDoYouNeed" />
               </h2>
               <UnorderedList>

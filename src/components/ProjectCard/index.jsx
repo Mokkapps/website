@@ -45,7 +45,7 @@ const ProjectCard = ({
 ProjectCard.propTypes = {
   asset: PropTypes.object.isRequired,
   description: PropTypes.string.isRequired,
-  id: PropTypes.number,
+  id: PropTypes.string,
   minimal: PropTypes.bool,
   title: PropTypes.string.isRequired,
   urls: PropTypes.object.isRequired,

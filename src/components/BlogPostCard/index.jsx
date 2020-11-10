@@ -29,7 +29,7 @@ const BlogPostCard = props => {
 
 BlogPostCard.propTypes = {
   asset: PropTypes.object.isRequired,
-  id: PropTypes.number,
+  id: PropTypes.string,
   title: PropTypes.string.isRequired,
   url: PropTypes.string,
   dataCy: PropTypes.string,

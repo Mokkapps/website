@@ -15,7 +15,11 @@ const ThemeContextProvider = ({ children }) => {
         '(prefers-color-scheme: dark)'
       ).matches;
       const theme = localStorage.getItem('theme');
-      return theme || isDarkModePreferred ? 'dark' : 'light';
+      if (theme !== undefined) {
+        return theme;
+      } else {
+        return isDarkModePreferred ? 'dark' : 'light';
+      }
     }
     setTheme(loadTheme());
   }, []);

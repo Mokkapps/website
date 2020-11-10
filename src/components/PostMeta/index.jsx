@@ -46,6 +46,7 @@ const PostMeta = props => {
     timeToRead,
     categories,
     authorImage,
+    className,
     categoryLink = true,
     icons: {
       calendar: CalendarIcon,
@@ -56,27 +57,30 @@ const PostMeta = props => {
   } = props;
 
   return [
-    <Author className="mb-8" key="author">
+    <Author className={`mb-8 ${className}`} key="author">
       <AuthorImg
         className="meta__author-icon"
         fixed={authorImage.childImageSharp.fixed}
       />
       <AuthorTextContainer>
         <span className="mb-2 flex items-center">
-          {CalendarIcon && <UserIcon className="mr-2" style={iconStyle} />} Michael Hoffmann
+          {CalendarIcon && <UserIcon className="mr-2" style={iconStyle} />}{' '}
+          Michael Hoffmann
         </span>
         <span className="flex items-center">
           {CalendarIcon && <CalendarIcon className="mr-2" style={iconStyle} />}{' '}
           {<FormattedDate value={prefix} />} |{' '}
-          {ReadIcon && <ReadIcon className="ml-1 mr-2" style={iconStyle} />} {timeToRead}{' '}
-          <FormattedMessage id="minuteRead" />
+          {ReadIcon && <ReadIcon className="ml-1 mr-2" style={iconStyle} />}{' '}
+          {timeToRead} <FormattedMessage id="minuteRead" />
         </span>
       </AuthorTextContainer>
     </Author>,
     <CategoriesContainer key="categories-container">
       {categories &&
         categories.map(category => {
-          const link = <Link to={`/categories/${category}`}>{capitalize(category)}</Link>;
+          const link = (
+            <Link to={`/categories/${category}`}>{capitalize(category)}</Link>
+          );
           const txt = <span key={category}>{capitalize(category)}</span>;
 
           return (

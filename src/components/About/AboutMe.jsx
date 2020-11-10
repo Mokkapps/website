@@ -40,7 +40,7 @@ const AboutMe = ({ images }) => (
         <SocialLink link={link} key={link.id} />
       ))}
     </SocialLinks>
-    <DescriptionContainer className="mt-8 md:w-4/5" data-cy="about-description">
+    <DescriptionContainer className="mt-8" data-cy="about-description">
       <AboutParagraph>
         <FormattedMessage
           id="aboutParagraph"

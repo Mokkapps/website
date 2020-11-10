@@ -4,19 +4,23 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
   background-color: var(--accent);
-  border: 0.16em solid rgba(255, 255, 255, 0);
   text-align: center;
   border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
-  color: white;
+  color: var(--basic-button-text);
   padding: 0.25rem 1.5rem;
-  transition: all 0.2s;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  outline: none;
 
   &:hover {
-    cursor: pointer;
-    border-color: rgba(255, 255, 255, 1);
+    filter: brightness(90%);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   }
 `;
 
