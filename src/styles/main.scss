@@ -32,51 +32,69 @@
   --basic-button-text-light: #1c1b1b;
 }
 
-ol,
-ul {
-  list-style: initial;
-  @apply ml-4;
-}
+@layer base {
+  ol,
+  ul {
+    list-style: initial;
+    @apply ml-4;
+  }
 
-li {
-  @apply mb-2;
-}
+  li {
+    @apply mb-2;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Domine', sans-serif;
-  font-weight: bold;
-  line-height: 1.1;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Domine', sans-serif;
+    font-weight: bold;
+    line-height: 1.1;
+  }
 
-h1 {
-  @apply text-3xl;
-  @apply mb-2;
-
-  @media (max-width: 712px) {
+  h1 {
     @apply text-5xl;
+    @apply mb-2;
+
+    @media (max-width: 640px) {
+      @apply text-4xl;
+    }
   }
-}
 
-h2 {
-  @apply text-2xl;
-  @apply mb-2;
+  h2 {
+    @apply text-4xl;
+    @apply mb-2;
 
-  @media (max-width: 712px) {
-    @apply text-3xl;
+    @media (max-width: 640px) {
+      @apply text-3xl;
+    }
   }
-}
 
-h3 {
-  @apply text-xl;
-  @apply mb-2;
-
-  @media (max-width: 712px) {
+  h3 {
     @apply text-2xl;
+    @apply mb-2;
+
+    @media (max-width: 640px) {
+      @apply text-xl;
+    }
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration: none;
+      background-size: 100% 2px;
+    }
   }
 }
 
@@ -87,22 +105,6 @@ body {
 html {
   box-sizing: border-box;
   background: #313131;
-}
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-  background-image: linear-gradient(var(--accent), var(--accent));
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
-}
-
-a:hover {
-  color: var(--accent);
-  text-decoration: none;
-  background-size: 100% 2px;
 }
 
 .alert {
