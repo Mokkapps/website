@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import { FormattedMessage } from 'react-intl';
 
 import { customMedia } from '../../utils/style-utils';
+import { sendCustomAnalyticsEvent } from '../../utils/helper';
 
 const Wrapper = styled.div`
   display: flex;
@@ -42,7 +43,10 @@ const Card = styled.a`
 
 const HireTheAuthor = ({ image }) => (
   <Wrapper data-cy="hire-the-author">
-    <Card href="/contact">
+    <Card
+      href="/contact"
+      onClick={() => sendCustomAnalyticsEvent('Hire the author card clicked')}
+    >
       <Img fluid={image.childImageSharp.fluid} />
       <Description>
         <FormattedMessage id="shortSummary"></FormattedMessage>
@@ -52,7 +56,7 @@ const HireTheAuthor = ({ image }) => (
 );
 
 HireTheAuthor.propTypes = {
-  image: PropTypes.object
+  image: PropTypes.object,
 };
 
 export default HireTheAuthor;

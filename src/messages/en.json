@@ -88,5 +88,6 @@
   "otherCategories": "Other Categories",
   "postsInCategory": "Posts in Category",
   "singlePostInCategory": "There is {count} post in this category",
-  "multiplePostsInCategory": "There are {count} posts in this category"
+  "multiplePostsInCategory": "There are {count} posts in this category",
+  "buyMeACoffee": "Buy me a coffee"
 }

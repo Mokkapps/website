@@ -9,6 +9,12 @@ export const getAsset = (edges, imageName) => {
     .find(node => node.childImageSharp.fluid.src.includes(imageName));
 };
 
+export function sendCustomAnalyticsEvent(eventName) {
+  if (window.umami && typeof window.umami === 'function') {
+    window.umami(eventName);
+  }
+}
+
 export const yearsOfExperience = new Date().getFullYear() - 2015;
 
 export const getAllCategories = allPosts => {

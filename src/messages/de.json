@@ -88,5 +88,6 @@
   "otherCategories": "Weitere Kategorien",
   "postsInCategory": "Beiträge in Kategorie",
   "singlePostInCategory": "Es befindet sich {count} Beitrag in dieser Kategorie",
-  "multiplePostsInCategory": "Es befinden sich {count} Beiträge in dieser Kategorie"
+  "multiplePostsInCategory": "Es befinden sich {count} Beiträge in dieser Kategorie",
+  "buyMeACoffee": "Kauf mir einen Kaffee"
 }

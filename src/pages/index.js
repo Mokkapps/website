@@ -14,7 +14,11 @@ import Seo from '../components/Seo';
 import Button from '../components/Button';
 import { navigate } from 'gatsby-link';
 import { FormattedMessage } from 'react-intl';
-import { getAsset, yearsOfExperience } from '../utils/helper';
+import {
+  getAsset,
+  sendCustomAnalyticsEvent,
+  yearsOfExperience
+} from '../utils/helper';
 import LinkButton from '../components/LinkButton';
 import ProjectCard from '../components/ProjectCard';
 import BlogPostCard from '../components/BlogPostCard';
@@ -110,9 +114,7 @@ const IndexPage = props => {
               dataCy="home-hire-me-button"
               className="w-64 h-16 mr-8 mb-2 uppercase"
               onClick={() => {
-                if (window.umami && typeof window.umami === 'function') {
-                  window.umami('Hire me button click');
-                }
+                sendCustomAnalyticsEvent('Hire me button clicked');
                 navigate('/contact');
               }}
             >

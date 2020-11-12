@@ -1,36 +1,22 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
-
-const FooterWrapper = styled.footer`
-  flex-shrink: 0;
-  padding: 1em;
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Content = styled.div`
-  text-align: center;
-  color: var(--text-main);
-  margin: 1rem 0 1rem 0;
-`;
+import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 
 const Footer = () => (
-  <FooterWrapper>
-    <SocialLinks data-cy="footer-social-links">
+  <footer className="flex flex-shrink-0 flex-col items-center justify-center py-8">
+    <div className="flex justify-center" data-cy="footer-social-links">
       {config.socialLinks.map(link => (
         <SocialLink link={link} key={link.id} />
       ))}
-    </SocialLinks>
+    </div>
 
-    <Content>
+    <BuyMeACoffeeButton className="my-4" />
+
+    <div className="text-center text-text-main">
       <a
         href="https://github.com/Mokkapps/website"
         target="_blank"
@@ -54,8 +40,8 @@ const Footer = () => (
       <Link data-cy="footer-legal-notice" to="/legal-notice">
         <FormattedMessage id="legalNotice" />
       </Link>
-    </Content>
-  </FooterWrapper>
+    </div>
+  </footer>
 );
 
 export default Footer;

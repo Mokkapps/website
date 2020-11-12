@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import content from '../../content/meta/config';
 import SocialLink from '../SocialLink';
 import { FormattedMessage } from 'react-intl';
+import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 
 const Container = styled.section`
   background-color: var(--secondary);
@@ -56,6 +57,7 @@ const Author = ({ image, className }) => (
           <SocialLink link={link} key={link.id} />
         ))}
       </SocialLinks>
+      <BuyMeACoffeeButton className="my-4" />
     </Description>
   </Container>
 );

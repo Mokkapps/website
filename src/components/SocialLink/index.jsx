@@ -5,7 +5,7 @@ import * as simpleIcons from 'simple-icons';
 
 const StyledAnchor = styled.a`
   align-items: center;
-  background: white;
+  background: var(--color-toggle-light);
   border-radius: 100%;
   display: flex;
   align-content: center;
