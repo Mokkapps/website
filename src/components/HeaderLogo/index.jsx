@@ -22,7 +22,7 @@ const Image = styled.img`
 `;
 
 const Text = styled.p`
-  color: white;
+  color: var(--text-main);
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 1.5em;

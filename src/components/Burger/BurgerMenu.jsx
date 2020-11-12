@@ -25,7 +25,7 @@ export const StyledMenu = styled.nav`
   width: 100vw;
 
   a {
-    color: var(--burger-menu-text);
+    color: var(--text-main);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.4rem;

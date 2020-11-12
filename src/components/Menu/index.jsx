@@ -47,7 +47,7 @@ const Item = styled.li`
     justify-content: center;
     align-items: center;
     padding: 0 10px 0 0;
-    color: white;
+    color: var(--text-main);
 
     position: relative;
     text-decoration: none;

@@ -18,7 +18,7 @@ const SocialLinks = styled.div`
 
 const Content = styled.div`
   text-align: center;
-  color: white;
+  color: var(--text-main);
   margin: 1rem 0 1rem 0;
 `;
 
