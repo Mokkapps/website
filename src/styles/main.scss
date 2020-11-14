@@ -142,3 +142,13 @@ html {
 .custom-block-body p {
   margin: 0 !important;
 }
+
+a.anchor {
+  fill: var(--text-main);
+  text-decoration: none;
+
+  & > svg {
+    display: inline;
+    @apply ml-2;
+  }
+}

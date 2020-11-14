@@ -93,6 +93,12 @@ module.exports = {
         extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              isIconAfterHeader: true,
+            },
+          },
+          {
             resolve: 'gatsby-remark-custom-blocks',
             options: {
               blocks: {
