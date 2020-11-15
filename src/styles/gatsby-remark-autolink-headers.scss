@@ -1,0 +1,9 @@
+a.anchor {
+  fill: var(--text-main);
+  background-image: none;
+
+  & > svg {
+    display: inline;
+    @apply ml-2;
+  }
+}
