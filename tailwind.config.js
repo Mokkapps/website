@@ -4,12 +4,16 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
+  purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
   theme: {
     extend: {
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
         heading: ['Domine', 'sans-serif'],
+      },
+      inset: {
+        'logo-left': '130px',
+        'logo-top': '5px',
       },
       minWidth: {
         0: '0',

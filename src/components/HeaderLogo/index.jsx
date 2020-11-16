@@ -30,9 +30,9 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
-const HeaderLogo = () => (
+const HeaderLogo = ({imageClassName}) => (
   <Anchor data-cy="header-logo" href="/">
-    <Image src={logo} alt="Logo" width={35} height={35} />
+    <Image className={imageClassName} src={logo} alt="Logo" width={35} height={35} />
     <Text>OKKAPPS</Text>
   </Anchor>
 );

@@ -3,6 +3,7 @@ title: "How I Replaced Google Analytics With a Private, Open-Source & Self-Hoste
 categories:
   - "tools"
 cover: "images/cover.jpg"
+imageShare: "images/how-i-replaced-google-analytics-with-a-private-open-source-and-self-hosted-alternative-share.png"
 ---
 
 For me, it is important to see analytics about my portfolio website. This way, I can see which posts got the most views, which country my users are from, and which browser & operating system they are using.

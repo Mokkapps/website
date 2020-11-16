@@ -23,6 +23,7 @@ const config = {
   // pathPrefix: '',
 
   twitterUsername: '@mokkapps',
+  shareImageName: 'Michael Hoffmann (Mokkapps)',
   authorName: 'Michael Hoffmann',
   skills: [
     // className can be found in https://konpa.github.io/devicon/

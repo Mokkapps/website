@@ -49,7 +49,14 @@ const PostTemplate = props => {
       post: {
         excerpt,
         body,
-        frontmatter: { title, categories, cover, bannerCredit, canonical },
+        frontmatter: {
+          title,
+          categories,
+          cover,
+          bannerCredit,
+          canonical,
+          imageShare,
+        },
         fields: { slug, prefix },
         timeToRead,
       },
@@ -77,10 +84,17 @@ const PostTemplate = props => {
   const allCategories = getAllCategories(allEdges);
   const handleNewComment = () => {};
 
+  let seoImage = null;
+  if (imageShare) {
+    seoImage = `${config.siteUrl}${imageShare.childImageSharp.fluid.src}`;
+  } else if (cover) {
+    seoImage = `${config.siteUrl}${cover.childImageSharp.fluid.src}`;
+  }
+
   return (
     <Layout>
       <ArticleWithSidebar authorImage={authorImage} categories={allCategories}>
-        <Heading title={title}  />
+        <Heading title={title} />
         <PostMeta
           className="my-8"
           authorImage={file}
@@ -115,9 +129,7 @@ const PostTemplate = props => {
         title={`${title}${siteTitlePostfix}`}
         canonical={canonical}
         description={excerpt}
-        image={
-          cover ? `${config.siteUrl}${cover.childImageSharp.fluid.src}` : null
-        }
+        image={seoImage}
         postSEO
       />
     </Layout>
@@ -155,6 +167,14 @@ export const query = graphql`
       frontmatter {
         title
         canonical
+        bannerCredit
+        imageShare {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
         categories
         cover {
           childImageSharp {
