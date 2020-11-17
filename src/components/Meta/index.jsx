@@ -10,6 +10,7 @@ const MetaText = styled.p`
   font-size: 0.9em;
   display: flex;
   margin: 0.5em 0 1em;
+  color: var(--text-secondary);
 
   flex-wrap: wrap;
 

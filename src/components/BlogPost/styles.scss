@@ -1,13 +1,12 @@
 .image {
   width: 30%;
-  margin: 1.5rem;
-  
+
   @media (min-width: 992px) {
-    height: 350px;
+    height: 200px;
   }
 
   @media (max-width: 992px) {
+    max-height: 300px;
     width: 100%;
-    margin: 1rem;
   }
 }

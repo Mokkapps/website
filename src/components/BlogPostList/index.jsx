@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import BlogPost from '../BlogPost';
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const List = styled.ul`
-  list-style: none;
-  width: 100%;
-`;
 
 const BlogPostList = props => {
   const { items, author, metaIcons } = props;
   let count = 0;
 
   return (
-    <Container>
-      <List data-cy="blog-post-list">
+    <div className="flex justify-center">
+      <ul className="list-none w-100" data-cy="blog-post-list">
         {items.map(item => {
           const {
             frontmatter: { title, categories, cover },
@@ -29,7 +18,7 @@ const BlogPostList = props => {
           } = item;
 
           const component = (
-            <li key={slug}>
+            <li className="mb-4" key={slug}>
               <BlogPost
                 id={count}
                 title={title}
@@ -48,8 +37,8 @@ const BlogPostList = props => {
 
           return component;
         })}
-      </List>
-    </Container>
+      </ul>
+    </div>
   );
 };
 

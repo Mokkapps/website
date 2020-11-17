@@ -15,21 +15,13 @@ const Anchor = styled.a`
   letter-spacing: 2px;
   background-color: var(--secondary);
   background-image: none;
-  border-radius: 0.25rem;
   margin: 1rem;
   user-select: none;
   transition: 0.25s;
-
-  &:hover {
-    box-shadow: 0 6px 14px -3px rgba(0, 0, 0, 0.75);
-    transform: translateY(-0.2rem);
-    text-decoration: none;
-    color: var(--primary);
-  }
 `;
 
 const Card = ({ children, url, id }) => (
-  <Anchor data-cy={`card-${id}`} href={url}>
+  <Anchor className="roundend-sm hover:shadow-2xl transform hover:-translate-y-1 hover:text-primary" data-cy={`card-${id}`} href={url}>
     {children}
   </Anchor>
 );
