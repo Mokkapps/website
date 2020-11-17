@@ -112,7 +112,7 @@ const IndexPage = props => {
           <div className="flex flex-wrap justify-center">
             <Button
               dataCy="home-hire-me-button"
-              className="w-64 h-16 mr-8 mb-2 uppercase"
+              className="w-64 h-16 mb-2 uppercase"
               onClick={() => {
                 sendCustomAnalyticsEvent('Hire me button clicked');
                 navigate('/contact');
