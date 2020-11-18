@@ -101,6 +101,32 @@
     }
   }
 
+  input {
+    @apply h-8;
+    @apply rounded-lg;
+    @apply border-none;
+    @apply bg-secondary;
+    @apply px-1;
+    @apply py-4;
+    @apply overflow-auto;
+  }
+
+  textarea {
+    @apply h-64;
+    @apply rounded-lg;
+    @apply border-none;
+    @apply bg-secondary;
+    @apply px-1;
+    @apply py-4;
+    @apply overflow-auto;
+  }
+
+  label {
+    @apply text-main-text;
+    @apply my-2;
+    @apply mx-0;
+  }
+
   .text-shadow {
     text-shadow: 1px 1px 4px rgba(34, 34, 34, 0.6);
   }

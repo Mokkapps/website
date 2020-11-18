@@ -13,11 +13,12 @@
     "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "build:dev": "gatsby build",
     "generate-social-card": "generate/social-card.js",
+    "generate-blogpost": "node generate/blogpost.js",
+    "generate-toc": "node generate/toc.js",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
     "serve-e2e": "npm run build && gatsby serve -p 8000",
     "start-server": "gatsby develop",
-    "generate-blogpost": "node generate/blogpost.js",
     "cy:open": "cypress open",
     "cy:install": "cypress install",
     "cy:run": "cypress run",
@@ -88,7 +89,6 @@
     "recompose": "^0.30.0",
     "simple-icons": "^3.12.1",
     "styled-components": "^5.2.0",
-    "styled-media-query": "^2.1.2",
     "tailwindcss": "^1.9.6"
   },
   "devDependencies": {

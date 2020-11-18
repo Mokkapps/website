@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { customMedia } from '../../utils/style-utils';
 import appStoreImage from '../../images/badge_app_store.svg';
 import googlePlayStoreImage from '../../images/badge_google_play_store.svg';
 
@@ -11,10 +10,6 @@ const Container = styled.div`
   border-radius: 2px;
   height: ${props => `${props.height}px`};
   width: 240px;
-
-  ${customMedia.lessThan('md')`
-     width: 190px;
-  `};
 `;
 
 const StyledAnchor = styled.a`

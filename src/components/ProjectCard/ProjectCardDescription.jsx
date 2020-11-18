@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import ProjectCardButton from './ProjectCardButton';
 import AppStoreButton from './AppStoreButton';
 
-import { customMedia } from '../../utils/style-utils';
-
 const Container = styled.div`
   display: flex;
   flex-flow: column;
@@ -26,9 +24,6 @@ const Heading = styled.h3`
   letter-spacing: 3px;
   color: var(--text-secondary);
   word-wrap: normal;
-  ${customMedia.lessThan('md')`
-    font-size: 1.2em;
-  `};
 `;
 
 const Divider = styled.hr`

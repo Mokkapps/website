@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import config from '../content/meta/config';
 
-import '../utils/style-utils';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
@@ -17,7 +16,7 @@ import { FormattedMessage } from 'react-intl';
 import {
   getAsset,
   sendCustomAnalyticsEvent,
-  yearsOfExperience
+  yearsOfExperience,
 } from '../utils/helper';
 import LinkButton from '../components/LinkButton';
 import ProjectCard from '../components/ProjectCard';

@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import { customMedia } from '../../utils/style-utils';
-
 const StyledAnchor = styled.a`
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -17,11 +15,6 @@ const StyledAnchor = styled.a`
   background-size: 100% 0;
   transition: 0.25s;
   text-decoration: none;
-
-  width: 240px;
-  ${customMedia.lessThan('md')`
-     width: 190px;
-  `};
 
   display: flex;
   justify-content: center;
