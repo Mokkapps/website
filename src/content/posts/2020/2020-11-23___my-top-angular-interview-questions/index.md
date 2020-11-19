@@ -7,7 +7,7 @@ categories:
 cover: "images/cover.jpg"
 ---
 
-This article summarizes a list of Angular interview questions which I would ask candidates and which I get often asked in interviews. 
+This article summarizes a list of Angular interview questions which I would ask candidates and that I get often asked in interviews. 
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ This article summarizes a list of Angular interview questions which I would ask 
 
 ## 1. What is Angular? What is the difference between Angular and Vue.js / React?
 
-[Angular](https://angular.io) is an application design framework and development platform for creating efficient and sophisticated single-page apps. Angular is built entirely in TypeScript and uses it as a primary language. As it is a framework it has many useful built-in features like routing, forms, HTTP client, Internationalization (i18n), animations and many more.
+[Angular](https://angular.io) is an application design framework and development platform for creating efficient and sophisticated single-page apps. Angular is built entirely in TypeScript and uses it as a primary language. As it is a framework it has many useful built-in features like routing, forms, HTTP client, Internationalization (i18n), animations, and many more.
 
 [Vue.js](https://vuejs.org/) and [React](https://reactjs.org/) are no application frameworks but JavaScript libraries to build user interfaces. 
 
@@ -44,10 +44,10 @@ Check the [Angular blog](https://blog.angular.io) for latest release notes, for 
 
 ## 3. What are Angular's main concepts?
 
-- **Component**: Basic building block of an Angular application and is used to control HTML views.
-- **Modules**: An Angular module contains basic building blocks like components, services, directives etc. Using modules you can split your application into logical pieces where each piece performs a single task and is called "module".
+- **Component**: The basic building block of an Angular application and is used to control HTML views.
+- **Modules**: An Angular module contains basic building blocks like components, services, directives, etc. Using modules you can split your application into logical pieces where each piece performs a single task and is called a "module".
 - **Templates**: A template represents the view of an Angular application.
-- **Services**: Services are used to create components which can be shared across the entire application.
+- **Services**: Services are used to create components that can be shared across the entire application.
 - **Metadata**: Metadata is used to add more data to an Angular class.
 
 ![Angular architecture](./images/angular-architecture.jpg)
@@ -95,9 +95,9 @@ Provides chaining and subscription to handle complex applications | Uses only .t
 
 > Service is a broad category encompassing any value, function, or feature that an app needs. A service is typically a class with a narrow, well-defined purpose. It should do something specific and do it well.
 
-An Angular component should focus on presenting data and enabling the user experience. It should mediate between the application logic (data model) and the view (renderey by the template).
+An Angular component should focus on presenting data and enabling the user experience. It should mediate between the application logic (data model) and the view (rendered by the template).
 
-Angular services helps us to separate non-view-related functionality to keep component classes lean and efficient. 
+Angular services help us to separate non-view-related functionality to keep component classes lean and efficient. 
 
 ### How do you provide a service? 
 
@@ -111,11 +111,11 @@ You must register at least one provider of any service you are going to use. A s
 })
 ```
 
-Angular creates a single, shared instance if a service is provided at root level. This shared instance is injected into any class that asks for it. By usiong the `@Injectable()` metadata, Angular can remove the service from the compiled app if it isn't used.
+Angular creates a single, shared instance if a service is provided at root level. This shared instance is injected into any class that asks for it. By using the `@Injectable()` metadata, Angular can remove the service from the compiled app if it isn't used.
 
 ### Provide with a specific NgModule
 
-Registering a provider with a specific NgModule returns the same instance of a service to all components in that NgModule if they ask for it.
+Registering a provider with a specific NgModule will return the same instance of a service to all components in that NgModule if they ask for it.
 
 ```ts
 @NgModule({
@@ -129,7 +129,7 @@ Registering a provider with a specific NgModule returns the same instance of a s
 
 #### Provide at component level
 
-A new instance of a service is generated for each new instance of the component, if you register the provider at component level. 
+A new instance of a service is generated for each new instance of the component if you register the provider at component level. 
 
 ```ts
 @Component({
@@ -141,7 +141,7 @@ A new instance of a service is generated for each new instance of the component,
 
 ## 10. What do you understand by directives?
 
-Directives add behaviour to an existing DOM element or an existing component instance. The basic difference between a component and a directive is that a component has a template, whereas an attribute or structural directive does not have a template and only one component can be instantiated per an element in a template.
+Directives add behavior to an existing DOM element or an existing component instance. The basic difference between a component and a directive is that a component has a template, whereas an attribute or structural directive does not have a template and only one component can be instantiated per an element in a template.
      
 We can differentiate between three types of directives:
 - **Components**: These directives have a template.
@@ -150,7 +150,7 @@ We can differentiate between three types of directives:
 
 ## 11. JIT vs AOT
 
-Angular provides two ways to compile your app. Compilation is needed as Angular templates and components cannot be understood by the browser therefore the HTML and TypeScript code is converted into efficient JavaScript code.
+Angular provides two ways to compile your app. The compilation step is needed as Angular templates and components cannot be understood by the browser therefore the HTML and TypeScript code is converted into efficient JavaScript code.
 
 ### Just-in-Time (JIT)
 
@@ -158,9 +158,9 @@ JIT compiles your app in the browser at runtime. JIT compilation is the default 
 
 ### Ahead-of-Time (AOT)
 
-AOT compiles your app at build time. For AOT compilation, include the --aot option with the ng build or ng serve command as below,
+AOT compiles your app at build time. For AOT compilation, include the `--aot option with the ng build or ng serve command as below,
 
-#### What are the advantages with AOT?
+#### What are the advantages of AOT?
 - The application can be rendered without compiling the app because the browser downloads a pre-compiled version of the application.
 - External CSS style sheets and HTML templates are included within the application JavaScript code. This way, a lot of AJAX requests can be saved.
 - It is not necessary to download the Angular compiler which reduces the application payload.
@@ -187,9 +187,9 @@ Angular calls these hook methods in the following order:
 7. **ngAfterViewChecked**: Is called after every check of a component's views.
 8. **ngOnDestroy**: Is called just before the directive is destroyed.
 
-## 14. What is difference between ViewChild and ContentChild?
+## 14. What is the difference between ViewChild and ContentChild?
 
-ViewChild and ContentChild are used for component communication in Angular, for example, if a parent component wants access of child component.
+ViewChild and ContentChild are used for component communication in Angular, for example, if a parent component wants access to one or multiple child components.
 
 - A ViewChild is any component, directive, or element which is part of a template.
 - A ContentChild is any component or element which is projected in the template.
@@ -197,22 +197,21 @@ ViewChild and ContentChild are used for component communication in Angular, for 
 In Angular exist two different DOMs: 
 
 - **Content DOM** which has only knowledge of the template provided by the component at hand or content injected via `<ng-content>`.
-- **View DOM** which has only knowledge of the encapsulated and of the descending components.
+- **View DOM** which has only knowledge of the encapsulated and the descending components.
 
 ## 15. What is the difference between an Angular module and a JavaScript module?
-Both type of modules can help to modularize code and Angular relies on both kinds of modules but they are very different.
+Both types of modules can help to modularize code and Angular relies on both kinds of modules but they are very different.
     
 A JavaScript module is an individual file with JavaScript code, usually containing a class or a library of functions for a specific purpose within your app.
     
 NgModules are specific to Angular and a NgModule is a class marked by the `@NgModule` decorator with a metadata object.
 
-## 16. What is @HostBinding and @HostListener?
+## 16. What are @HostBinding and @HostListener?
 
-`@HostListener()` function decorator allows you to handle events of the host element in the directive class. When you hover you mouse over the host element, only the color of the host element should change. In addition, when the mouse is gone, the color of the host element should change to its default color.
-    
-`@HostBinding()` function decorator allows you to set the properties of the host element from the directive class. you want to change the style properties such as height, width, color, margin, border, etc., or any other internal properties of the host element in the directive class
+- `@HostListener()` function decorator allows you to handle events of the host element in the directive class. For example, it can be used to change the color of the host element if you hover over the host element with the mouse.
+- `@HostBinding()` function decorator allows you to set the properties of the host element from the directive class. In this directive class, we can change any style property like height, width, color, margin, border, etc.
 
-## 17. What is difference between OnPush and default change detection?
+## 17. What is the difference between OnPush and default change detection?
 
 Please read my article [The Last Guide For Angular Change Detection You'll Ever Need](https://www.mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/) for a detailed explanation.
 ￼
