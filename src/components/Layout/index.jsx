@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       <section
         className={`${theme === 'light' ? 'theme-light' : 'theme-dark'} ${
           devMode ? 'debug-screens' : ''
-        } bg-background text-main-text relative md:p-4 overflow-hidden lg:overflow-clip`}
+        } bg-background text-main-text relative md:p-4 overflow-hidden lg:overflow-visible lg:overflow-clip`}
       >
         <header className="lg:hidden flex justify-center p-4">
           <HeaderLogo />
