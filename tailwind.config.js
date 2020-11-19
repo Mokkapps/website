@@ -23,6 +23,9 @@ module.exports = {
         '3/4': '75%',
         full: '100%',
       },
+      screens: {
+        xxl: '1920px',
+      },
       colors: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',

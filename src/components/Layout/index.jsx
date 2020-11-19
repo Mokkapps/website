@@ -16,11 +16,12 @@ const Layout = ({ children }) => {
   const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LanguageContext);
+  const devMode = process.env.NODE_ENV !== `production`;
   return (
     <IntlProvider locale={lang} messages={lang === 'en' ? localEng : localDe}>
       <section
-        className={`${
-          theme === 'light' ? 'theme-light' : 'theme-dark'
+        className={`${theme === 'light' ? 'theme-light' : 'theme-dark'} ${
+          devMode ? 'debug-screens' : ''
         } bg-background text-main-text relative md:p-4 overflow-hidden`}
       >
         <header className="lg:hidden flex justify-center p-4">

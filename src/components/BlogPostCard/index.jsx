@@ -22,7 +22,7 @@ const BlogPostCard = props => {
   return (
     <StyledCard className="p-4" url={url} id={id}>
       <ProjectImage fluid={asset.childImageSharp.fluid} />
-      <h3 className="text-secondary-text p-2">{title}</h3>
+      <h3 className="text-secondary-text p-2 flex items-center h-full">{title}</h3>
     </StyledCard>
   );
 };

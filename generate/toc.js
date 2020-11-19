@@ -36,7 +36,9 @@ async function generateTableOfContents() {
             return console.log(err);
           }
 
-          console.log(`📖 TABLE OF CONTENT 👇🏻\n\n${toc(data).content} `);
+          console.log(
+            `📖 TABLE OF CONTENT 👇🏻\n\n${toc(data, { maxdepth: 2 }).content} `
+          );
         }
       );
     }

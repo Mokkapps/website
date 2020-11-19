@@ -120,6 +120,7 @@
     "puppeteer": "^5.4.1",
     "react-testing-library": "^8.0.1",
     "start-server-and-test": "^1.11.4",
+    "tailwindcss-debug-screens": "^1.1.0",
     "tinify": "^1.6.0-beta.2",
     "yaml-loader": "^0.6.0"
   }

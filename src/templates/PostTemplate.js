@@ -105,7 +105,9 @@ const PostTemplate = props => {
           timeToRead={timeToRead}
         />
         {cover ? (
-          <Img className="mb-4" fluid={cover.childImageSharp.fluid} />
+          <div className="flex justify-center">
+            <Img className="mb-4 w-full h-full" fluid={cover.childImageSharp.fluid} />
+          </div>
         ) : null}
         {bannerCredit ? (
           <div dangerouslySetInnerHTML={{ __html: bannerCredit }} />
@@ -178,8 +180,9 @@ export const query = graphql`
         categories
         cover {
           childImageSharp {
-            fluid(maxWidth: 1000) {
+            fluid(maxHeight: 700) {
               ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
