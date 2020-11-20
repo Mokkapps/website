@@ -1,7 +1,7 @@
 # explicit commands for building the site
 # and the folder to publish
 [build]
-command = "npm rebuild node-sass && gatsby build"
+command = "npx gatsby-parallel-runner"
 publish = "public"
   [build.environment]
   # cache Cypress binary in local "node_modules" folder
