@@ -225,30 +225,27 @@ module.exports = {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
                   url:
                     site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.body }],
+                  guid: site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 });
               });
             },
             query: `
               {
                 allMdx(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [fields___prefix] },
-                  filter: { fields: { source: {eq: "posts"}, slug: { ne: null } } }
+                  sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
                   edges {
                     node {
                       excerpt
-                      body
-                      fields {
-                        slug
-                        prefix
-                      }
+                      html
+                      fields { slug }
                       frontmatter {
                         title
+                        date
                       }
                     }
                   }
