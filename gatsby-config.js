@@ -228,7 +228,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url:
                     site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 });
               });
@@ -236,16 +236,20 @@ module.exports = {
             query: `
               {
                 allMdx(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  limit: 1000,
+                  sort: { order: DESC, fields: [fields___prefix] },
+                  filter: { fields: { source: {eq: "posts"}, slug: { ne: null } } }
                 ) {
                   edges {
                     node {
                       excerpt
                       html
-                      fields { slug }
+                      fields {
+                        slug
+                        prefix
+                      }
                       frontmatter {
                         title
-                        date
                       }
                     }
                   }
