@@ -3,7 +3,6 @@ import { graphql, withPrefix } from 'gatsby';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
-import config from '../content/meta/config';
 import HeaderLogo from '../components/HeaderLogo';
 
 const GlobalPageStyle = createGlobalStyle`
@@ -52,17 +51,12 @@ const Preview = styled.div`
 `;
 
 const BlogPostShareImage = props => {
-  const { post, authorImage } = props.data;
+  const { post } = props.data;
   console.log('props', props);
   const darkMode = true;
   const width = 440;
   const height = 220;
   const title = post.frontmatter.title;
-  // const post = props.data.post;
-  // const { width, height } = props.pageContext;
-  // const { siteCover, authorAvatar, headerTitle } = { siteCover: 'siteCover', authorAvatar: 'authorAvatar', headerTitle: 'headerTitle' };
-  // const { fixed } = useSiteImages(authorAvatar);
-  // const siteCoverPath = useSiteImages(siteCover).fluid.src;
 
   return (
     <Wrapper

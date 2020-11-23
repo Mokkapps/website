@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
+// Generate an image for social media sharing
 // full script available here:
 // https://github.com/maxpou/gatsby-starter-morning-dew/blob/master/scripts/generatePostPreviewImages.js
 
 /* eslint-disable no-console */
-const { readFile, readdirSync, existsSync, mkdirSync } = require('fs');
-const { join, dirname } = require('path');
-const glob = require('glob');
-const YAML = require('yaml');
+const { readdirSync, existsSync, mkdirSync } = require('fs');
+const { join } = require('path');
 const puppeteer = require('puppeteer');
 const inquirer = require('inquirer');
 
@@ -34,39 +33,6 @@ const takeScreenshot = async (url, width, height, destination) => {
   });
 
   await browser.close();
-};
-
-const getArticleFiles = () => {
-  return glob.sync(
-    join(
-      process.cwd(),
-      'src',
-      'content',
-      'posts',
-      '2020',
-      '2020-01-07___manually-lazy-load-modules-and-components-in-angular',
-      'index.md'
-    )
-  );
-};
-
-const parseFile = async file => {
-  return new Promise((resolve, reject) => {
-    readFile(file, 'utf8', (err, content) => {
-      if (err) {
-        return reject(err);
-      }
-
-      const frontmatter = content.split('---')[1];
-      const data = YAML.parse(frontmatter);
-
-      return resolve({
-        ...data,
-        file,
-        directory: dirname(file),
-      });
-    });
-  });
 };
 
 const main = async () => {
@@ -101,6 +67,8 @@ const main = async () => {
           destinationFile
         );
         console.log(`Created ${destinationFile}`);
+      } else {
+        console.log('File already exists!');
       }
     }
   } catch (err) {
