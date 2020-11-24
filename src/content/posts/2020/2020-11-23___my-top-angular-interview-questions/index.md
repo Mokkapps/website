@@ -153,13 +153,15 @@ We can differentiate between three types of directives:
 
 Angular provides two ways to compile your app. The compilation step is needed as Angular templates and components cannot be understood by the browser therefore the HTML and TypeScript code is converted into efficient JavaScript code.
 
+When you run the `ng serve` or `ng build` CLI commands, the type of compilation (JIT or AOT) depends on the value of the `aot` property in your build configuration specified in `angular.json`. By default, `aot` is set to true for new CLI apps.
+
 ### Just-in-Time (JIT)
 
-JIT compiles your app in the browser at runtime. JIT compilation is the default when you run the ng build (build only) or ng serve (build and serve locally) CLI commands. i.e, the below commands used for JIT compilation,
+JIT compiles your app in the browser at runtime. This was the default until Angular 8.
 
 ### Ahead-of-Time (AOT)
 
-AOT compiles your app at build time. For AOT compilation, include the `--aot option with the ng build or ng serve command as below,
+AOT compiles your app at build time. This is the default since Angular 9.
 
 #### What are the advantages of AOT?
 - The application can be rendered without compiling the app because the browser downloads a pre-compiled version of the application.
