@@ -25,10 +25,11 @@ This article summarizes a list of Angular interview questions which I would ask 
 - [11. JIT vs AOT](#11-jit-vs-aot)
 - [12. What do you understand by lazy loading?](#12-what-do-you-understand-by-lazy-loading)
 - [13. Can you explain Angular Components Lifecycle Hooks?](#13-can-you-explain-angular-components-lifecycle-hooks)
-- [14. What is difference between ViewChild and ContentChild?](#14-what-is-difference-between-viewchild-and-contentchild)
+- [14. What is the difference between ViewChild and ContentChild?](#14-what-is-the-difference-between-viewchild-and-contentchild)
 - [15. What is the difference between an Angular module and a JavaScript module?](#15-what-is-the-difference-between-an-angular-module-and-a-javascript-module)
-- [16. What is @HostBinding and @HostListener?](#16-what-is-hostbinding-and-hostlistener)
-- [17. What is difference between OnPush and default change detection?](#17-what-is-difference-between-onpush-and-default-change-detection)
+- [16. What are @HostBinding and @HostListener?](#16-what-are-hostbinding-and-hostlistener)
+- [17. What is the difference between OnPush and default change detection?](#17-what-is-the-difference-between-onpush-and-default-change-detection)
+- [18. What is ViewEncapsulation?](#18-what-is-viewencapsulation)
 - [Conclusion](#conclusion)
 - [Links](#links) 
 
@@ -37,7 +38,7 @@ This article summarizes a list of Angular interview questions which I would ask 
 
 [Angular](https://angular.io) is an application design framework and development platform for creating efficient and sophisticated single-page apps. Angular is built entirely in TypeScript and uses it as a primary language. As it is a framework it has many useful built-in features like routing, forms, HTTP client, Internationalization (i18n), animations, and many more.
 
-[Vue.js](https://vuejs.org/) and [React](https://reactjs.org/) are no application frameworks but JavaScript libraries to build user interfaces. 
+[Vue.js](https://vuejs.org/) and [React](https://reactjs.org/) are no application frameworks but JavaScript libraries to build user interfaces. Vue.js describe itself as `an incrementally adoptable ecosystem that scales between a library and a full-featured framework` and React as `a JavaScript library for building user interfaces`.
 
 ## 2. What's new in Angular?
 
@@ -218,6 +219,24 @@ NgModules are specific to Angular and a NgModule is a class marked by the `@NgMo
 
 Please read my article [The Last Guide For Angular Change Detection You'll Ever Need](https://www.mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/) for a detailed explanation.
 ￼
+## 18. What is ViewEncapsulation?
+
+Component CSS styles are encapsulated into the component's view to avoid styling side effects in the rest of the Angular application. 
+
+The type of encapsulation can be controlled per component via the `encapsulation` property in the component metadata: 
+
+```ts
+// warning: few browsers support shadow DOM encapsulation at this time
+encapsulation: ViewEncapsulation.ShadowDom
+```
+
+You can choose between the following modes: 
+
+- `ViewEncapsulation.Emulated` which is the default mode and emulates the shadow DOM behavior. It renames and preprocesses the CSS code to effectively scope the CSS to the component's view. Each DOM element gets attached some additional attributes like `_nghost` or `_ngcontent`. An element that would be a shadow DOM host in native encapsulation has a generated `_nghost` attribute. This is typically the case for component host elements. An element within a component's view has a `_ngcontent` attribute that identifies to which host's emulated shadow DOM this element belongs.
+- `ViewEncapsulation.None` which tells Angular to not use view encapsulation and adds CSS to the global styles. Essentially, this is the same behavior as pasing the component's styles into the HTML.
+- `ViewEncapsulation.ShadowDom` which uses the browser's native [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM) implementation. It attaches a shadow DOM to the component's host element and then puts the component view inside that shadow DOM. The component's styles are included within the shadow DOM.
+
+
 ## Conclusion
 
 I hope this list of Angular interview questions will help you to get your next Angular position. Leave me a comment if you know any other important Angular interview questions. 
