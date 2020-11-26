@@ -21,8 +21,8 @@ import {
 import LinkButton from '../components/LinkButton';
 import ProjectCard from '../components/ProjectCard';
 import BlogPostCard from '../components/BlogPostCard';
-import { apiUrl, useFetch } from "../hooks/useFetch";
-import Availability from "../components/Availability";
+import Availability from '../components/Availability';
+import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 
 const Image = styled(Img)`
   width: 100%;
@@ -59,7 +59,6 @@ const IndexPage = props => {
   } = props;
 
   const posts = latestPosts.edges.map(edge => edge.node);
-
 
   const { siteTitlePostfix, siteUrl, siteDescription } = config;
 
@@ -114,16 +113,23 @@ const IndexPage = props => {
           <div className="flex flex-wrap justify-center">
             <Button
               dataCy="home-hire-me-button"
-              className="w-64 h-16 mb-2 uppercase"
+              className="w-72 h-16 mb-2 uppercase mx-2"
               onClick={() => {
                 sendCustomAnalyticsEvent('Hire me button clicked');
                 navigate('/contact');
               }}
             >
+              <span className="mr-2" role="img" aria-label="phone">
+                💻
+              </span>
               <FormattedMessage id="homeHireMe" />
             </Button>
+            <ScheduleMeetingButton
+              dataCy="home-hire-me-button"
+              className="w-64 h-16 mb-2 uppercase mx-2"
+            />
           </div>
-          <Availability/>
+          <Availability />
         </div>
         <h2 className="text-center mt-10 mb-4">
           <FormattedMessage id="latestBlogPosts" />

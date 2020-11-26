@@ -78,6 +78,7 @@
     "prismjs": "^1.22.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-calendly": "^1.2.0",
     "react-custom-share": "^0.4.8",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.13.1",

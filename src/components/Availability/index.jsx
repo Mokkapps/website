@@ -11,16 +11,17 @@ const Availability = () => {
   const { data, error } = useFetch(apiUrl);
   const availability = data.availability;
   const availabilityDate = new Date(availability);
+  const isValidAvailabilityDate = !isNaN(availabilityDate.getTime());
   const currentDate = new Date();
   const isAvailable = availabilityDate <= currentDate;
 
-  return error || !data || !availabilityDate ? null : (
+  return error || isValidAvailabilityDate ? null : (
     // eslint-disable-next-line react/prop-types
     <div className="rounded-lg px-2 py-1 flex items-center justify-center my-4">
       {isAvailable ? (
-        <div className="rounded-full h-4 w-4 available mr-2"></div>
+        <div className="rounded-full h-4 w-4 available mr-2" />
       ) : (
-        <div className="rounded-full h-4 w-4 not-available mr-2"></div>
+        <div className="rounded-full h-4 w-4 not-available mr-2" />
       )}
       <FormattedMessage
         id={isAvailable ? 'available' : 'notAvailable'}

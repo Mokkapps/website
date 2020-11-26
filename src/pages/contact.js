@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import config from '../content/meta/config';
 
@@ -14,12 +13,7 @@ import Seo from '../components/Seo';
 import FluidImage from '../components/FluidImage';
 import LinkButton from '../components/LinkButton';
 import Availability from '../components/Availability';
-
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
+import ScheduleMeetingButton from "../components/ScheduleMeetingButton";
 
 const ContactPage = props => {
   const {
@@ -31,17 +25,21 @@ const ContactPage = props => {
     <Layout>
       <Article>
         <Heading i18nId="contactMe" />
-        <Container>
+        <section className="flex flex-col justify-center items-center">
           <FluidImage image={contactImage} />
           <LinkButton
-            className="mt-2"
+            className="mt-2 mb-4"
             dataCy="contact-about-me-button"
             href="/about"
             i18nId="moreAboutMeLink"
           />
           <Availability />
+          <ScheduleMeetingButton
+            dataCy="contact-hire-me-button"
+            className="w-64 h-16 mb-2 uppercase"
+          />
           <ContactForm />
-        </Container>
+        </section>
       </Article>
       <Footer />
       <Seo
