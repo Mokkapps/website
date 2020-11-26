@@ -185,4 +185,12 @@
   .text-shadow {
     text-shadow: 1px 1px 4px rgba(34, 34, 34, 0.6);
   }
+
+  .not-available {
+    background-color: #cf000f;
+  }
+
+  .available {
+    background-color: #009944;
+  }
 }

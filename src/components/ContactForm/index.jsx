@@ -1,7 +1,7 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import Button from '../Button';
-import { FormattedMessage } from 'react-intl';
 
 const ContactForm = () => (
   <div className="flex justify-center px-12 py-12 md:px-8 md:py-6 w-full">

@@ -13,6 +13,7 @@ import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import FluidImage from '../components/FluidImage';
 import LinkButton from '../components/LinkButton';
+import Availability from '../components/Availability';
 
 const Container = styled.section`
   display: flex;
@@ -38,6 +39,7 @@ const ContactPage = props => {
             href="/about"
             i18nId="moreAboutMeLink"
           />
+          <Availability />
           <ContactForm />
         </Container>
       </Article>

@@ -9,6 +9,8 @@
   "homeMyName": "My name is",
   "homeRightPlace": "and you are in the right place!",
   "homeHireMe": "Hire me",
+  "notAvailable": "Available from {date}",
+  "available": "Available for hire",
   "language": "English",
   "built": "Built",
   "with": "with",

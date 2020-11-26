@@ -21,6 +21,8 @@ import {
 import LinkButton from '../components/LinkButton';
 import ProjectCard from '../components/ProjectCard';
 import BlogPostCard from '../components/BlogPostCard';
+import { apiUrl, useFetch } from "../hooks/useFetch";
+import Availability from "../components/Availability";
 
 const Image = styled(Img)`
   width: 100%;
@@ -57,6 +59,7 @@ const IndexPage = props => {
   } = props;
 
   const posts = latestPosts.edges.map(edge => edge.node);
+
 
   const { siteTitlePostfix, siteUrl, siteDescription } = config;
 
@@ -120,6 +123,7 @@ const IndexPage = props => {
               <FormattedMessage id="homeHireMe" />
             </Button>
           </div>
+          <Availability/>
         </div>
         <h2 className="text-center mt-10 mb-4">
           <FormattedMessage id="latestBlogPosts" />
