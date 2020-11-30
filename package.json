@@ -12,7 +12,7 @@
     "prebuild": "npm run preload-fonts",
     "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "build:dev": "gatsby build",
-    "generate-social-card": "generate/social-card.js",
+    "generate-social-card": "node generate/social-card.js",
     "generate-blogpost": "node generate/blogpost.js",
     "generate-toc": "node generate/toc.js",
     "clean": "gatsby clean",

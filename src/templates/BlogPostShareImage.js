@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 import HeaderLogo from '../components/HeaderLogo';
+import config from '../content/meta/config';
+
+const width = config.socialShareImage.width;
+const height = config.socialShareImage.height;
 
 const GlobalPageStyle = createGlobalStyle`
   * {
@@ -20,8 +24,8 @@ const GlobalPageStyle = createGlobalStyle`
 `;
 
 const Wrapper = styled.div`
-  width: ${props => props.width || 440}px;
-  height: ${props => props.height || 220}px;
+  width: ${props => props.width || width}px;
+  height: ${props => props.height || height}px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,16 +36,16 @@ const Wrapper = styled.div`
 `;
 
 const Square = styled.div`
-  width: ${props => props.width || 440}px;
-  height: ${props => props.height || 220}px;
+  width: ${props => props.width || width}px;
+  height: ${props => props.height || height}px;
   position: absolute;
   outline: 3px solid var(--text-main) !important;
   outline-offset: -25px;
 `;
 
 const Preview = styled.div`
-  width: ${props => props.width || 440}px;
-  height: ${props => props.height || 220}px;
+  width: ${props => props.width || width}px;
+  height: ${props => props.height || height}px;
   background-image: url('${props =>
     props.hero || withPrefix(props.siteCover)}');
   background-position: center;
@@ -52,37 +56,37 @@ const Preview = styled.div`
 
 const BlogPostShareImage = props => {
   const { post } = props.data;
-  console.log('props', props);
   const darkMode = true;
-  const width = 440;
-  const height = 220;
+  const showPreview = true;
   const title = post.frontmatter.title;
 
   return (
     <Wrapper
-      className={darkMode ? 'theme-dark' : 'theme-light'}
+      className={`${darkMode ? 'theme-dark' : 'theme-light'}`}
       width={width}
       height={height}
     >
       <GlobalPageStyle />
 
-      <div className="flex justify-center absolute left-logo-left top-logo-top z-20 bg-secondary rounded-lg">
-        <HeaderLogo imageClassName="pl-2" />
-      </div>
-      <div className="flex flex-col justify-center">
-        <h1 className="text-center text-main-text text-2xl mx-8 mt-4 text-shadow z-10">
+      <div className="flex flex-col justify-center h-full p-6">
+        <h1 className="flex items-center flex-grow text-center text-main-text text-10xl mx-8 mt-4 text-shadow z-10">
           {title}
         </h1>
-        <span className="text-md font-bold text-shadow text-main-text z-10">
-          {post.timeToRead} min read
-        </span>
+        <div className="flex justify-between items-center w-full px-4 py-2 z-10">
+          <HeaderLogo textClassName="text-shadow" />
+          <span className="text-xl font-bold text-shadow text-main-text">
+            {post.timeToRead} min read
+          </span>
+        </div>
       </div>
-      <Preview
-        className="z-0"
-        width={width}
-        height={height}
-        siteCover={post.frontmatter.cover.childImageSharp.fluid.src}
-      />
+      {showPreview && (
+        <Preview
+          className="z-0"
+          width={width}
+          height={height}
+          siteCover={post.frontmatter.cover.childImageSharp.fixed.src}
+        />
+      )}
       <Square className="square" width={width} height={height} />
     </Wrapper>
   );
@@ -106,20 +110,13 @@ export const pageQuery = graphql`
         categories
         cover {
           childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_withWebp
+            fixed(width: 1200, height: 628) {
+              ...GatsbyImageSharpFixed_withWebp_noBase64
             }
           }
         }
       }
       timeToRead
-    }
-    authorImage: file(relativePath: { eq: "contact.jpg" }) {
-      childImageSharp {
-        fixed(width: 400) {
-          ...GatsbyImageSharpFixed
-        }
-      }
     }
   }
 `;

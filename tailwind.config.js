@@ -11,9 +11,8 @@ module.exports = {
         sans: ['"Open Sans"', 'sans-serif'],
         heading: ['Domine', 'sans-serif'],
       },
-      inset: {
-        'logo-left': '130px',
-        'logo-top': '5px',
+      fontSize: {
+        '10xl': '5rem'
       },
       minWidth: {
         0: '0',

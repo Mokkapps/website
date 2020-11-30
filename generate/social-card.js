@@ -9,26 +9,41 @@ const { readdirSync, existsSync, mkdirSync } = require('fs');
 const { join } = require('path');
 const puppeteer = require('puppeteer');
 const inquirer = require('inquirer');
+const config = require('../src/content/meta/config');
 
 const fromRoot = (...p) => join(__dirname, '..', ...p);
 
 const baseUrl = process.argv[2] || 'http://localhost:8000/';
+const width = config.socialShareImage.width;
+const height = config.socialShareImage.height;
 
-const takeScreenshot = async (url, width, height, destination) => {
+const VIEWPORT = { width, height, deviceScaleFactor: 2 };
+
+const takeScreenshot = async (url, w, h, destination) => {
+  console.log(`👷 Generating image with ${w}/${h}px ...`);
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
+  await page.setViewport(
+    Object.assign({}, VIEWPORT, { height })
+  );
   await page.goto(url, {
     waitUntil: 'networkidle2',
   });
+  await page.click(
+    'body > div.cc-window.cc-banner.cc-type-info.cc-theme-classic.cc-bottom.cc-color-override-849295177 > div > a'
+  );
+  await page.waitForTimeout(200);
   await page.screenshot({
     path: destination,
+    type: 'jpeg',
+    omitBackground: true,
     clip: {
       x: 0,
       y: 0,
-      width,
-      height,
+      width: w,
+      height: h,
     },
   });
 
@@ -62,17 +77,17 @@ const main = async () => {
       if (!existsSync(destinationFile)) {
         await takeScreenshot(
           `${baseUrl}blog/${slug}/image-share`,
-          440,
-          220,
+          width,
+          height,
           destinationFile
         );
-        console.log(`Created ${destinationFile}`);
+        console.log(`✅  Created new share image at ${destinationFile}`);
       } else {
-        console.log('File already exists!');
+        console.warn('⚠️  File already exists!');
       }
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 

@@ -30,10 +30,11 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
-const HeaderLogo = ({imageClassName}) => (
+// eslint-disable-next-line react/prop-types
+const HeaderLogo = ({imageClassName, textClassName}) => (
   <Anchor data-cy="header-logo" href="/">
     <Image className={imageClassName} src={logo} alt="Logo" width={35} height={35} />
-    <Text>OKKAPPS</Text>
+    <Text className={textClassName}>OKKAPPS</Text>
   </Anchor>
 );
 

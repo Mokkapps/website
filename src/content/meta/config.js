@@ -12,6 +12,11 @@ const config = {
   siteDescription: `${base.desc}`,
   defaultSeoImage: `/images/me.jpg`,
 
+  socialShareImage: {
+    width: 1200,
+    height: 628
+  },
+
   /* site header */
   headerTitle: `${base.name}`,
   headerSubTitle: `${base.desc}`,
