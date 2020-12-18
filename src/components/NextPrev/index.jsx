@@ -58,7 +58,7 @@ const NextPrev = props => {
   return (
     <Container>
       {prevSlug && (
-        <Link to={`/blog/${prevSlug}`} className="prev">
+        <Link to={`/blog${prevSlug}`} className="prev">
           {PrevIcon && <PrevIcon />}
           <p>
             {prevTitle} <time>{<FormattedDate value={prevPrefix} />}</time>
@@ -66,7 +66,7 @@ const NextPrev = props => {
         </Link>
       )}
       {nextSlug && (
-        <Link to={`/blog/${nextSlug}`} className="next">
+        <Link to={`/blog${nextSlug}`} className="next">
           {NextIcon && <NextIcon />}
           <p>
             {nextTitle} <time>{<FormattedDate value={nextPrefix} />} </time>
