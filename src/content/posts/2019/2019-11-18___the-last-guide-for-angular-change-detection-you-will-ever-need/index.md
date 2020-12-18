@@ -16,6 +16,11 @@ Angular's Change Detection is a core mechanic of the framework but (at least fro
 
 In this blog post, I will provide you all the necessary information you need to know about change detection. I will explain the mechanics by using a [demo project][demo-github] I built for this blog post.
 
+## Table of Contents
+- [What Is Change Detection](#what-is-change-detection)
+- [How Change Detection Works](#how-change-detection-works)
+- [Performance](#performance)
+
 ## What Is Change Detection
 
 Two of Angular's main goals are to be predictable and performant. The framework needs to replicate the state of our application on the UI by combining the state and the template:
@@ -173,7 +178,7 @@ There exist three methods to manually trigger change detections:
 > Running change detection manually is not a hack but you should only use it in reasonable cases
 
 The following illustrations shows the different `ChangeDetectorRef` methods in a visual representation:
-![ChangeDetectorRef methods](./changedetectorref-methods.png)
+![ChangeDetectorRef methods](./change-detector-ref.jpg)
 
 You can test some of these actions using the "DC" (`detectChanges()`) and "MFC" (`markForCheck()`) buttons in the [simple demo][demo-simple].
 
