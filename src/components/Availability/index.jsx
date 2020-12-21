@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedDate, FormattedMessage } from 'react-intl';
 
-const availability = new Date('2021-01-11');
+const availability = new Date('2021-07-01');
 
 const Availability = () => {
   const availabilityDate = new Date(availability);
