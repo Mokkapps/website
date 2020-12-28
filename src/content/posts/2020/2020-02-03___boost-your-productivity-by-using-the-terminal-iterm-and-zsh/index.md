@@ -35,7 +35,7 @@ I would recommend replacing the default `Terminal.app` in macOS by [iTerm2](http
 You can install it using `brew`:
 
 ```bash
-brew cask install iterm2
+brew install --cask iterm2
 ```
 
 Some of the best [iTerm features](https://iterm2.com/features.html):
