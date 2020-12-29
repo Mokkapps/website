@@ -193,4 +193,16 @@
   .available {
     background-color: #009944;
   }
+
+  .stylistic-quote-mark {
+    font-size: 5rem;
+    right: 100%;
+    @apply mr-0 absolute top-0 leading-none;
+  }
+
+  @screen sm {
+    .stylistic-quote-mark {
+      @apply block mr-2;
+    }
+  }
 }

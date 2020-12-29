@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
 import Menu from '../Menu';
-import localEng from '../../messages/en.json';
-import localDe from '../../messages/de.json';
+import localEng from '../../lang/en.json';
+import localDe from '../../lang/de.json';
 import { LanguageContext } from '../../context/languageContext';
 import { ThemeContext } from '../../context/themeContextProvider';
 import BurgerMenu from '../Burger/BurgerMenu';

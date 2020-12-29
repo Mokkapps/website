@@ -126,6 +126,7 @@ const config = {
     'Carl Zeiss Microscopy',
     'ProSiebenSat.1 Tech',
     'Angular Architects',
+    'VHV Gruppe',
   ],
   projects: [
     {

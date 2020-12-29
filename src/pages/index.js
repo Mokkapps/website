@@ -23,6 +23,7 @@ import ProjectCard from '../components/ProjectCard';
 import BlogPostCard from '../components/BlogPostCard';
 import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
+import Testimonials from '../components/Testimonials';
 
 const Image = styled(Img)`
   width: 100%;
@@ -110,6 +111,7 @@ const IndexPage = props => {
             </strong>{' '}
             <FormattedMessage id="homeRightPlace" />
           </p>
+          <Testimonials className="mb-10" />
           <div className="flex flex-wrap justify-center">
             <Button
               dataCy="home-hire-me-button"

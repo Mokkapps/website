@@ -92,5 +92,9 @@
   "postsInCategory": "Posts in Category",
   "singlePostInCategory": "There is {count} post in this category",
   "multiplePostsInCategory": "There are {count} posts in this category",
-  "buyMeACoffee": "Buy me a coffee"
+  "buyMeACoffee": "Buy me a coffee",
+  "testimonialName1": "D.T., Product Owner, ProSiebenSat1 Tech Solutions GmbH",
+  "testimonialText1": "Michael made an important contribution to the progress of the product and, as a team member, enriched the teamwork. He created a large part of the basis that our users can now enjoy working with the app.",
+  "testimonialName2": "T.M., Head of Department Audi mobility, jambit GmbH",
+  "testimonialText2": "Michael worked as a permanent employee in our company and has always done an absolutely excellent job. I can only recommend him!"
 }

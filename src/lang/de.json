@@ -26,7 +26,7 @@
   "articles": "ARTIKEL",
   "slides": "Folien",
   "menuHome": "Start",
-  "menuBlog": "Blog",
+  "menuBlog": "Blog \uD83C\uDDFA\uD83C\uDDF8",
   "menuProjects": "Projekte",
   "menuAbout": "Über mich",
   "menuContact": "Kontakt",
@@ -92,5 +92,9 @@
   "postsInCategory": "Beiträge in Kategorie",
   "singlePostInCategory": "Es befindet sich {count} Beitrag in dieser Kategorie",
   "multiplePostsInCategory": "Es befinden sich {count} Beiträge in dieser Kategorie",
-  "buyMeACoffee": "Kauf mir einen Kaffee"
+  "buyMeACoffee": "Kauf mir einen Kaffee",
+  "testimonialName1": "D.T., Product Owner, ProSiebenSat1 Tech Solutions GmbH",
+  "testimonialText1": "Michael hat einen wichtigen Teil dazu beigetragen, dass das Produkt so weit vorangekommen ist und hat als Teammitglied die gemeinsame Arbeit im Team bereichert. Er hat einen großen Teil der Basis geschaffen, dass unsere Nutzer jetzt mit Freude mit der App arbeiten.",
+  "testimonialName2": "T.M., Head of Department Audi mobility, jambit GmbH",
+  "testimonialText2": "Michael war als Festangestellter in unserer Firma tätig und hat immer absolut exzellente Arbeit gemacht. Kann ihn nur empfehlen!"
 }

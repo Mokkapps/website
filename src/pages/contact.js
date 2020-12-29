@@ -13,7 +13,7 @@ import Seo from '../components/Seo';
 import FluidImage from '../components/FluidImage';
 import LinkButton from '../components/LinkButton';
 import Availability from '../components/Availability';
-import ScheduleMeetingButton from "../components/ScheduleMeetingButton";
+import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 
 const ContactPage = props => {
   const {
