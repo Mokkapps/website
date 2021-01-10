@@ -112,6 +112,7 @@ const IndexPage = props => {
             <FormattedMessage id="homeRightPlace" />
           </p>
           <Testimonials className="mb-10" />
+          <Availability />
           <div className="flex flex-wrap justify-center">
             <Button
               dataCy="home-hire-me-button"
@@ -131,7 +132,6 @@ const IndexPage = props => {
               className="w-64 h-16 mb-2 uppercase mx-2"
             />
           </div>
-          <Availability />
         </div>
         <h2 className="text-center mt-10 mb-4">
           <FormattedMessage id="latestBlogPosts" />
