@@ -3,7 +3,6 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
-import { ShareButtonRectangle } from 'react-custom-share';
 
 import config from '../content/meta/config';
 
@@ -12,9 +11,6 @@ import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
 import PrevIcon from 'react-feather/dist/icons/arrow-left';
 import NextIcon from 'react-feather/dist/icons/arrow-right';
-import FacebookIcon from 'react-feather/dist/icons/facebook';
-import TwitterIcon from 'react-feather/dist/icons/twitter';
-import EmailIcon from 'react-feather/dist/icons/mail';
 import ReadIcon from 'react-feather/dist/icons/eye';
 
 import Footer from '../components/Footer';
@@ -69,14 +65,8 @@ const PostTemplate = props => {
   const { siteUrl, siteTitlePostfix } = config;
 
   const url = `${siteUrl}/blog${slug}`;
-  const shareBlockProps = {
+  const shareProps = {
     url,
-    button: ShareButtonRectangle,
-    buttons: [
-      { network: 'Twitter', icon: TwitterIcon },
-      { network: 'Facebook', icon: FacebookIcon },
-      { network: 'Email', icon: EmailIcon },
-    ],
     text: title,
     longtext: excerpt,
   };
@@ -113,7 +103,7 @@ const PostTemplate = props => {
           <div dangerouslySetInnerHTML={{ __html: bannerCredit }} />
         ) : null}
         <BodyText body={body} fullWidth />
-        <Share className="my-4" shareBlockProps={shareBlockProps} />
+        <Share className="my-4" shareProps={shareProps} />
         <Author className="mb-8" image={authorImage} />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <ReactDisqusComments

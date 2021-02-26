@@ -68,9 +68,8 @@ package = "netlify-plugin-a11y"
   [plugins.inputs]
     resultMode = "warn"
 
-# Commented out until https://github.com/cypress-io/netlify-plugin-cypress/issues/58 is fixed
-#[[plugins]]
-#  # local Cypress plugin will test our site after it is built
-#  package = "netlify-plugin-cypress"
-#    [plugins.inputs]
-#      record = true
+[[plugins]]
+  # local Cypress plugin will test our site after it is built
+  package = "netlify-plugin-cypress"
+    [plugins.inputs]
+      record = true

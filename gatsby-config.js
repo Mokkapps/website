@@ -56,6 +56,7 @@ module.exports = {
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-plugin-sass',
       options: {
