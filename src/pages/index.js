@@ -128,7 +128,7 @@ const IndexPage = props => {
               <FormattedMessage id="homeHireMe" />
             </Button>
             <ScheduleMeetingButton
-              dataCy="home-hire-me-button"
+              dataCy="home-schedule-meeting-button"
               className="w-64 h-16 mb-2 uppercase mx-2"
             />
           </div>

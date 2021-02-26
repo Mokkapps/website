@@ -69,5 +69,7 @@ package = "netlify-plugin-a11y"
     resultMode = "warn"
 
 [[plugins]]
-  # local Cypress plugin will test our site after it is built
-  package = "netlify-plugin-cypress"
+# local Cypress plugin will test our site after it is built
+package = "netlify-plugin-cypress"
+  [plugins.inputs]
+  browser = "chromium"
