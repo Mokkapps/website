@@ -17,6 +17,7 @@ const IconsContainer = styled.div`
   background-color: var(--secondary);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 3px;
+  padding: 0.5rem;
 `;
 
 const SkillsContainer = styled.div`
@@ -41,6 +42,7 @@ const SkillHeading = styled.h3`
   align-items: center;
   padding: 0.5rem;
   height: 100%;
+  text-align: center;
   background-color: var(--secondary);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 3px;

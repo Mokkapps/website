@@ -1,7 +1,7 @@
 const base = {
-  name: 'Mokkapps (Michael Hoffmann) - Freelance Angular Software Engineer',
+  name: 'Mokkapps (Michael Hoffmann) - Senior Freelance Fullstack Developer',
   url: 'https://www.mokkapps.de',
-  desc: 'Freelance software engineer from Germany with focus on Angular.',
+  desc: 'Senior freelance fullstack developer from Germany with focus on Angular & React.',
 };
 
 const config = {
@@ -24,7 +24,7 @@ const config = {
   /* url */
   siteUrl: base.url,
   googleSearchUrl:
-    'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog+angular',
+    'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog',
   // pathPrefix: '',
 
   twitterUsername: '@mokkapps',
@@ -35,7 +35,7 @@ const config = {
     {
       type: 'JavaScript',
       className: 'devicon-javascript-plain colored',
-      level: 'advanced',
+      level: 'expert',
     },
     {
       type: 'C#',
@@ -50,22 +50,22 @@ const config = {
     {
       type: 'TypeScript',
       className: 'devicon-typescript-plain colored',
-      level: 'advanced',
+      level: 'expert',
     },
     {
       type: 'Java',
       className: 'devicon-java-plain-wordmark colored',
-      level: 'intermediate',
+      level: 'advanced',
     },
     {
       type: 'CSS3',
       className: 'devicon-css3-plain-wordmark colored',
-      level: 'advanced',
+      level: 'expert',
     },
     {
       type: 'HTML5',
       className: 'devicon-html5-plain-wordmark colored',
-      level: 'advanced',
+      level: 'expert',
     },
     {
       type: 'Angular',
@@ -75,7 +75,7 @@ const config = {
     {
       type: 'React',
       className: 'devicon-react-original-wordmark colored',
-      level: 'advanced',
+      level: 'expert',
     },
     {
       type: 'Vue',
@@ -328,6 +328,12 @@ const config = {
     },
     {
       type: 'article',
+      title: '2020 inDepth Dev: The Last Guide For Angular Change Detection You\'ll Ever Need',
+      link:
+        'https://indepth.dev/posts/1305/the-last-guide-for-angular-change-detection-youll-ever-need',
+    },
+    {
+      type: 'article',
       title: '2016 ToiletPaper jambit: Kotlin: Das bessere Java?',
       link:
         'https://www.jambit.com/aktuelles/toilet-papers/kotlin-das-bessere-java/',
@@ -335,7 +341,7 @@ const config = {
     {
       type: 'article',
       title:
-        'Concept for an Intermodal Traveller Information System with Real-Time Data Using Complex Event Processing',
+        '2015 IEEE: Concept for an Intermodal Traveller Information System with Real-Time Data Using Complex Event Processing',
       link: 'https://ieeexplore.ieee.org/document/7313462/authors?reload=true',
     },
   ],

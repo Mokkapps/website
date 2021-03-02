@@ -20,7 +20,14 @@ const Availability = () => {
         id={isAvailable ? 'available' : 'notAvailable'}
         defaultMessage=""
         values={{
-          date: <FormattedDate value={availabilityDate} />,
+          date: (
+            <FormattedDate
+              value={availabilityDate}
+              year="numeric"
+              month="long"
+              day="2-digit"
+            />
+          ),
         }}
       />
     </div>

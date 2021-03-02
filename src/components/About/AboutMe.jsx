@@ -72,6 +72,15 @@ const AboutMe = ({ images }) => (
                 <FormattedMessage id="blogLink" />
               </Link>
             ),
+            inDepthDevLink: (
+              <a
+                href="https://indepth.dev/authors/1080/michael-hoffmann"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FormattedMessage id="inDepthDevLink" />
+              </a>
+            ),
             publicationLink: (
               <Link to="/publications">
                 <FormattedMessage id="publicationLink" />
