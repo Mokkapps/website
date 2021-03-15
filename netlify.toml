@@ -68,6 +68,9 @@ package = "netlify-plugin-a11y"
   [plugins.inputs]
     resultMode = "warn"
 
+[[plugins]]
+# runs Cypress tests against the deployed URL
+  package = "netlify-plugin-cypress"
 # [[plugins]]
 # package = "netlify-plugin-cypress"
 #   [plugins.inputs]
