@@ -16,10 +16,10 @@ This article describes the necessary steps to combine Storybook and Stencil in o
 
 > Stencil is a toolchain for building reusable, scalable Design Systems. Generate small, blazing fast, and 100% standards based Web Components that run in every browser.
 
-Stencil combines the "best concepts of the most popular frameworks into a simple build-time tool" like:
+Stencil combines the "best concepts of the most popular frameworks into a simple build-time tool" that provides features like:
 
 - TypeScript support
-- JSX Support
+- JSX support
 - One way data-binding
 
 As you can see from these picked concepts, Stencil is a [React](https://reactjs.org/)-inspired web component library. I previously worked with [lit-element](https://lit-element.polymer-project.org/) but due to the above-mentioned features, I prefer working with Stencil, especially in React projects.
