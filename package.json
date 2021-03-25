@@ -38,7 +38,7 @@
     "cross-env": "^7.0.2",
     "emotion": "^11.0.0",
     "facepaint": "^1.2.1",
-    "gatsby": "^2.32.8",
+    "gatsby": "^3.1.2",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-catch-links": "^2.10.0",
     "gatsby-plugin-feed-mdx": "^1.1.0",
