@@ -51,7 +51,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`, // needs to be after the manifest plugin
-    `gatsby-plugin-preact`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-styled-components`,
