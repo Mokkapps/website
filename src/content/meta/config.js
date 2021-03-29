@@ -1,7 +1,8 @@
 const base = {
   name: 'Mokkapps (Michael Hoffmann) - Senior Freelance Fullstack Developer',
   url: 'https://www.mokkapps.de',
-  desc: 'Senior freelance fullstack developer from Germany with focus on Angular & React.',
+  desc:
+    'Senior freelance fullstack developer from Germany with focus on Angular & React.',
 };
 
 const config = {
@@ -14,7 +15,7 @@ const config = {
 
   socialShareImage: {
     width: 1200,
-    height: 628
+    height: 628,
   },
 
   /* site header */
@@ -23,8 +24,7 @@ const config = {
 
   /* url */
   siteUrl: base.url,
-  googleSearchUrl:
-    'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog',
+  googleSearchUrl: 'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog',
   // pathPrefix: '',
 
   twitterUsername: '@mokkapps',
@@ -115,9 +115,33 @@ const config = {
     },
     {
       id: 'instagram',
-      url: ' https://www.instagram.com/mokkapps/',
+      url: 'https://www.instagram.com/mokkapps/',
       icon: 'instagram',
       ariaLabel: 'Instagram',
+    },
+    {
+      id: 'facebook',
+      url: 'https://www.facebook.com/mokkapps-dev/',
+      icon: 'facebook',
+      ariaLabel: 'Facebook',
+    },
+    {
+      id: 'hashnode',
+      url: 'https://mokkapps.hashnode.dev/',
+      icon: 'hashnode',
+      ariaLabel: 'Hashnode',
+    },
+    {
+      id: 'rss',
+      url: 'https://mokkapps.de/rss.xml',
+      icon: 'rss',
+      ariaLabel: 'Mokkapps RSS Feed',
+    },
+    {
+      id: 'mail',
+      url: 'mailto:mail@mokkapps.de',
+      icon: 'minutemailer',
+      ariaLabel: 'Send email',
     },
   ],
   customers: [
@@ -328,7 +352,8 @@ const config = {
     },
     {
       type: 'article',
-      title: '2020 inDepth Dev: The Last Guide For Angular Change Detection You\'ll Ever Need',
+      title:
+        "2020 inDepth Dev: The Last Guide For Angular Change Detection You'll Ever Need",
       link:
         'https://indepth.dev/posts/1305/the-last-guide-for-angular-change-detection-youll-ever-need',
     },
