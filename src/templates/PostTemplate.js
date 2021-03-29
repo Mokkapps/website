@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
@@ -76,14 +76,14 @@ const PostTemplate = props => {
 
   let seoImage = null;
   if (imageShare) {
-    seoImage = `${config.siteUrl}${imageShare.childImageSharp.fluid.src}`;
+    seoImage = `${config.siteUrl}${imageShare.childImageSharp.gatsbyImageData.src}`;
   } else if (cover) {
-    seoImage = `${config.siteUrl}${cover.childImageSharp.fluid.src}`;
+    seoImage = `${config.siteUrl}${cover.childImageSharp.gatsbyImageData.src}`;
   }
 
   return (
     <Layout>
-      <ArticleWithSidebar authorImage={authorImage} categories={allCategories}>
+      <ArticleWithSidebar categories={allCategories}>
         <Heading title={title} />
         <PostMeta
           className="my-8"
@@ -96,7 +96,9 @@ const PostTemplate = props => {
         />
         {cover ? (
           <div className="flex justify-center">
-            <Img className="mb-4 w-full h-full" fluid={cover.childImageSharp.fluid} />
+            <GatsbyImage
+              image={cover.childImageSharp.gatsbyImageData}
+              className="mb-4 w-full h-full" />
           </div>
         ) : null}
         {bannerCredit ? (
@@ -104,7 +106,7 @@ const PostTemplate = props => {
         ) : null}
         <BodyText body={body} fullWidth />
         <Share className="my-4" shareProps={shareProps} />
-        <Author className="mb-8" image={authorImage} />
+        <Author className="mb-8"  />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <ReactDisqusComments
           className="mt-4"
@@ -137,61 +139,46 @@ PostTemplate.propTypes = {
 
 export default PostTemplate;
 
-export const query = graphql`
-  query PostTemplateQuery($slug: String!) {
-    allEdges: allMdx {
-      edges {
-        node {
-          frontmatter {
-            categories
-          }
-        }
-      }
-    }
-    post: mdx(fields: { slug: { eq: $slug } }) {
-      body
-      fileAbsolutePath
-      excerpt
-      fields {
-        slug
-        prefix
-      }
-      frontmatter {
-        title
-        canonical
-        bannerCredit
-        imageShare {
-          childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        categories
-        cover {
-          childImageSharp {
-            fluid(maxHeight: 700) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
-        }
-      }
-      timeToRead
-    }
-    file(relativePath: { eq: "about.jpg" }) {
-      childImageSharp {
-        fixed(width: 60, height: 60) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
-    }
-    authorImage: file(relativePath: { eq: "about.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid_withWebp
+export const query = graphql`query PostTemplateQuery($slug: String!) {
+  allEdges: allMdx {
+    edges {
+      node {
+        frontmatter {
+          categories
         }
       }
     }
   }
+  post: mdx(fields: {slug: {eq: $slug}}) {
+    body
+    fileAbsolutePath
+    excerpt
+    fields {
+      slug
+      prefix
+    }
+    frontmatter {
+      title
+      canonical
+      bannerCredit
+      imageShare {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
+        }
+      }
+      categories
+      cover {
+        childImageSharp {
+          gatsbyImageData(height: 700, layout: CONSTRAINED)
+        }
+      }
+    }
+    timeToRead
+  }
+  file(relativePath: {eq: "about.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 60, height: 60, layout: FIXED)
+    }
+  }
+}
 `;

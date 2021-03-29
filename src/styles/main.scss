@@ -200,6 +200,14 @@
     @apply mr-0 absolute top-0 leading-none;
   }
 
+  .fluid-image {
+    @apply rounded-lg #{!important};
+    @apply flex #{!important};
+    @apply m-auto #{!important};
+    @apply w-full #{!important};
+    @apply lg:w-2/3 #{!important};
+  }
+
   @screen sm {
     .stylistic-quote-mark {
       @apply block mr-2;

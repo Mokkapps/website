@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import content from '../../content/meta/config';
@@ -23,11 +23,6 @@ const Description = styled.div`
   padding: 0.5rem;
 `;
 
-const Image = styled(Img)`
-  width: 200px;
-  height: 200px;
-`;
-
 const Name = styled.h3`
   text-align: center;
 `;
@@ -44,9 +39,15 @@ const SocialLinks = styled.div`
   padding: 0.2rem;
 `;
 
-const Author = ({ image, className }) => (
+const Author = ({ className }) => (
   <Container className={className}>
-    <Image fluid={image.childImageSharp.fluid} />
+    <StaticImage
+      alt="Michael Hoffmann (Mokkapps)"
+      width={200}
+      height={200}
+      className="my-4 rounded-lg"
+      src="../../images/about.jpg"
+    />
     <Description>
       <Name>Michael Hoffmann</Name>
       <Text>
@@ -63,7 +64,6 @@ const Author = ({ image, className }) => (
 );
 
 Author.propTypes = {
-  image: PropTypes.object.isRequired,
   className: PropTypes.string,
 };
 

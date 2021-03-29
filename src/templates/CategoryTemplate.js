@@ -95,40 +95,37 @@ PageTemplate.propTypes = {
 
 export default PageTemplate;
 
-export const query = graphql`
-  query CategoryTemplateQuery($category: String!) {
-    allCategories: allMdx(filter: {frontmatter: {categories: {ne: ""}}}) {
-      group(field: frontmatter___categories) {
-        fieldValue
-        totalCount
-      }
-    }
-    posts: allMdx(
-      limit: 1000
-      sort: { fields: [fields___prefix], order: DESC }
-      filter: { frontmatter: { categories: { eq: $category } } }
-    ) {
+export const query = graphql`query CategoryTemplateQuery($category: String!) {
+  allCategories: allMdx(filter: {frontmatter: {categories: {ne: ""}}}) {
+    group(field: frontmatter___categories) {
+      fieldValue
       totalCount
-      edges {
-        node {
-          fields {
-            slug
-            prefix
-          }
-          excerpt
-          frontmatter {
-            title
-            categories
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 700) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+    }
+  }
+  posts: allMdx(
+    limit: 1000
+    sort: {fields: [fields___prefix], order: DESC}
+    filter: {frontmatter: {categories: {eq: $category}}}
+  ) {
+    totalCount
+    edges {
+      node {
+        fields {
+          slug
+          prefix
+        }
+        excerpt
+        frontmatter {
+          title
+          categories
+          cover {
+            childImageSharp {
+              gatsbyImageData(width: 700, layout: CONSTRAINED)
             }
           }
         }
       }
     }
   }
+}
 `;

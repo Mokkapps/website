@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import Card from '../Card';
@@ -13,7 +13,7 @@ const StyledCard = styled(Card)`
   background: var(--secondary);
 `;
 
-const ProjectImage = styled(Img)`
+const ProjectImage = styled(GatsbyImage)`
   margin: 0.3rem;
   min-height: 200px;
 `;
@@ -30,7 +30,7 @@ const ProjectCard = ({
   className,
 }) => (
   <StyledCard className={className} url={urls.page} clickable id={id}>
-    <ProjectImage fluid={asset.childImageSharp.fluid} />
+    <ProjectImage alt={`${title} Image`} image={asset} />
     <ProjectCardDescription
       minimal={minimal}
       projectName={title}

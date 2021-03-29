@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import config from '../content/meta/config';
@@ -10,15 +9,12 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
-import FluidImage from '../components/FluidImage';
 import LinkButton from '../components/LinkButton';
 import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
+import { StaticImage } from "gatsby-plugin-image";
 
-const ContactPage = props => {
-  const {
-    data: { contactImage },
-  } = props;
+const ContactPage = () => {
   const { siteUrl, siteTitlePostfix } = config;
 
   return (
@@ -26,7 +22,7 @@ const ContactPage = props => {
       <Article>
         <Heading i18nId="contactMe" />
         <section className="flex flex-col justify-center items-center">
-          <FluidImage image={contactImage} />
+          <StaticImage alt="Michael Hoffmann Image" className="fluid-image" src="../images/contact.jpg" />
           <LinkButton
             className="mt-2 mb-4"
             dataCy="contact-about-me-button"
@@ -56,15 +52,3 @@ ContactPage.propTypes = {
 };
 
 export default ContactPage;
-
-export const query = graphql`
-  query {
-    contactImage: file(relativePath: { eq: "contact.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`;

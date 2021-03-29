@@ -48,46 +48,43 @@ SimpleBlogPage.propTypes = {
 
 export default SimpleBlogPage;
 
-export const query = graphql`
-  query {
-    allEdges: allMdx {
-      edges {
-        node {
-          frontmatter {
-            categories
-          }
+export const query = graphql`{
+  allEdges: allMdx {
+    edges {
+      node {
+        frontmatter {
+          categories
         }
       }
     }
-    allBlogPosts: allMdx(
-      filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
-    ) {
-      totalCount
-    }
-    posts: allMdx(
-      filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
-      sort: { fields: [fields___prefix], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            categories
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 700) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+  }
+  allBlogPosts: allMdx(
+    filter: {fields: {source: {eq: "posts"}, slug: {ne: null}}}
+  ) {
+    totalCount
+  }
+  posts: allMdx(
+    filter: {fields: {source: {eq: "posts"}, slug: {ne: null}}}
+    sort: {fields: [fields___prefix], order: DESC}
+  ) {
+    edges {
+      node {
+        excerpt(pruneLength: 250)
+        fields {
+          slug
+          prefix
+        }
+        frontmatter {
+          title
+          categories
+          cover {
+            childImageSharp {
+              gatsbyImageData(width: 700, layout: CONSTRAINED)
             }
           }
         }
       }
     }
   }
+}
 `;

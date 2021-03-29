@@ -123,9 +123,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(width: 700, layout: CONSTRAINED)
           }
         }
       }

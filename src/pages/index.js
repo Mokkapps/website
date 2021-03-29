@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
 
 import styled from 'styled-components';
-import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
@@ -24,13 +24,6 @@ import BlogPostCard from '../components/BlogPostCard';
 import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 import Testimonials from '../components/Testimonials';
-
-const Image = styled(Img)`
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-`;
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -56,7 +49,7 @@ const Projects = styled.section`
 
 const IndexPage = props => {
   const {
-    data: { projectAssets, latestPosts, file },
+    data: { projectAssets, latestPosts },
   } = props;
 
   const posts = latestPosts.edges.map(edge => edge.node);
@@ -70,8 +63,8 @@ const IndexPage = props => {
           <h1 className="text-center mb-10 lg:mb-20" data-cy="home-heading">
             <FormattedMessage id="homeTitle" />
           </h1>
-          <div className="flex flex-col md:flex-row">
-            <div className="w-full mr-10">
+          <div className="flex flex-wrap">
+            <div className="w-full md:w-1/2">
               <h2 className="text-center lg:text-left">
                 <FormattedMessage id="homeDoYouNeed" />
               </h2>
@@ -98,11 +91,18 @@ const IndexPage = props => {
                 </ListElement>
               </UnorderedList>
             </div>
-            <Image
-              alt="Michael Hoffmann Image"
-              title="Michael Hoffmann"
-              fluid={file.childImageSharp.fluid}
-            />
+            <div className="w-full md:w-1/2">
+              <StaticImage
+                alt="Michael Hoffmann Image"
+                title="Michael Hoffmann"
+                placeholder="blurred"
+                layout="constrained"
+                aspectRatio={1}
+                height={500}
+                class="rounded-lg shadow-md"
+                src="../images/contact.jpg"
+              />
+            </div>
           </div>
           <p className="text-center my-10 text-xl">
             <FormattedMessage id="homeMyName" />{' '}
@@ -204,21 +204,12 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const query = graphql`
-  query {
-    file(relativePath: { eq: "contact.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1900, maxHeight: 1900) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
+  {
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(width: 600, layout: CONSTRAINED)
           }
         }
       }
@@ -237,9 +228,7 @@ export const query = graphql`
             title
             cover {
               childImageSharp {
-                fluid(maxWidth: 350) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(width: 350, layout: CONSTRAINED)
               }
             }
           }

@@ -11,8 +11,8 @@ import ProjectList from '../components/ProjectList';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-import FluidImage from '../components/FluidImage';
 import Seo from '../components/Seo';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const MarginCenteredWrapper = styled.div`
   width: 100%;
@@ -42,7 +42,7 @@ const Heading2 = styled.h2`
 
 const ProjectsPage = props => {
   const {
-    data: { projectAssets, consultingImage },
+    data: { projectAssets },
   } = props;
 
   const { siteUrl, siteTitlePostfix, customers } = config;
@@ -59,7 +59,11 @@ const ProjectsPage = props => {
             <FormattedMessage id="detailedProjectList" />
           </span>
           <MarginCenteredWrapper className="mt-8">
-            <FluidImage image={consultingImage} />
+            <StaticImage
+              alt="Michael Hoffmann Image"
+              className="fluid-image"
+              src="../../images/consulting1.jpg"
+            />
           </MarginCenteredWrapper>
           <MarginCenteredWrapper className="my-8">
             <span>
@@ -96,21 +100,12 @@ ProjectsPage.propTypes = {
 export default ProjectsPage;
 
 export const query = graphql`
-  query {
-    consultingImage: file(relativePath: { eq: "consulting1.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1500) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
+  {
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(width: 600, layout: CONSTRAINED)
           }
         }
       }

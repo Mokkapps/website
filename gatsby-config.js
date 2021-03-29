@@ -67,9 +67,9 @@ module.exports = {
     },
     `gatsby-plugin-resolve-src`, // resolve imports from src subdir
     `gatsby-plugin-catch-links`, // intercept markdown links
-    // Following two are necessary for gatsby-image
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

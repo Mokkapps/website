@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedDate, FormattedMessage } from 'react-intl';
@@ -11,11 +11,6 @@ const Author = styled.section`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`;
-
-const AuthorImg = styled(Img)`
-  border-radius: 100%;
-  margin-right: 0.5rem;
 `;
 
 const AuthorTextContainer = styled.div`
@@ -45,7 +40,6 @@ const PostMeta = props => {
     prefix,
     timeToRead,
     categories,
-    authorImage,
     className,
     categoryLink = true,
     icons: {
@@ -58,9 +52,13 @@ const PostMeta = props => {
 
   return [
     <Author className={`mb-8 ${className}`} key="author">
-      <AuthorImg
-        className="meta__author-icon"
-        fixed={authorImage.childImageSharp.fixed}
+      <StaticImage
+        alt="Michael Hoffmann (Mokkapps)"
+        className="rounded-full mr-1"
+        layout="fixed"
+        width={60}
+        height={60}
+        src="../../images/about.jpg"
       />
       <AuthorTextContainer>
         <span className="mb-2 flex items-center">

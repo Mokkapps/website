@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
 
 import Card from '../Card';
@@ -12,7 +12,7 @@ const StyledCard = styled(Card)`
   background: var(--secondary);
 `;
 
-const ProjectImage = styled(Img)`
+const ProjectImage = styled(GatsbyImage)`
   margin: 0.3rem;
   min-height: 200px;
 `;
@@ -21,7 +21,7 @@ const BlogPostCard = props => {
   const { url, id, asset, title } = props;
   return (
     <StyledCard className="p-4" url={url} id={id}>
-      <ProjectImage fluid={asset.childImageSharp.fluid} />
+      <ProjectImage alt={`${title} Image`} placeholder="blurred" image={asset.childImageSharp.gatsbyImageData} />
       <h3 className="text-secondary-text p-2 flex items-center h-full">{title}</h3>
     </StyledCard>
   );

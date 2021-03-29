@@ -1,12 +1,16 @@
 import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
+import { getImage } from 'gatsby-plugin-image';
 
 export const getAsset = (edges, imageName) => {
-  return edges
+  const node = edges
     .map(e => e.node)
-    .filter(node => node.childImageSharp)
-    .find(node => node.childImageSharp.fluid.src.includes(imageName));
+    .filter(n => n.childImageSharp)
+    .find(n =>
+      n.childImageSharp.gatsbyImageData.images.fallback.src.includes(imageName)
+    );
+  return getImage(node.childImageSharp.gatsbyImageData);
 };
 
 export function sendCustomAnalyticsEvent(eventName) {

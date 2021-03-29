@@ -84,7 +84,7 @@ const BlogPostShareImage = props => {
           className="z-0"
           width={width}
           height={height}
-          siteCover={post.frontmatter.cover.childImageSharp.fixed.src}
+          siteCover={post.frontmatter.cover.childImageSharp.gatsbyImageData.src}
         />
       )}
       <Square className="square" width={width} height={height} />
@@ -94,29 +94,26 @@ const BlogPostShareImage = props => {
 
 export default BlogPostShareImage;
 
-export const pageQuery = graphql`
-  query BlogPostShareImage($slug: String!) {
-    post: mdx(fields: { slug: { eq: $slug } }) {
-      body
-      fileAbsolutePath
-      excerpt
-      fields {
-        slug
-        prefix
-      }
-      frontmatter {
-        title
-        canonical
-        categories
-        cover {
-          childImageSharp {
-            fixed(width: 1200, height: 628) {
-              ...GatsbyImageSharpFixed_withWebp_noBase64
-            }
-          }
+export const pageQuery = graphql`query BlogPostShareImage($slug: String!) {
+  post: mdx(fields: {slug: {eq: $slug}}) {
+    body
+    fileAbsolutePath
+    excerpt
+    fields {
+      slug
+      prefix
+    }
+    frontmatter {
+      title
+      canonical
+      categories
+      cover {
+        childImageSharp {
+          gatsbyImageData(width: 1200, height: 628, placeholder: NONE, layout: FIXED)
         }
       }
-      timeToRead
     }
+    timeToRead
   }
+}
 `;

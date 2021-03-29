@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -6,8 +5,8 @@ import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
-import FluidImage from '../FluidImage';
-import { yearsOfExperience } from "../../utils/helper";
+import { yearsOfExperience } from '../../utils/helper';
+import { StaticImage } from "gatsby-plugin-image";
 
 const SocialLinks = styled.div`
   display: flex;
@@ -32,9 +31,9 @@ const AboutParagraph = styled.p`
   text-justify: inter-word;
 `;
 
-const AboutMe = ({ images }) => (
+const AboutMe = () => (
   <Container>
-    <FluidImage image={images.intro} />
+    <StaticImage alt="Michael Hoffmann Image" className="fluid-image" src="../../images/about.jpg" />
     <SocialLinks className="mt-8" data-cy="about-social-links">
       {config.socialLinks.map(link => (
         <SocialLink link={link} key={link.id} />
@@ -132,8 +131,6 @@ const AboutMe = ({ images }) => (
   </Container>
 );
 
-AboutMe.propTypes = {
-  images: PropTypes.object.isRequired,
-};
+AboutMe.propTypes = {};
 
 export default AboutMe;

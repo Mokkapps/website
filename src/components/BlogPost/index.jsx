@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from 'gatsby';
 import { PropTypes } from 'prop-types';
 
@@ -28,7 +28,9 @@ const BlogPost = props => {
       key={slug}
     >
       {cover ? (
-        <Img className="image mb-4 lg:mr-4" fluid={cover.childImageSharp.fluid} />
+        <GatsbyImage
+          image={cover.childImageSharp.gatsbyImageData}
+          className="image mb-4 lg:mr-4" />
       ) : null}
       <div className="w-full lg:w-2/3">
         <h3>{title}</h3>
