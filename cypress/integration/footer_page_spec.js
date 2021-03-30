@@ -8,11 +8,15 @@ describe('Footer Test', () => {
   it('includes the social links', () => {
     cy.get('[data-cy=footer-social-links]')
       .children()
-      .should('have.length', 5);
+      .should('have.length', 9);
     cy.get('[data-cy=social-link-twitter]');
     cy.get('[data-cy=social-link-dev-dot-to]');
     cy.get('[data-cy=social-link-linkedin]');
     cy.get('[data-cy=social-link-instagram]');
+    cy.get('[data-cy=social-link-facebook]');
+    cy.get('[data-cy=social-link-hashnode]');
+    cy.get('[data-cy=social-link-rss]');
+    cy.get('[data-cy=social-link-minutemailer]');
   });
 
   it('includes link to privacy policy and legal notice', () => {
@@ -69,6 +73,39 @@ describe('Footer Test', () => {
       .filter(link => link.id === 'instagram')
       .map(link => link.url);
     cy.get('[data-cy=social-link-instagram]').should(
+      'have.attr',
+      'href',
+      url[0]
+    );
+  });
+
+  it('navigates to facebook page', () => {
+    const url = config.socialLinks
+      .filter(link => link.id === 'facebook')
+      .map(link => link.url);
+    cy.get('[data-cy=social-link-facebook]').should(
+      'have.attr',
+      'href',
+      url[0]
+    );
+  });
+
+  it('navigates to RSS feed', () => {
+    const url = config.socialLinks
+      .filter(link => link.id === 'rss')
+      .map(link => link.url);
+    cy.get('[data-cy=social-link-rss]').should(
+      'have.attr',
+      'href',
+      url[0]
+    );
+  });
+
+  it('navigates to send mail', () => {
+    const url = config.socialLinks
+      .filter(link => link.id === 'mail')
+      .map(link => link.url);
+    cy.get('[data-cy=social-link-minutemailer]').should(
       'have.attr',
       'href',
       url[0]

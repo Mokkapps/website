@@ -30,6 +30,7 @@ const BlogPost = props => {
       {cover ? (
         <GatsbyImage
           image={cover.childImageSharp.gatsbyImageData}
+          alt={`${title} Image`}
           className="image mb-4 lg:mr-4" />
       ) : null}
       <div className="w-full lg:w-2/3">

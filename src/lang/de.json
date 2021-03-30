@@ -18,6 +18,8 @@
   "using": "und mit",
   "minuteRead": "Minuten Lesezeit",
   "contactMe": "KONTAKTIEREN SIE MICH",
+  "contactSuccess": "NACHRICHT GESENDET",
+  "contactSuccessDescr": "Vielen Dank! Ihre Nachricht ist bei mir eingegangen. Ich werde mich so rasch wie möglich bei Ihnen zurückmelden.",
   "yourMessage": "Ihre Nachricht",
   "send": "Senden",
   "privacyPolicy": "Datenschutzerklärung",

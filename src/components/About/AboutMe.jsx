@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import config from '../../content/meta/config';
 import SocialLink from '../SocialLink';
 import { yearsOfExperience } from '../../utils/helper';
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from 'gatsby-plugin-image';
 
 const SocialLinks = styled.div`
   display: flex;
@@ -33,7 +33,11 @@ const AboutParagraph = styled.p`
 
 const AboutMe = () => (
   <Container>
-    <StaticImage alt="Michael Hoffmann Image" className="fluid-image" src="../../images/about.jpg" />
+    <StaticImage
+      alt={config.baseName}
+      className="fluid-image"
+      src="../../images/about.jpg"
+    />
     <SocialLinks className="mt-8" data-cy="about-social-links">
       {config.socialLinks.map(link => (
         <SocialLink link={link} key={link.id} />

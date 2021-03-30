@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { getSrc, StaticImage } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
 
@@ -12,7 +13,6 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
-import { StaticImage } from 'gatsby-plugin-image';
 
 const MarginCenteredWrapper = styled.div`
   width: 100%;
@@ -42,7 +42,7 @@ const Heading2 = styled.h2`
 
 const ProjectsPage = props => {
   const {
-    data: { projectAssets },
+    data: { projectAssets, seoImage },
   } = props;
 
   const { siteUrl, siteTitlePostfix, customers } = config;
@@ -60,9 +60,9 @@ const ProjectsPage = props => {
           </span>
           <MarginCenteredWrapper className="mt-8">
             <StaticImage
-              alt="Michael Hoffmann Image"
+              alt={config.baseName}
               className="fluid-image"
-              src="../../images/consulting1.jpg"
+              src="../images/consulting1.jpg"
             />
           </MarginCenteredWrapper>
           <MarginCenteredWrapper className="my-8">
@@ -79,7 +79,7 @@ const ProjectsPage = props => {
           </MarginCenteredWrapper>
         </MarginCenteredWrapper>
         <Heading2>
-          <FormattedMessage id="privateProjectsHeading"></FormattedMessage>
+          <FormattedMessage id="privateProjectsHeading" />
         </Heading2>
         <ProjectList projectAssets={projectAssets} />
       </Article>
@@ -87,6 +87,7 @@ const ProjectsPage = props => {
       <Seo
         url={siteUrl}
         title={`Projects${siteTitlePostfix}`}
+        image={getSrc(seoImage)}
         description="A list of all private and business projects from Michael Hoffmann"
       />
     </Layout>
@@ -101,11 +102,21 @@ export default ProjectsPage;
 
 export const query = graphql`
   {
+    seoImage: file(relativePath: { eq: "og/og-projects.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FIXED)
+      }
+    }
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(width: 600, layout: CONSTRAINED)
+            gatsbyImageData(
+              width: 600
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
       }

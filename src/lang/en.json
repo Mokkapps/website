@@ -18,6 +18,8 @@
   "using": "using",
   "minuteRead": "min read",
   "contactMe": "CONTACT ME",
+  "contactSuccess": "MAIL SENT SUCCESSFULLY",
+  "contactSuccessDescr": "Thanks for your message. I'll answer your request as quick as possible.",
   "privacyPolicy": "Privacy Policy",
   "legalNotice": "Legal Notice",
   "talks": "TALKS",

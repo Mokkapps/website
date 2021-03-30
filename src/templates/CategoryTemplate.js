@@ -16,7 +16,7 @@ import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
 import GoogleSearchLink from '../components/GoogleSearchLink';
 
-import { metaIcons, getAllCategories, capitalize } from '../utils/helper';
+import { metaIcons, capitalize } from '../utils/helper';
 import { FormattedMessage } from 'react-intl';
 
 const Introduction = styled.div`
@@ -120,7 +120,7 @@ export const query = graphql`query CategoryTemplateQuery($category: String!) {
           categories
           cover {
             childImageSharp {
-              gatsbyImageData(width: 700, layout: CONSTRAINED)
+              gatsbyImageData(width: 700, layout: CONSTRAINED, placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }

@@ -10,7 +10,7 @@
   "scripts": {
     "start": "gatsby develop -p 8000",
     "prebuild": "npm run preload-fonts",
-    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "gatsby build --log-pages",
     "build:dev": "gatsby build",
     "generate-social-card": "node generate/social-card.js",
     "generate-blogpost": "node generate/blogpost.js",

@@ -1,30 +1,25 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
 
 import Footer from '../components/Footer';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import BodyText from '../components/BodyText';
 import Seo from '../components/Seo';
+import Heading from '../components/Heading';
 
-const SuccessPage = props => {
-  const {
-    data: {
-      success,
-    },
-  } = props;
-
+const SuccessPage = () => {
   const { siteTitlePostfix, siteUrl } = config;
 
   return (
     <Layout>
       <Article>
-        <Heading title="SUCCESS" />
-        <BodyText body={success.body} />
+        <Heading i18nId="contactSuccess" />
+        <section className="flex flex-col justify-center items-center my-8">
+          <FormattedMessage id={'contactSuccessDescr'} />
+        </section>
       </Article>
       <Footer />
       <Seo
@@ -36,18 +31,6 @@ const SuccessPage = props => {
   );
 };
 
-SuccessPage.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+SuccessPage.propTypes = {};
 
 export default SuccessPage;
-
-export const query = graphql`
-  query {
-    success: mdx(
-      fileAbsolutePath: { regex: "/content/parts/contactSuccess/" }
-    ) {
-      body
-    }
-  }
-`;

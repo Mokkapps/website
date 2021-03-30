@@ -1,7 +1,9 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { StaticImage } from 'gatsby-plugin-image';
+import { getSrc, StaticImage } from 'gatsby-plugin-image';
+import { navigate } from 'gatsby-link';
+import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
 
@@ -11,8 +13,6 @@ import Article from '../components/Article';
 import Footer from '../components/Footer';
 import Seo from '../components/Seo';
 import Button from '../components/Button';
-import { navigate } from 'gatsby-link';
-import { FormattedMessage } from 'react-intl';
 import {
   getAsset,
   sendCustomAnalyticsEvent,
@@ -49,7 +49,7 @@ const Projects = styled.section`
 
 const IndexPage = props => {
   const {
-    data: { projectAssets, latestPosts },
+    data: { projectAssets, latestPosts, seoImage },
   } = props;
 
   const posts = latestPosts.edges.map(edge => edge.node);
@@ -93,7 +93,7 @@ const IndexPage = props => {
             </div>
             <div className="w-full md:w-1/2">
               <StaticImage
-                alt="Michael Hoffmann Image"
+                alt={config.baseName}
                 title="Michael Hoffmann"
                 placeholder="blurred"
                 layout="constrained"
@@ -192,6 +192,7 @@ const IndexPage = props => {
         url={siteUrl}
         title={`Home${siteTitlePostfix}`}
         description={siteDescription}
+        image={getSrc(seoImage)}
       />
     </Layout>
   );
@@ -205,11 +206,21 @@ export default IndexPage;
 
 export const query = graphql`
   {
+    seoImage: file(relativePath: { eq: "og/og-home.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FIXED)
+      }
+    }
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(width: 600, layout: CONSTRAINED)
+            gatsbyImageData(
+              width: 600
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
       }
@@ -228,7 +239,12 @@ export const query = graphql`
             title
             cover {
               childImageSharp {
-                gatsbyImageData(width: 350, layout: CONSTRAINED)
+                gatsbyImageData(
+                  width: 350
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }

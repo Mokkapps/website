@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 import content from '../../content/meta/config';
 import SocialLink from '../SocialLink';
-import { FormattedMessage } from 'react-intl';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 
 const Container = styled.section`
@@ -42,7 +42,7 @@ const SocialLinks = styled.div`
 const Author = ({ className }) => (
   <Container className={className}>
     <StaticImage
-      alt="Michael Hoffmann (Mokkapps)"
+      alt={content.baseName}
       width={200}
       height={200}
       className="my-4 rounded-lg"

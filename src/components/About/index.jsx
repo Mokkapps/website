@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import Skills from '../Skills';
 import AboutMe from './AboutMe';
 import HowIWork from './HowIWork';
 import Testimonials from '../Testimonials';
-import { StaticImage } from 'gatsby-plugin-image';
+import config from '../../content/meta/config';
 
 const Heading = styled.h2`
   text-align: center;
@@ -25,7 +26,11 @@ const About = () => (
       <Heading className="mb-8">
         <FormattedMessage id="howIWork" />
       </Heading>
-      <StaticImage alt="Consulting Image" className="my-8 fluid-image" src="../../images/consulting2.jpg" />
+      <StaticImage
+        alt={config.baseName}
+        className="my-8 fluid-image"
+        src="../../images/consulting2.jpg"
+      />
       <HowIWork />
     </div>
   </section>

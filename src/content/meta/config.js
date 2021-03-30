@@ -11,7 +11,7 @@ const config = {
   baseDesc: `${base.desc}`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
-  defaultSeoImage: `/images/me.jpg`,
+  defaultSeoImage: `/images/og/og-home.jpg`,
 
   socialShareImage: {
     width: 1200,
@@ -133,7 +133,7 @@ const config = {
     },
     {
       id: 'rss',
-      url: 'https://mokkapps.de/rss.xml',
+      url: `${base.url}/rss.xml`,
       icon: 'rss',
       ariaLabel: 'Mokkapps RSS Feed',
     },

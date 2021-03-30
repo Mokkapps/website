@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { FormattedDate, FormattedMessage } from 'react-intl';
 
 import { capitalize } from '../../utils/helper';
+import config from '../../content/meta/config';
 
 const Author = styled.section`
   display: flex;
@@ -53,8 +54,8 @@ const PostMeta = props => {
   return [
     <Author className={`mb-8 ${className}`} key="author">
       <StaticImage
-        alt="Michael Hoffmann (Mokkapps)"
-        className="rounded-full mr-1"
+        alt={config.baseName}
+        className="rounded-full mr-4"
         layout="fixed"
         width={60}
         height={60}

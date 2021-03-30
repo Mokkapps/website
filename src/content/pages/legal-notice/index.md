@@ -13,7 +13,7 @@ Holzapfelkreuther Straße 19
 
 Telephone: +4915141257551
 
-E-Mail: mailto:mail@mokkapps.de
+E-Mail: mail@mokkapps.de
 
 Internet address: https://www.mokkapps.de
 

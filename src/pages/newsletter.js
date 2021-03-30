@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { graphql } from 'gatsby';
+import { getSrc } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
 
@@ -23,7 +25,10 @@ const NewsletterContainer = styled.div`
   justify-content: center;
 `;
 
-const NewsletterPage = () => {
+const NewsletterPage = props => {
+  const {
+    data: { seoImage },
+  } = props;
   const { siteTitlePostfix, siteUrl } = config;
 
   return (
@@ -59,9 +64,20 @@ const NewsletterPage = () => {
         url={siteUrl}
         title={`Newsletter${siteTitlePostfix}`}
         description="Subscribe for the newsletter to stay up-do-date on Mokkapps topics"
+        image={getSrc(seoImage)}
       />
     </Layout>
   );
 };
 
 export default NewsletterPage;
+
+export const query = graphql`
+  {
+    seoImage: file(relativePath: { eq: "og/og-newsletter.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FIXED)
+      }
+    }
+  }
+`;

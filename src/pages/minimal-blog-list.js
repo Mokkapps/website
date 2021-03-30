@@ -79,7 +79,7 @@ export const query = graphql`{
           categories
           cover {
             childImageSharp {
-              gatsbyImageData(width: 700, layout: CONSTRAINED)
+              gatsbyImageData(width: 700, layout: CONSTRAINED, placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }

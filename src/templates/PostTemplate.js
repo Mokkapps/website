@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
@@ -57,7 +57,6 @@ const PostTemplate = props => {
         timeToRead,
       },
       file,
-      authorImage,
     },
     pageContext: { next, prev },
   } = props;
@@ -98,7 +97,8 @@ const PostTemplate = props => {
           <div className="flex justify-center">
             <GatsbyImage
               image={cover.childImageSharp.gatsbyImageData}
-              className="mb-4 w-full h-full" />
+              className="mb-4 w-full h-full"
+            />
           </div>
         ) : null}
         {bannerCredit ? (
@@ -106,7 +106,7 @@ const PostTemplate = props => {
         ) : null}
         <BodyText body={body} fullWidth />
         <Share className="my-4" shareProps={shareProps} />
-        <Author className="mb-8"  />
+        <Author className="mb-8" />
         <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
         <ReactDisqusComments
           className="mt-4"
@@ -139,46 +139,63 @@ PostTemplate.propTypes = {
 
 export default PostTemplate;
 
-export const query = graphql`query PostTemplateQuery($slug: String!) {
-  allEdges: allMdx {
-    edges {
-      node {
-        frontmatter {
-          categories
+export const query = graphql`
+  query PostTemplateQuery($slug: String!) {
+    allEdges: allMdx {
+      edges {
+        node {
+          frontmatter {
+            categories
+          }
         }
       }
     }
-  }
-  post: mdx(fields: {slug: {eq: $slug}}) {
-    body
-    fileAbsolutePath
-    excerpt
-    fields {
-      slug
-      prefix
-    }
-    frontmatter {
-      title
-      canonical
-      bannerCredit
-      imageShare {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+    post: mdx(fields: { slug: { eq: $slug } }) {
+      body
+      fileAbsolutePath
+      excerpt
+      fields {
+        slug
+        prefix
+      }
+      frontmatter {
+        title
+        canonical
+        bannerCredit
+        imageShare {
+          childImageSharp {
+            gatsbyImageData(
+              width: 500
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
+          }
+        }
+        categories
+        cover {
+          childImageSharp {
+            gatsbyImageData(
+              height: 700
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
+          }
         }
       }
-      categories
-      cover {
-        childImageSharp {
-          gatsbyImageData(height: 700, layout: CONSTRAINED)
-        }
+      timeToRead
+    }
+    file(relativePath: { eq: "about.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 60
+          height: 60
+          layout: FIXED
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+        )
       }
     }
-    timeToRead
   }
-  file(relativePath: {eq: "about.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 60, height: 60, layout: FIXED)
-    }
-  }
-}
 `;

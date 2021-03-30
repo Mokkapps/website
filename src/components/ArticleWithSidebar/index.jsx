@@ -30,7 +30,6 @@ const ArticleWithSidebar = ({ children, categories }) => (
 
 ArticleWithSidebar.propTypes = {
   children: PropTypes.node.isRequired,
-  authorImage: PropTypes.object.isRequired,
   categories: PropTypes.array,
 };
 

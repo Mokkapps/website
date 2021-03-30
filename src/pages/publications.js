@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { getSrc } from "gatsby-plugin-image";
 
 import config from '../content/meta/config';
 import { getAsset } from '../utils/helper';
@@ -44,7 +45,7 @@ const TalkText = styled.p`
 
 const PublicationsPage = props => {
   const {
-    data: { talkAssets },
+    data: { talkAssets, seoImage },
   } = props;
   const { edges } = talkAssets;
   const { siteTitlePostfix, publications, siteUrl } = config;
@@ -106,6 +107,7 @@ const PublicationsPage = props => {
         url={siteUrl}
         title={`Publications${siteTitlePostfix}`}
         description="A list of talks and articles from Michael Hoffmann"
+        image={getSrc(seoImage)}
       />
     </Layout>
   );
@@ -119,11 +121,21 @@ export default PublicationsPage;
 
 export const query = graphql`
   query {
+    seoImage: file(relativePath: { eq: "og/og-publications.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FIXED)
+      }
+    }
     talkAssets: allFile(filter: { absolutePath: { regex: "/talks/" } }) {
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(width: 700, layout: CONSTRAINED)
+            gatsbyImageData(
+              width: 700
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
       }

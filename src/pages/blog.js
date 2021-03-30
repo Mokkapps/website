@@ -17,6 +17,7 @@ import CategorySelection from '../components/CategorySelection';
 import { metaIcons, getAllCategories } from '../utils/helper';
 
 import './style.scss';
+import { getSrc } from 'gatsby-plugin-image';
 
 const Container = styled.div`
   display: flex;
@@ -28,6 +29,7 @@ const Container = styled.div`
 const BlogPage = props => {
   const {
     data: {
+      seoImage,
       posts: { edges },
       allEdges,
     },
@@ -37,6 +39,8 @@ const BlogPage = props => {
   const categories = getAllCategories(allEdges);
 
   const { siteUrl, siteTitlePostfix } = config;
+
+  console.log('SRC', getSrc(seoImage));
 
   return (
     <Layout>
@@ -60,6 +64,7 @@ const BlogPage = props => {
       <Seo
         url={siteUrl}
         title={`Blog${siteTitlePostfix}`}
+        image={getSrc(seoImage)}
         description="Blog posts about software engineering and career"
       />
     </Layout>
@@ -73,43 +78,54 @@ BlogPage.propTypes = {
 
 export default BlogPage;
 
-export const query = graphql`{
-  allEdges: allMdx {
-    edges {
-      node {
-        frontmatter {
-          categories
+export const query = graphql`
+  {
+    seoImage: file(relativePath: { eq: "og/og-blog.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FIXED)
+      }
+    }
+    allEdges: allMdx {
+      edges {
+        node {
+          frontmatter {
+            categories
+          }
         }
       }
     }
-  }
-  allBlogPosts: allMdx(
-    filter: {fields: {source: {eq: "posts"}, slug: {ne: null}}}
-  ) {
-    totalCount
-  }
-  posts: allMdx(
-    filter: {fields: {source: {eq: "posts"}, slug: {ne: null}}}
-    sort: {fields: [fields___prefix], order: DESC}
-  ) {
-    edges {
-      node {
-        excerpt(pruneLength: 250)
-        fields {
-          slug
-          prefix
-        }
-        frontmatter {
-          title
-          categories
-          cover {
-            childImageSharp {
-              gatsbyImageData(width: 700, layout: CONSTRAINED)
+    allBlogPosts: allMdx(
+      filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
+    ) {
+      totalCount
+    }
+    posts: allMdx(
+      filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
+      sort: { fields: [fields___prefix], order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          fields {
+            slug
+            prefix
+          }
+          frontmatter {
+            title
+            categories
+            cover {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 700
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
+              }
             }
           }
         }
       }
     }
   }
-}
 `;
