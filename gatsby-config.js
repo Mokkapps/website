@@ -236,7 +236,7 @@ module.exports = {
             query: `
               {
                 allMdx(
-                  limit: 1000,
+                  limit: 5,
                   sort: { order: DESC, fields: [fields___prefix] },
                   filter: { fields: { source: {eq: "posts"}, slug: { ne: null } } }
                 ) {
