@@ -38,7 +38,7 @@ const AboutMe = () => (
       className="fluid-image"
       src="../../images/about.jpg"
     />
-    <SocialLinks className="mt-8" data-cy="about-social-links">
+    <SocialLinks className="flex flex-wrap mt-8" data-cy="about-social-links">
       {config.socialLinks.map(link => (
         <SocialLink link={link} key={link.id} />
       ))}

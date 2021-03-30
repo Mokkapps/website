@@ -53,7 +53,7 @@ const Author = ({ className }) => (
       <Text>
         <FormattedMessage id="shortSummary" />
       </Text>
-      <SocialLinks className="mt-2">
+      <SocialLinks className="flex flex-wrap mt-2">
         {content.socialLinks.map(link => (
           <SocialLink link={link} key={link.id} />
         ))}

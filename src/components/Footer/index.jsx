@@ -8,7 +8,7 @@ import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 
 const Footer = () => (
   <footer className="flex flex-shrink-0 flex-col items-center justify-center py-8">
-    <div className="flex justify-center" data-cy="footer-social-links">
+    <div className="flex flex-wrap justify-center" data-cy="footer-social-links">
       {config.socialLinks.map(link => (
         <SocialLink link={link} key={link.id} />
       ))}
