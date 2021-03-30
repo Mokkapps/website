@@ -32,7 +32,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@netlify/plugin-lighthouse": "^1.4.2",
+    "@netlify/plugin-lighthouse": "^2.0.0",
     "autoprefixer": "^9",
     "babel-plugin-styled-components": "^1.12.0",
     "cross-env": "^7.0.2",
@@ -86,10 +86,10 @@
     "react-helmet": "^6.1.0",
     "react-intl": "^5.13.1",
     "react-scroll-up-button": "^1.6.4",
-    "react-share": "^4.3.1",
+    "react-share": "^4.4.0",
     "react-switch": "^6.0.0",
     "recompose": "^0.30.0",
-    "simple-icons": "^4.12.0",
+    "simple-icons": "^4.17.0",
     "styled-components": "^5.2.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
