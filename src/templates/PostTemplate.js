@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
@@ -75,10 +75,13 @@ const PostTemplate = props => {
 
   let seoImage = null;
   if (imageShare) {
-    seoImage = `${config.siteUrl}${imageShare.childImageSharp.gatsbyImageData.src}`;
+    seoImage = `${config.siteUrl}${getSrc(imageShare)}`;
   } else if (cover) {
-    seoImage = `${config.siteUrl}${cover.childImageSharp.gatsbyImageData.src}`;
+    seoImage = `${config.siteUrl}${getSrc(cover)}`;
   }
+
+  console.log('seoImage', seoImage)
+
 
   return (
     <Layout>
