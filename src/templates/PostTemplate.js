@@ -80,9 +80,6 @@ const PostTemplate = props => {
     seoImage = `${config.siteUrl}${getSrc(cover)}`;
   }
 
-  console.log('seoImage', seoImage)
-
-
   return (
     <Layout>
       <ArticleWithSidebar categories={allCategories}>

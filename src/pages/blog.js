@@ -40,8 +40,6 @@ const BlogPage = props => {
 
   const { siteUrl, siteTitlePostfix } = config;
 
-  console.log('SRC', getSrc(seoImage));
-
   return (
     <Layout>
       <Article>
