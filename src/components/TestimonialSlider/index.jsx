@@ -17,9 +17,17 @@ const TestimonialSlider = ({ intl, className }) => {
 
   const randomIndex = Math.floor(Math.random() * testimonials.length);
 
-  if (typeof window === "undefined") {
-    return <p>Server Render</p>
+  if (typeof window === 'undefined') {
+    return null;
   }
+
+  const quoteMark = (
+    <div className="relative">
+      <div className="stylistic-quote-mark" aria-hidden="true">
+        &ldquo;
+      </div>
+    </div>
+  );
 
   return (
     <Splide
@@ -35,12 +43,8 @@ const TestimonialSlider = ({ intl, className }) => {
       {testimonials.map(t => (
         <SplideSlide key={t.name}>
           <div className="px-16 flex">
-            <div className="stylistic-quote-mark" aria-hidden="true">
-              &ldquo;
-            </div>
-            <blockquote
-              className={`relative text-xl italic bg-neutral-100 text-neutral-600 border-neutral-500 ${className}`}
-            >
+            {quoteMark}
+            <blockquote className="pl-14 relative text-xl italic bg-neutral-100 text-neutral-600 border-neutral-500">
               <div className="flex flex-col">
                 <cite className="mb-4">{t.text}</cite>
                 <p className="text-sm">{t.name}</p>

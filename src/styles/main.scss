@@ -196,6 +196,7 @@
 
   .stylistic-quote-mark {
     font-size: 5rem;
+    @apply mr-0 absolute top-0 leading-none;
   }
 
   .fluid-image {
