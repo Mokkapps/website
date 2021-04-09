@@ -17,6 +17,10 @@ const TestimonialSlider = ({ intl, className }) => {
 
   const randomIndex = Math.floor(Math.random() * testimonials.length);
 
+  if (typeof window === "undefined") {
+    return <p>Server Render</p>
+  }
+
   return (
     <Splide
       className={className}

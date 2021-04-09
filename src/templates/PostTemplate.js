@@ -96,6 +96,7 @@ const PostTemplate = props => {
         {cover ? (
           <div className="flex justify-center">
             <GatsbyImage
+              alt={`${title} Image`}
               image={cover.childImageSharp.gatsbyImageData}
               className="mb-4 w-full h-full"
             />
