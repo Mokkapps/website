@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 const testimonialCount = 2;
 
@@ -10,16 +9,12 @@ const TestimonialSlider = ({ intl, className }) => {
 
   for (let i = 1; i <= testimonialCount; i++) {
     testimonials.push({
-      name: intl.formatMessage({ id: 'testimonialName' + i }),
-      text: intl.formatMessage({ id: 'testimonialText' + i }),
+      name: intl.formatMessage({ id: `testimonialName${i}` }),
+      text: intl.formatMessage({ id: `testimonialText${i}` }),
     });
   }
 
   const randomIndex = Math.floor(Math.random() * testimonials.length);
-
-  if (typeof window === 'undefined') {
-    return null;
-  }
 
   const quoteMark = (
     <div className="relative">
@@ -28,6 +23,27 @@ const TestimonialSlider = ({ intl, className }) => {
       </div>
     </div>
   );
+
+  const renderQuote = testimonial => {
+    const { name, text } = testimonial;
+    return (
+      <blockquote className="pl-14 relative text-xl italic bg-neutral-100 text-neutral-600 border-neutral-500">
+        <div className="flex flex-col">
+          <cite className="mb-4">{text}</cite>
+          <p className="text-sm">{name}</p>
+        </div>
+      </blockquote>
+    );
+  };
+
+  const splideModule =
+    typeof window !== `undefined` ? require('@splidejs/react-splide') : null;
+
+  if (!splideModule) {
+    return renderQuote(testimonials[randomIndex]);
+  }
+
+  const { Splide, SplideSlide } = splideModule;
 
   return (
     <Splide
@@ -44,12 +60,7 @@ const TestimonialSlider = ({ intl, className }) => {
         <SplideSlide key={t.name}>
           <div className="px-16 flex">
             {quoteMark}
-            <blockquote className="pl-14 relative text-xl italic bg-neutral-100 text-neutral-600 border-neutral-500">
-              <div className="flex flex-col">
-                <cite className="mb-4">{t.text}</cite>
-                <p className="text-sm">{t.name}</p>
-              </div>
-            </blockquote>
+            {renderQuote(t)}
           </div>
         </SplideSlide>
       ))}
