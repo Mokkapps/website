@@ -23,7 +23,7 @@ import ProjectCard from '../components/ProjectCard';
 import BlogPostCard from '../components/BlogPostCard';
 import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
-import Testimonials from '../components/Testimonials';
+import TestimonialSlider from '../components/TestimonialSlider';
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -111,7 +111,7 @@ const IndexPage = props => {
             </strong>{' '}
             <FormattedMessage id="homeRightPlace" />
           </p>
-          <Testimonials className="mb-10" />
+          <TestimonialSlider className="mb-10" />
           <Availability />
           <div className="flex flex-wrap justify-center">
             <Button

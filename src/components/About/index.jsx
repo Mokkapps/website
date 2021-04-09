@@ -6,7 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Skills from '../Skills';
 import AboutMe from './AboutMe';
 import HowIWork from './HowIWork';
-import Testimonials from '../Testimonials';
+import TestimonialSlider from '../TestimonialSlider';
 import config from '../../content/meta/config';
 
 const Heading = styled.h2`
@@ -17,8 +17,8 @@ const Heading = styled.h2`
 const About = () => (
   <section>
     <AboutMe />
+    <TestimonialSlider className="mx-auto mt-10 mb-5" />
     <div className="my-8 md:w-4/5 mx-auto" data-cy="about-skills">
-      <Testimonials className="mx-auto my-10" />
       <Heading className="mb-8">SKILLS</Heading>
       <Skills />
     </div>
