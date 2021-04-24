@@ -35,7 +35,7 @@ version number always contains these three parts:
 Developers tend to write commit messages that [serve no purpose](http://whatthecommit.com/). Usually, the message does not
 describe where changes were made, what was changed, and what was the motivation for making the changes. 
 
-So I recommend to write commit messages using the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.2/):
+So I recommend writing commit messages using the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.2/):
 
 ```
 <type>[optional scope]: <description>
@@ -81,7 +81,7 @@ was initialized running `npm init` and `git init`.
 The next step is to install [husky](https://github.com/typicode/husky), which sets up your [Git hooks](https://git-scm.com/docs/githooks):
 
 ```
-npm install husky
+npx husky-init && npm install
 ```
 
 Then install [commitlint](https://github.com/conventional-changelog/commitlint) with a config, which will be used to lint your commit message:
@@ -92,29 +92,13 @@ npm install @commitlint/{cli,config-conventional}
 
 As we are using `config-conventional` we are automatically following the [Angular commit convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
 
-Now we need to tell Husky to run `commitlint` during the Git commit hook. We can add it to the `package.json` 
+Now we need to tell Husky to run `commitlint` during the Git commit hook. Therefore, we need to add a `commit-msg` file to the `.husky` folder: 
 
-```json
-  "dependencies": {
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "husky": "latest"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
-```
+```shell
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-alternatively to a `.huskyrc` file: 
-
-```
-{
-  "hooks": {
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-  }
-}
+npx --no-install commitlint --edit "$1"
 ```
 
 Finally, we create a `.commitlintrc.json` file which extends the rules from [config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional):
