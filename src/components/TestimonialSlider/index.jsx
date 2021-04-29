@@ -6,6 +6,7 @@ import ArrowLeftIcon from 'react-feather/dist/icons/arrow-left';
 
 const testimonialCount = 2;
 const intervalTimeInMs = 7500;
+const showArrows = false;
 
 const TestimonialSlider = ({ intl, className }) => {
   const testimonials = [];
@@ -64,9 +65,11 @@ const TestimonialSlider = ({ intl, className }) => {
   return (
     <section className={className}>
       <div className="flex m-auto">
-        <button className="outline-none px-2" onClick={showPreviousSlide}>
-          <ArrowLeftIcon />
-        </button>
+        {showArrows && (
+          <button className="outline-none pr-8" onClick={showPreviousSlide}>
+            <ArrowLeftIcon />
+          </button>
+        )}
         <div>
           {testimonials.map((t, i) => (
             <div
@@ -83,9 +86,11 @@ const TestimonialSlider = ({ intl, className }) => {
           ))}
         </div>
 
-        <button className="outline-none px-2" onClick={showNextSlide}>
-          <ArrowRightIcon />
-        </button>
+        {showArrows && (
+          <button className="outline-none pl-8" onClick={showNextSlide}>
+            <ArrowRightIcon />
+          </button>
+        )}
       </div>
       <br />
 
@@ -95,7 +100,7 @@ const TestimonialSlider = ({ intl, className }) => {
             key={t.name}
             className={`outline-none mx-1 h-3 w-3 ${
               i === slideIndex ? 'bg-main-text' : 'bg-secondary'
-            } rounded-full inline-block transition-colors hover:bg-secondary`}
+            } rounded-full inline-block transition-colors hover:bg-main-text`}
             onClick={() => setSlideIndex(i)}
           />
         ))}

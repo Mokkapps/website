@@ -63,8 +63,8 @@ const IndexPage = props => {
           <h1 className="text-center mb-10 lg:mb-20" data-cy="home-heading">
             <FormattedMessage id="homeTitle" />
           </h1>
-          <div className="flex flex-wrap">
-            <div className="w-full md:w-1/2">
+          <div className="grid w-full grid-cols-1 grid-rows-1 md:grid-cols-2 md:gap-x-5">
+            <div className="w-full">
               <h2 className="text-center lg:text-left">
                 <FormattedMessage id="homeDoYouNeed" />
               </h2>
@@ -91,7 +91,7 @@ const IndexPage = props => {
                 </ListElement>
               </UnorderedList>
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="w-full m-auto">
               <StaticImage
                 alt={config.baseName}
                 title="Michael Hoffmann"
