@@ -99,7 +99,7 @@ const IndexPage = props => {
                 layout="constrained"
                 aspectRatio={1}
                 height={500}
-                class="rounded-lg shadow-md"
+                className="rounded-lg shadow-md"
                 src="../images/contact.jpg"
               />
             </div>

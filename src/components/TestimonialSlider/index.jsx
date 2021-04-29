@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
+import ArrowRightIcon from 'react-feather/dist/icons/arrow-right';
+import ArrowLeftIcon from 'react-feather/dist/icons/arrow-left';
 
 const testimonialCount = 2;
+const intervalTimeInMs = 7500;
 
 const TestimonialSlider = ({ intl, className }) => {
   const testimonials = [];
@@ -14,7 +17,9 @@ const TestimonialSlider = ({ intl, className }) => {
     });
   }
 
+  const lastIndex = testimonials.length - 1;
   const randomIndex = Math.floor(Math.random() * testimonials.length);
+  const [slideIndex, setSlideIndex] = useState(randomIndex);
 
   const quoteMark = (
     <div className="relative">
@@ -36,35 +41,66 @@ const TestimonialSlider = ({ intl, className }) => {
     );
   };
 
-  const splideModule =
-    typeof window !== `undefined` ? require('@splidejs/react-splide') : null;
+  const showPreviousSlide = () => {
+    const newSlideIndex = slideIndex - 1;
+    setSlideIndex(newSlideIndex < 0 ? lastIndex : newSlideIndex);
+  };
 
-  if (!splideModule) {
-    return renderQuote(testimonials[randomIndex]);
-  }
+  const showNextSlide = () => {
+    const newSlideIndex = slideIndex + 1;
+    setSlideIndex(newSlideIndex > lastIndex ? 0 : newSlideIndex);
+  };
 
-  const { Splide, SplideSlide } = splideModule;
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      showNextSlide();
+    }, intervalTimeInMs);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [showNextSlide]);
 
   return (
-    <Splide
-      className={className}
-      options={{
-        type: 'loop',
-        autoplay: true,
-        width: '100%',
-        start: randomIndex,
-        pagination: false,
-      }}
-    >
-      {testimonials.map(t => (
-        <SplideSlide key={t.name}>
-          <div className="px-16 flex">
-            {quoteMark}
-            {renderQuote(t)}
-          </div>
-        </SplideSlide>
-      ))}
-    </Splide>
+    <section className={className}>
+      <div className="flex m-auto">
+        <button className="outline-none px-2" onClick={showPreviousSlide}>
+          <ArrowLeftIcon />
+        </button>
+        <div>
+          {testimonials.map((t, i) => (
+            <div
+              key={t.name}
+              className={`${
+                i === slideIndex
+                  ? 'opacity-100 h-auto'
+                  : 'h-0 opacity-0 overflow-hidden'
+              } transition-opacity ease-linear duration-1000`}
+            >
+              {quoteMark}
+              {renderQuote(t)}
+            </div>
+          ))}
+        </div>
+
+        <button className="outline-none px-2" onClick={showNextSlide}>
+          <ArrowRightIcon />
+        </button>
+      </div>
+      <br />
+
+      <div className="flex justify-center">
+        {testimonials.map((t, i) => (
+          <button
+            key={t.name}
+            className={`outline-none mx-1 h-3 w-3 ${
+              i === slideIndex ? 'bg-main-text' : 'bg-secondary'
+            } rounded-full inline-block transition-colors hover:bg-secondary`}
+            onClick={() => setSlideIndex(i)}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
