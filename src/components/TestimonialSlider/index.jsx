@@ -64,7 +64,7 @@ const TestimonialSlider = ({ intl, className }) => {
 
   return (
     <section className={className}>
-      <div className="flex m-auto">
+      <div className="flex m-auto min-h-testimonial-mobile sm:min-h-testimonial-desktop">
         {showArrows && (
           <button className="outline-none pr-8" onClick={showPreviousSlide}>
             <ArrowLeftIcon />
