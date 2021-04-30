@@ -116,7 +116,7 @@ const IndexPage = props => {
           <div className="flex flex-wrap justify-center">
             <Button
               dataCy="home-hire-me-button"
-              className="w-72 h-16 mb-2 uppercase mx-2"
+              className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
               onClick={() => {
                 sendCustomAnalyticsEvent('Hire me button clicked');
                 navigate('/contact');
@@ -129,7 +129,7 @@ const IndexPage = props => {
             </Button>
             <ScheduleMeetingButton
               dataCy="home-schedule-meeting-button"
-              className="w-64 h-16 mb-2 uppercase mx-2"
+              className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
             />
           </div>
         </div>
