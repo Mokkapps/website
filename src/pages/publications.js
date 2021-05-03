@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { getSrc } from "gatsby-plugin-image";
+import { getSrc } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
 import { getAsset } from '../utils/helper';
@@ -14,34 +13,7 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import ProjectCard from '../components/ProjectCard';
-
-const Talks = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-`;
-
-const TalkInfo = styled.div`
-  border-top: 1px solid var(--text-main);
-  background: var(--secondary);
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const TalkText = styled.p`
-  margin-bottom: 0.5rem;
-  color: var(--text-main);
-`;
+import CardDivider from '../components/Card/CardDivider';
 
 const PublicationsPage = props => {
   const {
@@ -53,12 +25,12 @@ const PublicationsPage = props => {
   return (
     <Layout>
       <Article>
-        <Content>
+        <div className="flex flex-col items-center">
           <Heading i18nId="publicationsHeading" />
           <h2 className="my-8">
             <FormattedMessage id="talks" />
           </h2>
-          <Talks>
+          <div className="flex justify-around flex-wrap">
             {publications
               .filter(p => p.type === 'talk')
               .map((talk, i) => {
@@ -75,19 +47,22 @@ const PublicationsPage = props => {
                     urls={{ page: link }}
                     minimal
                   >
-                    <TalkInfo>
-                      <TalkText>{date}</TalkText>
-                      <TalkText>{host}</TalkText>
-                      {slides ? (
-                        <a href={slides}>
-                          <FormattedMessage id="slides" />
-                        </a>
-                      ) : null}
-                    </TalkInfo>
+                    <div className="h-full bg-secondary flex flex-col items-center px-4 pb-4">
+                      <CardDivider />
+                      <div className="flex flex-col items-center flex-grow justify-evenly">
+                        <p className="text-main-text">{date}</p>
+                        <p className="text-main-text">{host}</p>
+                        {slides ? (
+                          <a href={slides} className="mt-2">
+                            <FormattedMessage id="slides" />
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
                   </ProjectCard>
                 );
               })}
-          </Talks>
+          </div>
           <h2 className="my-8">
             <FormattedMessage id="articles" />
           </h2>
@@ -100,7 +75,7 @@ const PublicationsPage = props => {
                 </li>
               ))}
           </ul>
-        </Content>
+        </div>
       </Article>
       <Footer />
       <Seo

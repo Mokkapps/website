@@ -90,16 +90,18 @@ const config = {
   ],
   socialLinks: [
     {
-      id: 'github',
-      url: 'https://github.com/mokkapps',
-      icon: 'github',
-      ariaLabel: 'GitHub',
-    },
-    {
       id: 'twitter',
       url: 'https://twitter.com/mokkapps',
       icon: 'twitter',
       ariaLabel: 'Twitter',
+      favorite: true,
+    },
+    {
+      id: 'github',
+      url: 'https://github.com/mokkapps',
+      icon: 'github',
+      ariaLabel: 'GitHub',
+      favorite: true,
     },
     {
       id: 'dev.to',
@@ -112,18 +114,21 @@ const config = {
       url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
       icon: 'linkedin',
       ariaLabel: 'LinkedIn',
+      favorite: true,
     },
     {
       id: 'instagram',
       url: 'https://www.instagram.com/mokkapps/',
       icon: 'instagram',
       ariaLabel: 'Instagram',
+      favorite: true,
     },
     {
       id: 'facebook',
       url: 'https://www.facebook.com/mokkapps-dev/',
       icon: 'facebook',
       ariaLabel: 'Facebook',
+      favorite: true,
     },
     {
       id: 'hashnode',
@@ -136,6 +141,7 @@ const config = {
       url: `${base.url}/rss.xml`,
       icon: 'rss',
       ariaLabel: 'Mokkapps RSS Feed',
+      favorite: true,
     },
     {
       id: 'mail',
@@ -336,7 +342,7 @@ const config = {
       date: '06/2017',
       image: 'reactive-programming',
       host: 'jambit GmbH',
-      title: 'Reactive Programming',
+      title: 'Eine Einführung in Reactive Programming',
       link:
         'https://www.jambit.com/en/latest-info/events/coffeetalks-june-2017/',
     },

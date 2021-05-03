@@ -6,13 +6,6 @@ import styled from 'styled-components';
 import Card from '../Card';
 import ProjectCardDescription from './ProjectCardDescription';
 
-const StyledCard = styled(Card)`
-  display: flex;
-  flex-flow: column;
-  box-shadow: 0 10px 30px rgba(#2c3e50, 0.5);
-  background: var(--secondary);
-`;
-
 const ProjectImage = styled(GatsbyImage)`
   margin: 0.3rem;
   min-height: 200px;
@@ -27,9 +20,8 @@ const ProjectCard = ({
   minimal,
   usedTechnologies,
   children,
-  className,
 }) => (
-  <StyledCard className={className} url={urls.page} clickable id={id}>
+  <Card url={urls.page} clickable id={id}>
     <ProjectImage alt={`${title} Image`} image={asset} />
     <ProjectCardDescription
       minimal={minimal}
@@ -39,7 +31,7 @@ const ProjectCard = ({
       usedTechnologies={usedTechnologies}
     />
     {children}
-  </StyledCard>
+  </Card>
 );
 
 ProjectCard.propTypes = {

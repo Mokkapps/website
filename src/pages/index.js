@@ -92,7 +92,7 @@ const IndexPage = props => {
           placeholder="blurred"
           layout="constrained"
           aspectRatio={1}
-          height={500}
+          height={1920}
           className="rounded-lg shadow-md"
           src="../images/contact.jpg"
         />

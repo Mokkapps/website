@@ -22,7 +22,7 @@ const BlogPost = props => {
   } = props;
   return (
     <Link
-      className={`flex flex-col lg:flex-row justify-center items-center cursor-pointer rounded-md bg-none bg-secondary p-4 hover:shadow-2xl ${className}`}
+      className={`flex flex-col lg:flex-row justify-center items-center cursor-pointer rounded-md bg-none bg-secondary shadow-md p-4 ${className}`}
       to={`/blog${slug}`}
       data-cy={`blog-post-${id}`}
       key={slug}

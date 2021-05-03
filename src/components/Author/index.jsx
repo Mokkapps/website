@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import content from '../../content/meta/config';
-import SocialLink from '../SocialLink';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
+import SocialLinks from '../SocialLink/SocialLinks';
 
 const Container = styled.section`
   background-color: var(--secondary);
@@ -33,12 +33,6 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 0.2rem;
-`;
-
 const Author = ({ className }) => (
   <Container className={className}>
     <StaticImage
@@ -53,11 +47,7 @@ const Author = ({ className }) => (
       <Text>
         <FormattedMessage id="shortSummary" />
       </Text>
-      <SocialLinks className="flex flex-wrap mt-2">
-        {content.socialLinks.map(link => (
-          <SocialLink link={link} key={link.id} />
-        ))}
-      </SocialLinks>
+      <SocialLinks className="mt-2" onlyFavorites />
       <BuyMeACoffeeButton className="my-4" />
     </Description>
   </Container>
