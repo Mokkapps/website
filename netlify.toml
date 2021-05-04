@@ -1,12 +1,9 @@
 # explicit commands for building the site
 # and the folder to publish
 [build]
-command = "npx gatsby-parallel-runner"
+command = "gatsby build"
 publish = "public"
   [build.environment]
-  # cache Cypress binary in local "node_modules" folder
-  # so Netlify caches it
-  CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
   # set TERM variable for terminal output
   TERM = "xterm"
 
@@ -67,13 +64,3 @@ package = "@netlify/plugin-lighthouse"
 package = "netlify-plugin-a11y"
   [plugins.inputs]
     resultMode = "warn"
-
-# [[plugins]]
-# package = "netlify-plugin-cypress"
-#   [plugins.inputs]
-#     # skip the default tests before the deploy
-#     skip = true
-#   [plugins.inputs.onSuccess]
-#     browser = "chromium"
-#     # run tests after the deploy
-#     enable = true
