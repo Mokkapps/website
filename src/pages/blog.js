@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -11,10 +11,8 @@ import Article from '../components/Article';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
-import GoogleSearchLink from '../components/GoogleSearchLink';
-import CategorySelection from '../components/CategorySelection';
 
-import { metaIcons, getAllCategories } from '../utils/helper';
+import { metaIcons } from '../utils/helper';
 
 import './style.scss';
 import { getSrc } from 'gatsby-plugin-image';
@@ -31,27 +29,28 @@ const BlogPage = props => {
     data: {
       seoImage,
       posts: { edges },
-      allEdges,
     },
   } = props;
 
   const posts = edges.map(edge => edge.node);
-  const categories = getAllCategories(allEdges);
-
   const { siteUrl, siteTitlePostfix } = config;
+
+  const searchComponent = (
+    <p className="my-8 text-center">
+      {' '}
+      You can search blog posts by{' '}
+      <a href={config.googleSearchUrl}>using Google</a>, browse a{' '}
+      <Link to={'/minimal-blog-list'}>minimal list</Link> or{' '}
+      <Link to={'/categories'}>by category</Link>
+    </p>
+  );
 
   return (
     <Layout>
       <Article>
         <Container>
           <Heading className="mb-8" title="BLOG" />
-          <CategorySelection
-            dataCy="blog-categories"
-            className="mt-4"
-            categories={categories}
-            centered
-          />
-          <GoogleSearchLink className="my-8" />
+          {searchComponent}
           <BlogPostList
             items={posts}
             author={config.authorName}
@@ -82,15 +81,6 @@ export const query = graphql`
     seoImage: file(relativePath: { eq: "og/og-blog.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FIXED)
-      }
-    }
-    allEdges: allMdx {
-      edges {
-        node {
-          frontmatter {
-            categories
-          }
-        }
       }
     }
     allBlogPosts: allMdx(

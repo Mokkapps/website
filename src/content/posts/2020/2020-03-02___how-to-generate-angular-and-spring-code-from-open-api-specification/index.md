@@ -4,6 +4,9 @@ categories:
   - 'angular'
   - 'development'
   - 'spring'
+  - 'fullstack'
+  - 'frontend'
+  - 'backend'
 cover: 'images/cover.png'
 ---
 

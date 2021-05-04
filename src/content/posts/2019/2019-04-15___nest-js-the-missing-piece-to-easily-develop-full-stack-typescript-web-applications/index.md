@@ -1,7 +1,7 @@
 ---
 title: NestJS - The missing piece to easily develop full-stack TypeScript web applications
 subTitle: Use the same programming language in your frontend and backend code
-categories: ['development'] 
+categories: ['development', 'fullstack', 'backend', 'frontend'] 
 cover: cover.png
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Sending Message To Specific Anonymous User On Spring WebSocket
 subTitle:
-categories: ['spring', 'development']
+categories: ['spring', 'development', 'backend']
 cover: cover.jpg
 ---
 

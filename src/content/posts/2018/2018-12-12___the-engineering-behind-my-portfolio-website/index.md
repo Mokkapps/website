@@ -1,7 +1,7 @@
 ---
 title: The Engineering Behind My Portfolio Website
 subTitle: Learn with which tools I have built my portfolio website
-categories: ['development']
+categories: ['development', 'frontend']
 cover: cover.jpg
 ---
 

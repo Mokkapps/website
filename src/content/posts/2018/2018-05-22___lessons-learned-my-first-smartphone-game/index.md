@@ -1,7 +1,7 @@
 ---
 title: "Lessons Learned: My First Smartphone Game"
 subTitle: Join me on my journey developing my first smartphone game
-categories: ["development"]
+categories: ["development", "mobile"]
 cover: cover.png
 ---
 

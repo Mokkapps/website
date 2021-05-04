@@ -2,6 +2,7 @@
 title: "How to Deploy a Heroku Backend to a Netlify Subdomain"
 categories:
   - "development"
+  - "backend"
 cover: "images/cover.jpg"
 
 ---

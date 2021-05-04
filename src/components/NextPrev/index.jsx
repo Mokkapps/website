@@ -16,11 +16,7 @@ const Container = styled.div`
   }
 
   & a {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    background-image: none;
   }
 
   & .next,
@@ -44,6 +40,7 @@ const Container = styled.div`
 
 const NextPrev = props => {
   const {
+    className,
     icons: { next: NextIcon, prev: PrevIcon },
     next: {
       fields: { prefix: nextPrefix, slug: nextSlug } = {},
@@ -56,7 +53,7 @@ const NextPrev = props => {
   } = props;
 
   return (
-    <Container>
+    <Container className={`${className}`}>
       {prevSlug && (
         <Link to={`/blog${prevSlug}`} className="prev">
           {PrevIcon && <PrevIcon />}
@@ -78,6 +75,7 @@ const NextPrev = props => {
 };
 
 NextPrev.propTypes = {
+  className: PropTypes.string,
   next: PropTypes.object,
   prev: PropTypes.object,
   icons: PropTypes.object,

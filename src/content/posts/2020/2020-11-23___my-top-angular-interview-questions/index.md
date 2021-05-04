@@ -1,7 +1,6 @@
 ---
 title: "My Top Angular Interview Questions"
 categories:
-  - "development"
   - "career"
   - "angular"
 cover: "images/cover.jpg"

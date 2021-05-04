@@ -1,56 +1,32 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import content from '../../content/meta/config';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 import SocialLinks from '../SocialLink/SocialLinks';
 
-const Container = styled.section`
-  background-color: var(--secondary);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const Description = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-`;
-
-const Name = styled.h3`
-  text-align: center;
-`;
-
-const Text = styled.p`
-  padding: 0 2rem 0.5rem 2rem;
-  text-align: center;
-  margin-bottom: 0;
-`;
-
 const Author = ({ className }) => (
-  <Container className={className}>
+  <section
+    className={`flex flex-wrap justify-center bg-secondary rounded-md shadow-md ${className}`}
+  >
     <StaticImage
       alt={content.baseName}
       width={200}
       height={200}
-      className="my-4 rounded-lg"
+      className="my-4 rounded-md"
       src="../../images/about.jpg"
     />
-    <Description>
-      <Name>Michael Hoffmann</Name>
-      <Text>
+    <div className="flex flex-col justify-center items-center p-4">
+      <h3 className="text-center">Michael Hoffmann</h3>
+      <p className="py-2 px-4 text-center mb-0">
         <FormattedMessage id="shortSummary" />
-      </Text>
+      </p>
       <SocialLinks className="mt-2" onlyFavorites />
       <BuyMeACoffeeButton className="my-4" />
-    </Description>
-  </Container>
+    </div>
+  </section>
 );
 
 Author.propTypes = {

@@ -1,7 +1,7 @@
 ---
 title: How I Built My Website With Hugo And Netlify
 subTitle: Learn how I built my static portfolio website
-categories: ["development"]
+categories: ["development", "frontend"]
 cover: cover.png
 ---
 

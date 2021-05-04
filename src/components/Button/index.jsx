@@ -20,13 +20,12 @@ const Button = ({
   className,
   dataCy,
   secondary,
+  block,
 }) => (
   <StyledButton
     data-cy={dataCy}
-    className={`${className} ${
-      secondary
-        ? 'bg-black text-white'
-        : 'bg-accent text-basic-button-text'
+    className={`${className} ${block ? 'w-full' : ''} ${
+      secondary ? 'bg-black text-white' : 'bg-accent text-basic-button-text'
     } text-center rounded-md font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none min-h-50px`}
     type={type || 'button'}
     title={title}

@@ -1,7 +1,7 @@
 ---
 title: Manually Lazy Load Modules And Components In Angular
 subTitle:
-categories: ['development', 'angular']
+categories: ['development', 'angular', 'frontend']
 cover: cover.jpg
 ---
 

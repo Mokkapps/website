@@ -1,7 +1,7 @@
 ---
 title: How I Set Up A New Angular Project
 subTitle: 
-categories: ['development', 'angular'] 
+categories: ['development', 'angular', 'frontend'] 
 cover: cover.jpg
 ---
 

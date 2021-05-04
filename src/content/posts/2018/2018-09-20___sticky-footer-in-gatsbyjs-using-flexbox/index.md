@@ -1,7 +1,7 @@
 ---
 title: Sticky Footer in GatsbyJS using Flexbox
 subTitle: Implementing a sticky footer using Flexbox
-categories: ['development']
+categories: ['development', 'frontend']
 cover: cover.png
 ---
 

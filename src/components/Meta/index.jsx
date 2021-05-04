@@ -14,8 +14,8 @@ const Meta = props => {
   } = props;
 
   return (
-    <p className="flex flex-wrap text-secondary-text text-xs mb-2">
-      <span className="flex items-center mr-4">
+    <p className="flex flex-wrap text-secondary-text text-xs">
+      <span className="flex items-center mr-4 mb-2">
         {CalendarIcon && <CalendarIcon className="mr-1 w-4 h-4" />}{' '}
         {<FormattedDate value={prefix} />}
       </span>
@@ -27,7 +27,7 @@ const Meta = props => {
           const txt = <span key={category}>{capitalize(category)}</span>;
 
           return (
-            <span className="flex items-center mr-4" key={category}>
+            <span className="flex items-center mr-4 mb-2" key={category}>
               {TagIcon && <TagIcon className="w-4 h-4 mr-1" />}
               {categoryLink ? link : txt}
             </span>

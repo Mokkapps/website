@@ -1,7 +1,7 @@
 ---
 title: How I Write Marble Tests For RxJS Observables In Angular
 subTitle: Because testing observables can be hard
-categories: ['development', 'angular']
+categories: ['development', 'angular', 'testing', 'frontend']
 cover: cover.jpg
 ---
 
