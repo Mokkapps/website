@@ -9,7 +9,7 @@ const Footer = () => (
   <footer className="flex flex-shrink-0 flex-col items-center justify-center py-8">
     <SocialLinks
       className="flex flex-wrap justify-center"
-      data-cy="footer-social-links"
+      dataCy="footer-social-links"
     />
     <BuyMeACoffeeButton className="my-4" />
     <div className="text-center text-text-main">

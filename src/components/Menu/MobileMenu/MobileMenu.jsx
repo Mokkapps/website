@@ -52,7 +52,7 @@ const MobileMenu = ({ open, intl, className }) => {
               icon={icon}
               to={to}
               linkProps={linkProps}
-              dataCy={`header-menu-item-${i18nId.toLowerCase()}`}
+              dataCy={`burger-menu-item-${i18nId.toLowerCase()}`}
               isMobile
             />
           );

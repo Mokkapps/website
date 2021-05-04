@@ -134,6 +134,7 @@ const MenuItem = ({
       title={intl.formatMessage({ id: i18nId })}
       aria-label={ariaLabel}
       activeClassName="active"
+      data-cy={dataCy}
       {...linkProps}
     >
       <ItemContainer>
@@ -146,11 +147,11 @@ const MenuItem = ({
   );
 
   return isMobile ? (
-    <MobileItem className={className} dataCy={dataCy}>
+    <MobileItem className={className}>
       {link}
     </MobileItem>
   ) : (
-    <DesktopItem className={className} dataCy={dataCy}>
+    <DesktopItem className={className}>
       {link}
     </DesktopItem>
   );

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import { capitalize, metaIcons } from '../../utils/helper';
 
-const CategorySelection = ({ categories, centered, className }) => {
+const CategorySelection = ({ categories, centered, className, dataCy }) => {
   const categoriesLinks = categories.map(category => {
     const link = (
       <Link to={`/categories/${category.replace(' ', '-')}`}>
@@ -15,7 +15,7 @@ const CategorySelection = ({ categories, centered, className }) => {
 
     return (
       <span
-        className="flex items-center my-0 mx-2"
+        className={`${className} flex items-center my-0 mx-2`}
         key={category}
         data-cy={`blog-category-${category}`}
       >
@@ -29,12 +29,13 @@ const CategorySelection = ({ categories, centered, className }) => {
 
   return centered ? (
     <div
+      data-cy={dataCy}
       className={`${className} grid gap-2 grid-cols-2 grid-rows-5 md:grid-cols-4 md:grid-rows-2 grid-flow-col xxl:grid-cols-6 xxl:grid-rows-1`}
     >
       {categoriesLinks}
     </div>
   ) : (
-    <ul className="list-none">
+    <ul data-cy={dataCy} className="list-none">
       {categoriesLinks.map((cl, i) => (
         <li key={i}>{cl}</li>
       ))}
@@ -45,6 +46,8 @@ const CategorySelection = ({ categories, centered, className }) => {
 CategorySelection.propTypes = {
   categories: PropTypes.array.isRequired,
   centered: PropTypes.bool,
+  className: PropTypes.string,
+  dataCy: PropTypes.string,
   props: PropTypes.node,
 };
 
