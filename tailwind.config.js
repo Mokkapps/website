@@ -19,6 +19,7 @@ module.exports = {
         'testimonial-desktop': '150px',
         'testimonial-mobile': '350px',
         '50px': '50px',
+
         '1/4': '25%',
         '1/2': '50%',
         '3/4': '75%',

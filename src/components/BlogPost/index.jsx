@@ -34,7 +34,7 @@ const BlogPost = props => {
           className="image mb-4 lg:mr-4" />
       ) : null}
       <div className="w-full lg:w-2/3">
-        <h3>{title}</h3>
+        <h3 className="text-main-text">{title}</h3>
         <Meta
           categories={categories}
           prefix={prefix}

@@ -6,8 +6,8 @@ const ThemeSwitch = props => {
   const [checked, setChecked] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
 
-  const handleThemeToggle = checked => {
-    setChecked(checked);
+  const handleThemeToggle = value => {
+    setChecked(value);
     if (theme === 'light') {
       setTheme('dark');
     } else {
@@ -21,32 +21,14 @@ const ThemeSwitch = props => {
       aria-checked={checked}
       {...props}
       uncheckedIcon={
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-            fontSize: 20,
-            paddingRight: 2,
-          }}
-        >
+        <div className="flex justify-center items-center h-full">
           <span role="img" aria-label="sun">
             🌞
           </span>
         </div>
       }
       checkedIcon={
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-            fontSize: 20,
-            paddingRight: 2,
-          }}
-        >
+        <div className="flex justify-center items-center h-full">
           <span role="img" aria-label="moon">
             🌜
           </span>

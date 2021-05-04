@@ -1,26 +1,18 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
 
 import ProjectCard from '../ProjectCard';
 import config from '../../content/meta/config';
 import { getAsset } from '../../utils/helper';
 
-const Container = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
-  align-self: center;
-  align-items: flex-start;
-  justify-content: center;
-`;
-
 const ProjectList = ({ projectAssets }) => {
   const { edges } = projectAssets;
   let count = 0;
   return (
-    <Container data-cy="projects-list">
+    <section
+      className="flex flex-wrap content-center self-center items-stretch justify-center"
+      data-cy="projects-list"
+    >
       {config.projects.map(project => {
         const {
           imageName,
@@ -46,13 +38,12 @@ const ProjectList = ({ projectAssets }) => {
 
         return comp;
       })}
-    </Container>
+    </section>
   );
 };
 
 ProjectList.propTypes = {
-  projectAssets: PropTypes.object.isRequired
+  projectAssets: PropTypes.object.isRequired,
 };
 
 export default ProjectList;
-
