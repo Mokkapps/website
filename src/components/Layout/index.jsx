@@ -3,13 +3,13 @@ import ScrollUpButton from 'react-scroll-up-button';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
-import Menu from '../Menu';
+import Menu from '../Menu/DesktopMenu/DesktopMenu';
 import localEng from '../../lang/en.json';
 import localDe from '../../lang/de.json';
 import { LanguageContext } from '../../context/languageContext';
 import { ThemeContext } from '../../context/themeContextProvider';
-import BurgerMenu from '../Burger/BurgerMenu';
-import BurgerMenuButton from '../Burger/BurgerMenuButton';
+import BurgerMenu from '../Menu/MobileMenu/MobileMenu';
+import BurgerMenuButton from '../Menu/MobileMenu/BurgerMenuButton';
 import HeaderLogo from '../HeaderLogo';
 
 const Layout = ({ children }) => {

@@ -4,10 +4,11 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
-import menuItems from '../../content/meta/menu';
-import HeaderLogo from '../HeaderLogo';
-import LanguageSwitcher from '../LanguageSwitcher';
-import ThemeSwitch from '../ThemeSwitch';
+import menuItems from '../../../content/meta/menu';
+import HeaderLogo from '../../HeaderLogo';
+import LanguageSwitcher from '../../LanguageSwitcher';
+import ThemeSwitch from '../../ThemeSwitch';
+import MenuItem from "../MenuItem";
 
 const Header = styled.header`
   width: 100%;
@@ -93,34 +94,25 @@ const ItemTitle = styled.span`
   margin-left: 0.5rem;
 `;
 
-const Menu = ({ intl, className }) => {
+const DesktopMenu = ({ intl, className }) => {
   return (
     <Header className={`hidden lg:flex ${className}`} data-cy="header-menu">
       <HeaderLogo />
       <MenuItems>
         {menuItems.map(item => {
-          const { ariaLabel, i18nId, to, icon: Icon, linkProps } = item;
+          const { ariaLabel, i18nId, to, icon, linkProps } = item;
 
           return (
-            <Item
-              data-cy={`header-menu-item-${i18nId.toLowerCase()}`}
+            <MenuItem
               key={ariaLabel}
-            >
-              <Link
-                to={to}
-                title={intl.formatMessage({ id: i18nId })}
-                aria-label={ariaLabel}
-                activeClassName="active"
-                {...linkProps}
-              >
-                <ItemContainer>
-                  {Icon && <Icon />}
-                  <ItemTitle>
-                    <FormattedMessage id={i18nId} />
-                  </ItemTitle>
-                </ItemContainer>
-              </Link>
-            </Item>
+              intl={intl}
+              ariaLabel={ariaLabel}
+              i18nId={i18nId}
+              icon={icon}
+              to={to}
+              linkProps={linkProps}
+              dataCy={`header-menu-item-${i18nId.toLowerCase()}`}
+            />
           );
         })}
 
@@ -131,9 +123,9 @@ const Menu = ({ intl, className }) => {
   );
 };
 
-Menu.propTypes = {
+DesktopMenu.propTypes = {
   intl: PropTypes.any.isRequired,
   className: PropTypes.string,
 };
 
-export default injectIntl(Menu);
+export default injectIntl(DesktopMenu);

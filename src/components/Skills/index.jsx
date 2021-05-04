@@ -1,80 +1,44 @@
 import React from 'react';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
 
-const DevIconContainer = styled.div`
-  margin: auto 0.5rem;
-  padding: 0.25rem;
-`;
-
-const IconsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: var(--secondary);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 3px;
-  padding: 0.5rem;
-`;
-
-const SkillsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 3fr;
-  grid-template-areas:
-    'text icons'
-    'text icons'
-    'text icons'
-    'text icons';
-  grid-gap: 10px;
-`;
-
-const DevIcon = styled.i`
-  font-size: 50px;
-`;
-
-const SkillHeading = styled.h3`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-  height: 100%;
-  text-align: center;
-  background-color: var(--secondary);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 3px;
-`;
+const SKILLS = ['expert', 'advanced', 'intermediate', 'elementary'];
 
 const getDevIcons = skills =>
   skills.map(skill => (
-    <DevIconContainer title={skill.type} key={skill.className}>
-      <DevIcon className={skill.className}/>
-    </DevIconContainer>
+    <div className="p-4" title={skill.type} key={skill.className}>
+      <i className={`${skill.className} text-5xl`} />
+    </div>
   ));
 
 const getSkillSection = (skillLevel, skills) =>
   skills.length > 0
     ? [
-        <SkillHeading key={skillLevel}>
+        <h3
+          className="bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
+          key={skillLevel}
+        >
           <FormattedMessage id={skillLevel} />
-        </SkillHeading>,
-        <IconsContainer key={Math.random()}>
+        </h3>,
+        <div
+          className="flex flex-wrap justify-center bg-secondary rounded-md shadow-md"
+          key={Math.random()}
+        >
           {getDevIcons(skills)}
-        </IconsContainer>,
+        </div>,
       ]
     : null;
 
-const SKILLS = ['expert', 'advanced', 'intermediate', 'elementary'];
-
 const Skills = () => (
-  <SkillsContainer>
+  <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
     {SKILLS.map(skill =>
-      getSkillSection(skill, config.skills.filter(s => s.level === skill))
+      getSkillSection(
+        skill,
+        config.skills.filter(s => s.level === skill)
+      )
     )}
-  </SkillsContainer>
+  </div>
 );
 
 export default Skills;

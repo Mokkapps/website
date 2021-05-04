@@ -6,11 +6,6 @@ describe('Home Page Test', () => {
     cy.visit('/');
   });
 
-  it('includes a heading and images', () => {
-    cy.get('[data-cy=home-heading]');
-    cy.get('picture').should('have.length', 8);
-  });
-
   it('shows a hire me button which redirects to contact page', () => {
     cy.get('[data-cy=home-hire-me-button]').click();
     cy.url().should('include', '/contact');

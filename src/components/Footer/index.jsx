@@ -2,20 +2,16 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
-import config from '../../content/meta/config';
-import SocialLink from '../SocialLink';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
+import SocialLinks from '../SocialLink/SocialLinks';
 
 const Footer = () => (
   <footer className="flex flex-shrink-0 flex-col items-center justify-center py-8">
-    <div className="flex flex-wrap justify-center" data-cy="footer-social-links">
-      {config.socialLinks.map(link => (
-        <SocialLink link={link} key={link.id} />
-      ))}
-    </div>
-
+    <SocialLinks
+      className="flex flex-wrap justify-center"
+      dataCy="footer-social-links"
+    />
     <BuyMeACoffeeButton className="my-4" />
-
     <div className="text-center text-text-main">
       <a
         href="https://github.com/Mokkapps/website"

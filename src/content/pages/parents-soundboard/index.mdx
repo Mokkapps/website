@@ -1,12 +1,24 @@
 ---
 title: Parents Soundboard
 ---
+
 import AppStoreButton from '../../../components/ProjectCard/AppStoreButton';
 import config from '../../meta/config';
 
 ## iOS & Android Soundboard App
 
 ### Used Technology: [React Native](https://facebook.github.io/react-native/)
+
+<h3>
+  Source Code: {' '}
+  <a
+    href={config.projects[3].urls.github}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub
+  </a>
+</h3>
 
 ![Parents Soundboard Screenshot](./soundboard-screenshot.png)
 
@@ -19,6 +31,6 @@ You can define custom sentences and let the smartphone speak them for you.
 Your kids will hate it ;-)
 
 <div className="flex justify-between">
-  <AppStoreButton store="ios" url={config.projects[3].urls.appStore}></AppStoreButton>
-  <AppStoreButton store="android" url={config.projects[3].urls.googlePlay}></AppStoreButton>
+  <AppStoreButton store="ios" url={config.projects[3].urls.appStore} />
+  <AppStoreButton store="android" url={config.projects[3].urls.googlePlay} />
 </div>

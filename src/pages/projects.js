@@ -22,20 +22,6 @@ const MarginCenteredWrapper = styled.div`
   justify-content: center;
 `;
 
-const CustomerNames = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const Customer = styled.p`
-  background-color: var(--secondary);
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 3px;
-  padding: 10px 20px;
-`;
-
 const Heading2 = styled.h2`
   text-align: center;
 `;
@@ -69,13 +55,16 @@ const ProjectsPage = props => {
             <span>
               <FormattedMessage id="workedWith" />
             </span>
-            <CustomerNames className="mt-3">
+            <section className="my-4 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 md:grid-flow-col gap-4">
               {customers.map(customer => (
-                <Customer className="mx-2 mb-2 lg:mx-2" key={customer}>
-                  {customer}
-                </Customer>
+                <div
+                  className="flex justify-center items-center bg-secondary align-middle text-center shadow-md rounded-lg py-2 px-4"
+                  key={customer}
+                >
+                  <span className="font-bold">{customer}</span>
+                </div>
               ))}
-            </CustomerNames>
+            </section>
           </MarginCenteredWrapper>
         </MarginCenteredWrapper>
         <Heading2>

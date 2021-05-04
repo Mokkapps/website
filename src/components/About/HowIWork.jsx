@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import AboutParagraph from './AboutParagraph';
 
 export default class HowIWork extends React.Component {
   createHowIWorkList = () => {
@@ -8,7 +9,7 @@ export default class HowIWork extends React.Component {
     for (let i = 1; i <= 12; i++) {
       list.push(
         <li key={i}>
-          <FormattedMessage id={'whatIDo' + i} />
+          <AboutParagraph id={'whatIDo' + i} />
         </li>
       );
     }
@@ -29,21 +30,15 @@ export default class HowIWork extends React.Component {
           <h3>
             <FormattedMessage id="whoIWorkWithHeading" />
           </h3>
-          <p>
-            <FormattedMessage id="whoIWorkWithDesc" />
-          </p>
+          <AboutParagraph id="whoIWorkWithDesc" />
         </div>
 
         <div className="my-4">
           <h3>
             <FormattedMessage id="whatDontDoHeading" />
           </h3>
-          <p>
-            <FormattedMessage id="whatDontDoDesc1" />
-          </p>
-          <p>
-            <FormattedMessage id="whatDontDoDesc2" />
-          </p>
+          <AboutParagraph className="text-justify" id="whatDontDoDesc1" />
+          <AboutParagraph id="whatDontDoDesc2" />
         </div>
       </section>
     );

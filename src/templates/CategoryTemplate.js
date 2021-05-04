@@ -67,9 +67,14 @@ const PageTemplate = props => {
             />
           </h3>
           <CenteredHeading className="my-8">
-            <FormattedMessage id="otherCategories"></FormattedMessage>
+            <FormattedMessage id="otherCategories" />
           </CenteredHeading>
-          <CategorySelection className="my-8" categories={categories} centered />
+          <CategorySelection
+            className="my-8"
+            categories={categories}
+            centered
+            dataCy="blog-categories"
+          />
           <GoogleSearchLink className="mb-8" />
         </Heading>
         <BlogPostList
@@ -95,37 +100,43 @@ PageTemplate.propTypes = {
 
 export default PageTemplate;
 
-export const query = graphql`query CategoryTemplateQuery($category: String!) {
-  allCategories: allMdx(filter: {frontmatter: {categories: {ne: ""}}}) {
-    group(field: frontmatter___categories) {
-      fieldValue
-      totalCount
+export const query = graphql`
+  query CategoryTemplateQuery($category: String!) {
+    allCategories: allMdx(filter: { frontmatter: { categories: { ne: "" } } }) {
+      group(field: frontmatter___categories) {
+        fieldValue
+        totalCount
+      }
     }
-  }
-  posts: allMdx(
-    limit: 1000
-    sort: {fields: [fields___prefix], order: DESC}
-    filter: {frontmatter: {categories: {eq: $category}}}
-  ) {
-    totalCount
-    edges {
-      node {
-        fields {
-          slug
-          prefix
-        }
-        excerpt
-        frontmatter {
-          title
-          categories
-          cover {
-            childImageSharp {
-              gatsbyImageData(width: 700, layout: CONSTRAINED, placeholder: BLURRED, formats: [AUTO, WEBP])
+    posts: allMdx(
+      limit: 1000
+      sort: { fields: [fields___prefix], order: DESC }
+      filter: { frontmatter: { categories: { eq: $category } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          fields {
+            slug
+            prefix
+          }
+          excerpt
+          frontmatter {
+            title
+            categories
+            cover {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 700
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
+              }
             }
           }
         }
       }
     }
   }
-}
 `;

@@ -56,6 +56,99 @@ const IndexPage = props => {
 
   const { siteTitlePostfix, siteUrl, siteDescription } = config;
 
+  const skills = (
+    <div className="grid w-full grid-cols-1 grid-rows-1 md:grid-cols-2 md:gap-x-5">
+      <div className="w-full">
+        <h2 className="text-center lg:text-left">
+          <FormattedMessage id="homeDoYouNeed" />
+        </h2>
+        <UnorderedList>
+          <ListElement className="my-8">
+            <FormattedMessage id="homeSkill1" />
+          </ListElement>
+          <ListElement className="my-8">
+            <FormattedMessage
+              id="homeSkill2"
+              values={{
+                years: yearsOfExperience,
+              }}
+            />
+          </ListElement>
+          <ListElement className="my-8">
+            <FormattedMessage id="homeSkill3" />
+          </ListElement>
+          <ListElement className="my-8">
+            <FormattedMessage id="homeSkill4" />
+          </ListElement>
+          <ListElement className="my-8">
+            <FormattedMessage id="homeSkill5" />
+          </ListElement>
+        </UnorderedList>
+      </div>
+      <div className="w-full m-auto">
+        <StaticImage
+          alt={config.baseName}
+          title="Michael Hoffmann"
+          placeholder="blurred"
+          layout="constrained"
+          aspectRatio={1}
+          height={1920}
+          className="rounded-lg shadow-md"
+          src="../images/contact.jpg"
+        />
+      </div>
+    </div>
+  );
+
+  const hireMeButton = (
+    <Button
+      dataCy="home-hire-me-button"
+      className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
+      onClick={() => {
+        sendCustomAnalyticsEvent('Hire me button clicked');
+        navigate('/contact');
+      }}
+    >
+      <span className="mr-2" role="img" aria-label="phone">
+        💻
+      </span>
+      <FormattedMessage id="homeHireMe" />
+    </Button>
+  );
+
+  const latestBlogPosts = posts.map(post => {
+    const {
+      frontmatter: { title, cover },
+      fields: { slug },
+    } = post;
+    return (
+      <BlogPostCard
+        id="blog-post"
+        key={slug}
+        asset={cover}
+        title={title}
+        url={`/blog${slug}`}
+      />
+    );
+  });
+
+  const privateProjects = config.projects
+    .filter(p => p.featured)
+    .map(project => {
+      const { imageName, title, description, urls } = project;
+      return (
+        <ProjectCard
+          data-cy="home-project-card"
+          key={title}
+          minimal={true}
+          asset={getAsset(projectAssets.edges, imageName)}
+          title={title}
+          description={description.short}
+          urls={urls}
+        />
+      );
+    });
+
   return (
     <Layout>
       <Article className="flex flex-col min-h-screen">
@@ -63,96 +156,28 @@ const IndexPage = props => {
           <h1 className="text-center mb-10 lg:mb-20" data-cy="home-heading">
             <FormattedMessage id="homeTitle" />
           </h1>
-          <div className="flex flex-wrap">
-            <div className="w-full md:w-1/2">
-              <h2 className="text-center lg:text-left">
-                <FormattedMessage id="homeDoYouNeed" />
-              </h2>
-              <UnorderedList>
-                <ListElement className="my-8">
-                  <FormattedMessage id="homeSkill1" />
-                </ListElement>
-                <ListElement className="my-8">
-                  <FormattedMessage
-                    id="homeSkill2"
-                    values={{
-                      years: yearsOfExperience,
-                    }}
-                  />
-                </ListElement>
-                <ListElement className="my-8">
-                  <FormattedMessage id="homeSkill3" />
-                </ListElement>
-                <ListElement className="my-8">
-                  <FormattedMessage id="homeSkill4" />
-                </ListElement>
-                <ListElement className="my-8">
-                  <FormattedMessage id="homeSkill5" />
-                </ListElement>
-              </UnorderedList>
-            </div>
-            <div className="w-full md:w-1/2">
-              <StaticImage
-                alt={config.baseName}
-                title="Michael Hoffmann"
-                placeholder="blurred"
-                layout="constrained"
-                aspectRatio={1}
-                height={500}
-                class="rounded-lg shadow-md"
-                src="../images/contact.jpg"
-              />
-            </div>
-          </div>
-          <p className="text-center my-10 text-xl">
+          {skills}
+          <p className="text-center mt-10 text-xl">
             <FormattedMessage id="homeMyName" />{' '}
             <strong>
               <Link to="/about">Michael Hoffmann</Link>
             </strong>{' '}
             <FormattedMessage id="homeRightPlace" />
           </p>
-          <TestimonialSlider className="mb-10" />
-          <Availability />
+          <Availability className="mt-10 mb-5" />
           <div className="flex flex-wrap justify-center">
-            <Button
-              dataCy="home-hire-me-button"
-              className="w-72 h-16 mb-2 uppercase mx-2"
-              onClick={() => {
-                sendCustomAnalyticsEvent('Hire me button clicked');
-                navigate('/contact');
-              }}
-            >
-              <span className="mr-2" role="img" aria-label="phone">
-                💻
-              </span>
-              <FormattedMessage id="homeHireMe" />
-            </Button>
+            {hireMeButton}
             <ScheduleMeetingButton
               dataCy="home-schedule-meeting-button"
-              className="w-64 h-16 mb-2 uppercase mx-2"
+              className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
             />
           </div>
         </div>
+        <TestimonialSlider className="my-10" />
         <h2 className="text-center mt-10 mb-4">
           <FormattedMessage id="latestBlogPosts" />
         </h2>
-        <div className="flex flex-wrap justify-center">
-          {posts.map(post => {
-            const {
-              frontmatter: { title, cover },
-              fields: { slug },
-            } = post;
-            return (
-              <BlogPostCard
-                id="blog-post"
-                key={slug}
-                asset={cover}
-                title={title}
-                url={`/blog${slug}`}
-              />
-            );
-          })}
-        </div>
+        <div className="flex flex-wrap justify-center">{latestBlogPosts}</div>
         <LinkButton
           className="mb-10"
           dataCy="hero-blog-more-button"
@@ -162,26 +187,9 @@ const IndexPage = props => {
         <h2 className="text-center mt-10 mb-4">
           <FormattedMessage id="featuredProjects" />
         </h2>
-        <Projects data-cy="hero-projects-section">
-          {config.projects
-            .filter(p => p.featured)
-            .map(project => {
-              const { imageName, title, description, urls } = project;
-              return (
-                <ProjectCard
-                  data-cy="home-project-card"
-                  key={title}
-                  minimal={true}
-                  asset={getAsset(projectAssets.edges, imageName)}
-                  title={title}
-                  description={description.short}
-                  urls={urls}
-                />
-              );
-            })}
-        </Projects>
+        <Projects data-cy="hero-projects-section">{privateProjects}</Projects>
         <LinkButton
-          className="mb-10"
+          className="mb-5"
           dataCy="hero-projects-more-button"
           href="/projects"
           i18nId="moreProjectsLink"

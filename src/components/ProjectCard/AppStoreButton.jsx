@@ -16,15 +16,10 @@ const StyledAnchor = styled.a`
   background: ${props => `url(${imageLinks[props.store]}) no-repeat`};
   background-size: contain;
   display: inline-block;
-  overflow: hidden;
-  text-decoration: none;
   height: 100%;
   width: 100%;
-  padding: 5px;
 
   &:hover {
-    text-decoration: none;
-    transform: scale(1.05, 1.05);
     background-size: contain;
   }
 `;

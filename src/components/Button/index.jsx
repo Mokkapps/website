@@ -3,31 +3,31 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  background-color: var(--accent);
-  text-align: center;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--basic-button-text);
-  padding: 0.25rem 1.5rem;
-  transition: all 0.3s;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  outline: none;
-
   &:hover {
     filter: brightness(90%);
   }
 
   &:active {
     transform: scale(0.98);
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   }
 `;
 
-const Button = ({ children, title, onClick, type, className, dataCy }) => (
+const Button = ({
+  children,
+  title,
+  onClick,
+  type,
+  className,
+  dataCy,
+  secondary,
+}) => (
   <StyledButton
     data-cy={dataCy}
-    className={className}
+    className={`${className} ${
+      secondary
+        ? 'bg-black text-white'
+        : 'bg-accent text-basic-button-text'
+    } text-center rounded-md font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none min-h-50px`}
     type={type || 'button'}
     title={title}
     onClick={onClick}
@@ -39,6 +39,7 @@ const Button = ({ children, title, onClick, type, className, dataCy }) => (
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
+  secondary: PropTypes.bool,
   onClick: PropTypes.func,
   type: PropTypes.string,
   className: PropTypes.string,

@@ -46,6 +46,7 @@ const BlogPage = props => {
         <Container>
           <Heading className="mb-8" title="BLOG" />
           <CategorySelection
+            dataCy="blog-categories"
             className="mt-4"
             categories={categories}
             centered

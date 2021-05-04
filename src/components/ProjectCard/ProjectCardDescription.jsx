@@ -2,32 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import ProjectCardButton from './ProjectCardButton';
 import AppStoreButton from './AppStoreButton';
-
-const Container = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-start;
-  flex: 0 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-  background-color: var(--secondary);
-`;
+import CardDivider from '../Card/CardDivider';
 
 const Heading = styled.h3`
   text-align: center;
-  font-weight: bold;
-  margin: 0;
   text-transform: uppercase;
-  font-size: 1.4rem;
-  letter-spacing: 3px;
-  color: var(--text-secondary);
+  color: var(--text-main);
   word-wrap: normal;
-`;
-
-const Divider = styled.hr`
-  margin: 1rem 0 1rem 0;
 `;
 
 const DescriptionText = styled.p`
@@ -47,7 +29,6 @@ const ButtonsContainer = styled.div`
 `;
 
 const TechnologiesContainer = styled.div`
-  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -72,11 +53,11 @@ const ProjectCardDescription = ({
   minimal,
   usedTechnologies,
 }) => (
-  <Container>
+  <div className="flex flex-col p-4">
     <Heading>{projectName}</Heading>
     {minimal ? null : (
       <div>
-        <Divider />
+        <CardDivider />
         <TechnologiesContainer>
           {usedTechnologies.map(tech =>
             tech.iconClassName ? (
@@ -89,30 +70,23 @@ const ProjectCardDescription = ({
             )
           )}
         </TechnologiesContainer>
-        <Divider />
+        <CardDivider />
         <DescriptionText>{description}</DescriptionText>
         <ButtonsContainer>
-          {urls.github ? (
-            <ProjectCardButton icon="github" url={urls.github} />
-          ) : null}
           {urls.googlePlay ? (
-            <div style={{ marginTop: '1rem' }}>
-              <AppStoreButton
-                store="android"
-                width={240}
-                url={urls.googlePlay}
-              />
+            <div className="mt-1">
+              <AppStoreButton store="android" url={urls.googlePlay} />
             </div>
           ) : null}
           {urls.appStore ? (
             <div>
-              <AppStoreButton store="ios" width={240} url={urls.appStore} />
+              <AppStoreButton store="ios" url={urls.appStore} />
             </div>
           ) : null}
         </ButtonsContainer>
       </div>
     )}
-  </Container>
+  </div>
 );
 
 ProjectCardDescription.propTypes = {

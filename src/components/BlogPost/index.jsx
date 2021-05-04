@@ -22,7 +22,7 @@ const BlogPost = props => {
   } = props;
   return (
     <Link
-      className={`flex flex-col lg:flex-row justify-center items-center cursor-pointer rounded-md bg-none bg-secondary p-4 hover:shadow-2xl ${className}`}
+      className={`flex flex-col lg:flex-row justify-center items-center cursor-pointer rounded-md bg-none bg-secondary shadow-md p-4 ${className}`}
       to={`/blog${slug}`}
       data-cy={`blog-post-${id}`}
       key={slug}
@@ -34,7 +34,7 @@ const BlogPost = props => {
           className="image mb-4 lg:mr-4" />
       ) : null}
       <div className="w-full lg:w-2/3">
-        <h3>{title}</h3>
+        <h3 className="text-main-text">{title}</h3>
         <Meta
           categories={categories}
           prefix={prefix}

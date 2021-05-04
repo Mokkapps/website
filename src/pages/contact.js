@@ -32,12 +32,12 @@ const ContactPage = props => {
             src="../images/contact.jpg"
           />
           <LinkButton
-            className="mt-2 mb-4"
+            className="mt-2"
             dataCy="contact-about-me-button"
             href="/about"
             i18nId="moreAboutMeLink"
           />
-          <Availability />
+          <Availability className="my-5" />
           <ScheduleMeetingButton
             dataCy="contact-hire-me-button"
             className="w-64 h-16 mb-2 uppercase"
