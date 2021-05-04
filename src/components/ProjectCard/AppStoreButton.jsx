@@ -9,7 +9,7 @@ const Container = styled.div`
   display: inline-block;
   border-radius: 2px;
   height: ${props => `${props.height}px`};
-  width: 240px;
+  width: 220px;
 `;
 
 const StyledAnchor = styled.a`
