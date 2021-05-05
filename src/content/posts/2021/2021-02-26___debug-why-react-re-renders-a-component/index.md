@@ -3,6 +3,7 @@ title: "Debug Why React (Re-)Renders a Component"
 categories:
   - "development"
   - "react"
+  - "frontend"
 cover: "images/cover.jpg"
 
 ---

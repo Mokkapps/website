@@ -57,7 +57,7 @@ const IndexPage = props => {
   const { siteTitlePostfix, siteUrl, siteDescription } = config;
 
   const skills = (
-    <div className="grid w-full grid-cols-1 grid-rows-1 md:grid-cols-2 md:gap-x-5">
+    <div className="flex flex-col">
       <div className="w-full">
         <h2 className="text-center lg:text-left">
           <FormattedMessage id="homeDoYouNeed" />
@@ -85,14 +85,12 @@ const IndexPage = props => {
           </ListElement>
         </UnorderedList>
       </div>
-      <div className="w-full m-auto">
+      <div className="flex justify-center">
         <StaticImage
           alt={config.baseName}
           title="Michael Hoffmann"
           placeholder="blurred"
-          layout="constrained"
-          aspectRatio={1}
-          height={1920}
+          height={500}
           className="rounded-lg shadow-md"
           src="../images/contact.jpg"
         />
@@ -153,11 +151,11 @@ const IndexPage = props => {
     <Layout>
       <Article className="flex flex-col min-h-screen">
         <div className="flex flex-col flex-grow items-center">
-          <h1 className="text-center mb-10 lg:mb-20" data-cy="home-heading">
+          <h1 className="text-center mb-10" data-cy="home-heading">
             <FormattedMessage id="homeTitle" />
           </h1>
           {skills}
-          <p className="text-center mt-10 text-xl">
+          <p className="text-center mt-5 text-xl">
             <FormattedMessage id="homeMyName" />{' '}
             <strong>
               <Link to="/about">Michael Hoffmann</Link>

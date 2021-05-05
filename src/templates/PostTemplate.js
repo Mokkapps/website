@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 
 import config from '../content/meta/config';
@@ -25,6 +25,8 @@ import NextPrev from '../components/NextPrev';
 import Share from '../components/Share';
 
 import { getAllCategories } from '../utils/helper';
+import Button from '../components/Button';
+import { FormattedMessage } from 'react-intl';
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -61,6 +63,7 @@ const PostTemplate = props => {
     pageContext: { next, prev },
   } = props;
 
+  const [showComments, setShowComments] = useState(false);
   const { siteUrl, siteTitlePostfix } = config;
 
   const url = `${siteUrl}/blog${slug}`;
@@ -107,16 +110,26 @@ const PostTemplate = props => {
         ) : null}
         <BodyText body={body} fullWidth />
         <Share className="my-4" shareProps={shareProps} />
-        <Author className="mb-8" />
-        <NextPrev next={next} prev={prev} icons={nextPrevIcons} />
-        <ReactDisqusComments
-          className="mt-4"
-          shortname="mokkapps"
-          identifier={slug}
-          title={title}
-          url={url}
-          onNewComment={handleNewComment}
+        <NextPrev
+          className="my-8"
+          next={next}
+          prev={prev}
+          icons={nextPrevIcons}
         />
+        {showComments ? (
+          <ReactDisqusComments
+            shortname="mokkapps"
+            identifier={slug}
+            title={title}
+            url={url}
+            onNewComment={handleNewComment}
+          />
+        ) : (
+          <Button className="my-8" block onClick={() => setShowComments(true)}>
+            <FormattedMessage id="leaveAComment" />
+          </Button>
+        )}
+        <Author className="my-8" />
       </ArticleWithSidebar>
       <Footer />
       <Seo

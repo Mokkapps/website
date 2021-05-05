@@ -1,7 +1,7 @@
 ---
 title: Boost Your Productivity By Using The Terminal (iTerm & ZSH)
 subTitle:
-categories: ['productivity', 'development']
+categories: ['productivity', 'tools']
 cover: cover.jpeg
 ---
 

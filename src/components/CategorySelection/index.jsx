@@ -30,7 +30,7 @@ const CategorySelection = ({ categories, centered, className, dataCy }) => {
   return centered ? (
     <div
       data-cy={dataCy}
-      className={`${className} grid gap-2 grid-cols-2 grid-rows-5 md:grid-cols-4 md:grid-rows-2 grid-flow-col xxl:grid-cols-6 xxl:grid-rows-1`}
+      className={`${className} grid gap-2 grid-cols-2 md:grid-cols-5 xxl:grid-cols-7`}
     >
       {categoriesLinks}
     </div>

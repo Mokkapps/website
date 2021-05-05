@@ -1,7 +1,7 @@
 ---
 title: How To Build An Angular App Once And Deploy It To Multiple Environments
 subTitle:
-categories: ['development', 'angular']
+categories: ['development', 'angular', 'frontend']
 cover: build-once-process.png
 ---
 

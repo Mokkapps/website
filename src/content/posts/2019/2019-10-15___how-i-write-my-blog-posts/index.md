@@ -1,7 +1,7 @@
 ---
 title: How I Write My Blog Posts
 subTitle: 
-categories: ['career'] 
+categories: ['career', 'productivity'] 
 cover: cover.jpg
 ---
 

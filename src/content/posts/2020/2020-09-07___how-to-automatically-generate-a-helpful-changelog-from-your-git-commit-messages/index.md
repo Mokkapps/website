@@ -3,6 +3,7 @@ title: "How To Automatically Generate A Helpful Changelog From Your Git Commit M
 categories:
   - "development"
   - "tools"
+  - "productivity"
 cover: "images/cover.jpg"
 bannerCredit: "Photo by <a href=https://unsplash.com/photos/hsPFuudRg5I}>Isis França</a>"
 ---

@@ -1,7 +1,7 @@
 ---
 title: Why I Switched From Visual Studio Code to JetBrains WebStorm
 subTitle: An IDE is often the better choice for developing large business application
-categories: ['development', 'tools']
+categories: ['productivity', 'tools']
 cover: cover.png
 ---
 

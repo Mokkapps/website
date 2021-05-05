@@ -3,6 +3,7 @@ title: "Monitoring Spring Boot Application With Micrometer, Prometheus And Grafa
 categories:
   - "development"
   - "spring"
+  - "backend"
 cover: "images/cover.jpg"
 bannerCredit: "Photo by <a href=https://unsplash.com/photos/hOf9BaYUN88}>Mitchel Boot</a>"
 

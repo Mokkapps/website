@@ -25,11 +25,10 @@ const PostShare = props => {
   } = props;
 
   const iconSize = 48;
-
   const windowGlobal = typeof window !== 'undefined' && window;
 
   return (
-    <div className="flex justify-between my-10">
+    <div className="flex flex-wrap justify-between my-10">
       <FacebookShareButton url={url} quote={text}>
         <FacebookIcon size={iconSize} round />
       </FacebookShareButton>

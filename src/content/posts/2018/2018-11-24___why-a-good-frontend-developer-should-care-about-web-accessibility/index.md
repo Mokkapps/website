@@ -1,7 +1,7 @@
 ---
 title: Why A Good Frontend Developer Should Care About Web Accessibility
 subTitle:
-categories: ['development']
+categories: ['development', 'frontend']
 cover: cover.jpg
 ---
 <small>Cover image from <a href="https://www.flickr.com/photos/poakpong/4681315789">Poakpong</a> licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC 2.0</a></small>

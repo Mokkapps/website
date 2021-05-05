@@ -3,6 +3,7 @@ title: 'Run, Build & Deploy Stencil and Storybook From One Repository'
 categories:
   - 'development'
   - 'tools'
+  - 'frontend'
 cover: 'images/cover.jpg'
 ---
 

@@ -73,16 +73,16 @@ const ProjectCardDescription = ({
         <CardDivider />
         <DescriptionText>{description}</DescriptionText>
         <ButtonsContainer>
-          {urls.googlePlay ? (
+          {urls.googlePlay && (
             <div className="mt-1">
               <AppStoreButton store="android" url={urls.googlePlay} />
             </div>
-          ) : null}
-          {urls.appStore ? (
+          )}
+          {urls.appStore && (
             <div>
               <AppStoreButton store="ios" url={urls.appStore} />
             </div>
-          ) : null}
+          )}
         </ButtonsContainer>
       </div>
     )}

@@ -1,9 +1,8 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import React from 'react';
-
 import TagIcon from 'react-feather/dist/icons/tag';
+import { FormattedMessage } from 'react-intl';
 
 import config from 'content/meta/config';
 
@@ -14,20 +13,7 @@ import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
-import GoogleSearchLink from '../components/GoogleSearchLink';
-
 import { metaIcons, capitalize } from '../utils/helper';
-import { FormattedMessage } from 'react-intl';
-
-const Introduction = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const CenteredHeading = styled.h4`
-  text-align: center;
-`;
 
 const PageTemplate = props => {
   const {
@@ -47,16 +33,14 @@ const PageTemplate = props => {
     <Layout>
       <Article>
         <Heading>
-          <div className="mb-3">
-            <Introduction data-cy="category-introduction">
-              <span className="mr-2">
-                <FormattedMessage id="postsInCategory" />
-              </span>
-              <TagIcon />
-            </Introduction>
-          </div>
-          <h1>{capitalize(category)}</h1>
-          <h3>
+          <span
+            className="flex items-center justify-center"
+            data-cy="category-introduction"
+          >
+            <FormattedMessage id="postsInCategory" />
+          </span>
+          <h1 className="mt-3">{capitalize(category)}</h1>
+          <h3 className="my-8">
             <FormattedMessage
               id={
                 totalCount <= 1
@@ -66,21 +50,20 @@ const PageTemplate = props => {
               values={{ count: totalCount }}
             />
           </h3>
-          <CenteredHeading className="my-8">
-            <FormattedMessage id="otherCategories" />
-          </CenteredHeading>
-          <CategorySelection
-            className="my-8"
-            categories={categories}
-            centered
-            dataCy="blog-categories"
-          />
-          <GoogleSearchLink className="mb-8" />
         </Heading>
         <BlogPostList
           items={items}
           author={config.authorName}
           metaIcons={metaIcons}
+        />
+        <h4 className="text-center">
+          <FormattedMessage id="otherCategories" />
+        </h4>
+        <CategorySelection
+          className="my-4"
+          categories={categories}
+          centered
+          dataCy="blog-categories"
         />
       </Article>
       <Footer />

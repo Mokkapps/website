@@ -1,7 +1,7 @@
 ---
 title: The Mistakes I Made In My First Software Project
 subTitle: 
-categories: ['development', 'career'] 
+categories: ['career'] 
 cover: cover.jpg
 ---
 
