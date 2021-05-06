@@ -198,7 +198,7 @@ const IndexPage = props => {
         url={siteUrl}
         title={`Home${siteTitlePostfix}`}
         description={siteDescription}
-        image={getSrc(seoImage)}
+        image={`${config.siteUrl}${getSrc(seoImage)}`}
       />
     </Layout>
   );

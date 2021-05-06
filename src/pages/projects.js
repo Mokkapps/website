@@ -76,7 +76,7 @@ const ProjectsPage = props => {
       <Seo
         url={siteUrl}
         title={`Projects${siteTitlePostfix}`}
-        image={getSrc(seoImage)}
+        image={`${config.siteUrl}${getSrc(seoImage)}`}
         description="A list of all private and business projects from Michael Hoffmann"
       />
     </Layout>

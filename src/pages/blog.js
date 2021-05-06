@@ -62,7 +62,7 @@ const BlogPage = props => {
       <Seo
         url={siteUrl}
         title={`Blog${siteTitlePostfix}`}
-        image={getSrc(seoImage)}
+        image={`${config.siteUrl}${getSrc(seoImage)}`}
         description="Blog posts about software engineering and career"
       />
     </Layout>

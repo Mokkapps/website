@@ -50,7 +50,7 @@ const ContactPage = props => {
         url={siteUrl}
         title={`Contact${siteTitlePostfix}`}
         description="Contact Michael Hoffmann to hire him as a freelance software engineer or just ask him a question"
-        image={getSrc(seoImage)}
+        image={`${config.siteUrl}${getSrc(seoImage)}`}
       />
     </Layout>
   );

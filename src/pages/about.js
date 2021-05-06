@@ -29,7 +29,7 @@ const AboutPage = props => {
         url={siteUrl}
         title={`About${siteTitlePostfix}`}
         description={siteDescription}
-        image={getSrc(seoImage)}
+        image={`${config.siteUrl}${getSrc(seoImage)}`}
       />
     </Layout>
   );

@@ -13,6 +13,7 @@ import './style.scss';
 import Heading from '../components/Heading';
 import CategorySelection from '../components/CategorySelection';
 import { getAllCategories } from '../utils/helper';
+import { getSrc } from "gatsby-plugin-image";
 
 const CategoriesPage = props => {
   const {

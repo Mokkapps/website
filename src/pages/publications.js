@@ -82,7 +82,7 @@ const PublicationsPage = props => {
         url={siteUrl}
         title={`Publications${siteTitlePostfix}`}
         description="A list of talks and articles from Michael Hoffmann"
-        image={getSrc(seoImage)}
+        image={`${config.siteUrl}${getSrc(seoImage)}`}
       />
     </Layout>
   );
