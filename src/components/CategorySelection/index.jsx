@@ -1,31 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'gatsby';
 
-import { capitalize, metaIcons } from '../../utils/helper';
+import CategoryLink from '../CategoryLink';
 
 const CategorySelection = ({ categories, centered, className, dataCy }) => {
-  const categoriesLinks = categories.map(category => {
-    const link = (
-      <Link to={`/categories/${category.replace(' ', '-')}`}>
-        {capitalize(category)}
-      </Link>
-    );
-    const TagIcon = metaIcons.tag;
-
-    return (
-      <span
-        className={`${className} flex items-center my-0 mx-2`}
-        key={category}
-        data-cy={`blog-category-${category}`}
-      >
-        {TagIcon && (
-          <TagIcon style={{ marginRight: '.25rem', width: 20, height: 20 }} />
-        )}
-        {link}
-      </span>
-    );
-  });
+  const categoriesLinks = categories.map(category => (
+    <CategoryLink
+      key={category}
+      className={className}
+      category={category}
+      dataCy={`blog-category-${category}`}
+    />
+  ));
 
   return centered ? (
     <div

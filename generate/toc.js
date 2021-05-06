@@ -3,12 +3,12 @@
  * for a given blog post
  */
 
-const toc = require('markdown-toc');
-const path = require('path');
-const fs = require('fs');
-const inquirer = require('inquirer');
+import toc from 'markdown-toc';
+import path from 'path';
+import fs from 'fs';
+import inquirer from 'inquirer';
 
-const fromRoot = (...p) => path.join(__dirname, '..', ...p);
+const fromRoot = (...p) => path.join(process.env.PWD, ...p);
 
 async function generateTableOfContents() {
   try {
@@ -16,12 +16,18 @@ async function generateTableOfContents() {
       fromRoot(`src/content/posts/${new Date().getFullYear()}`)
     );
 
-    const { selectedBlogPosts } = await inquirer.prompt([
+    const { selectedBlogPosts, maxDepth } = await inquirer.prompt([
       {
         type: 'checkbox',
         name: 'selectedBlogPosts',
         choices: blogPosts.reverse(),
         message: 'Select a blog post',
+      },
+      {
+        type: 'input',
+        name: 'maxDepth',
+        default: 3,
+        message: 'Enter the max depth (default: 3)',
       },
     ]);
 
@@ -37,7 +43,12 @@ async function generateTableOfContents() {
           }
 
           console.log(
-            `📖 TABLE OF CONTENT 👇🏻\n\n${toc(data, { maxdepth: 2 }).content} `
+            `📖 TABLE OF CONTENT 👇🏻\n\n${
+              toc(data, {
+                maxdepth: maxDepth ? parseInt(maxDepth) : 3,
+                bullets: ['*', '-', '+'],
+              }).content
+            } `
           );
         }
       );

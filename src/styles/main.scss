@@ -41,6 +41,22 @@
   ul {
     list-style: initial;
     @apply ml-4;
+
+    > li {
+      @apply ml-4 #{!important};
+
+      > ul {
+        list-style: initial;
+
+        > li {
+          list-style-type: square;
+
+          a {
+            @apply text-base;
+          }
+        }
+      }
+    }
   }
 
   li {

@@ -21,6 +21,13 @@ export function sendCustomAnalyticsEvent(eventName) {
 
 export const yearsOfExperience = new Date().getFullYear() - 2015;
 
+export const getCategoryDisplayText = category => {
+  if (category === 'aws') {
+    return category.toUpperCase();
+  }
+  return capitalize(category);
+};
+
 export const getAllCategories = allPosts => {
   const postCategories = allPosts.edges
     .map(edge => edge.node.frontmatter.categories)

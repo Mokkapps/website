@@ -4,8 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { FormattedDate, FormattedMessage } from 'react-intl';
 
-import { capitalize } from '../../utils/helper';
 import config from '../../content/meta/config';
+import CategoryLink from '../CategoryLink';
 
 const PostMeta = props => {
   const {
@@ -48,21 +48,14 @@ const PostMeta = props => {
         </span>
       </div>
     </section>,
-    <section className="flex flex-wrap justify-center md:justify-start mb-6" key="categories-container">
+    <section
+      className="flex flex-wrap justify-center md:justify-start mb-6"
+      key="categories-container"
+    >
       {categories &&
-        categories.map(category => {
-          const link = (
-            <Link to={`/categories/${category}`}>{capitalize(category)}</Link>
-          );
-          const txt = <span key={category}>{capitalize(category)}</span>;
-
-          return (
-            <span className="flex flex-wrap items-center mr-2 mb-2" key={category}>
-              {TagIcon && <TagIcon className="mr-2 w-4 h-4" />}
-              {categoryLink ? link : txt}
-            </span>
-          );
-        })}
+        categories.map(category => (
+          <CategoryLink key={category} category={category} />
+        ))}
     </section>,
   ];
 };

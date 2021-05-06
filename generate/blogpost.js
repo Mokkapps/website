@@ -3,23 +3,24 @@
  * Inspired by https://github.com/kentcdodds/kentcdodds.com/blob/master/generate/blogpost.js
  */
 
-const path = require('path');
-const fs = require('fs');
-const util = require('util');
-const jsToYaml = require('json-to-pretty-yaml');
-const mkdirp = require('mkdirp');
-const fakeUa = require('fake-useragent');
-const opn = require('opn');
-const axios = require('axios');
-const slugify = require('@sindresorhus/slugify');
-const inquirer = require('inquirer');
-const tinify = require('tinify');
-const ora = require('ora');
-require('dotenv').config({
-  path: path.join(__dirname, '.env'),
+import path from 'path';
+import fs from 'fs';
+import util from 'util';
+import jsToYaml from 'json-to-pretty-yaml';
+import mkdirp from 'mkdirp';
+import fakeUa from 'fake-useragent';
+import opn from 'opn';
+import axios from 'axios';
+import slugify from '@sindresorhus/slugify';
+import inquirer from 'inquirer';
+import tinify from 'tinify';
+import ora from 'ora';
+import dotenv from 'dotenv';
+dotenv.config({
+  path: path.join(path.resolve(), '.env'),
 });
 
-const fromRoot = (...p) => path.join(__dirname, '..', ...p);
+const fromRoot = (...p) => path.join(path.resolve(), '..', ...p);
 
 tinify.key = process.env.TINY_PNG_API_KEY;
 
@@ -92,6 +93,7 @@ async function generateBlogPost() {
     bannerCredit ? '<small>${bannerCredit}</small>' : ''
   }`;
   console.log(`Markdown data:\n${mdData}`);
+  console.log(`Slug:\n${slug}`);
   if (!dryRun) {
     fs.writeFileSync(path.join(destination, 'index.md'), mdData);
     console.log(
@@ -193,13 +195,12 @@ function titleCaps(title) {
           return /[A-Za-z]\.[A-Za-z]/.test(all) ? all : upper(all);
         })
         .replace(RegExp('\\b' + small + '\\b', 'ig'), lower)
-        .replace(RegExp('^' + punct + small + '\\b', 'ig'), function (
-          all,
-          punct,
-          word
-        ) {
-          return punct + upper(word);
-        })
+        .replace(
+          RegExp('^' + punct + small + '\\b', 'ig'),
+          function (all, punct, word) {
+            return punct + upper(word);
+          }
+        )
         .replace(RegExp('\\b' + small + punct + '$', 'ig'), upper)
     );
 

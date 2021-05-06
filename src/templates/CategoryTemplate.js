@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import TagIcon from 'react-feather/dist/icons/tag';
 import { FormattedMessage } from 'react-intl';
 
 import config from 'content/meta/config';
@@ -13,7 +12,7 @@ import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
-import { metaIcons, capitalize } from '../utils/helper';
+import { getCategoryDisplayText, metaIcons } from '../utils/helper';
 
 const PageTemplate = props => {
   const {
@@ -39,7 +38,7 @@ const PageTemplate = props => {
           >
             <FormattedMessage id="postsInCategory" />
           </span>
-          <h1 className="mt-3">{capitalize(category)}</h1>
+          <h1 className="mt-3">{getCategoryDisplayText(category)}</h1>
           <h3 className="my-8">
             <FormattedMessage
               id={
