@@ -2,7 +2,7 @@ const base = {
   name: 'Mokkapps (Michael Hoffmann) - Senior Freelance Fullstack Developer',
   url: 'https://www.mokkapps.de',
   desc:
-    'Senior freelance fullstack developer from Germany with focus on Angular & React.',
+    'Senior freelance fullstack developer from Munich with focus on Angular & React.',
 };
 
 const config = {
@@ -24,7 +24,6 @@ const config = {
 
   /* url */
   siteUrl: base.url,
-  googleSearchUrl: 'https://www.google.com/search?q=site%3Amokkapps.de%2Fblog',
   // pathPrefix: '',
 
   twitterUsername: '@mokkapps',

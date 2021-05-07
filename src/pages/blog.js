@@ -39,8 +39,10 @@ const BlogPage = props => {
     <p className="my-8 text-center">
       {' '}
       You can search blog posts by{' '}
-      <a href={config.googleSearchUrl}>using Google</a>, browse a{' '}
-      <Link to={'/minimal-blog-list'}>minimal list</Link> or{' '}
+      <a href="https://www.google.com/search?q=site%3Amokkapps.de%2Fblog">
+        using Google
+      </a>
+      , browse a <Link to={'/minimal-blog-list'}>minimal list</Link> or{' '}
       <Link to={'/categories'}>by category</Link>
     </p>
   );
