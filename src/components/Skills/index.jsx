@@ -26,6 +26,7 @@ const getDevIcons = skills =>
       technology={skill.type}
       className="p-4"
       key={skill.type}
+      circle={false}
     />
   ));
 

@@ -19,27 +19,54 @@ const devIcons = {
   electron: { class: 'devicon-electron-original', displayText: 'Electron' },
   gatsby: { class: 'devicon-gatsby-plain', displayText: 'Gatsby.js' },
   firebase: { class: 'devicon-firebase-plain', displayText: 'Firebase' },
+  spring: { class: 'devicon-spring-plain', displayText: 'Spring Boot' },
+  django: { class: 'devicon-django-plain', displayText: 'Django' },
+  jenkins: { class: 'devicon-jenkins-plain', displayText: 'Jenkins' },
+  kubernetes: { class: 'devicon-kubernetes-plain', displayText: 'Kubernetes' },
+  jasmine: { class: 'devicon-jasmine-plain', displayText: 'Jasmine' },
+  protractor: { class: 'devicon-protractor-plain', displayText: 'Protractor' },
 };
 
-const DevIcon = ({ technology, colored = true, size, className }) => {
+const DevIcon = ({
+  technology,
+  colored = true,
+  size,
+  className,
+  circle = true,
+}) => {
   const icon = devIcons[technology];
-  return icon ? (
+  if (!icon) {
+    return (
+      <span className={`${className} text-base text-main-text capitalize`}>
+        {technology}
+      </span>
+    );
+  }
+
+  const iconElement = (
     <i
       title={icon.displayText}
-      className={`${className} ${icon.class} ${colored && 'colored'} text-${
+      className={`${icon.class} ${colored && 'colored'} text-${
         size ? size : 'base'
       }`}
     />
-  ) : (
-    <span className={`${className} text-base text-main-text capitalize`}>
-      {technology}
+  );
+
+  return circle ? (
+    <span
+      className={`${className} rounded-full px-2 py-1 bg-color-toggle-light`}
+    >
+      {iconElement}
     </span>
+  ) : (
+    <span className={className}>{iconElement}</span>
   );
 };
 
 DevIcon.propTypes = {
   technology: PropType.string.isRequired,
   colored: PropType.bool,
+  circle: PropType.bool,
   size: PropType.string,
   className: PropType.string,
 };

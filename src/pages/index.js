@@ -24,6 +24,7 @@ import BlogPostCard from '../components/BlogPostCard';
 import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 import TestimonialSlider from '../components/TestimonialSlider';
+import BusinessProjectList from '../components/BusinessProjectsList';
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -114,84 +115,117 @@ const IndexPage = props => {
     </Button>
   );
 
-  const latestBlogPosts = posts.map(post => {
-    const {
-      frontmatter: { title, cover },
-      fields: { slug },
-    } = post;
-    return (
-      <BlogPostCard
-        id="blog-post"
-        key={slug}
-        asset={cover}
-        title={title}
-        url={`/blog${slug}`}
-      />
-    );
-  });
+  const latestBlogPosts = (
+    <section>
+      <h2 className="text-center mt-10 mb-4 uppercase">
+        <FormattedMessage id="landingPage.latestBlogPosts" />
+      </h2>
+      <div className="flex flex-wrap justify-center">
+        {posts.map(post => {
+          const {
+            frontmatter: { title, cover },
+            fields: { slug },
+          } = post;
+          return (
+            <BlogPostCard
+              id="blog-post"
+              key={slug}
+              asset={cover}
+              title={title}
+              url={`/blog${slug}`}
+            />
+          );
+        })}
+      </div>
 
-  const privateProjects = config.projects
-    .filter(p => p.featured)
-    .map(project => {
-      const { imageName, title, description, urls } = project;
-      return (
-        <ProjectCard
-          data-cy="home-project-card"
-          key={title}
-          minimal={true}
-          asset={getAsset(projectAssets.edges, imageName)}
-          title={title}
-          description={description.short}
-          urls={urls}
+      <LinkButton
+        className="mb-10"
+        dataCy="hero-blog-more-button"
+        href="/blog"
+        i18nId="general.moreBlogPostsLink"
+      />
+    </section>
+  );
+
+  const featuredPrivateProjects = (
+    <section>
+      <h2 className="text-center mt-10 mb-4 uppercase">
+        <FormattedMessage id="landingPage.featuredPrivateProjects" />
+      </h2>
+      <Projects data-cy="hero-projects-section">
+        {config.projects
+          .filter(p => p.featured)
+          .map(project => {
+            const { imageName, title, description, urls } = project;
+            return (
+              <ProjectCard
+                data-cy="home-project-card"
+                key={title}
+                minimal={true}
+                asset={getAsset(projectAssets.edges, imageName)}
+                title={title}
+                description={description.short}
+                urls={urls}
+              />
+            );
+          })}
+      </Projects>
+      <LinkButton
+        className="mb-5"
+        dataCy="hero-projects-more-button"
+        href="/projects"
+        i18nId="general.moreProjectsLink"
+      />
+    </section>
+  );
+
+  const introduction = (
+    <div className="flex flex-col flex-grow items-center">
+      <h1 className="text-center mb-10" data-cy="home-heading">
+        <FormattedMessage id="landingPage.title" />
+      </h1>
+      {skills}
+      <p className="text-center mt-5 text-xl">
+        <FormattedMessage id="landingPage.myName" />{' '}
+        <strong>
+          <Link to="/about">Michael Hoffmann</Link>
+        </strong>{' '}
+        <FormattedMessage id="landingPage.rightPlace" />
+      </p>
+      <Availability className="mt-10 mb-5" />
+      <div className="flex flex-wrap justify-center">
+        {hireMeButton}
+        <ScheduleMeetingButton
+          dataCy="home-schedule-meeting-button"
+          className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
         />
-      );
-    });
+      </div>
+      <TestimonialSlider className="my-10" />
+    </div>
+  );
+
+  const businessProjects = (
+    <section>
+      <h2 className="text-center mt-10 mb-4 uppercase">
+        <FormattedMessage id="landingPage.businessProjectHighlights" />
+      </h2>
+      <BusinessProjectList />
+      <LinkButton
+        className="mb-5"
+        dataCy="hero-projects-more-button"
+        href="/projects"
+        i18nId="general.moreProjectsLink"
+      />
+    </section>
+  );
 
   return (
     <Layout>
       <Article className="flex flex-col min-h-screen">
-        <div className="flex flex-col flex-grow items-center">
-          <h1 className="text-center mb-10" data-cy="home-heading">
-            <FormattedMessage id="landingPage.title" />
-          </h1>
-          {skills}
-          <p className="text-center mt-5 text-xl">
-            <FormattedMessage id="landingPage.myName" />{' '}
-            <strong>
-              <Link to="/about">Michael Hoffmann</Link>
-            </strong>{' '}
-            <FormattedMessage id="landingPage.rightPlace" />
-          </p>
-          <Availability className="mt-10 mb-5" />
-          <div className="flex flex-wrap justify-center">
-            {hireMeButton}
-            <ScheduleMeetingButton
-              dataCy="home-schedule-meeting-button"
-              className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
-            />
-          </div>
-        </div>
-        <TestimonialSlider className="my-10" />
-        <h2 className="text-center mt-10 mb-4 uppercase">
-          <FormattedMessage id="landingPage.latestBlogPosts" />
-        </h2>
-        <div className="flex flex-wrap justify-center">{latestBlogPosts}</div>
-        <LinkButton
-          className="mb-10"
-          dataCy="hero-blog-more-button"
-          href="/blog"
-          i18nId="general.moreBlogPostsLink"
-        />
-        <h2 className="text-center mt-10 mb-4 uppercase">
-          <FormattedMessage id="landingPage.featuredProjects" />
-        </h2>
-        <Projects data-cy="hero-projects-section">{privateProjects}</Projects>
-        <LinkButton
-          className="mb-5"
-          dataCy="hero-projects-more-button"
-          href="/projects"
-          i18nId="general.moreProjectsLink"
-        />
+        {introduction}
+        {businessProjects}
+        {latestBlogPosts}
+        {featuredPrivateProjects}
       </Article>
       <Footer />
       <Seo

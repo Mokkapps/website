@@ -8,41 +8,8 @@ export default class HTML extends React.Component {
       <html lang="en" {...this.props.htmlAttributes}>
         <link
           rel="stylesheet"
-          href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css"
           async
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
-          async
-        />
-        <script
-          src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
-          data-cfasync="false"
-          async
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener("load", function()
-              {window.cookieconsent.initialise({
-                palette: {
-                  popup: {
-                    background: '#000',
-                  },
-                  button: {
-                    background: '#fc1a20',
-                  },
-                },
-                theme: 'classic',
-                content: {
-                  href: 'https://www.mokkapps.de/privacy-policy',
-                },
-              })}
-              );
-            `,
-          }}
         />
         <head>
           <meta charSet="utf-8" />

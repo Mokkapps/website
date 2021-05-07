@@ -86,7 +86,7 @@ const config = {
         short: 'iOS & Android app for the gaming blog www.rebelgamer.de',
         long: '',
       },
-      usedTechnologies: ['React-Native', 'react', 'apple', 'android'],
+      usedTechnologies: ['react', 'apple', 'android'],
       imageName: 'rebelgamer',
       urls: {
         page: '/rebelgamer',
@@ -105,7 +105,7 @@ const config = {
           'A soundboard developed for parents to be able to play often needed phrases like "No"',
         long: '',
       },
-      usedTechnologies: ['React-Native', 'react', 'apple', 'android'],
+      usedTechnologies: ['react', 'apple', 'android'],
       imageName: 'parents-soundboard',
       urls: {
         page: '/parents-soundboard',

@@ -35,7 +35,8 @@
     "rightPlace": "and you are in the right place!",
     "hireMe": "Hire me",
     "scheduleMeeting": "Schedule a meeting",
-    "featuredProjects": "Featured Private Projects",
+    "featuredPrivateProjects": "Featured Private Projects",
+    "businessProjectHighlights": "Project Highlights",
     "latestBlogPosts": "Latest Blog Posts"
   },
   "blogPage": {
@@ -48,7 +49,26 @@
     "privateProjectsHeading": "My Private Projects",
     "detailedProjectList": " if you want to have a detailed list of projects I have worked on in my professional career.",
     "getInTouch": "Get in touch",
-    "workedWith": "I am proud to have worked with:"
+    "workedWith": "I am proud to have worked with:",
+    "keyContributions": "Key Contributions:",
+    "businessProjectsExcerpt": "The following abstract of my business project will give you an idea how I helped my clients in previous projects:",
+    "businessProjects": {
+      "segmentationTool": {
+        "company": "ProSiebenSat.1 Tech Solutions GmbH",
+        "title": "Development of a video segmentation tool",
+        "keyContribution1": "Planned & executed the extraction of the segmentation tool from a monolithic application",
+        "keyContribution2": "Set up, developed and maintained multiple microservices",
+        "keyContribution3": "Designed and implemented a Websocket-based dashboard",
+        "techStack": "vue,typeScript,jest,spring,kubernetes,jenkins"
+      },
+      "apeer": {
+        "company": "Carl Zeiss Microscopy GmbH",
+        "title": "Technical lead for the frontend development of apeer.com",
+        "keyContribution1": "Refactored the frontend application and worked on new feature implementations",
+        "keyContribution2": "Defined best practices, guidelines and trainings for frontend development",
+        "techStack": "angular,jasmine,protractor,dotNet"
+      }
+    }
   },
   "publicationsPage": {
     "title": "Publications",

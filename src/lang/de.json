@@ -35,7 +35,8 @@
     "rightPlace": "und Sie sind hier absolut richtig!",
     "hireMe": "Beauftragen Sie mich",
     "scheduleMeeting": "Termin vereinbaren",
-    "featuredProjects": "Private Projekte",
+    "featuredPrivateProjects": "Private Projekte",
+    "businessProjectHighlights": "Projekt Highlights",
     "latestBlogPosts": "Aktuelle Blog Artikel"
   },
   "blogPage": {
@@ -48,7 +49,26 @@
     "privateProjectsHeading": "Meine privaten Projekte",
     "detailedProjectList": ", wenn Sie eine detaillierte Liste der Projekte erhalten wollen, an denen ich bisher in meiner professionellen Karriere gearbeitet habe.",
     "getInTouch": "Kontaktieren Sie mich",
-    "workedWith": "Für folgende Firmen habe ich bisher an Projekten gearbeitet:"
+    "workedWith": "Für folgende Firmen habe ich bisher an Projekten gearbeitet:",
+    "keyContributions": "Wesentliche Beiträge:",
+    "businessProjectsExcerpt": "Hier ein kleiner Einblick, wie ich meinen Kunden in früheren Projekten geholfen habe:",
+    "businessProjects": {
+      "segmentationTool": {
+        "company": "ProSiebenSat.1 Tech Solutions GmbH",
+        "title": "Entwicklung eines Tools zur Videosegmentierung",
+        "keyContribution1": "Planung & Durchführung der Extraktion des Tools aus einem Monolithen",
+        "keyContribution2": "Aufsetzen, Entwicklung und Wartung mehrerer Microservices",
+        "keyContribution3": "Konzeption und Implementierung eines Websocket-basierten Dashboards",
+        "techStack": "vue,typeScript,jest,spring,kubernetes,jenkins"
+      },
+      "apeer": {
+        "company": "Carl Zeiss Microscopy GmbH",
+        "title": "Technical Lead für die Frontend-Entwicklung von apeer.com",
+        "keyContribution1": "Refactoring der bestehenden Frontend-Anwendung und Implementierung neuer Features",
+        "keyContribution2": "Definieren von Best Practices, Guidelines und Trainings für die Frontend Entwicklung",
+        "techStack": "angular,jasmine,protractor,dotNet"
+      }
+    }
   },
   "publicationsPage": {
     "title": "Publikationen",
