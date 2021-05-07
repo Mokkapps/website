@@ -16,7 +16,6 @@ import BusinessProjectList from '../components/BusinessProjectsList';
 
 const ProjectsPage = props => {
   const {
-    intl,
     data: { projectAssets, seoImage },
   } = props;
 

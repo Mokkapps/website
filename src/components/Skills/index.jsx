@@ -22,25 +22,24 @@ const skillLevels = ['expert', 'advanced', 'intermediate', 'elementary'];
 const getDevIcons = skills =>
   skills.map(skill => (
     <DevIcon
-      size="5xl"
+      className="mr-2"
+      size="2xl"
       technology={skill.type}
-      className="p-4"
       key={skill.type}
-      circle={false}
     />
   ));
 
 const getSkillSection = (skillLevel, skills) =>
   skills.length > 0
     ? [
-        <h3
-          className="bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
+        <p
+          className="bold text-lg bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
           key={skillLevel}
         >
           <FormattedMessage id={`aboutPage.${skillLevel}`} />
-        </h3>,
+        </p>,
         <div
-          className="flex flex-wrap justify-center bg-secondary rounded-md shadow-md"
+          className="flex flex-wrap justify-center items-center bg-secondary rounded-md shadow-md p-3"
           key={Math.random()}
         >
           {getDevIcons(skills)}

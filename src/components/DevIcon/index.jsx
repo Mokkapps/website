@@ -32,7 +32,6 @@ const DevIcon = ({
   colored = true,
   size,
   className,
-  circle = true,
 }) => {
   const icon = devIcons[technology];
   if (!icon) {
@@ -43,30 +42,23 @@ const DevIcon = ({
     );
   }
 
-  const getIconElement = cssClassName => (
-    <i
-      title={icon.displayText}
-      className={`${cssClassName} ${icon.class} ${colored && 'colored'} text-${
-        size ? size : 'base'
-      }`}
-    />
-  );
-
-  return circle ? (
+  return (
     <span
-      className={`${className} rounded-full px-2 py-1 bg-color-toggle-light`}
+      className={`${className} shadow-md rounded-full px-2 py-1 bg-secondary-darken`}
     >
-      {getIconElement()}
+      <i
+        title={icon.displayText}
+        className={`${icon.class} ${colored && 'colored'} text-${
+          size ? size : 'base'
+        }`}
+      />
     </span>
-  ) : (
-    <React.Fragment>{getIconElement(className)}</React.Fragment>
   );
 };
 
 DevIcon.propTypes = {
   technology: PropType.string.isRequired,
   colored: PropType.bool,
-  circle: PropType.bool,
   size: PropType.string,
   className: PropType.string,
 };
