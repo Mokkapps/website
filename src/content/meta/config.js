@@ -11,7 +11,7 @@ const config = {
   baseDesc: `${base.desc}`,
   siteTitlePostfix: ` - ${base.name}`,
   siteDescription: `${base.desc}`,
-  defaultSeoImage: `/images/og/og-home.jpg`,
+  defaultSeoImage: `https://i.imgur.com/7M1N3cS.jpg`,
 
   socialShareImage: {
     width: 1200,
@@ -30,126 +30,6 @@ const config = {
   twitterUsername: '@mokkapps',
   shareImageName: 'Michael Hoffmann (Mokkapps)',
   authorName: 'Michael Hoffmann',
-  skills: [
-    // className can be found in https://konpa.github.io/devicon/
-    {
-      type: 'JavaScript',
-      className: 'devicon-javascript-plain colored',
-      level: 'expert',
-    },
-    {
-      type: 'C#',
-      className: 'devicon-csharp-line colored',
-      level: 'elementary',
-    },
-    {
-      type: '.NET',
-      className: 'devicon-dot-net-plain-wordmark colored',
-      level: 'elementary',
-    },
-    {
-      type: 'TypeScript',
-      className: 'devicon-typescript-plain colored',
-      level: 'expert',
-    },
-    {
-      type: 'Java',
-      className: 'devicon-java-plain-wordmark colored',
-      level: 'advanced',
-    },
-    {
-      type: 'CSS3',
-      className: 'devicon-css3-plain-wordmark colored',
-      level: 'expert',
-    },
-    {
-      type: 'HTML5',
-      className: 'devicon-html5-plain-wordmark colored',
-      level: 'expert',
-    },
-    {
-      type: 'Angular',
-      className: 'devicon-angularjs-plain colored',
-      level: 'expert',
-    },
-    {
-      type: 'React',
-      className: 'devicon-react-original-wordmark colored',
-      level: 'expert',
-    },
-    {
-      type: 'Vue',
-      className: 'devicon-vuejs-plain-wordmark colored',
-      level: 'advanced',
-    },
-    {
-      type: 'Node.js',
-      className: 'devicon-nodejs-plain-wordmark colored',
-      level: 'intermediate',
-    },
-  ],
-  socialLinks: [
-    {
-      id: 'twitter',
-      url: 'https://twitter.com/mokkapps',
-      icon: 'twitter',
-      ariaLabel: 'Twitter',
-      favorite: true,
-    },
-    {
-      id: 'github',
-      url: 'https://github.com/mokkapps',
-      icon: 'github',
-      ariaLabel: 'GitHub',
-      favorite: true,
-    },
-    {
-      id: 'dev.to',
-      url: 'https://dev.to/mokkapps',
-      icon: 'dev-dot-to',
-      ariaLabel: 'DEV.to',
-    },
-    {
-      id: 'linkedin',
-      url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
-      icon: 'linkedin',
-      ariaLabel: 'LinkedIn',
-      favorite: true,
-    },
-    {
-      id: 'instagram',
-      url: 'https://www.instagram.com/mokkapps/',
-      icon: 'instagram',
-      ariaLabel: 'Instagram',
-      favorite: true,
-    },
-    {
-      id: 'facebook',
-      url: 'https://www.facebook.com/mokkapps-dev/',
-      icon: 'facebook',
-      ariaLabel: 'Facebook',
-      favorite: true,
-    },
-    {
-      id: 'hashnode',
-      url: 'https://mokkapps.hashnode.dev/',
-      icon: 'hashnode',
-      ariaLabel: 'Hashnode',
-    },
-    {
-      id: 'rss',
-      url: `${base.url}/rss.xml`,
-      icon: 'rss',
-      ariaLabel: 'Mokkapps RSS Feed',
-      favorite: true,
-    },
-    {
-      id: 'mail',
-      url: 'mailto:mail@mokkapps.de',
-      icon: 'minutemailer',
-      ariaLabel: 'Send email',
-    },
-  ],
   customers: [
     'BMW',
     'Audi Business Innovation',

@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
-import SocialLink from '../SocialLink/SocialLink';
 import { yearsOfExperience } from '../../utils/helper';
 import { StaticImage } from 'gatsby-plugin-image';
 import AboutParagraph from './AboutParagraph';
+import SocialLinks from '../SocialLink/SocialLinks';
 
 const AboutMe = () => (
   <section className="flex flex-col justify-center items-center">
@@ -19,9 +19,7 @@ const AboutMe = () => (
       className="flex justify-center flex-wrap mt-8"
       data-cy="about-social-links"
     >
-      {config.socialLinks.map(link => (
-        <SocialLink link={link} key={link.id} />
-      ))}
+      <SocialLinks onlyFavorites />
     </div>
     <div className="m-auto mt-8" data-cy="about-description">
       <AboutParagraph

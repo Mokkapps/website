@@ -33,7 +33,7 @@ const SimpleBlogPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Blog${siteTitlePostfix}`}
+        title={`Minimal Blog List${siteTitlePostfix}`}
         description="Blog posts about software engineering and career"
       />
     </Layout>

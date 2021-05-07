@@ -1,9 +1,66 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import config from '../../content/meta/config';
+const skills = [
+  // className can be found in https://konpa.github.io/devicon/
+  {
+    type: 'JavaScript',
+    className: 'devicon-javascript-plain colored',
+    level: 'expert',
+  },
+  {
+    type: 'C#',
+    className: 'devicon-csharp-line colored',
+    level: 'elementary',
+  },
+  {
+    type: '.NET',
+    className: 'devicon-dot-net-plain-wordmark colored',
+    level: 'elementary',
+  },
+  {
+    type: 'TypeScript',
+    className: 'devicon-typescript-plain colored',
+    level: 'expert',
+  },
+  {
+    type: 'Java',
+    className: 'devicon-java-plain-wordmark colored',
+    level: 'advanced',
+  },
+  {
+    type: 'CSS3',
+    className: 'devicon-css3-plain-wordmark colored',
+    level: 'expert',
+  },
+  {
+    type: 'HTML5',
+    className: 'devicon-html5-plain-wordmark colored',
+    level: 'expert',
+  },
+  {
+    type: 'Angular',
+    className: 'devicon-angularjs-plain colored',
+    level: 'expert',
+  },
+  {
+    type: 'React',
+    className: 'devicon-react-original-wordmark colored',
+    level: 'expert',
+  },
+  {
+    type: 'Vue',
+    className: 'devicon-vuejs-plain-wordmark colored',
+    level: 'advanced',
+  },
+  {
+    type: 'Node.js',
+    className: 'devicon-nodejs-plain-wordmark colored',
+    level: 'intermediate',
+  },
+];
 
-const SKILLS = ['expert', 'advanced', 'intermediate', 'elementary'];
+const skillLevels = ['expert', 'advanced', 'intermediate', 'elementary'];
 
 const getDevIcons = skills =>
   skills.map(skill => (
@@ -32,10 +89,10 @@ const getSkillSection = (skillLevel, skills) =>
 
 const Skills = () => (
   <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
-    {SKILLS.map(skill =>
+    {skillLevels.map(skill =>
       getSkillSection(
         skill,
-        config.skills.filter(s => s.level === skill)
+        skills.filter(s => s.level === skill)
       )
     )}
   </div>

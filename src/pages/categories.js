@@ -13,7 +13,6 @@ import './style.scss';
 import Heading from '../components/Heading';
 import CategorySelection from '../components/CategorySelection';
 import { getAllCategories } from '../utils/helper';
-import { getSrc } from 'gatsby-plugin-image';
 
 const CategoriesPage = props => {
   const {
@@ -21,7 +20,7 @@ const CategoriesPage = props => {
   } = props;
 
   const categories = getAllCategories(allEdges);
-  const { siteUrl } = config;
+  const { siteUrl, siteTitlePostfix } = config;
 
   return (
     <Layout>
@@ -37,7 +36,7 @@ const CategoriesPage = props => {
       <Footer />
       <Seo
         url={siteUrl}
-        title={`Categories`}
+        title={`Categories${siteTitlePostfix}`}
         description="Available categories for blog posts"
       />
     </Layout>

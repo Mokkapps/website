@@ -68,7 +68,7 @@ const PageTemplate = props => {
       <Footer />
       <Seo
         url={`${siteUrl}/categories/${category}/`}
-        title={`Posts in category: ${category}${siteTitlePostfix}`}
+        title={`Posts in category: ${getCategoryDisplayText(category)}${siteTitlePostfix}`}
         description={`This page contains all the posts in the category ${category}`}
       />
     </Layout>
