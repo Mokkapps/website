@@ -43,10 +43,10 @@ const DevIcon = ({
     );
   }
 
-  const iconElement = (
+  const getIconElement = cssClassName => (
     <i
       title={icon.displayText}
-      className={`${icon.class} ${colored && 'colored'} text-${
+      className={`${cssClassName} ${icon.class} ${colored && 'colored'} text-${
         size ? size : 'base'
       }`}
     />
@@ -56,10 +56,10 @@ const DevIcon = ({
     <span
       className={`${className} rounded-full px-2 py-1 bg-color-toggle-light`}
     >
-      {iconElement}
+      {getIconElement()}
     </span>
   ) : (
-    <span className={className}>{iconElement}</span>
+    <React.Fragment>{getIconElement(className)}</React.Fragment>
   );
 };
 
