@@ -16,7 +16,7 @@ const BuyMeACoffeeButton = props => {
         ☕️
       </span>
       <span className="text-l font-bold flex text-main-text">
-        <FormattedMessage id="buyMeACoffee" />
+        <FormattedMessage id="general.buyMeACoffee" />
       </span>
     </a>
   );

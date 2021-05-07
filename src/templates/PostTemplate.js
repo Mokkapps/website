@@ -126,7 +126,7 @@ const PostTemplate = props => {
           />
         ) : (
           <Button className="my-8" block onClick={() => setShowComments(true)}>
-            <FormattedMessage id="leaveAComment" />
+            <FormattedMessage id="blogPage.leaveAComment" />
           </Button>
         )}
         <Author className="my-8" />

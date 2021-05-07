@@ -16,7 +16,7 @@ const HireTheAuthor = () => (
     >
       <StaticImage alt={config.baseName} src="../../images/about.jpg" className="m-1" />
       <p className="p-2 bg-secondary text-main-text text-center text-md">
-        <FormattedMessage id="shortSummary" />
+        <FormattedMessage id="hireTheAuthor.shortSummary" />
       </p>
     </a>
     <SocialLinks onlyFavorites className="p-2 justify-center" />

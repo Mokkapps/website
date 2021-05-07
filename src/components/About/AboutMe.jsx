@@ -25,14 +25,14 @@ const AboutMe = () => (
     </div>
     <div className="m-auto mt-8" data-cy="about-description">
       <AboutParagraph
-        id="aboutParagraph"
+        id="aboutPage.paragraph1"
         values={{
           years: yearsOfExperience,
         }}
       />
       <AboutParagraph
         className="mt-4"
-        id="aboutParagraph2"
+        id="aboutPage.paragraph2"
         values={{
           // eslint-disable-next-line react/display-name
           a: chunks => <Link to="/contact">{chunks}</Link>,
@@ -40,16 +40,16 @@ const AboutMe = () => (
       />
       <AboutParagraph
         className="mt-4"
-        id="aboutParagraph3"
+        id="aboutPage.paragraph3"
         values={{
           privateProjectsLink: (
             <Link to="/projects">
-              <FormattedMessage id="privateProjectsLink" />
+              <FormattedMessage id="aboutPage.privateProjectsLink" />
             </Link>
           ),
           blogLink: (
             <Link to="/blog">
-              <FormattedMessage id="blogLink" />
+              <FormattedMessage id="aboutPage.blogLink" />
             </Link>
           ),
           inDepthDevLink: (
@@ -58,12 +58,12 @@ const AboutMe = () => (
               target="_blank"
               rel="noreferrer"
             >
-              <FormattedMessage id="inDepthDevLink" />
+              <FormattedMessage id="aboutPage.inDepthDevLink" />
             </a>
           ),
           publicationLink: (
             <Link to="/publications">
-              <FormattedMessage id="publicationLink" />
+              <FormattedMessage id="aboutPage.publicationLink" />
             </Link>
           ),
           angularArchitectsLink: (
@@ -72,7 +72,7 @@ const AboutMe = () => (
               target="_blank"
               rel="noreferrer"
             >
-              <FormattedMessage id="angularArchitectsLink" />
+              <FormattedMessage id="aboutPage.angularArchitectsLink" />
             </a>
           ),
           gitHubLink: (
@@ -81,23 +81,23 @@ const AboutMe = () => (
               target="_blank"
               rel="noreferrer"
             >
-              <FormattedMessage id="gitHubLink" />
+              <FormattedMessage id="aboutPage.gitHubLink" />
             </a>
           ),
         }}
       />
       <AboutParagraph
         className="mt-4"
-        id="aboutParagraph6"
+        id="aboutPage.paragraph6"
         values={{
           // eslint-disable-next-line react/display-name
           a: chunks => <Link to="/uses">{chunks}</Link>,
         }}
       />
-      <AboutParagraph className="mt-4" id="aboutParagraph4" />
+      <AboutParagraph className="mt-4" id="aboutPage.paragraph4" />
       <AboutParagraph
         className="mt-4"
-        id="aboutParagraph5"
+        id="aboutPage.paragraph5"
         values={{
           // eslint-disable-next-line react/display-name
           a: chunks => <Link to="/contact">{chunks}</Link>,

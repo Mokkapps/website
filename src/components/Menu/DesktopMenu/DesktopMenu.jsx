@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import menuItems from '../../../content/meta/menu';
 import HeaderLogo from '../../HeaderLogo';
@@ -79,19 +78,6 @@ const Item = styled.li`
   svg {
     height: 30px;
   }
-`;
-
-const ItemContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  align-content: center;
-`;
-
-const ItemTitle = styled.span`
-  display: block;
-  margin-left: 0.5rem;
 `;
 
 const DesktopMenu = ({ intl, className }) => {

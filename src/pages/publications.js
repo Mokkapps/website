@@ -26,9 +26,9 @@ const PublicationsPage = props => {
     <Layout>
       <Article>
         <div className="flex flex-col items-center">
-          <Heading i18nId="publicationsHeading" />
-          <h2 className="my-8">
-            <FormattedMessage id="talks" />
+          <Heading i18nId="publicationsPage.title" />
+          <h2 className="my-8 uppercase">
+            <FormattedMessage id="publicationsPage.talks" />
           </h2>
           <div className="flex justify-around flex-wrap">
             {publications
@@ -53,8 +53,8 @@ const PublicationsPage = props => {
                         <p className="text-main-text">{date}</p>
                         <p className="text-main-text">{host}</p>
                         {slides ? (
-                          <a href={slides} className="mt-2">
-                            <FormattedMessage id="slides" />
+                          <a href={slides} className="mt-2 uppercase">
+                            <FormattedMessage id="publicationsPage.slides" />
                           </a>
                         ) : null}
                       </div>
@@ -63,8 +63,8 @@ const PublicationsPage = props => {
                 );
               })}
           </div>
-          <h2 className="my-8">
-            <FormattedMessage id="articles" />
+          <h2 className="my-8 uppercase">
+            <FormattedMessage id="publicationsPage.articles" />
           </h2>
           <ul>
             {publications

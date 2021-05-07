@@ -34,12 +34,12 @@ const NewsletterPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading i18nId="newsletter" />
+        <Heading i18nId="newsletterPage.newsletter" />
         <InfoText className="mb-4">
-          <FormattedMessage id="newsletterInfo" />
+          <FormattedMessage id="newsletterPage.newsletterInfo" />
         </InfoText>
         <InfoText className="mb-2">
-          <FormattedMessage id="mailChimpInfo" />
+          <FormattedMessage id="newsletterPage.mailChimpInfo" />
         </InfoText>
         <NewsletterContainer className="mb-2">
           <a
@@ -47,7 +47,7 @@ const NewsletterPage = props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FormattedMessage id="mailChimpInfoLink" />
+            <FormattedMessage id="newsletterPage.mailChimpInfoLink" />
           </a>
         </NewsletterContainer>
         <NewsletterContainer>
@@ -56,7 +56,7 @@ const NewsletterPage = props => {
         <LinkButton
           dataCy="newsletter-archive-link-button"
           href="https://us19.campaign-archive.com/home/?u=587746a905932c04ed4e175bb&id=220816f8fa"
-          i18nId="visitArchive"
+          i18nId="newsletterPage.visitArchive"
         />
       </Article>
       <Footer />

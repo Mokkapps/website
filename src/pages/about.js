@@ -21,7 +21,7 @@ const AboutPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading i18nId="aboutMe" />
+        <Heading i18nId="aboutPage.title" />
         <About />
       </Article>
       <Footer />

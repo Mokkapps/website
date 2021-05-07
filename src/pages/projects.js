@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { getSrc, StaticImage } from 'gatsby-plugin-image';
 
@@ -14,18 +13,6 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 
-const MarginCenteredWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Heading2 = styled.h2`
-  text-align: center;
-`;
-
 const ProjectsPage = props => {
   const {
     data: { projectAssets, seoImage },
@@ -36,24 +23,24 @@ const ProjectsPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading i18nId="businessProjectsHeading" />
-        <MarginCenteredWrapper className="my-8">
+        <Heading i18nId="projectsPage.businessProjectsHeading" />
+        <div className="flex flex-col items-center justify-center w-full my-8">
           <span>
             <Link to="/contact">
-              <FormattedMessage id="getInTouch" />
+              <FormattedMessage id="projectsPage.getInTouch" />
             </Link>
-            <FormattedMessage id="detailedProjectList" />
+            <FormattedMessage id="projectsPage.detailedProjectList" />
           </span>
-          <MarginCenteredWrapper className="mt-8">
+          <div className="flex flex-col items-center justify-center w-full mt-8">
             <StaticImage
               alt={config.baseName}
               className="fluid-image"
               src="../images/consulting1.jpg"
             />
-          </MarginCenteredWrapper>
-          <MarginCenteredWrapper className="my-8">
+          </div>
+          <div className="flex flex-col items-center justify-center w-full  my-8">
             <span>
-              <FormattedMessage id="workedWith" />
+              <FormattedMessage id="projectsPage.workedWith" />
             </span>
             <section className="my-4 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 md:grid-flow-col gap-4">
               {customers.map(customer => (
@@ -65,11 +52,11 @@ const ProjectsPage = props => {
                 </div>
               ))}
             </section>
-          </MarginCenteredWrapper>
-        </MarginCenteredWrapper>
-        <Heading2>
-          <FormattedMessage id="privateProjectsHeading" />
-        </Heading2>
+          </div>
+        </div>
+        <h2 className="text-center uppercase">
+          <FormattedMessage id="projectsPage.privateProjectsHeading" />
+        </h2>
         <ProjectList projectAssets={projectAssets} />
       </Article>
       <Footer />

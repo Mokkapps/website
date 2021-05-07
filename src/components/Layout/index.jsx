@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
 import Menu from '../Menu/DesktopMenu/DesktopMenu';
-import localEng from '../../lang/en.json';
-import localDe from '../../lang/de.json';
+import messages from '../../lang/messages';
 import { LanguageContext } from '../../context/languageContext';
 import { ThemeContext } from '../../context/themeContextProvider';
 import BurgerMenu from '../Menu/MobileMenu/MobileMenu';
@@ -18,7 +17,10 @@ const Layout = ({ children }) => {
   const { lang } = useContext(LanguageContext);
   const devMode = process.env.NODE_ENV !== `production`;
   return (
-    <IntlProvider locale={lang} messages={lang === 'en' ? localEng : localDe}>
+    <IntlProvider
+      locale={lang}
+      messages={lang === 'en' ? messages.english : messages.german}
+    >
       <section
         className={`${theme === 'light' ? 'theme-light' : 'theme-dark'} ${
           devMode ? 'debug-screens' : ''

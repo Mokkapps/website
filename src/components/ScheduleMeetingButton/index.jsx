@@ -1,7 +1,7 @@
 import React from 'react';
 import { openPopupWidget } from 'react-calendly';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage } from 'react-intl';
 
 import Button from '../Button';
 import { sendCustomAnalyticsEvent } from '../../utils/helper';
@@ -20,7 +20,10 @@ const ScheduleMeetingButton = props => {
         openPopupWidget(options);
       }}
     >
-      <span className="mr-2" role="img" aria-label="phone">📞</span><FormattedMessage id="scheduleMeeting"/>
+      <span className="mr-2" role="img" aria-label="phone">
+        📞
+      </span>
+      <FormattedMessage id="landingPage.scheduleMeeting" />
     </Button>
   );
 };

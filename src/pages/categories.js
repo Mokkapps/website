@@ -13,7 +13,7 @@ import './style.scss';
 import Heading from '../components/Heading';
 import CategorySelection from '../components/CategorySelection';
 import { getAllCategories } from '../utils/helper';
-import { getSrc } from "gatsby-plugin-image";
+import { getSrc } from 'gatsby-plugin-image';
 
 const CategoriesPage = props => {
   const {
@@ -26,7 +26,7 @@ const CategoriesPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading i18nId="categories" />
+        <Heading i18nId="categoriesPage.title" />
         <CategorySelection
           className="my-4"
           categories={categories}

@@ -13,8 +13,8 @@ const TestimonialSlider = ({ intl, className }) => {
 
   for (let i = 1; i <= testimonialCount; i++) {
     testimonials.push({
-      name: intl.formatMessage({ id: `testimonialName${i}` }),
-      text: intl.formatMessage({ id: `testimonialText${i}` }),
+      name: intl.formatMessage({ id: `testimonials.testimonialName${i}` }),
+      text: intl.formatMessage({ id: `testimonials.testimonialText${i}` }),
     });
   }
 

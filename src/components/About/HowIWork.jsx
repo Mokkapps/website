@@ -9,7 +9,7 @@ export default class HowIWork extends React.Component {
     for (let i = 1; i <= 12; i++) {
       list.push(
         <li key={i}>
-          <AboutParagraph id={'whatIDo' + i} />
+          <AboutParagraph id={'aboutPage.whatIDo' + i} />
         </li>
       );
     }
@@ -21,24 +21,24 @@ export default class HowIWork extends React.Component {
       <section className="flex flex-col justify-center items-start">
         <div className="my-4">
           <h3>
-            <FormattedMessage id="whatIDo" />
+            <FormattedMessage id="aboutPage.whatIDoHeading" />
           </h3>
           <ul>{this.createHowIWorkList()}</ul>
         </div>
 
         <div className="my-4">
           <h3>
-            <FormattedMessage id="whoIWorkWithHeading" />
+            <FormattedMessage id="aboutPage.whoIWorkWithHeading" />
           </h3>
-          <AboutParagraph id="whoIWorkWithDesc" />
+          <AboutParagraph id="aboutPage.whoIWorkWithDesc" />
         </div>
 
         <div className="my-4">
           <h3>
-            <FormattedMessage id="whatDontDoHeading" />
+            <FormattedMessage id="aboutPage.whatDontDoHeading" />
           </h3>
-          <AboutParagraph className="text-justify" id="whatDontDoDesc1" />
-          <AboutParagraph id="whatDontDoDesc2" />
+          <AboutParagraph className="text-justify" id="aboutPage.whatDontDoDesc1" />
+          <AboutParagraph id="aboutPage.whatDontDoDesc2" />
         </div>
       </section>
     );

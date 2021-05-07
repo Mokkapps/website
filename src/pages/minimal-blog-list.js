@@ -27,7 +27,7 @@ const SimpleBlogPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading className="mb-8" i18nId="minimalBlogList" />
+        <Heading className="mb-8" i18nId="minimalBlogListPage.title" />
         <SimpleBlogPostList items={posts} />
       </Article>
       <Footer />

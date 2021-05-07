@@ -30,13 +30,13 @@ const ContactForm = () => (
       </div>
       <div className="flex flex-col my-4">
         <label htmlFor="message">
-          <FormattedMessage id="yourMessage" />
+          <FormattedMessage id="contactPage.yourMessage" />
         </label>
         <textarea data-cy="contact-message" name="message" required />
       </div>
       <div data-netlify-recaptcha="true" />
       <Button className="mt-4" type="submit">
-        <FormattedMessage id="send" />
+        <FormattedMessage id="contactPage.send" />
       </Button>
       <input type="hidden" name="form-name" value="contact-form" />
     </form>

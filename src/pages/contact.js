@@ -24,7 +24,7 @@ const ContactPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading i18nId="contactMe" />
+        <Heading i18nId="contactPage.title" />
         <section className="flex flex-col justify-center items-center">
           <StaticImage
             alt="Michael Hoffmann Image"
@@ -35,7 +35,7 @@ const ContactPage = props => {
             className="mt-2"
             dataCy="contact-about-me-button"
             href="/about"
-            i18nId="moreAboutMeLink"
+            i18nId="general.moreAboutMeLink"
           />
           <Availability className="my-5" />
           <ScheduleMeetingButton

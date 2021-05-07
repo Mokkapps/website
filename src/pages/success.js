@@ -15,9 +15,9 @@ const SuccessPage = () => {
   return (
     <Layout>
       <Article>
-        <Heading i18nId="contactSuccess" />
+        <Heading i18nId="contactPage.contactSuccess" />
         <section className="flex flex-col justify-center items-center my-8">
-          <FormattedMessage id={'contactSuccessDescr'} />
+          <FormattedMessage id="contactPage.contactSuccessDescr" />
         </section>
       </Article>
       <Footer />

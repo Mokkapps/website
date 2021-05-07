@@ -60,28 +60,28 @@ const IndexPage = props => {
     <div className="flex flex-col">
       <div className="w-full">
         <h2 className="text-center lg:text-left">
-          <FormattedMessage id="homeDoYouNeed" />
+          <FormattedMessage id="landingPage.doYouNeed" />
         </h2>
         <UnorderedList>
           <ListElement className="my-8">
-            <FormattedMessage id="homeSkill1" />
+            <FormattedMessage id="landingPage.skills.development" />
           </ListElement>
           <ListElement className="my-8">
             <FormattedMessage
-              id="homeSkill2"
+              id="landingPage.skills.experience"
               values={{
                 years: yearsOfExperience,
               }}
             />
           </ListElement>
           <ListElement className="my-8">
-            <FormattedMessage id="homeSkill3" />
+            <FormattedMessage id="landingPage.skills.tShaped" />
           </ListElement>
           <ListElement className="my-8">
-            <FormattedMessage id="homeSkill4" />
+            <FormattedMessage id="landingPage.skills.codeQuality" />
           </ListElement>
           <ListElement className="my-8">
-            <FormattedMessage id="homeSkill5" />
+            <FormattedMessage id="landingPage.skills.partner" />
           </ListElement>
         </UnorderedList>
       </div>
@@ -110,7 +110,7 @@ const IndexPage = props => {
       <span className="mr-2" role="img" aria-label="phone">
         💻
       </span>
-      <FormattedMessage id="homeHireMe" />
+      <FormattedMessage id="landingPage.hireMe" />
     </Button>
   );
 
@@ -152,15 +152,15 @@ const IndexPage = props => {
       <Article className="flex flex-col min-h-screen">
         <div className="flex flex-col flex-grow items-center">
           <h1 className="text-center mb-10" data-cy="home-heading">
-            <FormattedMessage id="homeTitle" />
+            <FormattedMessage id="landingPage.title" />
           </h1>
           {skills}
           <p className="text-center mt-5 text-xl">
-            <FormattedMessage id="homeMyName" />{' '}
+            <FormattedMessage id="landingPage.myName" />{' '}
             <strong>
               <Link to="/about">Michael Hoffmann</Link>
             </strong>{' '}
-            <FormattedMessage id="homeRightPlace" />
+            <FormattedMessage id="landingPage.rightPlace" />
           </p>
           <Availability className="mt-10 mb-5" />
           <div className="flex flex-wrap justify-center">
@@ -172,25 +172,25 @@ const IndexPage = props => {
           </div>
         </div>
         <TestimonialSlider className="my-10" />
-        <h2 className="text-center mt-10 mb-4">
-          <FormattedMessage id="latestBlogPosts" />
+        <h2 className="text-center mt-10 mb-4 uppercase">
+          <FormattedMessage id="landingPage.latestBlogPosts" />
         </h2>
         <div className="flex flex-wrap justify-center">{latestBlogPosts}</div>
         <LinkButton
           className="mb-10"
           dataCy="hero-blog-more-button"
           href="/blog"
-          i18nId="moreBlogPostsLink"
+          i18nId="general.moreBlogPostsLink"
         />
-        <h2 className="text-center mt-10 mb-4">
-          <FormattedMessage id="featuredProjects" />
+        <h2 className="text-center mt-10 mb-4 uppercase">
+          <FormattedMessage id="landingPage.featuredProjects" />
         </h2>
         <Projects data-cy="hero-projects-section">{privateProjects}</Projects>
         <LinkButton
           className="mb-5"
           dataCy="hero-projects-more-button"
           href="/projects"
-          i18nId="moreProjectsLink"
+          i18nId="general.moreProjectsLink"
         />
       </Article>
       <Footer />

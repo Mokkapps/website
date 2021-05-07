@@ -49,7 +49,7 @@ const BlogPage = props => {
     <Layout>
       <Article>
         <Container>
-          <Heading className="mb-8" title="BLOG" />
+          <Heading className="mb-8" i18nId="blogPage.title" />
           {searchComponent}
           <BlogPostList
             items={posts}

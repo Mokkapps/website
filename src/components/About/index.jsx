@@ -24,7 +24,7 @@ const About = () => (
     </div>
     <div className="mb-8 md:w-4/5 mx-auto" data-cy="about-how-i-work">
       <Heading className="mb-8">
-        <FormattedMessage id="howIWork" />
+        <FormattedMessage id="aboutPage.howIWork" />
       </Heading>
       <StaticImage
         alt={config.baseName}

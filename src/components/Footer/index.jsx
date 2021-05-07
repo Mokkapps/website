@@ -18,9 +18,10 @@ const Footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FormattedMessage id="built" />
+        <FormattedMessage id="footer.built" />
       </a>{' '}
-      <FormattedMessage id="with" /> &hearts; <FormattedMessage id="using" />{' '}
+      <FormattedMessage id="footer.with" /> &hearts;{' '}
+      <FormattedMessage id="footer.using" />{' '}
       <a
         href="https://www.gatsbyjs.org/"
         target="_blank"
@@ -30,11 +31,11 @@ const Footer = () => (
       </a>{' '}
       |{' '}
       <Link data-cy="footer-privacy-policy" to="/privacy-policy">
-        <FormattedMessage id="privacyPolicy" />
+        <FormattedMessage id="footer.privacyPolicy" />
       </Link>{' '}
       |{' '}
       <Link data-cy="footer-legal-notice" to="/legal-notice">
-        <FormattedMessage id="legalNotice" />
+        <FormattedMessage id="footer.legalNotice" />
       </Link>
     </div>
   </footer>

@@ -19,7 +19,7 @@ const getSkillSection = (skillLevel, skills) =>
           className="bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
           key={skillLevel}
         >
-          <FormattedMessage id={skillLevel} />
+          <FormattedMessage id={`aboutPage.${skillLevel}`} />
         </h3>,
         <div
           className="flex flex-wrap justify-center bg-secondary rounded-md shadow-md"

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { FormattedDate, FormattedMessage } from 'react-intl';
@@ -13,11 +12,9 @@ const PostMeta = props => {
     timeToRead,
     categories,
     className,
-    categoryLink = true,
     icons: {
       calendar: CalendarIcon,
       user: UserIcon,
-      tag: TagIcon,
       read: ReadIcon,
     },
   } = props;
@@ -44,7 +41,7 @@ const PostMeta = props => {
           {CalendarIcon && <CalendarIcon className="mr-2 w-4 h-4" />}{' '}
           {<FormattedDate value={prefix} />} |{' '}
           {ReadIcon && <ReadIcon className="ml-1 mr-2 w-4 h-4" />} {timeToRead}{' '}
-          <FormattedMessage id="minuteRead" />
+          <FormattedMessage id="blogPage.minuteRead" />
         </span>
       </div>
     </section>,

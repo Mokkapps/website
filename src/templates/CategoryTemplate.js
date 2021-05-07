@@ -36,15 +36,15 @@ const PageTemplate = props => {
             className="flex items-center justify-center"
             data-cy="category-introduction"
           >
-            <FormattedMessage id="postsInCategory" />
+            <FormattedMessage id="categoriesPage.postsInCategory" />
           </span>
           <h1 className="mt-3">{getCategoryDisplayText(category)}</h1>
           <h3 className="my-8">
             <FormattedMessage
               id={
                 totalCount <= 1
-                  ? 'singlePostInCategory'
-                  : 'multiplePostsInCategory'
+                  ? 'categoriesPage.singlePostInCategory'
+                  : 'categoriesPage.multiplePostsInCategory'
               }
               values={{ count: totalCount }}
             />
@@ -56,7 +56,7 @@ const PageTemplate = props => {
           metaIcons={metaIcons}
         />
         <h4 className="text-center">
-          <FormattedMessage id="otherCategories" />
+          <FormattedMessage id="categoriesPage.otherCategories" />
         </h4>
         <CategorySelection
           className="my-4"
