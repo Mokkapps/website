@@ -21,9 +21,12 @@ const skillLevels = ['expert', 'advanced', 'intermediate', 'elementary'];
 
 const getDevIcons = skills =>
   skills.map(skill => (
-    <div className="p-4" title={skill.type} key={skill.className}>
-      <DevIcon className="text-5xl" technology={skill.type} />
-    </div>
+    <DevIcon
+      size="5xl"
+      technology={skill.type}
+      className="p-4"
+      key={skill.type}
+    />
   ));
 
 const getSkillSection = (skillLevel, skills) =>

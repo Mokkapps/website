@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import AppStoreButton from './AppStoreButton';
 import CardDivider from '../Card/CardDivider';
+import DevIcon from '../DevIcon';
 
 const Heading = styled.h3`
   text-align: center;
@@ -36,16 +37,6 @@ const TechnologiesContainer = styled.div`
   align-items: center;
 `;
 
-const TechIcon = styled.i`
-  margin: 0 0.25rem 0 0.25rem;
-  color: var(--text-main);
-`;
-
-const TechText = styled.p`
-  margin: 0 0.25rem 0 0.25rem;
-  color: var(--text-main);
-`;
-
 const ProjectCardDescription = ({
   projectName,
   description,
@@ -59,16 +50,9 @@ const ProjectCardDescription = ({
       <div>
         <CardDivider />
         <TechnologiesContainer>
-          {usedTechnologies.map(tech =>
-            tech.iconClassName ? (
-              <TechIcon
-                key={tech.iconClassName}
-                className={tech.iconClassName}
-              />
-            ) : (
-              <TechText key={tech.name}>{tech.name}</TechText>
-            )
-          )}
+          {usedTechnologies.map(tech => (
+            <DevIcon key={tech} technology={tech} size="xl" className="mr-2"/>
+          ))}
         </TechnologiesContainer>
         <CardDivider />
         <DescriptionText>{description}</DescriptionText>

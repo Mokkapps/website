@@ -54,11 +54,7 @@ const config = {
 
         Be careful! Unscanned articles in the shopping basket or articles which are thrown out of the screen, cost a life. You have three lifes per round.`,
       },
-      usedTechnologies: [
-        { name: 'Corona SDK' },
-        { iconClassName: 'devicon-apple-original colored' },
-        { iconClassName: 'devicon-android-plain' },
-      ],
+      usedTechnologies: ['Corona SDK', 'apple', 'android'],
       imageName: 'supermarket-challenge',
       urls: {
         page: '/supermarket-challenge',
@@ -76,10 +72,7 @@ const config = {
           'A desktop application which can be used in Scrum teams to initiate the daily Scrum meeting',
         long: '',
       },
-      usedTechnologies: [
-        { name: 'Electron' },
-        { iconClassName: 'devicon-angularjs-plain' },
-      ],
+      usedTechnologies: ['electron', 'angular'],
       imageName: 'standup-picker',
       urls: {
         page: '/standup-picker',
@@ -93,12 +86,7 @@ const config = {
         short: 'iOS & Android app for the gaming blog www.rebelgamer.de',
         long: '',
       },
-      usedTechnologies: [
-        { name: 'React-Native' },
-        { iconClassName: 'devicon-react-original' },
-        { iconClassName: 'devicon-apple-original colored' },
-        { iconClassName: 'devicon-android-plain' },
-      ],
+      usedTechnologies: ['React-Native', 'react', 'apple', 'android'],
       imageName: 'rebelgamer',
       urls: {
         page: '/rebelgamer',
@@ -117,12 +105,7 @@ const config = {
           'A soundboard developed for parents to be able to play often needed phrases like "No"',
         long: '',
       },
-      usedTechnologies: [
-        { name: 'React-Native' },
-        { iconClassName: 'devicon-react-original' },
-        { iconClassName: 'devicon-apple-original colored' },
-        { iconClassName: 'devicon-android-plain' },
-      ],
+      usedTechnologies: ['React-Native', 'react', 'apple', 'android'],
       imageName: 'parents-soundboard',
       urls: {
         page: '/parents-soundboard',
@@ -141,10 +124,7 @@ const config = {
           'A website which shows a list of traffic graphs of your own GitHub repositories',
         long: '',
       },
-      usedTechnologies: [
-        { name: 'Gatsby.js, Firebase' },
-        { iconClassName: 'devicon-react-original' },
-      ],
+      usedTechnologies: ['gatsby', 'firebase', 'react'],
       imageName: 'github-traffic-viewer',
       urls: {
         page: 'https://github-traffic-viewer.netlify.com/',
@@ -157,10 +137,7 @@ const config = {
         short: 'Website for our family-run honey farm',
         long: '',
       },
-      usedTechnologies: [
-        { name: 'Gatsby.js' },
-        { iconClassName: 'devicon-react-original' },
-      ],
+      usedTechnologies: ['gatsby', 'react'],
       imageName: 'privatimkerei-hoffmann',
       urls: {
         page: 'https://privatimkerei-hoffmann.de/',
@@ -174,10 +151,7 @@ const config = {
           'Web application which can be used to subscribe for push notifications which will inform 30 minutes before a band will play on the music festival Void Fest 2018',
         long: '',
       },
-      usedTechnologies: [
-        { iconClassName: 'devicon-react-original' },
-        { iconClassName: 'devicon-nodejs-plain' },
-      ],
+      usedTechnologies: ['react', 'node'],
       imageName: 'void-fest-band-reminder',
       urls: {
         page: 'https://void-fest-app.netlify.com/',
