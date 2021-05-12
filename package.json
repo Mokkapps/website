@@ -74,7 +74,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "node-sass": "^5.0.0",
-    "postcss": "^7",
+    "postcss": "^8",
     "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
