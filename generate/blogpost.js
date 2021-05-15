@@ -3,35 +3,19 @@
  * Inspired by https://github.com/kentcdodds/kentcdodds.com/blob/master/generate/blogpost.js
  */
 
+import dateformat from 'dateformat';
 import path from 'path';
 import fs from 'fs';
-import util from 'util';
 import jsToYaml from 'json-to-pretty-yaml';
 import mkdirp from 'mkdirp';
-import fakeUa from 'fake-useragent';
-import opn from 'opn';
-import axios from 'axios';
 import slugify from '@sindresorhus/slugify';
 import inquirer from 'inquirer';
-import tinify from 'tinify';
-import ora from 'ora';
-import dotenv from 'dotenv';
-dotenv.config({
-  path: path.join(path.resolve(), '.env'),
-});
 
-const fromRoot = (...p) => path.join(path.resolve(), '..', ...p);
-
-tinify.key = process.env.TINY_PNG_API_KEY;
+const today = new Date();
+const defaultDate = new Date().setDate(today.getDate() + 5);
 
 async function generateBlogPost() {
-  const {
-    title,
-    categories,
-    date,
-    useUnsplash,
-    dryRun,
-  } = await inquirer.prompt([
+  const { title, categories, date, dryRun } = await inquirer.prompt([
     {
       type: 'input',
       name: 'title',
@@ -47,21 +31,21 @@ async function generateBlogPost() {
         'productivity',
         'tools',
         'angular',
+        'react',
         'freelancing',
         'testing',
+        'fullstack',
+        'frontend',
+        'backend',
+        'aws',
       ],
       message: 'Categories',
     },
     {
       type: 'input',
       name: 'date',
+      default: dateformat(defaultDate, 'yyyy-mm-dd'),
       message: 'Release Date (format: yyyy-mm-dd)',
-    },
-    {
-      type: 'confirm',
-      name: 'useUnsplash',
-      default: false,
-      message: 'Use cover image from Unsplash? (default: false)',
     },
     {
       type: 'confirm',
@@ -72,16 +56,11 @@ async function generateBlogPost() {
   ]);
   const slug = slugify(title);
   const year = new Date(date).getFullYear();
-  const destination = fromRoot(
+  const destination = path.resolve(
     `src/content/posts/${year}`,
     `${date}___${slug}`
   );
   mkdirp.sync(destination);
-
-  let bannerCredit;
-  if (!dryRun && useUnsplash) {
-    bannerCredit = await getBannerPhoto(title, destination);
-  }
 
   const mdObj = {
     title: titleCaps(title),
@@ -89,68 +68,19 @@ async function generateBlogPost() {
     cover: 'images/cover.jpg',
   };
   const yaml = jsToYaml.stringify(removeEmpty(mdObj));
-  const mdData = `---\n${yaml}\n---\n${
-    bannerCredit ? '<small>${bannerCredit}</small>' : ''
-  }`;
+  const mdData = `---\n${yaml}\n`;
   console.log(`Markdown data:\n${mdData}`);
-  console.log(`Slug:\n${slug}`);
+  console.log(`Slug:\n${slug}\n`);
   if (!dryRun) {
-    fs.writeFileSync(path.join(destination, 'index.md'), mdData);
-    console.log(
-      `${destination.replace(process.cwd(), '')} is all ready for you`
-    );
-  }
-}
-
-async function getBannerPhoto(title, destination) {
-  const imagesDestination = path.join(destination, 'images');
-
-  await opn(`https://unsplash.com/search/photos/${encodeURIComponent(title)}`, {
-    wait: false,
-  });
-
-  const { unsplashPhotoId } = await inquirer.prompt([
-    {
-      type: 'input',
-      name: 'unsplashPhotoId',
-      message: `What's the Unsplash Photo ID for the banner for this post?`,
-    },
-  ]);
-  mkdirp.sync(imagesDestination);
-
-  const source = tinify
-    .fromUrl(
-      `https://unsplash.com/photos/${unsplashPhotoId}/download?force=true`
-    )
-    .resize({
-      method: 'cover',
-      width: 2070,
-      height: 1500,
+    const markdownPath = path.join(destination, 'index.md');
+    fs.writeFileSync(markdownPath, mdData);
+    fs.readFile(markdownPath, err => {
+      if (err) {
+        console.error('File could not be created', err);
+      }
+      console.info(`Successfully created markdown file at "${markdownPath}"`);
     });
-
-  const spinner = ora('compressing the image with tinypng.com').start();
-  await util
-    .promisify(source.toFile)
-    .call(source, path.join(imagesDestination, 'cover.jpg'));
-  spinner.text = 'compressed the image with tinypng.com';
-  spinner.stop();
-
-  const bannerCredit = await getPhotoCredit(unsplashPhotoId);
-  return bannerCredit;
-}
-
-async function getPhotoCredit(unsplashPhotoId) {
-  const response = await axios({
-    url: `https://unsplash.com/photos/${unsplashPhotoId}`,
-    headers: { 'User-Agent': fakeUa() },
-  });
-  const {
-    groups: { name },
-  } = response.data.match(/Photo by (?<name>.*?) on Unsplash/) || {
-    groups: { name: 'Unknown' },
-  };
-  const url = `https://unsplash.com/photos/${unsplashPhotoId}}`;
-  return `Photo by <a href=${url}>${name}</a>`;
+  }
 }
 
 function removeEmpty(obj) {
@@ -219,6 +149,6 @@ function titleCaps(title) {
     });
 }
 
-generateBlogPost();
+generateBlogPost().catch(e => console.error('Failed to create blog post', e));
 
 /* eslint no-console:0 */
