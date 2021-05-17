@@ -60,20 +60,34 @@ async function generateBlogPost() {
     `src/content/posts/${year}`,
     `${date}___${slug}`
   );
-  mkdirp.sync(destination);
-
   const mdObj = {
     title: titleCaps(title),
     categories,
     cover: 'images/cover.jpg',
   };
   const yaml = jsToYaml.stringify(removeEmpty(mdObj));
-  const mdData = `---\n${yaml}\n`;
-  console.log(`Markdown data:\n${mdData}`);
+  const mdData = `---
+${yaml}---
+
+## Conclusion
+
+If you liked this article, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new blog posts and more content from me.
+`;
   console.log(`Slug:\n${slug}\n`);
+  console.log(`Markdown data:\n${mdData}`);
+
   if (!dryRun) {
+    // create directory
+    mkdirp.sync(destination);
+
     const markdownPath = path.join(destination, 'index.md');
+    const imagesFolderPath = path.join(destination, 'images');
+    // create markdown file
     fs.writeFileSync(markdownPath, mdData);
+    // create images folder
+    if (!fs.existsSync(imagesFolderPath)) {
+      fs.mkdirSync(imagesFolderPath);
+    }
     fs.readFile(markdownPath, err => {
       if (err) {
         console.error('File could not be created', err);
