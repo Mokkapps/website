@@ -41,7 +41,7 @@ const BlogPage = props => {
 
   return (
     <Layout>
-      <Article>
+      <article className="px-24 py-8">
         <div className="flex flex-col items-center justify-center">
           <Heading className="mb-8" i18nId="blogPage.title" />
           <BlogLanguageWarning className="w-full my-4" />
@@ -53,7 +53,7 @@ const BlogPage = props => {
             metaIcons={metaIcons}
           />
         </div>
-      </Article>
+      </article>
       <Footer />
       <Seo
         url={siteUrl}
@@ -109,12 +109,7 @@ export const query = graphql`
             categories
             cover {
               childImageSharp {
-                gatsbyImageData(
-                  width: 700
-                  layout: CONSTRAINED
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP]
-                )
+                gatsbyImageData(width: 800)
               }
             }
           }

@@ -134,7 +134,7 @@
   },
   "categoriesPage": {
     "title": "Categories",
-    "otherCategories": "Other categories",
+    "otherCategories": "Other Categories",
     "postsInCategory": "Posts in category",
     "singlePostInCategory": "There is {count} post in this category",
     "multiplePostsInCategory": "There are {count} posts in this category"

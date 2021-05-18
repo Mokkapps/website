@@ -68,7 +68,15 @@ module.exports = {
     `gatsby-plugin-resolve-src`, // resolve imports from src subdir
     `gatsby-plugin-catch-links`, // intercept markdown links
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+        },
+      },
+    },
     `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: 'gatsby-plugin-robots-txt',
@@ -229,7 +237,8 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url:
                     site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+                  guid:
+                    site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 });
               });

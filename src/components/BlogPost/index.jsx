@@ -18,20 +18,19 @@ const BlogPost = props => {
     excerpt,
     className,
   } = props;
+
   return (
     <Link
-      className={`flex flex-col lg:flex-row justify-center items-center cursor-pointer rounded-md bg-none bg-secondary shadow-md p-4 ${className}`}
+      className={`flex flex-col justify-start items-center cursor-pointer rounded-md bg-none bg-secondary shadow-md p-4 ${className}`}
       to={`/blog${slug}`}
       data-cy={`blog-post-${id}`}
       key={slug}
     >
-      {cover ? (
-        <GatsbyImage
-          image={cover.childImageSharp.gatsbyImageData}
-          alt={`${title} Image`}
-          className="image mb-4 lg:mr-4 lg:mb-0"
-        />
-      ) : null}
+      <GatsbyImage
+        image={cover.childImageSharp.gatsbyImageData}
+        alt={`${title} Image`}
+        className="mb-4"
+      />
       <div className="w-full">
         <h3 className="text-main-text">{title}</h3>
         <Meta

@@ -1,38 +1,19 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FormattedDate } from 'react-intl';
-
-import { getCategoryDisplayText } from "../../utils/helper";
 
 const Meta = props => {
   const {
     prefix,
-    categories,
-    categoryLink = true,
-    icons: { calendar: CalendarIcon, tag: TagIcon },
+    icons: { calendar: CalendarIcon },
   } = props;
 
   return (
-    <p className="flex flex-wrap text-secondary-text text-xs">
-      <span className="flex items-center mr-4 mb-2">
+    <p className="flex flex-col flex-wrap text-secondary-text text-xs">
+      <span className="flex items-center mt-2 mb-4">
         {CalendarIcon && <CalendarIcon className="mr-1 w-4 h-4" />}{' '}
         {<FormattedDate value={prefix} />}
       </span>
-      {categories &&
-        categories.map(category => {
-          const link = (
-            <Link to={`/categories/${category}`}>{getCategoryDisplayText(category)}</Link>
-          );
-          const txt = <span key={category}>{getCategoryDisplayText(category)}</span>;
-
-          return (
-            <span className="flex items-center mr-4 mb-2" key={category}>
-              {TagIcon && <TagIcon className="w-4 h-4 mr-1" />}
-              {categoryLink ? link : txt}
-            </span>
-          );
-        })}
     </p>
   );
 };

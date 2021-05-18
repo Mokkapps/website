@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getCategoryDisplayText } from '../../utils/helper';
 import { navigate } from 'gatsby-link';
 
-const CategoryLink = ({ category, dataCy, className, compact = false }) => {
+const CategoryLink = ({ category, dataCy, className, compact = true }) => {
   const linkTo = `/categories/${category.replace(' ', '-')}`;
 
   const onKeyPress = event => {
