@@ -9,7 +9,6 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Seo from '../components/Seo';
 
-import './style.scss';
 import Heading from '../components/Heading';
 import CategorySelection from '../components/CategorySelection';
 import { getAllCategories } from '../utils/helper';

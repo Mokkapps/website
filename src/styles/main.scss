@@ -230,4 +230,56 @@
       @apply block mr-2;
     }
   }
+
+  .gatsby-resp-image-figcaption {
+    text-align: center;
+    font-style: italic;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    li {
+      padding: 0.5rem;
+      border-radius: 5px;
+
+      a {
+        cursor: pointer;
+        background-size: 100% 0;
+
+        &:hover {
+          background-size: 100% 0;
+        }
+      }
+    }
+
+    &__prev {
+      margin-right: 1rem;
+    }
+
+    &__next {
+      margin-left: 1rem;
+    }
+
+    &__active {
+      background: red;
+      a {
+        color: white;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    &__disabled {
+      a {
+        color: lightgray;
+        cursor: default !important;
+        text-decoration: none;
+      }
+    }
+  }
 }

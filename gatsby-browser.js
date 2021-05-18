@@ -1,5 +1,5 @@
 import './src/styles/main.scss';
-import 'prismjs/themes/prism.css';
+import './src/styles/prism-vsc-dark-plus.scss';
 
 import React from 'react';
 import ThemeContextProvider from './src/context/themeContextProvider';

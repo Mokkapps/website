@@ -10,7 +10,6 @@ import Article from '../components/Article';
 import Seo from '../components/Seo';
 import SimpleBlogPostList from '../components/SimpleBlogPostList';
 
-import './style.scss';
 import Heading from '../components/Heading';
 
 const SimpleBlogPage = props => {

@@ -1,37 +1,67 @@
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: lighten(black, 25%);
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
+  border-left: 0.25em solid var(--accent);
 }
 
-/**
- * Add back the container background-color, border-radius, padding, margin
- * and overflow that we removed from <pre>.
- */
+code[class*='language-text'],
+pre[class*='language-text'] {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
 .gatsby-highlight {
-  background-color: #f5f2f0;
-  border-radius: 0.3em;
-  margin: 0.5em 0;
-  padding: 1em;
+  position: relative;
+  border-radius: 0.375em;
   overflow: auto;
-}
 
-/**
- * Remove the default PrismJS theme background-color, border-radius, margin,
- * padding and overflow.
- * 1. Make the element just wide enough to fit its content.
- * 2. Always fill the visible space in .gatsby-highlight.
- * 3. Adjust the position of the line numbers
- */
-.gatsby-highlight pre[class*='language-'] {
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  overflow: initial;
-  float: left; /* 1 */
-  min-width: 100%; /* 2 */
+  pre[class*='language-']::before {
+    background: black;
+    border-radius: 0 0 0.25rem 0.25rem;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.025rem;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    right: 1rem;
+    text-align: right;
+    text-transform: uppercase;
+    top: 0;
+  }
+
+  pre[class='language-javascript']::before,
+  pre[class='language-js']::before {
+    content: 'js';
+    background: #f7df1e;
+    color: black;
+  }
+
+  pre[class='language-typescript']::before,
+  pre[class='language-ts']::before {
+    content: 'ts';
+    background: #3177c6;
+    color: white;
+  }
+
+  pre[class='language-html']::before {
+    content: 'html';
+    background: #005a9c;
+    color: white;
+  }
+
+  pre[class='language-css']::before {
+    content: 'css';
+    background: #ff9800;
+    color: white;
+  }
+
+  pre[class='language-json']::before {
+    content: 'json';
+    background: #e97a50;
+    color: white;
+  }
 }

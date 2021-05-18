@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { getSrc } from 'gatsby-plugin-image';
 
@@ -14,15 +13,6 @@ import Article from '../components/Article';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
-
-import './style.scss';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
 
 const BlogPage = props => {
   const {
@@ -50,7 +40,7 @@ const BlogPage = props => {
   return (
     <Layout>
       <Article>
-        <Container>
+        <div className="flex flex-col items-center justify-center">
           <Heading className="mb-8" i18nId="blogPage.title" />
           <BlogLanguageWarning className="w-full my-4" />
           {searchComponent}
@@ -59,7 +49,7 @@ const BlogPage = props => {
             author={config.authorName}
             metaIcons={metaIcons}
           />
-        </Container>
+        </div>
       </Article>
       <Footer />
       <Seo
