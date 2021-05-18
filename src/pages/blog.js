@@ -2,9 +2,12 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { getSrc } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
+import { metaIcons } from '../utils/helper';
 
+import BlogLanguageWarning from '../components/BlogLanguageWarning';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
@@ -12,10 +15,7 @@ import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
 
-import { metaIcons } from '../utils/helper';
-
 import './style.scss';
-import { getSrc } from 'gatsby-plugin-image';
 
 const Container = styled.div`
   display: flex;
@@ -52,6 +52,7 @@ const BlogPage = props => {
       <Article>
         <Container>
           <Heading className="mb-8" i18nId="blogPage.title" />
+          <BlogLanguageWarning className="w-full my-4" />
           {searchComponent}
           <BlogPostList
             items={posts}

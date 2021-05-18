@@ -27,6 +27,7 @@ import Share from '../components/Share';
 import { getAllCategories } from '../utils/helper';
 import Button from '../components/Button';
 import { FormattedMessage } from 'react-intl';
+import BlogLanguageWarning from "../components/BlogLanguageWarning";
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -87,6 +88,7 @@ const PostTemplate = props => {
     <Layout>
       <ArticleWithSidebar categories={allCategories}>
         <Heading title={title} />
+        <BlogLanguageWarning className="my-4" />
         <PostMeta
           className="my-8"
           authorImage={file}
