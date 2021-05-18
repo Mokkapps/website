@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { getSrc } from 'gatsby-plugin-image';
@@ -9,7 +9,6 @@ import { getAllCategories, metaIcons } from '../utils/helper';
 import BlogLanguageWarning from '../components/BlogLanguageWarning';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
-import Article from '../components/Article';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
@@ -25,11 +24,40 @@ const BlogPage = props => {
   } = props;
 
   const categories = getAllCategories(allEdges);
-  const posts = edges.map(edge => edge.node);
+  const allPosts = edges.map(edge => edge.node);
   const { siteUrl, siteTitlePostfix } = config;
+  const emptyQuery = '';
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  });
+  const { filteredData, query } = state;
+
+  const handleInputChange = event => {
+    const searchQuery = event.target.value;
+
+    const availablePosts = posts || [];
+
+    const filteredPosts = availablePosts.filter(post => {
+      const { categories: postCategories } = post.frontmatter;
+
+      return (
+        postCategories &&
+        postCategories
+          .join('')
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      );
+    });
+
+    setState({
+      query: searchQuery,
+      filteredData: filteredPosts,
+    });
+  };
 
   const searchComponent = (
-    <p className="my-8 text-center">
+    <p className="mt-4 mb-8 text-center">
       {' '}
       You can search blog posts by{' '}
       <a href="https://www.google.com/search?q=site%3Amokkapps.de%2Fblog">
@@ -39,12 +67,25 @@ const BlogPage = props => {
     </p>
   );
 
+  const hasSearchResults = filteredData && query !== emptyQuery;
+  const posts = hasSearchResults ? filteredData : allPosts;
+
   return (
     <Layout>
       <article className="px-24 py-8">
         <div className="flex flex-col items-center justify-center">
           <Heading className="mb-8" i18nId="blogPage.title" />
           <BlogLanguageWarning className="w-full my-4" />
+          <section className="relative mb-8">
+            <input
+              type="text"
+              aria-label="Search"
+              placeholder="Search Blogposts..."
+              className="w-64 pl-2 mr-4"
+              onChange={handleInputChange}
+            />
+            <span className="absolute right-7 top-1">{posts.length}</span>
+          </section>
           <CategorySelection compact categories={categories} />
           {searchComponent}
           <BlogPostList
