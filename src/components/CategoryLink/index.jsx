@@ -1,27 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import { getCategoryDisplayText, metaIcons } from '../../utils/helper';
+import { getCategoryDisplayText } from '../../utils/helper';
+import { navigate } from 'gatsby-link';
 
-const CategoryLink = ({ category, dataCy, className }) => {
-  const link = (
-    <Link to={`/categories/${category.replace(' ', '-')}`}>
-      {getCategoryDisplayText(category)}
-    </Link>
-  );
-  const TagIcon = metaIcons.tag;
+const CategoryLink = ({ category, dataCy, className, compact = false }) => {
+  const linkTo = `/categories/${category.replace(' ', '-')}`;
+
+  const onKeyPress = event => {
+    if (event.key === 'Enter') {
+      navigate(linkTo);
+    }
+  };
 
   return (
-    <span
-      className={`${className} flex items-center my-0 mx-2`}
+    <div
+      role="button"
+      tabIndex="0"
+      className={`${className} ${
+        compact ? 'py-0.5 px-1 m-1' : 'px-2 py-1 my-2 mx-2'
+      } select-none hover:cursor-pointer hover:bg-accent border border-accent rounded-md text-center`}
       key={category}
       data-cy={dataCy}
+      onClick={() => navigate(linkTo)}
+      onKeyPress={onKeyPress}
     >
-      {TagIcon && (
-        <TagIcon style={{ marginRight: '.25rem', width: 20, height: 20 }} />
-      )}
-      {link}
-    </span>
+      {getCategoryDisplayText(category)}
+    </div>
   );
 };
 
@@ -29,6 +33,7 @@ CategoryLink.propTypes = {
   category: PropTypes.string,
   className: PropTypes.string,
   dataCy: PropTypes.string,
+  compact: PropTypes.bool,
 };
 
 export default CategoryLink;

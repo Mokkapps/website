@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getSrc } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
-import { metaIcons } from '../utils/helper';
+import { getAllCategories, metaIcons } from '../utils/helper';
 
 import BlogLanguageWarning from '../components/BlogLanguageWarning';
 import Footer from '../components/Footer';
@@ -13,15 +13,18 @@ import Article from '../components/Article';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
 import Seo from '../components/Seo';
+import CategorySelection from '../components/CategorySelection';
 
 const BlogPage = props => {
   const {
     data: {
       seoImage,
+      allEdges,
       posts: { edges },
     },
   } = props;
 
+  const categories = getAllCategories(allEdges);
   const posts = edges.map(edge => edge.node);
   const { siteUrl, siteTitlePostfix } = config;
 
@@ -31,9 +34,8 @@ const BlogPage = props => {
       You can search blog posts by{' '}
       <a href="https://www.google.com/search?q=site%3Amokkapps.de%2Fblog">
         using Google
-      </a>
-      , browse a <Link to={'/minimal-blog-list'}>minimal list</Link> or{' '}
-      <Link to={'/categories'}>by category</Link>
+      </a>{' '}
+      or browse a <Link to={'/minimal-blog-list'}>minimal list</Link>.
     </p>
   );
 
@@ -43,6 +45,7 @@ const BlogPage = props => {
         <div className="flex flex-col items-center justify-center">
           <Heading className="mb-8" i18nId="blogPage.title" />
           <BlogLanguageWarning className="w-full my-4" />
+          <CategorySelection compact categories={categories} />
           {searchComponent}
           <BlogPostList
             items={posts}
@@ -74,6 +77,15 @@ export const query = graphql`
     seoImage: file(relativePath: { eq: "og/og-blog.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FIXED)
+      }
+    }
+    allEdges: allMdx {
+      edges {
+        node {
+          frontmatter {
+            categories
+          }
+        }
       }
     }
     allBlogPosts: allMdx(

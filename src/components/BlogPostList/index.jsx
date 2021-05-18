@@ -8,8 +8,8 @@ const BlogPostList = props => {
   let count = 0;
 
   return (
-    <div className="flex justify-center">
-      <ul className="list-none w-100" data-cy="blog-post-list">
+    <div className="w-100 flex justify-center" data-cy="blog-post-list">
+      <div className="w-100" data-cy="blog-post-list">
         {items.map(item => {
           const {
             frontmatter: { title, categories, cover },
@@ -18,26 +18,26 @@ const BlogPostList = props => {
           } = item;
 
           const component = (
-            <li className="mb-4" key={slug}>
-              <BlogPost
-                id={count}
-                title={title}
-                slug={slug}
-                cover={cover}
-                categories={categories}
-                prefix={prefix}
-                author={author}
-                metaIcons={metaIcons}
-                excerpt={excerpt}
-              />
-            </li>
+            <BlogPost
+              className="mb-4"
+              key={slug}
+              id={count}
+              title={title}
+              slug={slug}
+              cover={cover}
+              categories={categories}
+              prefix={prefix}
+              author={author}
+              metaIcons={metaIcons}
+              excerpt={excerpt}
+            />
           );
 
           count++;
 
           return component;
         })}
-      </ul>
+      </div>
     </div>
   );
 };

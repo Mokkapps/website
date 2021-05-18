@@ -3,9 +3,10 @@ import React from 'react';
 
 import CategoryLink from '../CategoryLink';
 
-const CategorySelection = ({ categories, centered, className, dataCy }) => {
+const CategorySelection = ({ categories, compact, className, dataCy }) => {
   const categoriesLinks = categories.map(category => (
     <CategoryLink
+      compact={compact}
       key={category}
       className={className}
       category={category}
@@ -13,25 +14,16 @@ const CategorySelection = ({ categories, centered, className, dataCy }) => {
     />
   ));
 
-  return centered ? (
-    <div
-      data-cy={dataCy}
-      className={`${className} grid gap-2 grid-cols-2 md:grid-cols-5 xxl:grid-cols-7`}
-    >
+  return (
+    <div data-cy={dataCy} className={`${className} flex flex-wrap justify-center lg:justify-start`}>
       {categoriesLinks}
     </div>
-  ) : (
-    <ul data-cy={dataCy} className="list-none">
-      {categoriesLinks.map((cl, i) => (
-        <li key={i}>{cl}</li>
-      ))}
-    </ul>
   );
 };
 
 CategorySelection.propTypes = {
   categories: PropTypes.array.isRequired,
-  centered: PropTypes.bool,
+  compact: PropTypes.bool,
   className: PropTypes.string,
   dataCy: PropTypes.string,
   props: PropTypes.node,

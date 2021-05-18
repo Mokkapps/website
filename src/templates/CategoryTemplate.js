@@ -39,7 +39,7 @@ const PageTemplate = props => {
             <FormattedMessage id="categoriesPage.postsInCategory" />
           </span>
           <h1 className="mt-3">{getCategoryDisplayText(category)}</h1>
-          <h3 className="my-8">
+          <h2 className="my-8">
             <FormattedMessage
               id={
                 totalCount <= 1
@@ -48,27 +48,29 @@ const PageTemplate = props => {
               }
               values={{ count: totalCount }}
             />
-          </h3>
+          </h2>
         </Heading>
+        <h3 className="text-center">
+          <FormattedMessage id="categoriesPage.otherCategories" />
+        </h3>
+        <CategorySelection
+          className="my-4"
+          categories={categories}
+          compact
+          dataCy="blog-categories"
+        />
         <BlogPostList
           items={items}
           author={config.authorName}
           metaIcons={metaIcons}
         />
-        <h4 className="text-center">
-          <FormattedMessage id="categoriesPage.otherCategories" />
-        </h4>
-        <CategorySelection
-          className="my-4"
-          categories={categories}
-          centered
-          dataCy="blog-categories"
-        />
       </Article>
       <Footer />
       <Seo
         url={`${siteUrl}/categories/${category}/`}
-        title={`Posts in category: ${getCategoryDisplayText(category)}${siteTitlePostfix}`}
+        title={`Posts in category: ${getCategoryDisplayText(
+          category
+        )}${siteTitlePostfix}`}
         description={`This page contains all the posts in the category ${category}`}
       />
     </Layout>

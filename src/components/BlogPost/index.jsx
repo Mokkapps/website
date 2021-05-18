@@ -1,11 +1,9 @@
 import React from 'react';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Meta from '../Meta';
-
-import './styles.scss';
 
 const BlogPost = props => {
   const {
@@ -31,9 +29,10 @@ const BlogPost = props => {
         <GatsbyImage
           image={cover.childImageSharp.gatsbyImageData}
           alt={`${title} Image`}
-          className="image mb-4 lg:mr-4" />
+          className="image mb-4 lg:mr-4 lg:mb-0"
+        />
       ) : null}
-      <div className="w-full lg:w-2/3">
+      <div className="w-full">
         <h3 className="text-main-text">{title}</h3>
         <Meta
           categories={categories}
