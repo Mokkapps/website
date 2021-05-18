@@ -3,18 +3,25 @@ import { FormattedMessage } from 'react-intl';
 
 import DevIcon from '../DevIcon';
 
-const skills = [
+const skillsList = [
   { type: 'javaScript', level: 'expert' },
-  { type: 'cSharp', level: 'elementary' },
-  { type: 'dotNet', level: 'elementary' },
+  { type: 'git', level: 'expert' },
   { type: 'typeScript', level: 'advanced' },
-  { type: 'java', level: 'intermediate' },
   { type: 'css', level: 'advanced' },
   { type: 'html', level: 'advanced' },
   { type: 'angular', level: 'advanced' },
   { type: 'react', level: 'advanced' },
+  { type: 'android', level: 'advanced' },
+  { type: 'apple', level: 'advanced' },
+  { type: 'java', level: 'intermediate' },
   { type: 'vue', level: 'intermediate' },
   { type: 'node', level: 'intermediate' },
+  { type: 'graphQL', level: 'intermediate' },
+  { type: 'docker', level: 'intermediate' },
+  { type: 'cSharp', level: 'elementary' },
+  { type: 'dotNet', level: 'elementary' },
+  { type: 'aws', level: 'elementary' },
+  { type: 'python', level: 'elementary' },
 ];
 
 const skillLevels = ['expert', 'advanced', 'intermediate', 'elementary'];
@@ -52,7 +59,7 @@ const Skills = () => (
     {skillLevels.map(skill =>
       getSkillSection(
         skill,
-        skills.filter(s => s.level === skill)
+        skillsList.filter(s => s.level === skill)
       )
     )}
   </div>

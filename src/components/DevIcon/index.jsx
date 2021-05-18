@@ -25,11 +25,16 @@ const devIcons = {
   kubernetes: { class: 'devicon-kubernetes-plain', displayText: 'Kubernetes' },
   jasmine: { class: 'devicon-jasmine-plain', displayText: 'Jasmine' },
   protractor: { class: 'devicon-protractor-plain', displayText: 'Protractor' },
+  aws: { class: 'devicon-amazonwebservices-original', displayText: 'Amazon Web Services' },
+  docker: { class: 'devicon-docker-plain', displayText: 'Docker' },
+  git: { class: 'devicon-git-plain', displayText: 'Git' },
+  graphQL: { class: 'devicon-graphql-plain', displayText: 'GraphQL' },
+  python: { class: 'devicon-python-plain', displayText: 'Python' },
 };
 
 const DevIcon = ({
   technology,
-  colored = true,
+  colored = false,
   size,
   className,
 }) => {
@@ -48,7 +53,7 @@ const DevIcon = ({
     >
       <i
         title={icon.displayText}
-        className={`${icon.class} ${colored && 'colored'} text-${
+        className={`text-main-text ${icon.class} ${colored && 'colored'} text-${
           size ? size : 'base'
         }`}
       />
