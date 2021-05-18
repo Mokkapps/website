@@ -4,12 +4,16 @@ import PropTypes from 'prop-types';
 import BlogPost from '../BlogPost';
 
 const BlogPostList = props => {
-  const { items, author, metaIcons } = props;
+  const { items, author, metaIcons, onlyTwoCols = false } = props;
   let count = 0;
 
   return (
     <div
-      className="w-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      className={`w-100 ${
+        onlyTwoCols
+          ? 'grid grid-cols-1 md:grid-cols-2 gap-6'
+          : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
+      } `}
       data-cy="blog-post-list"
     >
       {items.map(item => {
@@ -45,6 +49,7 @@ const BlogPostList = props => {
 BlogPostList.propTypes = {
   items: PropTypes.array.isRequired,
   author: PropTypes.string,
+  onlyTwoCols: PropTypes.bool,
   metaIcons: PropTypes.object,
 };
 

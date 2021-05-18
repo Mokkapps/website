@@ -41,7 +41,7 @@ const BusinessProjectList = ({ intl }) => {
           return (
             <div
               key={titleId}
-              className="w-full lex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
+              className="border border-text-main w-full lex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
             >
               <h5 className="text-center mb-0">
                 <FormattedMessage id={titleId} />

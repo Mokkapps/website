@@ -60,6 +60,7 @@ const PageTemplate = props => {
           dataCy="blog-categories"
         />
         <BlogPostList
+          onlyTwoCols
           items={items}
           author={config.authorName}
           metaIcons={metaIcons}
