@@ -104,24 +104,50 @@ As we now have a running API, we can add some insensitive configuration data as 
 Therefore, we need to modify the `amplify/backend/function/amplifyenvconfigdemofunction/amplifyenvconfigdemofunction-cloudformation-template.json` file. It includes a `Parameters` object where we can add a new environment variable. In our case we want to add a string variable that can be accessed with the key `MyEnvVariableKey` and has the value `my-environment-variable`:
 
 ```json
-"Parameters" : {
-  "MyEnvVariableKey" : {
-    "Type" : "String",
-    "Default" : "my-environment-variable"
-  }
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Lambda Function resource stack creation using Amplify CLI",
+  "Parameters" : {
+    ...
+    "env": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
+    },
+    // highlight-start
+    "MyEnvVariableKey" : {
+      "Type" : "String",
+      "Default" : "my-environment-variable"
+    }
+    // highlight-end
+  },
+  ...
 }
 ```
 
-We also need to modify the `Environment` object in this file to be able to map our new environment key to a variable that is attached to
-the global `process.env` variable that is injected by the Node.js runtime:
+We also need to modify the `Resources > Environment > Variables` object in this file to be able to map our new environment key to a variable that is attached to
+the global `process.env` variable and is injected by the Node.js runtime:
 
 ```json
-"Environment":{
-   "Variables":{
-      "MY_ENV_VAR":{
-         "Ref":"MyEnvVariableKey"
+{
+  "Resources": {
+    "Environment": {
+      "Variables": {
+        "ENV": {
+          "Ref": "env"
+        },
+        "REGION": {
+          "Ref": "AWS::Region"
+        },
+        // highlight-start
+        "MY_ENV_VAR": {
+          "Ref": "MyEnvVariableKey"
+        }
+        // highlight-end
       }
-   }
+    }  
+  }
 }
 ```
 
@@ -150,13 +176,13 @@ First, we need to click on "Store a new secret" to create a new secret:
 
 ![Store new secret](./images/aws-secrets-manager-store-new-secret.jpg)
 
-Next, we click "Other type of secret" and enter the key and value int the "Secret key/value" inputs:
+Next, we click "Other type of secret" and enter key and value of our secret in the corresponding "Secret key/value" inputs:
 
 ![Secret type](./images/aws-secrets-manager-type.jpg)
 
 It is possible to add multiple key/value pairs to a secret. A new pair can be added by clicking the "+ Add row" button.
 
-In the next screen we need to add a name and an optional description for our secret:
+In the next screen we need to add a name and some other optional information to our secret:
 
 ![Secret name and description](./images/aws-secrets-manager-name-and-description.jpg)
 
@@ -166,26 +192,42 @@ Now we can open the secret and inspect its values inside the AWS Secrets Manager
 
 ![Secret details](./images/aws-secrets-manager-secret-details.jpg)
 
-We need to copy the "Secret ARN" value as we need a new configuration object in our Cloudformation configuration file `amplify/backend/function/amplifyenvconfigdemofunction/amplifyenvconfigdemofunction-cloudformation-template.json` to the `Statement` array inside the `PolicyDocument` object:
+We need to copy the "Secret ARN" value as we need to add a new configuration object in our Cloudformation configuration file `amplifyenvconfigdemofunction-cloudformation-template.json`:
 
 ```json
-{
-  "Effect": "Allow",
-  "Action": ["secretsmanager:GetSecretValue"],
-  "Resource": {
-    "Fn::Sub": [
-      "arn:aws:secretsmanager:${region}:${account}:secret:key_id",
-      {
-        "region": {
-          "Ref": "AWS::Region"
-        },
-        "account": {
-          "Ref": "AWS::AccountId"
+"lambdaexecutionpolicy": {
+  "DependsOn": ["LambdaExecutionRole"],
+  "Type": "AWS::IAM::Policy",
+  "Properties": {
+  "PolicyName": "lambda-execution-policy",
+  "Roles": [{ "Ref": "LambdaExecutionRole" }],
+  "PolicyDocument": {
+    "Version": "2012-10-17",
+    "Statement": [
+        // highlight-start
+        {
+          "Effect": "Allow",
+          "Action": ["secretsmanager:GetSecretValue"],
+          "Resource": {
+            "Fn::Sub": [
+              "arn:aws:secretsmanager:${region}:${account}:secret:key_id",
+              { 
+                "region": {
+                  "Ref": "AWS::Region"
+                },
+                "account": {
+                  "Ref": "AWS::AccountId"
+                }
+              }
+            ]
+          }
         }
-      }
-    ]
+        // highlight-end
+      ]
+    }
   }
 }
+
 ```
 
 Again, we need to run `amplify push` to build all of our local backend resources and provision them in the cloud.
