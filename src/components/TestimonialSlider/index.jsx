@@ -33,12 +33,12 @@ const TestimonialSlider = ({ intl, className }) => {
   const renderQuote = testimonial => {
     const { name, text } = testimonial;
     return (
-      <blockquote className="pl-14 relative text-xl italic bg-neutral-100 text-neutral-600 border-neutral-500">
+      <div className="pl-14 relative text-xl italic bg-neutral-100 text-neutral-600 border-neutral-500">
         <div className="flex flex-col">
           <cite className="mb-4">{text}</cite>
           <p className="text-sm">{name}</p>
         </div>
-      </blockquote>
+      </div>
     );
   };
 

@@ -64,4 +64,31 @@ pre[class*='language-text'] {
     background: #e97a50;
     color: white;
   }
+
+  pre[class='language-graphql']::before {
+    content: 'graphql';
+    background: #E531AC;
+    color: white;
+  }
+
+  pre[class='language-java']::before {
+    content: 'java';
+    background: #EF7B14;
+    color: white;
+  }
+
+  pre[class='language-yaml']::before,
+  pre[class='language-yml']::before {
+    content: 'yaml';
+    background: #3f4554;
+    color: white;
+  }
+
+  pre[class='language-sh']::before,
+  pre[class='language-shell']::before,
+  pre[class='language-bash']::before {
+    content: 'bash';
+    background: #3f4554;
+    color: white;
+  }
 }

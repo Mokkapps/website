@@ -65,6 +65,15 @@
     @apply mb-2;
   }
 
+  blockquote {
+    @apply bg-secondary;
+    @apply rounded-md;
+
+    p {
+      @apply p-4;
+    }
+  }
+
   h1,
   h2,
   h3,
