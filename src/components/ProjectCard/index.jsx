@@ -20,8 +20,9 @@ const ProjectCard = ({
   minimal,
   usedTechnologies,
   children,
+  block = false,
 }) => (
-  <Card url={urls.page} clickable id={id}>
+  <Card url={urls.page} clickable id={id} block={block}>
     <ProjectImage alt={`${title} Image`} image={asset} />
     <ProjectCardDescription
       minimal={minimal}
@@ -44,6 +45,7 @@ ProjectCard.propTypes = {
   usedTechnologies: PropTypes.array,
   children: PropTypes.object,
   className: PropTypes.string,
+  block: PropTypes.bool,
 };
 
 export default ProjectCard;

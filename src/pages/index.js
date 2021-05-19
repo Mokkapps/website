@@ -42,12 +42,6 @@ const ListElement = styled.li`
   }
 `;
 
-const Projects = styled.section`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
-
 const IndexPage = props => {
   const {
     data: { projectAssets, latestPosts, seoImage },
@@ -116,11 +110,11 @@ const IndexPage = props => {
   );
 
   const latestBlogPosts = (
-    <section>
+    <section className="flex flex-col items-center justify-center">
       <h2 className="text-center mt-10 mb-4 uppercase">
         <FormattedMessage id="landingPage.latestBlogPosts" />
       </h2>
-      <div className="flex flex-wrap justify-center">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {posts.map(post => {
           const {
             frontmatter: { title, cover },
@@ -128,6 +122,7 @@ const IndexPage = props => {
           } = post;
           return (
             <BlogPostCard
+              block
               id="blog-post"
               key={slug}
               asset={cover}
@@ -148,17 +143,21 @@ const IndexPage = props => {
   );
 
   const featuredPrivateProjects = (
-    <section>
+    <section className="flex flex-col items-center justify-center">
       <h2 className="text-center mt-10 mb-4 uppercase">
         <FormattedMessage id="landingPage.featuredPrivateProjects" />
       </h2>
-      <Projects data-cy="hero-projects-section">
+      <div
+        className="grid grid-cols-1 gap-4 md:grid-cols-2"
+        data-cy="hero-projects-section"
+      >
         {config.projects
           .filter(p => p.featured)
           .map(project => {
             const { imageName, title, description, urls } = project;
             return (
               <ProjectCard
+                block
                 data-cy="home-project-card"
                 key={title}
                 minimal={true}
@@ -169,7 +168,7 @@ const IndexPage = props => {
               />
             );
           })}
-      </Projects>
+      </div>
       <LinkButton
         className="mb-5"
         dataCy="hero-projects-more-button"
@@ -255,12 +254,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(
-              width: 600
-              layout: CONSTRAINED
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-            )
+            gatsbyImageData(width: 600)
           }
         }
       }
@@ -268,7 +262,7 @@ export const query = graphql`
     latestPosts: allMdx(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
       sort: { fields: [fields___prefix], order: DESC }
-      limit: 3
+      limit: 4
     ) {
       edges {
         node {
@@ -279,12 +273,7 @@ export const query = graphql`
             title
             cover {
               childImageSharp {
-                gatsbyImageData(
-                  width: 350
-                  layout: CONSTRAINED
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP]
-                )
+                gatsbyImageData(width: 350)
               }
             }
           }

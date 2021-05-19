@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import Card from '../Card';
@@ -11,10 +11,14 @@ const ProjectImage = styled(GatsbyImage)`
 `;
 
 const BlogPostCard = props => {
-  const { url, id, asset, title } = props;
+  const { url, id, asset, title, block } = props;
   return (
-    <Card url={url} id={id}>
-      <ProjectImage alt={`${title} Image`} placeholder="blurred" image={asset.childImageSharp.gatsbyImageData} />
+    <Card url={url} id={id} block={block}>
+      <ProjectImage
+        alt={`${title} Image`}
+        placeholder="blurred"
+        image={asset.childImageSharp.gatsbyImageData}
+      />
       <h3 className="text-main-text p-4 flex items-center h-full">{title}</h3>
     </Card>
   );
@@ -25,6 +29,7 @@ BlogPostCard.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string.isRequired,
   url: PropTypes.string,
+  block: PropTypes.bool,
   dataCy: PropTypes.string,
 };
 

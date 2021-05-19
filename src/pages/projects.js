@@ -29,7 +29,7 @@ const ProjectsPage = props => {
       <section className="my-4 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 md:grid-flow-col gap-4">
         {customers.map(customer => (
           <div
-            className="flex justify-center items-center bg-secondary align-middle text-center shadow-md rounded-lg py-2 px-4"
+            className="flex justify-center items-center bg-secondary align-middle text-center shadow-md rounded-lg py-2 px-4 border border-text-main"
             key={customer}
           >
             <span className="font-bold">{customer}</span>
@@ -56,7 +56,9 @@ const ProjectsPage = props => {
         <div className="flex flex-col items-center justify-center w-full my-8">
           {image}
           {customerList}
-          <p className="text-center"><FormattedMessage id="projectsPage.businessProjectsExcerpt" /></p>
+          <p className="text-center">
+            <FormattedMessage id="projectsPage.businessProjectsExcerpt" />
+          </p>
           <BusinessProjectList />
           <p className="my-8 text-center">
             <Link to="/contact">

@@ -40,13 +40,13 @@ const getSkillSection = (skillLevel, skills) =>
   skills.length > 0
     ? [
         <p
-          className="bold text-lg bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
+          className="border border-text-main bold text-lg bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
           key={skillLevel}
         >
           <FormattedMessage id={`aboutPage.${skillLevel}`} />
         </p>,
         <div
-          className="flex flex-wrap justify-center items-center bg-secondary rounded-md shadow-md p-3"
+          className="border border-text-main flex flex-wrap justify-center items-center bg-secondary rounded-md shadow-md p-3"
           key={Math.random()}
         >
           {getDevIcons(skills)}

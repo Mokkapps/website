@@ -30,7 +30,7 @@ const PublicationsPage = props => {
           <h2 className="my-8 uppercase">
             <FormattedMessage id="publicationsPage.talks" />
           </h2>
-          <div className="flex justify-around flex-wrap">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {publications
               .filter(p => p.type === 'talk')
               .map((talk, i) => {
@@ -53,7 +53,7 @@ const PublicationsPage = props => {
                         <p className="text-main-text">{date}</p>
                         <p className="text-main-text">{host}</p>
                         {slides ? (
-                          <a href={slides} className="mt-2 uppercase">
+                          <a href={slides} className="mt-2">
                             <FormattedMessage id="publicationsPage.slides" />
                           </a>
                         ) : null}
