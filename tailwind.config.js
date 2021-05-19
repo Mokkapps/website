@@ -1,7 +1,13 @@
 module.exports = {
   important: true,
   darkMode: 'media',
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  purge: {
+    content: ['"./src/**/*.{js,jsx,ts,tsx}"'],
+    // These options are passed through directly to PurgeCSS
+    options: {
+      whitelist: ['gatsby-resp-image-figcaption'],
+    },
+  },
   theme: {
     extend: {
       fontFamily: {
@@ -9,13 +15,13 @@ module.exports = {
         heading: ['Domine', 'sans-serif'],
       },
       textColor: {
-        'accent': 'var(--accent)',
+        accent: 'var(--accent)',
       },
       fontSize: {
-        '10xl': '5rem'
+        '10xl': '5rem',
       },
       minHeight: {
-        '0': '0',
+        0: '0',
         'testimonial-desktop': '150px',
         'testimonial-mobile': '350px',
         '50px': '50px',
@@ -23,7 +29,7 @@ module.exports = {
         '1/4': '25%',
         '1/2': '50%',
         '3/4': '75%',
-        'full': '100%',
+        full: '100%',
       },
       minWidth: {
         0: '0',
