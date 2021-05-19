@@ -240,11 +240,6 @@
     }
   }
 
-  .gatsby-resp-image-figcaption {
-    text-align: center;
-    font-style: italic;
-  }
-
   .pagination {
     display: flex;
     justify-content: center;
@@ -291,4 +286,10 @@
       }
     }
   }
+}
+
+/* These styles will not be purged */
+.gatsby-resp-image-figcaption {
+  text-align: center;
+  font-style: italic;
 }
