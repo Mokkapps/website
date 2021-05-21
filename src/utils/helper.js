@@ -13,6 +13,16 @@ export const getAsset = (edges, imageName) => {
   return getImage(node.childImageSharp.gatsbyImageData);
 };
 
+// CSS variable needs to be defined in :root
+export function getCssVariableHexColor(propertyName) {
+  return window
+    ? window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue(propertyName)
+        .trim()
+    : propertyName;
+}
+
 export function sendCustomAnalyticsEvent(eventName) {
   if (window.umami && typeof window.umami === 'function') {
     window.umami(eventName);

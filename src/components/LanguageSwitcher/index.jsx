@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import Switch from 'react-switch';
 
 import { LanguageContext } from '../../context/languageContext';
+import { getCssVariableHexColor } from '../../utils/helper';
 
 const LanguageSwitcher = props => {
   const [checked, setChecked] = useState(false);
+  const color = getCssVariableHexColor('--switch-background');
+
   return (
     <LanguageContext.Consumer>
       {({ toggleLanguage, lang }) => (
@@ -13,41 +16,24 @@ const LanguageSwitcher = props => {
           aria-checked={checked}
           {...props}
           uncheckedIcon={
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100%',
-                fontSize: 20,
-                paddingRight: 2,
-              }}
-            >
+            <div className="flex justify-center items-center h-full">
               <span role="img" aria-label="usa-flag">
                 🇺🇸
               </span>
             </div>
           }
           checkedIcon={
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100%',
-                fontSize: 20,
-                paddingRight: 2,
-              }}
-            >
+            <div className="flex justify-center items-center h-full">
               <span role="img" aria-label="germany-flag">
                 🇩🇪
               </span>
             </div>
           }
-          onColor="var(--secondary)"
-          onChange={checked => {
+          onColor={color}
+          offColor={color}
+          onChange={value => {
             toggleLanguage();
-            setChecked(checked);
+            setChecked(value);
           }}
           checked={lang === 'de'}
         />

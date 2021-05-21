@@ -8,11 +8,11 @@ import CategorySelection from '../CategorySelection';
 const ArticleWithSidebar = ({ children, categories }) => (
   <section className="lg:grid lg:grid-col-1 lg:grid-cols-12 p-6 md:p-7 xl:p-4">
     <div className="hidden lg:col-start-1 lg:col-end-2 xl:col-start-1 xl:col-end-3" />
-    <article className="m-auto lg:m-0 lg:col-start-3 lg:col-end-11 xl:col-start-4 xl:col-end-10">
+    <article className="m-auto lg:mx-0 lg:my-4 lg:col-start-3 lg:col-end-11 xl:col-start-4 xl:col-end-10">
       {children}
     </article>
     <aside className="hidden lg:pl-8 lg:block lg:col-start-11 lg:col-end-13 xl:col-start-11 xl:col-end-13">
-      <div className="sticky top-0 max-w-48">
+      <div className="sticky top-20 max-w-48">
         <h3 className="p-2 mb-0">
           <FormattedMessage id="hireTheAuthor.title" />
         </h3>

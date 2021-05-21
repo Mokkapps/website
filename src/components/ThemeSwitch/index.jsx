@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from '../../context/themeContextProvider';
+import { getCssVariableHexColor } from '../../utils/helper';
 
 const ThemeSwitch = props => {
   const [checked, setChecked] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
+  const color = getCssVariableHexColor('--switch-background');
 
   const handleThemeToggle = value => {
     setChecked(value);
@@ -34,7 +36,8 @@ const ThemeSwitch = props => {
           </span>
         </div>
       }
-      onColor="var(--secondary)"
+      onColor={color}
+      offColor={color}
       onChange={handleThemeToggle}
       checked={theme === 'dark'}
     />

@@ -4,6 +4,9 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      zIndex: {
+        '200': '200',
+      },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
         heading: ['Domine', 'sans-serif'],

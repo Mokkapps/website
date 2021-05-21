@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import logo from '../../images/icon.png';
 
@@ -17,25 +18,20 @@ const Anchor = styled.a`
   }
 `;
 
-const Image = styled.img`
-  margin-bottom: 0;
-`;
-
-const Text = styled.p`
-  color: var(--text-main);
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  font-size: 1.5em;
-  margin-left: 0.25em;
-  margin-bottom: 0;
-`;
-
-// eslint-disable-next-line react/prop-types
-const HeaderLogo = ({imageClassName, textClassName}) => (
+const HeaderLogo = ({ imageClassName }) => (
   <Anchor data-cy="header-logo" href="/">
-    <Image className={imageClassName} src={logo} alt="Logo" width={35} height={35} />
-    <Text className={textClassName}>OKKAPPS</Text>
+    <img
+      className={`${imageClassName} mb-0 py-2`}
+      src={logo}
+      alt="Logo"
+      width={50}
+      height={50}
+    />
   </Anchor>
 );
+
+HeaderLogo.propTypes = {
+  imageClassName: PropTypes.string,
+};
 
 export default HeaderLogo;

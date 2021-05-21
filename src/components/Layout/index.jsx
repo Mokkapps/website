@@ -24,15 +24,17 @@ const Layout = ({ children }) => {
       <section
         className={`${theme === 'light' ? 'theme-light' : 'theme-dark'} ${
           devMode ? 'debug-screens' : ''
-        } bg-background text-main-text relative md:p-4 overflow-hidden lg:overflow-visible lg:overflow-clip`}
+        } bg-background text-main-text relative overflow-hidden lg:overflow-visible lg:overflow-clip`}
       >
-        <header className="lg:hidden flex justify-center p-4">
+        <header className="bg-background lg:hidden flex justify-center sticky">
           <HeaderLogo />
         </header>
         <BurgerMenuButton className="lg:hidden" open={open} setOpen={setOpen} />
         <BurgerMenu className="lg:hidden" open={open} setOpen={setOpen} />
-        <Menu className="hidden lg:flex mb-4" />
-        {children}
+        <Menu className="hidden lg:flex" />
+        <div className="md:mt-10 md:p-4 ">
+          {children}
+        </div>
         <ScrollUpButton />
       </section>
     </IntlProvider>
