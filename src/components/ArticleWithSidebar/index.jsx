@@ -13,9 +13,6 @@ const ArticleWithSidebar = ({ children, categories }) => (
     </article>
     <aside className="hidden lg:pl-8 lg:block lg:col-start-11 lg:col-end-13 xl:col-start-11 xl:col-end-13">
       <div className="sticky top-20 max-w-48">
-        <h3 className="p-2 mb-0">
-          <FormattedMessage id="hireTheAuthor.title" />
-        </h3>
         <HireTheAuthor />
         <div className="mt-3">
           <h3 className="p-2 mb-0">

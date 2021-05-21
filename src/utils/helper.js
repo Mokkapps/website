@@ -15,7 +15,8 @@ export const getAsset = (edges, imageName) => {
 
 // CSS variable needs to be defined in :root
 export function getCssVariableHexColor(propertyName) {
-  return window
+  const isBrowser = () => typeof window !== 'undefined';
+  return isBrowser
     ? window
         .getComputedStyle(document.documentElement)
         .getPropertyValue(propertyName)

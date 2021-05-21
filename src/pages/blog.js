@@ -80,7 +80,7 @@ const BlogPage = props => {
             <input
               type="text"
               aria-label="Search"
-              placeholder="Search Blogposts..."
+              placeholder="Search by category..."
               className="w-64 pl-2 mr-4"
               onChange={handleInputChange}
             />

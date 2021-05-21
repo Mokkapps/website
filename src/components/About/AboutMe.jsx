@@ -16,7 +16,7 @@ const AboutMe = () => (
       src="../../images/about.jpg"
     />
     <div
-      className="flex justify-center flex-wrap mt-8"
+      className="flex lg:hidden justify-center flex-wrap mt-8"
       data-cy="about-social-links"
     >
       <SocialLinks onlyFavorites />

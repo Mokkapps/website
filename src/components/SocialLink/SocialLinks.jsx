@@ -11,73 +11,73 @@ const SOCIAL_LINKS = [
     favorite: true,
   },
   {
-    id: 'github',
     url: 'https://github.com/mokkapps',
     icon: 'github',
     ariaLabel: 'GitHub',
     favorite: true,
   },
   {
-    id: 'dev.to',
     url: 'https://dev.to/mokkapps',
     icon: 'dev-dot-to',
     ariaLabel: 'DEV.to',
   },
   {
-    id: 'linkedin',
     url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
     icon: 'linkedin',
     ariaLabel: 'LinkedIn',
     favorite: true,
   },
   {
-    id: 'instagram',
     url: 'https://www.instagram.com/mokkapps/',
     icon: 'instagram',
     ariaLabel: 'Instagram',
     favorite: true,
   },
   {
-    id: 'facebook',
     url: 'https://www.facebook.com/mokkapps-dev/',
     icon: 'facebook',
     ariaLabel: 'Facebook',
-    favorite: true,
   },
   {
-    id: 'hashnode',
     url: 'https://mokkapps.hashnode.dev/',
     icon: 'hashnode',
     ariaLabel: 'Hashnode',
   },
   {
-    id: 'rss',
     url: `https://mokkapps.de/rss.xml`,
     icon: 'rss',
     ariaLabel: 'Mokkapps RSS Feed',
     favorite: true,
   },
   {
-    id: 'mail',
     url: 'mailto:mail@mokkapps.de',
     icon: 'minutemailer',
     ariaLabel: 'Send email',
+    favorite: true,
   },
 ];
 
-const SocialLinks = ({ onlyFavorites, className, dataCy }) => {
+const SocialLinks = ({
+  onlyFavorites,
+  asColumn,
+  className,
+  dataCy,
+  largeIcons,
+}) => {
   const socialLinks = onlyFavorites
     ? SOCIAL_LINKS.filter(link => link.favorite)
     : SOCIAL_LINKS;
 
   return (
     <div
-      className={`${className} flex flex-wrap justify-evenly`}
+      className={`${className} flex ${
+        asColumn && 'flex-col'
+      } flex-wrap justify-evenly`}
       data-cy={dataCy}
     >
       {socialLinks.map(link => (
-        <div className="mb-2" key={link.id}>
-          <SocialLink link={link} />
+        <div className={`${largeIcons ? 'mb-4' : 'mb-2'}`} key={link.icon}>
+          <SocialLink largeIcons={largeIcons} link={link} />
         </div>
       ))}
     </div>
@@ -86,7 +86,9 @@ const SocialLinks = ({ onlyFavorites, className, dataCy }) => {
 
 SocialLinks.propTypes = {
   onlyFavorites: PropTypes.bool,
+  asColumn: PropTypes.bool,
   className: PropTypes.string,
+  largeIcons: PropTypes.bool,
   dataCy: PropTypes.string,
 };
 

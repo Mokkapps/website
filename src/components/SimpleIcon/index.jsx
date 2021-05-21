@@ -4,7 +4,6 @@ import * as simpleIcons from 'simple-icons';
 
 const SimpleIcon = ({ className, iconName }) => (
   <div
-    title={iconName}
     className={className}
     dangerouslySetInnerHTML={{
       __html: `${simpleIcons.get(iconName).svg}`,

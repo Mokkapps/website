@@ -11,7 +11,7 @@ import MenuItem from '../MenuItem';
 const DesktopMenu = ({ intl, className }) => {
   return (
     <header
-      className={`fixed top-0 z-200 px-8 shadow-lg flex flex-wrap w-full justify-between items-center bg-background hidden lg:flex ${className}`}
+      className={`bg-gradient-to-b from-background to-secondary-darken fixed top-0 z-200 px-8 shadow-lg flex flex-wrap w-full justify-between items-center bg-background hidden lg:flex ${className}`}
       data-cy="header-menu"
     >
       <HeaderLogo />
@@ -32,10 +32,11 @@ const DesktopMenu = ({ intl, className }) => {
             />
           );
         })}
-
-        <LanguageSwitcher className="mr-4 mb-2" />
-        <ThemeSwitch className="mb-2" />
       </ul>
+      <div className="flex">
+        <LanguageSwitcher className="mr-4" />
+        <ThemeSwitch className="" />
+      </div>
     </header>
   );
 };

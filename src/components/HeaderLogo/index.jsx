@@ -23,7 +23,8 @@ const HeaderLogo = ({ imageClassName }) => (
     <img
       className={`${imageClassName} mb-0 py-2`}
       src={logo}
-      alt="Logo"
+      title="Mokkapps Logo"
+      alt="Mokkapps Logo"
       width={50}
       height={50}
     />

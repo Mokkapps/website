@@ -4,6 +4,9 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      gradientColorStops: theme => ({
+        ...theme('colors'),
+      }),
       zIndex: {
         '200': '200',
       },
@@ -48,7 +51,7 @@ module.exports = {
         'main-text': 'var(--text-main)',
         'secondary-text': 'var(--text-secondary)',
         'basic-button-text': 'var(--basic-button-text)',
-        'color-toggle-light': 'var(--color-toggle-light)',
+        'button-background': 'var(--button-background)',
       },
     },
   },
