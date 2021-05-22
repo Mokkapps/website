@@ -13,10 +13,11 @@ export const getAsset = (edges, imageName) => {
   return getImage(node.childImageSharp.gatsbyImageData);
 };
 
+export const isBrowser = () => typeof window !== 'undefined';
+
 // CSS variable needs to be defined in :root
 export function getCssVariableHexColor(propertyName) {
-  const isBrowser = () => typeof window !== 'undefined';
-  return isBrowser
+  return isBrowser()
     ? window
         .getComputedStyle(document.documentElement)
         .getPropertyValue(propertyName)
