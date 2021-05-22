@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LanguageContext);
   const devMode = process.env.NODE_ENV !== `production`;
+
   return (
     <IntlProvider
       locale={lang}

@@ -72,7 +72,7 @@ const BlogPage = props => {
 
   return (
     <Layout>
-      <article className="px-24 py-8">
+      <article className="px-8 md:px-24 py-8">
         <div className="flex flex-col items-center justify-center">
           <Heading className="mb-8" i18nId="blogPage.title" />
           <BlogLanguageWarning className="w-full my-4" />
