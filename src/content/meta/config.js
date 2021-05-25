@@ -145,6 +145,17 @@ const config = {
       },
     },
     {
+      title: 'Gatsby Source Plugin For Imgur Albums',
+      description: {
+        short: 'A Gatsby source plugin which adds Imgur albums ',
+        long: '',
+      },
+      usedTechnologies: ['gatsby', 'node'],
+      urls: {
+        page: 'https://github.com/mokkapps/gatsby-source-imgur-albums',
+      },
+    },
+    {
       title: 'Void Fest 2018 Band Reminder',
       description: {
         short:

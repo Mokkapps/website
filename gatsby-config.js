@@ -55,6 +55,13 @@ module.exports = {
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify`,
+    {
+      resolve: 'gatsby-source-imgur-albums',
+      options: {
+        clientId: process.env.IMGUR_CLIENT_ID,
+        albumHashes: ['Jboo80G', 'keXG4EM', '2aduTTq', 'YiITFQv', 'PAEMJZM'],
+      },
+    },
     `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-plugin-sass',

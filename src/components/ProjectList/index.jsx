@@ -27,7 +27,7 @@ const ProjectList = ({ projectAssets }) => {
             id={count.toString()}
             key={title}
             usedTechnologies={usedTechnologies}
-            asset={getAsset(edges, imageName)}
+            asset={imageName ? getAsset(edges, imageName) : null}
             title={title}
             description={description.short}
             urls={urls}

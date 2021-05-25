@@ -12,7 +12,8 @@
     "projects": "Projekte",
     "about": "Über mich",
     "contact": "Kontakt",
-    "publications": "Publikationen"
+    "publications": "Publikationen",
+    "tips": "Tips"
   },
   "footer": {
     "built": "Erstellt",
@@ -69,6 +70,10 @@
         "techStack": "angular,jasmine,protractor,dotNet"
       }
     }
+  },
+  "tipsPage": {
+    "title": "Tips",
+    "intro": "Diese Seite beinhaltet einige meiner Tips, die ich in meinen Social Media Kanälen veröffentlicht habe."
   },
   "publicationsPage": {
     "title": "Publikationen",
