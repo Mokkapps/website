@@ -41,6 +41,7 @@
     "gatsby": "^3.4.0",
     "gatsby-cli": "^3.4.0",
     "gatsby-image": "^3.4.0",
+    "gatsby-parallel-runner": "^1.3.0",
     "gatsby-plugin-catch-links": "^3.4.0",
     "gatsby-plugin-feed-mdx": "^1.1.0",
     "gatsby-plugin-image": "^1.4.0",
