@@ -1,7 +1,7 @@
 # explicit commands for building the site
 # and the folder to publish
 [build]
-command = "gatsby build"
+command = "gatsby-parallel-runner"
 publish = "public"
   [build.environment]
   # set TERM variable for terminal output
