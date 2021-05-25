@@ -54,6 +54,7 @@ module.exports = {
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-netlify`,
     {
       resolve: 'gatsby-source-imgur-albums',

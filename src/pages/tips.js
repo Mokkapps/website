@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
-import { graphql } from 'gatsby';
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
+import { graphql, navigate } from 'gatsby';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
 
@@ -10,23 +11,34 @@ import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Seo from '../components/Seo';
-
 import Heading from '../components/Heading';
-import { FormattedMessage } from 'react-intl';
+
+const imageIdMap = {
+  js: 'db2d3319-93fa-5810-a3bf-333083458bdb',
+  ts: '42a2dd14-c0bf-5c77-8931-d938ee61dd8e',
+  other: '265e925b-5fc1-59af-8758-ecbcffccbb91',
+  html: '0e02c7a4-a4f9-54e5-9374-52b5065f2643',
+  css: 'bdfa9b27-b54d-5451-8186-b5044c1c9e75',
+};
+
+const tabIndexMap = {
+  js: 0,
+  ts: 1,
+  html: 2,
+  css: 3,
+  other: 4,
+};
 
 const TipsPage = props => {
   const {
     data: { imgurAlbums, seoImage },
+    location: { search },
   } = props;
   const { siteUrl, siteTitlePostfix } = config;
 
-  const imageIdMap = {
-    js: 'db2d3319-93fa-5810-a3bf-333083458bdb',
-    ts: '42a2dd14-c0bf-5c77-8931-d938ee61dd8e',
-    other: '265e925b-5fc1-59af-8758-ecbcffccbb91',
-    html: '0e02c7a4-a4f9-54e5-9374-52b5065f2643',
-    css: 'bdfa9b27-b54d-5451-8186-b5044c1c9e75',
-  };
+  const [tabIndex, setTabIndex] = useState(
+    tabIndexMap[search.replace('?', '')] || 0
+  );
 
   const javaScriptAlbum = imgurAlbums.nodes.find(
     node => node.id === imageIdMap.js
@@ -59,13 +71,13 @@ const TipsPage = props => {
         <p className="text-center my-8">
           <FormattedMessage id="tipsPage.intro" />
         </p>
-        <Tabs>
+        <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
           <TabList>
-            <Tab>JavaScript</Tab>
-            <Tab>TypeScript</Tab>
-            <Tab>HTML</Tab>
-            <Tab>CSS</Tab>
-            <Tab>Other</Tab>
+            <Tab onClick={() => navigate('/tips?js')}>JavaScript</Tab>
+            <Tab onClick={() => navigate('/tips?ts')}>TypeScript</Tab>
+            <Tab onClick={() => navigate('/tips?html')}>HTML</Tab>
+            <Tab onClick={() => navigate('/tips?css')}>CSS</Tab>
+            <Tab onClick={() => navigate('/tips?other')}>Other</Tab>
           </TabList>
 
           <TabPanel className="flex flex-col justify-center">
@@ -98,6 +110,7 @@ const TipsPage = props => {
 
 TipsPage.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default TipsPage;

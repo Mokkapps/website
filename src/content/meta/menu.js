@@ -23,7 +23,7 @@ const menu = [
   },
   {
     i18nId: 'menu.tips',
-    to: '/tips',
+    to: '/tips?js',
     ariaLabel: 'Tips',
     icon: TipIcon,
   },
