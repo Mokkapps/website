@@ -273,7 +273,7 @@ export const query = graphql`
             title
             cover {
               childImageSharp {
-                gatsbyImageData(width: 350)
+                gatsbyImageData(width: 1000)
               }
             }
           }
