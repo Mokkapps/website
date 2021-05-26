@@ -25,8 +25,8 @@ const HeaderLogo = ({ imageClassName }) => (
       src={logo}
       title="Mokkapps Logo"
       alt="Mokkapps Logo"
-      width={50}
-      height={50}
+      width={40}
+      height={40}
     />
   </Anchor>
 );

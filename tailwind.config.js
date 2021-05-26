@@ -8,20 +8,20 @@ module.exports = {
         ...theme('colors'),
       }),
       zIndex: {
-        '200': '200',
+        200: '200',
       },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
         heading: ['Domine', 'sans-serif'],
       },
       textColor: {
-        'accent': 'var(--accent)',
+        accent: 'var(--accent)',
       },
       fontSize: {
-        '10xl': '5rem'
+        '10xl': '5rem',
       },
       minHeight: {
-        '0': '0',
+        0: '0',
         'testimonial-desktop': '150px',
         'testimonial-mobile': '350px',
         '50px': '50px',
@@ -29,7 +29,7 @@ module.exports = {
         '1/4': '25%',
         '1/2': '50%',
         '3/4': '75%',
-        'full': '100%',
+        full: '100%',
       },
       minWidth: {
         0: '0',
@@ -56,5 +56,9 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require('tailwindcss'), require('autoprefixer')],
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer'),
+    require('tailwindcss-debug-screens'),
+  ],
 };

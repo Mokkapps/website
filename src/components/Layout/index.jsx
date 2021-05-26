@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
         <BurgerMenuButton className="lg:hidden" open={open} setOpen={setOpen} />
         <BurgerMenu className="lg:hidden" open={open} setOpen={setOpen} />
         <Menu className="hidden lg:flex" />
-        <section className="hidden lg:flex fixed left-7 top-80 z-200">
+        <section className="hidden xl:flex fixed left-7 top-80 z-200">
           <SocialLinks onlyFavorites asColumn largeIcons />
         </section>
         <div className="md:pt-20 md:p-4">{children}</div>
