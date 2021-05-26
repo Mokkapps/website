@@ -3,8 +3,7 @@ import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
-
-import config from '../content/meta/config';
+import { FormattedMessage } from 'react-intl';
 
 import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';
@@ -13,6 +12,7 @@ import PrevIcon from 'react-feather/dist/icons/arrow-left';
 import NextIcon from 'react-feather/dist/icons/arrow-right';
 import ReadIcon from 'react-feather/dist/icons/eye';
 
+import config from '../content/meta/config';
 import Footer from '../components/Footer';
 import ArticleWithSidebar from '../components/ArticleWithSidebar';
 import Layout from '../components/Layout';
@@ -23,11 +23,10 @@ import Seo from '../components/Seo';
 import Author from '../components/Author';
 import NextPrev from '../components/NextPrev';
 import Share from '../components/Share';
-
 import { getAllCategories } from '../utils/helper';
 import Button from '../components/Button';
-import { FormattedMessage } from 'react-intl';
-import BlogLanguageWarning from "../components/BlogLanguageWarning";
+import BlogLanguageWarning from '../components/BlogLanguageWarning';
+import EditOnGithub from '../components/EditOnGithub';
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -118,6 +117,7 @@ const PostTemplate = props => {
           prev={prev}
           icons={nextPrevIcons}
         />
+        <EditOnGithub prefix={prefix} slug={slug} />
         {showComments ? (
           <ReactDisqusComments
             shortname="mokkapps"
@@ -131,7 +131,7 @@ const PostTemplate = props => {
             <FormattedMessage id="blogPage.leaveAComment" />
           </Button>
         )}
-        <Author className="my-8" />
+        <Author className="xl:hidden my-8" />
       </ArticleWithSidebar>
       <Footer />
       <Seo

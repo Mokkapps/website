@@ -43,7 +43,10 @@
   "blogPage": {
     "title": "Blog",
     "minuteRead": "min read",
-    "leaveAComment": "Show comments"
+    "leaveAComment": "Show comments",
+    "editOnGitHubInfoLine1": "Find an issue with this post? Think you could clarify, update or add something?",
+    "editOnGitHubInfoLine2": "All my posts are available to edit on Github. Any fix, little or small, is appreciated!",
+    "editOnGitHubButton": "Edit on Github"
   },
   "projectsPage": {
     "businessProjectsHeading": "Business Projects",
