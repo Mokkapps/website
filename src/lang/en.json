@@ -128,7 +128,12 @@
     "contactSuccess": "Mail sent successfully",
     "contactSuccessDescr": "Thanks for your message. I'll answer your request as quick as possible.",
     "yourMessage": "Your message",
-    "send": "Send"
+    "send": "Send",
+    "emailTypes": {
+      "consulting": "Consulting",
+      "help": "Help / Ask a question",
+      "other": "Other..."
+    }
   },
   "newsletterPage": {
     "joinTheNewsletter": "Sign up for the Newsletter",

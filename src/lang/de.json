@@ -128,7 +128,12 @@
     "contactSuccess": "Nachricht gesendet",
     "contactSuccessDescr": "Vielen Dank! Ihre Nachricht ist bei mir eingegangen. Ich werde mich so rasch wie möglich bei Ihnen zurückmelden.",
     "yourMessage": "Ihre Nachricht",
-    "send": "Senden"
+    "send": "Senden",
+    "emailTypes": {
+      "consulting": "Projektanfrage",
+      "help": "Hilfe / Frage stellen",
+      "other": "Etwas anderes..."
+    }
   },
   "newsletterPage": {
     "joinTheNewsletter": "Newsletter Anmeldung",

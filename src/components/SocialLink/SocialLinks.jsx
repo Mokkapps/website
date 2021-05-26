@@ -44,6 +44,11 @@ const SOCIAL_LINKS = [
     ariaLabel: 'Hashnode',
   },
   {
+    url: 'https://www.npmjs.com/~mokkapps',
+    icon: 'npm',
+    ariaLabel: 'npm'
+  },
+  {
     url: `https://mokkapps.de/rss.xml`,
     icon: 'rss',
     ariaLabel: 'Mokkapps RSS Feed',
@@ -54,7 +59,7 @@ const SOCIAL_LINKS = [
     icon: 'minutemailer',
     ariaLabel: 'Send email',
     favorite: true,
-  },
+  }
 ];
 
 const SocialLinks = ({
