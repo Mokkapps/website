@@ -59,6 +59,6 @@ module.exports = {
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    require('tailwindcss-debug-screens'),
+    // require('tailwindcss-debug-screens'),
   ],
 };
