@@ -145,7 +145,8 @@
     "multiplePostsInCategory": "Es befinden sich {count} Beiträge in dieser Kategorie"
   },
   "minimalBlogListPage": {
-    "title": "Einfache Blog Liste"
+    "title": "Einfache Blog Liste",
+    "publishedPosts": "({amount} Artikel)"
   },
   "availability": {
     "notAvailable": "Verfügbar für Vollzeitprojekte ab {date}",
