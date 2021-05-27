@@ -136,14 +136,20 @@
     }
   },
   "newsletterPage": {
-    "joinTheNewsletter": "Sign up for the Newsletter",
-    "enterEmail": "Email*",
+    "joinTheNewsletter": "Sign up for the Newsletter →",
+    "email": "Email address",
     "subscribe": "Subscribe",
-    "newsletterInfo": "Sign up for my newsletter! Hear first if I publish a new blog post and get regularly news from the software community.",
+    "firstName": "First name (Optional)",
+    "lastName": "Last name (Optional)",
+    "newsletterInfoLine1": "I am Senior Freelance Software Engineer and Blogger.",
+    "newsletterInfoLine2": "I focus on JavaScript, TypeScript and Java. I'm pretty into Angular, React, Testing and Spring Boot.",
+    "newsletterInfoLine3": "Occasionally I also give career & freelancer advice.",
+    "newsletterInfoLine4": "My weekly emails reflect this preference.",
     "newsletter": "Newsletter",
+    "subscription": "Subscription",
+    "archiv": "Archive",
     "visitArchive": "Visit Newsletter Archive →",
-    "mailChimpInfo": "We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing",
-    "mailChimpInfoLink": "Learn more about Mailchimp's privacy practices here."
+    "revueInfo": "By subscribing, you agree with Revue’s {termsAndServiceLink} and {privacyPolicyLink}"
   },
   "categoriesPage": {
     "title": "Categories",

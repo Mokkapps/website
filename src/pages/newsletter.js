@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
 
 import config from '../content/meta/config';
 
@@ -14,17 +14,6 @@ import Seo from '../components/Seo';
 import NewsletterSubscription from '../components/NewsletterSubscription';
 import LinkButton from '../components/LinkButton';
 
-const InfoText = styled.p`
-  width: 100%;
-  text-align: center;
-`;
-
-const NewsletterContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
 const NewsletterPage = props => {
   const {
     data: { seoImage },
@@ -34,28 +23,30 @@ const NewsletterPage = props => {
   return (
     <Layout>
       <Article>
-        <Heading i18nId="newsletterPage.newsletter" />
-        <InfoText className="mb-4">
-          <FormattedMessage id="newsletterPage.newsletterInfo" />
-        </InfoText>
-        <InfoText className="mb-2">
-          <FormattedMessage id="newsletterPage.mailChimpInfo" />
-        </InfoText>
-        <NewsletterContainer className="mb-2">
-          <a
-            href="https://mailchimp.com/legal/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FormattedMessage id="newsletterPage.mailChimpInfoLink" />
-          </a>
-        </NewsletterContainer>
-        <NewsletterContainer>
-          <NewsletterSubscription />
-        </NewsletterContainer>
+        <Heading i18nId="newsletterPage.newsletter" className="mb-8" />
+        <p className="w-100 text-center mb-4">
+          <FormattedMessage id="newsletterPage.newsletterInfoLine1" />
+        </p>
+        <p className="w-100 text-center mb-4">
+          <FormattedMessage id="newsletterPage.newsletterInfoLine2" />
+        </p>
+        <p className="w-100 text-center mb-4">
+          <FormattedMessage id="newsletterPage.newsletterInfoLine3" />
+        </p>
+        <p className="w-100 text-center mb-4">
+          <FormattedMessage id="newsletterPage.newsletterInfoLine4" />
+        </p>
+        <h2 className="mt-16 text-center">
+          <FormattedMessage id="newsletterPage.subscription" />
+        </h2>
+        <NewsletterSubscription className="my-8" />
+        <h2 className="mt-16 mb-8 text-center">
+          <FormattedMessage id="newsletterPage.archiv" />
+        </h2>
         <LinkButton
+          newTab
           dataCy="newsletter-archive-link-button"
-          href="https://us19.campaign-archive.com/home/?u=587746a905932c04ed4e175bb&id=220816f8fa"
+          href="https://www.getrevue.co/profile/mokkapps#archive"
           i18nId="newsletterPage.visitArchive"
         />
       </Article>
@@ -68,6 +59,10 @@ const NewsletterPage = props => {
       />
     </Layout>
   );
+};
+
+NewsletterPage.propTypes = {
+  data: PropTypes.object,
 };
 
 export default NewsletterPage;

@@ -136,14 +136,20 @@
     }
   },
   "newsletterPage": {
-    "joinTheNewsletter": "Newsletter Anmeldung",
-    "enterEmail": "Email*",
+    "joinTheNewsletter": "Newsletter Anmeldung →",
+    "email": "Email-Addresse",
+    "firstName": "Vorname (Optional)",
+    "lastName": "Nachname (Optional)",
     "subscribe": "Anmelden",
-    "newsletterInfo": "Melde dich für meinen Newsletter an! Erfahre als Erster, wenn ich einen neuen Blog-Artikel veröffentliche und erhalte regelmäßige News aus der Software-Szene.",
+    "newsletterInfoLine1": "Ich bin Senior Freelance Software Engineer und Blogger.",
+    "newsletterInfoLine2": "Ich interessiere mich für die Programmiersprachen JavaScript, TypeScript und Java. Bei Frameworks liegt mein Schwerpunkt auf Angular, React und Spring Boot. ",
+    "newsletterInfoLine3": "Gelegentlich gebe ich auch Ratschläge zum Thema Karriere und Freelancing.",
+    "newsletterInfoLine4": "Meine wöchentlichen Emails spiegeln diese Präferenzen wieder.",
     "newsletter": "Newsletter",
+    "subscription": "Anmeldung",
+    "archiv": "Archiv",
     "visitArchive": "Newsletter Archiv →",
-    "mailChimpInfo": "Wir verwenden Mailchimp als Newsletter-Plattform. Bei der Anmeldung werden Informationen an Mailchimp übertragen.",
-    "mailChimpInfoLink": "Mehr Informationen über Mailchimp's Datenschutz-Praktiken."
+    "revueInfo": "Mit der Anmeldung bestätigst du Revue's {termsAndServiceLink} und {privacyPolicyLink}."
   },
   "categoriesPage": {
     "title": "Kategorien",
