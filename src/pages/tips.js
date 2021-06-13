@@ -40,6 +40,13 @@ const TipsPage = props => {
     tabIndexMap[search.replace('?', '')] || 0
   );
 
+  const sortImages = (a, b) => {
+    const { datetime: datetimeA } = a;
+    const { datetime: datetimeB } = b;
+
+    return datetimeB - datetimeA;
+  };
+
   const javaScriptAlbum = imgurAlbums.nodes.find(
     node => node.id === imageIdMap.js
   );
@@ -81,19 +88,19 @@ const TipsPage = props => {
           </TabList>
 
           <TabPanel className="flex flex-col justify-center">
-            {javaScriptAlbum.images.map(renderImage)}
+            {javaScriptAlbum.images.sort(sortImages).map(renderImage)}
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {typeScriptAlbum.images.map(renderImage)}
+            {typeScriptAlbum.images.sort(sortImages).map(renderImage)}
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {htmlAlbum.images.map(renderImage)}
+            {htmlAlbum.images.sort(sortImages).map(renderImage)}
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {cssAlbum.images.map(renderImage)}
+            {cssAlbum.images.sort(sortImages).map(renderImage)}
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {otherAlbum.images.map(renderImage)}
+            {otherAlbum.images.sort(sortImages).map(renderImage)}
           </TabPanel>
         </Tabs>
       </Article>
@@ -128,6 +135,7 @@ export const query = graphql`
         title
         images_count
         images {
+          datetime
           link
           localFile {
             childImageSharp {
