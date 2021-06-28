@@ -41,7 +41,28 @@
 }
 
 @layer base {
-  ol,
+  ol {
+    list-style: decimal;
+    @apply ml-4;
+
+    > li {
+      @apply ml-4 #{!important};
+
+      > ul {
+        list-style: initial;
+
+        > li {
+          @apply text-base #{!important};
+          list-style-type: initial;
+
+          a {
+            @apply text-base;
+          }
+        }
+      }
+    }
+  }
+
   ul {
     list-style: initial;
     @apply ml-4;
@@ -53,6 +74,7 @@
         list-style: initial;
 
         > li {
+          @apply text-base #{!important};
           list-style-type: square;
 
           a {

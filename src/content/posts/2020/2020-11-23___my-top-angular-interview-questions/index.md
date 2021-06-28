@@ -7,7 +7,7 @@ cover: "images/cover.jpg"
 imageShare: "images/my-top-angular-interview-questions-share.png"
 ---
 
-This article summarizes a list of Angular interview questions which I would ask candidates and that I get often asked in interviews. 
+This article summarizes a list of Angular interview questions that I would ask candidates and that I get often asked in interviews. 
 
 ## Table of Contents
 
