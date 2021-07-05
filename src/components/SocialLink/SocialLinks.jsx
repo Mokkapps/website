@@ -22,7 +22,7 @@ const SOCIAL_LINKS = [
     ariaLabel: 'DEV.to',
   },
   {
-    url: 'https://www.linkedin.com/in/michael-hoffmann-3b8933b1',
+    url: 'https://www.linkedin.com/in/mokkapps',
     icon: 'linkedin',
     ariaLabel: 'LinkedIn',
     favorite: true,
