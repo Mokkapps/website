@@ -152,9 +152,9 @@ class Counter extends React.Component {
         this.increment = this.increment.bind(this);
     }
 	
-	increment {
+	increment() {
 		this.setState((prevState) => {
-			return {counter: prevState.counter++};
+			return {counter: prevState.counter + 1};
 		});
 	}
 	
@@ -216,9 +216,9 @@ The value of an input element in an uncontrolled React component is controlled b
 React class components provide these lifecycle methods:
 - `componentDidMount()`: Runs after the component output has been rendered to the DOM.
 - `componentDidUpdate()`: Runs immediately after updating occurs.
-- `componentWillUnmount()`: Runs after the component is unmounted from the DOM and is used to clear up the memory space.
+- `componentWillUnmount()`: Runs before the component is unmounted from the DOM and is used to clear up the memory space.
 
-There exist some other [rarely used](https://reactjs.org/docs/react-component.html#legacy-lifecycle-methods) and [legacy](https://reactjs.org/docs/react-component.html#legacy-lifecycle-methods) lifecycle methods.
+There exist some other [rarely used](https://reactjs.org/docs/react-component.html#rarely-used-lifecycle-methods) and [legacy](https://reactjs.org/docs/react-component.html#legacy-lifecycle-methods) lifecycle methods.
 
 Hooks are used in functional components instead of the above-mentioned lifecycle methods. The Effect Hook `useEffect` adds, for example, the ability to perform side effects and provides the same functionality as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
 
