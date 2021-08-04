@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
+import { getSrc } from 'gatsby-plugin-image';
 import { graphql, navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import Gallery from '@browniebroke/gatsby-image-gallery';
 
 import config from '../content/meta/config';
 
@@ -59,17 +60,15 @@ const TipsPage = props => {
     node => node.id === imageIdMap.other
   );
 
-  const renderImage = imageData => {
-    const image = getImage(imageData.localFile);
-    return (
-      <GatsbyImage
-        className="m-2 border-2 border-secondary rounded-md shadow-md"
-        key={imageData.link}
-        image={image}
-        alt="Mokkapps Tip Image"
-      />
-    );
-  };
+  const mapToChildImageSharp = imageData => imageData.localFile.childImageSharp;
+
+  // eslint-disable-next-line react/prop-types
+  const ImageWrapper = ({ children, onClick }) => (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div className="custom-image-gallery-wrapper" onClick={onClick}>
+      {children}
+    </div>
+  );
 
   return (
     <Layout>
@@ -88,19 +87,44 @@ const TipsPage = props => {
           </TabList>
 
           <TabPanel className="flex flex-col justify-center">
-            {javaScriptAlbum.images.sort(sortImages).map(renderImage)}
+            <Gallery
+              customWrapper={ImageWrapper}
+              images={javaScriptAlbum.images
+                .sort(sortImages)
+                .map(mapToChildImageSharp)}
+            />
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {typeScriptAlbum.images.sort(sortImages).map(renderImage)}
+            <Gallery
+              customWrapper={ImageWrapper}
+              images={typeScriptAlbum.images
+                .sort(sortImages)
+                .map(mapToChildImageSharp)}
+            />
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {htmlAlbum.images.sort(sortImages).map(renderImage)}
+            <Gallery
+              customWrapper={ImageWrapper}
+              images={htmlAlbum.images
+                .sort(sortImages)
+                .map(mapToChildImageSharp)}
+            />
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {cssAlbum.images.sort(sortImages).map(renderImage)}
+            <Gallery
+              customWrapper={ImageWrapper}
+              images={cssAlbum.images
+                .sort(sortImages)
+                .map(mapToChildImageSharp)}
+            />
           </TabPanel>
           <TabPanel className="flex flex-col justify-center">
-            {otherAlbum.images.sort(sortImages).map(renderImage)}
+            <Gallery
+              customWrapper={ImageWrapper}
+              images={otherAlbum.images
+                .sort(sortImages)
+                .map(mapToChildImageSharp)}
+            />
           </TabPanel>
         </Tabs>
       </Article>
@@ -139,7 +163,12 @@ export const query = graphql`
           link
           localFile {
             childImageSharp {
-              gatsbyImageData(width: 500, layout: FULL_WIDTH)
+              thumb: gatsbyImageData(
+                width: 200
+                height: 100
+                placeholder: BLURRED
+              )
+              full: gatsbyImageData(width: 500, layout: FULL_WIDTH)
             }
           }
         }
