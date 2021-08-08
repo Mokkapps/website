@@ -175,5 +175,8 @@
   "hireTheAuthor": {
     "shortSummary": "Senior Freelance Software Engineer aus München mit Fokus auf Angular & React",
     "title": "Beauftrage den Autor"
+  },
+  "businessCardPage": {
+    "title": "Visitenkarte"
   }
 }

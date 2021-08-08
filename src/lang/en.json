@@ -175,5 +175,8 @@
   "hireTheAuthor": {
     "shortSummary": "Senior freelance software engineer from Munich with focus on Angular & React",
     "title": "Hire The Author"
+  },
+  "businessCardPage": {
+    "title": "Business Card"
   }
 }
