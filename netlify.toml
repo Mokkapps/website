@@ -54,6 +54,60 @@ publish = "public"
   to = "/uses/"
   status = 301
 
+# Simple business card redirect
+[[redirects]]
+from = "/visitenkarte"
+to = "/business-card"
+status = 301
+
+# Simple Twitter redirect
+[[redirects]]
+from = "/twitter"
+to = "https://twitter.com/mokkapps"
+status = 301
+
+# Simple GitHub redirect
+[[redirects]]
+from = "/git"
+to = "https://github.com/mokkapps"
+status = 301
+
+# Simple RSS feed redirect
+[[redirects]]
+from = "/rss"
+to = "https://mokkapps.de/rss.xml"
+status = 301
+
+# Simple Instagram redirect
+[[redirects]]
+from = "/instagram"
+to = "https://www.instagram.com/mokkapps"
+status = 301
+
+# Simple Dev.to redirect
+[[redirects]]
+from = "/dev-to"
+to = "https://dev.to/mokkapps"
+status = 301
+
+# Simple Medium redirect
+[[redirects]]
+from = "/medium"
+to = "https://medium.com/@mokkappsdev"
+status = 301
+
+# Simple Facebook redirect
+[[redirects]]
+from = "/facebook"
+to = "https://www.facebook.com/mokkapps-dev"
+status = 301
+
+# Simple npm redirect
+[[redirects]]
+from = "/npm"
+to = "https://www.npmjs.com/~mokkapps"
+status = 301
+
 [[plugins]]
 package = "netlify-plugin-gatsby-cache"
 
