@@ -10,8 +10,6 @@ import config from '../content/meta/config';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import Footer from '../components/Footer';
-import Seo from '../components/Seo';
 import Button from '../components/Button';
 import {
   getAsset,

@@ -63,7 +63,7 @@ const TipsPage = props => {
   // eslint-disable-next-line react/prop-types
   const ImageWrapper = ({ children, onClick }) => (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <div className="custom-image-gallery-wrapper" onClick={onClick}>
+    <div className="custom-image-gallery-wrapper" role="button" tabIndex={0} onClick={onClick}>
       {children}
     </div>
   );
