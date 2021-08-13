@@ -12,5 +12,14 @@ describe('Contact Page Test', () => {
     cy.get('[data-cy=contact-email]');
     cy.get('[data-cy=contact-message]');
     cy.get('[data-cy=contact-about-me-button]');
+  })
+
+  it('shows availability', () => {
+    cy.get('[data-cy=contact-availability');
+  });
+
+
+  it('shows schedule meeting button', () => {
+    cy.get('[data-cy=contact-hire-me-button');
   });
 });

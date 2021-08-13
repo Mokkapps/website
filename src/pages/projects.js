@@ -6,12 +6,10 @@ import { getSrc, StaticImage } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
 
-import Footer from '../components/Footer';
 import ProjectList from '../components/ProjectList';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-import Seo from '../components/Seo';
 import BusinessProjectList from '../components/BusinessProjectsList';
 
 const ProjectsPage = props => {
@@ -50,7 +48,15 @@ const ProjectsPage = props => {
   );
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/projects`,
+        title: `Projects${siteTitlePostfix}`,
+        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        description:
+          'A list of all private and business projects from Michael Hoffmann',
+      }}
+    >
       <Article>
         <Heading i18nId="projectsPage.businessProjectsHeading" />
         <div className="flex flex-col items-center justify-center w-full my-8">
@@ -59,7 +65,7 @@ const ProjectsPage = props => {
           <p className="text-center">
             <FormattedMessage id="projectsPage.businessProjectsExcerpt" />
           </p>
-          <BusinessProjectList />
+          <BusinessProjectList dataCy="projects-business-projects"/>
           <p className="my-8 text-center">
             <Link to="/contact">
               <FormattedMessage id="projectsPage.getInTouch" />
@@ -72,13 +78,6 @@ const ProjectsPage = props => {
         </h2>
         <ProjectList projectAssets={projectAssets} />
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Projects${siteTitlePostfix}`}
-        image={`${config.siteUrl}${getSrc(seoImage)}`}
-        description="A list of all private and business projects from Michael Hoffmann"
-      />
     </Layout>
   );
 };

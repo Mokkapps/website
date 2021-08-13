@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const availability = new Date('2021-10-01');
 
-const Availability = ({ className }) => {
+const Availability = ({ className, dataCy }) => {
   const availabilityDate = new Date(availability);
   const isValidAvailabilityDate = !isNaN(availabilityDate.getTime());
   const currentDate = new Date();
@@ -13,6 +13,7 @@ const Availability = ({ className }) => {
   return !isValidAvailabilityDate ? null : (
     <div
       className={`${className} rounded-lg px-2 py-1 flex items-center justify-center`}
+      data-cy={dataCy}
     >
       {isAvailable ? (
         <div className="rounded-full h-4 w-4 available mr-2" />
@@ -41,6 +42,7 @@ const Availability = ({ className }) => {
 
 Availability.propTypes = {
   className: PropTypes.string,
+  dataCy: PropTypes.string,
 };
 
 export default Availability;

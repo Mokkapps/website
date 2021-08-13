@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 
 import config from '../content/meta/config';
 
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import Seo from '../components/Seo';
 import SimpleBlogPostList from '../components/SimpleBlogPostList';
 
 import Heading from '../components/Heading';
@@ -24,17 +22,17 @@ const SimpleBlogPage = props => {
   const { siteUrl, siteTitlePostfix } = config;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/minimal-blog-list`,
+        title: `Minimal Blog List${siteTitlePostfix}`,
+        description: 'Blog posts about software engineering and career',
+      }}
+    >
       <Article>
         <Heading className="mb-8" i18nId="minimalBlogListPage.title" />
         <SimpleBlogPostList items={posts} />
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Minimal Blog List${siteTitlePostfix}`}
-        description="Blog posts about software engineering and career"
-      />
     </Layout>
   );
 };

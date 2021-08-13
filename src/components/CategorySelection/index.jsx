@@ -3,7 +3,8 @@ import React from 'react';
 
 import CategoryLink from '../CategoryLink';
 
-const CategorySelection = ({ categories, compact, className, dataCy }) => {
+const
+  CategorySelection = ({ categories, compact, className, dataCy }) => {
   const categoriesLinks = categories.map(category => (
     <CategoryLink
       compact={compact}

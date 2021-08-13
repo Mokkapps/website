@@ -27,7 +27,7 @@ const SimpleBlogPostList = props => {
   });
 
   return (
-    <section className="flex flex-col justify-center">
+    <section className="flex flex-col justify-center" data-cy="minimal-blog-list-section">
       {sortedYears.map((year, index) => {
         const posts = yearPostMap[year];
         return (

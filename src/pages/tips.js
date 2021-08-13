@@ -8,10 +8,8 @@ import Gallery from '@browniebroke/gatsby-image-gallery';
 
 import config from '../content/meta/config';
 
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import Seo from '../components/Seo';
 import Heading from '../components/Heading';
 
 const imageIdMap = {
@@ -71,22 +69,56 @@ const TipsPage = props => {
   );
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/tips`,
+        title: `Tips${siteTitlePostfix}`,
+        description:
+          'A collection of tips for certain programming languages, frameworks and tools',
+        image: `${config.siteUrl}${getSrc(seoImage)}`,
+      }}
+    >
       <Article>
         <Heading i18nId="tipsPage.title" />
         <p className="text-center my-8">
           <FormattedMessage id="tipsPage.intro" />
         </p>
-        <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
+        <Tabs
+          selectedIndex={tabIndex}
+          onSelect={index => setTabIndex(index)}
+          data-cy="tips-tabs"
+        >
           <TabList>
-            <Tab onClick={() => navigate('/tips?js')}>JavaScript</Tab>
-            <Tab onClick={() => navigate('/tips?ts')}>TypeScript</Tab>
-            <Tab onClick={() => navigate('/tips?html')}>HTML</Tab>
-            <Tab onClick={() => navigate('/tips?css')}>CSS</Tab>
-            <Tab onClick={() => navigate('/tips?other')}>Other</Tab>
+            <Tab
+              onClick={() => navigate('/tips?js')}
+              data-cy="tips-tab-javascript"
+            >
+              JavaScript
+            </Tab>
+            <Tab
+              onClick={() => navigate('/tips?ts')}
+              data-cy="tips-tab-typescript"
+            >
+              TypeScript
+            </Tab>
+            <Tab onClick={() => navigate('/tips?html')} data-cy="tips-tab-html">
+              HTML
+            </Tab>
+            <Tab onClick={() => navigate('/tips?css')} data-cy="tips-tab-css">
+              CSS
+            </Tab>
+            <Tab
+              onClick={() => navigate('/tips?other')}
+              data-cy="tips-tab-other"
+            >
+              Other
+            </Tab>
           </TabList>
 
-          <TabPanel className="flex flex-col justify-center">
+          <TabPanel
+            className="flex flex-col justify-center"
+            data-cy="tips-javascript-gallery"
+          >
             <Gallery
               customWrapper={ImageWrapper}
               images={javaScriptAlbum.images
@@ -94,7 +126,10 @@ const TipsPage = props => {
                 .map(mapToChildImageSharp)}
             />
           </TabPanel>
-          <TabPanel className="flex flex-col justify-center">
+          <TabPanel
+            className="flex flex-col justify-center"
+            data-cy="tips-typescript-gallery"
+          >
             <Gallery
               customWrapper={ImageWrapper}
               images={typeScriptAlbum.images
@@ -102,7 +137,10 @@ const TipsPage = props => {
                 .map(mapToChildImageSharp)}
             />
           </TabPanel>
-          <TabPanel className="flex flex-col justify-center">
+          <TabPanel
+            className="flex flex-col justify-center"
+            data-cy="tips-html-gallery"
+          >
             <Gallery
               customWrapper={ImageWrapper}
               images={htmlAlbum.images
@@ -110,7 +148,10 @@ const TipsPage = props => {
                 .map(mapToChildImageSharp)}
             />
           </TabPanel>
-          <TabPanel className="flex flex-col justify-center">
+          <TabPanel
+            className="flex flex-col justify-center"
+            data-cy="tips-css-gallery"
+          >
             <Gallery
               customWrapper={ImageWrapper}
               images={cssAlbum.images
@@ -118,7 +159,10 @@ const TipsPage = props => {
                 .map(mapToChildImageSharp)}
             />
           </TabPanel>
-          <TabPanel className="flex flex-col justify-center">
+          <TabPanel
+            className="flex flex-col justify-center"
+            data-cy="tips-other-gallery"
+          >
             <Gallery
               customWrapper={ImageWrapper}
               images={otherAlbum.images
@@ -128,13 +172,6 @@ const TipsPage = props => {
           </TabPanel>
         </Tabs>
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Tips${siteTitlePostfix}`}
-        description="A collection of tips for certain programming languages, frameworks and tools"
-        image={`${config.siteUrl}${getSrc(seoImage)}`}
-      />
     </Layout>
   );
 };

@@ -13,13 +13,11 @@ import NextIcon from 'react-feather/dist/icons/arrow-right';
 import ReadIcon from 'react-feather/dist/icons/eye';
 
 import config from '../content/meta/config';
-import Footer from '../components/Footer';
 import ArticleWithSidebar from '../components/ArticleWithSidebar';
 import Layout from '../components/Layout';
 import PostMeta from '../components/PostMeta';
 import Heading from '../components/Heading';
 import BodyText from '../components/BodyText';
-import Seo from '../components/Seo';
 import Author from '../components/Author';
 import NextPrev from '../components/NextPrev';
 import Share from '../components/Share';
@@ -84,7 +82,16 @@ const PostTemplate = props => {
   }
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}${slug}`,
+        title: `${title}${siteTitlePostfix}`,
+        canonical: canonical,
+        description: excerpt,
+        image: seoImage,
+        postSEO: true,
+      }}
+    >
       <ArticleWithSidebar categories={allCategories}>
         <Heading title={title} />
         <BlogLanguageWarning className="my-4" />
@@ -133,15 +140,6 @@ const PostTemplate = props => {
         )}
         <Author className="xl:hidden my-8" />
       </ArticleWithSidebar>
-      <Footer />
-      <Seo
-        url={`${siteUrl}${slug}`}
-        title={`${title}${siteTitlePostfix}`}
-        canonical={canonical}
-        description={excerpt}
-        image={seoImage}
-        postSEO
-      />
     </Layout>
   );
 };

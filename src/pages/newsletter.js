@@ -7,10 +7,8 @@ import PropTypes from 'prop-types';
 import config from '../content/meta/config';
 
 import Article from '../components/Article';
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-import Seo from '../components/Seo';
 import NewsletterSubscription from '../components/NewsletterSubscription';
 import LinkButton from '../components/LinkButton';
 
@@ -21,7 +19,15 @@ const NewsletterPage = props => {
   const { siteTitlePostfix, siteUrl } = config;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/newsletter`,
+        title: `Newsletter${siteTitlePostfix}`,
+        description:
+          'Subscribe for the newsletter to stay up-do-date on Mokkapps topics',
+        image: getSrc(seoImage),
+      }}
+    >
       <Article>
         <Heading i18nId="newsletterPage.newsletter" className="mb-8" />
         <p className="w-100 text-center mb-4">
@@ -50,13 +56,6 @@ const NewsletterPage = props => {
           i18nId="newsletterPage.visitArchive"
         />
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Newsletter${siteTitlePostfix}`}
-        description="Subscribe for the newsletter to stay up-do-date on Mokkapps topics"
-        image={getSrc(seoImage)}
-      />
     </Layout>
   );
 };

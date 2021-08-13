@@ -7,11 +7,9 @@ import { getSrc } from 'gatsby-plugin-image';
 import config from '../content/meta/config';
 import { getAsset } from '../utils/helper';
 
-import Footer from '../components/Footer';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-import Seo from '../components/Seo';
 import ProjectCard from '../components/ProjectCard';
 import CardDivider from '../components/Card/CardDivider';
 
@@ -23,14 +21,21 @@ const PublicationsPage = props => {
   const { siteTitlePostfix, publications, siteUrl } = config;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/publications`,
+        title: `Publications${siteTitlePostfix}`,
+        description: 'A list of talks and articles from Michael Hoffmann',
+        image: `${config.siteUrl}${getSrc(seoImage)}`,
+      }}
+    >
       <Article>
         <div className="flex flex-col items-center">
           <Heading i18nId="publicationsPage.title" />
           <h2 className="my-8 uppercase">
             <FormattedMessage id="publicationsPage.talks" />
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-cy="publications-talks-section">
             {publications
               .filter(p => p.type === 'talk')
               .map((talk, i) => {
@@ -66,7 +71,7 @@ const PublicationsPage = props => {
           <h2 className="my-8 uppercase">
             <FormattedMessage id="publicationsPage.articles" />
           </h2>
-          <ul>
+          <ul data-cy="publications-articles-section">
             {publications
               .filter(p => p.type === 'article')
               .map(p => (
@@ -77,13 +82,6 @@ const PublicationsPage = props => {
           </ul>
         </div>
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Publications${siteTitlePostfix}`}
-        description="A list of talks and articles from Michael Hoffmann"
-        image={`${config.siteUrl}${getSrc(seoImage)}`}
-      />
     </Layout>
   );
 };

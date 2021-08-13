@@ -19,6 +19,7 @@ const ThemeSwitch = props => {
 
   return (
     <Switch
+      data-cy="theme-switch"
       aria-label="Theme Switch"
       aria-checked={checked}
       {...props}

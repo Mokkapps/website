@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 
 import config from '../content/meta/config';
 
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import Seo from '../components/Seo';
 
 import Heading from '../components/Heading';
 import CategorySelection from '../components/CategorySelection';
@@ -22,7 +20,13 @@ const CategoriesPage = props => {
   const { siteUrl, siteTitlePostfix } = config;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/categories`,
+        title: `Categories${siteTitlePostfix}`,
+        description: 'Available categories for blog posts',
+      }}
+    >
       <Article>
         <Heading i18nId="categoriesPage.title" />
         <CategorySelection
@@ -32,12 +36,6 @@ const CategoriesPage = props => {
           dataCy="blog-categories"
         />
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Categories${siteTitlePostfix}`}
-        description="Available categories for blog posts"
-      />
     </Layout>
   );
 };

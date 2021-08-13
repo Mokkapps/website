@@ -5,11 +5,9 @@ import { StaticImage, getSrc } from 'gatsby-plugin-image';
 
 import config from '../content/meta/config';
 
-import Footer from '../components/Footer';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
-import Seo from '../components/Seo';
 
 const BusinessCardPage = props => {
   const {
@@ -19,7 +17,14 @@ const BusinessCardPage = props => {
   const { siteTitlePostfix, siteUrl } = config;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/business-card`,
+        title: `Business Card${siteTitlePostfix}`,
+        description: 'Business card of Michael Hoffmann',
+        image: `${config.siteUrl}${getSrc(seoImage)}`,
+      }}
+    >
       <Article>
         <Heading i18nId="businessCardPage.title" />
         <StaticImage
@@ -33,13 +38,6 @@ const BusinessCardPage = props => {
           alt="Business Card Back"
         />
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Business Card${siteTitlePostfix}`}
-        description="Business card of Michael Hoffmann"
-        image={`${config.siteUrl}${getSrc(seoImage)}`}
-      />
     </Layout>
   );
 };

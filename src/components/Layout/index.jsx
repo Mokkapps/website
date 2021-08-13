@@ -11,8 +11,13 @@ import BurgerMenu from '../Menu/MobileMenu/MobileMenu';
 import BurgerMenuButton from '../Menu/MobileMenu/BurgerMenuButton';
 import HeaderLogo from '../HeaderLogo';
 import SocialLinks from '../SocialLink/SocialLinks';
+import Footer from '../Footer';
+import Seo from '../Seo';
 
-const Layout = ({ children }) => {
+const Layout = ({
+  children,
+  seo: { url, title, image, description, postSEO, canonical },
+}) => {
   const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LanguageContext);
@@ -26,7 +31,7 @@ const Layout = ({ children }) => {
       <section
         className={`${theme === 'light' ? 'theme-light' : 'theme-dark'} ${
           devMode ? 'debug-screens' : ''
-        } bg-background h-full text-main-text relative overflow-hidden lg:overflow-visible lg:overflow-clip`}
+        } flex flex-col min-h-100vh bg-background text-main-text relative overflow-hidden lg:overflow-visible lg:overflow-clip`}
       >
         <header className="bg-background lg:hidden flex justify-center sticky">
           <HeaderLogo />
@@ -35,9 +40,18 @@ const Layout = ({ children }) => {
         <BurgerMenu className="lg:hidden" open={open} setOpen={setOpen} />
         <Menu className="hidden lg:flex" />
         <section className="hidden xl:flex fixed left-7 top-80 z-200">
-          <SocialLinks onlyFavorites asColumn largeIcons />
+          <SocialLinks onlyFavorites asColumn largeIcons dataCy={'desktop-sidebar-social-links'}/>
         </section>
-        <div className="md:pt-20 md:p-4">{children}</div>
+        <div className="md:pt-20 md:p-4 flex-grow">{children}</div>
+        <Footer />
+        <Seo
+          url={url}
+          title={title}
+          description={description}
+          image={image}
+          canonical={canonical}
+          postSEO={postSEO}
+        />
         <ScrollUpButton />
       </section>
     </IntlProvider>
@@ -46,6 +60,14 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  seo: PropTypes.shape({
+    url: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    canonical: PropTypes.string,
+    postSEO: PropTypes.bool,
+  }),
 };
 
 export default Layout;

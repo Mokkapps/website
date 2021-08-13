@@ -5,11 +5,9 @@ import { FormattedMessage } from 'react-intl';
 
 import config from 'content/meta/config';
 
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Heading from '../components/Heading';
-import Seo from '../components/Seo';
 import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
 import { getCategoryDisplayText, metaIcons } from '../utils/helper';
@@ -29,7 +27,15 @@ const PageTemplate = props => {
   const { siteUrl, siteTitlePostfix } = config;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/categories/${category}/`,
+        title: `Posts in category: ${getCategoryDisplayText(
+          category
+        )}${siteTitlePostfix}`,
+        description: `This page contains all the posts in the category ${category}`,
+      }}
+    >
       <Article>
         <Heading>
           <span
@@ -66,14 +72,6 @@ const PageTemplate = props => {
           metaIcons={metaIcons}
         />
       </Article>
-      <Footer />
-      <Seo
-        url={`${siteUrl}/categories/${category}/`}
-        title={`Posts in category: ${getCategoryDisplayText(
-          category
-        )}${siteTitlePostfix}`}
-        description={`This page contains all the posts in the category ${category}`}
-      />
     </Layout>
   );
 };

@@ -4,13 +4,14 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import DevIcon from '../DevIcon';
 import CardDivider from '../Card/CardDivider';
 
-const BusinessProjectList = ({ intl }) => {
-  const projects = [
-    { name: 'segmentationTool', contributions: 3 },
-    { name: 'apeer', contributions: 2 },
-  ];
+export const BUSINESS_PROJECTS = [
+  { name: 'segmentationTool', contributions: 3 },
+  { name: 'apeer', contributions: 2 },
+];
 
-  const businessProjects = projects.map(({ name, contributions }) => {
+const BusinessProjectList = ({ intl, dataCy }) => {
+
+  const businessProjects = BUSINESS_PROJECTS.map(({ name, contributions }) => {
     const baseId = `projectsPage.businessProjects.${name}`;
     return {
       baseId,
@@ -23,7 +24,7 @@ const BusinessProjectList = ({ intl }) => {
   });
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" data-cy={dataCy}>
       {businessProjects.map(
         ({ baseId, titleId, companyId, contributionIDs }) => {
           const usedTechnologies = intl
@@ -42,6 +43,7 @@ const BusinessProjectList = ({ intl }) => {
             <div
               key={titleId}
               className="border border-text-main w-full lex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
+              data-cy={`${dataCy}-${titleId}`}
             >
               <h5 className="text-center mb-0">
                 <FormattedMessage id={titleId} />
@@ -74,6 +76,7 @@ const BusinessProjectList = ({ intl }) => {
 
 BusinessProjectList.propTypes = {
   intl: PropType.object,
+  dataCy: PropType.string,
 };
 
 export default injectIntl(BusinessProjectList);

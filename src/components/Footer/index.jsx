@@ -16,7 +16,7 @@ const Footer = () => (
     <BuyMeACoffeeButton className="my-4" />
     <div className="flex mb-8 xl:mb-0 xl:absolute shadow-md rounded-md p-4 left-36 bottom-16 bg-secondary h-16 flex items-center">
       <LinkButton
-        dataCy="footer-newsletter"
+        dataCy="footer-newsletter-button"
         href="/newsletter"
         i18nId="newsletterPage.joinTheNewsletter"
         onClick={() => sendCustomAnalyticsEvent('Clicked join the newsletter')}

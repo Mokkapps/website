@@ -8,7 +8,7 @@ const testimonialCount = 2;
 const intervalTimeInMs = 7500;
 const showArrows = false;
 
-const TestimonialSlider = ({ intl, className }) => {
+const TestimonialSlider = ({ intl, className, dataCy }) => {
   const testimonials = [];
 
   for (let i = 1; i <= testimonialCount; i++) {
@@ -63,7 +63,7 @@ const TestimonialSlider = ({ intl, className }) => {
   }, [showNextSlide]);
 
   return (
-    <section className={className}>
+    <section className={className} data-cy={dataCy}>
       <div className="flex m-auto min-h-testimonial-mobile sm:min-h-testimonial-desktop">
         {showArrows && (
           <button className="outline-none pr-8" onClick={showPreviousSlide}>
@@ -112,6 +112,7 @@ const TestimonialSlider = ({ intl, className }) => {
 TestimonialSlider.propTypes = {
   intl: PropTypes.object.isRequired,
   className: PropTypes.string,
+  dataCy: PropTypes.string,
 };
 
 export default injectIntl(TestimonialSlider);

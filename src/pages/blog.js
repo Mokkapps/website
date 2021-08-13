@@ -7,11 +7,9 @@ import config from '../content/meta/config';
 import { getAllCategories, metaIcons } from '../utils/helper';
 
 import BlogLanguageWarning from '../components/BlogLanguageWarning';
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
-import Seo from '../components/Seo';
 import CategorySelection from '../components/CategorySelection';
 
 const BlogPage = props => {
@@ -71,7 +69,14 @@ const BlogPage = props => {
   const posts = hasSearchResults ? filteredData : allPosts;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}/blog`,
+        title: `Blog${siteTitlePostfix}`,
+        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        description: 'Blog posts about software engineering and career',
+      }}
+    >
       <article className="px-8 md:px-24 py-8">
         <div className="flex flex-col items-center justify-center">
           <Heading className="mb-8" i18nId="blogPage.title" />
@@ -83,10 +88,15 @@ const BlogPage = props => {
               placeholder="Search by category..."
               className="w-64 pl-2 mr-4"
               onChange={handleInputChange}
+              data-cy="blog-category-filter-input"
             />
             <span className="absolute right-7 top-1">{posts.length}</span>
           </section>
-          <CategorySelection compact categories={categories} />
+          <CategorySelection
+            compact
+            categories={categories}
+            dataCy={'blog-categories'}
+          />
           {searchComponent}
           <BlogPostList
             items={posts}
@@ -95,13 +105,6 @@ const BlogPage = props => {
           />
         </div>
       </article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Blog${siteTitlePostfix}`}
-        image={`${config.siteUrl}${getSrc(seoImage)}`}
-        description="Blog posts about software engineering and career"
-      />
     </Layout>
   );
 };

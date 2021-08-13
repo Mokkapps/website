@@ -12,6 +12,7 @@ const LanguageSwitcher = props => {
     <LanguageContext.Consumer>
       {({ toggleLanguage, lang }) => (
         <Switch
+          data-cy="language-switch"
           aria-label="Language Switch"
           aria-checked={checked}
           {...props}

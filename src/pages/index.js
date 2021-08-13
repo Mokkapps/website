@@ -149,7 +149,7 @@ const IndexPage = props => {
       </h2>
       <div
         className="grid grid-cols-1 gap-4 md:grid-cols-2"
-        data-cy="hero-projects-section"
+        data-cy="hero-private-projects-section"
       >
         {config.projects
           .filter(p => p.featured)
@@ -171,7 +171,7 @@ const IndexPage = props => {
       </div>
       <LinkButton
         className="mb-5"
-        dataCy="hero-projects-more-button"
+        dataCy="hero-private-projects-more-button"
         href="/projects"
         i18nId="general.moreProjectsLink"
       />
@@ -199,7 +199,7 @@ const IndexPage = props => {
           className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
         />
       </div>
-      <TestimonialSlider className="my-10" />
+      <TestimonialSlider className="my-10" dataCy="home-testimonial-slider" />
     </div>
   );
 
@@ -208,10 +208,10 @@ const IndexPage = props => {
       <h2 className="text-center mt-10 mb-4 uppercase">
         <FormattedMessage id="landingPage.businessProjectHighlights" />
       </h2>
-      <BusinessProjectList />
+      <BusinessProjectList dataCy="hero-business-project-list" />
       <LinkButton
         className="mb-5"
-        dataCy="hero-projects-more-button"
+        dataCy="hero-business-projects-more-button"
         href="/projects"
         i18nId="general.moreProjectsLink"
       />
@@ -219,20 +219,20 @@ const IndexPage = props => {
   );
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: siteUrl,
+        title: `Home${siteTitlePostfix}`,
+        description: siteDescription,
+        image: `${config.siteUrl}${getSrc(seoImage)}`,
+      }}
+    >
       <Article className="flex flex-col min-h-screen">
         {introduction}
         {businessProjects}
         {latestBlogPosts}
         {featuredPrivateProjects}
       </Article>
-      <Footer />
-      <Seo
-        url={siteUrl}
-        title={`Home${siteTitlePostfix}`}
-        description={siteDescription}
-        image={`${config.siteUrl}${getSrc(seoImage)}`}
-      />
     </Layout>
   );
 };

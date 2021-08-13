@@ -4,12 +4,10 @@ import React from 'react';
 
 import config from '../../src/content/meta/config';
 
-import Footer from '../components/Footer';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import BodyText from '../components/BodyText';
-import Seo from '../components/Seo';
 
 const PageTemplate = props => {
   const {
@@ -26,17 +24,17 @@ const PageTemplate = props => {
   const { siteUrl, siteTitlePostfix } = config;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        url: `${siteUrl}${slug}`,
+        title: `${title}${siteTitlePostfix}`,
+        description: excerpt,
+      }}
+    >
       <Article>
         <Heading title={title} />
         <BodyText body={body} />
       </Article>
-      <Footer />
-      <Seo
-        url={`${siteUrl}${slug}`}
-        title={`${title}${siteTitlePostfix}`}
-        description={excerpt}
-      />
     </Layout>
   );
 };

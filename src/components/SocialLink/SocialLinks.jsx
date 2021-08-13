@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import SocialLink from './SocialLink';
 
-const SOCIAL_LINKS = [
+export const SOCIAL_LINKS = [
   {
     id: 'twitter',
     url: 'https://twitter.com/mokkapps',

@@ -23,6 +23,7 @@ const NewsletterSubscription = ({ className }) => {
             type="email"
             name="member[email]"
             id="member_email"
+            data-cy="newsletter-email-input"
           />
         </div>
         <div className="flex flex-col mb-4">
@@ -34,6 +35,7 @@ const NewsletterSubscription = ({ className }) => {
             type="text"
             name="member[first_name]"
             id="member_first_name"
+            data-cy="newsletter-first-name-input"
           />
         </div>
         <div className="flex flex-col mb-4">
@@ -45,6 +47,7 @@ const NewsletterSubscription = ({ className }) => {
             type="text"
             name="member[last_name]"
             id="member_last_name"
+            data-cy="newsletter-last-name-input"
           />
         </div>
         <input
@@ -53,6 +56,7 @@ const NewsletterSubscription = ({ className }) => {
           value={intl.formatMessage({ id: 'newsletterPage.subscribe' })}
           name="member[subscribe]"
           id="member_submit"
+          data-cy="newsletter-submit-input"
         />
         <div className="revue-form-footer">
           <FormattedMessage
