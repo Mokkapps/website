@@ -31,11 +31,14 @@ jobs:
 
     - name: Run linter
       run: npm run lint
-      
-    - name: Run E2E on Chrome
+
+    - name: Run E2E tests
       uses: cypress-io/github-action@v2
+      env:
+        NODE_ENV: production
+        CI: true
       with:
-          browser: chrome
-          start: npm run test:e2e:ci
-          # quote the url to be safe against YML parsing surprises
-          wait-on: 'http://localhost:8000'
+        install: false # we have already installed all dependencies above
+        start: npm run test:e2e:ci
+        wait-on: 'http://localhost:8000'
+        wait-on-timeout: 1800
