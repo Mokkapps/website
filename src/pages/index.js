@@ -26,7 +26,6 @@ import BusinessProjectList from '../components/BusinessProjectsList';
 import DevIcon from '../components/DevIcon';
 
 const frontendTechnologies = ['react', 'angular', 'vue'];
-const backendTechnologies = ['spring', 'java', 'node'];
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -191,7 +190,7 @@ const IndexPage = props => {
             hideCircle
             colored
             key={tech}
-            size="10xl"
+            size="7xl"
             className={i === frontendTechnologies.length - 1 ? '' : 'mr-8'}
             technology={tech}
           />
