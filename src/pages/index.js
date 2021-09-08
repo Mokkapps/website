@@ -187,7 +187,7 @@ const IndexPage = props => {
       <div>
         {frontendTechnologies.map((tech, i) => (
           <DevIcon
-            hideCircle
+            hideBackground
             colored
             key={tech}
             size="text-7xl"

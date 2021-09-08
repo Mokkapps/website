@@ -38,7 +38,7 @@ const devIcons = {
 
 const DevIcon = ({
   technology,
-  hideCircle = false,
+  hideBackground = false,
   colored = false,
   size,
   className,
@@ -53,23 +53,21 @@ const DevIcon = ({
   }
 
   return (
-    <span
-      className={`${className} text-main-text ${size || 'text-base'} ${
-        hideCircle ? '' : 'shadow-md rounded-full px-2 py-1 bg-secondary-darken'
-      }`}
-    >
-      <i
-        title={icon.displayText}
-        className={`${icon.class} ${colored && 'colored'}`}
-      />
-    </span>
+    <i
+      title={icon.displayText}
+      className={`${className} ${size || 'text-base'} ${
+        hideBackground
+          ? ''
+          : 'shadow-md rounded-full px-2 py-1 bg-secondary-darken'
+      } ${icon.class} ${colored && 'colored'}`}
+    />
   );
 };
 
 DevIcon.propTypes = {
   technology: PropType.string.isRequired,
   colored: PropType.bool,
-  hideCircle: PropType.bool,
+  hideBackground: PropType.bool,
   size: PropType.string,
   className: PropType.string,
 };
