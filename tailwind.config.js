@@ -1,7 +1,12 @@
 module.exports = {
   important: true,
   darkMode: 'class',
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+    options: {
+      whitelist: ['text-7xl'],
+    }
+  },
   theme: {
     extend: {
       gradientColorStops: theme => ({
@@ -18,16 +23,6 @@ module.exports = {
         accent: 'var(--accent)',
       },
       fontSize: {
-        xs: '.75rem',
-        sm: '.875rem',
-        base: '1rem',
-        lg: '1.125rem',
-        xl: '1.25rem',
-        '2xl': '1.5rem',
-        '3xl': '1.875rem',
-        '4xl': '2.25rem',
-        '5xl': '3rem',
-        '6xl': '4rem',
         '7xl': '5rem',
       },
       minHeight: {
