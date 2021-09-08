@@ -22,7 +22,7 @@
     "cy:open": "cypress open",
     "cy:install": "cypress install",
     "cy:run": "cypress run",
-    "test:e2e:ci": "start-server-and-test serve-e2e http://localhost:8000 cy:run",
+    "test:e2e:ci": "start-server-and-test serve-e2e http://localhoxyst:8000 cy:run",
     "test:e2e": "start-server-and-test start http://localhost:8000 cy:open",
     "lint": "eslint src",
     "lighthouse:local": "lighthouse http://localhost:8000  --output html --output-path .lighthouse-report.html",

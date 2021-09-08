@@ -65,12 +65,13 @@
         "keyContribution3": "Designed and implemented a Websocket-based dashboard",
         "techStack": "vue,typeScript,jest,spring,kubernetes,jenkins"
       },
-      "apeer": {
-        "company": "Carl Zeiss Microscopy GmbH",
-        "title": "Technical lead for the frontend development of apeer.com",
-        "keyContribution1": "Refactored the frontend application and worked on new feature implementations",
-        "keyContribution2": "Defined best practices, guidelines and trainings for frontend development",
-        "techStack": "angular,jasmine,protractor,dotNet"
+      "vhv": {
+        "company": "VHV Allgemeine Versicherung AG",
+        "title": "Development of a car tariff calculator",
+        "keyContribution1": "Wrote React wrapper components to integrate the Stencil web components into the Guidewire project",
+        "keyContribution2": "Developed & maintained web components in Stencil",
+        "keyContribution3": "Migrated separated Stencil & Storybook repositories to a monorepo",
+        "techStack": "react,javaScript,cucumber,stencil,storybook,guidewire"
       }
     }
   },
@@ -88,7 +89,7 @@
     "title": "About me",
     "paragraph1": "My name is Michael Hoffmann, I'm a freelance software engineer based in Munich/Germany. I hold a Masters in Electrical Engineering from the renown Technical University of Munich (TUM) and have {years}+ years of professional experience.",
     "paragraph2": "I work for businesses of all sizes and have experience with both small and medium enterprises and corporates. In my career I have developed, maintained and launched multiple projects from scratch or improved an existing code base. <a>Get in touch</a>, if you like to receive a detailed list of projects I have worked on so far.",
-    "paragraph3": "Programming is my passion – but especially developing complex business applications both in frontend and in backend. I totally enjoy my work as a freelance developer and developing {privateProjectsLink} under the pseudonym Mokkapps. The reason why I write {blogLink} (also for {inDepthDevLink}), {publicationLink} and work as Angular trainer for {angularArchitectsLink} is that I like to share my knowledge with others. Therefore, I also try to share most of my projects {gitHubLink}.",
+    "paragraph3": "Programming is my passion – but especially developing complex business applications both in frontend and in backend. I totally enjoy my work as a freelance developer and developing {privateProjectsLink} under the pseudonym Mokkapps. The reason why I write {blogLink} (also for {inDepthDevLink}) and {publicationLink} is that I like to share my knowledge with others. Therefore, I also try to share most of my projects on {gitHubLink}.",
     "paragraph4": "If I do not invest my time in coding I'm usually playing video games or doing sports.",
     "paragraph5": "Just <a>contact me</a> if you would like me to work for you.",
     "paragraph6": "Visit <a>Uses</a> if you are interested in the software and hardware I use for software development.",

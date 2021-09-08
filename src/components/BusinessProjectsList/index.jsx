@@ -5,12 +5,11 @@ import DevIcon from '../DevIcon';
 import CardDivider from '../Card/CardDivider';
 
 export const BUSINESS_PROJECTS = [
+  { name: 'vhv', contributions: 3 },
   { name: 'segmentationTool', contributions: 3 },
-  { name: 'apeer', contributions: 2 },
 ];
 
 const BusinessProjectList = ({ intl, dataCy }) => {
-
   const businessProjects = BUSINESS_PROJECTS.map(({ name, contributions }) => {
     const baseId = `projectsPage.businessProjects.${name}`;
     return {

@@ -142,15 +142,6 @@ exports.createPages = ({ graphql, actions }) => {
               next,
             },
           });
-
-          if (process.env.gatsby_executing_command.includes('develop')) {
-            // create the blogpost page preview but only on non-production builds
-            createPage({
-              path: `/blog${slug}image-share`,
-              component: path.resolve('./src/templates/BlogPostShareImage.js'),
-              context: { slug },
-            });
-          }
         });
 
         // create pages

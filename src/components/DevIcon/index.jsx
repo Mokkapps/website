@@ -25,15 +25,20 @@ const devIcons = {
   kubernetes: { class: 'devicon-kubernetes-plain', displayText: 'Kubernetes' },
   jasmine: { class: 'devicon-jasmine-plain', displayText: 'Jasmine' },
   protractor: { class: 'devicon-protractor-plain', displayText: 'Protractor' },
-  aws: { class: 'devicon-amazonwebservices-original', displayText: 'Amazon Web Services' },
+  aws: {
+    class: 'devicon-amazonwebservices-original',
+    displayText: 'Amazon Web Services',
+  },
   docker: { class: 'devicon-docker-plain', displayText: 'Docker' },
   git: { class: 'devicon-git-plain', displayText: 'Git' },
   graphQL: { class: 'devicon-graphql-plain', displayText: 'GraphQL' },
   python: { class: 'devicon-python-plain', displayText: 'Python' },
+  cucumber: { class: 'devicon-cucumber-plain', displayText: 'Cucumber' },
 };
 
 const DevIcon = ({
   technology,
+  hideCircle = false,
   colored = false,
   size,
   className,
@@ -49,13 +54,13 @@ const DevIcon = ({
 
   return (
     <span
-      className={`${className} shadow-md rounded-full px-2 py-1 bg-secondary-darken`}
+      className={`${className} text-main-text text-${size ? size : 'base'} ${
+        hideCircle ? '' : 'shadow-md rounded-full px-2 py-1 bg-secondary-darken'
+      }`}
     >
       <i
         title={icon.displayText}
-        className={`text-main-text ${icon.class} ${colored && 'colored'} text-${
-          size ? size : 'base'
-        }`}
+        className={`${icon.class} ${colored && 'colored'}`}
       />
     </span>
   );
@@ -64,6 +69,7 @@ const DevIcon = ({
 DevIcon.propTypes = {
   technology: PropType.string.isRequired,
   colored: PropType.bool,
+  hideCircle: PropType.bool,
   size: PropType.string,
   className: PropType.string,
 };

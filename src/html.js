@@ -8,7 +8,7 @@ export default class HTML extends React.Component {
       <html lang="en" {...this.props.htmlAttributes}>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css"
           async
         />
         <head>

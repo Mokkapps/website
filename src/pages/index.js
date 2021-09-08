@@ -23,6 +23,10 @@ import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 import TestimonialSlider from '../components/TestimonialSlider';
 import BusinessProjectList from '../components/BusinessProjectsList';
+import DevIcon from '../components/DevIcon';
+
+const frontendTechnologies = ['react', 'angular', 'vue'];
+const backendTechnologies = ['spring', 'java', 'node'];
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -181,6 +185,18 @@ const IndexPage = props => {
       <h1 className="text-center mb-10" data-cy="home-heading">
         <FormattedMessage id="landingPage.title" />
       </h1>
+      <div>
+        {frontendTechnologies.map((tech, i) => (
+          <DevIcon
+            hideCircle
+            colored
+            key={tech}
+            size="10xl"
+            className={i === frontendTechnologies.length - 1 ? '' : 'mr-8'}
+            technology={tech}
+          />
+        ))}
+      </div>
       {skills}
       <p className="text-center mt-5 text-xl">
         <FormattedMessage id="landingPage.myName" />{' '}

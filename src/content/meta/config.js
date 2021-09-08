@@ -30,12 +30,12 @@ const config = {
   shareImageName: 'Michael Hoffmann (Mokkapps)',
   authorName: 'Michael Hoffmann',
   customers: [
-    'BMW',
-    'Audi Business Innovation',
-    'Carl Zeiss Microscopy',
+    'VHV Allgemeine Versicherung',
     'ProSiebenSat.1 Tech',
     'Angular Architects',
-    'VHV Gruppe',
+    'Carl Zeiss Microscopy',
+    'Audi Business Innovation',
+    'BMW',
   ],
   projects: [
     {
