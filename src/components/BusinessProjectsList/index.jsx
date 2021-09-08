@@ -32,7 +32,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
             .map(tech => (
               <DevIcon
                 key={tech}
-                size="2xl"
+                size="text-2xl"
                 className="mr-2"
                 technology={tech}
               />

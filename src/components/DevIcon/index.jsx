@@ -54,7 +54,7 @@ const DevIcon = ({
 
   return (
     <span
-      className={`${className} text-main-text text-${size ? size : 'base'} ${
+      className={`${className} text-main-text ${size || 'text-base'} ${
         hideCircle ? '' : 'shadow-md rounded-full px-2 py-1 bg-secondary-darken'
       }`}
     >

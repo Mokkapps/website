@@ -51,7 +51,7 @@ const ProjectCardDescription = ({
         <CardDivider />
         <TechnologiesContainer>
           {usedTechnologies.map(tech => (
-            <DevIcon key={tech} technology={tech} size="xl" className="mr-2"/>
+            <DevIcon key={tech} technology={tech} size="text-xl" className="mr-2"/>
           ))}
         </TechnologiesContainer>
         <CardDivider />

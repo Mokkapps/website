@@ -1,12 +1,7 @@
 module.exports = {
   important: true,
   darkMode: 'class',
-  purge: {
-    content: ['./src/**/*.{js,jsx,ts,tsx}'],
-    options: {
-      whitelist: ['text-7xl'],
-    }
-  },
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       gradientColorStops: theme => ({

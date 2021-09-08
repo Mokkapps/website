@@ -190,7 +190,7 @@ const IndexPage = props => {
             hideCircle
             colored
             key={tech}
-            size="7xl"
+            size="text-7xl"
             className={i === frontendTechnologies.length - 1 ? '' : 'mr-8'}
             technology={tech}
           />

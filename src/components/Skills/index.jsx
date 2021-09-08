@@ -30,7 +30,7 @@ const getDevIcons = skills =>
   skills.map(skill => (
     <DevIcon
       className="mr-2"
-      size="2xl"
+      size="text-2xl"
       technology={skill.type}
       key={skill.type}
     />
