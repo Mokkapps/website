@@ -35,7 +35,6 @@ jobs:
     - name: Run E2E tests
       uses: cypress-io/github-action@v2
       env:
-        NODE_ENV: production
         CI: true
         IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }}
       with:
