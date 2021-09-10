@@ -40,6 +40,12 @@ pre[class*='language-text'] {
     color: black;
   }
 
+  pre[class='language-jsx']::before {
+    content: 'jsx';
+    background: #282C34;
+    color: #61DAFB;
+  }
+
   pre[class='language-typescript']::before,
   pre[class='language-ts']::before {
     content: 'ts';

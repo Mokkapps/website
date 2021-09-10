@@ -37,6 +37,9 @@ export const getCategoryDisplayText = category => {
   if (category === 'aws') {
     return category.toUpperCase();
   }
+  if (category === 'node-js') {
+    return 'Node.js';
+  }
   return capitalize(category);
 };
 
