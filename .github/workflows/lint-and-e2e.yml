@@ -37,10 +37,18 @@ jobs:
       env:
         CI: true
         IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }}
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         install: false # we have already installed all dependencies above
+        record: true
         start: npm start
         wait-on: 'http://localhost:8000'
         wait-on-timeout: 1800
         browser: chrome
         headless: true
+
+    - name: Deploy to Netlify
+      if: job.status == 'success'
+      run: curl -X POST -d '' https://api.netlify.com/build_hooks/5ba3c8da1f12b70cbbcaa1a3 && curl -X POST -d {} https://api.netlify.com/build_hooks/5daf5f3d31ede3a743f5bebc
