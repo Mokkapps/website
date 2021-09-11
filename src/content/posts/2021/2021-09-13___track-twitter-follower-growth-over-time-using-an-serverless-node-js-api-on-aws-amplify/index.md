@@ -1,5 +1,5 @@
 ---
-title: 'Count Twitter Followers Over Time Using A Serverless Node.js API on AWS Amplify'
+title: 'Track Twitter Follower Growth Over Time Using A Serverless Node.js API on AWS Amplify'
 categories:
   - 'development'
   - 'react'
