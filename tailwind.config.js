@@ -16,6 +16,7 @@ module.exports = {
       },
       textColor: {
         accent: 'var(--accent)',
+        'main': 'var(--text-main)'
       },
       fontSize: {
         '7xl': '5rem',
