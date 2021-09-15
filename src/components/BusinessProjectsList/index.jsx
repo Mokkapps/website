@@ -33,7 +33,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
               <DevIcon
                 key={tech}
                 size="text-2xl"
-                className="mr-2"
+                className="mr-2 mb-2 sm:mb-0"
                 technology={tech}
               />
             ));
@@ -41,7 +41,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
           return (
             <div
               key={titleId}
-              className="border border-text-main w-full lex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
+              className="border border-text-main w-full flex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
               data-cy={`${dataCy}-${titleId}`}
             >
               <h5 className="text-center mb-0">
@@ -62,7 +62,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
                 ))}
               </ul>
               <CardDivider />
-              <div className="flex items-center justify-center">
+              <div className="flex flex-wrap items-center justify-center">
                 {usedTechnologies}
               </div>
             </div>

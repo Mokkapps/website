@@ -184,7 +184,7 @@ const IndexPage = props => {
       <h1 className="text-center mb-10" data-cy="home-heading">
         <FormattedMessage id="landingPage.title" />
       </h1>
-      <div>
+      <div className="mb-10">
         {frontendTechnologies.map((tech, i) => (
           <DevIcon
             hideBackground
