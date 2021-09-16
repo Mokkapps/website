@@ -23,14 +23,14 @@
     "legalNotice": "Impressum"
   },
   "landingPage": {
-    "title": "Suchen Sie einen Senior Freelance Frontend Developer?",
+    "title": "Suchen Sie einen {tech} Freelancer?",
     "doYouNeed": "Brauchen Sie:",
     "skills": {
-      "development": "Unterstützung bei der Entwicklung einer komplexen Web-Applikation oder Mobile App?",
-      "experience": "Einen erfahrenen Frontend Entwickler mit mehr als {years} Jahren Erfahrung?",
-      "tShaped": "Einen 'T-Shaped' Entwickler mit Frontend-Expertise und fachübergreifende Kompetenzen in der Backend-Entwicklung, Test-Automatisierung und DevOps?",
-      "codeQuality": "Einen Entwickler der viel Wert auf cleanen, gut dokumentierten und leicht wartbaren Code legt?",
-      "partner": "Einen zuverlässigen, ehrlichen und professionellen Partner, der Ihnen hilft ihr Projekt erfolgreich innerhalb der Deadlines und Budget zu beenden?"
+      "experience": "Einen Senior Frontend Entwickler mit Fokus auf <mark>{tech}</mark> und mehr als {years} Jahren Erfahrung?",
+      "development": "Unterstützung bei der Entwicklung einer <mark>komplexen Web-Applikation</mark> oder Mobile App?",
+      "tShaped": "Einen <mark>'T-Shaped' Entwickler</mark> mit Frontend-Expertise und fachübergreifende Kompetenzen in der Backend-Entwicklung, Test-Automatisierung und DevOps?",
+      "codeQuality": "Einen Entwickler der viel Wert auf <mark>cleanen</mark>, gut dokumentierten und leicht wartbaren <mark>Code</mark> legt?",
+      "partner": "Einen zuverlässigen, ehrlichen und <mark>professionellen Partner</mark>, der Ihnen hilft ihr Projekt erfolgreich innerhalb der Deadlines und Budget zu beenden?"
     },
     "myName": "Mein Name ist",
     "rightPlace": "und Sie sind hier absolut richtig!",
@@ -87,9 +87,9 @@
   },
   "aboutPage": {
     "title": "About me",
-    "paragraph1": "Mein Name ist Michael Hoffmann, ich bin freiberuflicher Software-Entwickler und wohne in München. Ich habe an der Technischen Universität in München meinen Master in Elektrotechnik absolviert und arbeite seit mehr als {years} Jahren als professioneller Softwareentwickler.",
-    "paragraph2": "Ich arbeite für Firmen unterschiedlichster Größen und konnte bereits Erfahrung in der Zusammenarbeit mit einigen großen Konzernen und kleineren Firmen sammeln. In meiner beruflichen Karriere habe ich bisher mehrere Projekte von Grund auf entwickelt, gewartet und veröffentlicht. Außerdem konnte ich auch wertvolle Erfahrung in der Weiterentwicklung bestehender Anwendungen sammeln. <a>Kontaktieren Sie mich</a>, wenn Sie an einer detaillierten Auflistung meiner bisherigen Projekte interessiert sind.",
-    "paragraph3": "Programmieren ist meine Leidenschaft, insbesondere die Entwicklung komplexer Business-Applikationen sowohl im Frontend als auch im Backend ist für mich spannend. Ich genieße meine tägliche Arbeit als freiberuflicher Entwickler und auch die Entwicklung meiner {privateProjectsLink} unter dem Pseudonym Mokkapps. Ich schreibe {blogLink} (auch für {inDepthDevLink}) und {publicationLink}, weil ich gerne mein Wissen mit anderen Leuten teilen will. Deswegen veröffentliche ich auch viele meiner Projekte auf {gitHubLink}.",
+    "paragraph1": "Mein Name ist <mark>Michael Hoffmann</mark>, ich bin freiberuflicher Software-Entwickler und wohne in München. Ich habe an der Technischen Universität in München meinen Master in Elektrotechnik absolviert und arbeite seit mehr als <mark>{years} Jahren</mark> als professioneller Softwareentwickler.",
+    "paragraph2": "Ich arbeite für Firmen unterschiedlichster Größen und konnte bereits Erfahrung in der Zusammenarbeit mit einigen großen Konzernen und kleineren Firmen sammeln. In meiner beruflichen Karriere habe ich bisher <mark>mehrere Projekte von Grund auf entwickelt, gewartet und veröffentlicht</mark>. Außerdem konnte ich auch wertvolle Erfahrung in der Weiterentwicklung bestehender Anwendungen sammeln. <a>Kontaktieren Sie mich</a>, wenn Sie an einer detaillierten Auflistung meiner bisherigen Projekte interessiert sind.",
+    "paragraph3": "<mark>Programmieren ist meine Leidenschaft</mark>, insbesondere die Entwicklung komplexer Business-Applikationen sowohl im <mark>Frontend</mark> als auch im <mark>Backend</mark> ist für mich spannend. Ich genieße meine tägliche Arbeit als freiberuflicher Entwickler und auch die Entwicklung meiner {privateProjectsLink} unter dem Pseudonym Mokkapps. Ich schreibe {blogLink} (auch für {inDepthDevLink}) und {publicationLink}, weil ich gerne mein Wissen mit anderen Leuten teilen will. Deswegen veröffentliche ich auch viele meiner Projekte auf {gitHubLink}.",
     "paragraph4": "Falls ich meine Zeit nicht mit Programmieren verbringe, mache ich entweder Sport oder spiele Videospiele.",
     "paragraph5": "<a>Kontaktieren Sie mich</a>, wenn Sie an einer Zusammenarbeit interessiert sind.",
     "paragraph6": "Unter <a>Uses</a> finden Sie die Soft- und Hardware, die ich für die Softwareentwicklung verwende.",
@@ -101,19 +101,16 @@
     "angularArchitectsLink": "Angular Architects",
     "gitHubLink": "GitHub",
     "howIWork": "Wie ich arbeite",
-    "whatIDoHeading": "Was ich mache",
-    "whatIDo1": "Ich habe mich auf die Entwicklung von Applikationen basierend auf Angular (nicht AngularJS) und React spezialisiert. Damit Sie ihre Geschäftsziele erreichen können, lasse ich dabei den Endkunden nie außer Acht.",
-    "whatIDo2": "Ich interessiere mich für Backend- und Frontend-Entwicklung",
-    "whatIDo3": "Ich bin ehrlich und zuverlässig in der Zusammenarbeit mit Kunden und Klienten",
-    "whatIDo4": "Unter der Berücksichtigung von Deadlines und Budget lege ich viel Wert auf cleanen, gut dokumentierten und leicht wartbaren Code",
-    "whatIDo5": "Ich lege Wert auf hohe Code Qualität Standards und verwende statische Code-Analyzer",
-    "whatIDo6": "Ich erstelle Produkte mit attraktiven und responsive Design, die auf einer Vielzahl von Geräten und Browsern funktionieren",
-    "whatIDo7": "Ich schätze semantisches und barrierefreies HTML",
-    "whatIDo8": "Ich verwende modernes CSS mit Grid, Flexbox und Animationen",
-    "whatIDo9": "Ich verwende liebend gern ReactiveExtensions (z.B. RxJS) in meinem Code",
-    "whatIDo10": "Ich mag strikte Typisierung in JavaScript, speziell mithilfe von TypeScript",
-    "whatIDo11": "Ich schreibe gerne Tests, egal ob Unit, Integration oder End-to-end",
-    "whatIDo12": "Ich habe fortgeschrittene Git Erfahrung",
+    "whatIDo1": "Ich habe mich auf die Entwicklung von Applikationen basierend auf <mark>{tech}</mark> spezialisiert. Damit Sie ihre Geschäftsziele erreichen können, lasse ich dabei den Endkunden nie außer Acht.",
+    "whatIDo2": "Ich interessiere mich für <mark>Backend- und Frontend-Entwicklung</mark>.",
+    "whatIDo3": "Ich bin <mark>ehrlich und zuverlässig</mark> in der Zusammenarbeit mit Kunden und Klienten.",
+    "whatIDo4": "Unter der Berücksichtigung von Deadlines und Budget lege ich viel Wert auf <mark>cleanen</mark>, gut dokumentierten und leicht wartbaren <mark>Code</mark>.",
+    "whatIDo5": "Ich lege Wert auf <mark>hohe Code Qualität Standards</mark> und verwende statische Code-Analyzer.",
+    "whatIDo6": "Ich <mark>schreibe gerne Tests</mark>, egal ob Unit, Integration oder End-to-End (E2E).",
+    "whatIDo7": "Ich mag strikte Typisierung in JavaScript, speziell mithilfe von <mark>TypeScript</mark>.",
+    "whatIDo8": "Ich verwende <mark>modernes CSS</mark> mit Grid, Flexbox und Animationen.",
+    "whatIDo9": "Ich schätze <mark>semantisches</mark> und barrierefreies <mark>HTML</mark>.",
+    "whatIDo10": "Ich erstelle Produkte mit <mark>attraktiven und responsive Design</mark>, die auf einer Vielzahl von Geräten und Browsern funktionieren.",
     "whoIWorkWithHeading": "Mit wem ich zusammenarbeite",
     "whoIWorkWithDesc": "Liebend gern arbeite ich beim Kunden vor Ort oder remote mit einem internationalen Team zusammen. Mir macht es Spaß neue Branchen kennenzulernen, besonders wenn das entsprechende Produkt einen guten Beitrag leistet.",
     "whatDontDoHeading": "Was ich nicht mache",
@@ -174,7 +171,6 @@
     "testimonialText2": "Michael war als Festangestellter in unserer Firma tätig und hat immer absolut exzellente Arbeit geleistet. Kann ihn nur empfehlen!"
   },
   "hireTheAuthor": {
-    "shortSummary": "Senior Freelance Software Engineer aus München mit Fokus auf Angular & React",
     "title": "Beauftrage den Autor"
   },
   "businessCardPage": {

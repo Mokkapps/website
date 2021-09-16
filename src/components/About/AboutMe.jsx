@@ -11,7 +11,7 @@ import SocialLinks from '../SocialLink/SocialLinks';
 const AboutMe = () => (
   <section className="flex flex-col justify-center items-center">
     <StaticImage
-      alt={config.baseName}
+      alt={config.baseNameWithTitle}
       className="fluid-image"
       src="../../images/about.jpg"
     />

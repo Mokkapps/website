@@ -25,7 +25,7 @@ const PostMeta = props => {
       key="author"
     >
       <StaticImage
-        alt={config.baseName}
+        alt={config.baseNameWithTitle}
         className="rounded-full mr-4"
         layout="fixed"
         width={60}

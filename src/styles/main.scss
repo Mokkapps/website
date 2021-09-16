@@ -17,6 +17,7 @@
   --secondary-darken: #cfd9db;
   --text-main: #0d0106;
   --text-secondary: #454e56;
+  --text-mark: #C6C6C6;
   --background: #f8f8f8;
   --accent: #fc1a20;
   --button-background: #ecf0f1;
@@ -28,6 +29,7 @@
   --secondary-darken: #454545;
   --text-main: #eaeaea;
   --text-secondary: #b8b8b9;
+  --text-mark: #636363;
   --background: #313131;
   --accent: #fc1a20;
   --button-background: #f8f8f8;
@@ -231,6 +233,14 @@
       @apply pl-2;
       border-right: none;
     }
+  }
+
+  mark {
+    color: var(--text-main);
+    background: linear-gradient(120deg, var(--text-mark) 0%, var(--text-mark) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 90%;
   }
 
   .text-shadow {

@@ -23,14 +23,14 @@
     "legalNotice": "Legal Notice"
   },
   "landingPage": {
-    "title": "Are You Looking For A Senior Freelance Frontend Developer?",
+    "title": "Are You Looking For A {tech} Freelancer?",
     "doYouNeed": "Do you need:",
     "skills": {
-      "development": "Support to build a complex web application or mobile app?",
-      "experience": "A senior frontend developer with +{years} years experience?",
-      "tShaped": "A T-shaped developer who has frontend expertise and cross-discipline competences in backend development, test engineering and DevOps?",
-      "codeQuality": "A developer who has a focus on high quality, clean, well-documented and easily maintainable code?",
-      "partner": "A reliable, honest and professional partner to successfully finish your project in budget and time?"
+      "experience": "A Senior Frontend Developer with focus on <mark>{tech}</mark> and +{years} years experience?",
+      "development": "Support to build a <mark>complex web application</mark> or mobile app?",
+      "tShaped": "A <mark>T-shaped developer</mark> who has frontend expertise and cross-discipline competences in backend development, test engineering and DevOps?",
+      "codeQuality": "A developer who has a focus on high quality, <mark>clean</mark>, well-documented and easily maintainable <mark>code</mark>?",
+      "partner": "A reliable, honest and <mark>professional partner</mark> to successfully finish your project in budget and time?"
     },
     "myName": "My name is",
     "rightPlace": "and you are in the right place!",
@@ -87,9 +87,9 @@
   },
   "aboutPage": {
     "title": "About me",
-    "paragraph1": "My name is Michael Hoffmann, I'm a freelance software engineer based in Munich/Germany. I hold a Masters in Electrical Engineering from the renown Technical University of Munich (TUM) and have {years}+ years of professional experience.",
-    "paragraph2": "I work for businesses of all sizes and have experience with both small and medium enterprises and corporates. In my career I have developed, maintained and launched multiple projects from scratch or improved an existing code base. <a>Get in touch</a>, if you like to receive a detailed list of projects I have worked on so far.",
-    "paragraph3": "Programming is my passion – but especially developing complex business applications both in frontend and in backend. I totally enjoy my work as a freelance developer and developing {privateProjectsLink} under the pseudonym Mokkapps. The reason why I write {blogLink} (also for {inDepthDevLink}) and {publicationLink} is that I like to share my knowledge with others. Therefore, I also try to share most of my projects on {gitHubLink}.",
+    "paragraph1": "My name is <mark>Michael Hoffmann</mark>, I'm a freelance software engineer based in Munich/Germany. I hold a Masters in Electrical Engineering from the renown Technical University of Munich (TUM) and have <mark>{years}+ years</mark> of professional experience.",
+    "paragraph2": "I work for businesses of all sizes and have experience with both small and medium enterprises and corporates. In my career I have <mark>developed, maintained and launched multiple projects from scratch</mark> or improved an existing code base. <a>Get in touch</a>, if you like to receive a detailed list of projects I have worked on so far.",
+    "paragraph3": "<mark>Programming is my passion</mark> – but especially developing complex business applications both in <mark>frontend and in backend</mark>. I totally enjoy my work as a freelance developer and developing {privateProjectsLink} under the pseudonym Mokkapps. The reason why I write {blogLink} (also for {inDepthDevLink}) and {publicationLink} is that I like to share my knowledge with others. Therefore, I also try to share most of my projects on {gitHubLink}.",
     "paragraph4": "If I do not invest my time in coding I'm usually playing video games or doing sports.",
     "paragraph5": "Just <a>contact me</a> if you would like me to work for you.",
     "paragraph6": "Visit <a>Uses</a> if you are interested in the software and hardware I use for software development.",
@@ -101,19 +101,16 @@
     "inDepthDevLink": "inDepthDev",
     "gitHubLink": "GitHub",
     "howIWork": "HOW I WORK",
-    "whatIDoHeading": "What I Do",
-    "whatIDo1": "I specialize in building applications written in Angular (not AngularJS) and React. I always develop them with your end-user in mind as this will also help you to meet your business goals",
-    "whatIDo2": "I am interested in doing development work in backend & frontend applications",
-    "whatIDo3": "I am reliable and honest to my customers and clients",
-    "whatIDo4": "I produce high quality, clean, well-documented and easily maintainable code while respecting deadlines and budgets",
-    "whatIDo5": "I use high code quality standards and static code analyzer",
-    "whatIDo6": "I create beautifully responsive products which work cross a variety of devices and browsers",
-    "whatIDo7": "I value accessible, valid and semantic HTML",
-    "whatIDo8": "I use modernized CSS using Grid, Flexbox, and Animations",
-    "whatIDo9": "I love to use ReactiveExtensions (RxJS)",
-    "whatIDo10": "I like strict typing in JavaScript, especially using TypeScript",
-    "whatIDo11": "I like to write tests (unit, integration and end-to-end)",
-    "whatIDo12": "I have advanced Git knowledge",
+    "whatIDo1": "I specialize in building applications written in <mark>{tech}</mark>. I always develop them with your end-user in mind as this will also help you to meet your business goals",
+    "whatIDo2": "I am interested in doing development work in <mark>backend & frontend</mark> applications.",
+    "whatIDo3": "I am <mark>reliable and honest</mark> to my customers and clients.",
+    "whatIDo4": "I produce high quality, <mark>clean</mark>, well-documented and easily maintainable <mark>code</mark> while respecting deadlines and budgets.",
+    "whatIDo5": "I use <mark>high code quality standards</mark> and static code analyzer.",
+    "whatIDo6": "I <mark>like to write tests</mark>, no matter if unit, integration or end-to-end (E2E).",
+    "whatIDo7": "I like strict typing in JavaScript, especially using <mark>TypeScript</mark>.",
+    "whatIDo8": "I use <mark>modern CSS</mark> using Grid, Flexbox, and Animations.",
+    "whatIDo9": "I value <mark>accessible</mark>, valid and semantic <mark>HTML</mark>.",
+    "whatIDo10": "I create beautifully <mark>responsive products</mark> which work cross a variety of devices and browsers.",
     "whoIWorkWithHeading": "Who I Work With",
     "whoIWorkWithDesc": "I enjoy working in a close relationship with international teams on-site or remote. It is great fun for me to learn about new industries, especially if the product has a positive impact.",
     "whatDontDoHeading": "What I Don't Do",
@@ -174,7 +171,6 @@
     "testimonialText2": "Michael worked as a permanent employee in our company and has always done an absolutely excellent job. I can only recommend him!"
   },
   "hireTheAuthor": {
-    "shortSummary": "Senior freelance software engineer from Munich with focus on Angular & React",
     "title": "Hire The Author"
   },
   "businessCardPage": {

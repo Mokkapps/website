@@ -48,8 +48,7 @@
     "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-manifest": "^3.6.0",
     "gatsby-plugin-mdx": "^2.6.0",
-    "gatsby-plugin-netlify": "^3.6.0",
-    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-netlify": "^3.14.0",
     "gatsby-plugin-offline": "^4.6.0",
     "gatsby-plugin-postcss": "^4.6.0",
     "gatsby-plugin-preconnect": "^1.2.0",
@@ -98,6 +97,7 @@
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.13.13",
+    "@netlify/plugin-gatsby": "^1.0.3",
     "@sindresorhus/slugify": "^2.1.0",
     "babel-eslint": "^10.1.0",
     "cypress": "^8.2.0",

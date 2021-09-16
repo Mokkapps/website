@@ -1,34 +1,38 @@
 const base = {
-  name: 'Mokkapps (Michael Hoffmann) - Senior Freelance Fullstack Developer',
+  twitterUsername: '@mokkapps',
   url: 'https://www.mokkapps.de',
-  desc:
-    'Senior freelance fullstack developer from Munich with focus on Angular & React.',
+  title: 'Senior Frontend Developer (Freelancer)',
+  name: `Michael Hoffmann`,
+  techFocus: 'Vue.js',
+  techFocusDevIconName: 'vue'
 };
 
-const config = {
-  /* meta tags */
-  baseName: `${base.name}`,
-  baseDesc: `${base.desc}`,
-  siteTitlePostfix: ` - ${base.name}`,
-  siteDescription: `${base.desc}`,
-  defaultSeoImage: `https://i.imgur.com/7M1N3cS.jpg`,
+const baseNameWithTitle = `${base.name} (Mokkapps) - ${base.title}`;
 
-  socialShareImage: {
-    width: 1200,
-    height: 628,
-  },
+const config = {
+  base,
+  /* meta tags */
+  descriptionEn: `${base.title} from Munich with focus on ${base.techFocus}`,
+  descriptionDe: `${base.title} aus München mit Fokus auf ${base.techFocus}`,
+  baseNameWithTitle: `${baseNameWithTitle}`,
+  baseName: `${base.name}`,
+  baseTitle: `${base.title}`,
+  baseTechFocus: `${base.techFocus}`,
+  baseDesc: `${base.descriptionEn}`,
+  siteTitlePostfix: ` - ${baseNameWithTitle}`,
+  siteDescription: `${base.descriptionEn}`,
+  defaultSeoImage: `https://i.imgur.com/C8ZMquy.jpg`,
 
   /* site header */
-  headerTitle: `${base.name}`,
-  headerSubTitle: `${base.desc}`,
+  headerTitle: `${baseNameWithTitle}`,
+  headerSubTitle: `${base.descriptionEn}`,
 
   /* url */
   siteUrl: base.url,
   // pathPrefix: '',
 
-  twitterUsername: '@mokkapps',
-  shareImageName: 'Michael Hoffmann (Mokkapps)',
-  authorName: 'Michael Hoffmann',
+  twitterUsername: `${base.twitterUsername}`,
+  authorName: `${base.name}`,
   customers: [
     'VHV Allgemeine Versicherung',
     'ProSiebenSat.1 Tech',
@@ -177,8 +181,7 @@ const config = {
       image: 'new-angular-project',
       host: 'Munich Frontend Meetup',
       title: 'How I Would Start A New Angular Project',
-      link:
-        'https://www.meetup.com/de-DE/Munich-Frontend-Developers/events/265401762/',
+      link: 'https://www.meetup.com/de-DE/Munich-Frontend-Developers/events/265401762/',
       slides: 'https://www.slideshare.net/secret/47Wj9B5Is6Zch3',
     },
     {
@@ -187,8 +190,7 @@ const config = {
       image: 'website-engineering',
       host: 'Munich Frontend Meetup',
       title: 'The Engineering Behind My Portfolio Website',
-      link:
-        'https://jambit.com/en/latest-info/events/meetup-munich-frontend-developers-2019/',
+      link: 'https://jambit.com/en/latest-info/events/meetup-munich-frontend-developers-2019/',
       slides: 'https://mokkapps-website-lightning-talk.netlify.com',
     },
     {
@@ -197,8 +199,7 @@ const config = {
       image: 'first-smartphone-game',
       host: 'jambit GmbH',
       title: 'My First Smartphone Game',
-      link:
-        'https://www.mokkapps.de/blog/lessons-learned-my-first-smartphone-game/',
+      link: 'https://www.mokkapps.de/blog/lessons-learned-my-first-smartphone-game/',
       slides: 'https://www.mokkapps.de/talks/my-first-smartphone-game/',
     },
     {
@@ -207,8 +208,7 @@ const config = {
       image: 'reactive-programming',
       host: 'jambit GmbH',
       title: 'Eine Einführung in Reactive Programming',
-      link:
-        'https://www.jambit.com/en/latest-info/events/coffeetalks-june-2017/',
+      link: 'https://www.jambit.com/en/latest-info/events/coffeetalks-june-2017/',
     },
     {
       type: 'talk',
@@ -217,21 +217,18 @@ const config = {
       host: 'jambit GmbH',
       title:
         'Unity – Eine Einführung in die Cross-Plattform-Spiele-Entwicklung',
-      link:
-        'https://jambit.com/aktuelles/veranstaltungen/coffeetalks-april-2016/',
+      link: 'https://jambit.com/aktuelles/veranstaltungen/coffeetalks-april-2016/',
     },
     {
       type: 'article',
       title:
         "2020 inDepth Dev: The Last Guide For Angular Change Detection You'll Ever Need",
-      link:
-        'https://indepth.dev/posts/1305/the-last-guide-for-angular-change-detection-youll-ever-need',
+      link: 'https://indepth.dev/posts/1305/the-last-guide-for-angular-change-detection-youll-ever-need',
     },
     {
       type: 'article',
       title: '2016 ToiletPaper jambit: Kotlin: Das bessere Java?',
-      link:
-        'https://www.jambit.com/aktuelles/toilet-papers/kotlin-das-bessere-java/',
+      link: 'https://www.jambit.com/aktuelles/toilet-papers/kotlin-das-bessere-java/',
     },
     {
       type: 'article',

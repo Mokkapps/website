@@ -2,6 +2,11 @@ import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
 import { getImage } from 'gatsby-plugin-image';
+import React from "react";
+
+export const baseFormattedMessageValues = {
+  mark: chunks => <mark>{chunks}</mark>,
+};
 
 export const getAsset = (edges, imageName) => {
   const node = edges

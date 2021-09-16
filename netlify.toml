@@ -109,7 +109,7 @@ to = "https://www.npmjs.com/~mokkapps"
 status = 301
 
 [[plugins]]
-package = "netlify-plugin-gatsby-cache"
+package = "@netlify/plugin-gatsby"
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"

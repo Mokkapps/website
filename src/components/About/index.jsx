@@ -8,6 +8,7 @@ import AboutMe from './AboutMe';
 import HowIWork from './HowIWork';
 import TestimonialSlider from '../TestimonialSlider';
 import config from '../../content/meta/config';
+import { baseFormattedMessageValues } from '../../utils/helper';
 
 const Heading = styled.h2`
   text-align: center;
@@ -23,11 +24,14 @@ const About = () => (
       <Skills />
     </div>
     <div className="mb-8 md:w-4/5 mx-auto" data-cy="about-how-i-work">
-      <Heading className="mb-8">
-        <FormattedMessage id="aboutPage.howIWork" />
+      <Heading className="mb-8 uppercase">
+        <FormattedMessage
+          id="aboutPage.howIWork"
+          values={{ ...baseFormattedMessageValues }}
+        />
       </Heading>
       <StaticImage
-        alt={config.baseName}
+        alt={config.baseNameWithTitle}
         className="my-8 fluid-image"
         src="../../images/consulting2.jpg"
       />

@@ -40,7 +40,7 @@ const ProjectsPage = props => {
   const image = (
     <div className="flex flex-col items-center justify-center w-full mt-8">
       <StaticImage
-        alt={config.baseName}
+        alt={config.baseNameWithTitle}
         className="fluid-image"
         src="../images/consulting1.jpg"
       />

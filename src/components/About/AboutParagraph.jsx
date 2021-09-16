@@ -2,10 +2,15 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
+import { baseFormattedMessageValues } from '../../utils/helper';
+
 const AboutParagraph = ({ id, values, className }) => {
   return (
     <p className={`${className} text-justify`}>
-      <FormattedMessage id={id} values={values} />
+      <FormattedMessage
+        id={id}
+        values={{ ...baseFormattedMessageValues, ...values }}
+      />
     </p>
   );
 };

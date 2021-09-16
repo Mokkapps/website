@@ -11,7 +11,7 @@ const Seo = props => {
   const {
     url,
     canonical,
-    title = config.baseName,
+    title = config.baseNameWithTitle,
     description = config.description,
     image = `${windowGlobal?.location?.origin}${config.defaultSeoImage}`,
     postSEO,

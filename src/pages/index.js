@@ -12,6 +12,7 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Button from '../components/Button';
 import {
+  baseFormattedMessageValues,
   getAsset,
   sendCustomAnalyticsEvent,
   yearsOfExperience,
@@ -24,8 +25,6 @@ import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 import TestimonialSlider from '../components/TestimonialSlider';
 import BusinessProjectList from '../components/BusinessProjectsList';
 import DevIcon from '../components/DevIcon';
-
-const frontendTechnologies = ['react', 'angular', 'vue'];
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -50,7 +49,13 @@ const IndexPage = props => {
 
   const posts = latestPosts.edges.map(edge => edge.node);
 
-  const { siteTitlePostfix, siteUrl, siteDescription } = config;
+  const {
+    siteTitlePostfix,
+    siteUrl,
+    siteDescription,
+    baseTitle,
+    baseTechFocus,
+  } = config;
 
   const skills = (
     <div className="flex flex-col">
@@ -60,30 +65,52 @@ const IndexPage = props => {
         </h2>
         <UnorderedList>
           <ListElement className="my-8">
-            <FormattedMessage id="landingPage.skills.development" />
-          </ListElement>
-          <ListElement className="my-8">
             <FormattedMessage
               id="landingPage.skills.experience"
               values={{
+                ...baseFormattedMessageValues,
                 years: yearsOfExperience,
+                tech: baseTechFocus,
               }}
             />
           </ListElement>
           <ListElement className="my-8">
-            <FormattedMessage id="landingPage.skills.tShaped" />
+            <FormattedMessage
+              id="landingPage.skills.development"
+              values={{
+                ...baseFormattedMessageValues,
+              }}
+            />
           </ListElement>
           <ListElement className="my-8">
-            <FormattedMessage id="landingPage.skills.codeQuality" />
+            <FormattedMessage
+              id="landingPage.skills.tShaped"
+              values={{
+                ...baseFormattedMessageValues,
+              }}
+            />
           </ListElement>
           <ListElement className="my-8">
-            <FormattedMessage id="landingPage.skills.partner" />
+            <FormattedMessage
+              id="landingPage.skills.codeQuality"
+              values={{
+                ...baseFormattedMessageValues,
+              }}
+            />
+          </ListElement>
+          <ListElement className="my-8">
+            <FormattedMessage
+              id="landingPage.skills.partner"
+              values={{
+                ...baseFormattedMessageValues,
+              }}
+            />
           </ListElement>
         </UnorderedList>
       </div>
       <div className="flex justify-center">
         <StaticImage
-          alt={config.baseName}
+          alt={config.baseNameWithTitle}
           title="Michael Hoffmann"
           placeholder="blurred"
           height={500}
@@ -179,23 +206,24 @@ const IndexPage = props => {
     </section>
   );
 
+  const techIcon = (
+    <DevIcon
+      hideBackground
+      colored
+      size="text-7xl"
+      technology={config.base.techFocusDevIconName}
+    />
+  );
+
   const introduction = (
     <div className="flex flex-col flex-grow items-center">
-      <h1 className="text-center mb-10" data-cy="home-heading">
-        <FormattedMessage id="landingPage.title" />
+      {techIcon}
+      <h1 className="text-center my-10" data-cy="home-heading">
+        <FormattedMessage
+          id="landingPage.title"
+          values={{ title: baseTitle, tech: baseTechFocus }}
+        />
       </h1>
-      <div className="mb-10">
-        {frontendTechnologies.map((tech, i) => (
-          <DevIcon
-            hideBackground
-            colored
-            key={tech}
-            size="text-7xl"
-            className={i === frontendTechnologies.length - 1 ? '' : 'mr-8'}
-            technology={tech}
-          />
-        ))}
-      </div>
       {skills}
       <p className="text-center mt-5 text-xl">
         <FormattedMessage id="landingPage.myName" />{' '}
