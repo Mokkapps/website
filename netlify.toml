@@ -1,6 +1,7 @@
 # explicit commands for building the site
 # and the folder to publish
 [build]
+ignore = 0 # indicates that the build should return early.
 command = "gatsby-parallel-runner"
 publish = "public"
   [build.environment]
