@@ -64,15 +64,6 @@ const AboutMe = () => (
               <FormattedMessage id="aboutPage.publicationLink" />
             </Link>
           ),
-          angularArchitectsLink: (
-            <a
-              href="https://www.angulararchitects.io/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FormattedMessage id="aboutPage.angularArchitectsLink" />
-            </a>
-          ),
           gitHubLink: (
             <a
               href="https://github.com/Mokkapps"
