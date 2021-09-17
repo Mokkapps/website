@@ -100,3 +100,6 @@ out/
 .idea/
 
 .build
+
+# Local Netlify folder
+.netlify
