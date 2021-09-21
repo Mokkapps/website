@@ -1,7 +1,7 @@
 ---
 title: Sending Message To Specific Anonymous User On Spring WebSocket
 subTitle:
-categories: ['spring', 'development', 'backend']
+categories: ['spring', 'development', 'backend', 'frontend', 'vue-js', 'fullstack']
 cover: cover.jpg
 ---
 
@@ -268,7 +268,6 @@ export class WebsocketService {
     this.client.publish({ destination, body });
   }
 }
-
 ```
 
 In the constructor, the client configuration is done. If we run the backend locally the WebSocket connection is available at `localhost:8080/ws` that's why `ws://localhost:8080/ws` is used as broker URL in Vue development mode. 
@@ -290,56 +289,58 @@ interface IWebSocketService {
 
 Inside the `mounted()` method in `App.vue` the service is instantiated:
 
-```ts
-import { Component, Vue } from 'vue-property-decorator';
-import { WebsocketService } from './services/websocket-service';
-
-@Component({})
-export default class App extends Vue {
-  private webSocketService?: WebsocketService;
-  private messages: string[] = [];
-
-  private readonly webSocketGreetingsSubscribeEndpoint = '/topic/greetings';
-  private readonly webSocketGreeetingsSendEndpoint = '/app/hello';
-
-  mounted(): void {
-    this.webSocketService = WebsocketService.getInstance();
-    this.webSocketService.connect(
-      () => {
-        this.webSocketService &&
-          this.webSocketService.subscribe(
-            this.webSocketGreetingsSubscribeEndpoint,
-            message => {
-              if (message.body) {
-                console.log('Received WS message: ', message.body);
-                this.messages.push(message.body);
-              } else {
-                console.warn('Received empty message', message);
+```vue
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator';
+  import { WebsocketService } from './services/websocket-service';
+  
+  @Component({})
+  export default class App extends Vue {
+    private webSocketService?: WebsocketService;
+    private messages: string[] = [];
+  
+    private readonly webSocketGreetingsSubscribeEndpoint = '/topic/greetings';
+    private readonly webSocketGreeetingsSendEndpoint = '/app/hello';
+  
+    mounted(): void {
+      this.webSocketService = WebsocketService.getInstance();
+      this.webSocketService.connect(
+        () => {
+          this.webSocketService &&
+            this.webSocketService.subscribe(
+              this.webSocketGreetingsSubscribeEndpoint,
+              message => {
+                if (message.body) {
+                  console.log('Received WS message: ', message.body);
+                  this.messages.push(message.body);
+                } else {
+                  console.warn('Received empty message', message);
+                }
               }
-            }
-          );
-
-        // send initial message to get jobs
-        this.sendMessage();
-      },
-      () => {},
-      () => {}
-    );
-  }
-
-  private sendMessage(): void {
-    this.webSocketService &&
-      this.webSocketService.sendMessage(
-        this.webSocketGreetingsSendEndpoint,
-        JSON.stringify({name: 'Any Name'})
+            );
+  
+          // send initial message to get jobs
+          this.sendMessage();
+        },
+        () => {},
+        () => {}
       );
+    }
+  
+    private sendMessage(): void {
+      this.webSocketService &&
+        this.webSocketService.sendMessage(
+          this.webSocketGreetingsSendEndpoint,
+          JSON.stringify({name: 'Any Name'})
+        );
+    }
   }
-}
+</script>
 ```
 
 Received messages are rendered in the template:
 
-```html
+```vue
 <template>
   <div id="app">
     <h1>Received WS messages</h1>

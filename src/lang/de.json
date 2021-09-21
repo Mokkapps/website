@@ -42,6 +42,9 @@
   },
   "blogPage": {
     "title": "Blog",
+    "introduction": "Wenn 280 Zeichen auf {twitter} nicht ganz ausreichen, schreibe ich meine ausführlichen Gedanken hier. Normalerweise veröffentliche ich einmal im Monat einen neuen Artikel. {newsletter}, um über neue Artikel informiert zu werden.",
+    "minimalList": "minimalen Liste",
+    "searchAlternative": "Alternativ können Sie Artikel auch über {google} oder in der {minimalList} suchen.",
     "minuteRead": "Minuten Lesezeit",
     "leaveAComment": "Zeig Kommentare",
     "editOnGitHubInfoLine1": "Du hast einen Fehler in diesem Artikel gefunden? Du möchtest gerne etwas klarstellen, aktualisieren oder hinzufügen?",
@@ -134,6 +137,7 @@
   },
   "newsletterPage": {
     "joinTheNewsletter": "Newsletter Anmeldung →",
+    "joinTheNewsletter2": "Melde dich für den Newsletter an",
     "email": "Email-Addresse",
     "firstName": "Vorname (Optional)",
     "lastName": "Nachname (Optional)",

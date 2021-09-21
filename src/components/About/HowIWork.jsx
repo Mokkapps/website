@@ -26,14 +26,14 @@ export default class HowIWork extends React.Component {
         </div>
 
         <div className="my-4">
-          <h3 className="uppercase">
+          <h3 className="uppercase text-center">
             <FormattedMessage id="aboutPage.whoIWorkWithHeading" />
           </h3>
           <AboutParagraph id="aboutPage.whoIWorkWithDesc" />
         </div>
 
         <div className="my-4">
-          <h3 className="uppercase">
+          <h3 className="uppercase text-center">
             <FormattedMessage id="aboutPage.whatDontDoHeading" />
           </h3>
           <AboutParagraph className="text-justify" id="aboutPage.whatDontDoDesc1" />

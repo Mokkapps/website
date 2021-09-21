@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { getSrc } from 'gatsby-plugin-image';
+import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
 import { getAllCategories, metaIcons } from '../utils/helper';
@@ -55,13 +56,22 @@ const BlogPage = props => {
   };
 
   const searchComponent = (
-    <p className="mt-4 mb-8 text-center">
-      {' '}
-      You can search blog posts by{' '}
-      <a href="https://www.google.com/search?q=site%3Amokkapps.de%2Fblog">
-        using Google
-      </a>{' '}
-      or browse a <Link to={'/minimal-blog-list'}>minimal list</Link>.
+    <p className="mt-4 mb-8">
+      <FormattedMessage
+        id="blogPage.searchAlternative"
+        values={{
+          google: (
+            <a href="https://www.google.com/search?q=site%3Amokkapps.de%2Fblog">
+              Google
+            </a>
+          ),
+          minimalList: (
+            <Link to="/minimal-blog-list">
+              <FormattedMessage id="blogPage.minimalList" />
+            </Link>
+          ),
+        }}
+      />
     </p>
   );
 
@@ -74,30 +84,57 @@ const BlogPage = props => {
         url: `${siteUrl}/blog`,
         title: `Blog${siteTitlePostfix}`,
         image: `${config.siteUrl}${getSrc(seoImage)}`,
-        description: 'Blog posts about software engineering and career',
+        description:
+          'Blog posts from Michael Hoffmann about Frontend, Backend, Fullstack, Vue.js, JavaScript, TypeScript and more.',
       }}
     >
       <article className="px-8 md:px-24 py-8">
         <div className="flex flex-col items-center justify-center">
-          <Heading className="mb-8" i18nId="blogPage.title" />
-          <BlogLanguageWarning className="w-full my-4" />
-          <section className="relative mb-8">
-            <input
-              type="text"
-              aria-label="Search"
-              placeholder="Search by category..."
-              className="w-64 pl-2 mr-4"
-              onChange={handleInputChange}
-              data-cy="blog-category-filter-input"
+          <div className="flex flex-col justify-center items-center md:px-24">
+            <Heading className="mb-8" i18nId="blogPage.title" />
+            <BlogLanguageWarning className="w-full mb-4" />
+            <p className="my-4">
+              <FormattedMessage
+                id="blogPage.introduction"
+                values={{
+                  twitter: (
+                    <a
+                      href="https://twitter.com/mokkapps"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Twitter
+                    </a>
+                  ),
+                  newsletter: (
+                    <Link to="/newsletter">
+                      <FormattedMessage id="newsletterPage.joinTheNewsletter2" />
+                    </Link>
+                  ),
+                }}
+              />
+            </p>
+            <CategorySelection
+              compact
+              className="mb-4"
+              categories={categories}
+              dataCy={'blog-categories'}
             />
-            <span className="absolute right-7 top-1">{posts.length}</span>
-          </section>
-          <CategorySelection
-            compact
-            categories={categories}
-            dataCy={'blog-categories'}
-          />
-          {searchComponent}
+            <section className="flex relative">
+              <section className="relative mb-4">
+                <input
+                  type="text"
+                  aria-label="Search"
+                  placeholder="Search by category..."
+                  className="w-64 pl-2 mr-4"
+                  onChange={handleInputChange}
+                  data-cy="blog-category-filter-input"
+                />
+                <span className="absolute right-7 top-1">{posts.length}</span>
+              </section>
+            </section>
+            {searchComponent}
+          </div>
           <BlogPostList
             items={posts}
             author={config.authorName}

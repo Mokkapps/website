@@ -13,20 +13,20 @@ import Article from '../components/Article';
 import Heading from '../components/Heading';
 
 export const imgurAlbumMap = {
-  vue: {
-    albumId: '27cb6538-d9a5-5f84-999e-a3fb8785e7e4',
-    tabIndex: 0,
-    displayName: 'Vue.js',
-  },
   js: {
     albumId: 'db2d3319-93fa-5810-a3bf-333083458bdb',
-    tabIndex: 1,
+    tabIndex: 0,
     displayName: 'JavaScript',
   },
   ts: {
     albumId: '42a2dd14-c0bf-5c77-8931-d938ee61dd8e',
-    tabIndex: 2,
+    tabIndex: 1,
     displayName: 'TypeScript',
+  },
+  vue: {
+    albumId: '27cb6538-d9a5-5f84-999e-a3fb8785e7e4',
+    tabIndex: 2,
+    displayName: 'Vue.js',
   },
   html: {
     albumId: '0e02c7a4-a4f9-54e5-9374-52b5065f2643',

@@ -40,6 +40,12 @@ pre[class*='language-text'] {
     color: black;
   }
 
+  pre[class='language-vue']::before {
+    content: 'vue';
+    background: #42b883;
+    color: white;
+  }
+
   pre[class='language-jsx']::before {
     content: 'jsx';
     background: #282C34;

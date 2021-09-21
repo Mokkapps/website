@@ -2,7 +2,7 @@ import CalendarIcon from 'react-feather/dist/icons/calendar';
 import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
 import { getImage } from 'gatsby-plugin-image';
-import React from "react";
+import React from 'react';
 
 export const baseFormattedMessageValues = {
   mark: chunks => <mark>{chunks}</mark>,
@@ -42,9 +42,12 @@ export const getCategoryDisplayText = category => {
   if (category === 'aws') {
     return category.toUpperCase();
   }
-  if (category === 'node-js') {
-    return 'Node.js';
+
+  if (category.includes('-js')) {
+    const name = category.split('-')[0];
+    return `${capitalize(name)}.js`;
   }
+
   return capitalize(category);
 };
 
