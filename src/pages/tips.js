@@ -12,7 +12,7 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Heading from '../components/Heading';
 
-export const imgurAlbumMap = {
+const imgurAlbumMap = {
   js: {
     albumId: 'db2d3319-93fa-5810-a3bf-333083458bdb',
     tabIndex: 0,

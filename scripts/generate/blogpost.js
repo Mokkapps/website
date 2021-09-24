@@ -38,6 +38,8 @@ async function generateBlogPost() {
         'frontend',
         'backend',
         'aws',
+        'vue-js',
+        'node-js',
       ],
       message: 'Categories',
     },
@@ -72,7 +74,10 @@ ${yaml}---
 ## Conclusion
 
 If you liked this article, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
 `;
+  console.log(`Date:\n${date}\n`);
   console.log(`Slug:\n${slug}\n`);
   console.log(`Markdown data:\n${mdData}`);
 
