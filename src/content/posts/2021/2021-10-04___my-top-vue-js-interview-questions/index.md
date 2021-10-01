@@ -65,7 +65,9 @@ Instead of methods, computed properties are cached based on their reactive depen
 
 ## 6. What are watchers?
 
-[Watchers](https://v3.vuejs.org/guide/computed.html#watchers) should be used when asynchronous or expensive operations need to be executed in response to changing data.
+[Watchers](https://v3.vuejs.org/guide/computed.html#watchers) are a more generic way to react to data changes instead of using computed properties.
+
+They should be used when asynchronous or expensive operations need to be executed in response to changing data.
 
 ## 7. What is the difference between registering a component locally and globally?
 
@@ -140,7 +142,6 @@ Vue provides the [v-model directive](https://vuejs.org/v2/api/#v-model) for two-
 
 A [slot](https://v3.vuejs.org/guide/component-slots.html#slots) is a placeholder in a child component that is filled with content passed from the parent. Content of a regular slot is compiled in the parent’s scope and then passed to the child component.
 
-
 Scoped slots are needed if the slot content needs to have access to data only available in the child component. We can bind attributes a `<slot>`, these elements are called __slot props__. Now, in the parent scope, we can use `v-slot` with a value to define a name for the slot props we've been provided:
 
 ![Vue Scoped Slot](./images/scoped-slot.jpg)
@@ -206,14 +207,15 @@ resolves the [Mixins drawbacks](https://v3.vuejs.org/guide/composition-api-intro
 
 ## 14. How to optimize Vue.js performance?
 
-Use [code splitting](https://v3.vuejs.org/guide/ssr/routing.html#code-splitting) (also known as lazy loading) to reduce the size of assets that need to be downloaded by the browser for the initial render. Essentially, it helps to load just the parts of the initial screen that are currently needed. All other parts of the application are downloaded when they are needed and requested:
+There are multiple reasons why your Vue application may become slow: 
 
-```js
-// the MyUser component is dynamically loaded if the `/user route is visited:
-const routes = [
-  { path: '/user', component: () => import('./components/MyUser.vue') },
-];
-```
+- You are using too many third-party libraries that are too big or used in the wrong way
+- You have a lot of images that are not optimized and compressed
+- You don't lazy load your images
+- You aren't reusing functionalities across your application to minimize duplicated code
+- You have a lot of pages and load every page on the initial load
+
+[This article](https://blog.logrocket.com/methods-optimizing-vue-js-applications/) provides the solution to the above-mentioned performance issues.
 
 ## 15. Which lifecycles and corresponding hooks are available in Vue?
 
@@ -234,7 +236,10 @@ This hook receives three arguments: the error, the component instance that trigg
 
 ## Conclusion
 
-With these interview questions, you should be well-prepared for any upcoming job interviews. Let me know in the comments if you would ask any other important questions about Vue.
+Of course, this list does not guarantee that you will pass an upcoming Vue job interview. There are hundreds of questions that you might
+get asked in such an interview. I recommend reading the [official docs](https://v3.vuejs.org/) and take some courses on [Vue Mastery](https://www.vuemastery.com/) if you prefer video courses. 
+
+Let me know in the comments if you would ask any other important questions about Vue.
 
 If you liked this article, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new blog posts and more content from me.
 
