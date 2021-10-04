@@ -136,7 +136,7 @@ const vm = new Vue({
 Vue uses a one-way data flow. Parents can pass data to child components using a prop and bind the data using the [v-bind directive](https://vuejs.org/v2/api/#v-bind). When the parent component updates the prop value, it's automatically updated in the child component. You should avoid mutating the property inside the child component and it will not affect the property in the parent component (unless it's an array or object).
 Using [Events](https://vuejs.org/v2/api/#v-bind) the child component can communicate back to the parent.
 
-Vue provides the [v-model directive](https://vuejs.org/v2/api/#v-model) for two-way data binding of form inputs. `v-model` is just syntax sugar for `v-bind` combined with `v-on:input`.
+Vue provides the [v-model directive](https://vuejs.org/v2/api/#v-model) for two-way data binding of form inputs. `v-model` is just syntax sugar for `v-bind` combined with `v-on:input`. But you can also implement `v-model` for your custom components, take a look at ["Using v-model on Components"](https://v3.vuejs.org/guide/component-basics.html#using-v-model-on-components) for more details.
 
 ## 11. What is the difference between a slot and a scoped slot? 
 
