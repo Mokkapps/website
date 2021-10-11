@@ -34,6 +34,7 @@ const config = {
   twitterUsername: `${base.twitterUsername}`,
   authorName: `${base.name}`,
   customers: [
+    'Gothaer Systems',
     'VHV Allgemeine Versicherung',
     'ProSiebenSat.1 Tech',
     'Angular Architects',

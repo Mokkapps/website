@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedDate, FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-const availability = new Date('2022-04-01');
+const availability = new Date('2022-07-31');
 
 const Availability = ({ className, dataCy }) => {
   const availabilityDate = new Date(availability);
