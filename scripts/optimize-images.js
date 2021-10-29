@@ -8,6 +8,7 @@ const MAX_WIDTH = 1800;
 const QUALITY = 70;
 const fileExtensionsPattern = `*.{png,jpg,jpeg}`;
 const defaultPattern = `src/**/**/${fileExtensionsPattern}`;
+const imageFolderPattern = `src/images/**/${fileExtensionsPattern}`;
 const fromRoot = (...p) => path.join(process.env.PWD, ...p);
 
 async function optimizeImages() {
@@ -20,7 +21,7 @@ async function optimizeImages() {
     {
       type: 'list',
       name: 'selectedPattern',
-      choices: [defaultPattern, latestBlogPostPattern],
+      choices: [defaultPattern, imageFolderPattern, latestBlogPostPattern],
       message:
         'Select a pattern to specify which images should be optimized. Either choose all or only from the latest blog post.',
     },
