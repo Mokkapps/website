@@ -17,8 +17,8 @@ describe('Home Page Test', () => {
     cy.get('[data-cy=home-schedule-meeting-button]');
   });
 
-  it('shows testimonials', () => {
-    cy.get('[data-cy=home-testimonial-slider]');
+  it('shows references', () => {
+    cy.get('[data-cy=home-references]');
   });
 
   it('shows featured private projects', () => {

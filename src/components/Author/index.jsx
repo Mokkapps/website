@@ -6,6 +6,7 @@ import config from '../../content/meta/config';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 import SocialLinks from '../SocialLink/SocialLinks';
 import { LanguageContext } from '../../context/languageContext';
+import NewsletterButton from "../NewsletterButton";
 
 const Author = ({ className }) => {
   const { lang } = useContext(LanguageContext);
@@ -26,7 +27,10 @@ const Author = ({ className }) => {
           {lang === 'en' ? config.descriptionEn : config.descriptionDe}
         </p>
         <SocialLinks className="mt-2" onlyFavorites />
-        <BuyMeACoffeeButton className="my-4" />
+        <div className="flex flex-col sm:flex-row my-4">
+          <BuyMeACoffeeButton dataCy="footer-buy-coffee-button" />
+          <NewsletterButton dataCy="footer-newsletter-button" />
+        </div>
       </div>
     </section>
   );

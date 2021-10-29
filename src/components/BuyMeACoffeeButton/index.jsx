@@ -3,14 +3,15 @@ import { FormattedMessage } from 'react-intl';
 import { sendCustomAnalyticsEvent } from '../../utils/helper';
 import PropTypes from 'prop-types';
 
-const BuyMeACoffeeButton = props => {
+const BuyMeACoffeeButton = ({ className, dataCy }) => {
   return (
     <a
       href="https://www.buymeacoffee.com/mokkapps"
       target="_blank"
       rel="noopener noreferrer"
-      className={`flex justify-center items-center rounded-lg px-4 bg-primary h-12 ${props.className}`}
+      className={`flex justify-center items-center rounded-lg px-4 bg-primary h-12 ${className}`}
       onClick={() => sendCustomAnalyticsEvent('Buy me a coffee button clicked')}
+      data-cy={dataCy}
     >
       <span className="mr-2 text-xl" role="img" aria-label="Coffee Icon">
         ☕️
@@ -24,6 +25,7 @@ const BuyMeACoffeeButton = props => {
 
 BuyMeACoffeeButton.propTypes = {
   className: PropTypes.string,
+  dataCy: PropTypes.string,
 };
 
 export default BuyMeACoffeeButton;

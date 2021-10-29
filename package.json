@@ -14,10 +14,11 @@
     "clean": "gatsby clean",
     "serve": "gatsby serve",
     "cy:open": "cypress open",
+    "cy:install": "cypress install",
     "test:e2e": "start-server-and-test start http://localhost:8000 cy:open",
     "lint": "eslint src",
     "preload-fonts": "gatsby-preload-fonts",
-    "generate-blogpost": "node generate/blogpost.js",
+    "generate-blogpost": "node scripts/generate/blogpost.js",
     "generate-toc": "node scripts/generate/toc.js",
     "optimize-images": "node scripts/optimize-images.js"
   },

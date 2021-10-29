@@ -4,8 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 import SocialLinks from '../SocialLink/SocialLinks';
-import LinkButton from '../LinkButton';
-import { sendCustomAnalyticsEvent } from '../../utils/helper';
+import NewsletterButton from '../NewsletterButton';
 
 const Footer = () => (
   <footer className="relative flex flex-shrink-0 flex-col items-center justify-center py-8">
@@ -13,14 +12,9 @@ const Footer = () => (
       className="flex flex-wrap justify-center"
       dataCy="footer-social-links"
     />
-    <BuyMeACoffeeButton className="my-4" />
-    <div className="flex mb-8 xl:mb-0 xl:absolute shadow-md rounded-md p-4 left-36 bottom-16 bg-secondary h-16 flex items-center">
-      <LinkButton
-        dataCy="footer-newsletter-button"
-        href="/newsletter"
-        i18nId="newsletterPage.joinTheNewsletter"
-        onClick={() => sendCustomAnalyticsEvent('Clicked join the newsletter')}
-      />
+    <div className="flex flex-col sm:flex-row my-4">
+      <BuyMeACoffeeButton dataCy="footer-buy-coffee-button" />
+      <NewsletterButton dataCy="footer-newsletter-button" />
     </div>
     <div className="text-center text-text-main">
       <a

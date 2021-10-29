@@ -22,9 +22,9 @@ import ProjectCard from '../components/ProjectCard';
 import BlogPostCard from '../components/BlogPostCard';
 import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
-import TestimonialSlider from '../components/TestimonialSlider';
 import BusinessProjectList from '../components/BusinessProjectsList';
 import DevIcon from '../components/DevIcon';
+import References from "../components/References";
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -240,7 +240,7 @@ const IndexPage = props => {
           className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
         />
       </div>
-      <TestimonialSlider className="my-10" dataCy="home-testimonial-slider" />
+      <References className="my-10" dataCy="home-references" />
     </div>
   );
 

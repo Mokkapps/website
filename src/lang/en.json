@@ -60,6 +60,7 @@
     "keyContributions": "Key Contributions:",
     "businessProjectsExcerpt": "The following abstract of my business project will give you an idea how I helped my clients in previous projects:",
     "businessProjects": {
+      "customer": "Customer:",
       "segmentationTool": {
         "company": "ProSiebenSat.1 Tech Solutions GmbH",
         "title": "Development of a video segmentation tool",
@@ -121,7 +122,13 @@
     "expert": "5+ years experience",
     "advanced": "3+ years experience",
     "intermediate": "1+ year experience",
-    "elementary": "Basic knowledge"
+    "elementary": "Basic knowledge",
+    "references": "References",
+    "freelancerContest": {
+      "title": "IT-Freelancer of the Year 2021 (3rd place)",
+      "linkText": "Visit contest website",
+      "description": "The renowned competition for the 'IT Freelancer of the Year', which includes non-cash prizes, takes place every two years. The first competition was held in 2005 - the organizers are IT Freelancer Magazin, Gesellschaft für Informatik and DBITS. The prize sponsors of the competition are HAYS, GULP, SOLCOM, Etengo (Deutschland) AG and SThree - each of which is one of the top 10 agencies for the placement of IT freelancers in Germany."
+    }
   },
   "contactPage": {
     "title": "Contact me",
@@ -136,7 +143,7 @@
     }
   },
   "newsletterPage": {
-    "joinTheNewsletter": "Sign up for the Newsletter →",
+    "joinTheNewsletter": "Newsletter Signup",
     "joinTheNewsletter2": "Sign up for the newsletter",
     "email": "Email address",
     "subscribe": "Subscribe",

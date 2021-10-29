@@ -25,7 +25,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
   return (
     <div className="flex flex-col items-center" data-cy={dataCy}>
       {businessProjects.map(
-        ({ baseId, titleId, companyId, contributionIDs }) => {
+        ({ baseId, titleId, companyId, contributionIDs }, index) => {
           const usedTechnologies = intl
             .formatMessage({ id: `${baseId}.techStack` })
             .split(',')
@@ -39,33 +39,42 @@ const BusinessProjectList = ({ intl, dataCy }) => {
             ));
 
           return (
-            <div
+            <details
               key={titleId}
               className="border border-text-main w-full flex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
               data-cy={`${dataCy}-${titleId}`}
+              open={index === 0}
             >
-              <h5 className="text-center mb-0">
-                <FormattedMessage id={titleId} />
-              </h5>
-              <p className="italic text-center my-2">
-                <FormattedMessage id={companyId} />
-              </p>
-              <CardDivider />
-              <h6 className="my-4">
-                <FormattedMessage id="projectsPage.keyContributions" />
-              </h6>
-              <ul>
-                {contributionIDs.map(id => (
-                  <li key={id}>
-                    <FormattedMessage id={id} />
-                  </li>
-                ))}
-              </ul>
-              <CardDivider />
-              <div className="flex flex-wrap items-center justify-center">
-                {usedTechnologies}
+              <summary>
+                <span className="text-center font-bold">
+                  <FormattedMessage id={titleId} />
+                </span>
+              </summary>
+              <div>
+                <CardDivider />
+                <div className="flex">
+                  <span className="font-bold">
+                    <FormattedMessage id="projectsPage.businessProjects.customer" />
+                  </span>
+                  &nbsp;
+                  <FormattedMessage id={companyId} />
+                </div>
+                <h6 className="my-4">
+                  <FormattedMessage id="projectsPage.keyContributions" />
+                </h6>
+                <ul>
+                  {contributionIDs.map(id => (
+                    <li key={id}>
+                      <FormattedMessage id={id} />
+                    </li>
+                  ))}
+                </ul>
+                <CardDivider />
+                <div className="flex flex-wrap items-center justify-center">
+                  {usedTechnologies}
+                </div>
               </div>
-            </div>
+            </details>
           );
         }
       )}

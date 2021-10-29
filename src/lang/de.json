@@ -60,6 +60,7 @@
     "keyContributions": "Wesentliche Beiträge:",
     "businessProjectsExcerpt": "Hier ein kleiner Einblick, wie ich meinen Kunden in früheren Projekten geholfen habe:",
     "businessProjects": {
+      "customer": "Kunde:",
       "segmentationTool": {
         "company": "ProSiebenSat.1 Tech Solutions GmbH",
         "title": "Entwicklung eines Tools zur Videosegmentierung",
@@ -121,7 +122,13 @@
     "expert": "5+ Jahre Erfahrung",
     "advanced": "3+ Jahre Erfahrung",
     "intermediate": "1+ Jahre Erfahrung",
-    "elementary": "Grundwissen"
+    "elementary": "Grundwissen",
+    "references": "Referenzen",
+    "freelancerContest": {
+      "title": "IT-Freelancer des Jahres 2021 (3. Platz)",
+      "linkText": "Zur Wettbewerb Website",
+      "description": "Der renommierte und mit Sachpreisen dotierte Wettbewerb zum ‚IT Freelancer des Jahres‘ findet alle zwei Jahre statt. Der erste Wettbewerb wurde 2005 ausgetragen – die Veranstalter sind das IT Freelancer Magazin, die Gesellschaft für Informatik und der DBITS. Die Preissponsoren des Wettbewerbs sind HAYS, GULP, SOLCOM, Etengo (Deutschland) AG und SThree – jeder gehört zu den Top10-Agenturen für die Vermittlung von IT-Freelancern in Deutschland."
+    }
   },
   "contactPage": {
     "title": "Kontaktieren sie mich",
@@ -136,7 +143,7 @@
     }
   },
   "newsletterPage": {
-    "joinTheNewsletter": "Newsletter Anmeldung →",
+    "joinTheNewsletter": "Newsletter Anmeldung",
     "joinTheNewsletter2": "Melde dich für den Newsletter an",
     "email": "Email-Addresse",
     "firstName": "Vorname (Optional)",

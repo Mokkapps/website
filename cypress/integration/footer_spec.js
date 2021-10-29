@@ -20,10 +20,20 @@ describe('Footer Test', () => {
     cy.get('[data-cy=social-link-minutemailer]');
   });
 
+  it('shows buy me a coffee button', () => {
+    cy.get('[data-cy=footer-buy-coffee-button]').should(
+      'have.attr',
+      'href',
+      'https://www.buymeacoffee.com/mokkapps'
+    );
+  });
+
   it('shows a newsletter button', () => {
-    cy.get('[data-cy=footer-newsletter-button]')
-      .find('a')
-      .should('have.attr', 'href', '/newsletter');
+    cy.get('[data-cy=footer-newsletter-button]').should(
+      'have.attr',
+      'href',
+      '/newsletter'
+    );
   });
 
   it('includes link to privacy policy and legal notice', () => {
