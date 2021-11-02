@@ -5,7 +5,7 @@ import TestimonialSlider from '../TestimonialSlider';
 import PropTypes from 'prop-types';
 
 const itFreelancer2021Url =
-  'https://www.freelancermap.de/blog/it-freelancer-des-jahres/';
+  'https://www.it-freelancer-magazin.de/index.php/2021/11/01/it-freelancer-des-jahres-2021-steht-fest/';
 
 const References = ({ dataCy, className }) => (
   <section className={`flex flex-col ${className}`} data-cy={dataCy}>
