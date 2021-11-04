@@ -18,7 +18,7 @@ export const SOCIAL_LINKS = [
   },
   {
     url: 'https://dev.to/mokkapps',
-    icon: 'dev-dot-to',
+    icon: 'devdotto',
     ariaLabel: 'DEV.to',
   },
   {

@@ -34,6 +34,8 @@ const devIcons = {
   graphQL: { class: 'devicon-graphql-plain', displayText: 'GraphQL' },
   python: { class: 'devicon-python-plain', displayText: 'Python' },
   cucumber: { class: 'devicon-cucumber-plain', displayText: 'Cucumber' },
+  storybook: { class: 'devicon-storybook-plain', displayText: 'Storybook' },
+  jest: { class: 'devicon-jest-plain', displayText: 'Jest' },
 };
 
 const DevIcon = ({

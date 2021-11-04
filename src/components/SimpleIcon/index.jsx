@@ -6,7 +6,7 @@ const SimpleIcon = ({ className, iconName }) => (
   <div
     className={className}
     dangerouslySetInnerHTML={{
-      __html: `${simpleIcons.get(iconName).svg}`,
+      __html: `${simpleIcons.Get(iconName).svg}`,
     }}
   />
 );

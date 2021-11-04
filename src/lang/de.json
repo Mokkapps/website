@@ -75,7 +75,7 @@
         "keyContribution1": "Entwicklung von React Wrapper-Komponente um Stencil Web Components in Guidewire Portal einzubinden",
         "keyContribution2": "Entwicklung & Wartung von Web Components in Stencil",
         "keyContribution3": "Migration von separaten Stencil & Storybook Repositories in ein Monorepo",
-        "techStack": "react,javaScript,cucumber,stencil,storybook,guidewire"
+        "techStack": "react,javaScript,cucumber,storybook,stencil,guidewire"
       }
     }
   },

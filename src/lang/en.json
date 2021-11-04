@@ -75,7 +75,7 @@
         "keyContribution1": "Wrote React wrapper components to integrate the Stencil web components into the Guidewire project",
         "keyContribution2": "Developed & maintained web components in Stencil",
         "keyContribution3": "Migrated separated Stencil & Storybook repositories to a monorepo",
-        "techStack": "react,javaScript,cucumber,stencil,storybook,guidewire"
+        "techStack": "react,javaScript,cucumber,storybook,stencil,guidewire"
       }
     }
   },

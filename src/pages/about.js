@@ -54,7 +54,7 @@ const AboutPage = props => {
             <StaticImage
               alt={config.baseNameWithTitle}
               className="my-8 fluid-image"
-              src="../../images/consulting2.jpg"
+              src="../images/consulting2.jpg"
             />
             <HowIWork />
           </div>
