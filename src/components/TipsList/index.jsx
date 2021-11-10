@@ -16,7 +16,7 @@ const TipsList = props => {
       } `}
       data-cy="tips-list"
     >
-      {items.map((item, index) => {
+      {items.map(item => {
         const {
           frontmatter: { title, cover },
           fields: { slug },

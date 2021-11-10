@@ -11,7 +11,7 @@ describe('Tips Page Test', () => {
   });
 
   it('shows tip page if it is clicked', () => {
-    cy.get('[data-cy=blog-post-0]').then($anchor => {
+    cy.get('[data-cy=tip-0]').then($anchor => {
       const href = $anchor[0].href;
 
       cy.get('[data-cy=tip-0]').click();
