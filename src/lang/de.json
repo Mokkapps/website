@@ -38,7 +38,9 @@
     "scheduleMeeting": "Termin vereinbaren",
     "featuredPrivateProjects": "Private Projekte",
     "businessProjectHighlights": "Projekt Highlights",
-    "latestBlogPosts": "Aktuelle Blog Artikel"
+    "latestBlogPosts": "Aktuelle Blog Artikel",
+    "latestTips": "Aktuelle Tips",
+    "moreTipsLink": "Mehr Tips →"
   },
   "blogPage": {
     "title": "Blog",
@@ -81,7 +83,7 @@
   },
   "tipsPage": {
     "title": "Tips",
-    "intro": "Diese Seite beinhaltet einige meiner Tips, die ich in meinen Social Media Kanälen veröffentlicht habe."
+    "intro": "Diese Seite beinhaltet einige kurze Tips, die zu kurz für einen eigenen Blog Artikel sind. {newsletter}, um über neue Tips informiert zu werden."
   },
   "publicationsPage": {
     "title": "Publikationen",

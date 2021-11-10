@@ -59,6 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve('./src/templates/PostTemplate.js');
     const pageTemplate = path.resolve('./src/templates/PageTemplate.js');
+    const tipTemplate = path.resolve('./src/templates/TipTemplate.js');
     const categoryTemplate = path.resolve(
       './src/templates/CategoryTemplate.js'
     );
@@ -123,8 +124,10 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
+        console.log('👷 Created category pages');
 
         // Create posts
+
         const posts = items.filter(item => item.node.fields.source === 'posts');
 
         posts.forEach(({ node }, index) => {
@@ -143,6 +146,28 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
+        console.log('👷 Created post pages');
+
+        // Create tips
+        const tips = items.filter(item => item.node.fields.source === 'tips');
+
+        tips.forEach(({ node }, index) => {
+          const slug = node.fields.slug;
+          const next = index === 0 ? undefined : tips[index - 1].node;
+          const prev =
+            index === tips.length - 1 ? undefined : tips[index + 1].node;
+
+          createPage({
+            path: `/tips${slug}`,
+            component: tipTemplate,
+            context: {
+              slug,
+              prev,
+              next,
+            },
+          });
+        });
+        console.log('👷 Created tips pages');
 
         // create pages
         const pages = items.filter(item => item.node.fields.source === 'pages');
@@ -159,6 +184,7 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
+        console.log('👷 Created pages');
       })
     );
   });

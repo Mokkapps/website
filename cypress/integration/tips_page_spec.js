@@ -4,19 +4,18 @@ describe('Tips Page Test', () => {
     cy.visit('/tips');
   });
 
-  it("shows all tabs", () => {
-    cy.get('[data-cy=tips-tab-vue]');
-    cy.get('[data-cy=tips-tab-js]');
-    cy.get('[data-cy=tips-tab-ts]');
-    cy.get('[data-cy=tips-tab-html]');
-    cy.get('[data-cy=tips-tab-css]');
-    cy.get('[data-cy=tips-tab-other]');
+  it('shows a list of tips', () => {
+    cy.get('[data-cy=tips-list]')
+      .children()
+      .should('have.length.greaterThan', 0);
+  });
 
-    cy.get('[data-cy=tips-js-gallery]').should('be.visible');
-    cy.get('[data-cy=tips-ts-gallery]').should('not.be.visible');
-    cy.get('[data-cy=tips-vue-gallery]').should('not.be.visible');
-    cy.get('[data-cy=tips-html-gallery]').should('not.be.visible');
-    cy.get('[data-cy=tips-css-gallery]').should('not.be.visible');
-    cy.get('[data-cy=tips-other-gallery]').should('not.be.visible');
+  it('shows tip page if it is clicked', () => {
+    cy.get('[data-cy=blog-post-0]').then($anchor => {
+      const href = $anchor[0].href;
+
+      cy.get('[data-cy=tip-0]').click();
+      cy.url().should('include', href);
+    });
   });
 });

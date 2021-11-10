@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { LanguageContext } from '../../context/languageContext';
 
-function BlogLanguageWarning({ className }) {
+function LanguageWarning({ className, type }) {
   const { lang } = useContext(LanguageContext);
 
   const warningIcon = <span role="img" aria-label="Warning">⚠️</span>;
@@ -11,14 +11,15 @@ function BlogLanguageWarning({ className }) {
   return (
     lang === 'de' && (
       <p className={`${className} text-center alert alert-warning`}>
-        {warningIcon} Blog Artikel sind nur in English verfügbar
+        {warningIcon} {type} sind nur in English verfügbar
       </p>
     )
   );
 }
 
-BlogLanguageWarning.propTypes = {
+LanguageWarning.propTypes = {
   className: PropTypes.string,
+  type: PropTypes.string.isRequired,
 };
 
-export default BlogLanguageWarning;
+export default LanguageWarning;

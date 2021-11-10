@@ -23,8 +23,8 @@ import NextPrev from '../components/NextPrev';
 import Share from '../components/Share';
 import { getAllCategories } from '../utils/helper';
 import Button from '../components/Button';
-import BlogLanguageWarning from '../components/BlogLanguageWarning';
 import EditOnGithub from '../components/EditOnGithub';
+import LanguageWarning from "../components/LanguageWarning";
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -94,7 +94,7 @@ const PostTemplate = props => {
     >
       <ArticleWithSidebar categories={allCategories}>
         <Heading title={title} />
-        <BlogLanguageWarning className="my-4" />
+        <LanguageWarning className="my-4" type="Blog Artikel" />
         <PostMeta
           className="my-8"
           authorImage={file}
