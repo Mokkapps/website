@@ -2,6 +2,7 @@ import React from 'react';
 import { getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { graphql, Link } from 'gatsby';
 
 import config from '../content/meta/config';
 
@@ -9,7 +10,6 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import TipsList from '../components/TipsList';
 import LanguageWarning from '../components/LanguageWarning';
-import { Link } from 'gatsby';
 
 const TipsPage = props => {
   const {
