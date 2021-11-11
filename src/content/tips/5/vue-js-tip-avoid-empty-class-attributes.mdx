@@ -1,0 +1,37 @@
+---
+title: 'Vue.js Tip: Avoid Empty Class Attributes'
+description: 'This Vue.js helps to avoid empty class attributes in the rendered HTML'
+date: '2021-11-14'
+cover: 'images/cover.jpg'
+---
+
+import TipCard from '../../../components/TipCard';
+
+export const badCode = `<div :class="isDisabled ? 'disabled' : ''"></div>
+<!-- Will render <div class></div> -->
+`.trim();
+
+export const goodCode = `<div :class="isDisabled ? 'disabled' : null"></div>
+<!-- Will render <div></div> -->`.trim();
+
+![](./images/cover.jpg)
+
+<TipCard highlight="bad" language="html">
+  {badCode}
+</TipCard>
+
+<br />
+
+<TipCard highlight="good" language="html">
+  {goodCode}
+</TipCard>
+
+<br />
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
