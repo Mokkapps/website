@@ -3,9 +3,6 @@ const glob = require(`glob`);
 const fs = require(`fs-extra`);
 const path = require(`path`);
 const inquirer = require('inquirer');
-const {
-  anchorsTargetIsEquivalentToSelf,
-} = require('gatsby-plugin-catch-links/catch-links');
 
 const MAX_WIDTH = 1800;
 const QUALITY = 70;
@@ -28,7 +25,12 @@ async function optimizeImages() {
     {
       type: 'list',
       name: 'selectedPattern',
-      choices: [defaultPattern, imageFolderPattern, latestBlogPostPattern, latestTipPattern],
+      choices: [
+        defaultPattern,
+        imageFolderPattern,
+        latestBlogPostPattern,
+        latestTipPattern,
+      ],
       message:
         'Select a pattern to specify which images should be optimized. Either choose all or only from the latest blog post.',
     },

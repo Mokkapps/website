@@ -72,7 +72,7 @@ export const query = graphql`
     }
     tips: allMdx(
       filter: { fields: { source: { eq: "tips" }, slug: { ne: null } } }
-      sort: { fields: [fields___prefix], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
