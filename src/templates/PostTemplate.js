@@ -51,7 +51,6 @@ const PostTemplate = props => {
           cover,
           bannerCredit,
           canonical,
-          imageShare,
         },
         fields: { slug, prefix },
         timeToRead,
@@ -74,12 +73,7 @@ const PostTemplate = props => {
   const allCategories = getAllCategories(allEdges);
   const handleNewComment = () => {};
 
-  let seoImage = null;
-  if (imageShare) {
-    seoImage = `${config.siteUrl}${getSrc(imageShare)}`;
-  } else if (cover) {
-    seoImage = `${config.siteUrl}${getSrc(cover)}`;
-  }
+  const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   return (
     <Layout
@@ -176,16 +170,6 @@ export const query = graphql`
         title
         canonical
         bannerCredit
-        imageShare {
-          childImageSharp {
-            gatsbyImageData(
-              width: 500
-              layout: CONSTRAINED
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-            )
-          }
-        }
         categories
         cover {
           childImageSharp {

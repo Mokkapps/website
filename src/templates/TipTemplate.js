@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import CalendarIcon from 'react-feather/dist/icons/calendar';
 
 import config from '../../src/content/meta/config';
@@ -10,19 +10,20 @@ import Heading from '../components/Heading';
 import BodyText from '../components/BodyText';
 import LanguageWarning from '../components/LanguageWarning';
 import ArticleWithSidebar from '../components/ArticleWithSidebar';
-import { FormattedDate, FormattedMessage } from "react-intl";
+import { FormattedDate, FormattedMessage } from 'react-intl';
 import Share from '../components/Share';
 import EditOnGithub from '../components/EditOnGithub';
-import Author from "../components/Author";
-import ReactDisqusComments from "react-disqus-comments";
-import Button from "../components/Button";
+import Author from '../components/Author';
+import ReactDisqusComments from 'react-disqus-comments';
+import Button from '../components/Button';
+import { getSrc } from 'gatsby-plugin-image';
 
 const TipTemplate = props => {
   const {
     data: {
       tip: {
         body,
-        frontmatter: { title, description, date },
+        frontmatter: { title, description, date, cover },
         fields: { slug },
       },
     },
@@ -33,6 +34,7 @@ const TipTemplate = props => {
 
   const { siteUrl, siteTitlePostfix } = config;
 
+  const seoImage = `${config.siteUrl}${getSrc(cover)}`;
   const url = `${siteUrl}/tips${slug}`;
   const shareProps = {
     url,
@@ -46,6 +48,8 @@ const TipTemplate = props => {
         url: `${siteUrl}${slug}`,
         title: `${title}${siteTitlePostfix}`,
         description: description,
+        image: seoImage,
+        postSEO: true,
       }}
     >
       <ArticleWithSidebar>
@@ -95,6 +99,16 @@ export const query = graphql`
         title
         description
         date
+        cover {
+          childImageSharp {
+            gatsbyImageData(
+              height: 700
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
+          }
+        }
       }
     }
   }
