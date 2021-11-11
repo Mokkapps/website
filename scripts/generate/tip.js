@@ -1,5 +1,5 @@
 /**
- * A NodeJS script which generates a blog post template
+ * A NodeJS script which generates a tip template
  * Inspired by https://github.com/kentcdodds/kentcdodds.com/blob/master/generate/blogpost.js
  */
 
@@ -11,39 +11,23 @@ import mkdirp from 'mkdirp';
 import slugify from '@sindresorhus/slugify';
 import inquirer from 'inquirer';
 
-import { titleCaps } from './title-caps,js';
+import { titleCaps } from './title-caps.js';
 
 const today = new Date();
 const defaultDate = new Date().setDate(today.getDate() + 5);
+const fromRoot = (...p) => path.join(process.env.PWD, ...p);
 
-async function generateBlogPost() {
-  const { title, categories, date, dryRun } = await inquirer.prompt([
+async function generateTip() {
+  const { title, description, date, dryRun } = await inquirer.prompt([
     {
       type: 'input',
       name: 'title',
       message: 'Title',
     },
     {
-      type: 'checkbox',
-      name: 'categories',
-      choices: [
-        'development',
-        'spring',
-        'career',
-        'productivity',
-        'tools',
-        'angular',
-        'react',
-        'freelancing',
-        'testing',
-        'fullstack',
-        'frontend',
-        'backend',
-        'aws',
-        'vue-js',
-        'node-js',
-      ],
-      message: 'Categories',
+      type: 'input',
+      name: 'description',
+      message: 'Description',
     },
     {
       type: 'input',
@@ -59,23 +43,30 @@ async function generateBlogPost() {
     },
   ]);
   const slug = slugify(title);
-  const year = new Date(date).getFullYear();
-  const destination = path.resolve(
-    `src/content/posts/${year}`,
-    `${date}___${slug}`
+  const latestTipsFolders = fs.readdirSync(fromRoot(`src/content/tips`));
+  const latestTipsNumber = Number(
+    latestTipsFolders[latestTipsFolders.length - 1]
   );
+
+  const destination = path.resolve(
+    `src/content/tips/${latestTipsNumber + 1}`
+  );
+
   const mdObj = {
     title: titleCaps(title),
-    categories,
+    description,
+    date,
     cover: 'images/cover.jpg',
   };
   const yaml = jsToYaml.stringify(removeEmpty(mdObj));
   const mdData = `---
 ${yaml}---
+![](./images/cover.jpg)
 
-## Conclusion
+---
+<br/>
 
-If you liked this article, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new blog posts and more content from me.
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
 
 Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
 `;
@@ -87,7 +78,7 @@ Alternatively (or additionally), you can also [subscribe to my newsletter](https
     // create directory
     mkdirp.sync(destination);
 
-    const markdownPath = path.join(destination, 'index.md');
+    const markdownPath = path.join(destination, `${slug}.mdx`);
     const imagesFolderPath = path.join(destination, 'images');
     // create markdown file
     fs.writeFileSync(markdownPath, mdData);
@@ -113,6 +104,6 @@ function removeEmpty(obj) {
   }, {});
 }
 
-generateBlogPost().catch(e => console.error('Failed to create blog post', e));
+generateTip().catch(e => console.error('Failed to create tip', e));
 
 /* eslint no-console:0 */

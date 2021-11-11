@@ -34,6 +34,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `tips`,
+        path: `${__dirname}/src/content/tips/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
       },
@@ -55,13 +62,6 @@ module.exports = {
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify`,
-    {
-      resolve: 'gatsby-source-imgur-albums',
-      options: {
-        clientId: process.env.IMGUR_CLIENT_ID,
-        albumHashes: ['Jboo80G', 'keXG4EM', '2aduTTq', 'YiITFQv', 'PAEMJZM', 'rgMOyRr'],
-      },
-    },
     `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-plugin-sass',

@@ -1,9 +1,9 @@
 describe('404 Page Test', () => {
   beforeEach(() => {
-    cy.visit('/any-test-url');
+    cy.visit('/any-test-url', { failOnStatusCode: false });
 
     // click preview custom 404 page in development mode
-    cy.get('button').click();
+    cy.contains('Preview custom 404 page').click();
   });
 
   it('shows custom 404 page', () => {

@@ -25,6 +25,7 @@ import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 import BusinessProjectList from '../components/BusinessProjectsList';
 import DevIcon from '../components/DevIcon';
 import References from "../components/References";
+import Tip from "../components/Tip";
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -44,10 +45,11 @@ const ListElement = styled.li`
 
 const IndexPage = props => {
   const {
-    data: { projectAssets, latestPosts, seoImage },
+    data: { projectAssets, latestPosts, latestTips: latestTipsData, seoImage },
   } = props;
 
   const posts = latestPosts.edges.map(edge => edge.node);
+  const tips = latestTipsData.edges.map(edge => edge.node);
 
   const {
     siteTitlePostfix,
@@ -137,6 +139,38 @@ const IndexPage = props => {
     </Button>
   );
 
+  const latestTips = (
+    <section className="flex flex-col items-center justify-center">
+      <h2 className="text-center mt-10 mb-4 uppercase">
+        <FormattedMessage id="landingPage.latestTips" />
+      </h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {tips.map(tip => {
+          const {
+            frontmatter: { title, cover },
+            fields: { slug },
+          } = tip;
+          return (
+            <Tip
+              id="card"
+              key={slug}
+              cover={cover}
+              title={title}
+              slug={slug}
+            />
+          );
+        })}
+      </div>
+
+      <LinkButton
+        className="mb-10"
+        dataCy="hero-more-tips-button"
+        href="/tips"
+        i18nId="landingPage.moreTipsLink"
+      />
+    </section>
+  );
+
   const latestBlogPosts = (
     <section className="flex flex-col items-center justify-center">
       <h2 className="text-center mt-10 mb-4 uppercase">
@@ -163,7 +197,7 @@ const IndexPage = props => {
 
       <LinkButton
         className="mb-10"
-        dataCy="hero-blog-more-button"
+        dataCy="hero-more-blog-posts-button"
         href="/blog"
         i18nId="general.moreBlogPostsLink"
       />
@@ -272,6 +306,7 @@ const IndexPage = props => {
         {introduction}
         {businessProjects}
         {latestBlogPosts}
+        {latestTips}
         {featuredPrivateProjects}
       </Article>
     </Layout>
@@ -303,6 +338,27 @@ export const query = graphql`
     latestPosts: allMdx(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
       sort: { fields: [fields___prefix], order: DESC }
+      limit: 4
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            cover {
+              childImageSharp {
+                gatsbyImageData(width: 1000)
+              }
+            }
+          }
+        }
+      }
+    },
+    latestTips: allMdx(
+      filter: { fields: { source: { eq: "tips" }, slug: { ne: null } } }
+      sort: { fields: [frontmatter___date], order: DESC }
       limit: 4
     ) {
       edges {

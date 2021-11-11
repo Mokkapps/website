@@ -3,20 +3,44 @@ import React from 'react';
 
 import CategoryLink from '../CategoryLink';
 
-const
-  CategorySelection = ({ categories, compact, className, dataCy }) => {
-  const categoriesLinks = categories.map(category => (
+const priorityMap = {
+  'vue-js': 10,
+  frontend: 9,
+  fullstack: 8,
+  development: 7,
+};
+
+const CategorySelection = ({ categories, compact, className, dataCy }) => {
+  const categoryPrioritized = categories
+    .map(category => ({
+      priority: priorityMap[category] ?? 1,
+      name: category,
+    }))
+    .sort((a, b) => {
+      if (a.priority > b.priority) {
+        return -1;
+      }
+      if (a.priority < b.priority) {
+        return 1;
+      }
+      return 0;
+    });
+
+  const categoriesLinks = categoryPrioritized.map(category => (
     <CategoryLink
       compact={compact}
-      key={category}
+      key={category.name}
       className={className}
-      category={category}
-      dataCy={`blog-category-${category}`}
+      category={category.name}
+      dataCy={`blog-category-${category.name}`}
     />
   ));
 
   return (
-    <div data-cy={dataCy} className={`${className} flex flex-wrap justify-center lg:justify-start`}>
+    <div
+      data-cy={dataCy}
+      className={`${className} flex flex-wrap justify-center lg:justify-start`}
+    >
       {categoriesLinks}
     </div>
   );

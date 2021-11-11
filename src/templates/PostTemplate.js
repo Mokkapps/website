@@ -23,8 +23,8 @@ import NextPrev from '../components/NextPrev';
 import Share from '../components/Share';
 import { getAllCategories } from '../utils/helper';
 import Button from '../components/Button';
-import BlogLanguageWarning from '../components/BlogLanguageWarning';
 import EditOnGithub from '../components/EditOnGithub';
+import LanguageWarning from "../components/LanguageWarning";
 
 const metaIcons = {
   calendar: CalendarIcon,
@@ -51,7 +51,6 @@ const PostTemplate = props => {
           cover,
           bannerCredit,
           canonical,
-          imageShare,
         },
         fields: { slug, prefix },
         timeToRead,
@@ -74,12 +73,7 @@ const PostTemplate = props => {
   const allCategories = getAllCategories(allEdges);
   const handleNewComment = () => {};
 
-  let seoImage = null;
-  if (imageShare) {
-    seoImage = `${config.siteUrl}${getSrc(imageShare)}`;
-  } else if (cover) {
-    seoImage = `${config.siteUrl}${getSrc(cover)}`;
-  }
+  const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   return (
     <Layout
@@ -94,7 +88,7 @@ const PostTemplate = props => {
     >
       <ArticleWithSidebar categories={allCategories}>
         <Heading title={title} />
-        <BlogLanguageWarning className="my-4" />
+        <LanguageWarning className="my-4" type="Blog Artikel" />
         <PostMeta
           className="my-8"
           authorImage={file}
@@ -176,16 +170,6 @@ export const query = graphql`
         title
         canonical
         bannerCredit
-        imageShare {
-          childImageSharp {
-            gatsbyImageData(
-              width: 500
-              layout: CONSTRAINED
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-            )
-          }
-        }
         categories
         cover {
           childImageSharp {

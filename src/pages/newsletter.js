@@ -11,6 +11,7 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import NewsletterSubscription from '../components/NewsletterSubscription';
 import LinkButton from '../components/LinkButton';
+import { baseFormattedMessageValues } from '../utils/helper';
 
 const NewsletterPage = props => {
   const {
@@ -31,16 +32,28 @@ const NewsletterPage = props => {
       <Article>
         <Heading i18nId="newsletterPage.newsletter" className="mb-8" />
         <p className="w-100 text-center mb-4">
-          <FormattedMessage id="newsletterPage.newsletterInfoLine1" />
+          <FormattedMessage
+            id="newsletterPage.newsletterInfoLine1"
+            values={{ ...baseFormattedMessageValues }}
+          />
         </p>
         <p className="w-100 text-center mb-4">
-          <FormattedMessage id="newsletterPage.newsletterInfoLine2" />
+          <FormattedMessage
+            id="newsletterPage.newsletterInfoLine2"
+            values={{ ...baseFormattedMessageValues }}
+          />
         </p>
         <p className="w-100 text-center mb-4">
-          <FormattedMessage id="newsletterPage.newsletterInfoLine3" />
+          <FormattedMessage
+            id="newsletterPage.newsletterInfoLine3"
+            values={{ ...baseFormattedMessageValues }}
+          />
         </p>
         <p className="w-100 text-center mb-4">
-          <FormattedMessage id="newsletterPage.newsletterInfoLine4" />
+          <FormattedMessage
+            id="newsletterPage.newsletterInfoLine4"
+            values={{ ...baseFormattedMessageValues }}
+          />
         </p>
         <h2 className="mt-16 text-center">
           <FormattedMessage id="newsletterPage.subscription" />
@@ -52,7 +65,7 @@ const NewsletterPage = props => {
         <LinkButton
           newTab
           dataCy="newsletter-archive-link-button"
-          href="https://www.getrevue.co/profile/mokkapps#archive"
+          href="http://newsletter.mokkapps.de/#archive"
           i18nId="newsletterPage.visitArchive"
         />
       </Article>

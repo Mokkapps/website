@@ -7,11 +7,11 @@ import { FormattedMessage } from 'react-intl';
 import config from '../content/meta/config';
 import { getAllCategories, metaIcons } from '../utils/helper';
 
-import BlogLanguageWarning from '../components/BlogLanguageWarning';
 import Layout from '../components/Layout';
 import BlogPostList from '../components/BlogPostList';
 import Heading from '../components/Heading';
 import CategorySelection from '../components/CategorySelection';
+import LanguageWarning from '../components/LanguageWarning';
 
 const BlogPage = props => {
   const {
@@ -92,7 +92,7 @@ const BlogPage = props => {
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col justify-center items-center md:px-24">
             <Heading className="mb-8" i18nId="blogPage.title" />
-            <BlogLanguageWarning className="w-full mb-4" />
+            <LanguageWarning className="w-full mb-4" type="Blog Artikel" />
             <p className="my-4">
               <FormattedMessage
                 id="blogPage.introduction"

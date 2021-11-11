@@ -1,8 +1,12 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "env": {
     "browser": true,
     "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "requireConfigFile": false
   },
   "extends": ["plugin:jsx-a11y/recommended", "plugin:react/recommended", "eslint:recommended"],
   "plugins": ["jsx-a11y"],

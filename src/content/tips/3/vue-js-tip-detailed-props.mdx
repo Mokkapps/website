@@ -1,0 +1,48 @@
+---
+title: 'Vue.js Tip: Detailed Prop Definitions'
+description: 'Define your Vue.js prop definitions as detailed as possible'
+date: '2021-11-12'
+cover: 'images/cover.jpg'
+---
+
+import TipCard from '../../../components/TipCard';
+
+![](./images/cover.jpg)
+
+Your Vue.js prop definitions should always be as detailed as possible, specifying at least type(s):
+
+export const badCode = `props: {
+  status: String
+}`.trim();
+
+export const goodCode = `props: {
+  status: {
+    type: String,
+    required: true,
+    validator: value => { return [ 'syncing', 'synced', 'version-conflict', 'error' ].includes(value) }
+  }
+}`.trim();
+
+<TipCard highlight="good" language="js">
+  {goodCode}
+</TipCard>
+
+<br />
+
+<TipCard highlight="bad" language="js">
+  {badCode}
+</TipCard>
+
+<br />
+
+This has two advantages:
+ - API documentation: It's easy to see how the component is meant to be used.
+ - Development Warnings: In development mode, you will get warnings if you pass incorrectly formatted props to a component.
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

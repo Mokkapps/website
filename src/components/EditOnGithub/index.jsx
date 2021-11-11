@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { sendCustomAnalyticsEvent } from '../../utils/helper';
 
-const EditOnGithub = ({ prefix, slug }) => {
-  const year = prefix.substring(0, 4);
-  const slugWithoutLeadingSlash = slug.substring(1);
-  const url = `https://github.com/Mokkapps/website/tree/master/src/content/posts/${year}/${prefix}___${slugWithoutLeadingSlash}/index.md`;
+const EditOnGithub = ({ prefix, slug, isTip }) => {
+  let url;
+
+  if (isTip) {
+    const slugWithoutTrailingSlash = slug.slice(0, -1);
+    url = `https://github.com/Mokkapps/website/tree/master/src/content/tips${slugWithoutTrailingSlash}.mdx`;
+  } else {
+    const year = prefix.substring(0, 4);
+    const slugWithoutLeadingSlash = slug.substring(1);
+    url = `https://github.com/Mokkapps/website/tree/master/src/content/posts/${year}/${prefix}___${slugWithoutLeadingSlash}/index.md`;
+  }
 
   return (
     <div className="flex bg-secondary flex-col p-4 border-l-2 border-accent">
@@ -34,7 +41,8 @@ const EditOnGithub = ({ prefix, slug }) => {
 };
 
 EditOnGithub.propTypes = {
-  prefix: PropTypes.string.isRequired,
+  prefix: PropTypes.string,
+  isTip: PropTypes.bool,
   slug: PropTypes.string.isRequired,
 };
 

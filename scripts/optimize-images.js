@@ -12,16 +12,25 @@ const imageFolderPattern = `src/images/**/${fileExtensionsPattern}`;
 const fromRoot = (...p) => path.join(process.env.PWD, ...p);
 
 async function optimizeImages() {
+  const latestTipsFolders = fs.readdirSync(fromRoot(`src/content/tips`));
+  const latestTip = latestTipsFolders[latestTipsFolders.length - 1];
+  const latestTipPattern = `src/content/tips/${latestTip}/**/${fileExtensionsPattern}`;
+
   const blogPostsThisYearPath = `src/content/posts/${new Date().getFullYear()}`;
-  const blogPostsThis = fs.readdirSync(fromRoot(blogPostsThisYearPath));
-  const latestBlogPost = blogPostsThis[blogPostsThis.length - 1];
+  const blogPostsFolders = fs.readdirSync(fromRoot(blogPostsThisYearPath));
+  const latestBlogPost = blogPostsFolders[blogPostsFolders.length - 1];
   const latestBlogPostPattern = `${blogPostsThisYearPath}/${latestBlogPost}/**/${fileExtensionsPattern}`;
 
   const { selectedPattern } = await inquirer.prompt([
     {
       type: 'list',
       name: 'selectedPattern',
-      choices: [defaultPattern, imageFolderPattern, latestBlogPostPattern],
+      choices: [
+        defaultPattern,
+        imageFolderPattern,
+        latestBlogPostPattern,
+        latestTipPattern,
+      ],
       message:
         'Select a pattern to specify which images should be optimized. Either choose all or only from the latest blog post.',
     },

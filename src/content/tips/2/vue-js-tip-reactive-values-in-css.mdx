@@ -1,0 +1,45 @@
+---
+title: "Vue.js Tip: Reactive Values in CSS"
+description: "In Vue 3 it is possible to use reactive values in CSS"
+date: "2021-11-11"
+cover: "images/cover.jpg"
+---
+![](./images/cover.jpg)
+
+Since [Vue 3](https://v3.vuejs.org/) it is possible to use reactive values in the `<style>`:
+
+```vue
+<template>
+  <span class="label">Hello World!</span>
+</template>
+
+<script>
+export default {
+  props: {
+    color: {
+      type: String,
+      default: 'blue',
+    },
+  }
+};
+</script>
+
+<style>
+  .label {
+    color: v-bind(color);
+  }
+</style>
+```
+
+In this example we bind the `color` property of our Vue component to the CSS color property of our label.
+
+Internally, Vue uses CSS variables that are scoped to each component.
+
+More info can be found in the [official documentation](https://v3.vuejs.org/api/sfc-style.html?ck_subscriber_id=1460864714#state-driven-dynamic-css).
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

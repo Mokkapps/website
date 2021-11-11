@@ -38,7 +38,9 @@
     "scheduleMeeting": "Termin vereinbaren",
     "featuredPrivateProjects": "Private Projekte",
     "businessProjectHighlights": "Projekt Highlights",
-    "latestBlogPosts": "Aktuelle Blog Artikel"
+    "latestBlogPosts": "Aktuelle Blog Artikel",
+    "latestTips": "Aktuelle Tips",
+    "moreTipsLink": "Mehr Tips →"
   },
   "blogPage": {
     "title": "Blog",
@@ -81,7 +83,7 @@
   },
   "tipsPage": {
     "title": "Tips",
-    "intro": "Diese Seite beinhaltet einige meiner Tips, die ich in meinen Social Media Kanälen veröffentlicht habe."
+    "intro": "Diese Seite beinhaltet einige kurze Tips, die zu kurz für einen eigenen Blog Artikel sind. {newsletter}, um über neue Tips informiert zu werden."
   },
   "publicationsPage": {
     "title": "Publikationen",
@@ -149,8 +151,8 @@
     "firstName": "Vorname (Optional)",
     "lastName": "Nachname (Optional)",
     "subscribe": "Anmelden",
-    "newsletterInfoLine1": "Ich bin Senior Freelance Software Engineer und Blogger.",
-    "newsletterInfoLine2": "Ich interessiere mich für die Programmiersprachen JavaScript, TypeScript und Java. Bei Frameworks liegt mein Schwerpunkt auf Vue.js und Spring Boot. ",
+    "newsletterInfoLine1": "Ich bin Senior Frontend Developer, Freelancer und Blogger.",
+    "newsletterInfoLine2": "Mein Fokus liegt auf <mark>Vue.js</mark>. Ich interessiere mich für die Programmiersprachen JavaScript, TypeScript und Java.",
     "newsletterInfoLine3": "Gelegentlich gebe ich auch Ratschläge zum Thema Karriere und Freelancing.",
     "newsletterInfoLine4": "Meine wöchentlichen Emails spiegeln diese Präferenzen wieder.",
     "newsletter": "Newsletter",

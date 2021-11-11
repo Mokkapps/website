@@ -113,8 +113,3 @@ package = "@netlify/plugin-gatsby"
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
-
-[[plugins]]
-package = "netlify-plugin-a11y"
-  [plugins.inputs]
-    resultMode = "warn"

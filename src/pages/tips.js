@@ -1,82 +1,25 @@
-import React, { useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import React from 'react';
 import { getSrc } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Gallery from '@browniebroke/gatsby-image-gallery';
+import { graphql, Link } from 'gatsby';
 
 import config from '../content/meta/config';
 
 import Layout from '../components/Layout';
-import Article from '../components/Article';
 import Heading from '../components/Heading';
-
-const imgurAlbumMap = {
-  js: {
-    albumId: 'db2d3319-93fa-5810-a3bf-333083458bdb',
-    tabIndex: 0,
-    displayName: 'JavaScript',
-  },
-  ts: {
-    albumId: '42a2dd14-c0bf-5c77-8931-d938ee61dd8e',
-    tabIndex: 1,
-    displayName: 'TypeScript',
-  },
-  vue: {
-    albumId: '27cb6538-d9a5-5f84-999e-a3fb8785e7e4',
-    tabIndex: 2,
-    displayName: 'Vue.js',
-  },
-  html: {
-    albumId: '0e02c7a4-a4f9-54e5-9374-52b5065f2643',
-    tabIndex: 3,
-    displayName: 'HTML',
-  },
-  css: {
-    albumId: 'bdfa9b27-b54d-5451-8186-b5044c1c9e75',
-    tabIndex: 4,
-    displayName: 'CSS',
-  },
-  other: {
-    albumId: '265e925b-5fc1-59af-8758-ecbcffccbb91',
-    tabIndex: 5,
-    displayName: 'Other',
-  },
-};
+import TipsList from '../components/TipsList';
+import LanguageWarning from '../components/LanguageWarning';
 
 const TipsPage = props => {
   const {
-    data: { imgurAlbums, seoImage },
+    data: {
+      tips: { edges },
+      seoImage,
+    },
   } = props;
+  const allTips = edges.map(edge => edge.node);
   const { siteUrl, siteTitlePostfix } = config;
-
-  const [tabIndex, setTabIndex] = useState(0);
-
-  const sortImages = (a, b) => {
-    const { datetime: datetimeA } = a;
-    const { datetime: datetimeB } = b;
-
-    return datetimeB - datetimeA;
-  };
-
-  const getAlbumNodes = key =>
-    imgurAlbums.nodes.find(node => node.id === imgurAlbumMap[key].albumId);
-
-  const mapToChildImageSharp = imageData => imageData.localFile.childImageSharp;
-
-  // eslint-disable-next-line react/prop-types
-  const ImageWrapper = ({ children, onClick }) => (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <div
-      className="custom-image-gallery-wrapper"
-      role="button"
-      tabIndex={0}
-      onClick={onClick}
-    >
-      {children}
-    </div>
-  );
 
   return (
     <Layout
@@ -84,44 +27,31 @@ const TipsPage = props => {
         url: `${siteUrl}/tips`,
         title: `Tips${siteTitlePostfix}`,
         description:
-          'A collection of tips for certain programming languages, frameworks and tools',
+          'A collection of short tips about topics like frontend, Vue.js, JavaScript, TypeScript, HTML, CSS and more.',
         image: `${config.siteUrl}${getSrc(seoImage)}`,
       }}
     >
-      <Article>
-        <Heading i18nId="tipsPage.title" />
-        <p className="text-center my-8">
-          <FormattedMessage id="tipsPage.intro" />
-        </p>
-        <Tabs
-          selectedIndex={tabIndex}
-          onSelect={index => setTabIndex(index)}
-          data-cy="tips-tabs"
-        >
-          <TabList>
-            {Object.entries(imgurAlbumMap).map(([key, value]) => (
-              <Tab key={key} data-cy={`tips-tab-${key}`}>
-                {value.displayName}
-              </Tab>
-            ))}
-          </TabList>
-
-          {Object.keys(imgurAlbumMap).map(key => (
-            <TabPanel
-              key={key}
-              className="flex flex-col justify-center"
-              data-cy={`tips-${key}-gallery`}
-            >
-              <Gallery
-                customWrapper={ImageWrapper}
-                images={getAlbumNodes(key)
-                  .images.sort(sortImages)
-                  .map(mapToChildImageSharp)}
+      <article className="px-8 md:px-24 py-8">
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col justify-center items-center md:px-24">
+            <Heading i18nId="tipsPage.title" />
+            <LanguageWarning className="w-full mb-4" type="Tips" />
+            <p className="text-center my-8">
+              <FormattedMessage
+                id="tipsPage.intro"
+                values={{
+                  newsletter: (
+                    <Link to="/newsletter">
+                      <FormattedMessage id="newsletterPage.joinTheNewsletter2" />
+                    </Link>
+                  ),
+                }}
               />
-            </TabPanel>
-          ))}
-        </Tabs>
-      </Article>
+            </p>
+            <TipsList items={allTips} author={config.authorName} />
+          </div>
+        </div>
+      </article>
     </Layout>
   );
 };
@@ -140,22 +70,28 @@ export const query = graphql`
         gatsbyImageData(layout: FIXED)
       }
     }
-    imgurAlbums: allImgurAlbum {
-      nodes {
-        id
-        title
-        images_count
-        images {
-          datetime
-          link
-          localFile {
-            childImageSharp {
-              thumb: gatsbyImageData(
-                width: 200
-                height: 100
-                placeholder: BLURRED
-              )
-              full: gatsbyImageData(width: 500, layout: FULL_WIDTH)
+    tips: allMdx(
+      filter: { fields: { source: { eq: "tips" }, slug: { ne: null } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            prefix
+          }
+          frontmatter {
+            title
+            categories
+            cover {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 700
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
+              }
             }
           }
         }

@@ -10,7 +10,7 @@ describe('Footer Test', () => {
       .children()
       .should('have.length', SOCIAL_LINKS.length);
     cy.get('[data-cy=social-link-twitter]');
-    cy.get('[data-cy=social-link-dev-dot-to]');
+    cy.get('[data-cy=social-link-devdotto]');
     cy.get('[data-cy=social-link-linkedin]');
     cy.get('[data-cy=social-link-instagram]');
     cy.get('[data-cy=social-link-facebook]');
@@ -64,10 +64,10 @@ describe('Footer Test', () => {
   });
 
   it('navigates to dev.to page', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'dev-dot-to').map(
+    const url = SOCIAL_LINKS.filter(link => link.icon === 'devdotto').map(
       link => link.url
     );
-    cy.get('[data-cy=social-link-dev-dot-to]').should(
+    cy.get('[data-cy=social-link-devdotto]').should(
       'have.attr',
       'href',
       url[0]

@@ -1,6 +1,6 @@
 import config from '../../src/content/meta/config';
 import { SOCIAL_LINKS } from '../../src/components/SocialLink/SocialLinks';
-import { BUSINESS_PROJECTS } from "../../src/components/BusinessProjectsList";
+import { BUSINESS_PROJECTS } from '../../src/components/BusinessProjectsList';
 
 describe('Home Page Test', () => {
   beforeEach(() => {
@@ -40,14 +40,22 @@ describe('Home Page Test', () => {
   it('shows latest blog posts', () => {
     cy.get('[data-cy=card-blog-post').should('have.length', 4);
 
-    cy.get('[data-cy=hero-blog-more-button]').click();
+    cy.get('[data-cy=hero-more-blog-posts-button]').click();
     cy.url().should('include', '/blog');
   });
 
+  it('shows latest tips', () => {
+    cy.get('[data-cy=tip-card')
+      .should('have.length.greaterThan', 0)
+      .should('have.length.lessThan', 5);
+
+    cy.get('[data-cy=hero-more-tips-button]').click();
+    cy.url().should('include', '/tips');
+  });
+
   it('shows a sidebar menu with social links', () => {
-    cy.get('[data-cy=desktop-sidebar-social-links').children().should(
-      'have.length',
-      SOCIAL_LINKS.filter(link => link.favorite).length
-    );
+    cy.get('[data-cy=desktop-sidebar-social-links')
+      .children()
+      .should('have.length', SOCIAL_LINKS.filter(link => link.favorite).length);
   });
 });
