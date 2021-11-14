@@ -22,7 +22,7 @@ const HireTheAuthor = () => {
         onClick={() => sendCustomAnalyticsEvent('Hire the author card clicked')}
       >
         <h3 className="text-main-text p-2 mb-0">
-          <FormattedMessage id="hireTheAuthor.title" />
+          <FormattedMessage id="sidebar.hireTheAuthor.title" />
         </h3>
         <StaticImage
           alt={config.baseNameWithTitle}

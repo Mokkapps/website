@@ -3,13 +3,14 @@ import Prism from 'prismjs';
 import { FaRegCheckCircle, FaRegTimesCircle } from 'react-icons/fa';
 
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 const TipCard = ({ children, language, highlight }) => {
   const codeElement = useRef(null);
 
   useEffect(() => {
     if (codeElement && codeElement.current) {
-      Prism.highlightElement(codeElement.current)
+      Prism.highlightElement(codeElement.current);
     }
   }, []);
 
@@ -32,11 +33,19 @@ const TipCard = ({ children, language, highlight }) => {
       )}
       <div className="gatsby-highlight mt-2" data-language={languageClassName}>
         <pre className={languageClassName}>
-          <code ref={codeElement} className={languageClassName}>{children}</code>
+          <code ref={codeElement} className={languageClassName}>
+            {children}
+          </code>
         </pre>
       </div>
     </div>
   );
+};
+
+TipCard.propTypes = {
+  children: React.node,
+  language: PropTypes.string,
+  highlight: PropTypes.string,
 };
 
 export default TipCard;

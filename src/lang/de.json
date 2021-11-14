@@ -150,7 +150,7 @@
     "email": "Email-Addresse",
     "firstName": "Vorname (Optional)",
     "lastName": "Nachname (Optional)",
-    "subscribe": "Anmelden",
+    "subscribe": "Jetzt anmelden",
     "newsletterInfoLine1": "Ich bin Senior Frontend Developer, Freelancer und Blogger.",
     "newsletterInfoLine2": "Mein Fokus liegt auf <mark>Vue.js</mark>. Ich interessiere mich für die Programmiersprachen JavaScript, TypeScript und Java.",
     "newsletterInfoLine3": "Gelegentlich gebe ich auch Ratschläge zum Thema Karriere und Freelancing.",
@@ -182,8 +182,13 @@
     "testimonialName2": "T.M., Head of Department Audi mobility, jambit GmbH",
     "testimonialText2": "Michael war als Festangestellter in unserer Firma tätig und hat immer absolut exzellente Arbeit geleistet. Kann ihn nur empfehlen!"
   },
-  "hireTheAuthor": {
-    "title": "Beauftrage den Autor"
+  "sidebar": {
+    "hireTheAuthor": {
+      "title": "Beauftrage den Autor"
+    },
+    "newsletter": {
+      "title": "Wöchentliche Vue.js News"
+    }
   },
   "businessCardPage": {
     "title": "Visitenkarte"

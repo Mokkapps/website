@@ -148,7 +148,7 @@
     "joinTheNewsletter": "Newsletter Signup",
     "joinTheNewsletter2": "Sign up for the newsletter",
     "email": "Email address",
-    "subscribe": "Subscribe",
+    "subscribe": "Subscribe Now",
     "firstName": "First name (Optional)",
     "lastName": "Last name (Optional)",
     "newsletterInfoLine1": "I'm a Senior Frontend Developer, Freelancer and Blogger.",
@@ -182,8 +182,13 @@
     "testimonialName2": "T.M., Head of Department Audi mobility, jambit GmbH",
     "testimonialText2": "Michael worked as a permanent employee in our company and has always done an absolutely excellent job. I can only recommend him!"
   },
-  "hireTheAuthor": {
-    "title": "Hire The Author"
+  "sidebar": {
+    "hireTheAuthor": {
+      "title": "Hire The Author"
+    },
+    "newsletter": {
+      "title": "Weekly Vue.js News"
+    }
   },
   "businessCardPage": {
     "title": "Business Card"

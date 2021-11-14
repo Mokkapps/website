@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 import SocialLinks from '../SocialLink/SocialLinks';
-import NewsletterButton from '../NewsletterButton';
+import NewsletterSubscription from '../NewsletterSubscription';
 
 const Footer = () => (
   <footer className="relative flex flex-shrink-0 flex-col items-center justify-center py-8">
@@ -12,9 +12,11 @@ const Footer = () => (
       className="flex flex-wrap justify-center"
       dataCy="footer-social-links"
     />
+    <div className="flex w-80 my-4">
+      <NewsletterSubscription minimal />
+    </div>
     <div className="flex flex-col sm:flex-row my-4">
       <BuyMeACoffeeButton dataCy="footer-buy-coffee-button" />
-      <NewsletterButton dataCy="footer-newsletter-button" />
     </div>
     <div className="text-center text-text-main">
       <a

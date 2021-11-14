@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import HireTheAuthor from '../HireTheAuthor';
 import CategorySelection from '../CategorySelection';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
-import NewsletterButton from '../NewsletterButton';
+import NewsletterSidebar from '../NewsletterSidebar';
 
 const ArticleWithSidebar = ({ children, categories = [] }) => (
   <section className="lg:grid lg:grid-col-1 lg:grid-cols-12 p-6 md:p-7 xl:p-4">
@@ -16,8 +16,8 @@ const ArticleWithSidebar = ({ children, categories = [] }) => (
     <aside className="hidden xl:pl-8 xl:block xl:col-start-11 xl:col-end-13 xl:col-start-11 xxl:col-end-13">
       <div className="sticky top-20 max-w-48">
         <HireTheAuthor />
-        <BuyMeACoffeeButton className="my-4" />
-        <NewsletterButton className="my-4" />
+        <NewsletterSidebar className="my-4" />
+        <BuyMeACoffeeButton />
         {categories.length > 0 ? (
           <div className="mt-3">
             <h3 className="p-2 mb-0">

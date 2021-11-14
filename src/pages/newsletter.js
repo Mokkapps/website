@@ -55,11 +55,8 @@ const NewsletterPage = props => {
             values={{ ...baseFormattedMessageValues }}
           />
         </p>
-        <h2 className="mt-16 text-center">
-          <FormattedMessage id="newsletterPage.subscription" />
-        </h2>
-        <NewsletterSubscription className="my-8" />
-        <h2 className="mt-16 mb-8 text-center">
+        <NewsletterSubscription h2Heading className="my-8" />
+        <h2 className="mt-16 mb-4 text-center">
           <FormattedMessage id="newsletterPage.archiv" />
         </h2>
         <LinkButton
