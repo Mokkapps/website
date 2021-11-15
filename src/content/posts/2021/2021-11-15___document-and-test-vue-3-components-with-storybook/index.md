@@ -240,7 +240,7 @@ As already mentioned, Storybook converts the JSDoc comments from our code snippe
 
 ## Testing
 
-Now that we have our living documentation in Storybook run tests against them.
+Now that we have our living documentation in Storybook we can run tests against them.
 
 ### Jest Setup
 

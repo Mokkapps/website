@@ -33,7 +33,7 @@ const NewsletterSubscription = ({
         id="revue-form"
         name="revue-form"
         target="_blank"
-        onSubmit={sendCustomAnalyticsEvent('Newsletter form submitted')}
+        onSubmit={() => sendCustomAnalyticsEvent('Newsletter form submitted')}
       >
         <div className="flex flex-col">
           <label htmlFor="member_email">
