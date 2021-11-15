@@ -55,7 +55,11 @@ const NewsletterPage = props => {
             values={{ ...baseFormattedMessageValues }}
           />
         </p>
-        <NewsletterSubscription h2Heading className="my-8" />
+        <NewsletterSubscription
+          h2Heading
+          className="my-8"
+          dataCy="newsletter-subscription-form"
+        />
         <h2 className="mt-16 mb-4 text-center">
           <FormattedMessage id="newsletterPage.archiv" />
         </h2>

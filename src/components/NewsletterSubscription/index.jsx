@@ -4,6 +4,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { sendCustomAnalyticsEvent } from '../../utils/helper';
 
 const NewsletterSubscription = ({
+  dataCy,
   className,
   minimal = false,
   h2Heading = false,
@@ -15,6 +16,7 @@ const NewsletterSubscription = ({
     <div
       id="revue-embed"
       className={`${className} w-full flex flex-col justify-center`}
+      data-cy={dataCy}
     >
       {h2Heading ? (
         <h2 className="text-main-text mb-0 text-center">
@@ -119,6 +121,7 @@ const NewsletterSubscription = ({
 
 NewsletterSubscription.propTypes = {
   className: PropTypes.string,
+  dataCy: PropTypes.string,
   minimal: PropTypes.bool,
   h2Heading: PropTypes.bool,
 };

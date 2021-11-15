@@ -28,12 +28,8 @@ describe('Footer Test', () => {
     );
   });
 
-  it('shows a newsletter button', () => {
-    cy.get('[data-cy=footer-newsletter-button]').should(
-      'have.attr',
-      'href',
-      '/newsletter'
-    );
+  it('shows a newsletter subscription', () => {
+    cy.get('[data-cy=footer-newsletter-subscription]');
   });
 
   it('includes link to privacy policy and legal notice', () => {

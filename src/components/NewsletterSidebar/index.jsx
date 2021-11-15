@@ -7,7 +7,10 @@ const NewsletterSidebar = ({ className }) => {
     <div
       className={`flex flex-col items-center justify-center border-secondary border-2 p-4 rounded-md shadow-md ${className}`}
     >
-      <NewsletterSubscription minimal />
+      <NewsletterSubscription
+        dataCy="newsletter-subscription-sidebar"
+        minimal
+      />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import config from '../../content/meta/config';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 import SocialLinks from '../SocialLink/SocialLinks';
 import { LanguageContext } from '../../context/languageContext';
-import NewsletterButton from '../NewsletterButton';
+import NewsletterSubscription from '../NewsletterSubscription';
 
 const Author = ({ className }) => {
   const { lang } = useContext(LanguageContext);
@@ -32,7 +32,10 @@ const Author = ({ className }) => {
             className="sm:mr-2"
             dataCy="footer-buy-coffee-button"
           />
-          <NewsletterButton dataCy="footer-newsletter-button" />
+          <NewsletterSubscription
+            minimal
+            dataCy="footer-newsletter-subscription"
+          />
         </div>
       </div>
     </section>

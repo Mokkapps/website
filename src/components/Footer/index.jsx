@@ -13,7 +13,7 @@ const Footer = () => (
       dataCy="footer-social-links"
     />
     <div className="flex w-80 my-4">
-      <NewsletterSubscription minimal />
+      <NewsletterSubscription minimal dataCy="footer-newsletter-subscription" />
     </div>
     <div className="flex flex-col sm:flex-row my-4">
       <BuyMeACoffeeButton dataCy="footer-buy-coffee-button" />
