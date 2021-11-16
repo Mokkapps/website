@@ -1,0 +1,43 @@
+---
+title: 'Vue Tip: Destructure in v-for '
+description: 'It is possible to use ES6 destructuring in a v-for in Vue'
+date: '2021-11-16'
+cover: 'images/cover.jpg'
+---
+
+![](./images/cover.jpg)
+
+I'm a big fan of [ES6 destructuring](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/) and recently discovered that you can use it in `v-for`.
+
+First, let's take a look at a `v-for` without using ES6 destructuring:
+
+```html
+<div v-for="article in articles" :key="article.id">
+  <h2>{{ article.title }}</h2>
+</div>
+```
+
+`articles` is a list of `article` JavaScript objects and has the type `Article[]`:
+
+```ts
+interface Article {
+  title: string;
+  id: string;
+}
+```
+
+We can use ES6 destructuring which results in a cleaner template code:
+
+```html
+<div v-for="{id, title} in articles" :key="id">
+  <h2>{{ title }}</h2>
+</div>
+```
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

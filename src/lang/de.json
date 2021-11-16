@@ -159,7 +159,8 @@
     "subscription": "Anmeldung",
     "archiv": "Archiv",
     "visitArchive": "Newsletter Archiv →",
-    "revueInfo": "Mit der Anmeldung bestätigst du Revue's {termsAndServiceLink} und {privacyPolicyLink}."
+    "revueInfo": "Mit der Anmeldung bestätigst du Revue's {termsAndServiceLink} und {privacyPolicyLink}.",
+    "notConvinced": "Nicht überzeugt? Hier sind Beispiele"
   },
   "categoriesPage": {
     "title": "Kategorien",

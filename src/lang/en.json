@@ -159,7 +159,8 @@
     "subscription": "Subscription",
     "archiv": "Archive",
     "visitArchive": "Visit Newsletter Archive →",
-    "revueInfo": "By subscribing, you agree with Revue’s {termsAndServiceLink} and {privacyPolicyLink}"
+    "revueInfo": "By subscribing, you agree with Revue’s {termsAndServiceLink} and {privacyPolicyLink}",
+    "notConvinced": "Not convinced? See some examples"
   },
   "categoriesPage": {
     "title": "Categories",

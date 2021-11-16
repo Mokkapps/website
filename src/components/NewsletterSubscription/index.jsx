@@ -105,7 +105,6 @@ const NewsletterSubscription = ({
             </span>
           </div>
         ) : null}
-
         <input
           className="w-full h-14 cursor-pointer bg-accent mt-2"
           type="submit"
@@ -114,6 +113,16 @@ const NewsletterSubscription = ({
           id="member_submit"
           data-cy="newsletter-submit-input"
         />
+
+        <span className="text-xs">
+          <a
+            href="http://newsletter.mokkapps.de/#archive"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FormattedMessage id="newsletterPage.notConvinced" />
+          </a>
+        </span>
       </form>
     </div>
   );
