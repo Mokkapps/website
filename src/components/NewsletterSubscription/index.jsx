@@ -119,6 +119,9 @@ const NewsletterSubscription = ({
             href="http://newsletter.mokkapps.de/#archive"
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              sendCustomAnalyticsEvent('Newsletter archive in sidebar clicked!')
+            }
           >
             <FormattedMessage id="newsletterPage.notConvinced" />
           </a>

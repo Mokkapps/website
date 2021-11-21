@@ -1,0 +1,38 @@
+---
+title: "Vue Tip: Avoid Unwanted Re-Renders of an Element Using v-once"
+description: "The v-once directive is a Vue.js directive that is used to avoid unwanted re-renders of an element."
+date: "2021-11-21"
+cover: "images/cover.jpg"
+---
+![](./images/cover.jpg)
+
+The [v-once directive](https://v3.vuejs.org/api/directives.html#v-once) is a Vue.js directive that is used to avoid unwanted re-renders of an element.
+
+It optimizes the update performance as it renders the element and component only once.
+
+Vue will treat the element/component and all its children as static content on any subsequent re-render.
+
+```vue
+<p v-once>This text will never change: {{ message }}</p>
+```
+
+If we put the `v-once` directive on an element with children, these would also be treated as static content:
+
+```vue
+<section v-once>
+  <h1>My Headline</h1>
+  <p>{{ message }}</p>
+</section>
+```
+
+<br/>
+
+[[info]]
+| Since [3.2](https://v3.vuejs.org/api/directives.html#v-memo), you can also memoize part of the template with invalidation conditions using `v-memo`.
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

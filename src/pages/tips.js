@@ -21,6 +21,26 @@ const TipsPage = props => {
   const allTips = edges.map(edge => edge.node);
   const { siteUrl, siteTitlePostfix } = config;
 
+  const searchComponent = (
+    <p className="mb-8">
+      <FormattedMessage
+        id="tipsPage.searchAlternative"
+        values={{
+          google: (
+            <a href="https://www.google.com/search?q=site%3Amokkapps.de%2Ftips">
+              Google
+            </a>
+          ),
+          minimalList: (
+            <Link to="/minimal-tip-list">
+              <FormattedMessage id="blogPage.minimalList" />
+            </Link>
+          ),
+        }}
+      />
+    </p>
+  );
+
   return (
     <Layout
       seo={{
@@ -48,6 +68,7 @@ const TipsPage = props => {
                 }}
               />
             </p>
+            {searchComponent}
             <TipsList items={allTips} author={config.authorName} />
           </div>
         </div>

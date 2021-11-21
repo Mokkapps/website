@@ -83,7 +83,8 @@
   },
   "tipsPage": {
     "title": "Tips",
-    "intro": "Diese Seite beinhaltet einige kurze Tips, die zu kurz für einen eigenen Blog Artikel sind. {newsletter}, um über neue Tips informiert zu werden."
+    "intro": "Diese Seite beinhaltet einige kurze Tips, die zu kurz für einen eigenen Blog Artikel sind. {newsletter}, um über neue Tips informiert zu werden.",
+    "searchAlternative": "Alternativ können Sie Tips auch über {google} oder in der {minimalList} suchen."
   },
   "publicationsPage": {
     "title": "Publikationen",
@@ -172,6 +173,10 @@
   "minimalBlogListPage": {
     "title": "Einfache Blog Liste",
     "publishedPosts": "({amount} Artikel)"
+  },
+  "minimalTipListPage": {
+    "title": "Einfache Tips Liste",
+    "publishedTips": "({amount} Tips)"
   },
   "availability": {
     "notAvailable": "Verfügbar für Vollzeitprojekte ab {date}",

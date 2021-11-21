@@ -6,32 +6,32 @@ import config from '../content/meta/config';
 
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import SimpleBlogPostList from '../components/SimpleBlogPostList';
-
 import Heading from '../components/Heading';
+import SimpleTipList from '../components/SimpleTipList';
 
 const SimpleBlogPage = props => {
   const {
     data: {
-      posts: { edges },
+      tips: { edges },
     },
   } = props;
 
-  const posts = edges.map(edge => edge.node);
+  const tips = edges.map(edge => edge.node);
 
   const { siteUrl, siteTitlePostfix } = config;
 
   return (
     <Layout
       seo={{
-        url: `${siteUrl}/minimal-blog-list`,
-        title: `Minimal Blog List${siteTitlePostfix}`,
-        description: 'Blog posts about software engineering and career',
+        url: `${siteUrl}/minimal-tip-list`,
+        title: `Minimal Tip List${siteTitlePostfix}`,
+        description:
+          'A collection of short tips about topics like frontend, Vue.js, JavaScript, TypeScript, HTML, CSS and more.',
       }}
     >
       <Article>
-        <Heading className="mb-8" i18nId="minimalBlogListPage.title" />
-        <SimpleBlogPostList items={posts} />
+        <Heading className="mb-8" i18nId="minimalTipListPage.title" />
+        <SimpleTipList items={tips} />
       </Article>
     </Layout>
   );
@@ -46,20 +46,18 @@ export default SimpleBlogPage;
 
 export const query = graphql`
   {
-    posts: allMdx(
-      filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
-      sort: { fields: [fields___prefix], order: DESC }
+    tips: allMdx(
+      filter: { fields: { source: { eq: "tips" }, slug: { ne: null } } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
           fields {
             slug
-            prefix
           }
           frontmatter {
             title
-            categories
+            date
             cover {
               childImageSharp {
                 gatsbyImageData(

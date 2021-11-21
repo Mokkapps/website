@@ -83,7 +83,8 @@
   },
   "tipsPage": {
     "title": "Tips",
-    "intro": "This page includes some tips that are too short for a dedicated blog post. {newsletter} to get informed about new tips."
+    "intro": "This page includes some tips that are too short for a dedicated blog post. {newsletter} to get informed about new tips.",
+    "searchAlternative": "You can also search tips using {google} oder in the {minimalList}."
   },
   "publicationsPage": {
     "title": "Publications",
@@ -172,6 +173,10 @@
   "minimalBlogListPage": {
     "title": "Minimal blog list",
     "publishedPosts": "({amount} posts)"
+  },
+  "minimalTipListPage": {
+    "title": "Minimal tip list",
+    "publishedTips": "({amount} tips)"
   },
   "availability": {
     "notAvailable": "Available for full-time projects from {date}",
