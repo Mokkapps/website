@@ -1,0 +1,41 @@
+---
+title: "Vue Tip: Trigger Watcher Immediately"
+description: "The watch hook provides an option that the callback is called immediately."
+date: "2021-12-02"
+cover: "images/cover.jpg"
+---
+![](./images/cover.jpg)
+
+The [watch hook](https://v3.vuejs.org/guide/composition-api-introduction.html#reacting-to-changes-with-watch) provides an option that its callback
+function is called immediately:
+
+```vue
+<template>
+  <input v-model="counter">
+</template>
+
+<script setup>
+import { ref, watch } from "vue";
+
+const counter = ref(0);
+
+watch(
+  counter,
+  (newValue, oldValue) => {
+    console.log("The new counter value is: " + counter.value);
+  },
+  // highlight-next-line
+  { immediate: true }
+);
+</script>
+```
+
+This code will generate the output `New counter value is: 0` after the setup method is executed initially. It will also
+create a log message for all subsequent counter value changes.
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
