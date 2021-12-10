@@ -1,0 +1,59 @@
+---
+title: "Vue Tip: Simple Expressions in Templates"
+description: "Vue component templates should only include simple expressions, with more complex expressions refactored into computed properties or methods."
+date: "2021-12-10"
+cover: "images/cover.jpg"
+---
+import TipCard from '../../../components/TipCard';
+
+export const badCode = `<!-- In a template -->
+<span>{{
+  fullName.split(' ').map((word) => {
+    return word[0].toUpperCase() + word.slice(1)
+  }).join(' ')
+}}</span>`.trim();
+
+export const goodCode = `<!-- In a template -->
+<span>{{ normalizedFullName }}</span>`.trim();
+
+![](./images/cover.jpg)
+
+Your Vue component templates should only include simple expressions as they make your template more declarative.
+
+If you have more complex expressions in your Vue.js component templates you should refactor them into computed properties or methods. This allows us to reuse the code.
+
+<TipCard highlight="bad" language="js">
+  {badCode}
+</TipCard>
+
+<br />
+
+<TipCard highlight="good" language="js">
+  {goodCode}
+</TipCard>
+
+<br />
+
+We have moved the complex expression to a computed property:
+
+```vue
+<script setup>
+const props = defineProps({ fullName: String });
+
+const normalizedFullName = computed(() =>
+  props.fullName
+    .split(' ')
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(' ')
+);
+</script>
+```
+
+This tip is taken from the [official style guide](https://v3.vuejs.org/style-guide/#simple-expressions-in-templates-strongly-recommended).
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

@@ -12,7 +12,9 @@ const imageFolderPattern = `src/images/**/${fileExtensionsPattern}`;
 const fromRoot = (...p) => path.join(process.env.PWD, ...p);
 
 async function optimizeImages() {
-  const latestTipsFolders = fs.readdirSync(fromRoot(`src/content/tips`));
+  const latestTipsFolders = fs.readdirSync(fromRoot(`src/content/tips`)).sort((a, b) => {
+    return a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'});
+  });
   const latestTip = latestTipsFolders[latestTipsFolders.length - 1];
   const latestTipPattern = `src/content/tips/${latestTip}/**/${fileExtensionsPattern}`;
 
