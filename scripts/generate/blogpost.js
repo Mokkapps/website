@@ -11,7 +11,7 @@ import mkdirp from 'mkdirp';
 import slugify from '@sindresorhus/slugify';
 import inquirer from 'inquirer';
 
-import { titleCaps } from './title-caps,js';
+import { titleCaps } from './title-caps.js';
 
 const today = new Date();
 const defaultDate = new Date().setDate(today.getDate() + 5);
