@@ -43,7 +43,9 @@ async function generateTip() {
     },
   ]);
   const slug = slugify(title);
-  const latestTipsFolders = fs.readdirSync(fromRoot(`src/content/tips`));
+  const latestTipsFolders = fs.readdirSync(fromRoot(`src/content/tips`)).sort((a, b) => {
+    return a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'});
+  });
   const latestTipsNumber = Number(
     latestTipsFolders[latestTipsFolders.length - 1]
   );
