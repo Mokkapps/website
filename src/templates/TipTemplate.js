@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import CalendarIcon from 'react-feather/dist/icons/calendar';
 
 import config from '../../src/content/meta/config';
 
@@ -10,13 +9,14 @@ import Heading from '../components/Heading';
 import BodyText from '../components/BodyText';
 import LanguageWarning from '../components/LanguageWarning';
 import ArticleWithSidebar from '../components/ArticleWithSidebar';
-import { FormattedDate, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import Share from '../components/Share';
 import EditOnGithub from '../components/EditOnGithub';
 import Author from '../components/Author';
 import ReactDisqusComments from 'react-disqus-comments';
 import Button from '../components/Button';
 import { getSrc } from 'gatsby-plugin-image';
+import { getFormattedDate } from '../utils/helper';
 
 const TipTemplate = props => {
   const {
@@ -52,15 +52,14 @@ const TipTemplate = props => {
         postSEO: true,
       }}
     >
-      <ArticleWithSidebar>
+      <ArticleWithSidebar shareProps={shareProps}>
         <LanguageWarning className="my-4" type="Tips" />
         <Heading title={title} />
-        <div className="flex justify-center items-center">
-          {<CalendarIcon className="mr-2 w-4 h-4" />}{' '}
-          <FormattedDate value={date} />
+        <div className="flex justify-center items-center mt-8">
+          {getFormattedDate(date)}
         </div>
         <BodyText body={body} />
-        <Share className="my-4" shareProps={shareProps} />
+        <Share className="my-10" shareProps={shareProps} />
         <EditOnGithub isTip slug={slug} />
         {showComments ? (
           <ReactDisqusComments

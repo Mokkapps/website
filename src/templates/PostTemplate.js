@@ -77,7 +77,7 @@ const PostTemplate = props => {
         postSEO: true,
       }}
     >
-      <ArticleWithSidebar categories={allCategories}>
+      <ArticleWithSidebar categories={allCategories} shareProps={shareProps}>
         <Heading title={title} />
         <LanguageWarning className="my-4" type="Blog Artikel" />
         <PostMeta

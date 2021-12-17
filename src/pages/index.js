@@ -19,13 +19,12 @@ import {
 } from '../utils/helper';
 import LinkButton from '../components/LinkButton';
 import ProjectCard from '../components/ProjectCard';
-import BlogPostCard from '../components/BlogPostCard';
 import Availability from '../components/Availability';
 import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
 import BusinessProjectList from '../components/BusinessProjectsList';
 import DevIcon from '../components/DevIcon';
-import References from "../components/References";
-import Tip from "../components/Tip";
+import References from '../components/References';
+import LinkCard from '../components/LinkCard';
 
 const UnorderedList = styled.ul`
   list-style: none;
@@ -144,19 +143,19 @@ const IndexPage = props => {
       <h2 className="text-center mt-10 mb-4 uppercase">
         <FormattedMessage id="landingPage.latestTips" />
       </h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div  className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {tips.map(tip => {
           const {
             frontmatter: { title, cover },
             fields: { slug },
           } = tip;
           return (
-            <Tip
-              id="card"
+            <LinkCard
               key={slug}
               cover={cover}
+              dataCy={`latest-tip`}
+              to={`/tips${slug}`}
               title={title}
-              slug={slug}
             />
           );
         })}
@@ -183,13 +182,12 @@ const IndexPage = props => {
             fields: { slug },
           } = post;
           return (
-            <BlogPostCard
-              block
-              id="blog-post"
+            <LinkCard
               key={slug}
-              asset={cover}
+              cover={cover}
+              dataCy={`latest-blog-post`}
+              to={`/blog${slug}`}
               title={title}
-              url={`/blog${slug}`}
             />
           );
         })}
@@ -355,7 +353,7 @@ export const query = graphql`
           }
         }
       }
-    },
+    }
     latestTips: allMdx(
       filter: { fields: { source: { eq: "tips" }, slug: { ne: null } } }
       sort: { fields: [frontmatter___date], order: DESC }

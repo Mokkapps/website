@@ -16,48 +16,79 @@ import {
   RedditShareButton,
   RedditIcon,
   EmailShareButton,
-  EmailIcon
+  EmailIcon,
 } from 'react-share';
+import { sendCustomAnalyticsEvent } from '../../utils/helper';
 
-const PostShare = props => {
+const Share = props => {
   const {
+    className,
+    buttonClassName,
     shareProps: { url, text },
+    iconSize = 48,
   } = props;
 
-  const iconSize = 48;
   const windowGlobal = typeof window !== 'undefined' && window;
 
+  const sendAnalyticsEvent = provider => {
+    sendCustomAnalyticsEvent(
+      `Open share dialog for article with url ${url} on ${provider}`
+    );
+  };
+
   return (
-    <div className="flex flex-wrap justify-between my-10">
-      <FacebookShareButton url={url} quote={text}>
+    <div className={`flex flex-wrap justify-between ${className}`}>
+      <FacebookShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('Facebook')}
+        url={url}
+        quote={text}
+      >
         <FacebookIcon size={iconSize} round />
       </FacebookShareButton>
-      <TwitterShareButton url={url} title={text}>
+      <TwitterShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('Twitter')}
+        url={url}
+        title={text}
+      >
         <TwitterIcon size={iconSize} round />
       </TwitterShareButton>
       <TelegramShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('Telegram')}
         url={url}
         title={text}
       >
         <TelegramIcon size={iconSize} round />
       </TelegramShareButton>
       <WhatsappShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('Whatsapp')}
         url={url}
         title={text}
         separator=":: "
       >
         <WhatsappIcon size={iconSize} round />
       </WhatsappShareButton>
-      <LinkedinShareButton url={url}>
+      <LinkedinShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('LinkedIn')}
+        url={url}
+      >
         <LinkedinIcon size={iconSize} round />
       </LinkedinShareButton>
       <PinterestShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('Pinterest')}
         url={url}
         media={`${String(windowGlobal?.location)}/image-share`}
       >
         <PinterestIcon size={iconSize} round />
       </PinterestShareButton>
       <RedditShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('Reddit')}
         url={url}
         title={text}
         windowWidth={660}
@@ -66,6 +97,8 @@ const PostShare = props => {
         <RedditIcon size={iconSize} round />
       </RedditShareButton>
       <EmailShareButton
+        className={buttonClassName}
+        beforeOnClick={() => sendAnalyticsEvent('Email')}
         url={url}
         subject={text}
         body="body"
@@ -76,8 +109,11 @@ const PostShare = props => {
   );
 };
 
-PostShare.propTypes = {
+Share.propTypes = {
   shareProps: PropTypes.object,
+  className: PropTypes.string,
+  buttonClassName: PropTypes.string,
+  iconSize: PropTypes.number,
 };
 
-export default PostShare;
+export default Share;

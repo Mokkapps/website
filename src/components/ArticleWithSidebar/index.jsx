@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 
 import HireTheAuthor from '../HireTheAuthor';
-import CategorySelection from '../CategorySelection';
 import BuyMeACoffeeButton from '../BuyMeACoffeeButton';
 import NewsletterSidebar from '../NewsletterSidebar';
+import Share from '../Share';
 
-const ArticleWithSidebar = ({ children, categories = [] }) => (
+const ArticleWithSidebar = ({ children, shareProps }) => (
   <section className="lg:grid lg:grid-col-1 lg:grid-cols-12 p-6 md:p-7 xl:p-4">
     <div className="hidden lg:col-start-1 lg:col-end-2 xl:col-start-1 xl:col-end-3" />
     <article className="m-auto lg:mx-0 lg:my-4 lg:col-start-2 lg:col-end-12 xl:col-start-4 xl:col-end-10">
@@ -16,16 +15,18 @@ const ArticleWithSidebar = ({ children, categories = [] }) => (
     <aside className="hidden xl:pl-8 xl:block xl:col-start-11 xl:col-end-13 xl:col-start-11 xxl:col-end-13">
       <div className="sticky top-20 max-w-48">
         <HireTheAuthor />
-        <NewsletterSidebar className="my-4" />
-        <BuyMeACoffeeButton />
-        {categories.length > 0 ? (
-          <div className="mt-3">
-            <h3 className="p-2 mb-0">
-              <FormattedMessage id="categoriesPage.otherCategories" />
-            </h3>
-            <CategorySelection categories={categories} />
+        <NewsletterSidebar className="mt-4" />
+        <div className="flex justify-center mt-4">
+          <div className="w-3/4">
+            <Share
+              className="flex justify-center"
+              buttonClassName="mt-2"
+              iconSize={36}
+              shareProps={shareProps}
+            />
           </div>
-        ) : null}
+        </div>
+        <BuyMeACoffeeButton className="mt-4" />
       </div>
     </aside>
   </section>
@@ -33,7 +34,7 @@ const ArticleWithSidebar = ({ children, categories = [] }) => (
 
 ArticleWithSidebar.propTypes = {
   children: PropTypes.node.isRequired,
-  categories: PropTypes.array,
+  shareProps: PropTypes.object,
 };
 
 export default ArticleWithSidebar;

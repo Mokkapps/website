@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BlogPost from '../BlogPost';
+import LinkCard from '../LinkCard';
 
 const BlogPostList = props => {
-  const { items, author, metaIcons, onlyTwoCols = false } = props;
+  const { items, onlyTwoCols = false } = props;
   let count = 0;
 
   return (
@@ -18,23 +18,18 @@ const BlogPostList = props => {
     >
       {items.map(item => {
         const {
-          frontmatter: { title, categories, cover },
+          frontmatter: { title, cover },
           fields: { slug, prefix },
-          excerpt,
         } = item;
 
         const component = (
-          <BlogPost
+          <LinkCard
             key={slug}
-            id={count}
-            title={title}
-            slug={slug}
             cover={cover}
-            categories={categories}
-            prefix={prefix}
-            author={author}
-            metaIcons={metaIcons}
-            excerpt={excerpt}
+            dataCy={`blog-post-${count}`}
+            date={prefix}
+            to={`/blog${slug}`}
+            title={title}
           />
         );
 

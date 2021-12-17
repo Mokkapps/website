@@ -3,10 +3,15 @@ import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { FormattedDate } from 'react-intl';
 
 export const baseFormattedMessageValues = {
   mark: chunks => <mark>{chunks}</mark>,
 };
+
+export const getFormattedDate = date => (
+  <FormattedDate year="numeric" month="long" day="2-digit" value={date} />
+);
 
 export const getAsset = (edges, imageName) => {
   const node = edges

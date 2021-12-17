@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedDate, FormattedMessage } from 'react-intl';
+import { getFormattedDate } from '../../utils/helper';
 
 const PostMeta = props => {
   const {
@@ -18,14 +19,18 @@ const PostMeta = props => {
       <div className="flex flex-col">
         <span className="flex items-center">
           {CalendarIcon && <CalendarIcon className="mr-2 w-4 h-4" />}{' '}
-          {<FormattedDate value={prefix} />} |{' '}
+          {getFormattedDate(prefix)} |{' '}
           {ReadIcon && <ReadIcon className="ml-1 mr-2 w-4 h-4" />} {timeToRead}{' '}
           <FormattedMessage id="blogPage.minuteRead" />
         </span>
       </div>
-      {lastUpdated ? <div className="flex flex-col mt-2">
-        <span className="text-s text-secondary-text">(Updated on <FormattedDate value={lastUpdated} />)</span>
-      </div> : null}
+      {lastUpdated ? (
+        <div className="flex flex-col mt-2">
+          <span className="text-s text-secondary-text">
+            (Updated on {getFormattedDate(lastUpdated)})
+          </span>
+        </div>
+      ) : null}
     </section>
   );
 };

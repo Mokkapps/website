@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedDate } from 'react-intl';
+import { getFormattedDate } from '../../utils/helper';
 
 const Container = styled.div`
   display: flex;
@@ -58,7 +59,7 @@ const NextPrev = props => {
         <Link to={`/blog${prevSlug}`} className="prev">
           {PrevIcon && <PrevIcon />}
           <p>
-            {prevTitle} <time>{<FormattedDate value={prevPrefix} />}</time>
+            {prevTitle} <time>{getFormattedDate(prevPrefix)}</time>
           </p>
         </Link>
       )}
@@ -66,7 +67,7 @@ const NextPrev = props => {
         <Link to={`/blog${nextSlug}`} className="next">
           {NextIcon && <NextIcon />}
           <p>
-            {nextTitle} <time>{<FormattedDate value={nextPrefix} />} </time>
+            {nextTitle} <time>{getFormattedDate(nextPrefix)} </time>
           </p>
         </Link>
       )}

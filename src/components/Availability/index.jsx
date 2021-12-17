@@ -1,6 +1,7 @@
 import React from 'react';
-import { FormattedDate, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
+import { getFormattedDate } from '../../utils/helper';
 
 const availability = new Date('2022-07-31');
 
@@ -26,14 +27,7 @@ const Availability = ({ className, dataCy }) => {
         }
         defaultMessage=""
         values={{
-          date: (
-            <FormattedDate
-              value={availabilityDate}
-              year="numeric"
-              month="long"
-              day="2-digit"
-            />
-          ),
+          date: getFormattedDate(availabilityDate),
         }}
       />
     </div>

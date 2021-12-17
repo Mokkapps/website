@@ -38,14 +38,14 @@ describe('Home Page Test', () => {
   });
 
   it('shows latest blog posts', () => {
-    cy.get('[data-cy=card-blog-post').should('have.length', 4);
+    cy.get('[data-cy=latest-blog-post').should('have.length', 4);
 
     cy.get('[data-cy=hero-more-blog-posts-button]').click();
     cy.url().should('include', '/blog');
   });
 
   it('shows latest tips', () => {
-    cy.get('[data-cy=tip-card')
+    cy.get('[data-cy=latest-tip')
       .should('have.length.greaterThan', 0)
       .should('have.length.lessThan', 5);
 

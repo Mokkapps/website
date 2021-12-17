@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Tip from '../Tip';
+import LinkCard from '../LinkCard';
 
 const TipsList = props => {
   const { items, onlyTwoCols = false } = props;
@@ -18,12 +18,19 @@ const TipsList = props => {
     >
       {items.map(item => {
         const {
-          frontmatter: { title, cover },
+          frontmatter: { title, cover, date },
           fields: { slug },
         } = item;
 
         const component = (
-          <Tip key={slug} id={count} title={title} slug={slug} cover={cover} />
+          <LinkCard
+            key={slug}
+            cover={cover}
+            dataCy={`tip-${count}`}
+            date={date}
+            to={`/tips${slug}`}
+            title={title}
+          />
         );
 
         count++;
