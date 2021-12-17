@@ -6,7 +6,6 @@ import ReactDisqusComments from 'react-disqus-comments';
 import { FormattedMessage } from 'react-intl';
 
 import CalendarIcon from 'react-feather/dist/icons/calendar';
-import UserIcon from 'react-feather/dist/icons/user';
 import TagIcon from 'react-feather/dist/icons/tag';
 import PrevIcon from 'react-feather/dist/icons/arrow-left';
 import NextIcon from 'react-feather/dist/icons/arrow-right';
@@ -24,11 +23,10 @@ import Share from '../components/Share';
 import { getAllCategories } from '../utils/helper';
 import Button from '../components/Button';
 import EditOnGithub from '../components/EditOnGithub';
-import LanguageWarning from "../components/LanguageWarning";
+import LanguageWarning from '../components/LanguageWarning';
 
 const metaIcons = {
   calendar: CalendarIcon,
-  user: UserIcon,
   tag: TagIcon,
   read: ReadIcon,
 };
@@ -45,17 +43,10 @@ const PostTemplate = props => {
       post: {
         excerpt,
         body,
-        frontmatter: {
-          title,
-          categories,
-          cover,
-          bannerCredit,
-          canonical,
-        },
+        frontmatter: { title, cover, bannerCredit, canonical, lastUpdated },
         fields: { slug, prefix },
         timeToRead,
       },
-      file,
     },
     pageContext: { next, prev },
   } = props;
@@ -90,12 +81,10 @@ const PostTemplate = props => {
         <Heading title={title} />
         <LanguageWarning className="my-4" type="Blog Artikel" />
         <PostMeta
-          className="my-8"
-          authorImage={file}
-          author={config.authorName}
+          className="my-10"
           prefix={prefix}
-          categories={categories}
           icons={metaIcons}
+          lastUpdated={lastUpdated}
           timeToRead={timeToRead}
         />
         {cover ? (
@@ -171,6 +160,7 @@ export const query = graphql`
         canonical
         bannerCredit
         categories
+        lastUpdated
         cover {
           childImageSharp {
             gatsbyImageData(
@@ -183,17 +173,6 @@ export const query = graphql`
         }
       }
       timeToRead
-    }
-    file(relativePath: { eq: "about.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          width: 60
-          height: 60
-          layout: FIXED
-          placeholder: BLURRED
-          formats: [AUTO, WEBP]
-        )
-      }
     }
   }
 `;

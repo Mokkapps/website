@@ -1,42 +1,21 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { FormattedDate, FormattedMessage } from 'react-intl';
-
-import config from '../../content/meta/config';
-import CategoryLink from '../CategoryLink';
 
 const PostMeta = props => {
   const {
     prefix,
     timeToRead,
-    categories,
+    lastUpdated,
     className,
-    icons: {
-      calendar: CalendarIcon,
-      user: UserIcon,
-      read: ReadIcon,
-    },
+    icons: { calendar: CalendarIcon, read: ReadIcon },
   } = props;
 
-  return [
+  return (
     <section
-      className={`flex justify-start items-center mb-4 ${className}`}
-      key="author"
+      className={`flex flex-col justify-center items-center ${className}`}
     >
-      <StaticImage
-        alt={config.baseNameWithTitle}
-        className="rounded-full mr-4"
-        layout="fixed"
-        width={60}
-        height={60}
-        src="../../images/about.jpg"
-      />
       <div className="flex flex-col">
-        <span className="mb-2 flex items-center">
-          {CalendarIcon && <UserIcon className="mr-2 w-4 h-4" />} Michael
-          Hoffmann
-        </span>
         <span className="flex items-center">
           {CalendarIcon && <CalendarIcon className="mr-2 w-4 h-4" />}{' '}
           {<FormattedDate value={prefix} />} |{' '}
@@ -44,24 +23,18 @@ const PostMeta = props => {
           <FormattedMessage id="blogPage.minuteRead" />
         </span>
       </div>
-    </section>,
-    <section
-      className="flex flex-wrap justify-center md:justify-start mb-6"
-      key="categories-container"
-    >
-      {categories &&
-        categories.map(category => (
-          <CategoryLink key={category} category={category} />
-        ))}
-    </section>,
-  ];
+      {lastUpdated ? <div className="flex flex-col mt-2">
+        <span className="text-s text-secondary-text">(Updated on <FormattedDate value={lastUpdated} />)</span>
+      </div> : null}
+    </section>
+  );
 };
 
 PostMeta.propTypes = {
   prefix: PropTypes.string,
-  categories: PropTypes.array,
-  author: PropTypes.string,
-  categoryLink: PropTypes.bool,
+  timeToRead: PropTypes.number,
+  lastUpdated: PropTypes.string,
+  className: PropTypes.string,
   icons: PropTypes.object,
 };
 

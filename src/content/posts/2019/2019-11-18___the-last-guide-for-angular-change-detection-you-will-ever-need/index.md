@@ -4,6 +4,7 @@ subTitle:
 categories: ['development', 'angular'] 
 cover: cover.jpg
 canonical: "https://indepth.dev/the-last-guide-for-angular-change-detection-youll-ever-need/"
+lastUpdated: '2021-12-18'
 ---
 <!-- Variables -->
 [demo-live]: https://angular-change-detection-demo.netlify.com
