@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import ReactDisqusComments from 'react-disqus-comments';
 import { FormattedMessage } from 'react-intl';
 
@@ -65,6 +65,19 @@ const PostTemplate = props => {
   const handleNewComment = () => {};
 
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
+
+  useEffect(() => {
+    fetch('https://mokkapps.de/api/supabase', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: { slug },
+    })
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
+  }, []);
 
   return (
     <Layout
