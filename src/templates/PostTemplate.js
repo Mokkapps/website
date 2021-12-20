@@ -10,7 +10,6 @@ import {
 } from 'react-icons/fa';
 
 import config from '@content/meta/config';
-import { getAllCategories } from '@utils';
 import ArticleWithSidebar from '@components/ArticleWithSidebar';
 import Layout from '@components/Layout';
 import PostMeta from '@components/PostMeta';
@@ -29,7 +28,6 @@ const nextPrevIcons = {
 const PostTemplate = props => {
   const {
     data: {
-      allEdges,
       post: {
         excerpt,
         body,
@@ -59,15 +57,14 @@ const PostTemplate = props => {
     longtext: excerpt,
   };
 
-  const allCategories = getAllCategories(allEdges);
   const handleNewComment = () => {};
 
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   useEffect(() => {
-    fetch(`${window.origin}/api/views${slug}`, { method: 'POST' })
+    fetch(`/api/views${slug}`, { method: 'POST' })
       .then(() => {
-        fetch(`${window.origin}/api/views${slug}`)
+        fetch(`/api/views${slug}`)
           .then(response =>
             response.json().then(json => {
               setPageViews(json.total);
@@ -93,7 +90,7 @@ const PostTemplate = props => {
         postSEO: true,
       }}
     >
-      <ArticleWithSidebar categories={allCategories} shareProps={shareProps}>
+      <ArticleWithSidebar slug={slug} shareProps={shareProps}>
         <LanguageWarning className="my-4" type="Blog Artikel" />
         <h1>{title}</h1>
         <PostMeta
@@ -154,15 +151,6 @@ export default PostTemplate;
 
 export const query = graphql`
   query PostTemplateQuery($slug: String!) {
-    allEdges: allMdx {
-      edges {
-        node {
-          frontmatter {
-            categories
-          }
-        }
-      }
-    }
     post: mdx(fields: { slug: { eq: $slug } }) {
       body
       fileAbsolutePath

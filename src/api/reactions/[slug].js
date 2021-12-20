@@ -27,6 +27,12 @@ export default async function handler(req, res) {
   const slug = req.params.slug;
 
   if (req.method === 'POST') {
+    if (process.env.NODE_ENV === 'development') {
+      return res.status(200).json({
+        message: `Successfully performed reaction for: ${slug}`,
+      });
+    }
+
     const body = JSON.parse(req.body);
     const { type } = body;
 
@@ -35,7 +41,7 @@ export default async function handler(req, res) {
       type,
       slug,
       'increment_clap_count',
-      'decrement_party_count'
+      'decrement_clap_count'
     );
 
     return res.status(200).json({
@@ -44,6 +50,12 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'GET') {
+    if (process.env.NODE_ENV === 'development') {
+      return res.status(200).json({
+        clap_count: 3456,
+      });
+    }
+
     const { data } = await supabase
       .from('content')
       .select('clap_count')

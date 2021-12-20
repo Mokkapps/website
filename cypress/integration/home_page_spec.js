@@ -13,11 +13,8 @@ describe('Home Page Test', () => {
     cy.url().should('include', '/contact');
   });
 
-  it('shows a schedule meeting button', () => {
+  it('shows all fields', () => {
     cy.get('[data-cy=home-schedule-meeting-button]');
-  });
-
-  it('shows references', () => {
     cy.get('[data-cy=home-references]');
   });
 

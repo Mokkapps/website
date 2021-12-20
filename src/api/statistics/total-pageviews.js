@@ -3,6 +3,10 @@ import fetch from 'node-fetch';
 const baseUrl = 'http://analytics.mokkapps.de';
 
 export default async function handler(req, res) {
+  if (process.env.NODE_ENV === 'development') {
+    return res.status(200).json({ pageviews: 12456 });
+  }
+
   const authResponse = await fetch(`${baseUrl}/api/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

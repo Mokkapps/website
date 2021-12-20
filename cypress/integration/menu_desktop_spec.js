@@ -4,12 +4,15 @@ describe('Desktop Menu Test', () => {
     cy.visit('/');
   });
 
-  it('includes the header logo', () => {
+  it('includes all fields', () => {
     cy.get('[data-cy=header-menu]');
     cy.get('[data-cy=header-logo]');
-  });
 
-  it('includes navigation elements', () => {
+    // Switcher
+    cy.get('[data-cy=language-switch]');
+    cy.get('[data-cy=theme-switch]');
+
+    // Navigation elements
     cy.get('[data-cy="header-menu-item-menu.home"]');
     cy.get('[data-cy="header-menu-item-menu.blog"]');
     cy.get('[data-cy="header-menu-item-menu.projects"]');
@@ -19,15 +22,7 @@ describe('Desktop Menu Test', () => {
     cy.get('[data-cy="header-menu-item-menu.publications"]');
   });
 
-  it("show a theme switcher", () => {
-    cy.get('[data-cy=language-switch]');
-  });
-
-  it("show a language switcher", () => {
-    cy.get('[data-cy=theme-switch]');
-  });
-
-  it('navigates to blog page if blog menu item is clicked', () => {
+  it('navigates to menu pages if they are clicked', () => {
     cy.get('[data-cy="header-menu-item-menu.blog"]').click();
     cy.url().should('include', '/blog');
   });

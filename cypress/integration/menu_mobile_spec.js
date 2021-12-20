@@ -4,20 +4,13 @@ describe('Mobile Menu Test', () => {
     cy.visit('/');
   });
 
-  it('includes the header logo', () => {
+  it('includes elements', () => {
     cy.get('[data-cy=header-menu]');
     cy.get('[data-cy=header-logo]');
-  });
 
-  it("show a theme switcher", () => {
     cy.get('[data-cy=language-switch]');
-  });
-
-  it("show a language switcher", () => {
     cy.get('[data-cy=theme-switch]');
-  });
 
-  it('includes navigation elements', () => {
     cy.get('[data-cy="burger-menu-item-menu.home"]');
     cy.get('[data-cy="burger-menu-item-menu.blog"]');
     cy.get('[data-cy="burger-menu-item-menu.projects"]');

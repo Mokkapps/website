@@ -44,9 +44,9 @@ const TipTemplate = props => {
 
   useEffect(() => {
     const apiSlug = slug.split('/')[2];
-    fetch(`${window.origin}/api/views/${apiSlug}`, { method: 'POST' })
+    fetch(`/api/views/${apiSlug}`, { method: 'POST' })
       .then(() => {
-        fetch(`${window.origin}/api/views/${apiSlug}`)
+        fetch(`/api/views/${apiSlug}`)
           .then(response =>
             response.json().then(json => {
               setPageViews(json.total);

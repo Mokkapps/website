@@ -9,6 +9,12 @@ export default async function handler(req, res) {
   const slug = req.params.slug;
 
   if (req.method === 'POST') {
+    if (process.env.NODE_ENV === 'development') {
+      return res.status(200).json({
+        message: `Successfully incremented page: ${slug}`,
+      });
+    }
+
     const { error } = await supabase.rpc('increment_page_view', {
       page_slug: slug,
     });
@@ -23,6 +29,12 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'GET') {
+    if (process.env.NODE_ENV === 'development') {
+      return res.status(200).json({
+        total: 22346,
+      });
+    }
+
     // Query the pages table in the database where slug equals the request params slug.
     const { data, error } = await supabase
       .from('content')

@@ -5,17 +5,15 @@ describe('Blog Post Test', () => {
     cy.get('[data-cy=blog-post-0]').click();
   });
 
-  it('show a sidebar with hire the author which redirect to contact page', () => {
-    cy.get('[data-cy=hire-the-author]').click();
-    cy.url().should('include', '/contact');
-  });
-
-  it('show a list of available categories', () => {
-    cy.get('[data-cy=blog-categories]');
+  it('show sidebar widgets', () => {
+    cy.get('[data-cy=reactions]');
+    cy.get('[data-cy=newsletter-subscription-sidebar]');
+    cy.get('[data-cy=sidebar-share]');
+    cy.get('[data-cy=sidebar-buy-me-a-coffee]');
   });
 
   it('does not show sidebar on mobile', () => {
     cy.viewport('iphone-6')
-    cy.get('[data-cy=hire-the-author]').should('not.be.visible');
+    cy.get('[data-cy=reactions]').should('not.be.visible');
   });
 });

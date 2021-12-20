@@ -5,34 +5,13 @@ describe('Footer Test', () => {
     cy.visit('/');
   });
 
-  it('includes the social links', () => {
+  it('includes all fields', () => {
+    cy.get('[data-cy=footer-newsletter-subscription]');
+
     cy.get('[data-cy=footer-social-links]')
       .children()
       .should('have.length', SOCIAL_LINKS.length);
-    cy.get('[data-cy=social-link-twitter]');
-    cy.get('[data-cy=social-link-devdotto]');
-    cy.get('[data-cy=social-link-linkedin]');
-    cy.get('[data-cy=social-link-instagram]');
-    cy.get('[data-cy=social-link-facebook]');
-    cy.get('[data-cy=social-link-hashnode]');
-    cy.get('[data-cy=social-link-rss]');
-    cy.get('[data-cy=social-link-npm]');
-    cy.get('[data-cy=social-link-minutemailer]');
-  });
 
-  it('shows buy me a coffee button', () => {
-    cy.get('[data-cy=footer-buy-coffee-button]').should(
-      'have.attr',
-      'href',
-      'https://www.buymeacoffee.com/mokkapps'
-    );
-  });
-
-  it('shows a newsletter subscription', () => {
-    cy.get('[data-cy=footer-newsletter-subscription]');
-  });
-
-  it('includes link to privacy policy and legal notice', () => {
     cy.get('[data-cy=footer-privacy-policy]').should(
       'have.attr',
       'href',
@@ -43,24 +22,29 @@ describe('Footer Test', () => {
       'href',
       '/legal-notice'
     );
+    cy.get('[data-cy=footer-uses]').should('have.attr', 'href', '/uses');
+    cy.get('[data-cy=footer-newsletter]').should(
+      'have.attr',
+      'href',
+      '/newsletter'
+    );
   });
 
-  it('navigates to github page', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'github').map(
+  it('navigates to social link pages', () => {
+    // GitHub
+    let url = SOCIAL_LINKS.filter(link => link.icon === 'github').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-github]').should('have.attr', 'href', url[0]);
-  });
 
-  it('navigates to twitter page', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'twitter').map(
+    // Twitter
+    url = SOCIAL_LINKS.filter(link => link.icon === 'twitter').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-twitter]').should('have.attr', 'href', url[0]);
-  });
 
-  it('navigates to dev.to page', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'devdotto').map(
+    // Dev.to
+    url = SOCIAL_LINKS.filter(link => link.icon === 'devdotto').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-devdotto]').should(
@@ -68,10 +52,9 @@ describe('Footer Test', () => {
       'href',
       url[0]
     );
-  });
 
-  it('navigates to linkedin page', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'linkedin').map(
+    // LinkedIn
+    url = SOCIAL_LINKS.filter(link => link.icon === 'linkedin').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-linkedin]').should(
@@ -79,10 +62,9 @@ describe('Footer Test', () => {
       'href',
       url[0]
     );
-  });
 
-  it('navigates to instagram page', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'instagram').map(
+    // Instagram
+    url = SOCIAL_LINKS.filter(link => link.icon === 'instagram').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-instagram]').should(
@@ -90,10 +72,9 @@ describe('Footer Test', () => {
       'href',
       url[0]
     );
-  });
 
-  it('navigates to facebook page', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'facebook').map(
+    // Facebook
+    url = SOCIAL_LINKS.filter(link => link.icon === 'facebook').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-facebook]').should(
@@ -101,17 +82,15 @@ describe('Footer Test', () => {
       'href',
       url[0]
     );
-  });
 
-  it('navigates to RSS feed', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'rss').map(
+    // RSS
+    url = SOCIAL_LINKS.filter(link => link.icon === 'rss').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-rss]').should('have.attr', 'href', url[0]);
-  });
 
-  it('navigates to send mail', () => {
-    const url = SOCIAL_LINKS.filter(link => link.icon === 'minutemailer').map(
+    //  Mail
+    url = SOCIAL_LINKS.filter(link => link.icon === 'minutemailer').map(
       link => link.url
     );
     cy.get('[data-cy=social-link-minutemailer]').should(
