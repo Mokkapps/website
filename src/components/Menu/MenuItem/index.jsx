@@ -10,7 +10,6 @@ const MenuItem = ({
   ariaLabel,
   i18nId,
   linkProps,
-  icon: Icon,
   dataCy,
   isMobile = false,
 }) => {
@@ -25,8 +24,7 @@ const MenuItem = ({
       {...linkProps}
     >
       <div className="flex items-center content-center">
-        {Icon && <Icon />}
-        <span className="ml-2">
+        <span>
           <FormattedMessage id={i18nId} />
         </span>
       </div>
@@ -48,7 +46,6 @@ MenuItem.propTypes = {
   ariaLabel: PropTypes.string,
   i18nId: PropTypes.string,
   linkProps: PropTypes.object,
-  icon: PropTypes.object,
   dataCy: PropTypes.string,
 };
 

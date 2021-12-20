@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import ReactDisqusComments from 'react-disqus-comments';
-import { FaRegCalendar, FaRegClock } from "react-icons/fa";
 
 import config from '@content/meta/config';
 
@@ -29,11 +28,6 @@ const TipTemplate = props => {
       },
     },
   } = props;
-
-  const metaIcons = {
-    calendar: FaRegCalendar,
-    read: FaRegClock,
-  };
 
   const [showComments, setShowComments] = useState(false);
   const handleNewComment = () => {};
@@ -64,7 +58,6 @@ const TipTemplate = props => {
         <PostMeta
           className="my-10"
           date={date}
-          icons={metaIcons}
           timeToRead={timeToRead}
         />
         {cover ? (

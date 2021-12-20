@@ -1,12 +1,18 @@
 const { createClient } = require('@supabase/supabase-js');
 
-async function incrementOrDecrement(supabase, type, slug, reaction) {
+async function incrementOrDecrement(
+  supabase,
+  type,
+  slug,
+  increment,
+  decrement
+) {
   if (type === 'increment') {
-    await supabase.rpc(reaction.increment, {
+    await supabase.rpc(increment, {
       page_slug: slug,
     });
   } else if (type === 'decrement') {
-    await supabase.rpc(reaction.decrement, {
+    await supabase.rpc(decrement, {
       page_slug: slug,
     });
   }
@@ -22,28 +28,15 @@ export default async function handler(req, res) {
 
   if (req.method === 'POST') {
     const body = JSON.parse(req.body);
-    const { reaction, type } = body;
+    const { type } = body;
 
-    const rpcMap = {
-      like_count: {
-        increment: 'increment_like_count',
-        decrement: 'decrement_like_count',
-      },
-      love_count: {
-        increment: 'increment_love_count',
-        decrement: 'decrement_love_count',
-      },
-      clap_count: {
-        increment: 'increment_clap_count',
-        decrement: 'decrement_clap_count',
-      },
-      party_count: {
-        increment: 'increment_party_count',
-        decrement: 'decrement_party_count',
-      },
-    };
-
-    await incrementOrDecrement(supabase, type, slug, rpcMap[reaction]);
+    await incrementOrDecrement(
+      supabase,
+      type,
+      slug,
+      'increment_clap_count',
+      'decrement_party_count'
+    );
 
     return res.status(200).json({
       message: `Successfully performed reaction for: ${slug}`,
@@ -53,15 +46,12 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     const { data } = await supabase
       .from('content')
-      .select('like_count, love_count, clap_count, party_count')
+      .select('clap_count')
       .filter('slug', 'eq', slug);
 
     if (data) {
       return res.status(200).json({
-        like_count: data[0]?.like_count || 0,
-        love_count: data[0]?.love_count || 0,
         clap_count: data[0]?.clap_count || 0,
-        party_count: data[0]?.party_count || 0,
       });
     }
   }

@@ -2,25 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
+import { FaRegEye, FaRegCalendar, FaRegClock } from 'react-icons/fa';
 
 import { getFormattedDate } from '@utils';
 import { baseNameWithTitle } from '@content/meta/config';
 import CategoryLink from '@components/CategoryLink';
 
 const PostMeta = props => {
-  const {
-    date,
-    timeToRead,
-    lastUpdated,
-    className,
-    categories,
-    icons: { calendar: CalendarIcon, read: ReadIcon },
-  } = props;
+  const { date, timeToRead, lastUpdated, className, pageViews, categories } =
+    props;
 
   return (
-    <section
-      className={`flex items-center ${className}`}
-    >
+    <section className={`flex items-center ${className}`}>
       <StaticImage
         alt={baseNameWithTitle}
         className="rounded-full mr-8"
@@ -32,10 +25,19 @@ const PostMeta = props => {
       <div>
         <div className="flex flex-col">
           <span className="flex items-center">
-            {CalendarIcon && <CalendarIcon className="mr-2 w-4 h-4" />}{' '}
+            {<FaRegCalendar className="mr-2 w-4 h-4" />}{' '}
             {getFormattedDate(date)} |{' '}
-            {ReadIcon && <ReadIcon className="ml-1 mr-2 w-4 h-4" />}{' '}
-            {timeToRead} <FormattedMessage id="blogPage.minuteRead" />
+            {<FaRegClock className="ml-1 mr-2 w-4 h-4" />} {timeToRead}{' '}
+            <FormattedMessage id="blogPage.minuteRead" />
+            {pageViews ? (
+              <div>
+                {<FaRegEye className="ml-1 mr-2 w-4 h-4" />}{' '}
+                <FormattedMessage
+                  id="general.views"
+                  values={{ count: pageViews }}
+                />
+              </div>
+            ) : null}
           </span>
         </div>
         {lastUpdated ? (
@@ -65,6 +67,7 @@ PostMeta.propTypes = {
   date: PropTypes.string,
   categories: PropTypes.arrayOf(PropTypes.string),
   timeToRead: PropTypes.number,
+  pageViews: PropTypes.number,
   lastUpdated: PropTypes.string,
   className: PropTypes.string,
   icons: PropTypes.object,

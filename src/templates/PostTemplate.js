@@ -5,10 +5,8 @@ import React, { useEffect, useState } from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 import { FormattedMessage } from 'react-intl';
 import {
-  FaRegCalendar,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
-  FaRegClock,
 } from 'react-icons/fa';
 
 import config from '@content/meta/config';
@@ -24,11 +22,6 @@ import Button from '@components/Button';
 import EditOnGithub from '@components/EditOnGithub';
 import LanguageWarning from '@components/LanguageWarning';
 
-const metaIcons = {
-  calendar: FaRegCalendar,
-  read: FaRegClock,
-};
-
 const nextPrevIcons = {
   next: FaAngleDoubleRight,
   prev: FaAngleDoubleLeft,
@@ -41,7 +34,14 @@ const PostTemplate = props => {
       post: {
         excerpt,
         body,
-        frontmatter: { title, cover, bannerCredit, canonical, lastUpdated, categories },
+        frontmatter: {
+          title,
+          cover,
+          bannerCredit,
+          canonical,
+          lastUpdated,
+          categories,
+        },
         fields: { slug, prefix },
         timeToRead,
       },
@@ -50,6 +50,7 @@ const PostTemplate = props => {
   } = props;
 
   const [showComments, setShowComments] = useState(false);
+  const [pageViews, setPageViews] = useState(null);
   const { siteUrl, siteTitlePostfix } = config;
 
   const url = `${siteUrl}/blog${slug}`;
@@ -65,19 +66,21 @@ const PostTemplate = props => {
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   useEffect(() => {
-    // fetch(`http://localhost:8888/api/views/${slug}`, {
-    //   method: 'POST',
-    // })
-    //   .then(response => console.log(response))
-    //   .catch(error => console.log(error));
-    //
-    // fetch(`http://localhost:8888/api/views/${slug}`)
-    //   .then(response => response.json().then(json => console.log(json)))
-    //   .catch(error => console.log(error));
-
-    fetch(`http://localhost:8888/api/statistics/total-pageviews`)
-      .then(response => response.json().then(json => console.log(json)))
-      .catch(error => console.log(error));
+    fetch(`${window.origin}/api/views/${slug}`, { method: 'POST' })
+      .then(() => {
+        fetch(`${window.origin}/api/views/${slug}`)
+          .then(response =>
+            response.json().then(json => {
+              setPageViews(json.total);
+            })
+          )
+          .catch(error =>
+            console.log(`Failed to get page views for slug ${slug}`, error)
+          );
+      })
+      .catch(error =>
+        console.log(`Failed to set page views for slug ${slug}`, error)
+      );
   }, []);
 
   return (
@@ -97,10 +100,10 @@ const PostTemplate = props => {
         <PostMeta
           className="my-10"
           date={prefix}
-          icons={metaIcons}
           lastUpdated={lastUpdated}
           timeToRead={timeToRead}
           categories={categories}
+          pageViews={pageViews}
         />
         {cover ? (
           <div className="flex justify-center">

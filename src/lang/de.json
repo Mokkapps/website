@@ -5,7 +5,8 @@
     "newsletterLink": "Zum Newsletter →",
     "moreBlogPostsLink": "Mehr Blog Artikel →",
     "buyMeACoffee": "Kauf mir einen Kaffee",
-    "read": "Gelesen"
+    "read": "Gelesen",
+    "views": "{count} Ansichten"
   },
   "menu": {
     "home": "Start",
