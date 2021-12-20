@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { GatsbyImage, getSrc } from "gatsby-plugin-image";
+import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import ReactDisqusComments from 'react-disqus-comments';
 
 import config from '@content/meta/config';
@@ -13,7 +13,6 @@ import LanguageWarning from '@components/LanguageWarning';
 import ArticleWithSidebar from '@components/ArticleWithSidebar';
 import Share from '@components/Share';
 import EditOnGithub from '@components/EditOnGithub';
-import Author from '@components/Author';
 import Button from '@components/Button';
 import PostMeta from '@components/PostMeta';
 
@@ -24,12 +23,13 @@ const TipTemplate = props => {
         body,
         frontmatter: { title, description, date, cover },
         fields: { slug },
-        timeToRead
+        timeToRead,
       },
     },
   } = props;
 
   const [showComments, setShowComments] = useState(false);
+  const [pageViews, setPageViews] = useState(null);
   const handleNewComment = () => {};
 
   const { siteUrl, siteTitlePostfix } = config;
@@ -41,6 +41,25 @@ const TipTemplate = props => {
     text: title,
     longtext: description,
   };
+
+  useEffect(() => {
+    const apiSlug = slug.split('/')[2];
+    fetch(`${window.origin}/api/views/${apiSlug}`, { method: 'POST' })
+      .then(() => {
+        fetch(`${window.origin}/api/views/${apiSlug}`)
+          .then(response =>
+            response.json().then(json => {
+              setPageViews(json.total);
+            })
+          )
+          .catch(error =>
+            console.log(`Failed to get page views for slug ${apiSlug}`, error)
+          );
+      })
+      .catch(error =>
+        console.log(`Failed to set page views for slug ${apiSlug}`, error)
+      );
+  }, [slug]);
 
   return (
     <Layout
@@ -55,11 +74,7 @@ const TipTemplate = props => {
       <ArticleWithSidebar shareProps={shareProps}>
         <LanguageWarning className="my-4" type="Tips" />
         <h1>{title}</h1>
-        <PostMeta
-          className="my-10"
-          date={date}
-          timeToRead={timeToRead}
-        />
+        <PostMeta className="my-10" date={date} timeToRead={timeToRead} pageViews={pageViews} />
         {cover ? (
           <div className="flex justify-center mt-10">
             <GatsbyImage
@@ -69,7 +84,7 @@ const TipTemplate = props => {
             />
           </div>
         ) : null}
-        <BodyText body={body} fullWidth/>
+        <BodyText body={body} fullWidth />
         <Share className="my-10" shareProps={shareProps} />
         <EditOnGithub isTip slug={slug} />
         {showComments ? (
@@ -85,7 +100,6 @@ const TipTemplate = props => {
             <FormattedMessage id="blogPage.leaveAComment" />
           </Button>
         )}
-        <Author className="xl:hidden my-8" />
       </ArticleWithSidebar>
     </Layout>
   );

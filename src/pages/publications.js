@@ -55,7 +55,7 @@ const PublicationsPage = props => {
                     urls={{ page: link }}
                     minimal
                   >
-                    <div className="h-full bg-secondary flex flex-col items-center px-4 pb-4">
+                    <div className="h-full bg-secondary flex flex-col items-center px-4 pb-4 rounded-b-md">
                       <Divider />
                       <div className="flex flex-col items-center flex-grow justify-evenly">
                         <p className="text-main-text">{date}</p>

@@ -19,12 +19,12 @@ const menu = [
   {
     i18nId: 'menu.about',
     to: '/about',
-    ariaLabel: 'About Me',
+    ariaLabel: 'About',
   },
   {
     i18nId: 'menu.contact',
     to: '/contact',
-    ariaLabel: 'Contact Me',
+    ariaLabel: 'Contact',
   },
 ];
 

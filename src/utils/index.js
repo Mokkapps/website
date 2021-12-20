@@ -11,6 +11,8 @@ export const getFormattedDate = date => (
   <FormattedDate year="numeric" month="long" day="2-digit" value={date} />
 );
 
+export const formatNumber = number => new Intl.NumberFormat().format(number);
+
 export const handleArticleClicked = slug => {
   const localData = JSON.parse(localStorage.getItem(slug));
   if (typeof window !== 'undefined') {

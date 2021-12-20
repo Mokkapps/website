@@ -116,6 +116,7 @@
   }
 
   h1 {
+    line-height: 1.2 !important;
     @apply text-5xl;
 
     @media (max-width: 640px) {

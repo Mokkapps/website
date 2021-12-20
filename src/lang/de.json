@@ -22,7 +22,8 @@
     "with": "mit viel",
     "using": "und mit",
     "privacyPolicy": "Datenschutzerklärung",
-    "legalNotice": "Impressum"
+    "legalNotice": "Impressum",
+    "uses": "Uses"
   },
   "landingPage": {
     "title": "Suchen Sie einen {tech} Freelancer?",

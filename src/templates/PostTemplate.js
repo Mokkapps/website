@@ -15,7 +15,6 @@ import ArticleWithSidebar from '@components/ArticleWithSidebar';
 import Layout from '@components/Layout';
 import PostMeta from '@components/PostMeta';
 import BodyText from '@components/BodyText';
-import Author from '@components/Author';
 import NextPrev from '@components/NextPrev';
 import Share from '@components/Share';
 import Button from '@components/Button';
@@ -81,7 +80,7 @@ const PostTemplate = props => {
       .catch(error =>
         console.log(`Failed to set page views for slug ${slug}`, error)
       );
-  }, []);
+  }, [slug]);
 
   return (
     <Layout
@@ -139,7 +138,6 @@ const PostTemplate = props => {
             <FormattedMessage id="blogPage.leaveAComment" />
           </Button>
         )}
-        <Author className="xl:hidden my-8" />
       </ArticleWithSidebar>
     </Layout>
   );
