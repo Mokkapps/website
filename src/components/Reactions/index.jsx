@@ -4,13 +4,13 @@ import React from 'react';
 import useArticleReactions from '@hooks/useArticleReactions';
 import { formatNumber } from '@utils';
 
-const Reactions = ({ slug }) => {
+const Reactions = ({ slug, className }) => {
   const modifiedSlug = slug[0] === '/' ? slug.substring(1) : slug;
   const { hasClapped, reactions, handleIncrementClap, handleDecrementClap } =
     useArticleReactions(modifiedSlug);
 
   return (
-    <div data-cy="reactions" className="flex">
+    <div data-cy="reactions" className={`flex ${className}`}>
       <div
         role="button"
         tabIndex={0}
@@ -35,6 +35,7 @@ const Reactions = ({ slug }) => {
 
 Reactions.propTypes = {
   slug: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default Reactions;

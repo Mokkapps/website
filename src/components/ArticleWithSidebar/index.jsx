@@ -14,7 +14,6 @@ const ArticleWithSidebar = ({ children, shareProps, slug }) => (
     </article>
     <aside className="hidden xl:pl-8 xl:block xl:col-start-11 xl:col-end-13 xl:col-start-11 xxl:col-end-13">
       <div className="sticky top-20 max-w-48">
-        <Reactions slug={slug}/>
         <NewsletterSidebar className="mt-4" />
         <div data-cy="sidebar-share" className="flex justify-center mt-4">
           <div className="w-3/4">
@@ -26,7 +25,8 @@ const ArticleWithSidebar = ({ children, shareProps, slug }) => (
             />
           </div>
         </div>
-        <BuyMeACoffeeButton dataCy="sidebar-buy-me-a-coffee" className="mt-4" />
+        <Reactions slug={slug} className="mt-4" />
+        <BuyMeACoffeeButton dataCy="sidebar-buy-me-a-coffee" />
       </div>
     </aside>
   </section>
