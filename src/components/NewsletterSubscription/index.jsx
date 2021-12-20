@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { sendCustomAnalyticsEvent } from '../../utils/helper';
+import { sendCustomAnalyticsEvent } from '../../utils';
 
 const NewsletterSubscription = ({
   dataCy,
@@ -19,11 +19,11 @@ const NewsletterSubscription = ({
       data-cy={dataCy}
     >
       {h2Heading ? (
-        <h2 className="text-main-text mb-0 text-center">
+        <h2 className="text-main-text mb-0">
           <FormattedMessage id="sidebar.newsletter.title" />
         </h2>
       ) : (
-        <h3 className="text-main-text mb-0 text-center">
+        <h3 className="text-main-text mb-0">
           <FormattedMessage id="sidebar.newsletter.title" />
         </h3>
       )}

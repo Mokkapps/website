@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { sendCustomAnalyticsEvent } from '../../utils/helper';
+import { sendCustomAnalyticsEvent } from '../../utils';
 import PropTypes from 'prop-types';
 
 const BuyMeACoffeeButton = ({ className, dataCy }) => {

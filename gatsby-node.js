@@ -2,8 +2,54 @@ const _ = require('lodash');
 const path = require('path');
 const Promise = require('bluebird');
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const fetch = require(`node-fetch`);
 
 const SLUG_SEPARATOR = '___';
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@api': path.resolve(__dirname, 'src/api'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
+        '@content': path.resolve(__dirname, 'src/content'),
+        '@static': path.resolve(__dirname, 'static'),
+      },
+    },
+  });
+};
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createContentDigest,
+}) => {
+  // get data from Revue API at build time
+  const result = await fetch('https://www.getrevue.co/api/v2/subscribers', {
+    method: 'GET',
+    headers: {
+      Authorization: `Token ${process.env.REVUE_API_KEY}`,
+    },
+  });
+
+  if (result.ok) {
+    const resultData = await result.json();
+    console.log(resultData.length);
+    // create node for build time data example in the docs
+    createNode({
+      subscriberCount: resultData.length,
+      // required fields
+      id: `revue-subscriber-count`,
+      parent: null,
+      children: [],
+      internal: {
+        type: `revue`,
+        contentDigest: createContentDigest(resultData),
+      },
+    });
+  }
+};
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;

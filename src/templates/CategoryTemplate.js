@@ -10,7 +10,7 @@ import Article from '../components/Article';
 import Heading from '../components/Heading';
 import BlogPostList from '../components/BlogPostList';
 import CategorySelection from '../components/CategorySelection';
-import { getCategoryDisplayText, metaIcons } from '../utils/helper';
+import { getCategoryDisplayText, metaIcons } from '../utils';
 
 const PageTemplate = props => {
   const {

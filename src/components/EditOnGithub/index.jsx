@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { sendCustomAnalyticsEvent } from '../../utils/helper';
+import { sendCustomAnalyticsEvent } from '../../utils';
 
 const EditOnGithub = ({ prefix, slug, isTip }) => {
   let url;

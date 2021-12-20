@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { getSrc } from 'gatsby-plugin-image';
 
-import config from '../content/meta/config';
-import { getAsset } from '../utils/helper';
+import config from '@content/meta/config';
+import { getAsset } from '@utils';
 
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import ProjectCard from '../components/ProjectCard';
-import CardDivider from '../components/Card/CardDivider';
+import Article from '@components/Article';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
+import ProjectCard from '@components/ProjectCard';
+import Divider from '@components/Divider';
 
 const PublicationsPage = props => {
   const {
@@ -32,10 +32,13 @@ const PublicationsPage = props => {
       <Article>
         <div className="flex flex-col items-center">
           <Heading i18nId="publicationsPage.title" />
-          <h2 className="my-8 uppercase">
+          <h2 className="my-8">
             <FormattedMessage id="publicationsPage.talks" />
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-cy="publications-talks-section">
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
+            data-cy="publications-talks-section"
+          >
             {publications
               .filter(p => p.type === 'talk')
               .map((talk, i) => {
@@ -53,7 +56,7 @@ const PublicationsPage = props => {
                     minimal
                   >
                     <div className="h-full bg-secondary flex flex-col items-center px-4 pb-4">
-                      <CardDivider />
+                      <Divider />
                       <div className="flex flex-col items-center flex-grow justify-evenly">
                         <p className="text-main-text">{date}</p>
                         <p className="text-main-text">{host}</p>
@@ -68,7 +71,7 @@ const PublicationsPage = props => {
                 );
               })}
           </div>
-          <h2 className="my-8 uppercase">
+          <h2 className="my-8">
             <FormattedMessage id="publicationsPage.articles" />
           </h2>
           <ul data-cy="publications-articles-section">

@@ -46,7 +46,7 @@ const ContactPage = props => {
           <Availability className="my-5" dataCy="contact-availability" />
           <ScheduleMeetingButton
             dataCy="contact-hire-me-button"
-            className="w-64 h-16 mb-2 uppercase"
+            className="w-64 h-16 mb-2"
           />
           <ContactForm />
         </section>

@@ -17,7 +17,7 @@
   --secondary-darken: #cfd9db;
   --text-main: #0d0106;
   --text-secondary: #454e56;
-  --text-mark: #C6C6C6;
+  --text-mark: #c6c6c6;
   --background: #f8f8f8;
   --accent: #fc1a20;
   --button-background: #ecf0f1;
@@ -41,6 +41,8 @@
   --burger-menu-button: #b8b8b9;
   --basic-button-text: #0d0106;
   --basic-button-text-light: #1c1b1b;
+  --color-success: #009944;
+  --color-error: #cf000f;
 }
 
 @layer base {
@@ -237,7 +239,11 @@
 
   mark {
     color: var(--text-main);
-    background: linear-gradient(120deg, var(--text-mark) 0%, var(--text-mark) 100%);
+    background: linear-gradient(
+      120deg,
+      var(--text-mark) 0%,
+      var(--text-mark) 100%
+    );
     background-repeat: no-repeat;
     background-size: 100% 40%;
     background-position: 0 90%;
@@ -247,12 +253,56 @@
     text-shadow: 1px 1px 4px rgba(34, 34, 34, 0.6);
   }
 
+  .text-success {
+    color: var(--color-success);
+  }
+
   .not-available {
-    background-color: #cf000f;
+    background-color: var(--color-error);
   }
 
   .available {
-    background-color: #009944;
+    background-color: var(--color-success);
+  }
+
+  .menu-item {
+    .active {
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+
+    a {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-main);
+      position: relative;
+      text-decoration: none;
+      background-size: 100% 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 3px;
+        transform: scaleX(0);
+        background-color: var(--accent);
+        transition: transform 0.3s;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        &:after {
+          transform: scaleX(1);
+        }
+      }
+    }
   }
 
   .stylistic-quote-mark {

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import ArrowRightIcon from 'react-feather/dist/icons/arrow-right';
-import ArrowLeftIcon from 'react-feather/dist/icons/arrow-left';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const testimonialCount = 2;
 const intervalTimeInMs = 7500;
@@ -67,7 +66,7 @@ const TestimonialSlider = ({ intl, className, dataCy }) => {
       <div className="flex m-auto min-h-testimonial-mobile sm:min-h-testimonial-desktop">
         {showArrows && (
           <button className="outline-none pr-8" onClick={showPreviousSlide}>
-            <ArrowLeftIcon />
+            <FaAngleLeft />
           </button>
         )}
         <div>
@@ -88,7 +87,7 @@ const TestimonialSlider = ({ intl, className, dataCy }) => {
 
         {showArrows && (
           <button className="outline-none pl-8" onClick={showNextSlide}>
-            <ArrowRightIcon />
+            <FaAngleRight />
           </button>
         )}
       </div>

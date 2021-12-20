@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Switch from 'react-switch';
 
 import { LanguageContext } from '../../context/languageContext';
-import { getCssVariableHexColor } from '../../utils/helper';
+import { getCssVariableHexColor } from '../../utils';
 
 const LanguageSwitcher = props => {
   const [checked, setChecked] = useState(false);

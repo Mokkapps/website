@@ -9,7 +9,7 @@ import Article from '../components/Article';
 
 import Heading from '../components/Heading';
 import CategorySelection from '../components/CategorySelection';
-import { getAllCategories } from '../utils/helper';
+import { getAllCategories } from '../utils';
 
 const CategoriesPage = props => {
   const {

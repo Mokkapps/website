@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../../content/meta/config';
-import { yearsOfExperience } from '../../utils/helper';
+import { yearsOfExperience } from '../../utils';
 import { StaticImage } from 'gatsby-plugin-image';
 import AboutParagraph from './AboutParagraph';
 import SocialLinks from '../SocialLink/SocialLinks';

@@ -5,7 +5,7 @@ import { getSrc } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
 
 import config from '../content/meta/config';
-import { getAllCategories, metaIcons } from '../utils/helper';
+import { getAllCategories, metaIcons } from '../utils';
 
 import Layout from '../components/Layout';
 import BlogPostList from '../components/BlogPostList';

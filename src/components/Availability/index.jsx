@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
-import { getFormattedDate } from '../../utils/helper';
+import { getFormattedDate } from '../../utils';
 
 const availability = new Date('2022-07-31');
 

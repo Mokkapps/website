@@ -4,33 +4,24 @@ import PropTypes from 'prop-types';
 import { getSrc, StaticImage } from 'gatsby-plugin-image';
 import { navigate } from 'gatsby-link';
 import { FormattedMessage } from 'react-intl';
-
-import config from '../content/meta/config';
-
 import styled from 'styled-components';
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import Button from '../components/Button';
+
+import config from '@content/meta/config';
 import {
   baseFormattedMessageValues,
-  getAsset,
   sendCustomAnalyticsEvent,
   yearsOfExperience,
-} from '../utils/helper';
-import LinkButton from '../components/LinkButton';
-import ProjectCard from '../components/ProjectCard';
-import Availability from '../components/Availability';
-import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
-import BusinessProjectList from '../components/BusinessProjectsList';
-import DevIcon from '../components/DevIcon';
-import References from '../components/References';
-import LinkCard from '../components/LinkCard';
-
-const UnorderedList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-`;
+} from '@utils';
+import Layout from '@components/Layout';
+import Article from '@components/Article';
+import Button from '@components/Button';
+import LinkButton from '@components/LinkButton';
+import Availability from '@components/Availability';
+import ScheduleMeetingButton from '@components/ScheduleMeetingButton';
+import BusinessProjectList from '@components/BusinessProjectsList';
+import DevIcon from '@components/DevIcon';
+import References from '@components/References';
+import LinkCard from '@components/LinkCard';
 
 const ListElement = styled.li`
   padding-left: -1rem;
@@ -64,7 +55,7 @@ const IndexPage = props => {
         <h2 className="text-center lg:text-left">
           <FormattedMessage id="landingPage.doYouNeed" />
         </h2>
-        <UnorderedList>
+        <ul className="list-none p-0 m-o">
           <ListElement className="my-8">
             <FormattedMessage
               id="landingPage.skills.experience"
@@ -107,7 +98,7 @@ const IndexPage = props => {
               }}
             />
           </ListElement>
-        </UnorderedList>
+        </ul>
       </div>
       <div className="flex justify-center">
         <StaticImage
@@ -125,7 +116,7 @@ const IndexPage = props => {
   const hireMeButton = (
     <Button
       dataCy="home-hire-me-button"
-      className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
+      className="w-full md:w-72 h-16 mb-2 mx-2"
       onClick={() => {
         sendCustomAnalyticsEvent('Hire me button clicked');
         navigate('/contact');
@@ -140,10 +131,10 @@ const IndexPage = props => {
 
   const latestTips = (
     <section className="flex flex-col items-center justify-center">
-      <h2 className="text-center mt-10 mb-4 uppercase">
+      <h2 className="text-center mt-10 mb-4">
         <FormattedMessage id="landingPage.latestTips" />
       </h2>
-      <div  className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {tips.map(tip => {
           const {
             frontmatter: { title, cover },
@@ -152,6 +143,7 @@ const IndexPage = props => {
           return (
             <LinkCard
               key={slug}
+              slug={slug}
               cover={cover}
               dataCy={`latest-tip`}
               to={`/tips${slug}`}
@@ -172,7 +164,7 @@ const IndexPage = props => {
 
   const latestBlogPosts = (
     <section className="flex flex-col items-center justify-center">
-      <h2 className="text-center mt-10 mb-4 uppercase">
+      <h2 className="text-center mt-10 mb-4">
         <FormattedMessage id="landingPage.latestBlogPosts" />
       </h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -184,6 +176,7 @@ const IndexPage = props => {
           return (
             <LinkCard
               key={slug}
+              slug={slug}
               cover={cover}
               dataCy={`latest-blog-post`}
               to={`/blog${slug}`}
@@ -204,7 +197,7 @@ const IndexPage = props => {
 
   const featuredPrivateProjects = (
     <section className="flex flex-col items-center justify-center">
-      <h2 className="text-center mt-10 mb-4 uppercase">
+      <h2 className="text-center mt-10 mb-4">
         <FormattedMessage id="landingPage.featuredPrivateProjects" />
       </h2>
       <div
@@ -214,17 +207,21 @@ const IndexPage = props => {
         {config.projects
           .filter(p => p.featured)
           .map(project => {
-            const { imageName, title, description, urls } = project;
+            const { imageName, title, urls } = project;
             return (
-              <ProjectCard
-                block
-                data-cy="home-project-card"
+              <LinkCard
                 key={title}
-                minimal={true}
-                asset={getAsset(projectAssets.edges, imageName)}
                 title={title}
-                description={description.short}
-                urls={urls}
+                cover={projectAssets.edges
+                  .map(e => e.node)
+                  .filter(n => n.childImageSharp)
+                  .find(n =>
+                    n.childImageSharp.gatsbyImageData.images.fallback.src.includes(
+                      imageName
+                    )
+                  )}
+                dataCy={`home-project-card`}
+                to={urls.page}
               />
             );
           })}
@@ -269,7 +266,7 @@ const IndexPage = props => {
         {hireMeButton}
         <ScheduleMeetingButton
           dataCy="home-schedule-meeting-button"
-          className="w-full md:w-72 h-16 mb-2 uppercase mx-2"
+          className="w-full md:w-72 h-16 mb-2 mx-2"
         />
       </div>
       <References className="my-10" dataCy="home-references" />
@@ -278,7 +275,7 @@ const IndexPage = props => {
 
   const businessProjects = (
     <section>
-      <h2 className="text-center mt-10 mb-4 uppercase">
+      <h2 className="text-center mt-10 mb-4">
         <FormattedMessage id="landingPage.businessProjectHighlights" />
       </h2>
       <BusinessProjectList dataCy="hero-business-project-list" />

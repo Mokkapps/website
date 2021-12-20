@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import Button from '../Button';
-import { sendCustomAnalyticsEvent } from '../../utils/helper';
+import { sendCustomAnalyticsEvent } from '../../utils';
 
 const ScheduleMeetingButton = props => {
   const options = {

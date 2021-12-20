@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedDate } from 'react-intl';
-import { getFormattedDate } from '../../utils/helper';
+import { getFormattedDate } from '../../utils';
 
 const Container = styled.div`
   display: flex;

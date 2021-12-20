@@ -14,8 +14,7 @@ const ArticleWithSidebar = ({ children, shareProps }) => (
     </article>
     <aside className="hidden xl:pl-8 xl:block xl:col-start-11 xl:col-end-13 xl:col-start-11 xxl:col-end-13">
       <div className="sticky top-20 max-w-48">
-        <HireTheAuthor />
-        <NewsletterSidebar className="mt-4" />
+        <NewsletterSidebar />
         <div className="flex justify-center mt-4">
           <div className="w-3/4">
             <Share

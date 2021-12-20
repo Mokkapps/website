@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getCategoryDisplayText } from '../../utils/helper';
+import { getCategoryDisplayText } from '../../utils';
 import { navigate } from 'gatsby-link';
 
 const CategoryLink = ({ category, dataCy, className, compact = true }) => {

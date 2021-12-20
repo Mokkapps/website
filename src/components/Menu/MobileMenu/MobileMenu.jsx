@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { bool, any, string } from 'prop-types';
 import { injectIntl } from 'react-intl';
 
-import menuItems from '../../../content/meta/menu';
-import LanguageSwitcher from '../../LanguageSwitcher';
-import ThemeSwitch from '../../ThemeSwitch';
-import MenuItem from "../MenuItem";
+import menuItems from '@content/meta/menu';
+import LanguageSwitcher from '@components/LanguageSwitcher';
+import ThemeSwitch from '@components/ThemeSwitch';
+import MenuItem from '@components/Menu/MenuItem';
 
 export const StyledMenu = styled.nav`
   position: absolute;

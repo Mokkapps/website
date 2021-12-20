@@ -73,7 +73,7 @@ const ProjectsPage = props => {
             <FormattedMessage id="projectsPage.detailedProjectList" />
           </p>
         </div>
-        <h2 className="text-center uppercase mb-8">
+        <h2 className="text-center mb-8">
           <FormattedMessage id="projectsPage.privateProjectsHeading" />
         </h2>
         <ProjectList projectAssets={projectAssets} />

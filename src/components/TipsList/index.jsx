@@ -25,6 +25,7 @@ const TipsList = props => {
         const component = (
           <LinkCard
             key={slug}
+            slug={slug}
             cover={cover}
             dataCy={`tip-${count}`}
             date={date}

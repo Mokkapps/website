@@ -1,39 +1,37 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 import { FormattedMessage } from 'react-intl';
+import {
+  FaRegCalendar,
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+  FaRegClock,
+} from 'react-icons/fa';
 
-import CalendarIcon from 'react-feather/dist/icons/calendar';
-import TagIcon from 'react-feather/dist/icons/tag';
-import PrevIcon from 'react-feather/dist/icons/arrow-left';
-import NextIcon from 'react-feather/dist/icons/arrow-right';
-import ReadIcon from 'react-feather/dist/icons/eye';
-
-import config from '../content/meta/config';
-import ArticleWithSidebar from '../components/ArticleWithSidebar';
-import Layout from '../components/Layout';
-import PostMeta from '../components/PostMeta';
-import Heading from '../components/Heading';
-import BodyText from '../components/BodyText';
-import Author from '../components/Author';
-import NextPrev from '../components/NextPrev';
-import Share from '../components/Share';
-import { getAllCategories } from '../utils/helper';
-import Button from '../components/Button';
-import EditOnGithub from '../components/EditOnGithub';
-import LanguageWarning from '../components/LanguageWarning';
+import config from '@content/meta/config';
+import { getAllCategories } from '@utils';
+import ArticleWithSidebar from '@components/ArticleWithSidebar';
+import Layout from '@components/Layout';
+import PostMeta from '@components/PostMeta';
+import BodyText from '@components/BodyText';
+import Author from '@components/Author';
+import NextPrev from '@components/NextPrev';
+import Share from '@components/Share';
+import Button from '@components/Button';
+import EditOnGithub from '@components/EditOnGithub';
+import LanguageWarning from '@components/LanguageWarning';
 
 const metaIcons = {
-  calendar: CalendarIcon,
-  tag: TagIcon,
-  read: ReadIcon,
+  calendar: FaRegCalendar,
+  read: FaRegClock,
 };
 
 const nextPrevIcons = {
-  next: NextIcon,
-  prev: PrevIcon,
+  next: FaAngleDoubleRight,
+  prev: FaAngleDoubleLeft,
 };
 
 const PostTemplate = props => {
@@ -43,7 +41,7 @@ const PostTemplate = props => {
       post: {
         excerpt,
         body,
-        frontmatter: { title, cover, bannerCredit, canonical, lastUpdated },
+        frontmatter: { title, cover, bannerCredit, canonical, lastUpdated, categories },
         fields: { slug, prefix },
         timeToRead,
       },
@@ -67,15 +65,18 @@ const PostTemplate = props => {
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   useEffect(() => {
-    fetch('https://mokkapps.de/api/supabase', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: { slug },
-    })
-      .then(response => console.log(response))
+    // fetch(`http://localhost:8888/api/views/${slug}`, {
+    //   method: 'POST',
+    // })
+    //   .then(response => console.log(response))
+    //   .catch(error => console.log(error));
+    //
+    // fetch(`http://localhost:8888/api/views/${slug}`)
+    //   .then(response => response.json().then(json => console.log(json)))
+    //   .catch(error => console.log(error));
+
+    fetch(`http://localhost:8888/api/statistics/total-pageviews`)
+      .then(response => response.json().then(json => console.log(json)))
       .catch(error => console.log(error));
   }, []);
 
@@ -91,14 +92,15 @@ const PostTemplate = props => {
       }}
     >
       <ArticleWithSidebar categories={allCategories} shareProps={shareProps}>
-        <Heading title={title} />
         <LanguageWarning className="my-4" type="Blog Artikel" />
+        <h1>{title}</h1>
         <PostMeta
           className="my-10"
-          prefix={prefix}
+          date={prefix}
           icons={metaIcons}
           lastUpdated={lastUpdated}
           timeToRead={timeToRead}
+          categories={categories}
         />
         {cover ? (
           <div className="flex justify-center">

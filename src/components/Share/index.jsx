@@ -18,7 +18,7 @@ import {
   EmailShareButton,
   EmailIcon,
 } from 'react-share';
-import { sendCustomAnalyticsEvent } from '../../utils/helper';
+import { sendCustomAnalyticsEvent } from '../../utils';
 
 const Share = props => {
   const {

@@ -4,8 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'gatsby';
 
-import { sendCustomAnalyticsEvent } from '../../utils/helper';
-import config from '../../content/meta/config';
+import { sendCustomAnalyticsEvent } from '@utils';
+import config from '@content/meta/config';
 import { LanguageContext } from '../../context/languageContext';
 
 const HireTheAuthor = () => {

@@ -3,7 +3,7 @@ import React from 'react';
 
 import ProjectCard from '../ProjectCard';
 import config from '../../content/meta/config';
-import { getAsset } from '../../utils/helper';
+import { getAsset } from '../../utils';
 
 const ProjectList = ({ projectAssets }) => {
   const { edges } = projectAssets;

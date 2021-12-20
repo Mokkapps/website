@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-import { baseFormattedMessageValues } from '../../utils/helper';
+import { baseFormattedMessageValues } from '../../utils';
 
 const AboutParagraph = ({ id, values, className }) => {
   return (

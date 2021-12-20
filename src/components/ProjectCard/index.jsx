@@ -1,15 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import styled from 'styled-components';
 
-import Card from '../Card';
 import ProjectCardDescription from './ProjectCardDescription';
-
-const ProjectImage = styled(GatsbyImage)`
-  margin: 0.3rem;
-  min-height: 200px;
-`;
 
 const ProjectCard = ({
   id,
@@ -22,8 +15,19 @@ const ProjectCard = ({
   children,
   block = false,
 }) => (
-  <Card url={urls.page} clickable id={id} block={block}>
-    <ProjectImage alt={`${title} Image`} image={asset} />
+  <a
+    className={`flex flex-col bg-none shadow-md bg-secondary rounded-md m-2 max-w-full ${
+      block ? 'w-full' : 'w-64'
+    }`}
+    data-cy={`card-${id}`}
+    href={urls.page}
+    id={id}
+  >
+    <GatsbyImage
+      className="rounded-t-md min-h-200px"
+      alt={`${title} Image`}
+      image={asset}
+    />
     <ProjectCardDescription
       minimal={minimal}
       projectName={title}
@@ -32,7 +36,7 @@ const ProjectCard = ({
       usedTechnologies={usedTechnologies}
     />
     {children}
-  </Card>
+  </a>
 );
 
 ProjectCard.propTypes = {

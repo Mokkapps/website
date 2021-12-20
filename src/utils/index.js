@@ -1,9 +1,7 @@
-import CalendarIcon from 'react-feather/dist/icons/calendar';
-import UserIcon from 'react-feather/dist/icons/user';
-import TagIcon from 'react-feather/dist/icons/tag';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { FormattedDate } from 'react-intl';
+import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
 
 export const baseFormattedMessageValues = {
   mark: chunks => <mark>{chunks}</mark>,
@@ -12,6 +10,22 @@ export const baseFormattedMessageValues = {
 export const getFormattedDate = date => (
   <FormattedDate year="numeric" month="long" day="2-digit" value={date} />
 );
+
+export const handleArticleClicked = slug => {
+  const localData = JSON.parse(localStorage.getItem(slug));
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(slug, JSON.stringify({ ...localData, hasRead: true }));
+  }
+};
+
+export const getNode = (edges, imageName) => {
+  return edges
+    .map(e => e.node)
+    .filter(n => n.childImageSharp)
+    .find(n =>
+      n.childImageSharp.gatsbyImageData.images.fallback.src.includes(imageName)
+    );
+};
 
 export const getAsset = (edges, imageName) => {
   const node = edges
@@ -72,9 +86,8 @@ export const getAllCategories = allPosts => {
 };
 
 export const metaIcons = {
-  calendar: CalendarIcon,
-  user: UserIcon,
-  tag: TagIcon,
+  calendar: FaRegCalendarAlt,
+  user: FaRegUser,
 };
 
 export const capitalize = s => {

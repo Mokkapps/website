@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from '../../context/themeContextProvider';
-import { getCssVariableHexColor } from '../../utils/helper';
+import { getCssVariableHexColor } from '../../utils';
 
 const ThemeSwitch = props => {
   const [checked, setChecked] = useState(false);

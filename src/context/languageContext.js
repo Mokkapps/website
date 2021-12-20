@@ -16,23 +16,23 @@ const LanguageProvider = ({ children, lang, toggleLanguage }) => (
 const enhance = compose(
   withState('lang', 'handleLanguage', 'en'),
   withHandlers({
-    toggleLanguage: ({ lang, handleLanguage }) => () => {
-      if (lang === 'de') {
-        handleLanguage('en');
-        localStorage.setItem('lang', 'en');
-      } else {
-        handleLanguage('de');
-        localStorage.setItem('lang', 'de');
-      }
-    },
+    toggleLanguage:
+      ({ lang, handleLanguage }) =>
+      () => {
+        if (lang === 'de') {
+          handleLanguage('en');
+          localStorage.setItem('lang', 'en');
+        } else {
+          handleLanguage('de');
+          localStorage.setItem('lang', 'de');
+        }
+      },
   }),
   lifecycle({
     componentDidMount() {
       const localLang = localStorage.getItem('lang');
       if (localLang) {
         this.props.handleLanguage(localLang);
-      } else if (window.location.href.includes('mokkapps.com')) {
-        this.props.handleLanguage('en');
       } else {
         this.props.handleLanguage(navigator.language.split('-')[0]);
       }

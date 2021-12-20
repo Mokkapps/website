@@ -31,7 +31,7 @@ const Button = ({
     title={title}
     onClick={onClick}
   >
-    {children}
+    <span className="uppercase">{children}</span>
   </StyledButton>
 );
 
@@ -39,6 +39,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
   secondary: PropTypes.bool,
+  block: PropTypes.bool,
   onClick: PropTypes.func,
   type: PropTypes.string,
   className: PropTypes.string,

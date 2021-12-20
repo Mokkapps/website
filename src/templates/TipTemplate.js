@@ -1,22 +1,22 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-
-import config from '../../src/content/meta/config';
-
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import BodyText from '../components/BodyText';
-import LanguageWarning from '../components/LanguageWarning';
-import ArticleWithSidebar from '../components/ArticleWithSidebar';
 import { FormattedMessage } from 'react-intl';
-import Share from '../components/Share';
-import EditOnGithub from '../components/EditOnGithub';
-import Author from '../components/Author';
+import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import ReactDisqusComments from 'react-disqus-comments';
-import Button from '../components/Button';
-import { getSrc } from 'gatsby-plugin-image';
-import { getFormattedDate } from '../utils/helper';
+import { FaRegCalendar, FaRegClock } from "react-icons/fa";
+
+import config from '@content/meta/config';
+
+import Layout from '@components/Layout';
+import BodyText from '@components/BodyText';
+import LanguageWarning from '@components/LanguageWarning';
+import ArticleWithSidebar from '@components/ArticleWithSidebar';
+import Share from '@components/Share';
+import EditOnGithub from '@components/EditOnGithub';
+import Author from '@components/Author';
+import Button from '@components/Button';
+import PostMeta from '@components/PostMeta';
 
 const TipTemplate = props => {
   const {
@@ -25,9 +25,15 @@ const TipTemplate = props => {
         body,
         frontmatter: { title, description, date, cover },
         fields: { slug },
+        timeToRead
       },
     },
   } = props;
+
+  const metaIcons = {
+    calendar: FaRegCalendar,
+    read: FaRegClock,
+  };
 
   const [showComments, setShowComments] = useState(false);
   const handleNewComment = () => {};
@@ -54,11 +60,23 @@ const TipTemplate = props => {
     >
       <ArticleWithSidebar shareProps={shareProps}>
         <LanguageWarning className="my-4" type="Tips" />
-        <Heading title={title} />
-        <div className="flex justify-center items-center mt-8">
-          {getFormattedDate(date)}
-        </div>
-        <BodyText body={body} />
+        <h1>{title}</h1>
+        <PostMeta
+          className="my-10"
+          date={date}
+          icons={metaIcons}
+          timeToRead={timeToRead}
+        />
+        {cover ? (
+          <div className="flex justify-center mt-10">
+            <GatsbyImage
+              alt={`${title} Image`}
+              image={cover.childImageSharp.gatsbyImageData}
+              className="mb-4 w-full h-full"
+            />
+          </div>
+        ) : null}
+        <BodyText body={body} fullWidth/>
         <Share className="my-10" shareProps={shareProps} />
         <EditOnGithub isTip slug={slug} />
         {showComments ? (
@@ -109,6 +127,7 @@ export const query = graphql`
           }
         }
       }
+      timeToRead
     }
   }
 `;

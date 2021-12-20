@@ -8,11 +8,24 @@
     "sourceType": "module",
     "requireConfigFile": false
   },
-  "extends": ["plugin:jsx-a11y/recommended", "plugin:react/recommended", "eslint:recommended"],
+  "extends": [
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "eslint:recommended"
+  ],
   "plugins": ["jsx-a11y"],
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "alias": [
+        ["@components", "./src/components"],
+        ["@api", "./src/api"],
+        ["@hooks", "./src/hooks"],
+        ["@utils", "./src/utils"],
+        ["@content", "./src/content"]
+      ]
     }
   }
 }

@@ -11,7 +11,7 @@ import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import NewsletterSubscription from '../components/NewsletterSubscription';
 import LinkButton from '../components/LinkButton';
-import { baseFormattedMessageValues } from '../utils/helper';
+import { baseFormattedMessageValues } from '../utils';
 
 const NewsletterPage = props => {
   const {

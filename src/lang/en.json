@@ -4,7 +4,8 @@
     "moreProjectsLink": "More projects →",
     "newsletterLink": "Join the Newsletter →",
     "moreBlogPostsLink": "More blog posts →",
-    "buyMeACoffee": "Buy me a coffee"
+    "buyMeACoffee": "Buy me a coffee",
+    "read": "Read"
   },
   "menu": {
     "home": "Home",
@@ -106,7 +107,7 @@
     "publicationLink": "do talks",
     "inDepthDevLink": "inDepthDev",
     "gitHubLink": "GitHub",
-    "howIWork": "HOW I WORK",
+    "howIWork": "How I work",
     "whatIDo1": "I specialize in building applications written in <mark>{tech}</mark>. I always develop them with your end-user in mind as this will also help you to meet your business goals",
     "whatIDo2": "I am interested in doing development work in <mark>backend & frontend</mark> applications.",
     "whatIDo3": "I am <mark>reliable and honest</mark> to my customers and clients.",

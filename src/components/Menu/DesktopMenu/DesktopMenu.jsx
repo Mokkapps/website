@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { injectIntl } from 'react-intl';
 
-import menuItems from '../../../content/meta/menu';
-import HeaderLogo from '../../HeaderLogo';
-import LanguageSwitcher from '../../LanguageSwitcher';
-import ThemeSwitch from '../../ThemeSwitch';
-import MenuItem from '../MenuItem';
+import menuItems from '@content/meta/menu';
+import HeaderLogo from '@components/HeaderLogo';
+import LanguageSwitcher from '@components/LanguageSwitcher';
+import ThemeSwitch from '@components/ThemeSwitch';
+import MenuItem from '@components/Menu/MenuItem';
 
 const DesktopMenu = ({ intl, className }) => {
   return (
