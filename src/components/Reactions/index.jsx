@@ -5,11 +5,12 @@ import useArticleReactions from '@hooks/useArticleReactions';
 import { formatNumber } from '@utils';
 
 const Reactions = ({ slug }) => {
+  const modifiedSlug = slug[0] === '/' ? slug.substring(1) : slug;
   const { hasClapped, reactions, handleIncrementClap, handleDecrementClap } =
-    useArticleReactions(slug);
+    useArticleReactions(modifiedSlug);
 
   return (
-    <div data-cy="reactions"  className="flex">
+    <div data-cy="reactions" className="flex">
       <div
         role="button"
         tabIndex={0}
