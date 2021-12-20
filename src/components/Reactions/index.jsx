@@ -5,10 +5,6 @@ import useArticleReactions from '@hooks/useArticleReactions';
 import { formatNumber } from '@utils';
 
 const Reactions = ({ slug }) => {
-  if (!slug) {
-    return null;
-  }
-
   const modifiedSlug = slug[0] === '/' ? slug.substring(1) : slug;
   const { hasClapped, reactions, handleIncrementClap, handleDecrementClap } =
     useArticleReactions(modifiedSlug);
@@ -38,7 +34,7 @@ const Reactions = ({ slug }) => {
 };
 
 Reactions.propTypes = {
-  slug: PropTypes.string,
+  slug: PropTypes.string.isRequired,
 };
 
 export default Reactions;
