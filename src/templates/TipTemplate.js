@@ -43,7 +43,7 @@ const TipTemplate = props => {
   };
 
   useEffect(() => {
-    const apiSlug = slug.split('/')[2];
+    const apiSlug = slug.split('/')[1];
     fetch(`/api/views/${apiSlug}`, { method: 'POST' })
       .then(() => {
         fetch(`/api/views/${apiSlug}`)
