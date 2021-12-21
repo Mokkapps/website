@@ -14,39 +14,70 @@ const Footer = () => (
     <div className="w-full flex flex-col md:flex-row justify-between mt-4">
       <div className="grid grid-cols-3 gap-4 mr-8">
         <div className="flex flex-col">
-          <strong className="mb-2">General</strong>
+          <strong className="mb-2">
+            <FormattedMessage id="footer.sectionHeadlines.sitemap" />
+          </strong>
           {menu.map(({ to, i18nId }) => (
             <Link key={i18nId} data-cy={`footer-general-${i18nId}`} to={to}>
               <FormattedMessage id={i18nId} />
             </Link>
           ))}
+          <a
+            href="https://www.mokkapps.de/sitemap/sitemap-0.xml"
+            target="_blank"
+            rel="noreferrer"
+            data-cy="footer-sitemap-xml"
+          >
+            <FormattedMessage id="footer.sitemapXML" />
+          </a>
         </div>
         <div className="flex flex-col">
-          <strong className="mb-2">Extra</strong>
+          <strong className="mb-2">
+            <FormattedMessage id="footer.sectionHeadlines.extra" />
+          </strong>
+          <Link data-cy="footer-stats" to="/stats">
+            <FormattedMessage id="footer.stats" />
+          </Link>
           <Link data-cy="footer-uses" to="/uses">
             <FormattedMessage id="footer.uses" />
           </Link>
           <Link data-cy="footer-newsletter" to="/newsletter">
             <FormattedMessage id="newsletterPage.newsletter" />
           </Link>
+          <Link data-cy="footer-business-card" to="/business-card">
+            <FormattedMessage id="footer.businessCard" />
+          </Link>
           <a
-            data-cy="footer-newsletter"
             href="https://www.buymeacoffee.com/mokkapps"
+            target="_blank"
+            rel="noreferrer"
+            data-cy="footer-newsletter"
           >
             <FormattedMessage id="general.buyMeACoffee" />
           </a>
         </div>
         <div className="flex flex-col">
-          <strong className="mb-2">Legal</strong>
+          <strong className="mb-2">
+            <FormattedMessage id="footer.sectionHeadlines.general" />
+          </strong>
           <Link data-cy="footer-privacy-policy" to="/privacy-policy">
             <FormattedMessage id="footer.privacyPolicy" />
           </Link>
           <Link data-cy="footer-legal-notice" to="/legal-notice">
             <FormattedMessage id="footer.legalNotice" />
           </Link>
+
+          <a
+            href="https://www.github.com/mokkapps/website"
+            target="_blank"
+            rel="noreferrer"
+            data-cy="footer-github"
+          >
+            <FormattedMessage id="footer.sourceCode" />
+          </a>
         </div>
       </div>
-      <div className="flex w-80 mt-4 md:mt-0">
+      <div className="flex w-80 mt-8 md:mt-0">
         <NewsletterSubscription
           minimal
           dataCy="footer-newsletter-subscription"

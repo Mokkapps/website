@@ -14,6 +14,9 @@ export const getFormattedDate = date => (
 export const formatNumber = number => new Intl.NumberFormat().format(number);
 
 export const handleArticleClicked = slug => {
+  if (!slug) {
+    return;
+  }
   const localData = JSON.parse(localStorage.getItem(slug));
   if (typeof window !== 'undefined') {
     localStorage.setItem(slug, JSON.stringify({ ...localData, hasRead: true }));

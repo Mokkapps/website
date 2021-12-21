@@ -19,10 +19,14 @@ export default async function handler(req, res) {
   const authJson = await authResponse.json();
   const authToken = authJson.token;
 
-  const start_at = new Date('2019-01-01').getTime();
-  const end_at = new Date().getTime();
+  const now = new Date();
+  const startDate = new Date();
+  startDate.setMonth(now.getMonth() - 1)
+
+  const endAt = now.getTime();
+  const startAt = startDate.getTime();
   const result = await fetch(
-    `${baseUrl}/api/website/1/stats?start_at=${start_at}&end_at=${end_at}`,
+    `${baseUrl}/api/website/1/metrics?start_at=${startAt}&end_at=${endAt}&type=url`,
     {
       headers: {
         Cookie: `umami.auth=${authToken}`,
@@ -31,16 +35,15 @@ export default async function handler(req, res) {
   );
 
   if (!result.ok) {
-    return res.status(500).json({ error: 'Error retrieving total pageviews' });
+    return res.status(500).json({ error: 'Error retrieving most view pages' });
   }
 
   const data = await result.json();
-  const views = data.pageviews.value;
 
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=60, stale-while-revalidate=60'
   );
 
-  return res.status(200).json({ pageviews: views });
+  return res.status(200).json({ metrics: data });
 }

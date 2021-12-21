@@ -79,7 +79,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-intl": "^5.21.0",
-    "react-scroll-up-button": "^1.6.4",
+    "react-loader-spinner": "^4.0.0",
     "react-share": "^4.4.0",
     "react-switch": "^6.0.0",
     "recompose": "^0.30.0",

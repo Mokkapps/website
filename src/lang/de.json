@@ -18,12 +18,56 @@
     "tips": "Tips"
   },
   "footer": {
-    "built": "Erstellt",
-    "with": "mit viel",
-    "using": "und mit",
     "privacyPolicy": "Datenschutzerklärung",
     "legalNotice": "Impressum",
-    "uses": "Uses"
+    "uses": "Uses",
+    "sitemapXML": "Sitemap.xml",
+    "businessCard": "Visitenkarte",
+    "sourceCode": "Quellcode",
+    "stats": "Stats",
+    "sectionHeadlines": {
+      "general": "Allgemein",
+      "sitemap": "Sitemap",
+      "extra": "Extra"
+    }
+  },
+  "statsPage": {
+    "title": "Statistiken",
+    "siteStats": {
+      "title": "Seiten Statistiken",
+      "pageViews": "Aufrufe aller Seiten",
+      "newsletterSubscribers": "Newsletter Abonnenten"
+    },
+    "articleStats": {
+      "title": "Artikel Statistiken",
+      "popularPages": "Beliebte Seiten der letzten 30 Tage",
+      "publishedArticles": "Veröffentlichte Artikel",
+      "publishedTips": "Veröffentlichte Tips",
+      "publishedNewsletters": "Veröffentlichte Newsletter",
+      "totalReactions": "\uD83D\uDC4F",
+      "pageColumn": "Seite",
+      "pageViews": "Aufrufe"
+    },
+    "socialMediaStats": {
+      "title": "Social Media Statistiken",
+      "githubFollowers": "GitHub Followers",
+      "twitterFollowers": "Twitter Followers",
+      "devToFollowers": "Dev.to Followers"
+    },
+    "githubRepo": {
+      "title": "GitHub Repo",
+      "description": "Das Repository dieser Seite wurde {stars} Mail mit einem Stern versehen and {forks} Mal geforkt.",
+      "buttons": {
+        "follow": "Folge mir auf GitHub",
+        "fork": "Forke das Repo",
+        "star": "Vergib einen Stern"
+      }
+    },
+    "sponsors": {
+      "title": "Sponsoren",
+      "description": "{supporterCount} äußert großzügige Personen haben mir {coffeeCount} Kaffees gespendet, um meine Arbeit zu unterstützen. Der aktuellste Kaffee wurde von {supporterName} gekauft. Danke, du bist der Wahnsinn!",
+      "button": "Unterstütze mich"
+    }
   },
   "landingPage": {
     "title": "Suchen Sie einen {tech} Freelancer?",

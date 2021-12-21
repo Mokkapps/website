@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import ScrollUpButton from 'react-scroll-up-button';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
@@ -52,7 +51,6 @@ const Layout = ({
           canonical={canonical}
           postSEO={postSEO}
         />
-        <ScrollUpButton />
       </section>
     </IntlProvider>
   );

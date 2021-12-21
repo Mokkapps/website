@@ -15,7 +15,7 @@ const NewsletterSubscription = ({
   return (
     <div
       id="revue-embed"
-      className={`${className} w-full flex flex-col justify-center`}
+      className={`${className} w-full flex flex-col`}
       data-cy={dataCy}
     >
       {h2Heading ? (

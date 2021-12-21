@@ -6,7 +6,6 @@ import { FaCheck } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
 
 import { useIsArticleRead } from '@hooks/useIsArticleRead';
-import Divider from '@components/Divider';
 import { handleArticleClicked, getFormattedDate } from '@utils';
 
 const LinkCard = ({
@@ -41,7 +40,7 @@ const LinkCard = ({
             </p>
           ) : null}
 
-          {hasRead ? (
+          {hasRead && slug ? (
             <div className="flex items-center text-success">
               <FaCheck className="mr-1" />
               <FormattedMessage id="general.read" />

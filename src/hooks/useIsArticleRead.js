@@ -4,6 +4,10 @@ export function useIsArticleRead(slug) {
   const [hasPageHydrated, setHasPageHydrated] = useState(false);
   const [hasRead, setHasRead] = useState(true);
 
+  if (!slug) {
+    return [false, setHasRead];
+  }
+
   useEffect(() => {
     setHasPageHydrated(true);
   }, []);

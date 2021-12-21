@@ -18,12 +18,69 @@
     "tips": "Tips"
   },
   "footer": {
-    "built": "Built",
-    "with": "with",
-    "using": "using",
     "privacyPolicy": "Privacy Policy",
     "legalNotice": "Legal Notice",
-    "uses": "Uses"
+    "uses": "Uses",
+    "businessCard": "Business Card",
+    "sourceCode": "Source Code",
+    "stats": "Stats",
+    "sitemapXML": "Sitemap.xml",
+    "sectionHeadlines": {
+      "general": "General",
+      "sitemap": "Sitemap",
+      "extra": "Extra"
+    }
+  },
+  "statsPage": {
+    "title": "Stats",
+    "siteStats": {
+      "title": "Site stats",
+      "pageViews": "Total page views",
+      "newsletterSubscribers": "Newsletter subscribers"
+    },
+    "articleStats": {
+      "title": "Article stats",
+      "publishedArticles": "Published articles",
+      "publishedNewsletters": "Published newsletters"
+    }
+  },
+  "statsPage": {
+    "title": "Stats",
+    "siteStats": {
+      "title": "Site stats",
+      "pageViews": "Total page views",
+      "newsletterSubscribers": "Newsletter subscribers"
+    },
+    "articleStats": {
+      "title": "Article stats",
+      "popularPages": "Popular pages - Last 30 days",
+      "publishedArticles": "Published articles",
+      "publishedTips": "Published tips",
+      "publishedNewsletters": "Published newsletter issues",
+      "totalReactions": "\uD83D\uDC4F",
+      "pageColumn": "Page",
+      "pageViews": "Views"
+    },
+    "socialMediaStats": {
+      "title": "Social media stats",
+      "githubFollowers": "GitHub Followers",
+      "twitterFollowers": "Twitter Followers",
+      "devToFollowers": "Dev.to Followers"
+    },
+    "githubRepo": {
+      "title": "GitHub Repo",
+      "description": "This site's repository has been starred {stars} times and forked {forks} times.",
+      "buttons": {
+        "follow": "Follow me on GitHub",
+        "fork": "Fork this repo",
+        "star": "Star this repo"
+      }
+    },
+    "sponsors": {
+      "title": "Sponsors",
+      "description": "{supporterCount} extremely generous people have bought me {coffeeCount} coffees to support my work. The most recent coffee was bought by {supporterName}. Thanks, you're awesome!",
+      "button": "Support me"
+    }
   },
   "landingPage": {
     "title": "Are You Looking For A {tech} Freelancer?",
