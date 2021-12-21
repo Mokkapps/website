@@ -1,65 +1,78 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {
+  FaInstagram,
+  FaTwitter,
+  FaGithub,
+  FaDev,
+  FaLinkedin,
+  FaFacebook,
+  FaNpm,
+  FaRss,
+  FaRegEnvelope,
+  FaRegEdit
+} from 'react-icons/fa';
+
 import SocialLink from './SocialLink';
 
 export const SOCIAL_LINKS = [
   {
     id: 'twitter',
     url: 'https://twitter.com/mokkapps',
-    icon: 'twitter',
+    icon: FaTwitter,
     ariaLabel: 'Twitter',
     favorite: true,
   },
   {
     url: 'https://github.com/mokkapps',
-    icon: 'github',
+    icon: FaGithub,
     ariaLabel: 'GitHub',
     favorite: true,
   },
   {
     url: 'https://dev.to/mokkapps',
-    icon: 'devdotto',
+    icon: FaDev,
     ariaLabel: 'DEV.to',
   },
   {
     url: 'https://www.linkedin.com/in/mokkapps',
-    icon: 'linkedin',
+    icon: FaLinkedin,
     ariaLabel: 'LinkedIn',
     favorite: true,
   },
   {
     url: 'https://www.instagram.com/mokkapps/',
-    icon: 'instagram',
+    icon: FaInstagram,
     ariaLabel: 'Instagram',
     favorite: true,
   },
   {
     url: 'https://www.facebook.com/mokkapps-dev/',
-    icon: 'facebook',
+    icon: FaFacebook,
     ariaLabel: 'Facebook',
   },
   {
     url: 'https://mokkapps.hashnode.dev/',
-    icon: 'hashnode',
+    icon: FaRegEdit,
     ariaLabel: 'Hashnode',
   },
   {
     url: 'https://www.npmjs.com/~mokkapps',
-    icon: 'npm',
-    ariaLabel: 'npm'
+    icon: FaNpm,
+    ariaLabel: 'npm',
   },
   {
     url: `https://mokkapps.de/rss.xml`,
-    icon: 'rss',
+    icon: FaRss,
     ariaLabel: 'Mokkapps RSS Feed',
     favorite: true,
   },
   {
     url: 'mailto:mail@mokkapps.de',
-    icon: 'minutemailer',
+    icon: FaRegEnvelope,
     ariaLabel: 'Send email',
     favorite: true,
-  }
+  },
 ];
 
 const SocialLinks = ({

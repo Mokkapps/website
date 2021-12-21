@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import SimpleIcon from '../SimpleIcon';
-import { sendCustomAnalyticsEvent } from '../../utils';
+
+import { sendCustomAnalyticsEvent } from '@utils';
 
 const SocialLink = props => {
   const {
     link: { url, ariaLabel, icon },
     largeIcons,
   } = props;
+
+  const Icon = icon;
 
   return (
     <a
@@ -24,10 +26,7 @@ const SocialLink = props => {
         sendCustomAnalyticsEvent(`Clicked "${ariaLabel}" social link`)
       }
     >
-      <SimpleIcon
-        iconName={icon}
-        className={`${largeIcons ? 'w-7 h-7' : 'w-4 h-4'}`}
-      />
+      <Icon className={`text-basic-button-text ${largeIcons ? 'w-7 h-7' : 'w-4 h-4'}`} />
     </a>
   );
 };
