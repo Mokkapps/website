@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
 import config from '@content/meta/config';
