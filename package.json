@@ -68,7 +68,6 @@
     "gatsby-remark-smartypants": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
-    "netlify-cli": "^8.4.1",
     "postcss": "8.4.5",
     "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
