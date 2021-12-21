@@ -16,9 +16,71 @@ const PostMeta = ({
   pageViews,
   categories,
 }) => {
+  const views = (
+    <div className="flex items-center">
+      {<FaRegEye className="mr-2 w-4 h-4" />}
+      <FormattedMessage
+        id="general.views"
+        values={{
+          count: pageViews != null ? formatNumber(pageViews) : '-',
+        }}
+      />
+    </div>
+  );
+
+  const formattedDate = (
+    <div className="flex items-center">
+      {<FaRegCalendar className="mr-2 w-4 h-4" />}
+      {getFormattedDate(date)}
+    </div>
+  );
+
+  const readTime = (
+    <div className="flex items-center">
+      {<FaRegClock className="mr-2 w-4 h-4" />}
+      <FormattedMessage
+        id="blogPage.minuteRead"
+        values={{ minutes: timeToRead }}
+      />
+    </div>
+  );
+
+  const divider = <span className="mx-2">|</span>;
+
+  const lastUpdatedText = lastUpdated ? (
+    <span className="text-s text-secondary-text">
+      (Updated on {getFormattedDate(lastUpdated)})
+    </span>
+  ) : null;
+
+  const desktopMeta = (
+    <div className="flex flex-col">
+      <div className="flex items-center">
+        {formattedDate}
+        {divider}
+        {readTime}
+        {divider}
+        {views}
+      </div>
+      <div className="flex mt-2">{lastUpdatedText}</div>
+    </div>
+  );
+
+  const mobileMeta = (
+    <div className="flex flex-col">
+      <div className="flex items-center">{formattedDate}</div>
+      <div className="flex items-center mt-2">
+        {readTime}
+        {divider}
+        {views}
+      </div>
+      <div className="flex mt-2">{lastUpdatedText}</div>
+    </div>
+  );
+
   return (
     <section className={`flex flex-col ${className}`}>
-      <div className="flex flex-col md:flex-row items-center">
+      <div className="flex items-center">
         <StaticImage
           alt={baseNameWithTitle}
           className="rounded-full mr-8"
@@ -27,32 +89,8 @@ const PostMeta = ({
           height={60}
           src="../../images/about.jpg"
         />
-        <div className="flex flex-col mt-4 md:mt-0">
-          <div className="flex flex-col">
-            <span className="flex items-center">
-              {<FaRegCalendar className="mr-2 w-4 h-4" />}{' '}
-              {getFormattedDate(date)} |{' '}
-              {<FaRegClock className="ml-1 mr-2 w-4 h-4" />} {timeToRead}{' '}
-              <FormattedMessage id="blogPage.minuteRead" />
-            </span>
-            <div className="flex items-center mt-2">
-              {<FaRegEye className="mr-2 w-4 h-4" />}{' '}
-              <FormattedMessage
-                id="general.views"
-                values={{
-                  count: pageViews != null ? formatNumber(pageViews) : '-',
-                }}
-              />
-            </div>
-          </div>
-          {lastUpdated ? (
-            <div className="flex flex-col mt-2">
-              <span className="text-s text-secondary-text">
-                (Updated on {getFormattedDate(lastUpdated)})
-              </span>
-            </div>
-          ) : null}
-        </div>
+        <div className="hidden sm:flex">{desktopMeta}</div>
+        <div className="flex sm:hidden">{mobileMeta}</div>
       </div>
       {categories?.length > 0 ? (
         <div className="flex flex-wrap mt-4">

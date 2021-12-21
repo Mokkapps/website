@@ -50,7 +50,7 @@
     "introduction": "When 280 characters on {twitter} doesn't quite cut it, I'll write my extended thoughts here. Usually I write a new article once a month. {newsletter} to get informed about new articles.",
     "minimalList": "minimal list",
     "searchAlternative": "You can also search blog posts using {google} oder in the {minimalList}.",
-    "minuteRead": "min read",
+    "minuteRead": "{minutes} min read",
     "leaveAComment": "Show comments",
     "editOnGitHubInfoLine1": "Find an issue with this post? Think you could clarify, update or add something?",
     "editOnGitHubInfoLine2": "All my posts are available to edit on Github. Any fix, little or small, is appreciated!",
