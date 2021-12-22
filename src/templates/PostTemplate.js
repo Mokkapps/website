@@ -62,9 +62,9 @@ const PostTemplate = props => {
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   useEffect(() => {
-    fetch(`/api/views${slug}`, { method: 'POST' })
+    fetch(`${process.env.API_URL}views${slug}`, { method: 'POST' })
       .then(() => {
-        fetch(`/api/views${slug}`)
+        fetch(`${process.env.API_URL}views${slug}`)
           .then(response =>
             response.json().then(json => {
               setPageViews(json.total);

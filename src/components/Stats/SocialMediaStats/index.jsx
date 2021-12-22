@@ -5,11 +5,13 @@ import { useFetch } from '@hooks/useFetch';
 import StatsCard from '@components/Stats/StatsCard';
 
 const SocialMediaStats = () => {
+  const githubUsername = 'mokkapps';
+
   const {
     status: githubFollowersStatus,
     data: githubFollowersData,
     error: githubFollowersError,
-  } = useFetch('/api/statistics/github-followers');
+  } = useFetch(`https://api.github.com/users/${githubUsername}`);
 
   const {
     status: twitterFollowersStatus,
@@ -38,9 +40,7 @@ const SocialMediaStats = () => {
         <StatsCard
           className="mt-4"
           loading={twitterFollowersStatus === 'fetching'}
-          value={
-            twitterFollowersError ? null : twitterFollowersData.followers
-          }
+          value={twitterFollowersError ? null : twitterFollowersData.followers}
           i18nId="statsPage.socialMediaStats.twitterFollowers"
         />{' '}
         <StatsCard
@@ -54,7 +54,6 @@ const SocialMediaStats = () => {
   );
 };
 
-SocialMediaStats.propTypes = {
-};
+SocialMediaStats.propTypes = {};
 
 export default SocialMediaStats;

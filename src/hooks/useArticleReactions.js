@@ -12,6 +12,8 @@ export default function useArticleReactions(slug) {
   const [reactions, setReactions] = useState();
   const [hydrated, setHydrated] = useState(false);
 
+  const apiUrl = `${process.env.API_URL}reactions/${slug}`;
+
   useEffect(() => {
     setHydrated(true);
   }, []);
@@ -28,7 +30,7 @@ export default function useArticleReactions(slug) {
   }, [hydrated, setReactionsToLocalStorage]);
 
   useEffect(() => {
-    fetch(`/api/reactions/${slug}`).then(response => {
+    fetch(apiUrl).then(response => {
       response.json().then(json => setReactions(json));
     });
   }, []);
@@ -36,7 +38,7 @@ export default function useArticleReactions(slug) {
   async function handleIncrementClap() {
     updateReactions('clapped');
 
-    await fetch(`/api/reactions/${slug}`, {
+    await fetch(apiUrl, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'clap_count',
@@ -44,7 +46,7 @@ export default function useArticleReactions(slug) {
       }),
     });
 
-    const response = await fetch(`/api/reactions/${slug}`);
+    const response = await fetch(apiUrl);
     const json = await response.json();
     setReactions(json);
   }
@@ -52,7 +54,7 @@ export default function useArticleReactions(slug) {
   async function handleDecrementClap() {
     updateReactions('clapped');
 
-    await fetch(`/api/reactions/${slug}`, {
+    await fetch(apiUrl, {
       method: 'POST',
       body: JSON.stringify({
         reaction: 'clap_count',
@@ -60,7 +62,7 @@ export default function useArticleReactions(slug) {
       }),
     });
 
-    const response = await fetch(`/api/reactions/${slug}`);
+    const response = await fetch(apiUrl);
     const json = await response.json();
     setReactions(json);
   }

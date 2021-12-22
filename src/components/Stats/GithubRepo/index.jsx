@@ -3,10 +3,14 @@ import { FormattedMessage } from 'react-intl';
 
 import { useFetch } from '@hooks/useFetch';
 import { sendCustomAnalyticsEvent } from '@utils';
-import Button from "@components/Button";
+import Button from '@components/Button';
 
 const GithubRepo = () => {
-  const { data: githubRepoData } = useFetch('/api/statistics/github-repo');
+  const repoName = 'website';
+  const ownerName = 'mokkapps';
+  const { data: githubRepoData } = useFetch(
+    `https://api.github.com/repos/${ownerName}/${repoName}`
+  );
 
   return (
     <>
@@ -16,12 +20,12 @@ const GithubRepo = () => {
           values={{
             stars: (
               <strong className="text-accent text-2xl">
-                {githubRepoData ? githubRepoData.stars : '--'}
+                {githubRepoData ? githubRepoData.stargazers_count : '--'}
               </strong>
             ),
             forks: (
               <strong className="text-accent text-2xl">
-                {githubRepoData ? githubRepoData.forks : '--'}
+                {githubRepoData ? githubRepoData.forks_count : '--'}
               </strong>
             ),
           }}

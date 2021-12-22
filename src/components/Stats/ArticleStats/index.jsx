@@ -11,7 +11,7 @@ const ArticleStats = ({ blogPostCount, tipsCount }) => {
     status: totalReactionStatus,
     data: totalStatusData,
     error: totalStatusError,
-  } = useFetch('/api/statistics/total-reactions');
+  } = useFetch(`${process.env.API_URL}total-reactions`);
 
   const {
     status: popularPagesStatus,

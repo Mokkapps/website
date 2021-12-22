@@ -44,9 +44,9 @@ const TipTemplate = props => {
 
   useEffect(() => {
     const apiSlug = slug.split('/')[2];
-    fetch(`/api/views/${apiSlug}`, { method: 'POST' })
+    fetch(`${process.env.API_URL}views${slug}`, { method: 'POST' })
       .then(() => {
-        fetch(`/api/views/${apiSlug}`)
+        fetch(`${process.env.API_URL}views${slug}`)
           .then(response =>
             response.json().then(json => {
               setPageViews(json.total);
@@ -74,7 +74,12 @@ const TipTemplate = props => {
       <ArticleWithSidebar slug={slug.split('/')[2]} shareProps={shareProps}>
         <LanguageWarning className="my-4" type="Tips" />
         <h1>{title}</h1>
-        <PostMeta className="my-10" date={date} timeToRead={timeToRead} pageViews={pageViews} />
+        <PostMeta
+          className="my-10"
+          date={date}
+          timeToRead={timeToRead}
+          pageViews={pageViews}
+        />
         {cover ? (
           <div className="flex justify-center mt-10">
             <GatsbyImage
