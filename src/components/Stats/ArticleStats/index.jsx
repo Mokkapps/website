@@ -17,13 +17,13 @@ const ArticleStats = ({ blogPostCount, tipsCount }) => {
     status: popularPagesStatus,
     data: popularPagesData,
     error: popularPagesError,
-  } = useFetch('/api/statistics/popular-pages-last-30-days');
+  } = useFetch(`${process.env.API_URL}analytics/popular-pages`);
 
   const {
     status: totalIssuesStatus,
     data: totalIssuesData,
     error: totalIssuesError,
-  } = useFetch('/api/statistics/total-issues');
+  } = useFetch(`${process.env.API_URL}newsletter/issues`);
 
   return (
     <>

@@ -9,13 +9,13 @@ const SiteStats = () => {
     status: totalPageviewsStatus,
     data: totalPageviewsData,
     error: totalPageviewsError,
-  } = useFetch('/api/statistics/total-pageviews');
+  } = useFetch(`${process.env.API_URL}analytics/total-page-views`);
 
   const {
     status: subscribersStatus,
     data: subscribersData,
     error: subscribersError,
-  } = useFetch('/api/statistics/subscribers');
+  } = useFetch(`${process.env.API_URL}newsletter/subscribers`);
 
   return (
     <>

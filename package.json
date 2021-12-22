@@ -26,10 +26,8 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@netlify/plugin-lighthouse": "^2.1.0",
     "@supabase/supabase-js": "^1.28.5",
     "autoprefixer": "10.4.0",
-    "babel-plugin-styled-components": "^1.13.3",
     "cross-env": "^7.0.2",
     "emotion": "^11.0.0",
     "facepaint": "^1.2.1",
@@ -88,8 +86,10 @@
   "devDependencies": {
     "@babel/preset-flow": "^7.16.0",
     "@netlify/plugin-gatsby": "^2.0.0-beta",
+    "@netlify/plugin-lighthouse": "^2.1.0",
     "@sindresorhus/slugify": "^2.1.0",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-styled-components": "^1.13.3",
     "cypress": "^9.1.1",
     "dateformat": "^5.0.2",
     "dotenv": "^10.0.0",

@@ -15,13 +15,13 @@ const SocialMediaStats = () => {
     status: twitterFollowersStatus,
     data: twitterFollowersData,
     error: twitterFollowersError,
-  } = useFetch('/api/statistics/twitter-followers');
+  } = useFetch(`${process.env.API_URL}followers/twitter`);
 
   const {
     status: devToFollowersStatus,
     data: devToFollowersData,
     error: devToFollowersError,
-  } = useFetch('/api/statistics/dev-to-followers');
+  } = useFetch(`${process.env.API_URL}followers/dev-to`);
 
   return (
     <>
@@ -39,14 +39,14 @@ const SocialMediaStats = () => {
           className="mt-4"
           loading={twitterFollowersStatus === 'fetching'}
           value={
-            twitterFollowersError ? null : twitterFollowersData.followerCount
+            twitterFollowersError ? null : twitterFollowersData.followers
           }
           i18nId="statsPage.socialMediaStats.twitterFollowers"
         />{' '}
         <StatsCard
           className="mt-4"
           loading={devToFollowersStatus === 'fetching'}
-          value={devToFollowersError ? null : devToFollowersData.followerCount}
+          value={devToFollowersError ? null : devToFollowersData.followers}
           i18nId="statsPage.socialMediaStats.devToFollowers"
         />
       </div>

@@ -7,7 +7,7 @@ import Button from '@components/Button';
 
 const Sponsors = () => {
   const { data: buyMeACoffeeData } = useFetch(
-    '/api/statistics/buy-me-a-coffee'
+    `${process.env.API_URL}buy-me-a-coffee`
   );
 
   return (
