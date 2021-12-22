@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     `https://dev.to/api/followers/users?per_page=${perPage}&page=${page}`,
     {
       headers: {
-        'api-key': process.env.DEV_TO_API_KEY,
+        'api-key': process.env.DEV_TO_KEY,
       },
     }
   );
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       `https://dev.to/api/followers/users?per_page=${perPage}&page=${page}`,
       {
         headers: {
-          'api-key': process.env.DEV_TO_API_KEY,
+          'api-key': process.env.DEV_TO_KEY,
         },
       }
     );

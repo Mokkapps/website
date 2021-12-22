@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   const result = await fetch('https://www.getrevue.co/api/v2/issues', {
     method: 'GET',
     headers: {
-      Authorization: `Token ${process.env.REVUE_API_KEY}`,
+      Authorization: `Token ${process.env.REVUE_KEY}`,
     },
   });
 

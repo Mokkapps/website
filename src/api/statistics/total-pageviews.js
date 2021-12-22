@@ -7,8 +7,8 @@ export default async function handler(req, res) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      username: process.env.ANALYTICS_USERNAME,
-      password: process.env.ANALYTICS_PASSWORD,
+      username: process.env.UMAMI_USER,
+      password: process.env.UMAMI_PW,
     }),
   });
 

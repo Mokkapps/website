@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     `https://api.twitter.com/2/users/${mokkappsTwitterId}/followers?max_results=1000`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
+        Authorization: `Bearer ${process.env.TWITTER_BEARER}`,
       },
     }
   );
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       `https://api.twitter.com/2/users/${mokkappsTwitterId}/followers?max_results=1000&pagination_token=${data.meta.next_token}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.TWITTER_BEARER}`,
         },
       }
     );

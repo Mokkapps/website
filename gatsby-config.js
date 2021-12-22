@@ -199,7 +199,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
-        dsn: process.env.GATSBY_SENTRY_DNS_URL,
+        dsn: process.env.SENTRY,
         config: {
           environment: 'production',
         },
