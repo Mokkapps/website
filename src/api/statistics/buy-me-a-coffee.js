@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     `https://developers.buymeacoffee.com/api/v1/supporters`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.BUY_ME_A_COFFEE_API_KEY}`,
+        Authorization: `Bearer ${process.env.COFFEE_API_KEY}`,
       },
     }
   );
