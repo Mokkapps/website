@@ -32,7 +32,7 @@ const PublicationsPage = props => {
       <Article>
         <div className="flex flex-col items-center">
           <Heading i18nId="publicationsPage.title" />
-          <h2 className="my-8">
+          <h2 className="mb-8">
             <FormattedMessage id="publicationsPage.talks" />
           </h2>
           <div

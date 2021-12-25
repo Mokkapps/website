@@ -22,7 +22,7 @@ const TipsPage = props => {
   const { siteUrl, siteTitlePostfix } = config;
 
   const searchComponent = (
-    <p className="mb-8">
+    <p>
       <FormattedMessage
         id="tipsPage.searchAlternative"
         values={{
@@ -56,9 +56,12 @@ const TipsPage = props => {
           <div className="flex flex-col justify-center items-center md:px-24">
             <Heading i18nId="tipsPage.title" />
             <LanguageWarning className="w-full mb-4" type="Tips" />
-            <p className="text-center my-8">
+            <p className="text-center text-lg mt-4">
+              <FormattedMessage id="tipsPage.introLine1" />
+            </p>
+            <p className="text-center text-lg text-secondary-text mt-4">
               <FormattedMessage
-                id="tipsPage.intro"
+                id="tipsPage.introLine2"
                 values={{
                   newsletter: (
                     <Link to="/newsletter">
@@ -68,7 +71,7 @@ const TipsPage = props => {
                 }}
               />
             </p>
-            {searchComponent}
+            <div className="my-8">{searchComponent}</div>
             <TipsList items={allTips} author={config.authorName} />
           </div>
         </div>

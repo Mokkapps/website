@@ -59,7 +59,7 @@ const ProjectsPage = props => {
     >
       <Article>
         <Heading i18nId="projectsPage.businessProjectsHeading" />
-        <div className="flex flex-col items-center justify-center w-full my-8">
+        <div className="flex flex-col items-center justify-center w-full">
           {image}
           {customerList}
           <p className="text-center">

@@ -91,14 +91,17 @@
   },
   "blogPage": {
     "title": "Blog",
-    "introduction": "Wenn 280 Zeichen auf {twitter} nicht ganz ausreichen, schreibe ich meine ausführlichen Gedanken hier. Normalerweise veröffentliche ich einmal im Monat einen neuen Artikel. {newsletter}, um über neue Artikel informiert zu werden.",
+    "introductionLine1": "Wenn 280 Zeichen auf {twitter} nicht ganz ausreichen, schreibe ich meine ausführlichen Gedanken hier. Normalerweise veröffentliche ich einmal im Monat einen neuen Artikel.",
+    "introductionLine2": "{newsletter}, um über neue Artikel informiert zu werden.",
     "minimalList": "minimalen Liste",
     "searchAlternative": "Alternativ können Sie Artikel auch über {google} oder in der {minimalList} suchen.",
     "minuteRead": "{minutes} Minuten Lesezeit",
     "leaveAComment": "Zeig Kommentare",
-    "editOnGitHubInfoLine1": "Du hast einen Fehler in diesem Artikel gefunden? Du möchtest gerne etwas klarstellen, aktualisieren oder hinzufügen?",
+    "editOnGitHubInfoLine1": "Sie haben einen Fehler in diesem Artikel gefunden? Sie möchten gerne etwas klarstellen, aktualisieren oder hinzufügen?",
     "editOnGitHubInfoLine2": "Alle meine Artikel können auf Github editiert werden. Jeder Fix ist willkommen, egal wie klein er sein mag!",
-    "editOnGitHubButton": "Ändern auf Github"
+    "editOnGitHubButton": "Ändern auf Github",
+    "similarArticlesLine1": "Wenn Sie diesen Artikel hilfreich fanden.",
+    "similarArticlesLine2": "Werden Sie diese diese lieben."
   },
   "projectsPage": {
     "businessProjectsHeading": "Business Projekte",
@@ -130,7 +133,8 @@
   },
   "tipsPage": {
     "title": "Tips",
-    "intro": "Diese Seite beinhaltet einige kurze Tips, die zu kurz für einen eigenen Blog Artikel sind. {newsletter}, um über neue Tips informiert zu werden.",
+    "introLine1": "Diese Seite beinhaltet einige kurze Tips, die zu kurz für einen eigenen Blog Artikel sind.",
+    "introLine2": "{newsletter}, um über neue Tips informiert zu werden.",
     "searchAlternative": "Alternativ können Sie Tips auch über {google} oder in der {minimalList} suchen."
   },
   "publicationsPage": {
@@ -207,7 +211,7 @@
     "subscription": "Anmeldung",
     "archiv": "Archiv",
     "visitArchive": "Newsletter Archiv →",
-    "revueInfo": "Mit der Anmeldung bestätigst du Revue's {termsAndServiceLink} und {privacyPolicyLink}.",
+    "revueInfo": "Mit der Anmeldung bestätigen Sie Revue's {termsAndServiceLink} und {privacyPolicyLink}.",
     "notConvinced": "Nicht überzeugt? Hier sind Beispiele"
   },
   "categoriesPage": {

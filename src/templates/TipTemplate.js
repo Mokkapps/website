@@ -44,7 +44,7 @@ const TipTemplate = props => {
   };
 
   useEffect(() => {
-    const apiSlug = isDevelopmentEnv() ? 'test' : slug.split('/')[2];
+    const apiSlug = isDevelopmentEnv() ? '/test' : slug.split('/')[2];
     fetch(`${process.env.API_URL}views${slug}`, { method: 'POST' })
       .then(() => {
         fetch(`${process.env.API_URL}views${slug}`)

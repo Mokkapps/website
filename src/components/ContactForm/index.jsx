@@ -52,7 +52,7 @@ const ContactForm = () => {
           <textarea data-cy="contact-message" name="message" required />
         </div>
         <div data-netlify-recaptcha="true" />
-        <Button className="mt-4" type="submit">
+        <Button className="mt-4 w-full" type="submit">
           <FormattedMessage id="contactPage.send" />
         </Button>
         <input type="hidden" name="form-name" value="contact-form" />

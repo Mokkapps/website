@@ -5,6 +5,11 @@ describe('Blog Post Test', () => {
     cy.get('[data-cy=blog-post-0]').click();
   });
 
+  it('shows relevant content', () => {
+    cy.get('[data-cy=similar-articles]');
+    // TODO mehr abtesten
+  });
+
   it('show sidebar widgets', () => {
     cy.get('[data-cy=reactions]');
     cy.get('[data-cy=newsletter-subscription-sidebar]');

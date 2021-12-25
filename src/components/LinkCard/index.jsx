@@ -31,7 +31,7 @@ const LinkCard = ({
         alt={`${title} Image`}
         className="rounded-t-md"
       />
-      <div className="flex flex-col flex-grow justify-between p-4">
+      <div className="flex flex-col flex-grow justify-between p-4 w-full">
         <span className="text-xl text-main-text font-bold">{title}</span>
         <div className="flex justify-between items-center mt-4">
           {date ? (

@@ -30,7 +30,7 @@ const SimpleBlogPage = props => {
       }}
     >
       <Article>
-        <Heading className="mb-8" i18nId="minimalTipListPage.title" />
+        <Heading i18nId="minimalTipListPage.title" />
         <SimpleTipList items={tips} />
       </Article>
     </Layout>

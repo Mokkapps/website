@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { getSrc } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
 
-import config from '../content/meta/config';
-import { getAllCategories, metaIcons } from '../utils';
+import config from '@content/meta/config';
+import { getAllCategories, metaIcons } from '@utils';
 
-import Layout from '../components/Layout';
-import BlogPostList from '../components/BlogPostList';
-import Heading from '../components/Heading';
-import CategorySelection from '../components/CategorySelection';
-import LanguageWarning from '../components/LanguageWarning';
+import Layout from '@components/Layout';
+import BlogPostList from '@components/BlogPostList';
+import Heading from '@components/Heading';
+import CategorySelection from '@components/CategorySelection';
+import LanguageWarning from '@components/LanguageWarning';
 
 const BlogPage = props => {
   const {
@@ -56,7 +56,7 @@ const BlogPage = props => {
   };
 
   const searchComponent = (
-    <p className="mt-4 mb-8">
+    <p className="text-center">
       <FormattedMessage
         id="blogPage.searchAlternative"
         values={{
@@ -91,11 +91,11 @@ const BlogPage = props => {
       <article className="px-8 md:px-24 py-8">
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col justify-center items-center md:px-24">
-            <Heading className="mb-8" i18nId="blogPage.title" />
+            <Heading i18nId="blogPage.title" />
             <LanguageWarning className="w-full mb-4" type="Blog Artikel" />
-            <p className="my-4">
+            <p className="text-lg">
               <FormattedMessage
-                id="blogPage.introduction"
+                id="blogPage.introductionLine1"
                 values={{
                   twitter: (
                     <a
@@ -106,6 +106,13 @@ const BlogPage = props => {
                       Twitter
                     </a>
                   ),
+                }}
+              />
+            </p>
+            <p className="text-xl text-secondary-text mt-4">
+              <FormattedMessage
+                id="blogPage.introductionLine2"
+                values={{
                   newsletter: (
                     <Link to="/newsletter">
                       <FormattedMessage id="newsletterPage.joinTheNewsletter2" />
@@ -114,13 +121,7 @@ const BlogPage = props => {
                 }}
               />
             </p>
-            <CategorySelection
-              compact
-              className="mb-4"
-              categories={categories}
-              dataCy={'blog-categories'}
-            />
-            <section className="flex relative">
+            <section className="flex relative mt-16">
               <section className="relative mb-4">
                 <input
                   type="text"
@@ -133,9 +134,16 @@ const BlogPage = props => {
                 <span className="absolute right-7 top-1">{posts.length}</span>
               </section>
             </section>
-            {searchComponent}
+            <CategorySelection
+              compact
+              className="mt-2"
+              categories={categories}
+              dataCy={'blog-categories'}
+            />
+            <div className="mt-4">{searchComponent}</div>
           </div>
           <BlogPostList
+            className="mt-10"
             items={posts}
             author={config.authorName}
             metaIcons={metaIcons}

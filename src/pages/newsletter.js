@@ -30,7 +30,7 @@ const NewsletterPage = props => {
       }}
     >
       <Article>
-        <Heading i18nId="newsletterPage.newsletter" className="mb-8" />
+        <Heading i18nId="newsletterPage.newsletter" />
         <p className="w-100 text-center mb-4">
           <FormattedMessage
             id="newsletterPage.newsletterInfoLine1"

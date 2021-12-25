@@ -7,7 +7,7 @@ const Heading = props => {
 
   if (i18nId) {
     return (
-      <header className={`${className} text-center`}>
+      <header className={`${className} text-center mb-8`}>
         <h1>
           <FormattedMessage id={i18nId} />
         </h1>
@@ -16,7 +16,7 @@ const Heading = props => {
   }
 
   return (
-    <header className="text-center">
+    <header className="text-center mb-8">
       {title ? <h1>{title}</h1> : children}
     </header>
   );

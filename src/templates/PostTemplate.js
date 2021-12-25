@@ -17,6 +17,7 @@ import Button from '@components/Button';
 import EditOnGithub from '@components/EditOnGithub';
 import LanguageWarning from '@components/LanguageWarning';
 import { isDevelopmentEnv } from '../utils';
+import SimilarArticles from '../components/SimilarArticles';
 
 const nextPrevIcons = {
   next: FaAngleDoubleRight,
@@ -60,7 +61,7 @@ const PostTemplate = props => {
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   useEffect(() => {
-    const apiSlug = isDevelopmentEnv() ? 'test' : slug;
+    const apiSlug = isDevelopmentEnv() ? '/test' : slug;
     fetch(`${process.env.API_URL}views${apiSlug}`, { method: 'POST' })
       .then(() => {
         fetch(`${process.env.API_URL}views${apiSlug}`)
@@ -134,6 +135,12 @@ const PostTemplate = props => {
             <FormattedMessage id="blogPage.leaveAComment" />
           </Button>
         )}
+
+        <SimilarArticles
+          className="mt-4"
+          categories={categories}
+          slug={slug}
+        />
       </ArticleWithSidebar>
     </Layout>
   );

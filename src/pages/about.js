@@ -32,7 +32,7 @@ const AboutPage = props => {
     >
       <Article>
         <Heading i18nId="aboutPage.title" />
-        <section>
+        <section className="mt-8">
           <AboutMe />
           <div className="mt-8">
             <h2 className="mb-8 text-center">
