@@ -3,6 +3,8 @@ import React from 'react';
 import { FormattedDate } from 'react-intl';
 import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
 
+export const isDevelopmentEnv = () => process.env.NODE_ENV === 'development';
+
 export const baseFormattedMessageValues = {
   mark: chunks => <mark>{chunks}</mark>,
 };

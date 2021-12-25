@@ -4,7 +4,6 @@ require("dotenv").config({
 const config = require('./src/content/meta/config');
 
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     title: config.baseNameWithTitle,
     siteUrl: config.siteUrl,

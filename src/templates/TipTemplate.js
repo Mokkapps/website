@@ -6,6 +6,7 @@ import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import ReactDisqusComments from 'react-disqus-comments';
 
 import config from '@content/meta/config';
+import { isDevelopmentEnv } from '@utils';
 
 import Layout from '@components/Layout';
 import BodyText from '@components/BodyText';
@@ -43,7 +44,7 @@ const TipTemplate = props => {
   };
 
   useEffect(() => {
-    const apiSlug = slug.split('/')[2];
+    const apiSlug = isDevelopmentEnv() ? 'test' : slug.split('/')[2];
     fetch(`${process.env.API_URL}views${slug}`, { method: 'POST' })
       .then(() => {
         fetch(`${process.env.API_URL}views${slug}`)

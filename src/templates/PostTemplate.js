@@ -4,10 +4,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 import { FormattedMessage } from 'react-intl';
-import {
-  FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-} from 'react-icons/fa';
+import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 
 import config from '@content/meta/config';
 import ArticleWithSidebar from '@components/ArticleWithSidebar';
@@ -19,6 +16,7 @@ import Share from '@components/Share';
 import Button from '@components/Button';
 import EditOnGithub from '@components/EditOnGithub';
 import LanguageWarning from '@components/LanguageWarning';
+import { isDevelopmentEnv } from '../utils';
 
 const nextPrevIcons = {
   next: FaAngleDoubleRight,
@@ -62,20 +60,21 @@ const PostTemplate = props => {
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
 
   useEffect(() => {
-    fetch(`${process.env.API_URL}views${slug}`, { method: 'POST' })
+    const apiSlug = isDevelopmentEnv() ? 'test' : slug;
+    fetch(`${process.env.API_URL}views${apiSlug}`, { method: 'POST' })
       .then(() => {
-        fetch(`${process.env.API_URL}views${slug}`)
+        fetch(`${process.env.API_URL}views${apiSlug}`)
           .then(response =>
             response.json().then(json => {
               setPageViews(json.total);
             })
           )
           .catch(error =>
-            console.log(`Failed to get page views for slug ${slug}`, error)
+            console.log(`Failed to get page views for slug ${apiSlug}`, error)
           );
       })
       .catch(error =>
-        console.log(`Failed to set page views for slug ${slug}`, error)
+        console.log(`Failed to set page views for slug ${apiSlug}`, error)
       );
   }, [slug]);
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { isDevelopmentEnv } from '@utils';
+
 // State that reflects if the current user has already selected a reaction for a specific blog post
 const initialReactionState = {
   clapped: false,
@@ -12,7 +14,9 @@ export default function useArticleReactions(slug) {
   const [reactions, setReactions] = useState();
   const [hydrated, setHydrated] = useState(false);
 
-  const apiUrl = `${process.env.API_URL}reactions/${slug}`;
+  const apiUrl = isDevelopmentEnv()
+    ? `${process.env.API_URL}reactions/test`
+    : `${process.env.API_URL}reactions/${slug}`;
 
   useEffect(() => {
     setHydrated(true);
