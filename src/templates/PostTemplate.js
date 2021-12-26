@@ -1,12 +1,15 @@
 import { graphql } from 'gatsby';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 import { FormattedMessage } from 'react-intl';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 
 import config from '@content/meta/config';
+import { isDevelopmentEnv } from '@utils';
+import useArticleView from '@hooks/useArticleViews';
+
 import ArticleWithSidebar from '@components/ArticleWithSidebar';
 import Layout from '@components/Layout';
 import PostMeta from '@components/PostMeta';
@@ -16,8 +19,7 @@ import Share from '@components/Share';
 import Button from '@components/Button';
 import EditOnGithub from '@components/EditOnGithub';
 import LanguageWarning from '@components/LanguageWarning';
-import { isDevelopmentEnv } from '../utils';
-import SimilarArticles from '../components/SimilarArticles';
+import SimilarArticles from '@components/SimilarArticles';
 
 const nextPrevIcons = {
   next: FaAngleDoubleRight,
@@ -45,8 +47,9 @@ const PostTemplate = props => {
     pageContext: { next, prev },
   } = props;
 
+  const apiSlug = isDevelopmentEnv() ? '/test' : slug;
+  const { pageViews } = useArticleView(apiSlug);
   const [showComments, setShowComments] = useState(false);
-  const [pageViews, setPageViews] = useState(null);
   const { siteUrl, siteTitlePostfix } = config;
 
   const url = `${siteUrl}/blog${slug}`;
@@ -59,25 +62,6 @@ const PostTemplate = props => {
   const handleNewComment = () => {};
 
   const seoImage = `${config.siteUrl}${getSrc(cover)}`;
-
-  useEffect(() => {
-    const apiSlug = isDevelopmentEnv() ? '/test' : slug;
-    fetch(`${process.env.API_URL}views${apiSlug}`, { method: 'POST' })
-      .then(() => {
-        fetch(`${process.env.API_URL}views${apiSlug}`)
-          .then(response =>
-            response.json().then(json => {
-              setPageViews(json.total);
-            })
-          )
-          .catch(error =>
-            console.log(`Failed to get page views for slug ${apiSlug}`, error)
-          );
-      })
-      .catch(error =>
-        console.log(`Failed to set page views for slug ${apiSlug}`, error)
-      );
-  }, [slug]);
 
   return (
     <Layout
@@ -136,11 +120,7 @@ const PostTemplate = props => {
           </Button>
         )}
 
-        <SimilarArticles
-          className="mt-4"
-          categories={categories}
-          slug={slug}
-        />
+        <SimilarArticles className="mt-4" categories={categories} slug={slug} />
       </ArticleWithSidebar>
     </Layout>
   );

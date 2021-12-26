@@ -1,12 +1,13 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import ReactDisqusComments from 'react-disqus-comments';
 
 import config from '@content/meta/config';
 import { isDevelopmentEnv } from '@utils';
+import useArticleView from '@hooks/useArticleViews';
 
 import Layout from '@components/Layout';
 import BodyText from '@components/BodyText';
@@ -29,8 +30,10 @@ const TipTemplate = props => {
     },
   } = props;
 
+  const apiSlug = isDevelopmentEnv() ? '/test' : slug.split('/')[2];
+  const { pageViews } = useArticleView(apiSlug);
+
   const [showComments, setShowComments] = useState(false);
-  const [pageViews, setPageViews] = useState(null);
   const handleNewComment = () => {};
 
   const { siteUrl, siteTitlePostfix } = config;
@@ -42,25 +45,6 @@ const TipTemplate = props => {
     text: title,
     longtext: description,
   };
-
-  useEffect(() => {
-    const apiSlug = isDevelopmentEnv() ? '/test' : slug.split('/')[2];
-    fetch(`${process.env.API_URL}views${slug}`, { method: 'POST' })
-      .then(() => {
-        fetch(`${process.env.API_URL}views${slug}`)
-          .then(response =>
-            response.json().then(json => {
-              setPageViews(json.total);
-            })
-          )
-          .catch(error =>
-            console.log(`Failed to get page views for slug ${apiSlug}`, error)
-          );
-      })
-      .catch(error =>
-        console.log(`Failed to set page views for slug ${apiSlug}`, error)
-      );
-  }, [slug]);
 
   return (
     <Layout
