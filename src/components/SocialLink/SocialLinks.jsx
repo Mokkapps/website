@@ -13,7 +13,7 @@ import {
   FaRegEdit
 } from 'react-icons/fa';
 
-import SocialLink from 'components/SocialLink';
+import SocialLink from 'components/SocialLink/SocialLink';
 
 export const SOCIAL_LINKS = [
   {
