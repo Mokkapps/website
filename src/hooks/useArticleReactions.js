@@ -15,8 +15,8 @@ export default function useArticleReactions(slug) {
   const [hydrated, setHydrated] = useState(false);
 
   const apiUrl = isDevelopmentEnv()
-    ? `${process.env.API_URL}reactions/test`
-    : `${process.env.API_URL}reactions/${slug}`;
+    ? `${process.env.GATSBY_API_URL}reactions/test`
+    : `${process.env.GATSBY_API_URL}reactions/${slug}`;
 
   useEffect(() => {
     setHydrated(true);

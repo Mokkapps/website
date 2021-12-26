@@ -11,19 +11,19 @@ const ArticleStats = ({ blogPostCount, tipsCount }) => {
     status: totalReactionStatus,
     data: totalStatusData,
     error: totalStatusError,
-  } = useFetch(`${process.env.API_URL}total-reactions`);
+  } = useFetch(`${process.env.GATSBY_API_URL}total-reactions`);
 
   const {
     status: popularPagesStatus,
     data: popularPagesData,
     error: popularPagesError,
-  } = useFetch(`${process.env.API_URL}analytics/popular-pages`);
+  } = useFetch(`${process.env.GATSBY_API_URL}analytics/popular-pages`);
 
   const {
     status: totalIssuesStatus,
     data: totalIssuesData,
     error: totalIssuesError,
-  } = useFetch(`${process.env.API_URL}newsletter/issues`);
+  } = useFetch(`${process.env.GATSBY_API_URL}newsletter/issues`);
 
   return (
     <>

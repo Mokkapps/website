@@ -4,9 +4,9 @@ export default function useArticleView(slug) {
   const [pageViews, setPageViews] = useState();
 
   useEffect(() => {
-    fetch(`${process.env.API_URL}views${slug}`, { method: 'POST' })
+    fetch(`${process.env.GATSBY_API_URL}views${slug}`, { method: 'POST' })
       .then(() => {
-        fetch(`${process.env.API_URL}views${slug}`)
+        fetch(`${process.env.GATSBY_API_URL}views${slug}`)
           .then(response =>
             response.json().then(json => {
               setPageViews(json.total);

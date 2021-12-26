@@ -17,13 +17,13 @@ const SocialMediaStats = () => {
     status: twitterFollowersStatus,
     data: twitterFollowersData,
     error: twitterFollowersError,
-  } = useFetch(`${process.env.API_URL}followers/twitter`);
+  } = useFetch(`${process.env.GATSBY_API_URL}followers/twitter`);
 
   const {
     status: devToFollowersStatus,
     data: devToFollowersData,
     error: devToFollowersError,
-  } = useFetch(`${process.env.API_URL}followers/dev-to`);
+  } = useFetch(`${process.env.GATSBY_API_URL}followers/dev-to`);
 
   return (
     <>
