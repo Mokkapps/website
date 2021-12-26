@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import Prism from 'prismjs';
+import PropTypes from 'prop-types';
 import { FaRegCheckCircle, FaRegTimesCircle } from 'react-icons/fa';
 
 import './styles.scss';
-import PropTypes from 'prop-types';
 
 const TipCard = ({ children, language, highlight }) => {
   const codeElement = useRef(null);

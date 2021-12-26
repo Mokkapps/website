@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import appStoreImage from '../../images/badge_app_store.svg';
-import googlePlayStoreImage from '../../images/badge_google_play_store.svg';
+import appStoreImage from 'images/badge_app_store.svg';
+import googlePlayStoreImage from 'images/badge_google_play_store.svg';
 
 const Container = styled.div`
   display: inline-block;

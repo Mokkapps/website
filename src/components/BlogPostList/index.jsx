@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import LinkCard from '@components/LinkCard';
+import LinkCard from 'components/LinkCard';
 
 const BlogPostList = ({ className, items, onlyTwoCols = false }) => {
   let count = 0;

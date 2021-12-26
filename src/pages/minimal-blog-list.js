@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from '@content/meta/config';
-import { generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { generateSeoImageUrl } from 'utils';
 
-import Layout from '@components/Layout';
-import Article from '@components/Article';
-import SimpleBlogPostList from '@components/SimpleBlogPostList';
-import Heading from '@components/Heading';
+import Layout from 'components/Layout';
+import Article from 'components/Article';
+import SimpleBlogPostList from 'components/SimpleBlogPostList';
+import Heading from 'components/Heading';
 
 const SimpleBlogPage = props => {
   const {

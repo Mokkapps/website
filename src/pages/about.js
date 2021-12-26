@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
 
-import { baseFormattedMessageValues, generateSeoImageUrl } from '@utils';
-import config from '@content/meta/config';
+import { baseFormattedMessageValues, generateSeoImageUrl } from 'utils';
+import config from 'content/meta/config';
 
-import Article from '@components/Article';
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
-import AboutMe from '@components/About/AboutMe';
-import Skills from '@components/Skills';
-import HowIWork from '@components/About/HowIWork';
-import References from '@components/References';
+import Article from 'components/Article';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
+import AboutMe from 'components/About/AboutMe';
+import Skills from 'components/Skills';
+import HowIWork from 'components/About/HowIWork';
+import References from 'components/References';
 
 const AboutPage = () => {
   const { siteTitlePostfix, siteUrl, siteDescription } = config;

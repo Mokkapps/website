@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { sendCustomAnalyticsEvent } from '@utils';
+import { sendCustomAnalyticsEvent } from 'utils';
 
 const SocialLink = props => {
   const {

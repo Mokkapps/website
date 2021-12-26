@@ -1,16 +1,16 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import config from '@content/meta/config';
-import { generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { generateSeoImageUrl } from 'utils';
 
-import ContactForm from '@components/ContactForm';
-import Article from '@components/Article';
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
-import LinkButton from '@components/LinkButton';
-import Availability from '@components/Availability';
-import ScheduleMeetingButton from '@components/ScheduleMeetingButton';
+import ContactForm from 'components/ContactForm';
+import Article from 'components/Article';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
+import LinkButton from 'components/LinkButton';
+import Availability from 'components/Availability';
+import ScheduleMeetingButton from 'components/ScheduleMeetingButton';
 
 const ContactPage = () => {
   const { siteUrl, siteTitlePostfix } = config;

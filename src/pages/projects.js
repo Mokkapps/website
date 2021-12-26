@@ -2,16 +2,16 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { getSrc, StaticImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
-import config from '@content/meta/config';
-import { generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { generateSeoImageUrl } from 'utils';
 
-import ProjectList from '@components/ProjectList';
-import Article from '@components/Article';
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
-import BusinessProjectList from '@components/BusinessProjectsList';
+import ProjectList from 'components/ProjectList';
+import Article from 'components/Article';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
+import BusinessProjectList from 'components/BusinessProjectsList';
 
 const ProjectsPage = props => {
   const {

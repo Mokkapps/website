@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import CategoryLink from '../CategoryLink';
+import CategoryLink from 'components/CategoryLink';
 
 const priorityMap = {
   'vue-js': 10,

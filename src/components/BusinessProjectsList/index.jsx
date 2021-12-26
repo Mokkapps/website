@@ -1,8 +1,9 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import DevIcon from '../DevIcon';
-import Index from '../Divider';
+
+import DevIcon from 'components/DevIcon';
+import Divider from 'components/Divider';
 
 export const BUSINESS_PROJECTS = [
   { name: 'vhv', contributions: 3 },
@@ -51,7 +52,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
                 </span>
               </summary>
               <div>
-                <Index />
+                <Divider />
                 <div className="flex">
                   <span className="font-bold">
                     <FormattedMessage id="projectsPage.businessProjects.customer" />
@@ -69,7 +70,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
                     </li>
                   ))}
                 </ul>
-                <Index />
+                <Divider />
                 <div className="flex flex-wrap items-center justify-center">
                   {usedTechnologies}
                 </div>

@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
-import config from '@content/meta/config';
-import { generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { generateSeoImageUrl } from 'utils';
 
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
-import Article from '@components/Article';
-import SiteStats from '@components/Stats/SiteStats';
-import SocialMediaStats from '@components/Stats/SocialMediaStats';
-import ArticleStats from '@components/Stats/ArticleStats';
-import GithubRepo from '@components/Stats/GithubRepo';
-import Sponsors from '@components/Stats/Sponsors';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
+import Article from 'components/Article';
+import SiteStats from 'components/Stats/SiteStats';
+import SocialMediaStats from 'components/Stats/SocialMediaStats';
+import ArticleStats from 'components/Stats/ArticleStats';
+import GithubRepo from 'components/Stats/GithubRepo';
+import Sponsors from 'components/Stats/Sponsors';
 
 const StatsPage = props => {
   const {

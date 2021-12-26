@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { isDevelopmentEnv } from '@utils';
+import { isDevelopmentEnv } from 'utils';
 
 // State that reflects if the current user has already selected a reaction for a specific blog post
 const initialReactionState = {

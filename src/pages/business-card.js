@@ -1,12 +1,12 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import config from '@content/meta/config';
-import { generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { generateSeoImageUrl } from 'utils';
 
-import Article from '@components/Article';
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
+import Article from 'components/Article';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
 
 const BusinessCardPage = () => {
   const { siteTitlePostfix, siteUrl } = config;

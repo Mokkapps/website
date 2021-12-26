@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import AboutParagraph from './AboutParagraph';
 
-import config from '../../content/meta/config';
+import config from 'content/meta/config';
+import AboutParagraph from 'components/About/AboutParagraph';
 
 export default class HowIWork extends React.Component {
   createHowIWorkList = () => {

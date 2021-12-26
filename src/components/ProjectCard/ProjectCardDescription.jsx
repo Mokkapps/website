@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
 
-import AppStoreButton from '@components/AppStoreButton';
-import Divider from '@components/Divider';
-import DevIcon from '@components/DevIcon';
+import AppStoreButton from 'components/AppStoreButton';
+import Divider from 'components/Divider';
+import DevIcon from 'components/DevIcon';
 
 const ProjectCardDescription = ({
   projectName,
@@ -14,7 +13,9 @@ const ProjectCardDescription = ({
   usedTechnologies,
 }) => (
   <div className="flex flex-col p-4">
-    <span className="text-xl text-main-text font-bold text-center">{projectName}</span>
+    <span className="text-xl text-main-text font-bold text-center">
+      {projectName}
+    </span>
     {minimal ? null : (
       <div className="mt-4">
         <Divider />

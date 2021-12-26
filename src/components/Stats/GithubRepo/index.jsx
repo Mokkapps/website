@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { useFetch } from '@hooks/useFetch';
-import { sendCustomAnalyticsEvent } from '@utils';
-import Button from '@components/Button';
+import { useFetch } from 'hooks/useFetch';
+import { sendCustomAnalyticsEvent } from 'utils';
+import Button from 'components/Button';
 
 const GithubRepo = () => {
   const repoName = 'website';

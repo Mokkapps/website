@@ -17,15 +17,6 @@
   "settings": {
     "react": {
       "version": "detect"
-    },
-    "import/resolver": {
-      "alias": [
-        ["@components", "./src/components"],
-        ["@api", "./src/api"],
-        ["@hooks", "./src/hooks"],
-        ["@utils", "./src/utils"],
-        ["@content", "./src/content"]
-      ]
     }
   }
 }

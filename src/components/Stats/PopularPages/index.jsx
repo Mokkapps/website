@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Loader from 'react-loader-spinner';
 import { FormattedMessage } from 'react-intl';
 
-import { formatNumber } from '@utils';
+import { formatNumber } from 'utils';
 
 const StatsPopularPages = ({ dataCy, className, metrics, loading }) => {
   return (

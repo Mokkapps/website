@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { FaRegCopyright } from 'react-icons/all';
 
-import menu from '@content/meta/menu';
-import SocialLinks from '@components/SocialLink/SocialLinks';
-import NewsletterSubscription from '@components/NewsletterSubscription';
-import Divider from '@components/Divider';
+import menu from 'content/meta/menu';
+import SocialLinks from 'components/SocialLink/SocialLinks';
+import NewsletterSubscription from 'components/NewsletterSubscription';
+import Divider from 'components/Divider';
 
 const Footer = () => (
   <footer className="relative flex flex-shrink-0 flex-col items-center justify-center px-4 md:px-96 py-4">

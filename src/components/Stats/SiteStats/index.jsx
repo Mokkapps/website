@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { useFetch } from '@hooks/useFetch';
-import StatsCard from '@components/Stats/StatsCard';
+import { useFetch } from 'hooks/useFetch';
+import StatsCard from 'components/Stats/StatsCard';
 
 const SiteStats = () => {
   const {

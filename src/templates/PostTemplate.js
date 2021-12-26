@@ -6,20 +6,20 @@ import ReactDisqusComments from 'react-disqus-comments';
 import { FormattedMessage } from 'react-intl';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 
-import config from '@content/meta/config';
-import { isDevelopmentEnv } from '@utils';
-import useArticleView from '@hooks/useArticleViews';
+import config from 'content/meta/config';
+import { isDevelopmentEnv } from 'utils';
+import useArticleView from 'hooks/useArticleViews';
 
-import ArticleWithSidebar from '@components/ArticleWithSidebar';
-import Layout from '@components/Layout';
-import PostMeta from '@components/PostMeta';
-import BodyText from '@components/BodyText';
-import NextPrev from '@components/NextPrev';
-import Share from '@components/Share';
-import Button from '@components/Button';
-import EditOnGithub from '@components/EditOnGithub';
-import LanguageWarning from '@components/LanguageWarning';
-import SimilarArticles from '@components/SimilarArticles';
+import ArticleWithSidebar from 'components/ArticleWithSidebar';
+import Layout from 'components/Layout';
+import PostMeta from 'components/PostMeta';
+import BodyText from 'components/BodyText';
+import NextPrev from 'components/NextPrev';
+import Share from 'components/Share';
+import Button from 'components/Button';
+import EditOnGithub from 'components/EditOnGithub';
+import LanguageWarning from 'components/LanguageWarning';
+import SimilarArticles from 'components/SimilarArticles';
 
 const nextPrevIcons = {
   next: FaAngleDoubleRight,

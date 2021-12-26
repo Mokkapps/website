@@ -5,18 +5,18 @@ import { FormattedMessage } from 'react-intl';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import ReactDisqusComments from 'react-disqus-comments';
 
-import config from '@content/meta/config';
-import { isDevelopmentEnv } from '@utils';
-import useArticleView from '@hooks/useArticleViews';
+import config from 'content/meta/config';
+import { isDevelopmentEnv } from 'utils';
+import useArticleView from 'hooks/useArticleViews';
 
-import Layout from '@components/Layout';
-import BodyText from '@components/BodyText';
-import LanguageWarning from '@components/LanguageWarning';
-import ArticleWithSidebar from '@components/ArticleWithSidebar';
-import Share from '@components/Share';
-import EditOnGithub from '@components/EditOnGithub';
-import Button from '@components/Button';
-import PostMeta from '@components/PostMeta';
+import Layout from 'components/Layout';
+import BodyText from 'components/BodyText';
+import LanguageWarning from 'components/LanguageWarning';
+import ArticleWithSidebar from 'components/ArticleWithSidebar';
+import Share from 'components/Share';
+import EditOnGithub from 'components/EditOnGithub';
+import Button from 'components/Button';
+import PostMeta from 'components/PostMeta';
 
 const TipTemplate = props => {
   const {

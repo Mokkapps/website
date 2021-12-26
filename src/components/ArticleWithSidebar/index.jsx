@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Reactions from '@components/Reactions';
-import BuyMeACoffeeButton from '@components/BuyMeACoffeeButton';
-import NewsletterSidebar from '@components/NewsletterSidebar';
-import Share from '@components/Share';
+import Reactions from 'components/Reactions';
+import BuyMeACoffeeButton from 'components/BuyMeACoffeeButton';
+import NewsletterSidebar from 'components/NewsletterSidebar';
+import Share from 'components/Share';
 
 const ArticleWithSidebar = ({ children, shareProps, slug }) => (
   <section className="lg:grid lg:grid-col-1 lg:grid-cols-12 p-6 md:p-7 xl:p-4">

@@ -3,8 +3,8 @@ import { openPopupWidget } from 'react-calendly';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import Button from '../Button';
-import { sendCustomAnalyticsEvent } from '../../utils';
+import Button from 'components/Button';
+import { sendCustomAnalyticsEvent } from 'utils';
 
 const ScheduleMeetingButton = props => {
   const options = {

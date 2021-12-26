@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { useFetch } from '@hooks/useFetch';
-import StatsCard from '@components/Stats/StatsCard';
-import StatsPopularPages from '@components/Stats/PopularPages';
+import { useFetch } from 'hooks/useFetch';
+import StatsCard from 'components/Stats/StatsCard';
+import StatsPopularPages from 'components/Stats/PopularPages';
 
 const ArticleStats = ({ blogPostCount, tipsCount }) => {
   const {

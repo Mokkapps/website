@@ -3,14 +3,14 @@ import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import config from '@content/meta/config';
-import { getAllCategories, metaIcons, generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { getAllCategories, metaIcons, generateSeoImageUrl } from 'utils';
 
-import Layout from '@components/Layout';
-import BlogPostList from '@components/BlogPostList';
-import Heading from '@components/Heading';
-import CategorySelection from '@components/CategorySelection';
-import LanguageWarning from '@components/LanguageWarning';
+import Layout from 'components/Layout';
+import BlogPostList from 'components/BlogPostList';
+import Heading from 'components/Heading';
+import CategorySelection from 'components/CategorySelection';
+import LanguageWarning from 'components/LanguageWarning';
 
 const BlogPage = props => {
   const {

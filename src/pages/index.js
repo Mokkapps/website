@@ -6,23 +6,23 @@ import { navigate } from 'gatsby-link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
-import config from '@content/meta/config';
+import config from 'content/meta/config';
 import {
   baseFormattedMessageValues,
   sendCustomAnalyticsEvent,
   yearsOfExperience,
   generateSeoImageUrl,
-} from '@utils';
-import Layout from '@components/Layout';
-import Article from '@components/Article';
-import Button from '@components/Button';
-import LinkButton from '@components/LinkButton';
-import Availability from '@components/Availability';
-import ScheduleMeetingButton from '@components/ScheduleMeetingButton';
-import BusinessProjectList from '@components/BusinessProjectsList';
-import DevIcon from '@components/DevIcon';
-import References from '@components/References';
-import LinkCard from '@components/LinkCard';
+} from 'utils';
+import Layout from 'components/Layout';
+import Article from 'components/Article';
+import Button from 'components/Button';
+import LinkButton from 'components/LinkButton';
+import Availability from 'components/Availability';
+import ScheduleMeetingButton from 'components/ScheduleMeetingButton';
+import BusinessProjectList from 'components/BusinessProjectsList';
+import DevIcon from 'components/DevIcon';
+import References from 'components/References';
+import LinkCard from 'components/LinkCard';
 
 const ListElement = styled.li`
   padding-left: -1rem;

@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { FaCheck } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
 
-import { useIsArticleRead } from '@hooks/useIsArticleRead';
-import { handleArticleClicked, getFormattedDate } from '@utils';
+import { useIsArticleRead } from 'hooks/useIsArticleRead';
+import { handleArticleClicked, getFormattedDate } from 'utils';
 
 const LinkCard = ({
   to,

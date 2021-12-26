@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
-import { sendCustomAnalyticsEvent } from '@utils';
-import LinkCard from '@components/LinkCard';
+import { sendCustomAnalyticsEvent } from 'utils';
+import LinkCard from 'components/LinkCard';
 
 const SimilarArticles = ({ className, categories, slug, count = 4 }) => {
   const data = useStaticQuery(graphql`

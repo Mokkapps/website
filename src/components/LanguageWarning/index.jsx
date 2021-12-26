@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import { LanguageContext } from '../../context/languageContext';
+import { LanguageContext } from 'context/languageContext';
 
 function LanguageWarning({ className, type }) {
   const { lang } = useContext(LanguageContext);

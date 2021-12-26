@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import DevIcon from '../DevIcon';
+import DevIcon from 'components/DevIcon';
 
 const skillsList = [
   { type: 'javaScript', level: 'expert' },

@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FaRegEye, FaRegCalendar, FaRegClock } from 'react-icons/fa';
 
-import { getFormattedDate, formatNumber } from '@utils';
-import { baseNameWithTitle } from '@content/meta/config';
-import CategoryLink from '@components/CategoryLink';
+import { getFormattedDate, formatNumber } from 'utils';
+import { baseNameWithTitle } from 'content/meta/config';
+import CategoryLink from 'components/CategoryLink';
 
 const PostMeta = ({
   date,

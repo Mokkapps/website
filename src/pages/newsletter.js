@@ -1,14 +1,14 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import config from '@content/meta/config';
-import { baseFormattedMessageValues, generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { baseFormattedMessageValues, generateSeoImageUrl } from 'utils';
 
-import Article from '@components/Article';
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
-import NewsletterSubscription from '@components/NewsletterSubscription';
-import LinkButton from '@components/LinkButton';
+import Article from 'components/Article';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
+import NewsletterSubscription from 'components/NewsletterSubscription';
+import LinkButton from 'components/LinkButton';
 
 const NewsletterPage = () => {
   const { siteTitlePostfix, siteUrl } = config;

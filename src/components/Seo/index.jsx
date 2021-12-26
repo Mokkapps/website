@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import config from '../../content/meta/config';
-import { LanguageContext } from '../../context/languageContext';
+import config from 'content/meta/config';
+import { LanguageContext } from 'context/languageContext';
 
 const windowGlobal = typeof window !== 'undefined' && window;
 

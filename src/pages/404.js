@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from '@content/meta/config';
-import { generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { generateSeoImageUrl } from 'utils';
 
-import Article from '@components/Article';
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
-import BodyText from '@components/BodyText';
+import Article from 'components/Article';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
+import BodyText from 'components/BodyText';
 
 const NotFoundPage = props => {
   const {

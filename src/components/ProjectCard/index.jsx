@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import ProjectCardDescription from './ProjectCardDescription';
+import ProjectCardDescription from 'components/ProjectCard/ProjectCardDescription';
 
 const ProjectCard = ({
   id,

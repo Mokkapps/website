@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import LinkCard from '../LinkCard';
+import LinkCard from 'components/LinkCard';
 
 const TipsList = props => {
   const { items, onlyTwoCols = false } = props;

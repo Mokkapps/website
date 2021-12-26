@@ -8,14 +8,7 @@ const SLUG_SEPARATOR = '___';
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      alias: {
-        '@components': path.resolve(__dirname, 'src/components'),
-        '@api': path.resolve(__dirname, 'src/api'),
-        '@hooks': path.resolve(__dirname, 'src/hooks'),
-        '@utils': path.resolve(__dirname, 'src/utils'),
-        '@content': path.resolve(__dirname, 'src/content'),
-        '@static': path.resolve(__dirname, 'static'),
-      },
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
   });
 };

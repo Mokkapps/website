@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import NewsletterSubscription from '../NewsletterSubscription';
+
+import NewsletterSubscription from 'components/NewsletterSubscription';
 
 const NewsletterSidebar = ({ className }) => {
   return (

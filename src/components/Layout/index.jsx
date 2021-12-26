@@ -2,16 +2,17 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
-import Menu from '../Menu/DesktopMenu/DesktopMenu';
-import messages from '../../lang/messages';
-import { LanguageContext } from '../../context/languageContext';
-import { ThemeContext } from '../../context/themeContextProvider';
-import BurgerMenu from '../Menu/MobileMenu/MobileMenu';
-import BurgerMenuButton from '../Menu/MobileMenu/BurgerMenuButton';
-import HeaderLogo from '../HeaderLogo';
-import SocialLinks from '../SocialLink/SocialLinks';
-import Footer from '../Footer';
-import Seo from '../Seo';
+import messages from 'lang/messages';
+import { LanguageContext } from 'context/languageContext';
+import { ThemeContext } from 'context/themeContextProvider';
+
+import Menu from 'components/Menu/DesktopMenu/DesktopMenu';
+import BurgerMenu from 'components/Menu/MobileMenu/MobileMenu';
+import BurgerMenuButton from 'components/Menu/MobileMenu/BurgerMenuButton';
+import HeaderLogo from 'components/HeaderLogo';
+import SocialLinks from 'components/SocialLink/SocialLinks';
+import Footer from 'components/Footer';
+import Seo from 'components/Seo';
 
 const Layout = ({
   children,
@@ -39,7 +40,12 @@ const Layout = ({
         <BurgerMenu className="lg:hidden" open={open} setOpen={setOpen} />
         <Menu className="hidden lg:flex" />
         <section className="hidden xl:flex fixed left-7 top-80 z-200">
-          <SocialLinks onlyFavorites asColumn largeIcons dataCy={'desktop-sidebar-social-links'}/>
+          <SocialLinks
+            onlyFavorites
+            asColumn
+            largeIcons
+            dataCy={'desktop-sidebar-social-links'}
+          />
         </section>
         <div className="md:pt-20 md:p-4 flex-grow">{children}</div>
         <Footer />

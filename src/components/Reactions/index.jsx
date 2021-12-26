@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import useArticleReactions from '@hooks/useArticleReactions';
-import { formatNumber } from '@utils';
+import useArticleReactions from 'hooks/useArticleReactions';
+import { formatNumber } from 'utils';
 
 const Reactions = ({ slug, className }) => {
   const modifiedSlug = slug[0] === '/' ? slug.substring(1) : slug;

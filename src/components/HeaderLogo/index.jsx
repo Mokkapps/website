@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import logo from '../../images/icon.png';
+import logo from 'images/icon.png';
 
 const Anchor = styled.a`
   display: flex;

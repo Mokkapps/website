@@ -1,8 +1,9 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
-import TestimonialSlider from '../TestimonialSlider';
 import PropTypes from 'prop-types';
+
+import TestimonialSlider from 'components/TestimonialSlider';
 
 const itFreelancer2021Url =
   'https://www.it-freelancer-magazin.de/index.php/2021/11/01/it-freelancer-des-jahres-2021-steht-fest/';

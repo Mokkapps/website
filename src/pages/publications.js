@@ -2,16 +2,15 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { getSrc } from 'gatsby-plugin-image';
 
-import config from '@content/meta/config';
-import { getAsset, generateSeoImageUrl } from '@utils';
+import config from 'content/meta/config';
+import { getAsset, generateSeoImageUrl } from 'utils';
 
-import Article from '@components/Article';
-import Layout from '@components/Layout';
-import Heading from '@components/Heading';
-import ProjectCard from '@components/ProjectCard';
-import Divider from '@components/Divider';
+import Article from 'components/Article';
+import Layout from 'components/Layout';
+import Heading from 'components/Heading';
+import ProjectCard from 'components/ProjectCard';
+import Divider from 'components/Divider';
 
 const PublicationsPage = props => {
   const {

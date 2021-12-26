@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Loader from 'react-loader-spinner';
 
-import { formatNumber } from '@utils';
+import { formatNumber } from 'utils';
 
 const StatsCard = ({ dataCy, className, value, i18nId, loading }) => {
   const formattedValue = value ? formatNumber(value) : '--';
