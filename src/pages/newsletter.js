@@ -1,23 +1,19 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { graphql } from 'gatsby';
-import { getSrc } from 'gatsby-plugin-image';
-import PropTypes from 'prop-types';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { baseFormattedMessageValues, generateSeoImageUrl } from '@utils';
 
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import NewsletterSubscription from '../components/NewsletterSubscription';
-import LinkButton from '../components/LinkButton';
-import { baseFormattedMessageValues } from '../utils';
+import Article from '@components/Article';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
+import NewsletterSubscription from '@components/NewsletterSubscription';
+import LinkButton from '@components/LinkButton';
 
-const NewsletterPage = props => {
-  const {
-    data: { seoImage },
-  } = props;
+const NewsletterPage = () => {
   const { siteTitlePostfix, siteUrl } = config;
+
+  const seoImageUrl = generateSeoImageUrl('Newsletter');
 
   return (
     <Layout
@@ -26,7 +22,7 @@ const NewsletterPage = props => {
         title: `Newsletter${siteTitlePostfix}`,
         description:
           'Subscribe for the newsletter to stay up-do-date on Mokkapps topics',
-        image: getSrc(seoImage),
+        image: seoImageUrl,
       }}
     >
       <Article>
@@ -74,18 +70,6 @@ const NewsletterPage = props => {
   );
 };
 
-NewsletterPage.propTypes = {
-  data: PropTypes.object,
-};
+NewsletterPage.propTypes = {};
 
 export default NewsletterPage;
-
-export const query = graphql`
-  {
-    seoImage: file(relativePath: { eq: "og/og-newsletter.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
-  }
-`;

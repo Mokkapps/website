@@ -2,12 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import Heading from '../components/Heading';
-import SimpleTipList from '../components/SimpleTipList';
+import Layout from '@components/Layout';
+import Article from '@components/Article';
+import Heading from '@components/Heading';
+import SimpleTipList from '@components/SimpleTipList';
 
 const SimpleBlogPage = props => {
   const {
@@ -15,6 +16,8 @@ const SimpleBlogPage = props => {
       tips: { edges },
     },
   } = props;
+
+  const seoImageUrl = generateSeoImageUrl('Minimal Tip List');
 
   const tips = edges.map(edge => edge.node);
 
@@ -27,6 +30,7 @@ const SimpleBlogPage = props => {
         title: `Minimal Tip List${siteTitlePostfix}`,
         description:
           'A collection of short tips about topics like frontend, Vue.js, JavaScript, TypeScript, HTML, CSS and more.',
+        image: seoImageUrl,
       }}
     >
       <Article>

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import config from 'content/meta/config';
+import config from '@content/meta/config';
+import { getCategoryDisplayText, metaIcons, generateSeoImageUrl } from '@utils';
 
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import Heading from '../components/Heading';
-import BlogPostList from '../components/BlogPostList';
-import CategorySelection from '../components/CategorySelection';
-import { getCategoryDisplayText, metaIcons } from '../utils';
+import Layout from '@components/Layout';
+import Article from '@components/Article';
+import Heading from '@components/Heading';
+import BlogPostList from '@components/BlogPostList';
+import CategorySelection from '@components/CategorySelection';
 
 const PageTemplate = props => {
   const {
@@ -20,6 +20,8 @@ const PageTemplate = props => {
       allCategories,
     },
   } = props;
+
+  const seoImageUrl = generateSeoImageUrl(category);
 
   const items = edges.map(edge => edge.node);
   const categories = allCategories.group.map(c => c.fieldValue);
@@ -34,6 +36,7 @@ const PageTemplate = props => {
           category
         )}${siteTitlePostfix}`,
         description: `This page contains all the posts in the category ${category}`,
+        image: seoImageUrl
       }}
     >
       <Article>

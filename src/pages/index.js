@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { getSrc, StaticImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import { navigate } from 'gatsby-link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import {
   baseFormattedMessageValues,
   sendCustomAnalyticsEvent,
   yearsOfExperience,
+  generateSeoImageUrl,
 } from '@utils';
 import Layout from '@components/Layout';
 import Article from '@components/Article';
@@ -35,8 +36,10 @@ const ListElement = styled.li`
 
 const IndexPage = props => {
   const {
-    data: { projectAssets, latestPosts, latestTips: latestTipsData, seoImage },
+    data: { projectAssets, latestPosts, latestTips: latestTipsData },
   } = props;
+
+  const seoImageUrl = generateSeoImageUrl('Home');
 
   const posts = latestPosts.edges.map(edge => edge.node);
   const tips = latestTipsData.edges.map(edge => edge.node);
@@ -294,7 +297,7 @@ const IndexPage = props => {
         url: siteUrl,
         title: `Home${siteTitlePostfix}`,
         description: siteDescription,
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
       }}
     >
       <Article className="flex flex-col min-h-screen">
@@ -316,11 +319,6 @@ export default IndexPage;
 
 export const query = graphql`
   {
-    seoImage: file(relativePath: { eq: "og/og-home.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {

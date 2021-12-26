@@ -1,10 +1,9 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { getSrc, StaticImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
 
-import { baseFormattedMessageValues } from '@utils';
+import { baseFormattedMessageValues, generateSeoImageUrl } from '@utils';
 import config from '@content/meta/config';
 
 import Article from '@components/Article';
@@ -15,11 +14,10 @@ import Skills from '@components/Skills';
 import HowIWork from '@components/About/HowIWork';
 import References from '@components/References';
 
-const AboutPage = props => {
-  const {
-    data: { seoImage },
-  } = props;
+const AboutPage = () => {
   const { siteTitlePostfix, siteUrl, siteDescription } = config;
+
+  const seoImageUrl = generateSeoImageUrl('About me');
 
   return (
     <Layout
@@ -27,7 +25,7 @@ const AboutPage = props => {
         url: `${siteUrl}/about`,
         title: `About${siteTitlePostfix}`,
         description: siteDescription,
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
       }}
     >
       <Article>
@@ -64,18 +62,6 @@ const AboutPage = props => {
   );
 };
 
-AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+AboutPage.propTypes = {};
 
 export default AboutPage;
-
-export const query = graphql`
-  {
-    seoImage: file(relativePath: { eq: "og/og-home.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
-  }
-`;

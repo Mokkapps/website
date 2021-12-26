@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import SimpleBlogPostList from '../components/SimpleBlogPostList';
-
-import Heading from '../components/Heading';
+import Layout from '@components/Layout';
+import Article from '@components/Article';
+import SimpleBlogPostList from '@components/SimpleBlogPostList';
+import Heading from '@components/Heading';
 
 const SimpleBlogPage = props => {
   const {
@@ -21,12 +21,15 @@ const SimpleBlogPage = props => {
 
   const { siteUrl, siteTitlePostfix } = config;
 
+  const seoImageUrl = generateSeoImageUrl('Minimal Blog List');
+
   return (
     <Layout
       seo={{
         url: `${siteUrl}/minimal-blog-list`,
         title: `Minimal Blog List${siteTitlePostfix}`,
         description: 'Blog posts about software engineering and career',
+        image: seoImageUrl,
       }}
     >
       <Article>

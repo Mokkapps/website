@@ -2,19 +2,20 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { getAllCategories, generateSeoImageUrl } from '@utils';
 
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-
-import Heading from '../components/Heading';
-import CategorySelection from '../components/CategorySelection';
-import { getAllCategories } from '../utils';
+import Layout from '@components/Layout';
+import Article from '@components/Article';
+import Heading from '@components/Heading';
+import CategorySelection from '@components/CategorySelection';
 
 const CategoriesPage = props => {
   const {
     data: { allEdges },
   } = props;
+
+  const seoImageUrl = generateSeoImageUrl('Categories');
 
   const categories = getAllCategories(allEdges);
   const { siteUrl, siteTitlePostfix } = config;
@@ -25,6 +26,7 @@ const CategoriesPage = props => {
         url: `${siteUrl}/categories`,
         title: `Categories${siteTitlePostfix}`,
         description: 'Available categories for blog posts',
+        image: seoImageUrl,
       }}
     >
       <Article>

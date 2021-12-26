@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { getSrc } from 'gatsby-plugin-image';
 
 import config from '@content/meta/config';
-import { getAsset } from '@utils';
+import { getAsset, generateSeoImageUrl } from '@utils';
 
 import Article from '@components/Article';
 import Layout from '@components/Layout';
@@ -15,10 +15,12 @@ import Divider from '@components/Divider';
 
 const PublicationsPage = props => {
   const {
-    data: { talkAssets, seoImage },
+    data: { talkAssets },
   } = props;
   const { edges } = talkAssets;
   const { siteTitlePostfix, publications, siteUrl } = config;
+
+  const seoImageUrl = generateSeoImageUrl('Publications');
 
   return (
     <Layout
@@ -26,7 +28,7 @@ const PublicationsPage = props => {
         url: `${siteUrl}/publications`,
         title: `Publications${siteTitlePostfix}`,
         description: 'A list of talks and articles from Michael Hoffmann',
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
       }}
     >
       <Article>
@@ -97,11 +99,6 @@ export default PublicationsPage;
 
 export const query = graphql`
   query {
-    seoImage: file(relativePath: { eq: "og/og-publications.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
     talkAssets: allFile(filter: { absolutePath: { regex: "/talks/" } }) {
       edges {
         node {

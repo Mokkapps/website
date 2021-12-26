@@ -4,22 +4,24 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { graphql, Link } from 'gatsby';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import TipsList from '../components/TipsList';
-import LanguageWarning from '../components/LanguageWarning';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
+import TipsList from '@components/TipsList';
+import LanguageWarning from '@components/LanguageWarning';
 
 const TipsPage = props => {
   const {
     data: {
       tips: { edges },
-      seoImage,
     },
   } = props;
   const allTips = edges.map(edge => edge.node);
   const { siteUrl, siteTitlePostfix } = config;
+
+  const seoImageUrl = generateSeoImageUrl('Tips');
 
   const searchComponent = (
     <p>
@@ -48,7 +50,7 @@ const TipsPage = props => {
         title: `Tips${siteTitlePostfix}`,
         description:
           'A collection of short tips about topics like frontend, Vue.js, JavaScript, TypeScript, HTML, CSS and more.',
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
       }}
     >
       <article className="px-8 md:px-24 py-8">
@@ -89,11 +91,6 @@ export default TipsPage;
 
 export const query = graphql`
   {
-    seoImage: file(relativePath: { eq: "og/og-tips.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
     tips: allMdx(
       filter: { fields: { source: { eq: "tips" }, slug: { ne: null } } }
       sort: { fields: [frontmatter___date], order: DESC }

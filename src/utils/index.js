@@ -3,6 +3,15 @@ import React from 'react';
 import { FormattedDate } from 'react-intl';
 import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
 
+export const generateSeoImageUrl = title =>
+  generateSocialImageUrl({
+    title: title.toUpperCase(),
+    cloudName: 'mokkapps',
+    imagePublicID: 'open_graph_site_template.jpg',
+    titleFont: 'domine',
+    titleFontSize: 80,
+  });
+
 export const isDevelopmentEnv = () => process.env.NODE_ENV === 'development';
 
 export const baseFormattedMessageValues = {
@@ -103,3 +112,77 @@ export const capitalize = s => {
     return a.toUpperCase();
   });
 };
+
+// Inspired by https://braydoncoyer.dev/blog/how-to-dynamically-create-open-graph-images-with-cloudinary-and-next.js
+function generateSocialImageUrl({
+  title,
+  cloudName,
+  imagePublicID,
+  cloudinaryUrlBase = 'https://res.cloudinary.com',
+  version = null,
+  titleFont = 'arial',
+  titleExtraConfig = '_bold',
+  underlayImageWidth = 580,
+  underlayImageHeight = 630,
+  underlayImage = '',
+  imageWidth = 1200,
+  imageHeight = 630,
+  textAreaWidth = 630,
+  textAreaHeight = 450,
+  textLeftOffset = 45,
+  textBottomOffset = -40,
+  textColor = 'FFFFFF',
+  titleFontSize = 60,
+}) {
+  // configure social media image dimensions, quality, and format
+  const imageConfig = [
+    `w_${imageWidth}`,
+    `h_${imageHeight}`,
+    'c_fill',
+    'f_auto',
+  ].join(',');
+
+  const underlayConfig = [
+    `w_${underlayImageWidth}`,
+    `h_${underlayImageHeight}`,
+    `c_fill`,
+    `u_${underlayImage}/fl_layer_apply`,
+    `g_east`,
+  ];
+
+  // configure the title text
+  const titleConfig = [
+    `w_${textAreaWidth}`,
+    `h_${textAreaHeight}`,
+    'c_fit',
+    `co_rgb:${textColor}`,
+    'g_west',
+    `x_${textLeftOffset}`,
+    `y_${textBottomOffset}`,
+    `l_text:${titleFont}_${titleFontSize}${titleExtraConfig}:${encodeURIComponent(
+      title
+    )}`,
+  ].join(',');
+
+  // combine all the pieces required to generate a Cloudinary URL
+  let urlParts = [
+    cloudinaryUrlBase,
+    cloudName,
+    'image',
+    'upload',
+    imageConfig,
+    titleConfig,
+    version,
+    imagePublicID,
+  ];
+
+  if (underlayImage) {
+    urlParts = [...urlParts, underlayConfig];
+  }
+
+  // remove any falsy sections of the URL (e.g. an undefined version)
+  const validParts = urlParts.filter(Boolean);
+
+  // join all the parts into a valid URL to the generated image
+  return validParts.join('/');
+}

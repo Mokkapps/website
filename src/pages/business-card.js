@@ -1,20 +1,17 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import { StaticImage, getSrc } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
+import Article from '@components/Article';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
 
-const BusinessCardPage = props => {
-  const {
-    data: { seoImage },
-  } = props;
-
+const BusinessCardPage = () => {
   const { siteTitlePostfix, siteUrl } = config;
+
+  const seoImageUrl = generateSeoImageUrl('Business Card');
 
   return (
     <Layout
@@ -22,7 +19,7 @@ const BusinessCardPage = props => {
         url: `${siteUrl}/business-card`,
         title: `Business Card${siteTitlePostfix}`,
         description: 'Business card of Michael Hoffmann',
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
       }}
     >
       <Article>
@@ -42,18 +39,6 @@ const BusinessCardPage = props => {
   );
 };
 
-BusinessCardPage.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+BusinessCardPage.propTypes = {};
 
 export default BusinessCardPage;
-
-export const query = graphql`
-  query {
-    seoImage: file(relativePath: { eq: "og/og-home.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
-  }
-`;

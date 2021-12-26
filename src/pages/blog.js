@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { getSrc } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
 
 import config from '@content/meta/config';
-import { getAllCategories, metaIcons } from '@utils';
+import { getAllCategories, metaIcons, generateSeoImageUrl } from '@utils';
 
 import Layout from '@components/Layout';
 import BlogPostList from '@components/BlogPostList';
@@ -16,11 +15,12 @@ import LanguageWarning from '@components/LanguageWarning';
 const BlogPage = props => {
   const {
     data: {
-      seoImage,
       allEdges,
       posts: { edges },
     },
   } = props;
+
+  const seoImageUrl = generateSeoImageUrl('Blog');
 
   const categories = getAllCategories(allEdges);
   const allPosts = edges.map(edge => edge.node);
@@ -83,7 +83,7 @@ const BlogPage = props => {
       seo={{
         url: `${siteUrl}/blog`,
         title: `Blog${siteTitlePostfix}`,
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
         description:
           'Blog posts from Michael Hoffmann about Frontend, Backend, Fullstack, Vue.js, JavaScript, TypeScript and more.',
       }}
@@ -163,11 +163,6 @@ export default BlogPage;
 
 export const query = graphql`
   {
-    seoImage: file(relativePath: { eq: "og/og-blog.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
     allEdges: allMdx {
       edges {
         node {

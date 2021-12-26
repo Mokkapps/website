@@ -1,10 +1,10 @@
 import React from 'react';
-import { getSrc } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
 import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
 import Layout from '@components/Layout';
 import Heading from '@components/Heading';
@@ -18,12 +18,13 @@ import Sponsors from '@components/Stats/Sponsors';
 const StatsPage = props => {
   const {
     data: {
-      seoImage,
       allBlogPosts: { totalCount: blogPostCount },
       allTips: { totalCount: tipsCount },
     },
   } = props;
   const { siteUrl, siteTitlePostfix } = config;
+
+  const seoImageUrl = generateSeoImageUrl('Stats');
 
   return (
     <Layout
@@ -31,7 +32,7 @@ const StatsPage = props => {
         url: `${siteUrl}/stats`,
         title: `Stats${siteTitlePostfix}`,
         description: 'Some statistics about my portfolio website',
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
       }}
     >
       <Article>
@@ -70,11 +71,6 @@ export default StatsPage;
 
 export const query = graphql`
   {
-    seoImage: file(relativePath: { eq: "og/og-stats.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
     allBlogPosts: allMdx(
       filter: { fields: { source: { eq: "posts" }, slug: { ne: null } } }
     ) {

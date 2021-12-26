@@ -2,12 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import BodyText from '../components/BodyText';
+import Article from '@components/Article';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
+import BodyText from '@components/BodyText';
 
 const NotFoundPage = props => {
   const {
@@ -16,12 +17,15 @@ const NotFoundPage = props => {
 
   const { siteTitlePostfix, siteUrl } = config;
 
+  const seoImageUrl = generateSeoImageUrl('404');
+
   return (
     <Layout
       seo={{
         url: siteUrl,
         title: `Not Found${siteTitlePostfix}`,
         description: 'The requested page was not found',
+        image: seoImageUrl,
       }}
     >
       <Article>

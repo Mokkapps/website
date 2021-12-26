@@ -1,23 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { getSrc, StaticImage } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import ContactForm from '../components/ContactForm';
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import LinkButton from '../components/LinkButton';
-import Availability from '../components/Availability';
-import ScheduleMeetingButton from '../components/ScheduleMeetingButton';
+import ContactForm from '@components/ContactForm';
+import Article from '@components/Article';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
+import LinkButton from '@components/LinkButton';
+import Availability from '@components/Availability';
+import ScheduleMeetingButton from '@components/ScheduleMeetingButton';
 
-const ContactPage = props => {
-  const {
-    data: { seoImage },
-  } = props;
+const ContactPage = () => {
   const { siteUrl, siteTitlePostfix } = config;
+
+  const seoImageUrl = generateSeoImageUrl('Contact me');
 
   return (
     <Layout
@@ -26,7 +24,7 @@ const ContactPage = props => {
         title: `Contact${siteTitlePostfix}`,
         description:
           'Contact Michael Hoffmann to hire him as a freelance software engineer or just ask him a question',
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
       }}
     >
       <Article>
@@ -55,18 +53,6 @@ const ContactPage = props => {
   );
 };
 
-ContactPage.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+ContactPage.propTypes = {};
 
 export default ContactPage;
-
-export const query = graphql`
-  {
-    seoImage: file(relativePath: { eq: "og/og-contact.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
-  }
-`;

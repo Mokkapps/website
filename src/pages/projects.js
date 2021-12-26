@@ -4,18 +4,21 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { getSrc, StaticImage } from 'gatsby-plugin-image';
 
-import config from '../content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import ProjectList from '../components/ProjectList';
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import BusinessProjectList from '../components/BusinessProjectsList';
+import ProjectList from '@components/ProjectList';
+import Article from '@components/Article';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
+import BusinessProjectList from '@components/BusinessProjectsList';
 
 const ProjectsPage = props => {
   const {
-    data: { projectAssets, seoImage },
+    data: { projectAssets },
   } = props;
+
+  const seoImageUrl = generateSeoImageUrl('Projects');
 
   const { siteUrl, siteTitlePostfix, customers } = config;
 
@@ -52,7 +55,7 @@ const ProjectsPage = props => {
       seo={{
         url: `${siteUrl}/projects`,
         title: `Projects${siteTitlePostfix}`,
-        image: `${config.siteUrl}${getSrc(seoImage)}`,
+        image: seoImageUrl,
         description:
           'A list of all private and business projects from Michael Hoffmann',
       }}
@@ -90,11 +93,6 @@ export default ProjectsPage;
 
 export const query = graphql`
   {
-    seoImage: file(relativePath: { eq: "og/og-projects.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
     projectAssets: allFile(filter: { absolutePath: { regex: "/projects/" } }) {
       edges {
         node {

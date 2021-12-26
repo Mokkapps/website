@@ -2,12 +2,13 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import config from '../../src/content/meta/config';
+import config from '@content/meta/config';
+import { generateSeoImageUrl } from '@utils';
 
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import Heading from '../components/Heading';
-import BodyText from '../components/BodyText';
+import Article from '@components/Article';
+import Layout from '@components/Layout';
+import Heading from '@components/Heading';
+import BodyText from '@components/BodyText';
 
 const PageTemplate = props => {
   const {
@@ -23,12 +24,15 @@ const PageTemplate = props => {
 
   const { siteUrl, siteTitlePostfix } = config;
 
+  const seoImageUrl = generateSeoImageUrl(title);
+
   return (
     <Layout
       seo={{
         url: `${siteUrl}${slug}`,
         title: `${title}${siteTitlePostfix}`,
         description: excerpt,
+        image: seoImageUrl,
       }}
     >
       <Article>
