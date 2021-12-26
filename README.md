@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3a56bccf-9bd3-4306-ae45-f92cef608076/deploy-status)](https://app.netlify.com/sites/mokkapps/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96a46c0d-e9b9-4cb2-bf6d-f4f5a5f0e8c7/deploy-status)](https://app.netlify.com/sites/mokkapps/deploys)
 ![GitHub workflow](https://github.com/mokkapps/website/actions/workflows/lint-e2e-deploy.yml/badge.svg)
 
 # Mokkapps Portfolio Website
