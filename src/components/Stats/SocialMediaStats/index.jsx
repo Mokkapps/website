@@ -14,6 +14,12 @@ const SocialMediaStats = () => {
   } = useFetch(`https://api.github.com/users/${githubUsername}`);
 
   const {
+    status: hashnodeFollowersStatus,
+    data: hashnodeFollowersData,
+    error: hashnodeFollowersError,
+  } = useFetch(`${process.env.GATSBY_API_URL}followers/hashnode`);
+
+  const {
     status: twitterFollowersStatus,
     data: twitterFollowersData,
     error: twitterFollowersError,
@@ -42,12 +48,20 @@ const SocialMediaStats = () => {
           loading={twitterFollowersStatus === 'fetching'}
           value={twitterFollowersError ? null : twitterFollowersData.followers}
           i18nId="statsPage.socialMediaStats.twitterFollowers"
-        />{' '}
+        />
         <StatsCard
           className="mt-4"
           loading={devToFollowersStatus === 'fetching'}
           value={devToFollowersError ? null : devToFollowersData.followers}
           i18nId="statsPage.socialMediaStats.devToFollowers"
+        />
+        <StatsCard
+          className="mt-4"
+          loading={hashnodeFollowersStatus === 'fetching'}
+          value={
+            hashnodeFollowersError ? null : hashnodeFollowersData.followers
+          }
+          i18nId="statsPage.socialMediaStats.hashnodeFollowers"
         />
       </div>
     </>
