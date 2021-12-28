@@ -18,9 +18,19 @@ export const baseFormattedMessageValues = {
   mark: chunks => <mark>{chunks}</mark>,
 };
 
-export const getFormattedDate = date => (
-  <FormattedDate year="numeric" month="long" day="2-digit" value={date} />
-);
+export const getFormattedDate = (date, withTime = false) =>
+  withTime ? (
+    <FormattedDate
+      year="numeric"
+      month="long"
+      day="2-digit"
+      minute="numeric"
+      hour="numeric"
+      value={date}
+    />
+  ) : (
+    <FormattedDate year="numeric" month="long" day="2-digit" value={date} />
+  );
 
 export const formatNumber = number => new Intl.NumberFormat().format(number);
 

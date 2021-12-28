@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import config from 'content/meta/config';
-import { generateSeoImageUrl } from 'utils';
 
 import Article from 'components/Article';
 import Layout from 'components/Layout';
@@ -17,7 +16,8 @@ const NotFoundPage = props => {
 
   const { siteTitlePostfix, siteUrl } = config;
 
-  const seoImageUrl = generateSeoImageUrl('404');
+  const seoImageUrl =
+    'https://res.cloudinary.com/mokkapps/image/upload/v1640673374/open_graph_home.jpg';
 
   return (
     <Layout

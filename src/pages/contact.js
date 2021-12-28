@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import config from 'content/meta/config';
@@ -41,12 +42,34 @@ const ContactPage = () => {
             href="/about"
             i18nId="general.moreAboutMeLink"
           />
-          <Availability className="my-5" dataCy="contact-availability" />
-          <ScheduleMeetingButton
-            dataCy="contact-hire-me-button"
-            className="w-64 h-16 mb-2"
-          />
-          <ContactForm />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-24">
+            <div className="mt-8">
+              <div className="flex flex-col">
+                <span className="text-xl">
+                  <FormattedMessage id="contactPage.meetingHeadline" />
+                </span>
+                <span className="text-xl text-secondary-text mt-2">
+                  <FormattedMessage id="contactPage.meetingDescription" />
+                </span>
+              </div>
+              <Availability className="my-5" dataCy="contact-availability" />
+              <ScheduleMeetingButton
+                dataCy="contact-hire-me-button"
+                className="w-64 h-16 mb-2"
+              />
+            </div>
+            <div className="mt-8">
+              <div className="flex flex-col">
+                <span className="text-xl">
+                  <FormattedMessage id="contactPage.contactHeadline" />
+                </span>
+                <span className="text-xl text-secondary-text mt-2">
+                  <FormattedMessage id="contactPage.contactDescription" />
+                </span>
+              </div>
+              <ContactForm className="" />
+            </div>
+          </div>
         </section>
       </Article>
     </Layout>

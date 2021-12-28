@@ -75,8 +75,8 @@ const TipTemplate = props => {
           </div>
         ) : null}
         <BodyText body={body} fullWidth />
-        <Share className="my-10" shareProps={shareProps} />
-        <EditOnGithub isTip slug={slug} />
+        <Share className="mt-10" shareProps={shareProps} />
+        <EditOnGithub className="mt-10" isTip slug={slug} />
         {showComments ? (
           <ReactDisqusComments
             shortname="mokkapps"
@@ -84,9 +84,10 @@ const TipTemplate = props => {
             title={title}
             url={url}
             onNewComment={handleNewComment}
+            className="mt-10"
           />
         ) : (
-          <Button className="my-8" block onClick={() => setShowComments(true)}>
+          <Button className="mt-10" block onClick={() => setShowComments(true)}>
             <FormattedMessage id="blogPage.leaveAComment" />
           </Button>
         )}

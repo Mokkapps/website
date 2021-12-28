@@ -18,7 +18,7 @@ const Footer = () => (
             <FormattedMessage id="footer.sectionHeadlines.sitemap" />
           </strong>
           {menu.map(({ to, i18nId }) => (
-            <Link key={i18nId} data-cy={`footer-general-${i18nId}`} to={to}>
+            <Link key={i18nId} data-cy={`footer-general-${i18nId}`} to={to} className="mt-1">
               <FormattedMessage id={i18nId} />
             </Link>
           ))}
@@ -27,6 +27,7 @@ const Footer = () => (
             target="_blank"
             rel="noreferrer"
             data-cy="footer-sitemap-xml"
+            className="mt-1"
           >
             <FormattedMessage id="footer.sitemapXML" />
           </a>
@@ -35,16 +36,16 @@ const Footer = () => (
           <strong className="mb-2">
             <FormattedMessage id="footer.sectionHeadlines.extra" />
           </strong>
-          <Link data-cy="footer-stats" to="/stats">
+          <Link className="mt-1" data-cy="footer-stats" to="/stats">
             <FormattedMessage id="footer.stats" />
           </Link>
-          <Link data-cy="footer-uses" to="/uses">
+          <Link className="mt-1" data-cy="footer-uses" to="/uses">
             <FormattedMessage id="footer.uses" />
           </Link>
-          <Link data-cy="footer-newsletter" to="/newsletter">
+          <Link className="mt-1" data-cy="footer-newsletter" to="/newsletter">
             <FormattedMessage id="newsletterPage.newsletter" />
           </Link>
-          <Link data-cy="footer-business-card" to="/business-card">
+          <Link className="mt-1" data-cy="footer-business-card" to="/business-card">
             <FormattedMessage id="footer.businessCard" />
           </Link>
           <a
@@ -52,6 +53,7 @@ const Footer = () => (
             target="_blank"
             rel="noreferrer"
             data-cy="footer-newsletter"
+            className="mt-1"
           >
             <FormattedMessage id="general.buyMeACoffee" />
           </a>
@@ -60,10 +62,10 @@ const Footer = () => (
           <strong className="mb-2">
             <FormattedMessage id="footer.sectionHeadlines.general" />
           </strong>
-          <Link data-cy="footer-privacy-policy" to="/privacy-policy">
+          <Link className="mt-1" data-cy="footer-privacy-policy" to="/privacy-policy">
             <FormattedMessage id="footer.privacyPolicy" />
           </Link>
-          <Link data-cy="footer-legal-notice" to="/legal-notice">
+          <Link className="mt-1" data-cy="footer-legal-notice" to="/legal-notice">
             <FormattedMessage id="footer.legalNotice" />
           </Link>
 
@@ -72,6 +74,7 @@ const Footer = () => (
             target="_blank"
             rel="noreferrer"
             data-cy="footer-github"
+            className="mt-1"
           >
             <FormattedMessage id="footer.sourceCode" />
           </a>

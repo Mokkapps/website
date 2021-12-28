@@ -16,7 +16,7 @@ const SocialLink = props => {
       {...props}
       className={`bg-button-background flex content-center rounded-full items-center mx-1 ${
         largeIcons ? 'p-2' : 'p-1.5'
-      } transform transition-all hover:bg-accent hover:scale-110`}
+      } transform transition-all hover:scale-110`}
       href={url}
       aria-label={ariaLabel}
       target="_blank"

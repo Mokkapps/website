@@ -10,7 +10,7 @@ const BuyMeACoffeeButton = ({ className, dataCy }) => {
       href="https://www.buymeacoffee.com/mokkapps"
       target="_blank"
       rel="noopener noreferrer"
-      className={`flex justify-center items-center rounded-lg px-4 bg-primary h-12 ${className}`}
+      className={`flex justify-center items-center rounded-lg no-underline px-4 bg-primary h-12 ${className}`}
       onClick={() => sendCustomAnalyticsEvent('Buy me a coffee button clicked')}
       data-cy={dataCy}
     >

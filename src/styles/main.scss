@@ -150,19 +150,11 @@
   }
 
   a {
-    color: var(--accent);
-    text-decoration: none;
-    background-image: linear-gradient(var(--accent), var(--accent));
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-    transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
-
-    &:hover {
-      color: var(--accent);
-      text-decoration: none;
-      background-size: 100% 2px;
-    }
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: bold;
   }
 
   input {
@@ -252,6 +244,10 @@
 
   .text-shadow {
     text-shadow: 1px 1px 4px rgba(34, 34, 34, 0.6);
+  }
+
+  .bg-success {
+    background-color: var(--color-success);
   }
 
   .text-success {

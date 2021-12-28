@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-import Button from '../Button';
+import Button from 'components/Button';
 
-const ContactForm = () => {
+const ContactForm = ({ className }) => {
   const intl = useIntl();
 
   return (
-    <div className="flex justify-center px-12 py-12 md:px-8 md:py-6 w-full">
+    <div className={`${className} flex justify-center w-full`}>
       <form
-        className="w-full lg:w-1/2"
+        className="w-full"
         name="contact-form"
         action="/success"
         method="POST"
@@ -59,6 +60,10 @@ const ContactForm = () => {
       </form>
     </div>
   );
+};
+
+ContactForm.propTypes = {
+  className: PropTypes.string,
 };
 
 export default ContactForm;

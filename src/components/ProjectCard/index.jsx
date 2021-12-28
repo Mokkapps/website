@@ -16,7 +16,7 @@ const ProjectCard = ({
   block = false,
 }) => (
   <a
-    className={`flex flex-col bg-none shadow-md bg-secondary rounded-md m-2 max-w-full ${
+    className={`flex flex-col bg-none shadow-md bg-secondary rounded-md m-2 max-w-full no-underline ${
       block ? 'w-full' : 'w-64'
     }`}
     data-cy={`card-${id}`}

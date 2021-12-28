@@ -25,13 +25,15 @@ const Button = ({
   <StyledButton
     data-cy={dataCy}
     className={`${className} ${block ? 'w-full' : ''} ${
-      secondary ? 'bg-black text-white' : 'bg-accent text-basic-button-text'
-    } text-center rounded-md font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none min-h-50px`}
+      secondary
+        ? 'bg-button-background text-basic-button-text'
+        : 'bg-button-background text-basic-button-text'
+    } text-center rounded-full font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none min-h-50px`}
     type={type || 'button'}
     title={title}
     onClick={onClick}
   >
-    <span className="uppercase">{children}</span>
+    <span>{children}</span>
   </StyledButton>
 );
 

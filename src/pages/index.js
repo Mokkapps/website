@@ -11,7 +11,6 @@ import {
   baseFormattedMessageValues,
   sendCustomAnalyticsEvent,
   yearsOfExperience,
-  generateSeoImageUrl,
 } from 'utils';
 import Layout from 'components/Layout';
 import Article from 'components/Article';
@@ -39,7 +38,7 @@ const IndexPage = props => {
     data: { projectAssets, latestPosts, latestTips: latestTipsData },
   } = props;
 
-  const seoImageUrl = generateSeoImageUrl('Home');
+  const seoImageUrl = 'https://res.cloudinary.com/mokkapps/image/upload/v1640673374/open_graph_home.jpg';
 
   const posts = latestPosts.edges.map(edge => edge.node);
   const tips = latestTipsData.edges.map(edge => edge.node);
@@ -114,22 +113,6 @@ const IndexPage = props => {
         />
       </div>
     </div>
-  );
-
-  const hireMeButton = (
-    <Button
-      dataCy="home-hire-me-button"
-      className="w-full md:w-72 h-16 mb-2 mx-2"
-      onClick={() => {
-        sendCustomAnalyticsEvent('Hire me button clicked');
-        navigate('/contact');
-      }}
-    >
-      <span className="mr-2" role="img" aria-label="phone">
-        💻
-      </span>
-      <FormattedMessage id="landingPage.hireMe" />
-    </Button>
   );
 
   const latestTips = (
@@ -264,14 +247,19 @@ const IndexPage = props => {
         </strong>{' '}
         <FormattedMessage id="landingPage.rightPlace" />
       </p>
-      <Availability className="mt-10 mb-5" />
-      <div className="flex flex-wrap justify-center">
-        {hireMeButton}
-        <ScheduleMeetingButton
-          dataCy="home-schedule-meeting-button"
-          className="w-full md:w-72 h-16 mb-2 mx-2"
-        />
-      </div>
+      <Button
+        dataCy="home-hire-me-button"
+        className="w-full md:w-72 h-16 mb-2 mx-2 mt-8"
+        onClick={() => {
+          sendCustomAnalyticsEvent('Hire me button clicked');
+          navigate('/contact');
+        }}
+      >
+      <span className="mr-2" role="img" aria-label="phone">
+        💻
+      </span>
+        <FormattedMessage id="landingPage.hireMe" />
+      </Button>
       <References className="my-10" dataCy="home-references" />
     </div>
   );

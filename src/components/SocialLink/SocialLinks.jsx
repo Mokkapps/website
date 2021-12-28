@@ -10,7 +10,8 @@ import {
   FaNpm,
   FaRss,
   FaRegEnvelope,
-  FaRegEdit
+  FaRegEdit,
+  FaNewspaper,
 } from 'react-icons/fa';
 
 import SocialLink from 'components/SocialLink/SocialLink';
@@ -60,6 +61,12 @@ export const SOCIAL_LINKS = [
     url: 'https://www.npmjs.com/~mokkapps',
     icon: FaNpm,
     ariaLabel: 'npm',
+  },
+  {
+    url: 'http://newsletter.mokkapps.de',
+    icon: FaNewspaper,
+    ariaLabel: 'Newsletter',
+    favorite: true,
   },
   {
     url: `https://mokkapps.de/rss.xml`,

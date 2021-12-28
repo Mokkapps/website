@@ -98,14 +98,14 @@ const PostTemplate = props => {
           <div dangerouslySetInnerHTML={{ __html: bannerCredit }} />
         ) : null}
         <BodyText body={body} fullWidth />
-        <Share className="my-4" shareProps={shareProps} />
+        <Share className="mt-10" shareProps={shareProps} />
         <NextPrev
-          className="my-8"
+          className="mt-10"
           next={next}
           prev={prev}
           icons={nextPrevIcons}
         />
-        <EditOnGithub prefix={prefix} slug={slug} />
+        <EditOnGithub className="mt-10" prefix={prefix} slug={slug} />
         {showComments ? (
           <ReactDisqusComments
             shortname="mokkapps"
@@ -113,14 +113,15 @@ const PostTemplate = props => {
             title={title}
             url={url}
             onNewComment={handleNewComment}
+            className="mt-10"
           />
         ) : (
-          <Button className="my-8" block onClick={() => setShowComments(true)}>
+          <Button className="mt-10" block onClick={() => setShowComments(true)}>
             <FormattedMessage id="blogPage.leaveAComment" />
           </Button>
         )}
 
-        <SimilarArticles className="mt-4" categories={categories} slug={slug} />
+        <SimilarArticles className="mt-10" categories={categories} slug={slug} />
       </ArticleWithSidebar>
     </Layout>
   );

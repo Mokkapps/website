@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { sendCustomAnalyticsEvent } from 'utils';
 
-const EditOnGithub = ({ prefix, slug, isTip }) => {
+const EditOnGithub = ({ prefix, slug, isTip, className }) => {
   let url;
 
   if (isTip) {
@@ -17,7 +17,9 @@ const EditOnGithub = ({ prefix, slug, isTip }) => {
   }
 
   return (
-    <div className="flex bg-secondary flex-col p-4 border-l-2 border-accent">
+    <div
+      className={`${className} flex bg-secondary flex-col p-4 border-l-2 border-accent`}
+    >
       <p className="mb-4">
         <FormattedMessage id="blogPage.editOnGitHubInfoLine1" />
       </p>
@@ -27,7 +29,7 @@ const EditOnGithub = ({ prefix, slug, isTip }) => {
       <a
         rel="noopener noreferrer"
         target="_blank"
-        className="bg-none"
+        className="bg-none no-underline"
         href={url}
         onClick={() => sendCustomAnalyticsEvent(`Edit on GitHub: ${slug}`)}
       >
@@ -43,6 +45,7 @@ const EditOnGithub = ({ prefix, slug, isTip }) => {
 
 EditOnGithub.propTypes = {
   prefix: PropTypes.string,
+  className: PropTypes.string,
   isTip: PropTypes.bool,
   slug: PropTypes.string.isRequired,
 };

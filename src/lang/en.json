@@ -36,20 +36,8 @@
     "siteStats": {
       "title": "Site stats",
       "pageViews": "Total page views",
-      "newsletterSubscribers": "Newsletter subscribers"
-    },
-    "articleStats": {
-      "title": "Article stats",
-      "publishedArticles": "Published articles",
-      "publishedNewsletters": "Published newsletters"
-    }
-  },
-  "statsPage": {
-    "title": "Stats",
-    "siteStats": {
-      "title": "Site stats",
-      "pageViews": "Total page views",
-      "newsletterSubscribers": "Newsletter subscribers"
+      "newsletterSubscribers": "Newsletter subscribers",
+      "liveVisitors": "Current visitors (last updated: {date})"
     },
     "articleStats": {
       "title": "Article stats",
@@ -65,7 +53,9 @@
       "title": "Social media stats",
       "githubFollowers": "GitHub Followers",
       "twitterFollowers": "Twitter Followers",
-      "devToFollowers": "Dev.to Followers"
+      "devToFollowers": "Dev.to Followers",
+      "instagramFollowers": "Instagram Followers",
+      "hashnodeFollowers": "Hashnode Followers"
     },
     "githubRepo": {
       "title": "GitHub Repo",
@@ -157,7 +147,7 @@
     "articles": "Articles"
   },
   "aboutPage": {
-    "title": "About me",
+    "title": "Meet Michael",
     "paragraph1": "My name is <mark>Michael Hoffmann</mark>, I'm a freelance software engineer based in Munich/Germany. I hold a Masters in Electrical Engineering from the renown Technical University of Munich (TUM) and have <mark>{years}+ years</mark> of professional experience.",
     "paragraph2": "I work for businesses of all sizes and have experience with both small and medium enterprises and corporates. In my career I have <mark>developed, maintained and launched multiple projects from scratch</mark> or improved an existing code base. <a>Get in touch</a>, if you like to receive a detailed list of projects I have worked on so far.",
     "paragraph3": "<mark>Programming is my passion</mark> – but especially developing complex business applications both in <mark>frontend and in backend</mark>. I totally enjoy my work as a freelance developer and developing {privateProjectsLink} under the pseudonym Mokkapps. The reason why I write {blogLink} (also for {inDepthDevLink}) and {publicationLink} is that I like to share my knowledge with others. Therefore, I also try to share most of my projects on {gitHubLink}.",
@@ -198,7 +188,7 @@
     }
   },
   "contactPage": {
-    "title": "Contact me",
+    "title": "Want to get in touch?",
     "contactSuccess": "Mail sent successfully",
     "contactSuccessDescr": "Thanks for your message. I'll answer your request as quick as possible.",
     "yourMessage": "Your message",
@@ -207,7 +197,11 @@
       "consulting": "Consulting",
       "help": "Help / Ask a question",
       "other": "Other..."
-    }
+    },
+    "meetingHeadline": "Looking to work together?",
+    "meetingDescription": "Book your free call where we talk about your project. Please first check my availability and share as much info, as possible so we can get the most out of our first catch-up.",
+    "contactHeadline": "Have another question?",
+    "contactDescription": "Complete the form below and I’ll get back to you within 2 business days"
   },
   "newsletterPage": {
     "joinTheNewsletter": "Newsletter Signup",

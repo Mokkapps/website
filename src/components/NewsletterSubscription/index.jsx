@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import { sendCustomAnalyticsEvent } from 'utils';
+import Button from 'components/Button';
 
 const NewsletterSubscription = ({
   dataCy,
@@ -106,15 +107,14 @@ const NewsletterSubscription = ({
             </span>
           </div>
         ) : null}
-        <input
-          className="w-full h-14 cursor-pointer bg-accent mt-2"
-          type="submit"
-          value={intl.formatMessage({ id: 'newsletterPage.subscribe' })}
-          name="member[subscribe]"
+        <Button
           id="member_submit"
           data-cy="newsletter-submit-input"
-        />
-
+          type="submit"
+          className="w-full mt-4"
+        >
+          {intl.formatMessage({ id: 'newsletterPage.subscribe' })}
+        </Button>
         <span className="text-xs">
           <a
             href="http://newsletter.mokkapps.de/#archive"

@@ -21,7 +21,7 @@ const LinkCard = ({
 
   return (
     <Link
-      className={`flex flex-col justify-start items-center cursor-pointer rounded-md bg-none bg-secondary shadow-md ${className}`}
+      className={`flex flex-col justify-start items-center cursor-pointer no-underline rounded-md bg-none bg-secondary shadow-md ${className}`}
       to={to}
       data-cy={dataCy}
       onClick={() => handleArticleClicked(slug)}
