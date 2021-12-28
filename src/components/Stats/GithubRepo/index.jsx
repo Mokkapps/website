@@ -31,7 +31,7 @@ const GithubRepo = () => {
           }}
         />
       </span>
-      <div className="flex mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
         <Button
           className="mr-2"
           onClick={() => {
