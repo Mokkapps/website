@@ -33,7 +33,7 @@ const SiteStats = () => {
         <StatsCard
           className="mt-4 col-span-2"
           loading={liveVisitorsStatus === 'fetching'}
-          value={liveVisitorsError ? null : liveVisitorsData.pageviews}
+          value={liveVisitorsError ? null : liveVisitorsData.visitors}
           i18nId="statsPage.siteStats.liveVisitors"
           i18nValues={{date: getFormattedDate(new Date(), true)}}
           showActiveIndicator
