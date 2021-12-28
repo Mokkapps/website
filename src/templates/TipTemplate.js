@@ -30,8 +30,8 @@ const TipTemplate = props => {
     },
   } = props;
 
-  const apiSlug = isDevelopmentEnv() ? '/test' : slug.split('/')[2];
-  const { pageViews } = useArticleView(apiSlug);
+  const apiSlug = isDevelopmentEnv() ? 'test' : slug.split('/')[2];
+  const { pageViews } = useArticleView(`/${apiSlug}`);
 
   const [showComments, setShowComments] = useState(false);
   const handleNewComment = () => {};
