@@ -9,7 +9,7 @@ import NewsletterSubscription from 'components/NewsletterSubscription';
 import Divider from 'components/Divider';
 
 const Footer = () => (
-  <footer className="relative flex flex-shrink-0 flex-col items-center justify-center px-4 md:px-96 py-4">
+  <footer className="relative flex flex-shrink-0 flex-col items-center justify-center px-4 md:px-48 xl:px-96 py-4">
     <Divider />
     <div className="w-full flex flex-col md:flex-row justify-between mt-4">
       <div className="grid grid-cols-3 gap-4 mr-8">
