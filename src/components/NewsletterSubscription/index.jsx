@@ -115,7 +115,7 @@ const NewsletterSubscription = ({
         >
           {intl.formatMessage({ id: 'newsletterPage.subscribe' })}
         </Button>
-        <span className="text-xs">
+        <span className="text-xs text-center flex justify-center mt-2">
           <a
             href="http://newsletter.mokkapps.de/#archive"
             target="_blank"

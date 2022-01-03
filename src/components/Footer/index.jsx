@@ -14,7 +14,7 @@ const Footer = () => (
     <div className="w-full flex flex-col md:flex-row justify-between mt-4">
       <div className="grid grid-cols-3 gap-4 mr-8">
         <div className="flex flex-col">
-          <strong className="mb-2">
+          <strong className="mb-2 text-xl">
             <FormattedMessage id="footer.sectionHeadlines.sitemap" />
           </strong>
           {menu.map(({ to, i18nId }) => (
@@ -33,7 +33,7 @@ const Footer = () => (
           </a>
         </div>
         <div className="flex flex-col">
-          <strong className="mb-2">
+          <strong className="mb-2 text-xl">
             <FormattedMessage id="footer.sectionHeadlines.extra" />
           </strong>
           <Link className="mt-1" data-cy="footer-stats" to="/stats">
@@ -59,7 +59,7 @@ const Footer = () => (
           </a>
         </div>
         <div className="flex flex-col">
-          <strong className="mb-2">
+          <strong className="mb-2 text-xl">
             <FormattedMessage id="footer.sectionHeadlines.general" />
           </strong>
           <Link className="mt-1" data-cy="footer-privacy-policy" to="/privacy-policy">

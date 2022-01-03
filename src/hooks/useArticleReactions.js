@@ -1,3 +1,4 @@
+// Inspired by https://github.com/braydoncoyer/braydoncoyer.dev/blob/v2/lib/hooks/useArticleReactions.ts
 import { useEffect, useState } from 'react';
 
 import { isDevelopmentEnv } from 'utils';
