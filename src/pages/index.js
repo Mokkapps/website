@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import config from 'content/meta/config';
 import {
   baseFormattedMessageValues,
+  generateVueTipImageUrl,
   sendCustomAnalyticsEvent,
   yearsOfExperience,
 } from 'utils';
@@ -16,8 +17,6 @@ import Layout from 'components/Layout';
 import Article from 'components/Article';
 import Button from 'components/Button';
 import LinkButton from 'components/LinkButton';
-import Availability from 'components/Availability';
-import ScheduleMeetingButton from 'components/ScheduleMeetingButton';
 import BusinessProjectList from 'components/BusinessProjectsList';
 import DevIcon from 'components/DevIcon';
 import References from 'components/References';
@@ -38,7 +37,8 @@ const IndexPage = props => {
     data: { projectAssets, latestPosts, latestTips: latestTipsData },
   } = props;
 
-  const seoImageUrl = 'https://res.cloudinary.com/mokkapps/image/upload/v1640673374/open_graph_home.jpg';
+  const seoImageUrl =
+    'https://res.cloudinary.com/mokkapps/image/upload/v1640673374/open_graph_home.jpg';
 
   const posts = latestPosts.edges.map(edge => edge.node);
   const tips = latestTipsData.edges.map(edge => edge.node);
@@ -123,14 +123,18 @@ const IndexPage = props => {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {tips.map(tip => {
           const {
-            frontmatter: { title, cover },
+            frontmatter: { title, date },
             fields: { slug },
           } = tip;
+
+          const coverUrl = generateVueTipImageUrl(slug);
+
           return (
             <LinkCard
               key={slug}
               slug={slug}
-              cover={cover}
+              date={date}
+              coverUrl={coverUrl}
               dataCy={`latest-tip`}
               to={`/tips${slug}`}
               title={title}
@@ -157,12 +161,13 @@ const IndexPage = props => {
         {posts.map(post => {
           const {
             frontmatter: { title, cover },
-            fields: { slug },
+            fields: { slug, prefix },
           } = post;
           return (
             <LinkCard
               key={slug}
               slug={slug}
+              date={prefix}
               cover={cover}
               dataCy={`latest-blog-post`}
               to={`/blog${slug}`}
@@ -255,9 +260,9 @@ const IndexPage = props => {
           navigate('/contact');
         }}
       >
-      <span className="mr-2" role="img" aria-label="phone">
-        💻
-      </span>
+        <span className="mr-2" role="img" aria-label="phone">
+          💻
+        </span>
         <FormattedMessage id="landingPage.hireMe" />
       </Button>
       <References className="my-10" dataCy="home-references" />
@@ -325,6 +330,7 @@ export const query = graphql`
         node {
           fields {
             slug
+            prefix
           }
           frontmatter {
             title
@@ -349,11 +355,7 @@ export const query = graphql`
           }
           frontmatter {
             title
-            cover {
-              childImageSharp {
-                gatsbyImageData(width: 1000)
-              }
-            }
+            date
           }
         }
       }

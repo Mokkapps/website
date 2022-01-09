@@ -1,0 +1,36 @@
+---
+title: "Use Teleport to Render a Component in a Different Place"
+description: "With teleport, you can render a component in a different place in the DOM tree, even if this place is not in your app's scope."
+date: "2022-01-09"
+technology: 'vue'
+---
+
+The built-in [Vue 3 Teleport component](https://v3.vuejs.org/guide/teleport.html#teleport) allows us to render HTML outside
+the Vue.js application. This can be useful to position modals, toast notifications, overlays, and more.
+
+Sometimes, a component's template belongs logically to the component itself.
+At the same time, from a technical point of view, it would be preferable to move this part of the template somewhere else in the DOM, outside of the Vue app.
+
+A full-screen modal is a common scenario where you'd want to handle the modal's logic inside the component, but it should be positioned at a completely different place.
+
+Teleport provides a clean way to allow us to control under which parent in the DOM we want a piece of HTML to be rendered,
+without having to resort to global state or splitting this into two components:
+
+```vue
+<template>
+  <teleport to="body">
+    This will be appended to the body tag
+  </teleport>
+</template>
+```
+
+The `to` attribute should be a valid CSS selector outside the Vue application.
+
+Read more about Teleport in the [official documentation](https://v3.vuejs.org/guide/teleport.html#teleport).
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

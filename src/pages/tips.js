@@ -104,16 +104,6 @@ export const query = graphql`
             title
             categories
             date
-            cover {
-              childImageSharp {
-                gatsbyImageData(
-                  height: 700
-                  layout: CONSTRAINED
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP]
-                )
-              }
-            }
           }
         }
       }

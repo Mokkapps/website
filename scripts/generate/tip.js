@@ -18,7 +18,7 @@ const defaultDate = new Date().setDate(today.getDate() + 5);
 const fromRoot = (...p) => path.join(process.env.PWD, ...p);
 
 async function generateTip() {
-  const { title, description, date, dryRun } = await inquirer.prompt([
+  const { title, description, date, technology, dryRun } = await inquirer.prompt([
     {
       type: 'input',
       name: 'title',
@@ -36,6 +36,12 @@ async function generateTip() {
       message: 'Release Date (format: yyyy-mm-dd)',
     },
     {
+      type: 'input',
+      name: 'technology',
+      default: 'vue',
+      message: 'Technology used for this tip (default: vue',
+    },
+    {
       type: 'confirm',
       name: 'dryRun',
       default: false,
@@ -43,27 +49,29 @@ async function generateTip() {
     },
   ]);
   const slug = slugify(title);
-  const latestTipsFolders = fs.readdirSync(fromRoot(`src/content/tips`)).sort((a, b) => {
-    return a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'});
-  });
+  const latestTipsFolders = fs
+    .readdirSync(fromRoot(`src/content/tips`))
+    .sort((a, b) => {
+      return a.localeCompare(b, undefined, {
+        numeric: true,
+        sensitivity: 'base',
+      });
+    });
   const latestTipsNumber = Number(
     latestTipsFolders[latestTipsFolders.length - 1]
   );
 
-  const destination = path.resolve(
-    `src/content/tips/${latestTipsNumber + 1}`
-  );
+  const destination = path.resolve(`src/content/tips/${latestTipsNumber + 1}`);
 
   const mdObj = {
     title: titleCaps(title),
     description,
     date,
-    cover: 'images/cover.jpg',
+    technology
   };
   const yaml = jsToYaml.stringify(removeEmpty(mdObj));
   const mdData = `---
 ${yaml}---
-![](./images/cover.jpg)
 
 ---
 <br/>

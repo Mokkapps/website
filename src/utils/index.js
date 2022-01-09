@@ -3,8 +3,24 @@ import React from 'react';
 import { FormattedDate } from 'react-intl';
 import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
 
+export const generateVueTipImageUrl = slug => {
+  const tipNumber = slug.split('/')[1];
+  return generateCloudinaryImageUrl({
+    title: `TIP #${tipNumber}`,
+    cloudName: 'mokkapps',
+    imagePublicID: 'vue_tip_template.jpg',
+    titleFont: 'domine',
+    titleFontSize: 120,
+    textColor: '000000',
+    textLeftOffset: 750,
+    textBottomOffset: 220,
+    imageWidth: 1920,
+    imageHeight: 1080,
+  });
+};
+
 export const generateSeoImageUrl = title =>
-  generateSocialImageUrl({
+  generateCloudinaryImageUrl({
     title: title.toUpperCase(),
     cloudName: 'mokkapps',
     imagePublicID: 'open_graph_site_template.jpg',
@@ -124,26 +140,26 @@ export const capitalize = s => {
 };
 
 // Inspired by https://braydoncoyer.dev/blog/how-to-dynamically-create-open-graph-images-with-cloudinary-and-next.js
-function generateSocialImageUrl({
-  title,
-  cloudName,
-  imagePublicID,
-  cloudinaryUrlBase = 'https://res.cloudinary.com',
-  version = null,
-  titleFont = 'arial',
-  titleExtraConfig = '_bold',
-  underlayImageWidth = 580,
-  underlayImageHeight = 630,
-  underlayImage = '',
-  imageWidth = 1200,
-  imageHeight = 630,
-  textAreaWidth = 630,
-  textAreaHeight = 450,
-  textLeftOffset = 45,
-  textBottomOffset = -40,
-  textColor = 'FFFFFF',
-  titleFontSize = 60,
-}) {
+function generateCloudinaryImageUrl({
+                                      title,
+                                      cloudName,
+                                      imagePublicID,
+                                      cloudinaryUrlBase = 'https://res.cloudinary.com',
+                                      version = null,
+                                      titleFont = 'arial',
+                                      titleExtraConfig = '_bold',
+                                      underlayImageWidth = 580,
+                                      underlayImageHeight = 630,
+                                      underlayImage = '',
+                                      imageWidth = 1200,
+                                      imageHeight = 630,
+                                      textAreaWidth = 630,
+                                      textAreaHeight = 450,
+                                      textLeftOffset = 45,
+                                      textBottomOffset = -40,
+                                      textColor = 'FFFFFF',
+                                      titleFontSize = 60,
+                                    }) {
   // configure social media image dimensions, quality, and format
   const imageConfig = [
     `w_${imageWidth}`,

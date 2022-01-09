@@ -2,11 +2,11 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import ReactDisqusComments from 'react-disqus-comments';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import config from 'content/meta/config';
-import { isDevelopmentEnv } from 'utils';
+import { generateVueTipImageUrl, isDevelopmentEnv } from 'utils';
 import useArticleView from 'hooks/useArticleViews';
 
 import Layout from 'components/Layout';
@@ -23,7 +23,7 @@ const TipTemplate = props => {
     data: {
       tip: {
         body,
-        frontmatter: { title, description, date, cover },
+        frontmatter: { title, description, date },
         fields: { slug },
         timeToRead,
       },
@@ -38,7 +38,9 @@ const TipTemplate = props => {
 
   const { siteUrl, siteTitlePostfix } = config;
 
-  const seoImage = `${config.siteUrl}${getSrc(cover)}`;
+  const coverUrl = generateVueTipImageUrl(slug);
+
+  const seoImage = coverUrl;
   const url = `${siteUrl}/tips${slug}`;
   const shareProps = {
     url,
@@ -65,12 +67,13 @@ const TipTemplate = props => {
           timeToRead={timeToRead}
           pageViews={pageViews}
         />
-        {cover ? (
-          <div className="flex justify-center mt-10">
-            <GatsbyImage
+        {coverUrl ? (
+          <div className="flex justify-center my-10">
+            <LazyLoadImage
+              src={coverUrl}
               alt={`${title} Image`}
-              image={cover.childImageSharp.gatsbyImageData}
-              className="mb-4 w-full h-full"
+              width={'100%'}
+              className="rounded-md"
             />
           </div>
         ) : null}
@@ -114,16 +117,6 @@ export const query = graphql`
         title
         description
         date
-        cover {
-          childImageSharp {
-            gatsbyImageData(
-              height: 700
-              layout: CONSTRAINED
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-            )
-          }
-        }
       }
       timeToRead
     }

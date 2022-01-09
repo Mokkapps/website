@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { generateVueTipImageUrl } from 'utils';
 import LinkCard from 'components/LinkCard';
 
 const TipsList = props => {
@@ -18,15 +19,17 @@ const TipsList = props => {
     >
       {items.map(item => {
         const {
-          frontmatter: { title, cover, date },
+          frontmatter: { title, date },
           fields: { slug },
         } = item;
+
+        const coverUrl = generateVueTipImageUrl(slug);
 
         const component = (
           <LinkCard
             key={slug}
             slug={slug}
-            cover={cover}
+            coverUrl={coverUrl}
             dataCy={`tip-${count}`}
             date={date}
             to={`/tips${slug}`}
