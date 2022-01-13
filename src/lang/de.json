@@ -55,7 +55,9 @@
       "twitterFollowers": "Twitter Followers",
       "devToFollowers": "Dev.to Followers",
       "instagramFollowers": "Instagram Followers",
-      "hashnodeFollowers": "Hashnode Followers"
+      "hashnodeFollowers": "Hashnode Followers",
+      "mediumFollowers": "Medium Followers",
+      "stackOverflowReputation": "Stack Overflow Reputation"
     },
     "githubRepo": {
       "title": "GitHub Repo",

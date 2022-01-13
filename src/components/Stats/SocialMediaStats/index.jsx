@@ -31,6 +31,18 @@ const SocialMediaStats = () => {
     error: devToFollowersError,
   } = useFetch(`${process.env.GATSBY_API_URL}followers/dev-to`);
 
+  const {
+    status: mediumFollowersStatus,
+    data: mediumFollowersData,
+    error: mediumFollowersError,
+  } = useFetch(`${process.env.GATSBY_API_URL}followers/medium`);
+
+  const {
+    status: stackOverflowReputationStatus,
+    data: stackOverflowReputationData,
+    error: stackOverflowReputationError,
+  } = useFetch(`${process.env.GATSBY_API_URL}stackoverflow/reputation`);
+
   return (
     <>
       <h2>
@@ -62,6 +74,22 @@ const SocialMediaStats = () => {
             hashnodeFollowersError ? null : hashnodeFollowersData.followers
           }
           i18nId="statsPage.socialMediaStats.hashnodeFollowers"
+        />
+        <StatsCard
+          className="mt-4"
+          loading={mediumFollowersStatus === 'fetching'}
+          value={mediumFollowersError ? null : mediumFollowersData.followers}
+          i18nId="statsPage.socialMediaStats.mediumFollowers"
+        />
+        <StatsCard
+          className="mt-4"
+          loading={stackOverflowReputationStatus === 'fetching'}
+          value={
+            stackOverflowReputationError
+              ? null
+              : stackOverflowReputationData.reputation
+          }
+          i18nId="statsPage.socialMediaStats.stackOverflowReputation"
         />
       </div>
     </>
