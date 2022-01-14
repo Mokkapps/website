@@ -44,7 +44,7 @@ const ArticleStats = ({ blogPostCount, tipsCount }) => {
         <StatsCard
           className="mt-4"
           loading={totalIssuesStatus === 'fetching'}
-          value={totalIssuesError ? null : totalIssuesData.count}
+          value={totalIssuesError ? null : totalIssuesData.issues}
           i18nId="statsPage.articleStats.publishedNewsletters"
         />
         <StatsCard

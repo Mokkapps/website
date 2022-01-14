@@ -47,7 +47,7 @@ const SiteStats = () => {
         <StatsCard
           className="mt-4"
           loading={subscribersStatus === 'fetching'}
-          value={subscribersError ? null : subscribersData.count}
+          value={subscribersError ? null : subscribersData.subscribers}
           i18nId="statsPage.siteStats.newsletterSubscribers"
         />
       </div>
