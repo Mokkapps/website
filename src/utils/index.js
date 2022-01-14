@@ -140,7 +140,7 @@ export const capitalize = s => {
 };
 
 // Inspired by https://braydoncoyer.dev/blog/how-to-dynamically-create-open-graph-images-with-cloudinary-and-next.js
-function generateCloudinaryImageUrl({
+export function generateCloudinaryImageUrl({
                                       title,
                                       cloudName,
                                       imagePublicID,

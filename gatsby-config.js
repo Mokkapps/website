@@ -102,6 +102,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-source-revue",
+      options: {
+        token: process.env.REVUE_TOKEN,
+      },
+    },
     // Parse Markdown files
     {
       resolve: `gatsby-plugin-mdx`,
