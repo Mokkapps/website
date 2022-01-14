@@ -62,6 +62,7 @@
     "githubRepo": {
       "title": "GitHub Repo",
       "description": "This site's repository has been starred {stars} times and forked {forks} times.",
+      "linesOfCode": "It contains {linesOfCode} lines of code.",
       "buttons": {
         "follow": "Follow me on GitHub",
         "fork": "Fork this repo",

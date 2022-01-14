@@ -2,10 +2,27 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { useFetch } from 'hooks/useFetch';
-import { sendCustomAnalyticsEvent } from 'utils';
+import { sendCustomAnalyticsEvent, formatNumber } from 'utils';
 import Button from 'components/Button';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const GithubRepo = () => {
+  const data = useStaticQuery(graphql`
+    query CodeLines {
+      statsJson {
+        SUM {
+          code
+        }
+      }
+    }
+  `);
+
+  const {
+    statsJson: {
+      SUM: { code: linesOfCode },
+    },
+  } = data;
+
   const repoName = 'website';
   const ownerName = 'mokkapps';
   const { data: githubRepoData } = useFetch(
@@ -26,6 +43,18 @@ const GithubRepo = () => {
             forks: (
               <strong className="text-accent text-2xl">
                 {githubRepoData ? githubRepoData.forks_count : '--'}
+              </strong>
+            ),
+          }}
+        />
+      </span>
+      <span className="text-lg">
+        <FormattedMessage
+          id="statsPage.githubRepo.linesOfCode"
+          values={{
+            linesOfCode: (
+              <strong className="text-accent text-2xl">
+                {formatNumber(linesOfCode)}
               </strong>
             ),
           }}

@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "prestart": "npm run generate-code-stats",
     "start": "gatsby develop -p 8000",
     "prebuild": "npm run preload-fonts",
     "build": "gatsby build --log-pages",
@@ -21,7 +22,8 @@
     "generate-blogpost": "node scripts/generate/blogpost.js",
     "generate-tip": "node scripts/generate/tip.js",
     "generate-toc": "node scripts/generate/toc.js",
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "generate-code-stats": "cloc --json src/ cypress/ scripts/ > data/stats/count_total.json"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -65,6 +67,7 @@
     "gatsby-remark-smartypants": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-source-revue": "^1.0.2",
+    "gatsby-transformer-json": "^4.5.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "postcss": "8.4.5",
     "prismjs": "^1.25.0",
@@ -92,6 +95,7 @@
     "@sindresorhus/slugify": "^2.1.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.13.3",
+    "cloc": "^2.9.0",
     "cypress": "^9.2.0",
     "dateformat": "^5.0.2",
     "dotenv": "^10.0.0",

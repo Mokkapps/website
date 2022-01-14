@@ -1,6 +1,6 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 const config = require('./src/content/meta/config');
 
 module.exports = {
@@ -10,7 +10,15 @@ module.exports = {
     description: config.siteDescription,
   },
   plugins: [
+    `gatsby-transformer-json`,
     // Import files
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `stats`,
+        path: `${__dirname}/data/stats/count_total.json`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -103,7 +111,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-revue",
+      resolve: 'gatsby-source-revue',
       options: {
         token: process.env.REVUE_TOKEN,
       },
@@ -184,7 +192,7 @@ module.exports = {
                   extend: 'html',
                   definition: {
                     vue_types: /(Vue)/,
-                  }
+                  },
                 },
               ],
             },

@@ -62,6 +62,7 @@
     "githubRepo": {
       "title": "GitHub Repo",
       "description": "Das Repository dieser Seite wurde {stars} Mail mit einem Stern versehen and {forks} Mal geforkt.",
+      "linesOfCode": "Es beinhaltet {linesOfCode} Zeilen Code.",
       "buttons": {
         "follow": "Folge mir auf GitHub",
         "fork": "Forke das Repo",
