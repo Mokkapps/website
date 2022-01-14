@@ -8,6 +8,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import config from 'content/meta/config';
 import { generateVueTipImageUrl, isDevelopmentEnv } from 'utils';
 import useArticleView from 'hooks/useArticleViews';
+import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 
 import Layout from 'components/Layout';
 import BodyText from 'components/BodyText';
@@ -17,6 +18,7 @@ import Share from 'components/Share';
 import EditOnGithub from 'components/EditOnGithub';
 import Button from 'components/Button';
 import PostMeta from 'components/PostMeta';
+import NextPrev from '../components/NextPrev';
 
 const TipTemplate = props => {
   const {
@@ -28,7 +30,13 @@ const TipTemplate = props => {
         timeToRead,
       },
     },
+    pageContext: { next, prev },
   } = props;
+
+  const nextPrevIcons = {
+    next: FaAngleDoubleRight,
+    prev: FaAngleDoubleLeft,
+  };
 
   const apiSlug = isDevelopmentEnv() ? 'test' : slug.split('/')[2];
   const { pageViews } = useArticleView(`/${apiSlug}`);
@@ -79,6 +87,13 @@ const TipTemplate = props => {
         ) : null}
         <BodyText body={body} fullWidth />
         <Share className="mt-10" shareProps={shareProps} />
+        <NextPrev
+          path={'/tips'}
+          next={next}
+          prev={prev}
+          icons={nextPrevIcons}
+          className="mt-10"
+        />
         <EditOnGithub className="mt-10" isTip slug={slug} />
         {showComments ? (
           <ReactDisqusComments

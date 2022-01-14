@@ -41,6 +41,7 @@ const Container = styled.div`
 
 const NextPrev = props => {
   const {
+    path,
     className,
     icons: { next: NextIcon, prev: PrevIcon },
     next: {
@@ -56,7 +57,7 @@ const NextPrev = props => {
   return (
     <Container className={`${className}`}>
       {prevSlug && (
-        <Link to={`/blog${prevSlug}`} className="prev no-underline">
+        <Link to={`${path}${prevSlug}`} className="prev no-underline">
           {PrevIcon && <PrevIcon />}
           <p>
             {prevTitle} <time>{getFormattedDate(prevPrefix)}</time>
@@ -64,7 +65,7 @@ const NextPrev = props => {
         </Link>
       )}
       {nextSlug && (
-        <Link to={`/blog${nextSlug}`} className="next no-underline">
+        <Link to={`${path}${nextSlug}`} className="next no-underline">
           {NextIcon && <NextIcon />}
           <p>
             {nextTitle} <time>{getFormattedDate(nextPrefix)} </time>
@@ -77,6 +78,7 @@ const NextPrev = props => {
 
 NextPrev.propTypes = {
   className: PropTypes.string,
+  path: PropTypes.string,
   next: PropTypes.object,
   prev: PropTypes.object,
   icons: PropTypes.object,

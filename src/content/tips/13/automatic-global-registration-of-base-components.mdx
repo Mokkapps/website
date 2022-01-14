@@ -1,0 +1,90 @@
+---
+title: 'Vue Tip: Automatic Global Registration of Base Components'
+description: 'We can use webpack to globally register our Vue.js base components.'
+date: '2022-01-14'
+technology: 'vue'
+---
+
+Base components are components that are relatively generic, like basic inputs or buttons. These components are frequently used across
+our application inside other components.
+
+A typical component import might look like this:
+
+```js
+import BaseButton from './BaseButton.vue';
+import BaseIcon from './BaseIcon.vue';
+import BaseInput from './BaseInput.vue';
+export default {
+  components: {
+    BaseButton,
+    BaseIcon,
+    BaseInput,
+  },
+};
+```
+
+These imports are necessary to be able to reference the components inside our template:
+
+```html
+<BaseButton>
+  <BaseIcon name="search" />
+</BaseButton>
+<BaseInput v-model="searchText" />
+```
+
+Using [webpack](https://webpack.js.org/) or [Vue CLI](https://github.com/vuejs/vue-cli) we can use `require.context`
+to globally register only these very common base components.
+
+Here's a code example from [the official Vue docs](https://v3.vuejs.org/cookbook/automatic-global-registration-of-base-components.html#base-example)
+to globally import base components in your app's entry file (e.g. `src/main.js`):
+
+```js
+import { createApp } from 'vue';
+import upperFirst from 'lodash/upperFirst';
+import camelCase from 'lodash/camelCase';
+import App from './App.vue';
+
+const app = createApp(App);
+
+const requireComponent = require.context(
+  // The relative path of the components folder
+  './components',
+  // Whether or not to look in subfolders
+  false,
+  // The regular expression used to match base component filenames
+  /Base[A-Z]\w+\.(vue|js)$/
+);
+
+requireComponent.keys().forEach(fileName => {
+  // Get component config
+  const componentConfig = requireComponent(fileName);
+
+  // Get PascalCase name of component
+  const componentName = upperFirst(
+    camelCase(
+      // Gets the file name regardless of folder depth
+      fileName
+        .split('/')
+        .pop()
+        .replace(/\.\w+$/, '')
+    )
+  );
+
+  app.component(
+    componentName,
+    // Look for the component options on `.default`, which will
+    // exist if the component was exported with `export default`,
+    // otherwise fall back to module's root.
+    componentConfig.default || componentConfig
+  );
+});
+
+app.mount('#app');
+```
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

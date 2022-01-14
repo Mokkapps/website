@@ -100,10 +100,11 @@ const PostTemplate = props => {
         <BodyText body={body} fullWidth />
         <Share className="mt-10" shareProps={shareProps} />
         <NextPrev
-          className="mt-10"
+          path={'/blog'}
           next={next}
           prev={prev}
           icons={nextPrevIcons}
+          className="mt-10"
         />
         <EditOnGithub className="mt-10" prefix={prefix} slug={slug} />
         {showComments ? (
@@ -121,7 +122,11 @@ const PostTemplate = props => {
           </Button>
         )}
 
-        <SimilarArticles className="mt-10" categories={categories} slug={slug} />
+        <SimilarArticles
+          className="mt-10"
+          categories={categories}
+          slug={slug}
+        />
       </ArticleWithSidebar>
     </Layout>
   );

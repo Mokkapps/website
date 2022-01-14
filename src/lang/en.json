@@ -140,7 +140,7 @@
     "title": "Tips",
     "introLine1": "This page includes some tips that are too short for a dedicated blog post.",
     "introLine2": "{newsletter} to get informed about new tips.",
-    "searchAlternative": "You can also search tips using {google} oder in the {minimalList}."
+    "searchAlternative": "You can also search tips using {google} or in the {minimalList}."
   },
   "publicationsPage": {
     "title": "Publications",
