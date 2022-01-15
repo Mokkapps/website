@@ -15,7 +15,9 @@
     "about": "Über mich",
     "contact": "Kontakt",
     "publications": "Publikationen",
-    "tips": "Tips"
+    "tips": "Tips",
+    "newsletter": "Newsletter",
+    "stats": "Stats"
   },
   "footer": {
     "privacyPolicy": "Datenschutzerklärung",
@@ -62,7 +64,9 @@
     "githubRepo": {
       "title": "GitHub Repo",
       "description": "Das Repository dieser Seite wurde {stars} Mail mit einem Stern versehen and {forks} Mal geforkt.",
-      "linesOfCode": "Es beinhaltet {linesOfCode} Zeilen Code.",
+      "totalLinesOfCode": "Es beinhaltet {linesOfCode} Zeilen Code.",
+      "linesOfCode": "{count} Zeilen Code",
+      "numberFiles": "{count} Dateien",
       "buttons": {
         "follow": "Folge mir auf GitHub",
         "fork": "Forke das Repo",
@@ -107,7 +111,8 @@
     "editOnGitHubInfoLine2": "Alle meine Artikel können auf Github editiert werden. Jeder Fix ist willkommen, egal wie klein er sein mag!",
     "editOnGitHubButton": "Ändern auf Github",
     "similarArticlesLine1": "Wenn Sie diesen Artikel hilfreich fanden.",
-    "similarArticlesLine2": "Werden Sie diese diese lieben."
+    "similarArticlesLine2": "Werden Sie diese diese lieben.",
+    "tableOfContents": "Inhaltsverzeichnis"
   },
   "projectsPage": {
     "businessProjectsHeading": "Business Projekte",
@@ -212,17 +217,17 @@
     "email": "Email-Addresse",
     "firstName": "Vorname (Optional)",
     "lastName": "Nachname (Optional)",
-    "subscribe": "Jetzt anmelden",
-    "newsletterInfoLine1": "Ich bin Senior Frontend Developer, Freelancer und Blogger.",
-    "newsletterInfoLine2": "Mein Fokus liegt auf <mark>Vue.js</mark>. Ich interessiere mich für die Programmiersprachen JavaScript, TypeScript und Java.",
-    "newsletterInfoLine3": "Gelegentlich gebe ich auch Ratschläge zum Thema Karriere und Freelancing.",
-    "newsletterInfoLine4": "Meine wöchentlichen Emails spiegeln diese Präferenzen wieder.",
+    "subscribe": "Anmelden",
+    "newsletterInfoLine1": "Gefällt Ihnen, was Sie lesen? Ich habe etwas für Sie!",
+    "newsletterInfoLine2": "Ich verschicke einen wöchentlichen Newsletter mit Fokus auf <mark>Vue.js</mark>. Wenn Ihnen meine Inhalte gefallen und Sie mehr wollen, können Sie sich gerne für den Newsletter anmelden!",
     "newsletter": "Newsletter",
+    "shortInfo": "Möchten Sie auf dem aktuellen Stand zum Thema Vue.js bleiben? Wenn Sie die neuesten Artikel und Projekte über Vue.js direkt in Ihren Posteingang erhalten möchten, abonnieren Sie meinen Newsletter.",
     "subscription": "Anmeldung",
-    "archiv": "Archiv",
-    "visitArchive": "Newsletter Archiv →",
+    "archiv": "Frühere Ausgaben:",
     "revueInfo": "Mit der Anmeldung bestätigen Sie Revue's {termsAndServiceLink} und {privacyPolicyLink}.",
-    "notConvinced": "Nicht überzeugt? Hier sind Beispiele"
+    "notConvinced": "Nicht überzeugt? Hier sind Beispiele",
+    "alternativeLine1": "Kein Interesse an E-Mails?",
+    "alternativeLine2": "Das ist kein Problem! Wenn Sie auf andere Weise über meine Inhalte auf dem Laufenden bleiben möchten, können Sie mir auf {twitterLink} folgen. Wenn ich neue Inhalte veröffentliche, erfahren Sie es auch dort."
   },
   "categoriesPage": {
     "title": "Kategorien",

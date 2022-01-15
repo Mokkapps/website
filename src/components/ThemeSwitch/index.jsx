@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Switch from 'react-switch';
 
 import { ThemeContext } from 'context/themeContextProvider';
-import { getCssVariableHexColor } from 'utils';
+import { getCssVariableHexColor, sendCustomAnalyticsEvent } from 'utils';
 
 const ThemeSwitch = props => {
   const [checked, setChecked] = useState(false);
@@ -13,8 +13,10 @@ const ThemeSwitch = props => {
     setChecked(value);
     if (theme === 'light') {
       setTheme('dark');
+      sendCustomAnalyticsEvent('Changed to dark theme');
     } else {
       setTheme('light');
+      sendCustomAnalyticsEvent('Changed to light theme');
     }
   };
 

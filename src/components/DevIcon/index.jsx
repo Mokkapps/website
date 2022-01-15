@@ -36,6 +36,8 @@ const devIcons = {
   cucumber: { class: 'devicon-cucumber-plain', displayText: 'Cucumber' },
   storybook: { class: 'devicon-storybook-plain', displayText: 'Storybook' },
   jest: { class: 'devicon-jest-plain', displayText: 'Jest' },
+  markdown: { class: 'devicon-markdown-original', displayText: 'Markdown' },
+  scss: { class: 'devicon-sass-original', displayText: 'SCSS' },
 };
 
 const DevIcon = ({

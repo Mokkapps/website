@@ -16,7 +16,7 @@ module.exports = {
       },
       textColor: {
         accent: 'var(--accent)',
-        'main': 'var(--text-main)'
+        main: 'var(--text-main)',
       },
       fontSize: {
         '7xl': '5rem',
@@ -34,6 +34,9 @@ module.exports = {
         full: '100%',
         '100vh': '100vh',
       },
+      maxHeight: {
+        72: '18rem',
+      },
       minWidth: {
         0: '0',
         '1/4': '25%',
@@ -50,6 +53,7 @@ module.exports = {
         secondary: 'var(--secondary)',
         'secondary-darken': 'var(--secondary-darken)',
         accent: 'var(--accent)',
+        'accent-darken': 'var(--accent-darken)',
         background: 'var(--background)',
         'main-text': 'var(--text-main)',
         'secondary-text': 'var(--text-secondary)',
@@ -58,10 +62,15 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      margin: ['last'],
+    },
+  },
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
+    require('tailwind-scrollbar'),
     // require('tailwindcss-debug-screens'),
   ],
 };

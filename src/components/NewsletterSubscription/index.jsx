@@ -3,81 +3,114 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import { sendCustomAnalyticsEvent } from 'utils';
-import Button from 'components/Button';
+import Alert from 'components/Alert';
+import { Link } from 'gatsby';
 
 const NewsletterSubscription = ({
   dataCy,
   className,
-  minimal = false,
-  h2Heading = false,
+  heading = true,
+  notConvinced = true,
+  shortInfo = false,
+  grid = false,
 }) => {
   const intl = useIntl();
-  const [inputFocussed, setInputFocussed] = useState(!minimal);
+  const [inputFocussed, setInputFocussed] = useState(false);
+  const [email, setEmail] = useState('');
+  const [showError, setShowError] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async event => {
+    event.preventDefault();
+
+    if (!email) {
+      return;
+    }
+
+    sendCustomAnalyticsEvent('Newsletter form submitted');
+
+    try {
+      loading(true);
+      const response = await fetch(
+        `${process.env.GATSBY_API_URL}newsletter/add-subscriber`,
+        {
+          method: 'POST',
+          body: JSON.stringify({ email }),
+        }
+      );
+      if (!response.ok) {
+        setShowError(true);
+        return;
+      }
+
+      setShowSuccess(true);
+    } catch (e) {
+      console.error('Failed to add subscriber', e);
+      setShowError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div
-      id="revue-embed"
-      className={`${className} w-full flex flex-col`}
-      data-cy={dataCy}
-    >
-      {h2Heading ? (
-        <h2 className="text-main-text mb-0">
-          <FormattedMessage id="sidebar.newsletter.title" />
-        </h2>
-      ) : (
+    <div className={`${className} w-full flex flex-col`} data-cy={dataCy}>
+      {heading ? (
         <h3 className="text-main-text mb-0">
           <FormattedMessage id="sidebar.newsletter.title" />
         </h3>
-      )}
-      <form
-        action="https://www.getrevue.co/profile/mokkapps/add_subscriber"
-        method="post"
-        id="revue-form"
-        name="revue-form"
-        target="_blank"
-        onSubmit={() => sendCustomAnalyticsEvent('Newsletter form submitted')}
-      >
-        <div className="flex flex-col">
-          <label htmlFor="member_email">
-            {intl.formatMessage({ id: 'newsletterPage.email' })}
-          </label>
-          <input
-            className="revue-form-field"
-            type="email"
-            name="member[email]"
-            id="member_email"
-            data-cy="newsletter-email-input"
-            onFocus={() => setInputFocussed(true)}
-          />
-        </div>
-        {minimal ? null : (
-          <div className="mt-4">
-            <div className="flex flex-col mb-4">
-              <label htmlFor="member_first_name">
-                {intl.formatMessage({ id: 'newsletterPage.firstName' })}
-              </label>
+      ) : null}
+      {shortInfo ? (
+        <span className="text-sm my-2">
+          <FormattedMessage id="newsletterPage.shortInfo" />
+        </span>
+      ) : null}
+      <form onSubmit={event => onSubmit(event)}>
+        <div
+          className={`${
+            grid ? 'grid grid-cols-12 gap-4 items-center' : 'flex flex-col'
+          }`}
+        >
+          <div className={`${grid ? 'col-span-10' : 'mt-2'}`}>
+            <div className="flex flex-col">
               <input
-                className="revue-form-field"
-                type="text"
-                name="member[first_name]"
-                id="member_first_name"
-                data-cy="newsletter-first-name-input"
-              />
-            </div>
-            <div className="flex flex-col mb-4">
-              <label htmlFor="member_last_name">
-                {intl.formatMessage({ id: 'newsletterPage.lastName' })}
-              </label>
-              <input
-                className="revue-form-field"
-                type="text"
-                name="member[last_name]"
-                id="member_last_name"
-                data-cy="newsletter-last-name-input"
+                type="email"
+                required
+                value={email}
+                placeholder="you@email.com"
+                onChange={event => setEmail(event.target.value)}
+                onFocus={() => setInputFocussed(true)}
+                data-cy="newsletter-email-input"
               />
             </div>
           </div>
-        )}
+          <button
+            disabled={loading}
+            data-cy="newsletter-submit-input"
+            type="submit"
+            className={`${
+              grid ? 'col-span-2' : 'mt-4'
+            } w-full bg-button-background text-basic-button-text text-center rounded-md font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none`}
+          >
+            {intl.formatMessage({ id: 'newsletterPage.subscribe' })}
+          </button>
+        </div>
+        {showError ? (
+          <Alert
+            className="mt-4"
+            type="error"
+            text="Error"
+            onClose={() => setShowError(false)}
+          />
+        ) : null}
+        {showSuccess ? (
+          <Alert
+            className="mt-4"
+            type="success"
+            text="Success"
+            onClose={() => setShowSuccess(false)}
+          />
+        ) : null}
         {inputFocussed ? (
           <div className="revue-form-footer my-2">
             <span className="text-xs">
@@ -107,26 +140,13 @@ const NewsletterSubscription = ({
             </span>
           </div>
         ) : null}
-        <Button
-          id="member_submit"
-          data-cy="newsletter-submit-input"
-          type="submit"
-          className="w-full mt-4"
-        >
-          {intl.formatMessage({ id: 'newsletterPage.subscribe' })}
-        </Button>
-        <span className="text-xs text-center flex justify-center mt-2">
-          <a
-            href="http://newsletter.mokkapps.de/#archive"
-            target="_blank"
-            rel="noreferrer"
-            onClick={() =>
-              sendCustomAnalyticsEvent('Newsletter archive in sidebar clicked!')
-            }
-          >
-            <FormattedMessage id="newsletterPage.notConvinced" />
-          </a>
-        </span>
+        {notConvinced ? (
+          <span className="text-xs mt-2">
+            <Link to="/newsletter">
+              <FormattedMessage id="newsletterPage.notConvinced" />
+            </Link>
+          </span>
+        ) : null}
       </form>
     </div>
   );
@@ -135,8 +155,10 @@ const NewsletterSubscription = ({
 NewsletterSubscription.propTypes = {
   className: PropTypes.string,
   dataCy: PropTypes.string,
-  minimal: PropTypes.bool,
-  h2Heading: PropTypes.bool,
+  heading: PropTypes.bool,
+  notConvinced: PropTypes.bool,
+  shortInfo: PropTypes.bool,
+  grid: PropTypes.bool,
 };
 
 export default NewsletterSubscription;

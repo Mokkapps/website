@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Switch from 'react-switch';
 
 import { LanguageContext } from 'context/languageContext';
-import { getCssVariableHexColor } from 'utils';
+import { getCssVariableHexColor, sendCustomAnalyticsEvent } from 'utils';
 
 const LanguageSwitcher = props => {
   const [checked, setChecked] = useState(false);
@@ -35,6 +35,7 @@ const LanguageSwitcher = props => {
           onChange={value => {
             toggleLanguage();
             setChecked(value);
+            sendCustomAnalyticsEvent(`Changed language‚ to ${lang}`);
           }}
           checked={lang === 'de'}
         />

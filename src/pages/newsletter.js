@@ -34,41 +34,49 @@ const NewsletterPage = ({ data: { allRevueIssue } }) => {
     >
       <Article>
         <Heading i18nId="newsletterPage.newsletter" />
-        <p className="w-100 text-center mb-4">
+        <p className="text-center text-3xl">
           <FormattedMessage
             id="newsletterPage.newsletterInfoLine1"
             values={{ ...baseFormattedMessageValues }}
           />
         </p>
-        <p className="w-100 text-center mb-4">
+        <p className="text-center text-secondary-text text-lg mt-4">
           <FormattedMessage
             id="newsletterPage.newsletterInfoLine2"
             values={{ ...baseFormattedMessageValues }}
           />
         </p>
-        <p className="w-100 text-center mb-4">
-          <FormattedMessage
-            id="newsletterPage.newsletterInfoLine3"
-            values={{ ...baseFormattedMessageValues }}
-          />
-        </p>
-        <p className="w-100 text-center mb-4">
-          <FormattedMessage
-            id="newsletterPage.newsletterInfoLine4"
-            values={{ ...baseFormattedMessageValues }}
-          />
-        </p>
         <NewsletterSubscription
-          h2Heading
-          className="my-8"
+          grid
+          heading={false}
+          notConvinced={false}
+          className="my-10"
           dataCy="newsletter-subscription-form"
         />
-        <h2 className="mt-16 mb-4 text-center">
+        <p className="text-xl">
+            <FormattedMessage id="newsletterPage.alternativeLine1" />
+          </p>
+        <p className="text-secondary-text text-xl mt-4">
+            <FormattedMessage
+              id="newsletterPage.alternativeLine2"
+              values={{
+                twitterLink: (
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.twitter.com/mokkapps"
+                  >
+                    Twitter
+                  </a>
+                ),
+              }}
+            />
+          </p>
+        <h2 className="mt-16">
           <FormattedMessage id="newsletterPage.archiv" />
         </h2>
-
         <div
-          className={`w-100 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6`}
+          className={`w-100 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-8`}
           data-cy="newsletter-issues-list"
         >
           {issues

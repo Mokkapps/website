@@ -57,7 +57,7 @@ const TipsPage = props => {
           <div className="flex flex-col justify-center items-center md:px-24">
             <Heading i18nId="tipsPage.title" />
             <LanguageWarning className="w-full mb-4" type="Tips" />
-            <p className="text-center text-lg mt-4">
+            <p className="text-center text-lg">
               <FormattedMessage id="tipsPage.introLine1" />
             </p>
             <p className="text-center text-lg text-secondary-text mt-4">

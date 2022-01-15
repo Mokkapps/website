@@ -12,10 +12,12 @@
     "home": "Home",
     "blog": "Blog",
     "projects": "Projects",
-    "about": "About",
+    "about": "About Me",
     "contact": "Contact",
     "publications": "Publications",
-    "tips": "Tips"
+    "tips": "Tips",
+    "newsletter": "Newsletter",
+    "stats": "Stats"
   },
   "footer": {
     "privacyPolicy": "Privacy Policy",
@@ -62,7 +64,9 @@
     "githubRepo": {
       "title": "GitHub Repo",
       "description": "This site's repository has been starred {stars} times and forked {forks} times.",
-      "linesOfCode": "It contains {linesOfCode} lines of code.",
+      "totalLinesOfCode": "It contains {linesOfCode} lines of code.",
+      "linesOfCode": "{count} lines",
+      "numberFiles": "{count} files",
       "buttons": {
         "follow": "Follow me on GitHub",
         "fork": "Fork this repo",
@@ -107,7 +111,8 @@
     "editOnGitHubInfoLine2": "All my posts are available to edit on Github. Any fix, little or small, is appreciated!",
     "editOnGitHubButton": "Edit on Github",
     "similarArticlesLine1": "If you found this article helpful.",
-    "similarArticlesLine2": "You will love these ones as well."
+    "similarArticlesLine2": "You will love these ones as well.",
+    "tableOfContents": "Table of Contents"
   },
   "projectsPage": {
     "businessProjectsHeading": "Business Projects",
@@ -210,19 +215,19 @@
     "joinTheNewsletter": "Newsletter Signup",
     "joinTheNewsletter2": "Sign up for the newsletter",
     "email": "Email address",
-    "subscribe": "Subscribe Now",
+    "subscribe": "Sign Up",
     "firstName": "First name (Optional)",
     "lastName": "Last name (Optional)",
-    "newsletterInfoLine1": "I'm a Senior Frontend Developer, Freelancer and Blogger.",
-    "newsletterInfoLine2": "I focus on <mark>Vue.js</mark>, JavaScript, TypeScript and Java.",
-    "newsletterInfoLine3": "Occasionally I also give career & freelancer advice.",
-    "newsletterInfoLine4": "My weekly emails reflect this preference.",
+    "newsletterInfoLine1": "Like what you're reading? I have something for you!",
+    "newsletterInfoLine2": "I send out a weekly newsletter that I hope inspires you to build new things. Its main focus is on <mark>Vue.js</mark>. If you're enjoying my content and want more, feel free to subscribe!",
+    "shortInfo": "Do you Want to stay up to date on Vue.js? For the latest Vue.js articles and projects straight to your inbox, subscribe to my newsletter.",
     "newsletter": "Newsletter",
     "subscription": "Subscription",
-    "archiv": "Archive",
-    "visitArchive": "Visit Newsletter Archive →",
+    "archiv": "Read Past Issues:",
     "revueInfo": "By subscribing, you agree with Revue’s {termsAndServiceLink} and {privacyPolicyLink}",
-    "notConvinced": "Not convinced? See some examples"
+    "notConvinced": "Not convinced? See some examples",
+    "alternativeLine1": "Don't want me filling your inbox?",
+    "alternativeLine2": "No problem. If you'd like to keep up with my content another way, you can follow me on {twitterLink}. Whenever I post new content, I like to talk about it there."
   },
   "categoriesPage": {
     "title": "Categories",

@@ -30,6 +30,7 @@ const PostTemplate = props => {
   const {
     data: {
       post: {
+        headings,
         excerpt,
         body,
         frontmatter: {
@@ -74,7 +75,7 @@ const PostTemplate = props => {
         postSEO: true,
       }}
     >
-      <ArticleWithSidebar slug={slug} shareProps={shareProps}>
+      <ArticleWithSidebar slug={slug} shareProps={shareProps} headings={headings}>
         <LanguageWarning className="my-4" type="Blog Artikel" />
         <h1>{title}</h1>
         <PostMeta
@@ -147,6 +148,10 @@ export const query = graphql`
       body
       fileAbsolutePath
       excerpt
+      headings {
+        value
+        depth
+      }
       fields {
         slug
         prefix

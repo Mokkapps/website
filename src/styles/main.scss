@@ -20,6 +20,7 @@
   --text-mark: #c6c6c6;
   --background: #f8f8f8;
   --accent: #fc1a20;
+  --accent-darken: #890105;
   --button-background: #ecf0f1;
 }
 
@@ -32,6 +33,7 @@
   --text-mark: #636363;
   --background: #313131;
   --accent: #fc1a20;
+  --accent-darken: #890105;
   --button-background: #f8f8f8;
 }
 
@@ -162,7 +164,7 @@
     @apply rounded-lg;
     @apply border-none;
     @apply bg-secondary;
-    @apply px-1;
+    @apply px-2;
     @apply py-4;
     @apply overflow-auto;
   }

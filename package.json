@@ -23,7 +23,7 @@
     "generate-tip": "node scripts/generate/tip.js",
     "generate-toc": "node scripts/generate/toc.js",
     "optimize-images": "node scripts/optimize-images.js",
-    "generate-code-stats": "cloc --json src/ cypress/ scripts/ > data/stats/count_total.json"
+    "generate-code-stats": "cloc --exclude-ext=svg --json src/ cypress/ scripts/ > data/stats/count_total.json"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -86,7 +86,8 @@
     "recompose": "^0.30.0",
     "sass": "^1.43.4",
     "styled-components": "^5.3.0",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.16.0",
@@ -119,6 +120,7 @@
     "prettier": "^2.5.1",
     "react-testing-library": "^8.0.1",
     "start-server-and-test": "^1.14.0",
+    "tailwind-scrollbar": "^1.3.1",
     "tailwindcss-debug-screens": "^2.2.1",
     "yaml-loader": "^0.6.0"
   }

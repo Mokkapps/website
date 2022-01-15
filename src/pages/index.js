@@ -102,16 +102,6 @@ const IndexPage = props => {
           </ListElement>
         </ul>
       </div>
-      <div className="flex justify-center">
-        <StaticImage
-          alt={config.baseNameWithTitle}
-          title="Michael Hoffmann"
-          placeholder="blurred"
-          height={500}
-          className="rounded-lg shadow-md"
-          src="../images/contact.jpg"
-        />
-      </div>
     </div>
   );
 
@@ -244,14 +234,28 @@ const IndexPage = props => {
           values={{ title: baseTitle, tech: baseTechFocus }}
         />
       </h1>
-      {skills}
-      <p className="text-center mt-5 text-xl">
-        <FormattedMessage id="landingPage.myName" />{' '}
-        <strong>
-          <Link to="/about">Michael Hoffmann</Link>
-        </strong>{' '}
-        <FormattedMessage id="landingPage.rightPlace" />
-      </p>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div>{skills}</div>
+        <div className="flex flex-col">
+          <div className="flex justify-center">
+            <StaticImage
+              alt={config.baseNameWithTitle}
+              title="Michael Hoffmann"
+              placeholder="blurred"
+              height={1920}
+              className="rounded-lg shadow-md"
+              src="../images/contact.jpg"
+            />
+          </div>
+          <p className="text-center mt-5 text-xl">
+            <FormattedMessage id="landingPage.myName" />{' '}
+            <strong>
+              <Link to="/about">Michael Hoffmann</Link>
+            </strong>{' '}
+            <FormattedMessage id="landingPage.rightPlace" />
+          </p>
+        </div>
+      </div>
       <Button
         dataCy="home-hire-me-button"
         className="w-full md:w-72 h-16 mb-2 mx-2 mt-8"

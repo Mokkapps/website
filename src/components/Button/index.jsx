@@ -28,7 +28,7 @@ const Button = ({
       secondary
         ? 'bg-button-background text-basic-button-text'
         : 'bg-button-background text-basic-button-text'
-    } text-center rounded-full font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none min-h-50px`}
+    } text-center rounded-full font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none`}
     type={type || 'button'}
     title={title}
     onClick={onClick}

@@ -82,7 +82,7 @@ const Footer = () => (
       </div>
       <div className="flex w-80 mt-8 md:mt-0">
         <NewsletterSubscription
-          minimal
+          shortInfo
           dataCy="footer-newsletter-subscription"
         />
       </div>
