@@ -52,7 +52,7 @@ jobs:
 
     - name: Deploy to Netlify
       if: job.status == 'success'
-      run: curl -X POST -d '' ${{secrets.NETLIFY_WEBHOOK_DE}} && curl -X POST -d {} ${{secrets.NETLIFY_WEBHOOK_COM}}
+      run: curl -X POST -d '' ${{secrets.NETLIFY_WEBHOOK_DE}}
 
     - name: Send notification mail
       if: always()
