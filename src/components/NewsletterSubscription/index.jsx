@@ -31,7 +31,7 @@ const NewsletterSubscription = ({
     sendCustomAnalyticsEvent('Newsletter form submitted');
 
     try {
-      loading(true);
+      setLoading(true);
       const response = await fetch(
         `${process.env.GATSBY_API_URL}newsletter/add-subscriber`,
         {
