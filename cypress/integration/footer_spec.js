@@ -8,7 +8,7 @@ describe('Footer Test', () => {
 
     cy.get('[data-cy=footer-social-links]')
       .children()
-      .should('have.length',11);
+      .should('have.length', 11);
 
     cy.get('[data-cy=footer-privacy-policy]').should(
       'have.attr',
@@ -21,19 +21,33 @@ describe('Footer Test', () => {
       '/legal-notice'
     );
     cy.get('[data-cy=footer-uses]').should('have.attr', 'href', '/uses');
-    cy.get('[data-cy=footer-newsletter]').should(
+    cy.get('[data-cy=footer-business-card]').should('have.attr', 'href', '/business-card');
+    cy.get('[data-cy=footer-changelog]').should(
       'have.attr',
       'href',
-      '/newsletter'
+      '/changelog'
+    );
+    cy.get('[data-cy=footer-buy-me-a-coffee]').should(
+      'have.attr',
+      'href',
+      'https://www.buymeacoffee.com/mokkapps'
     );
   });
 
   it('navigates to social link pages', () => {
     // GitHub
-    cy.get('[data-cy=social-link-github]').should('have.attr', 'href', 'https://github.com/mokkapps');
+    cy.get('[data-cy=social-link-github]').should(
+      'have.attr',
+      'href',
+      'https://github.com/mokkapps'
+    );
 
     // Twitter
-    cy.get('[data-cy=social-link-twitter]').should('have.attr', 'href', 'https://twitter.com/mokkapps');
+    cy.get('[data-cy=social-link-twitter]').should(
+      'have.attr',
+      'href',
+      'https://twitter.com/mokkapps'
+    );
 
     // Dev.to
     cy.get('[data-cy=social-link-devto]').should(
@@ -64,7 +78,11 @@ describe('Footer Test', () => {
     );
 
     // RSS
-    cy.get('[data-cy=social-link-mokkappsrssfeed]').should('have.attr', 'href', 'https://mokkapps.de/rss.xml');
+    cy.get('[data-cy=social-link-mokkappsrssfeed]').should(
+      'have.attr',
+      'href',
+      'https://mokkapps.de/rss.xml'
+    );
 
     //  Mail
     cy.get('[data-cy=social-link-sendemail]').should(

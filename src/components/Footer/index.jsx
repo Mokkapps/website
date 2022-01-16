@@ -49,7 +49,7 @@ const Footer = () => (
             href="https://www.buymeacoffee.com/mokkapps"
             target="_blank"
             rel="noreferrer"
-            data-cy="footer-newsletter"
+            data-cy="footer-buy-me-a-coffee"
             className="mt-1"
           >
             <FormattedMessage id="general.buyMeACoffee" />
