@@ -226,6 +226,8 @@
     "archiv": "Read Past Issues:",
     "revueInfo": "By subscribing, you agree with Revue’s {termsAndServiceLink} and {privacyPolicyLink}",
     "notConvinced": "Not convinced? See some examples",
+    "subscribeError": "Failed to subscribe. Please try again later!",
+    "subscribeSuccess": "Subscribed",
     "alternativeLine1": "Don't want me filling your inbox?",
     "alternativeLine2": "No problem. If you'd like to keep up with my content another way, you can follow me on {twitterLink}. Whenever I post new content, I like to talk about it there."
   },

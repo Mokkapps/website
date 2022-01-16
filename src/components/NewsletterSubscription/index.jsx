@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { Link } from 'gatsby';
 
 import { sendCustomAnalyticsEvent } from 'utils';
 import Alert from 'components/Alert';
-import { Link } from 'gatsby';
+import Button from 'components/Button';
 
 const NewsletterSubscription = ({
   dataCy,
@@ -84,22 +85,21 @@ const NewsletterSubscription = ({
               />
             </div>
           </div>
-          <button
+          <Button
             disabled={loading}
-            data-cy="newsletter-submit-input"
+            loading={loading}
             type="submit"
-            className={`${
-              grid ? 'col-span-2' : 'mt-4'
-            } w-full bg-button-background text-basic-button-text text-center rounded-md font-bold px-4 py-2 transition-all shadow-md dark:shadow-none outline-none`}
+            className={`${grid ? 'col-span-2' : 'mt-4'}`}
+            data-cy="newsletter-submit-input"
           >
             {intl.formatMessage({ id: 'newsletterPage.subscribe' })}
-          </button>
+          </Button>
         </div>
         {showError ? (
           <Alert
             className="mt-4"
             type="error"
-            text="Error"
+            text={intl.formatMessage({ id: 'newsletterPage.subscribeError' })}
             onClose={() => setShowError(false)}
           />
         ) : null}
@@ -107,7 +107,7 @@ const NewsletterSubscription = ({
           <Alert
             className="mt-4"
             type="success"
-            text="Success"
+            text={intl.formatMessage({ id: 'newsletterPage.subscribeSuccess' })}
             onClose={() => setShowSuccess(false)}
           />
         ) : null}

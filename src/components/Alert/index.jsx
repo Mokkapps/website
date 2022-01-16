@@ -17,7 +17,9 @@ const Alert = ({ className, text, type, onClose }) => {
         onClick={() => onClose()}
       >
         <svg
-          className="fill-current h-6 w-6 text-red-500"
+          className={`fill-current h-6 w-6 ${
+            type === 'error' ? 'text-red-500' : 'text-green-500'
+          }`}
           role="button"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -31,6 +33,7 @@ const Alert = ({ className, text, type, onClose }) => {
 };
 
 Alert.propTypes = {
+  className: PropTypes.string,
   text: PropTypes.string,
   type: PropTypes.string,
   onClose: PropTypes.func,

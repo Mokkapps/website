@@ -223,6 +223,8 @@
     "newsletter": "Newsletter",
     "shortInfo": "Möchten Sie auf dem aktuellen Stand zum Thema Vue.js bleiben? Wenn Sie die neuesten Artikel und Projekte über Vue.js direkt in Ihren Posteingang erhalten möchten, abonnieren Sie meinen Newsletter.",
     "subscription": "Anmeldung",
+    "subscribeError": "Fehler bei Anmeldung. Bitte versuchen Sie es später nochmal!",
+    "subscribeSuccess": "Angemeldet",
     "archiv": "Frühere Ausgaben:",
     "revueInfo": "Mit der Anmeldung bestätigen Sie Revue's {termsAndServiceLink} und {privacyPolicyLink}.",
     "notConvinced": "Nicht überzeugt? Hier sind Beispiele",
