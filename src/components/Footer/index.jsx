@@ -36,14 +36,11 @@ const Footer = () => (
           <strong className="mb-2 text-xl">
             <FormattedMessage id="footer.sectionHeadlines.extra" />
           </strong>
-          <Link className="mt-1" data-cy="footer-stats" to="/stats">
-            <FormattedMessage id="footer.stats" />
+          <Link className="mt-1" data-cy="footer-changelog" to="/changelog">
+            <FormattedMessage id="footer.changelog" />
           </Link>
           <Link className="mt-1" data-cy="footer-uses" to="/uses">
             <FormattedMessage id="footer.uses" />
-          </Link>
-          <Link className="mt-1" data-cy="footer-newsletter" to="/newsletter">
-            <FormattedMessage id="newsletterPage.newsletter" />
           </Link>
           <Link className="mt-1" data-cy="footer-business-card" to="/business-card">
             <FormattedMessage id="footer.businessCard" />

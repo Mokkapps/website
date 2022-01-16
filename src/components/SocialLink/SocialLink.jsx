@@ -11,7 +11,7 @@ const SocialLink = props => {
 
   const Icon = icon;
 
-  const dataCyLabel = ariaLabel.replace(/\./, '').replace(/\s/, '').toLowerCase();
+  const dataCyLabel = ariaLabel.replace(/\./g, '').replace(/\s/g, '').toLowerCase();
 
   return (
     <a
