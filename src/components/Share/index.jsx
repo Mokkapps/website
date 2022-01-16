@@ -31,9 +31,9 @@ const Share = props => {
 
   const windowGlobal = typeof window !== 'undefined' && window;
 
-  const sendAnalyticsEvent = provider => {
+  const sendAnalyticsEvent = () => {
     sendCustomAnalyticsEvent(
-      `Open share dialog for article with url ${url} on ${provider}`
+      `Article share dialog opened`
     );
   };
 
