@@ -1,20 +1,29 @@
 describe('Newsletter Page Test', () => {
   beforeEach(() => {
+    cy.intercept({
+      method: 'POST',
+      url: 'https://myapi.eu-central-1.amazonaws.com/dev/newsletter/add-subscriber',
+    }).as('apiCheck');
+
     cy.visit('/newsletter');
   });
 
-  it('includes a form and archive link', () => {
-    cy.get('form').then($form => {
-      expect($form[0].action).to.include(
-        'https://www.getrevue.co/profile/mokkapps/add_subscriber'
+  it('triggers sign up request', () => {
+    cy.get('[data-cy=newsletter-email-input]').first().type('test@test.com');
+
+    cy.get('[data-cy=newsletter-submit-button]').first().click();
+
+    cy.wait('@apiCheck').then(interception => {
+      assert.equal(
+        interception.request.body,
+        JSON.stringify({ email: 'test@test.com' })
       );
     });
+  });
 
-    cy.get('[data-cy=newsletter-email-input]');
-    cy.get('[data-cy=newsletter-first-name-input]');
-    cy.get('[data-cy=newsletter-last-name-input]');
-    cy.get('[data-cy=newsletter-submit-input]');
-
-    cy.get('[data-cy=newsletter-archive-link-button');
+  it('should show past issues', function () {
+    cy.get('[data-cy=newsletter-issues-list]')
+      .children()
+      .should('have.length.greaterThan', 20);
   });
 });

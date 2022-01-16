@@ -11,6 +11,8 @@ const SocialLink = props => {
 
   const Icon = icon;
 
+  const dataCyLabel = ariaLabel.replace('.', '').replaceAll(' ', '').toLowerCase();
+
   return (
     <a
       {...props}
@@ -21,7 +23,7 @@ const SocialLink = props => {
       aria-label={ariaLabel}
       target="_blank"
       rel="noopener noreferrer"
-      data-cy={`social-link-${icon}`}
+      data-cy={`social-link-${dataCyLabel}`}
       onClick={() =>
         sendCustomAnalyticsEvent(`Clicked "${ariaLabel}" social link`)
       }

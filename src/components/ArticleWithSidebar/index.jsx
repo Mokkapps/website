@@ -19,7 +19,7 @@ const ArticleWithSidebar = ({ children, shareProps, slug, headings }) => (
     </article>
     <aside className="hidden xl:pl-8 xl:block xl:col-start-11 xl:col-end-13">
       <div className="sticky top-20 max-w-48">
-        {headings ? <ToC headings={headings} /> : null}
+        {headings ? <ToC dataCy="table-of-contents" headings={headings} /> : null}
         <NewsletterSidebar className="mt-4" />
         <div data-cy="sidebar-share" className="flex justify-center mt-4">
           <div className="w-3/4">

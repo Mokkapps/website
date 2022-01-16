@@ -1,5 +1,3 @@
-import { SOCIAL_LINKS } from '../../src/components/SocialLink/SocialLinks';
-
 describe('Footer Test', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -10,7 +8,7 @@ describe('Footer Test', () => {
 
     cy.get('[data-cy=footer-social-links]')
       .children()
-      .should('have.length', SOCIAL_LINKS.length);
+      .should('have.length',11);
 
     cy.get('[data-cy=footer-privacy-policy]').should(
       'have.attr',
@@ -32,71 +30,47 @@ describe('Footer Test', () => {
 
   it('navigates to social link pages', () => {
     // GitHub
-    let url = SOCIAL_LINKS.filter(link => link.icon === 'github').map(
-      link => link.url
-    );
-    cy.get('[data-cy=social-link-github]').should('have.attr', 'href', url[0]);
+    cy.get('[data-cy=social-link-github]').should('have.attr', 'href', 'https://github.com/mokkapps');
 
     // Twitter
-    url = SOCIAL_LINKS.filter(link => link.icon === 'twitter').map(
-      link => link.url
-    );
-    cy.get('[data-cy=social-link-twitter]').should('have.attr', 'href', url[0]);
+    cy.get('[data-cy=social-link-twitter]').should('have.attr', 'href', 'https://twitter.com/mokkapps');
 
     // Dev.to
-    url = SOCIAL_LINKS.filter(link => link.icon === 'devdotto').map(
-      link => link.url
-    );
-    cy.get('[data-cy=social-link-devdotto]').should(
+    cy.get('[data-cy=social-link-devto]').should(
       'have.attr',
       'href',
-      url[0]
+      'https://dev.to/mokkapps'
     );
 
     // LinkedIn
-    url = SOCIAL_LINKS.filter(link => link.icon === 'linkedin').map(
-      link => link.url
-    );
     cy.get('[data-cy=social-link-linkedin]').should(
       'have.attr',
       'href',
-      url[0]
+      'https://www.linkedin.com/in/mokkapps'
     );
 
     // Instagram
-    url = SOCIAL_LINKS.filter(link => link.icon === 'instagram').map(
-      link => link.url
-    );
     cy.get('[data-cy=social-link-instagram]').should(
       'have.attr',
       'href',
-      url[0]
+      'https://www.instagram.com/mokkapps/'
     );
 
     // Facebook
-    url = SOCIAL_LINKS.filter(link => link.icon === 'facebook').map(
-      link => link.url
-    );
     cy.get('[data-cy=social-link-facebook]').should(
       'have.attr',
       'href',
-      url[0]
+      'https://www.facebook.com/mokkapps-dev/'
     );
 
     // RSS
-    url = SOCIAL_LINKS.filter(link => link.icon === 'rss').map(
-      link => link.url
-    );
-    cy.get('[data-cy=social-link-rss]').should('have.attr', 'href', url[0]);
+    cy.get('[data-cy=social-link-mokkappsrssfeed]').should('have.attr', 'href', 'https://mokkapps.de/rss.xml');
 
     //  Mail
-    url = SOCIAL_LINKS.filter(link => link.icon === 'minutemailer').map(
-      link => link.url
-    );
-    cy.get('[data-cy=social-link-minutemailer]').should(
+    cy.get('[data-cy=social-link-sendemail]').should(
       'have.attr',
       'href',
-      url[0]
+      'mailto:mail@mokkapps.de'
     );
   });
 });

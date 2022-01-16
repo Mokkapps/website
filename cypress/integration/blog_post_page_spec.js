@@ -7,11 +7,11 @@ describe('Blog Post Test', () => {
 
   it('shows relevant content', () => {
     cy.get('[data-cy=similar-articles]');
-    // TODO mehr abtesten
   });
 
   it('show sidebar widgets', () => {
     cy.get('[data-cy=reactions]');
+    cy.get('[data-cy=table-of-contents]');
     cy.get('[data-cy=newsletter-subscription-sidebar]');
     cy.get('[data-cy=sidebar-share]');
     cy.get('[data-cy=sidebar-buy-me-a-coffee]');

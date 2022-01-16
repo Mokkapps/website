@@ -90,7 +90,7 @@ const NewsletterSubscription = ({
             loading={loading}
             type="submit"
             className={`${grid ? 'col-span-2' : 'mt-4'}`}
-            data-cy="newsletter-submit-input"
+            dataCy="newsletter-submit-button"
           >
             {intl.formatMessage({ id: 'newsletterPage.subscribe' })}
           </Button>

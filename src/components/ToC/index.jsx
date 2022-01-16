@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-const ToC = ({ headings, className }) => (
-  <ul className={`${className} border-2 border-secondary ml-0 p-3 flex flex-col rounded`}>
+const ToC = ({ headings, className, dataCy }) => (
+  <ul data-cy={dataCy} className={`${className} border-2 border-secondary ml-0 p-3 flex flex-col rounded`}>
     <h3>
       <FormattedMessage id="blogPage.tableOfContents" />
     </h3>
@@ -37,6 +37,7 @@ const ToC = ({ headings, className }) => (
 ToC.propTypes = {
   headings: PropTypes.object.isRequired,
   className: PropTypes.string,
+  dataCy: PropTypes.string,
 };
 
 export default ToC;

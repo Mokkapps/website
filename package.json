@@ -91,6 +91,7 @@
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.16.0",
+    "@cypress/webpack-preprocessor": "^5.11.0",
     "@netlify/plugin-gatsby": "^2.0.0-beta",
     "@netlify/plugin-lighthouse": "^2.1.0",
     "@sindresorhus/slugify": "^2.1.0",
