@@ -1,7 +1,7 @@
 describe('RSS Test', () => {
   let urls = [];
 
-  it('should succesfully load each url in the feed', () => {
+  xit('should succesfully load each url in the feed', () => {
     cy.request('/rss.xml')
       .as('sitemap')
       .then(response => {
