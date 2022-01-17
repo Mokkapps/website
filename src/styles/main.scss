@@ -48,6 +48,15 @@
 }
 
 @layer base {
+  body {
+    background: #525252;
+  }
+
+  html {
+    box-sizing: border-box;
+    @apply text-lg;
+  }
+
   ol {
     list-style: decimal;
     @apply ml-4;
@@ -184,15 +193,6 @@
     @apply text-main-text;
     @apply my-2;
     @apply mx-0;
-  }
-
-  body {
-    background: #525252;
-  }
-
-  html {
-    box-sizing: border-box;
-    @apply text-lg;
   }
 
   table {

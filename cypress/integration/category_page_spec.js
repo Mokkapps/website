@@ -1,6 +1,6 @@
 describe('Category Page Test', () => {
   beforeEach(() => {
-    cy.visit('/categories/development');
+    cy.visit('/blog/categories/development');
   });
 
   it('includes an introduction, a blog post list and categories', () => {
