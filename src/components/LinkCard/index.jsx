@@ -18,22 +18,14 @@ const LinkCard = ({
   title,
   date,
   className,
+  externalLink = false,
 }) => {
   const [hasRead] = useIsArticleRead(slug);
 
-  return (
-    <Link
-      className={`flex flex-col justify-start items-center cursor-pointer no-underline rounded-md bg-none bg-secondary shadow-md ${className}`}
-      to={to}
-      data-cy={dataCy}
-      onClick={() => handleArticleClicked(slug)}
-    >
+  const innerContent = (
+    <>
       {coverUrl ? (
-        <LazyLoadImage
-          src={coverUrl}
-          alt={`${title} Image`}
-          width={'100%'}
-        />
+        <LazyLoadImage src={coverUrl} alt={`${title} Image`} width={'100%'} />
       ) : null}
       {cover ? (
         <GatsbyImage
@@ -59,6 +51,30 @@ const LinkCard = ({
           ) : null}
         </div>
       </div>
+    </>
+  );
+
+  const linkClassName = `flex flex-col justify-start items-center cursor-pointer no-underline rounded-md bg-none bg-secondary shadow-md ${className}`;
+
+  return externalLink ? (
+    <a
+      className={linkClassName}
+      href={to}
+      rel="noreferrer"
+      target="_blank"
+      data-cy={dataCy}
+      onClick={() => handleArticleClicked(slug)}
+    >
+      {innerContent}
+    </a>
+  ) : (
+    <Link
+      className={linkClassName}
+      to={to}
+      data-cy={dataCy}
+      onClick={() => handleArticleClicked(slug)}
+    >
+      {innerContent}
     </Link>
   );
 };
@@ -72,6 +88,7 @@ LinkCard.propTypes = {
   coverUrl: PropTypes.string,
   date: PropTypes.string,
   className: PropTypes.string,
+  externalLink: PropTypes.bool,
 };
 
 export default LinkCard;

@@ -92,6 +92,7 @@ const NewsletterPage = ({ data: { allRevueIssue } }) => {
               return (
                 <LinkCard
                   key={url}
+                  externalLink
                   to={url}
                   title={title}
                   coverUrl={coverUrl}
