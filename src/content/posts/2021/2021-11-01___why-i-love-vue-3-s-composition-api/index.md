@@ -116,7 +116,7 @@ If you are not familiar with the Vue 2 features mentioned above, you should firs
 Since Vue 3 we can **additionally** use [Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) to build Vue components.
 
 [[info]]
-| ℹ️ Composition API is fully optional, and we can still use Options API in Vue 3.
+| Composition API is fully optional, and we can still use Options API in Vue 3.
 
 In my [demo application](https://stackblitz.com/edit/vue-3-composition-api-demo?file=src/App.vue) I use the same template for all Vue components, so let's focus on the `<script>` part of the [CounterCompositionApi.vue](https://github.com/Mokkapps/vue-3-composition-api-demo/blob/master/src/components/CounterCompositionApi.vue) component:
 
@@ -169,8 +169,8 @@ Let's analyze this code:
 
 The entry point for all Composition API components is the new `setup` method. It is executed **before** the component is created and once the props are resolved. The function returns an object, and all of its properties are exposed to the rest of the component.
 
-[[warning]]
-| ⚠️ We should avoid using `this` inside setup as it won't refer to the component instance. `setup` is called before data properties, computed properties, or methods are resolved, so that they won't be available within setup.
+[[warning | ⚠️]]
+| We should avoid using `this` inside setup as it won't refer to the component instance. `setup` is called before data properties, computed properties, or methods are resolved, so that they won't be available within setup.
 
 But we need to be careful: The variables we return from the setup method are, by default, not reactive. 
 

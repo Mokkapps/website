@@ -134,12 +134,15 @@ module.exports = {
               blocks: {
                 danger: {
                   classes: 'alert alert-danger',
+                  title: 'optional',
                 },
                 info: {
                   classes: 'alert alert-info',
+                  title: 'optional',
                 },
                 warning: {
                   classes: 'alert alert-warning',
+                  title: 'optional',
                 },
               },
             },

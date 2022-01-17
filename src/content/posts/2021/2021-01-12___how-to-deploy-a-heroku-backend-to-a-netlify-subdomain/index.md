@@ -44,7 +44,7 @@ The next step is to configure the new subdomain in the Heroku dashboard in the `
 
 As you can see, I already have added my subdomain `api.mokkapps.de`, a new domain can be added by pressing the `Add domain` button. 
 
-[[warning]]
+[[warning | ⚠️]]
 | All default `appname.herokuapp.com` domains are already SSL-enabled and can be accessed by using HTTPS, for example, `https://appname.herokuapp.com`. To enable SSL on a custom domain you need to use the [SSL Endpoint](https://elements.heroku.com/addons/ssl) add-on which is a **paid** add-on service.
 
 ## Configure Netlify

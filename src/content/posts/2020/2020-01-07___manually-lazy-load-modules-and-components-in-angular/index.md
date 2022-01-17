@@ -38,12 +38,12 @@ A lazy-loaded module can be defined in the routing configuration using the new `
 export class AppModule {}
 ```
 
-[[warning]]
+[[warning | ⚠️]]
 | Using Angular 8 (or previous versions) you need to write `loadChildren: './lazy/lazy.module#LazyModule` to enable lazy loading of a module using the Angular router as it does not support the `import(...)` syntax.
 
 Angular CLI will then automatically create a separate JavaScript bundle for this module which is only loaded from the server if the selected route gets activated.
 
-[[warning]]
+[[warning | ⚠️]]
 | If you add `LazyModule` to any `imports` array of a module, it will be loaded eagerly (immediately).
 
 ## Manually Lazy Load Module
@@ -108,7 +108,7 @@ We can now call this method in an `onClick` handler in our `AppComponent` and dy
 
 We get the current router config from the Router via Dependency Injection and push our new routes into it.
 
-[[warning]]
+[[warning | ⚠️]]
 | Be careful if you have a wildcard route (`**`) in your route configuration. The wildcard route always needs to be at the last index of your routes array because it matches every URL and should be selected only if no other routes are matched first.
 
 Next, we need to reset the router configuration used for navigation and generating links by calling `resetConfig` with our new configuration that includes the lazy-loaded module route.
@@ -237,7 +237,7 @@ Some notes to this code block:
 * The `templateViewContainerRef` is used to tell the rendering engine where the lazy-loaded component should be rendered.
 * We use the same `import(...)` syntax to lazy-load components the same way we did it for modules.
 
-[[warning]]
+[[warning | ⚠️]]
 | Since Angular 9, we do not need to register and add the `DynamicLazyComponent` inside any module as an entry component. If you want to dynamically load a component in Angular 8, please check out [Manually Lazy load Components in Angular 8](https://dev.to/binarysort/manually-lazy-load-components-in-angular-8-ffi)
 
 The following picture demonstrates the lazy loading process of this component:
