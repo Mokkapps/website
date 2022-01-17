@@ -2,6 +2,7 @@
 title: "How I Replaced Google Analytics With a Private, Open-Source & Self-Hosted Alternative"
 categories:
   - "tools"
+  - "portfolio"
 cover: "images/cover.jpg"
 imageShare: "images/how-i-replaced-google-analytics-with-a-private-open-source-and-self-hosted-alternative-share.png"
 ---

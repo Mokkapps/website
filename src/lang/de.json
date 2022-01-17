@@ -223,6 +223,7 @@
     "newsletterInfoLine2": "Ich verschicke einen wöchentlichen Newsletter mit Fokus auf <mark>Vue.js</mark>. Wenn Ihnen meine Inhalte gefallen und Sie mehr wollen, können Sie sich gerne für den Newsletter anmelden!",
     "newsletter": "Newsletter",
     "shortInfo": "Möchten Sie auf dem aktuellen Stand zum Thema Vue.js bleiben? Wenn Sie die neuesten Artikel und Projekte über Vue.js direkt in Ihren Posteingang erhalten möchten, abonnieren Sie meinen Newsletter.",
+    "noSpam": "Kein Spam - Sie können sich jederzeit abmelden!",
     "subscription": "Anmeldung",
     "subscribeError": "Fehler bei Anmeldung. Bitte versuchen Sie es später nochmal!",
     "subscribeSuccess": "Angemeldet",

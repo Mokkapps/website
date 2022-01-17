@@ -62,11 +62,14 @@ const NewsletterSubscription = ({
         </h3>
       ) : null}
       {shortInfo ? (
-        <span className="text-sm my-2">
+        <span className="text-sm mt-2">
           <FormattedMessage id="newsletterPage.shortInfo" />
         </span>
       ) : null}
-      <form onSubmit={event => onSubmit(event)}>
+      <span className="text-sm bold mt-2">
+        <FormattedMessage id="newsletterPage.noSpam" />
+      </span>
+      <form className="mt-2" onSubmit={event => onSubmit(event)}>
         <div
           className={`${
             grid ? 'grid grid-cols-12 gap-4 items-center' : 'flex flex-col'

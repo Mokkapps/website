@@ -3,6 +3,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
+import './styles.scss'
+
 const MenuItem = ({
   intl,
   className,

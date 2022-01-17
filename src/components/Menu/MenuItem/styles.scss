@@ -1,0 +1,15 @@
+.menu-item {
+  a {
+    @apply text-secondary-text;
+    text-decoration: none;
+  }
+
+  a.active {
+    @apply text-main-text;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: bold
+  }
+}

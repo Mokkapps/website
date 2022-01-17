@@ -216,9 +216,8 @@ module.exports = {
       resolve: 'gatsby-plugin-sentry',
       options: {
         dsn: process.env.SENTRY,
-        config: {
-          environment: 'production',
-        },
+        environment: process.env.NODE_ENV,
+        enabled: process.env.NODE_ENV === 'production',
       },
     },
     // Create an RSS feed
