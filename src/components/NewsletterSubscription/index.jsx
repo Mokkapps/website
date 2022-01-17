@@ -57,9 +57,9 @@ const NewsletterSubscription = ({
   return (
     <div className={`${className} w-full flex flex-col`} data-cy={dataCy}>
       {heading ? (
-        <h3 className="text-main-text mb-0">
+        <span className="text-main-text text-xl mb-0">
           <FormattedMessage id="sidebar.newsletter.title" />
-        </h3>
+        </span>
       ) : null}
       {shortInfo ? (
         <span className="text-sm mt-2">

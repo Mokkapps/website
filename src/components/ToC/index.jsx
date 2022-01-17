@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl';
 
 const ToC = ({ headings, className, dataCy }) => (
   <ul data-cy={dataCy} className={`${className} border-2 border-secondary ml-0 p-3 flex flex-col rounded`}>
-    <h3>
+    <span className="text-xl">
       <FormattedMessage id="blogPage.tableOfContents" />
-    </h3>
+    </span>
     <div className="max-h-72 pl-2 overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-accent scrollbar-track-accent-darken">
       {headings.map(heading => {
         if (heading.depth > 4) {
@@ -16,7 +16,7 @@ const ToC = ({ headings, className, dataCy }) => (
         return (
           <li
             key={heading.value}
-            className="p-1 leading-5 mb-4 last:mb-0"
+            className="p-1 leading-5 mb-2 last:mb-0 text-sm"
           >
             <a
               className="text-main-text no-underline"
