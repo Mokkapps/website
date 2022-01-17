@@ -3,21 +3,35 @@
 }
 
 .alert {
-  position: relative;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
+  @apply flex;
+  @apply items-center;
+  @apply rounded-md;
+  @apply px-3;
+  @apply py-5;
+  @apply mb-4;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
 
   &-warning {
     border-color: var(--color-warning);
+    &::before {
+      content: '⚠️';
+      @apply mr-2;
+    }
   }
 
   &-info {
-    border-color: var(--color-success);
+    border-color: var(--color-info);
+    &::before {
+      content: 'ℹ️';
+      @apply mr-2;
+    }
   }
 
   &-danger {
     border-color: var(--color-error);
+    &::before {
+      content: '🚨';
+      @apply mr-2;
+    }
   }
 }

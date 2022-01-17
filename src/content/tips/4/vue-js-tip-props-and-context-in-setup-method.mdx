@@ -37,7 +37,7 @@ export default {
 
 The first argument in the `setup` function is the `props` argument. `props` are reactive and will be updated when new props are passed in.
 
-[[warning | ⚠️]]
+[[warning]]
 | ⚠️ You cannot use ES6 destructuring because it will remove `props` reactivity. If you want to destructure `props` you need to use [toRefs](https://v3.vuejs.org/guide/reactivity-fundamentals.html#destructuring-reactive-state).
 
 The second argument in the `setup` function is the `context` argument. It is a normal JavaScript object that exposes some useful values:

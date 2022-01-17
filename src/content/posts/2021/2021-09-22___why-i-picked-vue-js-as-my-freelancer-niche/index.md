@@ -14,7 +14,7 @@ I've reached the point in my career where I need to choose one of the three fram
 
 As the title already reveals, I chose Vue and in this article, I will describe to you why I picked it instead of React or Angular. 
 
-[[warning | ⚠️]]
+[[warning]]
 | This article will not provide a full comparison between the three technologies.
 
 

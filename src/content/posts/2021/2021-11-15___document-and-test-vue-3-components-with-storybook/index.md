@@ -161,7 +161,7 @@ export default {
 
 In the above code, you can see that I've annotated the Vue component with [JSDoc](https://jsdoc.app/) comments. Storybook converts them into living documentation alongside our stories.
 
-[[warning | ⚠️]]
+[[warning]]
 | Unfortunately, I found no way to add JSDoc comments to the `counter-update` event. I think it is currently not supported in [vue-docgen-api](https://github.com/vue-styleguidist/vue-styleguidist/tree/dev/packages/vue-docgen-api), which Storybook uses under the hood to extract code comments into descriptions. Leave a comment if you know a way how to document events in Vue 3.
 
 Storybook uses so-called [stories](https://storybook.js.org/docs/react/get-started/whats-a-story): 

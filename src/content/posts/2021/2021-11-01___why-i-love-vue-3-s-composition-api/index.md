@@ -169,7 +169,7 @@ Let's analyze this code:
 
 The entry point for all Composition API components is the new `setup` method. It is executed **before** the component is created and once the props are resolved. The function returns an object, and all of its properties are exposed to the rest of the component.
 
-[[warning | ⚠️]]
+[[warning]]
 | We should avoid using `this` inside setup as it won't refer to the component instance. `setup` is called before data properties, computed properties, or methods are resolved, so that they won't be available within setup.
 
 But we need to be careful: The variables we return from the setup method are, by default, not reactive. 
