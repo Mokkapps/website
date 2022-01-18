@@ -5,7 +5,7 @@ import { navigate } from 'gatsby-link';
 import { getCategoryDisplayText } from 'utils';
 
 const CategoryLink = ({ category, dataCy, className, compact = true }) => {
-  const linkTo = `/categories/${category.replace(' ', '-')}`;
+  const linkTo = `/blog/categories/${category.replace(' ', '-')}`;
 
   const onKeyPress = event => {
     if (event.key === 'Enter') {

@@ -23,7 +23,7 @@ const CategoriesPage = props => {
   return (
     <Layout
       seo={{
-        url: `${siteUrl}/categories`,
+        url: `${siteUrl}/blog/categories`,
         title: `Categories${siteTitlePostfix}`,
         description: 'Available categories for blog posts',
         image: seoImageUrl,

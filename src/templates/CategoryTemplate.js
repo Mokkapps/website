@@ -31,7 +31,7 @@ const PageTemplate = props => {
   return (
     <Layout
       seo={{
-        url: `${siteUrl}/categories/${category}/`,
+        url: `${siteUrl}/blog/categories/${category}/`,
         title: `Posts in category: ${getCategoryDisplayText(
           category
         )}${siteTitlePostfix}`,
