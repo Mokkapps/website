@@ -25,6 +25,7 @@ const Share = props => {
   const {
     className,
     buttonClassName,
+    dataCy,
     shareProps: { url, text },
     iconSize = 48,
   } = props;
@@ -38,7 +39,7 @@ const Share = props => {
   };
 
   return (
-    <div className={`flex flex-wrap justify-between ${className}`}>
+    <div data-cy={dataCy} className={`flex flex-wrap justify-center ${className}`}>
       <FacebookShareButton
         className={buttonClassName}
         beforeOnClick={() => sendAnalyticsEvent('Facebook')}
@@ -113,6 +114,7 @@ const Share = props => {
 Share.propTypes = {
   shareProps: PropTypes.object,
   className: PropTypes.string,
+  dataCy: PropTypes.string,
   buttonClassName: PropTypes.string,
   iconSize: PropTypes.number,
 };

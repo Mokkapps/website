@@ -74,8 +74,13 @@ const PostTemplate = props => {
         image: seoImage,
         postSEO: true,
       }}
+      showSocialLinks={false}
     >
-      <ArticleWithSidebar slug={slug} shareProps={shareProps} headings={headings}>
+      <ArticleWithSidebar
+        slug={slug}
+        shareProps={shareProps}
+        headings={headings}
+      >
         <LanguageWarning className="my-4" type="Blog Artikel" />
         <h1>{title}</h1>
         <PostMeta

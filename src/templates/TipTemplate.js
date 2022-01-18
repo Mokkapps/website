@@ -65,6 +65,7 @@ const TipTemplate = props => {
         image: seoImage,
         postSEO: true,
       }}
+      showSocialLinks={false}
     >
       <ArticleWithSidebar slug={slug.split('/')[2]} shareProps={shareProps}>
         <LanguageWarning className="my-4" type="Tips" />

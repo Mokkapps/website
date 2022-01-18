@@ -46,6 +46,7 @@ module.exports = {
         full: '100%',
       },
       screens: {
+        ad: '1440px',
         xxl: '1920px',
       },
       colors: {

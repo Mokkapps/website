@@ -16,6 +16,7 @@ import Seo from 'components/Seo';
 
 const Layout = ({
   children,
+  showSocialLinks = true,
   seo: { url, title, image, description, postSEO, canonical },
 }) => {
   const [open, setOpen] = useState(false);
@@ -39,14 +40,16 @@ const Layout = ({
         <BurgerMenuButton className="lg:hidden" open={open} setOpen={setOpen} />
         <BurgerMenu className="lg:hidden" open={open} setOpen={setOpen} />
         <Menu className="hidden lg:flex" />
-        <section className="hidden xl:flex fixed left-7 top-80 z-200">
-          <SocialLinks
-            onlyFavorites
-            asColumn
-            largeIcons
-            dataCy={'desktop-sidebar-social-links'}
-          />
-        </section>
+        {showSocialLinks ? (
+          <section className="hidden xl:flex fixed left-7 top-80 z-200">
+            <SocialLinks
+              onlyFavorites
+              asColumn
+              largeIcons
+              dataCy={'desktop-sidebar-social-links'}
+            />
+          </section>
+        ) : null}
         <div className="md:pt-20 md:p-4 flex-grow">{children}</div>
         <Footer />
         <Seo
@@ -64,6 +67,7 @@ const Layout = ({
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  showSocialLinks: PropTypes.bool,
   seo: PropTypes.shape({
     url: PropTypes.string,
     title: PropTypes.string,
