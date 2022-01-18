@@ -5,6 +5,7 @@
 .alert {
   @apply flex;
   @apply items-center;
+  @apply bg-secondary;
   @apply rounded-md;
   @apply px-3;
   @apply py-5;
