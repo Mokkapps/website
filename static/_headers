@@ -1,0 +1,4 @@
+/static/*"
+  Cache-Control: public
+  Cache-Control: max-age=31536000
+  Cache-Control: immutable

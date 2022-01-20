@@ -1,0 +1,15 @@
+# My manually set redirects
+/wp-login.php                       https://i.imgur.com/1Ia9tTG.gif
+/wp-login                           https://i.imgur.com/1Ia9tTG.gif
+/talks/my-first-smartphone-game/    https://mokkapps-first-smartphone-game-talk.netlify.com
+blog/my-development-setup/          /uses/
+/visitenkarte                       /business-card
+# Social media redirects
+/twitter                            https://twitter.com/mokkapps
+/git                                https://github.com/mokkapps
+/rss                                https://mokkapps.de/rss.xml
+/instagram                          https://www.instagram.com/mokkapps
+/dev-to                             https://dev.to/mokkapps
+/medium                             https://medium.com/@mokkappsdev
+/facebook                           https://www.facebook.com/mokkapps-dev
+/npm                                https://www.npmjs.com/~mokkapps
