@@ -2,11 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
+import { isDevelopmentEnv } from 'utils';
 
 const carbonCode = 'CEAD4K7U';
 const carbonPlacement = 'mokkappsde';
 
 const Ad = ({ className }) => {
+  if (isDevelopmentEnv()) {
+    return null;
+  }
+
   const reference = useRef(null);
 
   useEffect(() => {
