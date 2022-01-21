@@ -1,7 +1,7 @@
 # explicit commands for building the site
 # and the folder to publish
 [build]
-command = "gatsby build"
+command = "gatsby build && rm -rf .cache/functions"
 publish = "public"
   [build.environment]
   # set TERM variable for terminal output
