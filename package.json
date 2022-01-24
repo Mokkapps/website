@@ -21,7 +21,6 @@
     "preload-fonts": "gatsby-preload-fonts",
     "generate-blogpost": "node scripts/generate/blogpost.js",
     "generate-tip": "node scripts/generate/tip.js",
-    "generate-toc": "node scripts/generate/toc.js",
     "optimize-images": "node scripts/optimize-images.js",
     "generate-code-stats": "cloc --exclude-ext=svg --json src/ cypress/ scripts/ > data/stats/count_total.json"
   },

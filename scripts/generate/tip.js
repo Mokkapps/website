@@ -22,7 +22,8 @@ async function generateTip() {
     {
       type: 'input',
       name: 'title',
-      message: 'Title',
+      prefix: 'Vue Tip: ',
+      message: 'Title (prefix: Vue Tip: )',
     },
     {
       type: 'input',
@@ -39,7 +40,7 @@ async function generateTip() {
       type: 'input',
       name: 'technology',
       default: 'vue',
-      message: 'Technology used for this tip (default: vue',
+      message: 'Technology used for this tip (default: vue)',
     },
     {
       type: 'confirm',

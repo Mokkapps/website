@@ -1,0 +1,34 @@
+---
+title: 'Vue Tip: Display Raw HTML'
+description: 'The double mustaches interprets the data as plain text, not HTML. In order to output real HTML, you will need to use the v-html directive.'
+date: '2022-01-24'
+technology: 'vue'
+---
+
+The double mustaches `{{ text }}` interprets the data as plain text, not HTML:
+
+```vue
+<p>Using text interpolation: {{ rawHtml }}</p>
+```
+
+In order to output real HTML, you will need to use the `v-html` directive:
+
+```vue
+<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+```
+
+The contents of the `span` will be interpreted as plain HTML and all data bindings are ignored.
+
+We cannot use `v-html` to compose template partials, because Vue is not a string-based templating engine.
+Instead, components are preferred as the fundamental unit for UI reuse and composition.
+
+[[warning]]
+| Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to XSS vulnerabilities. Only use `v-html` on trusted content and never on user-provided content.
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
