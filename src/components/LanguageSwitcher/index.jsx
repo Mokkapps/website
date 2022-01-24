@@ -35,7 +35,9 @@ const LanguageSwitcher = props => {
           onChange={value => {
             toggleLanguage();
             setChecked(value);
-            sendCustomAnalyticsEvent(`Changed language to "${lang}"`);
+            sendCustomAnalyticsEvent(
+              `Changed language to "${checked ? 'de' : 'en'}"`
+            );
           }}
           checked={lang === 'de'}
         />
