@@ -1,0 +1,53 @@
+---
+title: "Vue Tip: Scroll to Top When Navigating to a New Route"
+description: "When using client-side routing, we may want to scroll to top when navigating to a new route, or preserve the scrolling position of history entries just like real page reload does."
+date: "2022-01-28"
+technology: "vue"
+---
+
+When using client-side routing using [Vue Router](https://router.vuejs.org/) we may want to scroll to top when navigating to a new route or preserve the scrolling position of history entries.
+
+Vue Router allows us to completely customize the scroll behavior on route navigation.
+
+[[warning]]
+| This feature only works if the browser supports `history.pushState`.
+
+When creating the router instance, we can provide the `scrollBehavior` function:
+
+```js
+const router = new VueRouter({
+  routes: [...],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
+})
+```
+
+The following code scrolls to the top of the page for all route navigations:
+
+```js
+scrollBehavior (to, from, savedPosition) {
+  return { x: 0, y: 0 }
+}
+```
+
+To achieve a native-like behavior when navigating with back/forward buttons we can return `savedPosition`:
+
+```js
+scrollBehavior (to, from, savedPosition) {
+  if (savedPosition) {
+    return savedPosition
+  } else {
+    return { x: 0, y: 0 }
+  }
+}
+```
+
+[Official documentation](https://router.vuejs.org/guide/advanced/scroll-behavior.html)
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

@@ -20,6 +20,8 @@
   --accent: #fc1a20;
   --accent-darken: #890105;
   --button-background: #ecf0f1;
+  --code-lang-text-background: rgba(27,31,35,.05);
+  --code-lang-text-text: #476582;
 }
 
 .theme-dark {
@@ -33,6 +35,8 @@
   --accent: #fc1a20;
   --accent-darken: #890105;
   --button-background: #f8f8f8;
+  --code-lang-text-background: #3a3a3a;
+  --code-lang-text-text: #aac8e4;
 }
 
 :root {
