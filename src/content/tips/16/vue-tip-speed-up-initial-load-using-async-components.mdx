@@ -1,0 +1,44 @@
+---
+title: 'Vue Tip: Speed Up Initial Load Using Async Components'
+description: 'Using async components is a great way to speed up the initial load time of your app.'
+date: '2022-02-04'
+technology: 'vue'
+---
+
+The regular, synchronous way of loading components is:
+
+```js
+import MyComponent from './MyComponent.vue';
+```
+
+In large applications, it makes sense to split the code into smaller chunks and only load it from the server when it's needed.
+
+Vue 3 therefore provides the `defineAsyncComponent`function:
+
+```js
+import { defineAsyncComponent } from 'vue';
+
+const AsyncComp = defineAsyncComponent(() => {
+  return new Promise((resolve, reject) => {
+    // ...load component from server
+    resolve(/* loaded component */);
+  });
+});
+```
+
+Now we can to use `AsyncComp` like a normal component in Vue.
+
+[Here are the docs for Async Components in Vue 3.](https://v3.vuejs.org/guide/migration/async-components.html#async-components)
+
+The syntax for Vue 2 is not that different:
+```js
+const AsyncComponent = () =>
+import('./components/LazyLoadingFTW.vue');
+```
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).

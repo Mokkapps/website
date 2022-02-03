@@ -14,41 +14,41 @@ import inquirer from 'inquirer';
 import { titleCaps } from './title-caps.js';
 
 const today = new Date();
-const defaultDate = new Date().setDate(today.getDate() + 5);
+const defaultDate = new Date().setDate(today.getDate() + 1);
 const fromRoot = (...p) => path.join(process.env.PWD, ...p);
 
 async function generateTip() {
-  const { title, description, date, technology, dryRun } = await inquirer.prompt([
-    {
-      type: 'input',
-      name: 'title',
-      prefix: 'Vue Tip: ',
-      message: 'Title (prefix: Vue Tip: )',
-    },
-    {
-      type: 'input',
-      name: 'description',
-      message: 'Description',
-    },
-    {
-      type: 'input',
-      name: 'date',
-      default: dateformat(defaultDate, 'yyyy-mm-dd'),
-      message: 'Release Date (format: yyyy-mm-dd)',
-    },
-    {
-      type: 'input',
-      name: 'technology',
-      default: 'vue',
-      message: 'Technology used for this tip (default: vue)',
-    },
-    {
-      type: 'confirm',
-      name: 'dryRun',
-      default: false,
-      message: 'Dry run without creating files? (default: false)',
-    },
-  ]);
+  const { title, description, date, technology, dryRun } =
+    await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'title',
+        message: 'Title (should start with: Vue Tip:)',
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Description',
+      },
+      {
+        type: 'input',
+        name: 'date',
+        default: dateformat(defaultDate, 'yyyy-mm-dd'),
+        message: 'Release Date (format: yyyy-mm-dd)',
+      },
+      {
+        type: 'input',
+        name: 'technology',
+        default: 'vue',
+        message: 'Technology used for this tip (default: vue)',
+      },
+      {
+        type: 'confirm',
+        name: 'dryRun',
+        default: false,
+        message: 'Dry run without creating files? (default: false)',
+      },
+    ]);
   const slug = slugify(title);
   const latestTipsFolders = fs
     .readdirSync(fromRoot(`src/content/tips`))
@@ -68,7 +68,7 @@ async function generateTip() {
     title: titleCaps(title),
     description,
     date,
-    technology
+    technology,
   };
   const yaml = jsToYaml.stringify(removeEmpty(mdObj));
   const mdData = `---
