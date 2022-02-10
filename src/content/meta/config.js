@@ -77,7 +77,7 @@ const config = {
           'A desktop application which can be used in Scrum teams to initiate the daily Scrum meeting',
         long: '',
       },
-      usedTechnologies: ['electron', 'angular'],
+      usedTechnologies: ['electron', 'vue'],
       imageName: 'standup-picker',
       urls: {
         page: '/standup-picker',
