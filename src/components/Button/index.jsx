@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import Loader from 'react-loader-spinner';
+import { TailSpin } from 'react-loader-spinner';
 
 const StyledButton = styled.button`
   &:hover {
@@ -41,8 +41,7 @@ const Button = ({
     onClick={onClick}
   >
     {loading ? (
-      <Loader
-        type="TailSpin"
+      <TailSpin
         color="var(--accent)"
         height={20}
         width={20}

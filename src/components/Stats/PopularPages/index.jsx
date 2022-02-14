@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from 'react-loader-spinner';
+import { TailSpin } from 'react-loader-spinner';
 import { FormattedMessage } from 'react-intl';
 
 import { formatNumber } from 'utils';
@@ -12,8 +12,7 @@ const StatsPopularPages = ({ dataCy, className, metrics, loading }) => {
       data-cy={dataCy}
     >
       {loading ? (
-        <Loader
-          type="TailSpin"
+        <TailSpin
           color="var(--accent)"
           height={25}
           width={25}

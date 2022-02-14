@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Loader from 'react-loader-spinner';
+import { TailSpin } from 'react-loader-spinner';
 
 import { formatNumber } from 'utils';
 
@@ -30,8 +30,7 @@ const StatsCard = ({
       data-cy={dataCy}
     >
       {loading ? (
-        <Loader
-          type="TailSpin"
+        <TailSpin
           color="var(--accent)"
           height={25}
           width={25}
