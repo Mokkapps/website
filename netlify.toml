@@ -8,7 +8,7 @@ publish = "public"
   TERM = "xterm"
   # Prevent Gatsby Functions and SSR/DSG render modes
   # https://docs.netlify.com/configure-builds/common-configurations/gatsby/#auto-generated-netlify-functions
-  NETLIFY_SKIP_GATSBY_FUNCTIONS = true
+  NETLIFY_SKIP_GATSBY_FUNCTIONS = "true"
 
 # Asset optimization
 [build.processing]
