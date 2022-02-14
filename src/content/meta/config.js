@@ -18,14 +18,8 @@ const config = {
   baseName: `${base.name}`,
   baseTitle: `${base.title}`,
   baseTechFocus: `${base.techFocus}`,
-  baseDesc: `${base.descriptionEn}`,
   siteTitlePostfix: ` - ${baseNameWithTitle}`,
-  siteDescription: `${base.descriptionEn}`,
   defaultSeoImage: `https://i.imgur.com/C8ZMquy.jpg`,
-
-  /* site header */
-  headerTitle: `${baseNameWithTitle}`,
-  headerSubTitle: `${base.descriptionEn}`,
 
   /* url */
   siteUrl: base.url,

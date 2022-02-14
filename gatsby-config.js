@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     title: config.baseNameWithTitle,
     siteUrl: config.siteUrl,
-    description: config.siteDescription,
+    description: config.descriptionEn,
   },
   plugins: [
     `gatsby-transformer-json`,

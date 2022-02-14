@@ -46,7 +46,7 @@ const IndexPage = props => {
   const {
     siteTitlePostfix,
     siteUrl,
-    siteDescription,
+    descriptionEn,
     baseTitle,
     baseTechFocus,
   } = config;
@@ -293,7 +293,7 @@ const IndexPage = props => {
       seo={{
         url: siteUrl,
         title: `Home${siteTitlePostfix}`,
-        description: siteDescription,
+        description: descriptionEn,
         image: seoImageUrl,
       }}
     >

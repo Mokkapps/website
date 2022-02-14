@@ -14,7 +14,7 @@ import HowIWork from 'components/About/HowIWork';
 import References from 'components/References';
 
 const AboutPage = () => {
-  const { siteTitlePostfix, siteUrl, siteDescription } = config;
+  const { siteTitlePostfix, siteUrl, descriptionEn } = config;
 
   const seoImageUrl = generateSeoImageUrl('About me');
 
@@ -23,7 +23,7 @@ const AboutPage = () => {
       seo={{
         url: `${siteUrl}/about`,
         title: `About${siteTitlePostfix}`,
-        description: siteDescription,
+        description: descriptionEn,
         image: seoImageUrl,
       }}
     >

@@ -183,7 +183,7 @@ The Vue application is served at `http://localhost:8080`:
 To develop/build a Quasar Electron app, we need to add the Electron mode to our Quasar project:
 
 ```bash
-$ quasar mode add electron
+quasar mode add electron
 ```
 
 Every Electron app has two threads: the main thread (deals with the window and initialization code – from the newly created folder `/src-electron`) and the renderer thread (which deals with the actual content of your app from `/src`).
@@ -204,7 +204,7 @@ The new folder has the following structure:
 Now we are ready to start our Electron application:
 
 ```bash
-$ quasar dev -m electron
+quasar dev -m electron
 ```
 
 This command will open up an Electron window which will render your app along with Developer Tools opened side by side:
