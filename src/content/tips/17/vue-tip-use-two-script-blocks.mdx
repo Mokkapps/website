@@ -1,0 +1,46 @@
+---
+title: "Vue Tip: Use Two Script Blocks "
+description: "<script setup> can be used alongside normal <script>. A normal <script> may be needed in special cases."
+date: "2022-02-14"
+technology: "vue"
+---
+
+If you are using the new `<script setup>` syntax, you may run into a case where you need some Options API functionality.
+In this case, it's possible to add an additional `<script>` block to your component. Vue will mix the two
+together for you, so the Composition API code and Options API code can remain separate.
+
+You may need a regular `<script>` block in these cases:
+
+- Use the Options API to declare options that cannot be expressed in `<script setup>`, for example, `inheritAttrs` or custom options enabled via plugins.
+- Run side effects or create objects that should only execute once because `setup()` is run for every component.
+- Declare named exports which allow exporting multiple things from one file.
+
+```vue
+<script>
+// Normal <script> using Options API, executed in module scope (only once)
+runSideEffectOnce()
+
+// Here you can declare additional options
+export default {
+  name: 'MyComponent',
+  inheritAttrs: false,
+  customOptions: {}
+}
+</script>
+
+<script setup>
+// Composition API: executed in setup() scope (for each instance)
+import { ref } from 'vue';
+console.log('Setting up new component instance');
+const count = ref(0);
+</script>
+```
+
+This feature is [officially supported and documented](https://vuejs.org/api/sfc-script-setup.html?ck_subscriber_id=1460864714#usage-alongside-normal-script).
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
