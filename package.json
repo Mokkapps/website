@@ -27,7 +27,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@supabase/supabase-js": "^1.28.5",
+    "@supabase/supabase-js": "^1.30.0",
     "autoprefixer": "10.4.0",
     "cross-env": "^7.0.2",
     "emotion": "^11.0.0",
@@ -78,7 +78,7 @@
     "react-icons": "^4.3.1",
     "react-intl": "^5.24.0",
     "react-lazy-load-image-component": "^1.5.1",
-    "react-loader-spinner": "^4.0.0",
+    "react-loader-spinner": "^5.1.3",
     "react-share": "^4.4.0",
     "react-switch": "^6.0.0",
     "recompose": "^0.30.0",
@@ -90,8 +90,8 @@
   "devDependencies": {
     "@babel/preset-flow": "^7.16.0",
     "@cypress/webpack-preprocessor": "^5.11.0",
-    "@netlify/plugin-gatsby": "^2.0.0-beta",
-    "@netlify/plugin-lighthouse": "^2.1.0",
+    "@netlify/plugin-gatsby": "^2.0.2",
+    "@netlify/plugin-lighthouse": "^2.1.3",
     "@sindresorhus/slugify": "^2.1.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.13.3",

@@ -115,7 +115,7 @@ export default NewsletterPage;
 
 export const pageQuery = graphql`
   query RevueIssues {
-    allRevueIssue {
+    allRevueIssue (sort: {fields: sent_at, order: DESC}) {
       nodes {
         title
         html
