@@ -5,9 +5,10 @@ import CategoryLink from 'components/CategoryLink';
 
 const priorityMap = {
   'vue-js': 10,
-  frontend: 9,
-  fullstack: 8,
-  development: 7,
+  'nuxt-js': 9,
+  frontend: 8,
+  fullstack: 7,
+  development: 6,
 };
 
 const CategorySelection = ({ categories, compact, className, dataCy }) => {

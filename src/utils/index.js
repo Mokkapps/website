@@ -104,6 +104,10 @@ export const getCategoryDisplayText = category => {
     return category.toUpperCase();
   }
 
+  if (category === 'tailwind-css') {
+    return 'Tailwind CSS';
+  }
+
   if (category.includes('-js')) {
     const name = category.split('-')[0];
     return `${capitalize(name)}.js`;

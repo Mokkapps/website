@@ -104,7 +104,7 @@ export default {
 
 This simple counter component includes multiple essential Vue functionalities:
 - We use a `count` data property that uses the `initialValue` property as its initial value.
-- `countPow` as computed property which calculates the power of the `count` value.
+- `countPow` as computed property which calculates the `count` value to the power of two.
 - A watcher that emits the `counter-update` event if the `count` value has changed.
 - Multiple methods to modify the `count` value.
 - A `console.log` message that is written if the [mounted lifecycle hook](https://vuejs.org/v2/api/#mounted) was triggered.
