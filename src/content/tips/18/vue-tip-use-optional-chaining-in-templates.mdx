@@ -1,0 +1,38 @@
+---
+title: 'Vue Tip: Use Optional Chaining in Templates'
+description: "It's possible to use optional chaining in Vue templates."
+date: '2022-02-19'
+technology: 'vue'
+---
+
+It's possible to use [Optional Chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) in Vue 3 templates:
+
+> The optional chaining operator (?.) enables you to read the value of a property located deep within a chain of connected objects without having to check that each reference in the chain is valid.
+
+Here's a simple Vue component that uses the optional chaining operator:
+
+```vue
+<template>
+  <p v-if="data?.user?.name">Name: {{ data?.user?.name }}</p>
+  <p>Age: {{ data?.user?.age ?? 0 }} years old</p>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const data = ref({ user: { name: 'Michael' } });
+</script>
+```
+
+The following Vue SFC playground shows the rendered output of this Vue component:
+
+<iframe width="100%" height="500" src="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgZGF0YSA9IHJlZih7dXNlcjoge25hbWU6ICdNaWNoYWVsJ319KVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPHAgdi1pZj1cImRhdGE/LnVzZXI/Lm5hbWVcIj5OYW1lOiB7eyBkYXRhPy51c2VyPy5uYW1lIH19PC9wPlxuICA8cD5BZ2U6IHt7IGRhdGE/LnVzZXI/LmFnZSA/PyAwIH19IHllYXJzIG9sZDwvcD5cbjwvdGVtcGxhdGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCJcbiAgfVxufSJ9"/>
+<br />
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
