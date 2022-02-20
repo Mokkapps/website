@@ -15,7 +15,7 @@
     "about": "About Me",
     "contact": "Contact",
     "publications": "Publications",
-    "tips": "Tips",
+    "tips": "Vue Tips",
     "newsletter": "Newsletter",
     "stats": "Stats"
   },
@@ -143,9 +143,9 @@
     }
   },
   "tipsPage": {
-    "title": "Tips",
-    "introLine1": "This page includes some tips that are too short for a dedicated blog post.",
-    "introLine2": "{newsletter} to get informed about new tips.",
+    "title": "Vue Tips",
+    "introLine1": "This page includes some <mark>Vue.js</mark> tips that are too short for a dedicated blog post.",
+    "introLine2": "{newsletter} to get informed about new Vue tips.",
     "searchAlternative": "You can also search tips using {google} or in the {minimalList}."
   },
   "publicationsPage": {
