@@ -46,9 +46,9 @@ const TipsPage = props => {
     <Layout
       seo={{
         url: `${siteUrl}/tips`,
-        title: `Tips${siteTitlePostfix}`,
+        title: `Vue Tips${siteTitlePostfix}`,
         description:
-          'A collection of short tips about topics like frontend, Vue.js, JavaScript, TypeScript, HTML, CSS and more.',
+          'A collection of short Vue.js tips to become a Vue expert.',
         image: seoImageUrl,
       }}
     >
