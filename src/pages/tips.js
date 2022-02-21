@@ -7,7 +7,6 @@ import config from 'content/meta/config';
 import {
   baseFormattedMessageValues,
   generateSeoImageUrl,
-  yearsOfExperience,
 } from 'utils';
 
 import Layout from 'components/Layout';
