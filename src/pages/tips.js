@@ -4,7 +4,11 @@ import { FormattedMessage } from 'react-intl';
 import { graphql, Link } from 'gatsby';
 
 import config from 'content/meta/config';
-import { generateSeoImageUrl } from 'utils';
+import {
+  baseFormattedMessageValues,
+  generateSeoImageUrl,
+  yearsOfExperience,
+} from 'utils';
 
 import Layout from 'components/Layout';
 import Heading from 'components/Heading';
@@ -58,7 +62,12 @@ const TipsPage = props => {
             <Heading i18nId="tipsPage.title" />
             <LanguageWarning className="w-full mb-4" type="Tips" />
             <p className="text-center text-lg">
-              <FormattedMessage id="tipsPage.introLine1" />
+              <FormattedMessage
+                id="tipsPage.introLine1"
+                values={{
+                  ...baseFormattedMessageValues,
+                }}
+              />
             </p>
             <p className="text-center text-lg text-secondary-text mt-4">
               <FormattedMessage
