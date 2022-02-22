@@ -13,7 +13,6 @@ const NewsletterSubscription = ({
   heading = true,
   notConvinced = true,
   shortInfo = false,
-  grid = false,
 }) => {
   const intl = useIntl();
   const [inputFocussed, setInputFocussed] = useState(false);
@@ -55,44 +54,37 @@ const NewsletterSubscription = ({
   };
 
   return (
-    <div className={`${className} w-full flex flex-col`} data-cy={dataCy}>
+    <div className={`${className} w-full flex flex-col border-2 rounded-md p-4 shadow-md`} data-cy={dataCy}>
       {heading ? (
         <span className="text-main-text text-xl mb-0">
           <FormattedMessage id="sidebar.newsletter.title" />
         </span>
       ) : null}
       {shortInfo ? (
-        <span className="text-sm mt-2">
+        <span className="text-sm mt-2 mb-4">
           <FormattedMessage id="newsletterPage.shortInfo" />
         </span>
       ) : null}
-      <span className="text-sm bold mt-2">
+      <span className="text-sm bold">
         <FormattedMessage id="newsletterPage.noSpam" />
       </span>
-      <form className="mt-2" onSubmit={event => onSubmit(event)}>
-        <div
-          className={`${
-            grid ? 'grid grid-cols-12 gap-4 items-center' : 'flex flex-col'
-          }`}
-        >
-          <div className={`${grid ? 'col-span-10' : 'mt-2'}`}>
-            <div className="flex flex-col">
-              <input
-                type="email"
-                required
-                value={email}
-                placeholder="you@email.com"
-                onChange={event => setEmail(event.target.value)}
-                onFocus={() => setInputFocussed(true)}
-                data-cy="newsletter-email-input"
-              />
-            </div>
-          </div>
+      <form onSubmit={event => onSubmit(event)}>
+        <div className="flex flex-wrap items-center">
+          <input
+            type="email"
+            required
+            value={email}
+            placeholder="you@email.com"
+            className="h-12 mt-4 mr-4 w-72"
+            onChange={event => setEmail(event.target.value)}
+            onFocus={() => setInputFocussed(true)}
+            data-cy="newsletter-email-input"
+          />
           <Button
             disabled={loading}
             loading={loading}
+            className="mt-4"
             type="submit"
-            className={`${grid ? 'col-span-2' : 'mt-4'}`}
             dataCy="newsletter-submit-button"
           >
             {intl.formatMessage({ id: 'newsletterPage.subscribe' })}
@@ -144,7 +136,7 @@ const NewsletterSubscription = ({
           </div>
         ) : null}
         {notConvinced ? (
-          <span className="text-xs mt-2">
+          <span className="text-xs mt-4">
             <Link to="/newsletter">
               <FormattedMessage id="newsletterPage.notConvinced" />
             </Link>

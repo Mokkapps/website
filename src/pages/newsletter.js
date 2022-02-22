@@ -27,8 +27,7 @@ const NewsletterPage = ({ data: { allRevueIssue } }) => {
       seo={{
         url: `${siteUrl}/newsletter`,
         title: `Newsletter${siteTitlePostfix}`,
-        description:
-          'Subscribe for the newsletter to stay up-do-date on Mokkapps topics',
+        description: 'Get weekly Vue.js news and become a Vue expert.',
         image: seoImageUrl,
       }}
     >
@@ -47,31 +46,30 @@ const NewsletterPage = ({ data: { allRevueIssue } }) => {
           />
         </p>
         <NewsletterSubscription
-          grid
           heading={false}
           notConvinced={false}
           className="my-10"
           dataCy="newsletter-subscription-form"
         />
         <p className="text-xl">
-            <FormattedMessage id="newsletterPage.alternativeLine1" />
-          </p>
+          <FormattedMessage id="newsletterPage.alternativeLine1" />
+        </p>
         <p className="text-secondary-text text-xl mt-4">
-            <FormattedMessage
-              id="newsletterPage.alternativeLine2"
-              values={{
-                twitterLink: (
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.twitter.com/mokkapps"
-                  >
-                    Twitter
-                  </a>
-                ),
-              }}
-            />
-          </p>
+          <FormattedMessage
+            id="newsletterPage.alternativeLine2"
+            values={{
+              twitterLink: (
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.twitter.com/mokkapps"
+                >
+                  Twitter
+                </a>
+              ),
+            }}
+          />
+        </p>
         <h2 className="mt-16">
           <FormattedMessage id="newsletterPage.archiv" />
         </h2>
@@ -115,7 +113,7 @@ export default NewsletterPage;
 
 export const pageQuery = graphql`
   query RevueIssues {
-    allRevueIssue (sort: {fields: sent_at, order: DESC}) {
+    allRevueIssue(sort: { fields: sent_at, order: DESC }) {
       nodes {
         title
         html

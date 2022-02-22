@@ -56,6 +56,7 @@ module.exports = {
         accent: 'var(--accent)',
         'accent-darken': 'var(--accent-darken)',
         background: 'var(--background)',
+        mark: 'var(--text-mark)',
         'main-text': 'var(--text-main)',
         'secondary-text': 'var(--text-secondary)',
         'basic-button-text': 'var(--basic-button-text)',

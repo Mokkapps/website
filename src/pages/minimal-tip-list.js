@@ -29,7 +29,7 @@ const SimpleBlogPage = props => {
         url: `${siteUrl}/minimal-tip-list`,
         title: `Minimal Tip List${siteTitlePostfix}`,
         description:
-          'A collection of short tips about topics like frontend, Vue.js, JavaScript, TypeScript, HTML, CSS and more.',
+          'A collection of Vue.js tips to become a Vue expert.',
         image: seoImageUrl,
       }}
     >
