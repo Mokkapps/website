@@ -270,9 +270,9 @@ My simple demo is available as interactive StackBlitz demo:
 
 <iframe width="100%" height="500" src="https://stackblitz.com/github/Mokkapps/nuxt-3-tailwind-3-dark-mode-switch-demo?embed=1"></iframe>
 
-## Nuxt 3 Module
+## Alternative
 
-Alternatively, you could also use the [color-mode](https://color-mode.nuxtjs.org/) module that supports Nuxt Bridge and Nuxt 3.
+Alternatively, you could also use the [color-mode](https://color-mode.nuxtjs.org/) module that supports Nuxt Bridge and Nuxt 3 or [useDark from VueUse](https://vueuse.org/core/usedark/).
 
 ## Conclusion
 
