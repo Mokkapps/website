@@ -1,0 +1,80 @@
+---
+title: "Vue Tip: Special CSS Selectors"
+description: "Vue provides some special CSS pseudo-selectors you can use in your Vue SFC."
+date: "2022-02-25"
+technology: "vue"
+---
+
+
+## Deep Selectors
+
+The `:deep()` CSS pseudo-class can be used if you want to styles to apply to some "deeply" nested child components:
+
+```vue
+<style scoped>
+  .a :deep(.b) {
+  /* ... */
+}
+</style>
+```
+
+Vue will compile this code into.
+
+```css
+.a[data-v-f3f3eg9] .b {
+/* ... */
+}
+```
+
+[[info]]
+| DOM content created with v-html are not affected by scoped styles, but you can still style them using deep selectors.
+
+## Slotted Selectors
+
+By default, scoped styles do not affect contents rendered by `<slot/>` but we can use the `:slotted` pseudo-selector to apply styles to slot content:
+
+```vue
+<style scoped>
+:slotted(div) {
+  color: red;
+}
+</style>
+```
+
+## Global Selectors
+
+The `:global` pseudo-class can be used to globally apply a rule, even within the `<style scoped>` block:
+
+```vue
+<style scoped>
+:global(.red) {
+  color: red;
+}
+</style>
+```
+
+To be more specific, I recommend adding a second `<style>` block if you need to apply multiple global styles:
+
+```vue
+<style scoped>
+:global(.red) {
+  color: red;
+}
+</style>
+
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+}
+</style>
+```
+
+[Official documentation](https://vuejs.org/api/sfc-css-features.html)
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
