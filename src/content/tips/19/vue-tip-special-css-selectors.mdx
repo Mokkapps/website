@@ -8,7 +8,7 @@ technology: "vue"
 
 ## Deep Selectors
 
-The `:deep()` CSS pseudo-class can be used if you want to styles to apply to some "deeply" nested child components:
+The `:deep()` CSS pseudo-class can be used if you want styles to apply to some "deeply" nested child components:
 
 ```vue
 <style scoped>
@@ -18,7 +18,7 @@ The `:deep()` CSS pseudo-class can be used if you want to styles to apply to som
 </style>
 ```
 
-Vue will compile this code into.
+Vue will compile this code into:
 
 ```css
 .a[data-v-f3f3eg9] .b {
@@ -27,7 +27,7 @@ Vue will compile this code into.
 ```
 
 [[info]]
-| DOM content created with v-html are not affected by scoped styles, but you can still style them using deep selectors.
+| DOM content created with v-html is not affected by scoped styles, but you can still style them using deep selectors.
 
 ## Slotted Selectors
 
