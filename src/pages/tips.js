@@ -23,7 +23,7 @@ const TipsPage = props => {
   const allTips = edges.map(edge => edge.node);
   const { siteUrl, siteTitlePostfix } = config;
 
-  const seoImageUrl = generateSeoImageUrl('Tips');
+  const seoImageUrl = generateSeoImageUrl('Vue Tips');
 
   const searchComponent = (
     <p>
