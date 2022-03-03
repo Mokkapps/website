@@ -1,0 +1,65 @@
+---
+title: 'Vue Tip: Use Vuex in Vue Router Navigation Guards'
+description: "It's possible to use Vuex state to determine if a user is allowed to visit certain Vue Router routes."
+date: '2022-03-04'
+technology: 'vue'
+---
+
+[Vue Router](https://router.vuejs.org/) allows us to define [Navigation Guards](https://router.vuejs.org/guide/advanced/navigation-guards.html).
+
+For example, we can register them globally:
+
+```js
+const router = createRouter({ ... })
+
+/**
+* to: the target route location in a normalized format being navigated to.
+* from: the current route location in a normalized format being navigated away from.
+*/
+router.beforeEach((to, from) => {
+  // ...
+  // explicitly return false to cancel the navigation
+  return false
+})
+```
+
+A common scenario is to redirect an unauthenticated user to the login page if he tries to visit a protected route:
+
+```js
+router.beforeEach(async (to, from) => {
+  if (
+    // make sure the user is authenticated
+    !isAuthenticated &&
+    // ❗️ Avoid an infinite redirect
+    to.name !== 'Login'
+  ) {
+    // redirect the user to the login page
+    return { name: 'Login' };
+  }
+});
+```
+
+If you are using [Vuex](https://vuex.vuejs.org/) you probably store the authenticated state in the Vuex store.
+
+You can easily access that store in your guard navigation:
+
+```js
+import store from '@/store';
+
+router.beforeEach(async (to, from) => {
+  const authenticated = store.getters['auth/authenticated'];
+
+  // redirect the user to login page if he is not authenticated
+  if (!authenticated && to.name !== 'Login') {
+    return { name: 'Login' };
+  }
+});
+```
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
