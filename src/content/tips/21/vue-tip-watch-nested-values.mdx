@@ -1,0 +1,49 @@
+---
+title: 'Vue Tip: Watch Nested Values'
+description: 'The watch options supports a dot-delimited path as key to watch nested values'
+date: '2022-03-11'
+technology: 'vue'
+---
+
+The [watch](https://vuejs.org/guide/essentials/watchers.html) option supports a dot-delimited path as key to watch nested values:
+
+```vue
+<script setup lang="ts">
+import { watch } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+watch(
+  () => route.query.id,
+  queryId => {
+    console.log('Route Query ID', queryId);
+  }
+);
+</script>
+```
+
+The above example assumes that you are using the [Composition API](https://vuejs.org/guide/introduction.html#composition-api) with [TypeScript](https://www.typescriptlang.org/).
+
+If you are using [Options API](https://vuejs.org/guide/introduction.html#options-api) the code looks like this:
+
+```vue
+<script>
+export default {
+  watch: {
+    // Note: only simple paths. Expressions are not supported.
+    '$route.query.id'(queryId) {
+      console.log('Route Query ID', queryId);
+    },
+  },
+};
+</script>
+```
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
