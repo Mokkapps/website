@@ -1,0 +1,68 @@
+---
+title: 'Vue Tip: Use v-bind to Pass Multiple Props to Components'
+description: 'Instead of passing each property individually to a component, you can bind an object to it.'
+date: '2022-03-18'
+technology: 'vue'
+---
+
+It's totally valid to bind multiple props to a Vue component:
+
+```vue
+<template>
+  <Button
+    :type="type"
+    :color="color"
+    :disabled="disabled"
+    :test-id="testId"
+    :icon="icon"
+    @click="onClick"
+    @custom="onCustom"
+  >
+    Login
+  </Button>
+</template>
+```
+
+For a cleaner template you can also `v-bind` to bind an object including all your property information to your component:
+
+```vue
+<template>
+  <Button v-bind="button">Login</Button>
+</template>
+
+<script setup lang="ts">
+const button = {
+  type: 'submit',
+  color: 'blue',
+  disabled: false,
+  testId: 'login-button',
+  icon: 'arrow-right',
+};
+</script>
+```
+
+If you need to handle a lot of events you might want to group them using `v-on`:
+
+```vue
+<template>
+  <Button v-on="buttonEventHandlers">Login</Button>
+</template>
+
+<script setup lang="ts">
+const buttonEventHandlers = {
+  onClick: () => console.log('Click'),
+  onCustom: () => console.log('Custom Event'),
+};
+</script>
+```
+
+[[info]]
+| `v-bind` and `v-on` works with Vue 2 and Vue 3.
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
