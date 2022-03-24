@@ -1,0 +1,94 @@
+---
+title: "Vue Tip: Animate Child Component Before Route Leave"
+description: "Vue Router provides a way to use transitions on route components and animate the navigations. But sometimes, you might want to animate a specific (sub-)component before a route is left."
+date: "2022-03-25"
+technology: "vue"
+---
+
+[Vue Router](https://router.vuejs.org) provides a way to use [transitions](https://router.vuejs.org/guide/advanced/transitions.html) on your route components and animate navigations.
+
+But sometimes, you might want to animate a specific (sub-)component before a route is left.
+
+Therefore, you can use the [onBeforeRouteLeave navigation guard](https://router.vuejs.org/guide/advanced/composition-api.html#navigation-guards) combined with a [ref](https://vuejs.org/api/built-in-special-attributes.html#ref) to toggle the visibility of the component:
+
+[[info]]
+| The `v-if` is necessary to trigger the animation. More at the [official docs](https://vuejs.org/guide/built-ins/transition.html#the-transition-component).
+
+```vue
+<template>
+  <section class="body">
+    <Transition name="image">
+      <img v-if="showUI" src="../assets/image.svg" alt="Image" />
+    </Transition>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { onBeforeRouteLeave } from 'vue-router';
+
+const showUI = ref(true);
+
+onBeforeRouteLeave((to, from, next) => {
+  if (to.name === 'Home') {
+    showUI.value = false;
+    setTimeout(() => {
+      next();
+    }, 1000);
+  } else {
+    next();
+  }
+});
+</script>
+
+<style lang="scss">
+.image-leave-active {
+  transition: transform 1s ease;
+}
+
+.image-leave-to {
+  transform: translateY(30vw) translateX(40vw) rotate(30deg);
+}
+</style>
+```
+
+Let's take a closer look at the code inside `onBeforeRouteLeave`:
+
+```js
+onBeforeRouteLeave((to, from, next) => {
+  if (to.name === 'Home') {
+    showUI.value = false;
+    setTimeout(() => {
+      next();
+    }, 1000);
+  } else {
+    next();
+  }
+});
+```
+
+If the following route is anything other than `Home`, we allow the navigation and call `next`.
+
+If the following route is `Home`, we toggle the component's visibility by setting `showUI` to `false`. Next, we call `setTimeout` with 1 second to wait until the animation is done and then proceed with the route change by calling `next`.
+
+The animation time is defined in our `<style>` block:
+
+```vue
+<style lang="scss">
+.image-leave-active {
+  // highlight-next-line
+  transition: transform 1s ease;
+}
+
+.image-leave-to {
+  transform: translateY(30vw) translateX(40vw) rotate(30deg);
+}
+</style>
+```
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
