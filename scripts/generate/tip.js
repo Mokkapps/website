@@ -77,7 +77,7 @@ ${yaml}---
 ---
 <br/>
 
-If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts and more content from me.
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts, and more content from me.
 
 Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
 `;
