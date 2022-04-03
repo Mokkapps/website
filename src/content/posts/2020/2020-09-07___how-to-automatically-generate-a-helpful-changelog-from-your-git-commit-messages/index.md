@@ -49,7 +49,7 @@ So I recommend writing commit messages using the [Conventional Commits specifica
 An example of such a message: 
 
 ```
-fix: ABC-123: Caught Promise exception
+fix(ABC-123): Caught Promise exception
 
 We did not catch the promise exception thrown by the API call
 and therefore we could not show the error message to the user
