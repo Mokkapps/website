@@ -1,0 +1,29 @@
+---
+title: "Vue Tip: Check Version at Runtime"
+description: "You can easily check the Vue version at runtime."
+date: "2022-04-10"
+technology: "vue"
+---
+
+It's possible to check Vue's version at runtime by importing `version` from the Vue npm package and splitting the string at the `.` character:
+
+```vue
+<template>
+  <h1>Vue Version: {{ vueVersion }}</h1>
+</template>
+
+<script setup>
+import { version } from 'vue';
+
+const vueVersion = version.split('.')[0];
+</script>
+```
+
+[Demo](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHRlbXBsYXRlPlxuICA8aDE+VnVlIFZlcnNpb246IHt7IHZ1ZVZlcnNpb24gfX08L2gxPlxuPC90ZW1wbGF0ZT5cblxuPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHZlcnNpb24gfSBmcm9tICd2dWUnO1xuICBcbmNvbnN0IHZ1ZVZlcnNpb24gPSB2ZXJzaW9uLnNwbGl0KCcuJylbMF07XG48L3NjcmlwdD4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts, and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
