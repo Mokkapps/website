@@ -25,36 +25,41 @@ const LinkCard = ({
   const innerContent = (
     <>
       {coverUrl ? (
-        <LazyLoadImage src={coverUrl} alt={`${title} Image`} width={'100%'} />
+        <LazyLoadImage
+          src={coverUrl}
+          alt={`${title} Image`}
+          width={'100%'}
+          className="rounded-md"
+        />
       ) : null}
       {cover ? (
         <GatsbyImage
           image={cover.childImageSharp.gatsbyImageData}
           alt={`${title} Image`}
-          className="rounded-t-md"
+          className="rounded-md"
         />
       ) : null}
-      <div className="flex flex-col flex-grow justify-between p-4 w-full">
-        <span className="text-xl text-main-text font-bold">{title}</span>
-        <div className="flex justify-between items-center mt-4">
+      <div className="flex flex-col flex-grow pt-4 w-full">
+        <div className="flex justify-between items-center">
           {date ? (
-            <p className="flex flex-col flex-wrap text-secondary-text text-s bold">
+            <p className="flex flex-col flex-wrap text-secondary-text text-xs">
               {getFormattedDate(date)}
             </p>
           ) : null}
 
           {hasRead && slug ? (
-            <div className="flex items-center text-success">
+            <div className="flex items-center text-success text-xs">
               <FaCheck className="mr-1" />
               <FormattedMessage id="general.read" />
             </div>
           ) : null}
         </div>
+        <span className="text-lg mt-2">{title}</span>
       </div>
     </>
   );
 
-  const linkClassName = `flex flex-col justify-start items-center cursor-pointer no-underline rounded-md bg-none bg-secondary shadow-md ${className}`;
+  const linkClassName = `flex flex-col justify-start items-center cursor-pointer no-underline rounded-md bg-transparent ${className}`;
 
   return externalLink ? (
     <a

@@ -11,7 +11,7 @@ const BlogPostList = ({ className, items, onlyTwoCols = false }) => {
       className={`${className} w-100 ${
         onlyTwoCols
           ? 'grid grid-cols-1 md:grid-cols-2 gap-6'
-          : 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'
+          : 'grid grid-cols-1 md:grid-cols-3 gap-12'
       } `}
       data-cy="blog-post-list"
     >
