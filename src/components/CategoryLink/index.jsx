@@ -18,8 +18,8 @@ const CategoryLink = ({ category, dataCy, className, compact = true }) => {
       role="button"
       tabIndex="0"
       className={`${className} ${
-        compact ? 'py-0.5 px-1 m-1' : 'px-2 py-1 my-2 mx-2'
-      } select-none hover:cursor-pointer hover:bg-accent border border-accent rounded-md text-center`}
+        compact ? 'py-1 px-2' : 'px-2 py-1'
+      } select-none hover:cursor-pointer bg-secondary rounded-full text-center border-transparent border hover:border-main-text`}
       key={category}
       data-cy={dataCy}
       onClick={() => navigate(linkTo)}

@@ -42,7 +42,7 @@ const BusinessProjectList = ({ intl, dataCy }) => {
           return (
             <details
               key={titleId}
-              className="border border-text-main w-full flex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
+              className="w-full flex flex-col bg-secondary p-4 rounded-md shadow-md mt-4"
               data-cy={`${dataCy}-${titleId}`}
               open={index === 0}
             >

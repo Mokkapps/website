@@ -16,7 +16,7 @@ const SocialLink = props => {
   return (
     <a
       {...props}
-      className={`bg-button-background flex content-center rounded-full items-center mx-1 ${
+      className={`flex content-center rounded-full items-center mx-1 ${
         largeIcons ? 'p-2' : 'p-1.5'
       } transform transition-all hover:scale-110`}
       href={url}
@@ -28,7 +28,7 @@ const SocialLink = props => {
         sendCustomAnalyticsEvent(`Clicked "${ariaLabel}" social link`)
       }
     >
-      <Icon className={`text-basic-button-text ${largeIcons ? 'w-7 h-7' : 'w-4 h-4'}`} />
+      <Icon className={`text-main-text ${largeIcons ? 'w-5 h-5' : 'w-4 h-4'}`} />
     </a>
   );
 };

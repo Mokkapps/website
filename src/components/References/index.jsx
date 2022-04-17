@@ -10,6 +10,9 @@ const itFreelancer2021Url =
 
 const References = ({ dataCy, className }) => (
   <section className={`flex flex-col ${className}`} data-cy={dataCy}>
+    <h2 className="mb-8 text-center">
+      <FormattedMessage id="aboutPage.references" />
+    </h2>
     <TestimonialSlider className="mx-auto mb-10" />
     <details>
       <summary className="text-center font-bold text-xl">

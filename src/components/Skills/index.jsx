@@ -7,13 +7,13 @@ const skillsList = [
   { type: 'javaScript', level: 'expert' },
   { type: 'typeScript', level: 'expert' },
   { type: 'git', level: 'expert' },
+  { type: 'vue', level: 'advanced' },
   { type: 'html', level: 'advanced' },
   { type: 'css', level: 'advanced' },
   { type: 'angular', level: 'advanced' },
   { type: 'react', level: 'advanced' },
   { type: 'android', level: 'advanced' },
   { type: 'apple', level: 'advanced' },
-  { type: 'vue', level: 'intermediate' },
   { type: 'java', level: 'intermediate' },
   { type: 'node', level: 'intermediate' },
   { type: 'graphQL', level: 'intermediate' },
@@ -40,13 +40,13 @@ const getSkillSection = (skillLevel, skills) =>
   skills.length > 0
     ? [
         <p
-          className="border border-text-main bold text-lg bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
+          className="bold text-lg bg-secondary flex justify-center items-center text-center h-full rounded-md shadow-md min-h-50px"
           key={skillLevel}
         >
           <FormattedMessage id={`aboutPage.${skillLevel}`} />
         </p>,
         <div
-          className="border border-text-main flex flex-wrap justify-center items-center bg-secondary rounded-md shadow-md p-3"
+          className="flex flex-wrap justify-center items-center bg-secondary rounded-md shadow-md p-3"
           key={Math.random()}
         >
           {getDevIcons(skills)}

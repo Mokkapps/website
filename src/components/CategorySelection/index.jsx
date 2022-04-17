@@ -40,7 +40,7 @@ const CategorySelection = ({ categories, compact, className, dataCy }) => {
   return (
     <div
       data-cy={dataCy}
-      className={`${className} flex flex-wrap justify-center lg:justify-start`}
+      className={`${className} flex flex-wrap justify-center lg:justify-start gap-2`}
     >
       {categoriesLinks}
     </div>

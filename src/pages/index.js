@@ -110,7 +110,7 @@ const IndexPage = props => {
       <h2 className="text-center mt-10 mb-4">
         <FormattedMessage id="landingPage.latestTips" />
       </h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         {tips.map(tip => {
           const {
             frontmatter: { title, date },
@@ -147,7 +147,7 @@ const IndexPage = props => {
       <h2 className="text-center mt-10 mb-4">
         <FormattedMessage id="landingPage.latestBlogPosts" />
       </h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         {posts.map(post => {
           const {
             frontmatter: { title, cover },
@@ -182,7 +182,7 @@ const IndexPage = props => {
         <FormattedMessage id="landingPage.featuredPrivateProjects" />
       </h2>
       <div
-        className="grid grid-cols-1 gap-4 md:grid-cols-2"
+        className="grid grid-cols-1 gap-12 md:grid-cols-2"
         data-cy="hero-private-projects-section"
       >
         {config.projects

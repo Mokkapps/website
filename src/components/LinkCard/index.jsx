@@ -48,7 +48,7 @@ const LinkCard = ({
           ) : null}
 
           {hasRead && slug ? (
-            <div className="flex items-center text-success text-xs">
+            <div className="flex items-center text-success text-xs opacity-60">
               <FaCheck className="mr-1" />
               <FormattedMessage id="general.read" />
             </div>

@@ -74,7 +74,7 @@ const NewsletterPage = ({ data: { allRevueIssue } }) => {
           <FormattedMessage id="newsletterPage.archiv" />
         </h2>
         <div
-          className={`w-100 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-8`}
+          className={`w-100 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 mt-8`}
           data-cy="newsletter-issues-list"
         >
           {issues

@@ -253,9 +253,11 @@
     "available": "Ab sofort für Vollzeitprojekte verfügbar"
   },
   "testimonials": {
-    "testimonialName1": "D.T., Product Owner, ProSiebenSat1 Tech Solutions GmbH",
+    "testimonialName1": "D.T., Product Owner",
+    "testimonialCompany1": "ProSiebenSat1 Tech Solutions GmbH",
     "testimonialText1": "Michael hat einen wichtigen Teil dazu beigetragen, dass das Produkt so weit vorangekommen ist und hat als Teammitglied die gemeinsame Arbeit im Team bereichert. Er hat einen großen Teil der Basis geschaffen, dass unsere Nutzer jetzt mit Freude mit der App arbeiten.",
-    "testimonialName2": "T.M., Head of Department Audi mobility, jambit GmbH",
+    "testimonialName2": "T.M., Head of Department Audi mobility",
+    "testimonialCompany2": "jambit GmbH",
     "testimonialText2": "Michael war als Festangestellter in unserer Firma tätig und hat immer absolut exzellente Arbeit geleistet. Kann ihn nur empfehlen!"
   },
   "sidebar": {

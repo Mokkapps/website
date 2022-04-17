@@ -4,15 +4,13 @@ import { FormattedMessage } from 'react-intl';
 import { graphql, Link } from 'gatsby';
 
 import config from 'content/meta/config';
-import {
-  baseFormattedMessageValues,
-  generateSeoImageUrl,
-} from 'utils';
+import { baseFormattedMessageValues, generateSeoImageUrl } from 'utils';
 
 import Layout from 'components/Layout';
 import Heading from 'components/Heading';
 import TipsList from 'components/TipsList';
 import LanguageWarning from 'components/LanguageWarning';
+import Article from 'components/Article';
 
 const TipsPage = props => {
   const {
@@ -55,7 +53,7 @@ const TipsPage = props => {
         image: seoImageUrl,
       }}
     >
-      <article className="px-8 md:px-24 py-8">
+      <Article>
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col justify-center items-center md:px-24">
             <Heading i18nId="tipsPage.title" />
@@ -84,7 +82,7 @@ const TipsPage = props => {
             <TipsList items={allTips} author={config.authorName} />
           </div>
         </div>
-      </article>
+      </Article>
     </Layout>
   );
 };

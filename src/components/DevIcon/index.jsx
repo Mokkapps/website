@@ -62,7 +62,7 @@ const DevIcon = ({
       className={`${className} ${size || 'text-base'} ${
         hideBackground
           ? ''
-          : 'shadow-md rounded-full px-2 py-1 bg-secondary-darken'
+          : 'shadow-md rounded-full px-2 py-1'
       } ${icon.class} ${colored && 'colored'}`}
     />
   );

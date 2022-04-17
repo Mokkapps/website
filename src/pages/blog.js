@@ -11,6 +11,7 @@ import BlogPostList from 'components/BlogPostList';
 import Heading from 'components/Heading';
 import CategorySelection from 'components/CategorySelection';
 import LanguageWarning from 'components/LanguageWarning';
+import Article from 'components/Article';
 
 const BlogPage = props => {
   const {
@@ -88,9 +89,9 @@ const BlogPage = props => {
           'Blog posts from Michael Hoffmann about Frontend, Backend, Fullstack, Vue.js, JavaScript, TypeScript and more.',
       }}
     >
-      <article className="px-8 md:px-24 py-8">
+      <Article>
         <div className="flex flex-col items-center justify-center">
-          <div className="flex flex-col justify-center items-center md:px-24">
+          <div className="flex flex-col justify-center items-center">
             <Heading i18nId="blogPage.title" />
             <LanguageWarning className="w-full mb-4" type="Blog Artikel" />
             <p className="text-lg">
@@ -149,7 +150,7 @@ const BlogPage = props => {
             metaIcons={metaIcons}
           />
         </div>
-      </article>
+      </Article>
     </Layout>
   );
 };

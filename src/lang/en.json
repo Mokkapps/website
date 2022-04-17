@@ -209,7 +209,7 @@
     "meetingHeadline": "Looking to work together?",
     "meetingDescription": "Book your free call where we talk about your project. Please first check my availability and share as much info, as possible so we can get the most out of our first catch-up.",
     "contactHeadline": "Have another question?",
-    "contactDescription": "Complete the form below and I’ll get back to you within 2 business days"
+    "contactDescription": "Complete the form below and I’ll get back to you within 2 business days."
   },
   "newsletterPage": {
     "joinTheNewsletter": "Newsletter Signup",
@@ -252,9 +252,11 @@
     "available": "Available for hire"
   },
   "testimonials": {
-    "testimonialName1": "D.T., Product Owner, ProSiebenSat1 Tech Solutions GmbH",
+    "testimonialName1": "D.T., Product Owner",
+    "testimonialCompany1": "ProSiebenSat1 Tech Solutions GmbH",
     "testimonialText1": "Michael made an important contribution to the progress of the product and, as a team member, enriched the teamwork. He created a large part of the basis that our users can now enjoy working with the app.",
-    "testimonialName2": "T.M., Head of Department Audi mobility, jambit GmbH",
+    "testimonialName2": "T.M., Head of Department Audi mobility",
+    "testimonialCompany2": "jambit GmbH",
     "testimonialText2": "Michael worked as a permanent employee in our company and has always done an absolutely excellent job. I can only recommend him!"
   },
   "sidebar": {

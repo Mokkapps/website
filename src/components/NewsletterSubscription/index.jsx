@@ -54,7 +54,7 @@ const NewsletterSubscription = ({
   };
 
   return (
-    <div className={`${className} w-full flex flex-col border-2 rounded-md p-4 shadow-md`} data-cy={dataCy}>
+    <div className={`${className} w-full flex flex-col rounded-md p-4 shadow-md bg-secondary`} data-cy={dataCy}>
       {heading ? (
         <span className="text-main-text text-xl mb-0">
           <FormattedMessage id="sidebar.newsletter.title" />

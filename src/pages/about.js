@@ -32,9 +32,6 @@ const AboutPage = () => {
         <section className="mt-8">
           <AboutMe />
           <div className="mt-8">
-            <h2 className="mb-8 text-center">
-              <FormattedMessage id="aboutPage.references" />
-            </h2>
             <References />
           </div>
           <div className="mt-8 mb-12 md:w-4/5 mx-auto" data-cy="about-skills">

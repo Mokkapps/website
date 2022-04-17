@@ -93,7 +93,7 @@ const PostMeta = ({
         <div className="flex sm:hidden">{mobileMeta}</div>
       </div>
       {categories?.length > 0 ? (
-        <div className="flex flex-wrap mt-4">
+        <div className="flex flex-wrap gap-2 mt-4">
           {categories.map(category => (
             <CategoryLink
               key={category}

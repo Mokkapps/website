@@ -30,7 +30,7 @@ const ProjectsPage = props => {
       <section className="my-4 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 md:grid-flow-col gap-4">
         {customers.map(customer => (
           <div
-            className="flex justify-center items-center bg-secondary align-middle text-center shadow-md rounded-lg py-2 px-4 border border-text-main"
+            className="flex justify-center items-center bg-secondary align-middle text-center shadow-md rounded-md py-2 px-4"
             key={customer}
           >
             <span className="font-bold">{customer}</span>

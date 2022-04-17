@@ -41,7 +41,7 @@ const Layout = ({
         <BurgerMenu className="lg:hidden" open={open} setOpen={setOpen} />
         <Menu className="hidden lg:flex" />
         {showSocialLinks ? (
-          <section className="hidden xl:flex fixed left-7 top-80 z-200">
+          <section className="hidden xl:flex fixed left-5 bottom-5 z-200">
             <SocialLinks
               onlyFavorites
               asColumn

@@ -12,7 +12,7 @@
 .theme-light {
   --primary: #f8f8f8;
   --secondary: #ecf0f1;
-  --secondary-darken: #cfd9db;
+  --tertiary: #ecf0f1;
   --text-main: #0d0106;
   --text-secondary: #454e56;
   --text-mark: #c6c6c6;
@@ -20,14 +20,14 @@
   --accent: #fc1a20;
   --accent-darken: #890105;
   --button-background: #ecf0f1;
-  --code-lang-text-background: rgba(27,31,35,.05);
+  --code-lang-text-background: rgba(27, 31, 35, 0.05);
   --code-lang-text-text: #476582;
 }
 
 .theme-dark {
   --primary: #313131;
-  --secondary: #525252;
-  --secondary-darken: #454545;
+  --secondary: #393939;
+  --tertiary: #8d8d8d;
   --text-main: #eaeaea;
   --text-secondary: #b8b8b9;
   --text-mark: #636363;
@@ -174,13 +174,19 @@
 
   input {
     @apply h-8;
-    @apply rounded-lg;
-    @apply border-none;
-    @apply bg-secondary;
-    @apply px-2;
-    @apply px-2;
-    @apply py-4;
+    @apply border-b-2;
+    @apply bg-transparent;
+    @apply px-1;
+    @apply py-2;
     @apply overflow-auto;
+  }
+
+  select {
+    @apply h-12;
+    @apply border-b-2;
+    @apply text-main-text;
+    @apply bg-transparent;
+    @apply py-2;
   }
 
   textarea {
@@ -188,8 +194,7 @@
     @apply rounded-lg;
     @apply border-none;
     @apply bg-secondary;
-    @apply px-1;
-    @apply py-4;
+    @apply p-2;
     @apply overflow-auto;
   }
 

@@ -26,15 +26,15 @@ const ContactForm = ({ className }) => {
         </div>
         <div className="flex flex-col my-4">
           <label htmlFor="name">Name</label>
-          <input data-cy="contact-name" name="name" type="text" required />
+          <input data-cy="contact-name" name="name" type="text" placeholder="Your name" required />
         </div>
         <div className="flex flex-col my-4">
           <label htmlFor="email">E-Mail</label>
-          <input data-cy="contact-email" name="email" type="email" required />
+          <input data-cy="contact-email" name="email" type="email" placeholder="you@email.com" required />
         </div>
         <div className="flex flex-col my-4">
           <label htmlFor="emailType">E-Mail Type</label>
-          <select className="bg-secondary rounded-md py-1" name="emailType">
+          <select name="emailType" placeholder="Select a type">
             <option value="consulting">
               {intl.formatMessage({ id: 'contactPage.emailTypes.consulting' })}
             </option>

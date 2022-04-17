@@ -11,7 +11,7 @@ import MenuItem from 'components/Menu/MenuItem';
 const DesktopMenu = ({ intl, className }) => {
   return (
     <header
-      className={`bg-gradient-to-b from-background to-secondary-darken fixed top-0 z-200 px-8 shadow-lg flex flex-wrap w-full justify-between items-center bg-background hidden lg:flex ${className}`}
+      className={`top-0 z-200 px-8 flex flex-wrap w-full justify-between items-center hidden lg:flex ${className}`}
       data-cy="header-menu"
     >
       <HeaderLogo />
