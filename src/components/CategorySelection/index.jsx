@@ -11,7 +11,7 @@ const priorityMap = {
   development: 6,
 };
 
-const CategorySelection = ({ categories, compact, className, dataCy }) => {
+const CategorySelection = ({ categories, className, dataCy }) => {
   const categoryPrioritized = categories
     .map(category => ({
       priority: priorityMap[category] ?? 1,
@@ -29,7 +29,6 @@ const CategorySelection = ({ categories, compact, className, dataCy }) => {
 
   const categoriesLinks = categoryPrioritized.map(category => (
     <CategoryLink
-      compact={compact}
       key={category.name}
       className={className}
       category={category.name}
@@ -49,7 +48,6 @@ const CategorySelection = ({ categories, compact, className, dataCy }) => {
 
 CategorySelection.propTypes = {
   categories: PropTypes.array.isRequired,
-  compact: PropTypes.bool,
   className: PropTypes.string,
   dataCy: PropTypes.string,
   props: PropTypes.node,

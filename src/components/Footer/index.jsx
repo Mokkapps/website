@@ -11,8 +11,8 @@ import Divider from 'components/Divider';
 const Footer = () => (
   <footer className="relative flex flex-shrink-0 flex-col items-center justify-center px-4 md:px-48 xl:px-96 py-4">
     <Divider />
-    <div className="w-full flex flex-col md:flex-row justify-between mt-4">
-      <div className="grid grid-cols-3 gap-4 mr-8">
+    <div className="w-full flex flex-col lg:flex-row gap-8 justify-between mt-4">
+      <div className="grid grid-cols-3 gap-4">
         <div className="flex flex-col">
           <strong className="mb-2 text-xl">
             <FormattedMessage id="footer.sectionHeadlines.sitemap" />
@@ -36,6 +36,9 @@ const Footer = () => (
           <strong className="mb-2 text-xl">
             <FormattedMessage id="footer.sectionHeadlines.extra" />
           </strong>
+          <Link className="mt-1" data-cy="footer-publications" to="/publications">
+            <FormattedMessage id="publicationsPage.title" />
+          </Link>
           <Link className="mt-1" data-cy="footer-changelog" to="/changelog">
             <FormattedMessage id="footer.changelog" />
           </Link>
@@ -77,7 +80,7 @@ const Footer = () => (
           </a>
         </div>
       </div>
-      <div className="flex w-80 mt-8 md:mt-0">
+      <div className="flex w-80">
         <NewsletterSubscription
           shortInfo
           dataCy="footer-newsletter-subscription"

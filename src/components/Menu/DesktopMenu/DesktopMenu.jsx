@@ -33,7 +33,7 @@ const DesktopMenu = ({ intl, className }) => {
           );
         })}
       </ul>
-      <div className="flex">
+      <div className="flex items-center">
         <LanguageSwitcher className="mr-4" />
         <ThemeSwitch className="" />
       </div>

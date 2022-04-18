@@ -19,7 +19,6 @@ describe('Desktop Menu Test', () => {
     cy.get('[data-cy="header-menu-item-menu.about"]');
     cy.get('[data-cy="header-menu-item-menu.contact"]');
     cy.get('[data-cy="header-menu-item-menu.tips"]');
-    cy.get('[data-cy="header-menu-item-menu.publications"]');
   });
 
   it('navigates to menu pages if they are clicked', () => {
@@ -45,10 +44,5 @@ describe('Desktop Menu Test', () => {
   it('navigates to tips page if tips menu item is clicked', () => {
     cy.get('[data-cy="header-menu-item-menu.tips"]').click();
     cy.url().should('include', '/tips');
-  });
-
-  it('navigates to publications page if publications menu item is clicked', () => {
-    cy.get('[data-cy="header-menu-item-menu.publications"]').click();
-    cy.url().should('include', '/publications');
   });
 });

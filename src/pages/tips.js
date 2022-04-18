@@ -55,7 +55,7 @@ const TipsPage = props => {
     >
       <Article>
         <div className="flex flex-col items-center justify-center">
-          <div className="flex flex-col justify-center items-center md:px-24">
+          <div className="flex flex-col justify-center items-center">
             <Heading i18nId="tipsPage.title" />
             <LanguageWarning className="w-full mb-4" type="Tips" />
             <p className="text-center text-lg">

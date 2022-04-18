@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { useFetch } from 'hooks/useFetch';
 import StatsCard from 'components/Stats/StatsCard';
-import { getFormattedDate } from "../../../utils";
+import { getFormattedDate } from 'utils';
 
 const SiteStats = () => {
   const {
@@ -35,7 +35,7 @@ const SiteStats = () => {
           loading={liveVisitorsStatus === 'fetching'}
           value={liveVisitorsError ? null : liveVisitorsData.visitors}
           i18nId="statsPage.siteStats.liveVisitors"
-          i18nValues={{date: getFormattedDate(new Date(), true)}}
+          i18nValues={{ date: getFormattedDate(new Date(), true) }}
           showActiveIndicator
         />
         <StatsCard

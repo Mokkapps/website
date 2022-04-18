@@ -4,7 +4,7 @@ import { navigate } from 'gatsby-link';
 
 import { getCategoryDisplayText } from 'utils';
 
-const CategoryLink = ({ category, dataCy, className, compact = true }) => {
+const CategoryLink = ({ category, dataCy, className}) => {
   const linkTo = `/blog/categories/${category.replace(' ', '-')}`;
 
   const onKeyPress = event => {
@@ -17,9 +17,7 @@ const CategoryLink = ({ category, dataCy, className, compact = true }) => {
     <div
       role="button"
       tabIndex="0"
-      className={`${className} ${
-        compact ? 'py-1 px-2' : 'px-2 py-1'
-      } select-none hover:cursor-pointer bg-secondary rounded-full text-center border-transparent border hover:border-main-text`}
+      className={`${className} py-1 px-2 select-none hover:cursor-pointer bg-secondary rounded-full text-center border-transparent border hover:border-main-text`}
       key={category}
       data-cy={dataCy}
       onClick={() => navigate(linkTo)}
@@ -34,7 +32,6 @@ CategoryLink.propTypes = {
   category: PropTypes.string,
   className: PropTypes.string,
   dataCy: PropTypes.string,
-  compact: PropTypes.bool,
 };
 
 export default CategoryLink;

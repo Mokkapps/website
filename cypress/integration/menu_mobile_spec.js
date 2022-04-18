@@ -17,7 +17,6 @@ describe('Mobile Menu Test', () => {
     cy.get('[data-cy="burger-menu-item-menu.about"]');
     cy.get('[data-cy="burger-menu-item-menu.contact"]');
     cy.get('[data-cy="burger-menu-item-menu.tips"]');
-    cy.get('[data-cy="burger-menu-item-menu.publications"]');
   });
 
   it('navigates to blog page if blog burger menu item is clicked', () => {
@@ -48,11 +47,5 @@ describe('Mobile Menu Test', () => {
     cy.get('[data-cy=burger-menu-button]').click();
     cy.get('[data-cy="burger-menu-item-menu.tips"]').click();
     cy.url().should('include', '/tips');
-  });
-
-  it('navigates to publications page if publications burger menu item is clicked', () => {
-    cy.get('[data-cy=burger-menu-button]').click();
-    cy.get('[data-cy="burger-menu-item-menu.publications"]').click();
-    cy.url().should('include', '/publications');
   });
 });

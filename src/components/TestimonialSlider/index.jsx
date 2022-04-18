@@ -20,7 +20,7 @@ const TestimonialSlider = ({ intl, className, dataCy }) => {
 
   return (
     <section className={className} data-cy={dataCy}>
-      <div className="grid grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {testimonials.map(t => (
           <TestimonialCard
             key={t.name}

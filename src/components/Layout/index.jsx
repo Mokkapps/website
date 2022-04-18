@@ -50,7 +50,7 @@ const Layout = ({
             />
           </section>
         ) : null}
-        <div className="md:pt-20 md:p-4 flex-grow">{children}</div>
+        <div className="md:pt-5 md:p-4 flex-grow">{children}</div>
         <Footer />
         <Seo
           url={url}

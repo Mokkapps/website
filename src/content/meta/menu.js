@@ -6,12 +6,7 @@ const menu = [
   { i18nId: 'menu.tips', to: '/tips', ariaLabel: 'Vue Tips' },
   { i18nId: 'menu.newsletter', to: '/newsletter', ariaLabel: 'Newsletter' },
   { i18nId: 'menu.stats', to: '/stats', ariaLabel: 'stats' },
-  { i18nId: 'menu.projects', to: '/projects', ariaLabel: 'Projects' },
-  {
-    i18nId: 'menu.publications',
-    to: '/publications',
-    ariaLabel: 'Publications',
-  },
+  { i18nId: 'menu.projects', to: '/projects', ariaLabel: 'Projects' }
 ];
 
 export default menu;

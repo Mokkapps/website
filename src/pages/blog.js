@@ -12,6 +12,7 @@ import Heading from 'components/Heading';
 import CategorySelection from 'components/CategorySelection';
 import LanguageWarning from 'components/LanguageWarning';
 import Article from 'components/Article';
+import FeaturedBlogPost from '../components/FeaturedBlogPost';
 
 const BlogPage = props => {
   const {
@@ -57,7 +58,7 @@ const BlogPage = props => {
   };
 
   const searchComponent = (
-    <p className="text-center">
+    <p className="text-xs">
       <FormattedMessage
         id="blogPage.searchAlternative"
         values={{
@@ -77,7 +78,27 @@ const BlogPage = props => {
   );
 
   const hasSearchResults = filteredData && query !== emptyQuery;
-  const posts = hasSearchResults ? filteredData : allPosts;
+  let posts = hasSearchResults ? filteredData : allPosts;
+  const latestPost = posts[0];
+  posts = posts.length > 1 ? posts.filter(p => p.fields.slug !== latestPost.fields.slug) : posts;
+
+  const searchInput = (
+    <section className="flex relative">
+      <section className="relative mb-4">
+        <input
+          type="text"
+          aria-label="Search"
+          placeholder="Search by category..."
+          className="w-64 mr-4"
+          onChange={handleInputChange}
+          data-cy="blog-category-filter-input"
+        />
+        <span className="text-secondary-text absolute right-5 top-0.5">
+          {posts.length}
+        </span>
+      </section>
+    </section>
+  );
 
   return (
     <Layout
@@ -110,39 +131,18 @@ const BlogPage = props => {
                 }}
               />
             </p>
-            <p className="text-xl text-secondary-text mt-4">
-              <FormattedMessage
-                id="blogPage.introductionLine2"
-                values={{
-                  newsletter: (
-                    <Link to="/newsletter">
-                      <FormattedMessage id="newsletterPage.joinTheNewsletter2" />
-                    </Link>
-                  ),
-                }}
-              />
-            </p>
-            <section className="flex relative mt-16">
-              <section className="relative mb-4">
-                <input
-                  type="text"
-                  aria-label="Search"
-                  placeholder="Search by category..."
-                  className="w-64 pl-2 mr-4"
-                  onChange={handleInputChange}
-                  data-cy="blog-category-filter-input"
-                />
-                <span className="absolute right-7 top-1">{posts.length}</span>
-              </section>
-            </section>
+            <div className="w-full flex flex-col mt-8">
+              <div>{searchInput}</div>
+              <div>{searchComponent}</div>
+            </div>
             <CategorySelection
               compact
-              className="mt-2"
+              className="mt-4"
               categories={categories}
               dataCy={'blog-categories'}
             />
-            <div className="mt-4">{searchComponent}</div>
           </div>
+          <FeaturedBlogPost className="mt-16" post={latestPost} />
           <BlogPostList
             className="mt-10"
             items={posts}

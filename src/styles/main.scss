@@ -30,7 +30,7 @@
   --tertiary: #8d8d8d;
   --text-main: #eaeaea;
   --text-secondary: #b8b8b9;
-  --text-mark: #636363;
+  --text-mark: #3a3a3a;
   --background: #313131;
   --accent: #fc1a20;
   --accent-darken: #890105;
@@ -182,11 +182,10 @@
   }
 
   select {
-    @apply h-12;
     @apply border-b-2;
     @apply text-main-text;
     @apply bg-transparent;
-    @apply py-2;
+    @apply py-1;
   }
 
   textarea {
@@ -245,14 +244,7 @@
 
   mark {
     color: var(--text-main);
-    background: linear-gradient(
-      120deg,
-      var(--text-mark) 0%,
-      var(--text-mark) 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 40%;
-    background-position: 0 90%;
+    background: transparent;
   }
 
   .text-shadow {
@@ -281,17 +273,6 @@
     @apply m-auto #{!important};
     @apply w-full #{!important};
     @apply lg:w-2/3 #{!important};
-  }
-
-  .stylistic-quote-mark {
-    font-size: 5rem;
-    @apply mr-0 absolute top-0 leading-none;
-  }
-
-  @screen sm {
-    .stylistic-quote-mark {
-      @apply block mr-2;
-    }
   }
 }
 

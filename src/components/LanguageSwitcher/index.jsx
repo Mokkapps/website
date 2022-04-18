@@ -1,49 +1,28 @@
-import React, { useState } from 'react';
-import Switch from 'react-switch';
+import React from 'react';
 
 import { LanguageContext } from 'context/languageContext';
-import { getCssVariableHexColor, sendCustomAnalyticsEvent } from 'utils';
+import PropTypes from 'prop-types';
 
-const LanguageSwitcher = props => {
-  const [checked, setChecked] = useState(false);
-  const color = getCssVariableHexColor('--switch-background');
-
+const LanguageSwitcher = ({ className }) => {
   return (
     <LanguageContext.Consumer>
       {({ toggleLanguage, lang }) => (
-        <Switch
+        <select
           data-cy="language-switch"
-          aria-label="Language Switch"
-          aria-checked={checked}
-          {...props}
-          uncheckedIcon={
-            <div className="flex justify-center items-center h-full">
-              <span role="img" aria-label="usa-flag">
-                🇺🇸
-              </span>
-            </div>
-          }
-          checkedIcon={
-            <div className="flex justify-center items-center h-full">
-              <span role="img" aria-label="germany-flag">
-                🇩🇪
-              </span>
-            </div>
-          }
-          onColor={color}
-          offColor={color}
-          onChange={value => {
-            toggleLanguage();
-            setChecked(value);
-            sendCustomAnalyticsEvent(
-              `Changed language to "${checked ? 'de' : 'en'}"`
-            );
-          }}
-          checked={lang === 'de'}
-        />
+          value={lang}
+          onChange={toggleLanguage}
+          className={`${className} outline-none`}
+        >
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+        </select>
       )}
     </LanguageContext.Consumer>
   );
+};
+
+LanguageSwitcher.propTypes = {
+  className: PropTypes.string,
 };
 
 export default LanguageSwitcher;

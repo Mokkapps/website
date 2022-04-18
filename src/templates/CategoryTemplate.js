@@ -65,11 +65,9 @@ const PageTemplate = props => {
         <CategorySelection
           className="my-4"
           categories={categories}
-          compact
           dataCy="blog-categories"
         />
         <BlogPostList
-          onlyTwoCols
           items={items}
           author={config.authorName}
           metaIcons={metaIcons}

@@ -30,6 +30,11 @@ const UnorderedList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 0;
+
+  li {
+    margin-left: 0 !important;
+  }
 `;
 
 const MobileMenu = ({ open, intl, className }) => {
