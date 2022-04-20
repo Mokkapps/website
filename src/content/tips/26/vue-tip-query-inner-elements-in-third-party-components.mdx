@@ -1,0 +1,32 @@
+---
+title: "Vue Tip: Query Inner Elements in Third-Party Components"
+description: "In some cases, we have to deal with third-party Vue components where we cannot put a ref on inner HTML elements to access them in our Vue code."
+date: "2022-04-21"
+technology: "vue"
+---
+
+In some cases, we have to deal with third-party Vue components where we cannot put a ref on inner HTML elements to access them in our Vue code.
+
+In these cases we can access [$el](https://vuejs.org/api/component-instance.html#el) on a [template ref](https://vuejs.org/guide/essentials/template-refs.html#template-refs=) on the third-party component:
+
+```vue
+<template>
+  <ThirdPartyComponent ref="comp"/>
+</template>
+
+<script setup lang="ts">
+  const compRef: Ref<typeof ThirdPartyComponent | null> = ref(null);
+  const input: HTMLInputElement | null = compRef.value?.$el.querySelector('input');
+</script>
+```
+
+[[info]]
+| In general and for consistency, you should use [template refs](https://vuejs.org/guide/essentials/template-refs.html#template-refs=) for direct access to elements instead of relying on `$el`.
+<br/>
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts, and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
