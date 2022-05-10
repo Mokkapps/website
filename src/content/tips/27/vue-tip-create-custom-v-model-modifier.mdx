@@ -1,0 +1,64 @@
+---
+title: 'Vue Tip: Create Custom v-model Modifier'
+description: 'v-model has some built-in modifiers but in some cases, you might need to add your own custom modifier.'
+date: '2022-05-11'
+technology: 'vue'
+---
+
+`v-model` has some [built-in modifiers](https://vuejs.org/guide/essentials/forms.html#modifiers) like `.lazy`, `.number` and `.trim`. But in some cases, you might need to add your own custom modifier.
+
+In this simple demo, I want to create a custom modifier called `no-underscore` that removes all underscores `_` from an input:
+
+```html
+<Comp v-model.no-underscore="text" />
+```
+
+Inside our component we can access the modifier via the `modelModifiers` prop. We manipulate the value if an `input` event is fired and the modifier is available:
+
+```vue
+<script setup>
+const props = defineProps({
+  modelValue: String,
+  // highlight-next-line
+  modelModifiers: { default: () => ({}) },
+});
+
+const emit = defineEmits(['update:modelValue']);
+
+function emitValue(e) {
+  let value = e.target.value;
+  // highlight-next-line
+  if (props.modelModifiers['no-underscore']) {
+    value = value.replace('_', '');
+  }
+  emit('update:modelValue', value);
+}
+</script>
+
+<template>
+  <input type="text" :value="modelValue" @input="emitValue" />
+</template>
+```
+
+If your `v-model` binding includes both modifiers and argument then the generated prop name will be `arg + "Modifiers"`:
+
+```vue
+<template>
+  <Comp v-model:name.no-underscore="text" />
+</template>
+
+<script setup>
+  const props = defineProps(['name', 'nameModifiers']);
+  defineEmits(['update:name']);
+</script>
+```
+
+Demo for this code is available at [Vue SFC Playground](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmltcG9ydCBDb21wIGZyb20gJy4vQ29tcC52dWUnXG5cbmNvbnN0IHRleHQgPSByZWYoJycpXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8aDE+e3sgdGV4dCB9fTwvaDE+XG4gIDxDb21wIHYtbW9kZWwubm8tdW5kZXJzY29yZT1cInRleHRcIi8+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJDb21wLnZ1ZSI6IjxzY3JpcHQgc2V0dXA+XG5jb25zdCBwcm9wcyA9IGRlZmluZVByb3BzKHtcbiAgbW9kZWxWYWx1ZTogU3RyaW5nLFxuICBtb2RlbE1vZGlmaWVyczogeyBkZWZhdWx0OiAoKSA9PiAoe30pIH1cbn0pXG5cbmNvbnN0IGVtaXQgPSBkZWZpbmVFbWl0cyhbJ3VwZGF0ZTptb2RlbFZhbHVlJ10pXG5cbmZ1bmN0aW9uIGVtaXRWYWx1ZShlKSB7XG4gIGxldCB2YWx1ZSA9IGUudGFyZ2V0LnZhbHVlXG4gIGlmIChwcm9wcy5tb2RlbE1vZGlmaWVyc1snbm8tdW5kZXJzY29yZSddKSB7XG5cdFx0dmFsdWUgPSB2YWx1ZS5yZXBsYWNlKCdfJywgJycpXG4gIH1cbiAgZW1pdCgndXBkYXRlOm1vZGVsVmFsdWUnLCB2YWx1ZSlcbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG5cdDxpbnB1dCB0eXBlPVwidGV4dFwiIDp2YWx1ZT1cIm1vZGVsVmFsdWVcIiBAaW5wdXQ9XCJlbWl0VmFsdWVcIiAvPlxuPC90ZW1wbGF0ZT4ifQ==)
+
+---
+
+<br />
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts, and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
