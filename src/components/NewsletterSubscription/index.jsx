@@ -65,7 +65,7 @@ const NewsletterSubscription = ({
           <FormattedMessage id="newsletterPage.shortInfo" />
         </span>
       ) : null}
-      <span className="text-sm bold">
+      <span className="text-sm bold mt-2">
         <FormattedMessage id="newsletterPage.noSpam" />
       </span>
       <form onSubmit={event => onSubmit(event)}>

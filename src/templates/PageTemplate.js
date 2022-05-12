@@ -15,7 +15,7 @@ const PageTemplate = props => {
     data: {
       page: {
         body,
-        frontmatter: { title },
+        frontmatter: { title, description },
         fields: { slug },
         excerpt,
       },
@@ -31,12 +31,13 @@ const PageTemplate = props => {
       seo={{
         url: `${siteUrl}${slug}`,
         title: `${title}${siteTitlePostfix}`,
-        description: excerpt,
+        description: description ?? excerpt,
         image: seoImageUrl,
       }}
     >
       <Article>
         <Heading title={title} />
+        {description ? <span className="bold text-xl text-secondary-text">{description}</span> : null}
         <BodyText body={body} />
       </Article>
     </Layout>
@@ -62,6 +63,7 @@ export const query = graphql`
       }
       frontmatter {
         title
+        description
         categories
       }
     }
