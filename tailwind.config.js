@@ -9,6 +9,8 @@ module.exports = {
       }),
       zIndex: {
         200: '200',
+        800: '800',
+        900: '900',
       },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],

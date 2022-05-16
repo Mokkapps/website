@@ -13,6 +13,8 @@ import HeaderLogo from 'components/HeaderLogo';
 import SocialLinks from 'components/SocialLink/SocialLinks';
 import Footer from 'components/Footer';
 import Seo from 'components/Seo';
+import EbookDialog from 'components/EbookDialog';
+import setShowEbookDialog from 'hooks/setShowEbookDialog';
 
 const Layout = ({
   children,
@@ -20,6 +22,7 @@ const Layout = ({
   seo: { url, title, image, description, postSEO, canonical },
 }) => {
   const [open, setOpen] = useState(false);
+  const [show, setShow, doNotShowAgain] = setShowEbookDialog();
   const { theme } = useContext(ThemeContext);
   const { lang } = useContext(LanguageContext);
   const devMode = process.env.NODE_ENV !== `production`;
@@ -29,6 +32,7 @@ const Layout = ({
       locale={lang}
       messages={lang === 'en' ? messages.english : messages.german}
     >
+      <EbookDialog show={show} onClose={() => setShow(!show)} doNotShowAgain={() => doNotShowAgain()} />
       <section
         className={`${theme === 'light' ? 'theme-light' : 'theme-dark'} ${
           devMode ? 'debug-screens' : ''
