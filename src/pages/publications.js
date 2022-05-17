@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from "gatsby";
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
@@ -33,7 +33,13 @@ const PublicationsPage = props => {
       <Article>
         <div className="flex flex-col items-center">
           <Heading i18nId="publicationsPage.title" />
-          <h2 className="mb-8">
+          <h2 className="mb-8">eBooks</h2>
+          <ul data-cy="publications-ebooks-section">
+            <li>
+              <Link to="/ebook/27-helpful-tips-for-vue-developers">27 Helpful Tips for Vue Developers</Link>
+            </li>
+          </ul>
+          <h2 className="my-8">
             <FormattedMessage id="publicationsPage.talks" />
           </h2>
           <div

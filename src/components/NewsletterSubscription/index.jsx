@@ -137,7 +137,7 @@ const NewsletterSubscription = ({
         ) : null}
         {notConvinced ? (
           <span className="text-xs mt-4">
-            <Link to="/newsletter">
+            <Link to="/newsletter" target="_blank">
               <FormattedMessage id="newsletterPage.notConvinced" />
             </Link>
           </span>

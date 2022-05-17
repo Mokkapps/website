@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FaWindowClose } from 'react-icons/fa';
 
@@ -10,6 +10,12 @@ Dialog.propTypes = {
 };
 
 function Dialog(props) {
+  useEffect(() => {
+    return () => {
+      props.onClose();
+    };
+  });
+
   return (
     <>
       {props.show ? (
