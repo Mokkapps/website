@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { getSrc } from 'gatsby-plugin-image';
 
 import config from 'content/meta/config';
 import { generateSeoImageUrl } from 'utils';
@@ -15,7 +16,7 @@ const PageTemplate = props => {
     data: {
       page: {
         body,
-        frontmatter: { title, description },
+        frontmatter: { title, description, seoImage },
         fields: { slug },
         excerpt,
       },
@@ -24,7 +25,7 @@ const PageTemplate = props => {
 
   const { siteUrl, siteTitlePostfix } = config;
 
-  const seoImageUrl = generateSeoImageUrl(title);
+  const seoImageUrl = seoImage ? `${config.siteUrl}${getSrc(seoImage)}` : generateSeoImageUrl(title);
 
   return (
     <Layout
@@ -37,7 +38,11 @@ const PageTemplate = props => {
     >
       <Article>
         <Heading title={title} />
-        {description ? <span className="bold text-xl text-secondary-text">{description}</span> : null}
+        {description ? (
+          <span className="bold text-xl text-secondary-text">
+            {description}
+          </span>
+        ) : null}
         <BodyText body={body} />
       </Article>
     </Layout>
@@ -65,6 +70,16 @@ export const query = graphql`
         title
         description
         categories
+        seoImage {
+          childImageSharp {
+            gatsbyImageData(
+              height: 700
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
+          }
+        }
       }
     }
   }
