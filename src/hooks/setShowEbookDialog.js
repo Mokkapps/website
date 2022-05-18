@@ -12,6 +12,11 @@ export default function setShowEbookDialog() {
   };
 
   useEffect(() => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    if (process.env.GATSBY_SHOW_EBOOK_DIALOG !== '1' || url.includes('ebook')) {
+      return;
+    }
+
     setTimeout(() => {
       const localStorageValue = localStorage.getItem(localStorageKey);
       if (localStorageValue === null) {
