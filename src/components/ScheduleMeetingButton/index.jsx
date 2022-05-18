@@ -19,7 +19,11 @@ const ScheduleMeetingButton = props => {
         url={options.url}
         onModalClose={() => setOpen(false)}
         open={open}
-        rootElement={document.getElementById('___gatsby')}
+        rootElement={
+          typeof document !== 'undefined'
+            ? document.getElementById('___gatsby')
+            : null
+        }
       />
       <Button
         dataCy={dataCy}
