@@ -128,7 +128,7 @@ export class NewsController {
 }
 ```
 
-As we did not add path information to our `@Get` decorator of the `findAll` method, Nest will map `GET /cats` requests to this handler.
+As we did not add path information to our `@Get` decorator of the `findAll` method, Nest will map `GET /news` requests to this handler.
 
 #### Services
 
