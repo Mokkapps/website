@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
+import { FaCoffee } from 'react-icons/fa';
 
 import { sendCustomAnalyticsEvent } from 'utils';
 
@@ -15,7 +16,7 @@ const BuyMeACoffeeButton = ({ className, dataCy }) => {
       data-cy={dataCy}
     >
       <span className="mr-2 text-xl" role="img" aria-label="Coffee Icon">
-        ☕️
+        <FaCoffee />
       </span>
       <span className="text-l font-bold flex text-main-text">
         <FormattedMessage id="general.buyMeACoffee" />

@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+import { Link } from 'gatsby';
+import { FaDownload } from 'react-icons/fa';
 
 import Reactions from 'components/Reactions';
 import BuyMeACoffeeButton from 'components/BuyMeACoffeeButton';
@@ -7,6 +10,8 @@ import NewsletterSidebar from 'components/NewsletterSidebar';
 import Share from 'components/Share';
 import ToC from 'components/ToC';
 import Ad from 'components/Ad';
+import { sendCustomAnalyticsEvent } from 'utils';
+import NewsletterSubscription from "../NewsletterSubscription";
 
 const ArticleWithSidebar = ({ children, shareProps, slug, headings }) => (
   <section className="lg:grid lg:grid-col-1 lg:grid-cols-12 p-6 md:p-7 xl:p-4">
@@ -32,8 +37,26 @@ const ArticleWithSidebar = ({ children, shareProps, slug, headings }) => (
         {headings ? (
           <ToC dataCy="table-of-contents" headings={headings} />
         ) : null}
-        <NewsletterSidebar className="mt-4" />
-        <BuyMeACoffeeButton className="mt-4" dataCy="sidebar-buy-me-a-coffee" />
+        <NewsletterSubscription
+          className="mt-4"
+          dataCy="newsletter-subscription-sidebar"
+          minimal
+        />
+        <Link
+          to="/ebook/27-helpful-tips-for-vue-developers"
+          className="flex justify-center items-center rounded-lg no-underline px-4 bg-primary h-12 mt-4"
+          onClick={() =>
+            sendCustomAnalyticsEvent('Free eBook sidebar button clicked')
+          }
+        >
+          <span className="mr-2 text-xl" role="img" aria-label="Download Icon">
+            <FaDownload />
+          </span>
+          <span className="text-l font-bold flex text-main-text">
+            <FormattedMessage id="general.freeVueEbook" />
+          </span>
+        </Link>
+        <BuyMeACoffeeButton className="mt-2" dataCy="sidebar-buy-me-a-coffee" />
       </div>
     </aside>
   </section>

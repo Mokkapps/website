@@ -25,7 +25,9 @@ const PageTemplate = props => {
 
   const { siteUrl, siteTitlePostfix } = config;
 
-  const seoImageUrl = seoImage ? `${config.siteUrl}${getSrc(seoImage)}` : generateSeoImageUrl(title);
+  const seoImageUrl = seoImage
+    ? `${config.siteUrl}${getSrc(seoImage)}`
+    : generateSeoImageUrl(title);
 
   return (
     <Layout
@@ -39,9 +41,9 @@ const PageTemplate = props => {
       <Article>
         <Heading title={title} />
         {description ? (
-          <span className="bold text-xl text-secondary-text">
+          <p className="bold text-xl text-center text-secondary-text mb-12">
             {description}
-          </span>
+          </p>
         ) : null}
         <BodyText body={body} />
       </Article>

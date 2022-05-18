@@ -45,10 +45,9 @@ const Button = ({
         color="var(--accent)"
         height={20}
         width={20}
-        className="mr-2"
       />
     ) : null}
-    <span>{children}</span>
+    <span className="flex items-center gap-1">{children}</span>
   </StyledButton>
 );
 

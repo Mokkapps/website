@@ -7,7 +7,7 @@ const ToC = ({ headings, className, dataCy }) => (
     <span className="text-xl">
       <FormattedMessage id="blogPage.tableOfContents" />
     </span>
-    <div className="max-h-56 pl-2 overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-accent scrollbar-track-accent-darken">
+    <div className="max-h-56 pl-2 overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-accent scrollbar-track-accent-darken mt-2">
       {headings.map(heading => {
         if (heading.depth > 4) {
           return <div />;

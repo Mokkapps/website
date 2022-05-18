@@ -1,6 +1,6 @@
 ---
 title: Uses
-categories: []
+description: List of tools and hardware that I use on a daily basis.
 ---
 
 In the past, I stumbled upon many interesting tools by investigating the development setups of other developers. Therefore, I thought I could also present you my setup.

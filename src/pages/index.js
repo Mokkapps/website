@@ -5,6 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { navigate } from 'gatsby-link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
+import { FaLaptopCode } from 'react-icons/fa';
 
 import config from 'content/meta/config';
 import {
@@ -43,13 +44,8 @@ const IndexPage = props => {
   const posts = latestPosts.edges.map(edge => edge.node);
   const tips = latestTipsData.edges.map(edge => edge.node);
 
-  const {
-    siteTitlePostfix,
-    siteUrl,
-    descriptionEn,
-    baseTitle,
-    baseTechFocus,
-  } = config;
+  const { siteTitlePostfix, siteUrl, descriptionEn, baseTitle, baseTechFocus } =
+    config;
 
   const skills = (
     <div className="flex flex-col">
@@ -265,7 +261,7 @@ const IndexPage = props => {
         }}
       >
         <span className="mr-2" role="img" aria-label="phone">
-          💻
+          <FaLaptopCode />
         </span>
         <FormattedMessage id="landingPage.hireMe" />
       </Button>

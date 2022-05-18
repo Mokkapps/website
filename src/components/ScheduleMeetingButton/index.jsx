@@ -1,30 +1,40 @@
-import React from 'react';
-import { openPopupWidget } from 'react-calendly';
+import React, { useState } from 'react';
+import { PopupModal } from 'react-calendly';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { FaPhoneAlt } from 'react-icons/fa';
 
 import Button from 'components/Button';
 import { sendCustomAnalyticsEvent } from 'utils';
 
 const ScheduleMeetingButton = props => {
+  const [open, setOpen] = useState(false);
   const options = {
     url: 'https://calendly.com/mokkapps',
   };
   const { dataCy, className } = props;
   return (
-    <Button
-      dataCy={dataCy}
-      className={className}
-      onClick={() => {
-        sendCustomAnalyticsEvent('Schedule meeting button clicked');
-        openPopupWidget(options);
-      }}
-    >
-      <span className="mr-2" role="img" aria-label="phone">
-        📞
-      </span>
-      <FormattedMessage id="landingPage.scheduleMeeting" />
-    </Button>
+    <>
+      <PopupModal
+        url={options.url}
+        onModalClose={() => setOpen(false)}
+        open={open}
+        rootElement={document.getElementById('___gatsby')}
+      />
+      <Button
+        dataCy={dataCy}
+        className={className}
+        onClick={() => {
+          sendCustomAnalyticsEvent('Schedule meeting button clicked');
+          setOpen(true);
+        }}
+      >
+        <span className="mr-2" role="img" aria-label="phone">
+          <FaPhoneAlt />
+        </span>
+        <FormattedMessage id="landingPage.scheduleMeeting" />
+      </Button>
+    </>
   );
 };
 
