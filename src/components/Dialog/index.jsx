@@ -23,7 +23,7 @@ function Dialog(props) {
       ) : null}
       <dialog
         open={props.show}
-        className="relative top-20 mx-auto p-8 w-4/5 md:w-3/5 shadow-lg rounded-md bg-white z-900"
+        className="fixed top-0 md:top-20 md:mx-auto p-8 shadow-lg rounded-md bg-white z-900"
       >
         <FaWindowClose
           className="absolute right-3 top-3 cursor-pointer"
