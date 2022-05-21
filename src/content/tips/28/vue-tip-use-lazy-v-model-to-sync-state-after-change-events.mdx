@@ -1,0 +1,40 @@
+---
+title: "Vue Tip: Use Lazy v-model to Sync State After Change Events"
+description: "By default, v-model syncs with the state of the Vue instance on every input event. The .lazy modifier syncs after change events."
+date: "2022-05-22"
+technology: "vue"
+---
+
+By default, `v-model` syncs with the state of the Vue instance on every input event. The `.lazy` modifier changes the `v-model` to only sync after change events.
+
+This modifier reduces the number of times our `v-model` is trying to sync with our Vue instance, which can increase the performance of your Vue application.
+
+Let's take a look at a simple example:
+
+```vue
+<template>
+  // highlight-next-line
+  <input v-model.lazy="message"/>
+</template>
+
+<script setup>
+import { watch, ref } from 'vue'
+
+const message = ref('');
+
+const saveMessage = () => {
+  // do anything with the message
+}
+
+watch(message, (newMessage) => {
+  saveMessage(newMessage) // only called on change events
+})
+</script>
+```
+
+---
+<br/>
+
+If you liked this tip, follow me on [Twitter](https://twitter.com/mokkapps) to get notified about new tips, blog posts, and more content from me.
+
+Alternatively (or additionally), you can also [subscribe to my newsletter](https://mokkapps.de/newsletter).
