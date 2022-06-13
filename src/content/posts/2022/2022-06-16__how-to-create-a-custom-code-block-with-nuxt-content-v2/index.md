@@ -58,6 +58,28 @@ To customize a Prose component we have to perform these steps:
 
 In our example, we want to override [ProseCode](https://github.com/nuxt/content/blob/main/src/runtime/components/Prose/ProseCode.vue) which is Nuxt Content's default Vue component to render code blocks in Markdown files.
 
+This component accepts the following props: 
+
+- `code`: the code string
+- `language`: the provided language name
+- `filename`: the provide filename
+- `highlights`: a list of highlighted line numbers
+
+Let's take a look how we can set these values in a Markdown file: 
+
+
+```
+  ```js [src/index.js] {1, 2-3}
+  const a = 4;
+  const b = a + 3;
+  const c  = a * b;
+  ```
+```
+
+- `js` is the value passed to the `language` prop
+- `src/index.js` is the value passed to the `filename` prop
+- `[1, 2, 3]` is the value passed to the `highlights` prop
+
 To override the component, we create `ProseCode.vue` in the `components/content` directory and use the exact same props that are defined in the default component:
 
 ```vue
@@ -80,9 +102,35 @@ const props = withDefaults(
 
 Now we can customize this component however we want. 
 
+## Style container
+
+First, we want to style the container that includes the code. Therefore we wrap the `<slot />` in a `div` and style it:
+
+```vue
+```vue
+<template>
+  <div class="container">
+    <slot />
+  </div>
+</template>
+
+<style scoped>
+.container {
+  background: #1e1e1e;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+</style>
+```
+
+![FIXME]()
+
 ## Show Language
 
-First, we want to show the name of the language on the top right, if it is available. 
+Next, we want to show the name of the language on the top right, if it is available. 
 
 ```vue
 <template>
@@ -160,9 +208,76 @@ const languageColor = computed(() =>
 We define a map called `languageMap` that defines the displayed text, the CSS background and text color for each programming language. 
 Based on this map we style the language inside our template.
 
+![FIXME]()
+
+## Show file name
+
+Next, we want to show the name of the file on the top left, if it is available. 
+
+```vue
+<template>
+  <div class="container">
+    <span v-if="filename" class="filename-text">
+      {{ filename }}
+    </span>
+    <slot />
+  </div>
+</template>
+
+<style scoped>
+.filename-text  {
+  position: absolute;
+  top: 0;
+  left: 1em;
+  padding: 0.25em 0.5em;
+  color: white;
+  font-size: 14px;
+}
+</style>
+```
+
+## Add copy code
+
+Finally, we want to show a button that copies the code to the clipboard. Therefore, we use [VueUse](https://vueuse.org/) [useCLipboard composable](https://vueuse.org/core/useclipboard/#useclipboard=):
+
+```vue
+<template>
+  <div class="container">
+    <slot />
+    <div class="bottom-container">
+      <div class="copy-container">
+        <span class="copied-text" v-if="copied">Copied code!</span>
+        <button @click="copy(code)">Copy Code</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useClipboard } from '@vueuse/core';
+
+const { copy, copied, text } = useClipboard();
+</script>
+
+<style scoped>
+.bottom-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copy-container {
+  display: flex;
+}
+
+.copied-text {
+  margin-right: 1em;
+}
+</style>
+```
+
 ## Conclusion
 
-It's effortless to create a Markdown file-based blog using [Nuxt Content v2](https://content.nuxtjs.org/). This article demonstrates the basic steps to set up such a blog.
+The following [StackBlitz sandbox](https://stackblitz.com/edit/nuxt-content-v2-custom-code-blocks) demonstrates the application we create in this article:
 
 You can expect more [Nuxt 3](https://v3.nuxtjs.org/) posts in the following months as I plan to blog about interesting topics that I discover while rewriting my portfolio website.
 
