@@ -57,7 +57,7 @@ React is extremely careful and re-renders "everything all the same time". Losing
 
 I created a demo project on [StackBlitz](https://stackblitz.com/edit/react-when-does-component-render-demo) which I will use in this article to demonstrate React's rendering behavior:
 
-<iframe width="100%" height="500" src="https://stackblitz.com/edit/react-when-does-component-render-demo?file=src/App.js&embed=1"></iframe>
+<iframe width="100%" height="500" src="https://stackblitz.com/edit/react-when-does-component-render-demo?file=src/App.js&embed=1&ctl=1"></iframe>
 <br/>
 
 The project contains a parent component, which basically consists of two child components where one component receives props and the other not:

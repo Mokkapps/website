@@ -42,39 +42,40 @@ A browser window should automatically open for `http://localhost:3000`. Alternat
 
 The following [StackBlitz sandbox](https://stackblitz.com/edit/nuxt-content-v2-custom-code-blocks) demonstrates the application we create in this article:
 
-<iframe width="100%" height="500" src="https://stackblitz.com/edit/nuxt-content-v2-custom-code-blocks?embed=1&"></iframe>
+<iframe width="100%" height="500" src="https://stackblitz.com/edit/nuxt-content-v2-custom-code-blocks?embed=1&ctl=1"></iframe>
 
 ## Custom Prose Component
 
-[Prose](https://content.nuxtjs.org/guide/writing/markdown#prose) represents the HTML tags output from the Markdown syntax in Nuxt Content. Nuxt Content provides a Vue component for each HTML tag like links, title levels and more. 
+[Prose](https://content.nuxtjs.org/guide/writing/markdown#prose) represents the HTML tags output from the Markdown syntax in Nuxt Content. Nuxt Content provides a Vue component for each HTML tag like links, title levels, etc.
 
-It's possible to override these Vue components and this is exactly what we'll do to create a custom code block component.
+It's possible to override these Vue components, which is precisely what we'll do to create a custom code block component.
 
-To customize a Prose component we have to perform these steps:
+To customize a Prose component, we have to perform these steps:
 
-- Checkout the original component sources.
-- Use the exact same props.
-- Name it the same in your components/content/ directory.
+- Check out the original component sources.
+- Use the same props.
+- Name it the same in our `components/content/` directory.
 
-In our example, we want to override [ProseCode](https://github.com/nuxt/content/blob/main/src/runtime/components/Prose/ProseCode.vue) which is Nuxt Content's default Vue component to render code blocks in Markdown files.
+In our example, we want to override [ProseCode](https://github.com/nuxt/content/blob/main/src/runtime/components/Prose/ProseCode.vue), which is Nuxt Content's default Vue component to render code blocks in Markdown files.
 
 This component accepts the following props: 
 
-- `code`: the code string
+- `code`: the provided code as a string
 - `language`: the provided language name
-- `filename`: the provide filename
+- `filename`: the provided filename
 - `highlights`: a list of highlighted line numbers
 
-Let's take a look how we can set these values in a Markdown file: 
+Let's take a look at how we can set these values in a Markdown file: 
 
-
-```
+````
   ```js [src/index.js] {1, 2-3}
   const a = 4;
   const b = a + 3;
   const c  = a * b;
   ```
-```
+````
+
+In the above example:
 
 - `js` is the value passed to the `language` prop
 - `src/index.js` is the value passed to the `filename` prop
@@ -102,11 +103,10 @@ const props = withDefaults(
 
 Now we can customize this component however we want. 
 
-## Style container
+## Style Container
 
-First, we want to style the container that includes the code. Therefore we wrap the `<slot />` in a `div` and style it:
+First, we want to style the container that includes the code. Therefore, we wrap the `<slot />` in a `div` and style it:
 
-```vue
 ```vue
 <template>
   <div class="container">
@@ -126,7 +126,9 @@ First, we want to style the container that includes the code. Therefore we wrap 
 </style>
 ```
 
-![FIXME]()
+Let's take a look at our custom code block:
+
+![Styled Code Block Container](./images/code-container-styled.png)
 
 ## Show Language
 
@@ -192,7 +194,7 @@ const languageColor = computed(() =>
   padding-top: 1em;
 }
 
-.language-text  {
+.language-text {
   position: absolute;
   top: 0;
   right: 1em;
@@ -205,14 +207,14 @@ const languageColor = computed(() =>
 </style>
 ```
 
-We define a map called `languageMap` that defines the displayed text, the CSS background and text color for each programming language. 
-Based on this map we style the language inside our template.
+We define a map called `languageMap` that contains the displayed text, the CSS background, and text color for each programming language.
+We style the `span` tag that renders the language inside our template based on this map and the provided `language` prop:
 
-![FIXME]()
+![Code block with language name](./images/code-block-with-language-name.png)
 
-## Show file name
+## Show File Name
 
-Next, we want to show the name of the file on the top left, if it is available. 
+Next, we want to show the file's name on the top left, if it is available:
 
 ```vue
 <template>
@@ -225,7 +227,7 @@ Next, we want to show the name of the file on the top left, if it is available.
 </template>
 
 <style scoped>
-.filename-text  {
+.filename-text {
   position: absolute;
   top: 0;
   left: 1em;
@@ -236,9 +238,13 @@ Next, we want to show the name of the file on the top left, if it is available.
 </style>
 ```
 
-## Add copy code
+The result looks like this:
 
-Finally, we want to show a button that copies the code to the clipboard. Therefore, we use [VueUse](https://vueuse.org/) [useCLipboard composable](https://vueuse.org/core/useclipboard/#useclipboard=):
+![Code block with file name](./images/code-block-with-filename.png)
+
+## Add Copy Code Button
+
+Finally, we want to show a button that copies the code to the clipboard. Therefore, we use [the useClipboard composable from VueUse](https://vueuse.org/core/useclipboard/#useclipboard=):
 
 ```vue
 <template>
@@ -275,9 +281,15 @@ const { copy, copied, text } = useClipboard();
 </style>
 ```
 
+Let's take a look at the final result with language & file name, copy code button, and line highlighting:
+
+![Final custom code block](./images/code-block-final.png)
+
 ## Conclusion
 
-The following [StackBlitz sandbox](https://stackblitz.com/edit/nuxt-content-v2-custom-code-blocks) demonstrates the application we create in this article:
+Custom code blocks are essential for my blog as my blog posts contain a lot of code snippets. Features like copy code or line highlighting provide excellent value to my readers, and it is straightforward to add such features by creating a custom code block component in Nuxt Content v2.
+
+The source code of this demo is available at [GitHub](https://github.com/Mokkapps/nuxt-content-v2-custom-code-blocks/tree/master) or as [StackBlitz sandbox](https://stackblitz.com/edit/nuxt-content-v2-custom-code-blocks).
 
 You can expect more [Nuxt 3](https://v3.nuxtjs.org/) posts in the following months as I plan to blog about interesting topics that I discover while rewriting my portfolio website.
 

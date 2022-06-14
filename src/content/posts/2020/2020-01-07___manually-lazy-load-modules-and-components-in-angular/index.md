@@ -11,7 +11,7 @@ In this blog post, I want to demonstrate how modules and components can be lazy-
 
 The following [StackBlitz demo](https://stackblitz.com/github/mokkapps/angular-manual-lazy-load-demo) includes the code described in the following chapters:
 
-<iframe width="100%" height="500" src="https://stackblitz.com/github/mokkapps/angular-manual-lazy-load-demo?embed=1&file=src/app/app.component.ts"></iframe>
+<iframe width="100%" height="500" src="https://stackblitz.com/github/mokkapps/angular-manual-lazy-load-demo?embed=1&ctl=1&file=src/app/app.component.ts"></iframe>
 
 The source code of the demo is available on [GitHub](https://github.com/Mokkapps/angular-manual-lazy-load-demo).
 

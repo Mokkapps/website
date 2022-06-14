@@ -37,7 +37,7 @@ A browser window should automatically open for `http://localhost:3000`. Alternat
 
 The following StackBlitz sandbox demonstrates the simple blog application we create in this article:
 
-<iframe width="100%" height="500" src="https://stackblitz.com/edit/nuxt-content-v2-blog-demo?embed=1"></iframe>
+<iframe width="100%" height="500" src="https://stackblitz.com/edit/nuxt-content-v2-blog-demo?embed=1&ctl=1"></iframe>
 
 ## Blog Content Structure
 

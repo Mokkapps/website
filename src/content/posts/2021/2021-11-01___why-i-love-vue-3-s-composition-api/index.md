@@ -13,7 +13,7 @@ First, I will show you how you can build components using Vue 2, and then I will
 
 For this article, I created a [Stackblitz Vue 3 demo application](https://stackblitz.com/edit/vue-3-composition-api-demo?file=src/App.vue) which includes all the components that I'll showcase in this article:
 
-<iframe width="100%" height="500" src="https://stackblitz.com/edit/vue-3-composition-api-demo?file=src/App.vue&embed=1"></iframe>
+<iframe width="100%" height="500" src="https://stackblitz.com/edit/vue-3-composition-api-demo?file=src/App.vue&embed=1&ctl=1"></iframe>
 <br/>
 
 The source code is also available on [GitHub](https://github.com/Mokkapps/vue-3-composition-api-demo/).

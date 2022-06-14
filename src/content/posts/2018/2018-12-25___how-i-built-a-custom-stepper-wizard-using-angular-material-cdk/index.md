@@ -111,7 +111,7 @@ export class AppModule {}
 
 ### Demo Stepper Project
 
-As the [official documentation](https://material.angular.io/cdk/stepper/overview) does not provide any code examples I created a [simple demo project on Stackblitz](https://stackblitz.com/edit/angular-basic-cdk-stepper?embed=1&file=src/app/custom-stepper/custom-stepper.component.ts) which I want to describe in the following sections.
+As the [official documentation](https://material.angular.io/cdk/stepper/overview) does not provide any code examples I created a [simple demo project on Stackblitz](https://stackblitz.com/edit/angular-basic-cdk-stepper?embed=1&ctl=1&file=src/app/custom-stepper/custom-stepper.component.ts) which I want to describe in the following sections.
 
 #### Create CustomStepperComponent
 

@@ -268,7 +268,7 @@ Finally, we can test our dark mode theme switch at `http://localhost:3000`:
 
 My simple demo is available as interactive StackBlitz demo:
 
-<iframe width="100%" height="500" src="https://stackblitz.com/github/Mokkapps/nuxt-3-tailwind-3-dark-mode-switch-demo?embed=1"></iframe>
+<iframe width="100%" height="500" src="https://stackblitz.com/github/Mokkapps/nuxt-3-tailwind-3-dark-mode-switch-demo?embed=1&ctl=1"></iframe>
 
 ## Alternative
 
