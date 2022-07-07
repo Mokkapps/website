@@ -69,7 +69,7 @@ const SimilarArticles = ({ className, categories, slug, count = 4 }) => {
         slug: node.fields.slug,
         cover: node.frontmatter.cover,
         title: node.frontmatter.title,
-        to: `/blog${slug}`,
+        to: `/blog${node.fields.slug}`,
       };
     })
     .slice(0, count);
