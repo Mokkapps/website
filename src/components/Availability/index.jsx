@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { getFormattedDate } from 'utils';
 
-const availability = new Date('2022-07-31');
+const availability = new Date('2023-01-01');
 
 const Availability = ({ className, dataCy }) => {
   const availabilityDate = new Date(availability);
